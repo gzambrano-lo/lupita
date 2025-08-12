@@ -1,98 +1,125 @@
+/* PADDINGS & MARGINS */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
+    padding: 2rem;
 }
 
-h1 {
-  font-size: 2.5rem;
-  text-transform: lowercase;
+main section {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-p {
-  font-style: italic, 'Segoe UI', sans-serif;
-  color: #000000;
+/* BORDERS */
+main section,
+.card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
-section {
-  margin-bottom: 3rem;
-  padding: 1.5rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  background-color: #fffdfd;
+/* CENTER NAV BAR */
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #ffe6f0;
-  /* soft pink */
-  color: #3b3b3b;
-  line-height: 1.6;
-  padding: 2rem;
-  max-width: 800px;
-  margin: auto;
-}
-
-h2 {
-  font-weight: bolder;
-}
-
-h1 {
-  font-weight: bold;
-}
-
-h3 {
-  font-size: medium;
+/* CENTER HEADER & IMAGE */
+.site-header {
+    text-align: center;
 }
 
 .center-img {
-  display: flex;
-  justify-content: center;
-  margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
 }
 
-.center-img img {
-  border-radius: 10px;
+/* NAV BUTTON STYLING */
+nav a {
+    display: inline-block;
+    padding: 0.4rem 1rem; /* PILL SHAPE BUTTON */
+    margin-right: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.7); /* SEE THROUGH */
+    border: 2px solid #dda0dd; /* PASTEL PURPLE */
+    border-radius: 999px; /* PILL SHAPE */
+    text-decoration: none;
+    color: #333; /* DARK TEXT FOR CONTRAST*/
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-header {
-  text-align: center
+nav a:hover {
+  background-color: #dda0dd; /* PASTEL PURPLE */
+  color: white; /* WHITE TEXT ON HOVER */
+  border-color: #b57edc; /* DEEPER PURPLE */
 }
 
-header img {
-  margin-top: 1rem;
+/* TYPOGRAPHY */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
 }
 
-.slide {
-  display: none;
-  width: 100%;
-  max-width: 300px;
-  border-radius: 10px;
-  margin: auto;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+h1 {
+    font-size: 2.4rem;
+    letter-spacing: .5px;
 }
 
-.slide.active {
-  display: block;
-  animation: fade 0.5s ease-in-out;
+h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #444;
 }
 
-.gallery {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 200px;
+p {
+    line-height: 1.6;
+}
+
+/* IMAGES */
+.center-img {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.center-img {
+    img {
+        border-radius: 10px;
+    }
+}
+
+/* 3 COLUMNS*/
+.columns {
+    column-count: 3;
+    column-gap: 20px;
+    column-rule: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.columns {
+    margin-top: 1rem;
+}
+
+/* CENTER TITLES AND CONTENT IN EACH COLUMN */ 
+.columns > article {
+    break-inside: avoid; 
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.columns > article h3 {
+    margin-top: 0;
+}
+
+/* BACKGROUND IMAGE*/
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: url('Images/gallery/background.png') no-repeat center center fixed;
+    background-size: cover;
 }
