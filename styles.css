@@ -16,12 +16,6 @@ main section,
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-/* CENTER NAV BAR */
-nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 0.5rem;
-}
 
 /* CENTER HEADER & IMAGE */
 .site-header {
@@ -32,27 +26,6 @@ nav {
     display: flex;
     justify-content: center;
     margin: 1rem 0;
-}
-
-/* NAV BUTTON STYLING */
-nav a {
-    display: inline-block;
-    padding: 0.4rem 1rem; /* PILL SHAPE BUTTON */
-    margin-right: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.7); /* SEE THROUGH */
-    border: 2px solid #dda0dd; /* PASTEL PURPLE */
-    border-radius: 999px; /* PILL SHAPE */
-    text-decoration: none;
-    color: #333; /* DARK TEXT FOR CONTRAST*/
-    font-weight: 600;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-nav a:hover {
-  background-color: #dda0dd; /* PASTEL PURPLE */
-  color: white; /* WHITE TEXT ON HOVER */
-  border-color: #b57edc; /* DEEPER PURPLE */
 }
 
 /* TYPOGRAPHY */
@@ -105,13 +78,14 @@ p {
     margin-top: 1rem;
 }
 
-/* CENTER TITLES AND CONTENT IN EACH COLUMN */ 
-.columns > article {
-    break-inside: avoid; 
+/* CENTER TITLES AND CONTENT IN EACH COLUMN */
+.columns>article {
+    break-inside: avoid;
     text-align: center;
     margin-bottom: 1rem;
 }
-.columns > article h3 {
+
+.columns>article h3 {
     margin-top: 0;
 }
 
@@ -120,6 +94,81 @@ html,
 body {
     height: 100%;
     margin: 0;
-    background: url('Images/gallery/background.png') no-repeat center center fixed;
+    background: url('images/gallery/background.png') no-repeat center center fixed;
     background-size: cover;
+}
+
+/* MODULE 6 ADD-ONS */
+
+/* SCALABLE IMAGES */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* NAV CONTAINER */
+#nav_menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* NAV LINKS (PILL STYLE) */
+#nav_menu a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid #d8add4;
+    border-radius: 999px;
+    transition: all 0.3 ease;
+}
+
+/* HIGHLIGHT CURRENT PAGE */
+#nav_menu .current a {
+    background-color: #b894d6;
+    color: white;
+}
+
+/* HOVER EFFECT*/
+#nav_menu a:hover {
+    background-color: #d8add4;
+    color: white;
+}
+
+/* FLUID TWO COLUMN LAYOUT */
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;  /* main : sidebar */
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+aside.sidebar {
+  background: rgba(255,255,255,.7);
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* BREAKPOINT 1: TABLET - STACK COLUMNS, VERTICAL NAV */
+@media (max-width: 900px) {
+  .main-grid { grid-template-columns: 1fr; }
+  #nav_menu ul { flex-direction: column; align-items: center; }
+  #nav_menu a { width: 100%; height: 38px; }
+}
+
+/* BREAKPOINT 2: MOBILE-TIGHTEN, SPACING */
+@media (max-width: 600px) {
+  html { font-size: 15px; }
+  .main-grid { gap: 1rem; }
 }
