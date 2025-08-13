@@ -94,7 +94,7 @@ html,
 body {
     height: 100%;
     margin: 0;
-    background: url('images/gallery/background.png') no-repeat center center fixed;
+    background-image: url(images/gallery/background.png);
     background-size: cover;
 }
 
