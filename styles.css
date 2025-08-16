@@ -1,268 +1,382 @@
-/* PADDINGS & MARGINS */
+/* 8-15-25 RESET FOR MODULE 8 SUBMISSION */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*THEME / PALETTE */
+:root {
+    --cream: #F7EDE2;
+    --soft: #D8E2DC;
+    --pink: #F5CAC3;
+    --sage: #84A59D;
+    --coral: #F28482;
+
+    --text: #333333;
+    --muted: #555555;
+    --card: #FFFFFF;
+    --border: #E5E7EB;
+    --radius: 12px;
+    --shadow: 0 2px 12px rgba(0, 0, 0, .06);
+}
+
+/* GLOBAL */
+html,
 body {
+    height: 100%;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
     padding: 2rem;
+
+    /* cream base */
+    background-color: var(--cream);
+
+    /* soft checker overlay */
+    background-image:
+        linear-gradient(90deg, rgba(132, 165, 157, .14) 50%, rgba(0, 0, 0, 0) 50%),
+        linear-gradient(180deg, rgba(132, 165, 157, .14) 50%, rgba(0, 0, 0, 0) 50%);
+    background-size: 180px 180px;
+    background-position: 0 0, 0 0;
+    background-attachment: fixed;
 }
-
-main section {
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-/* BORDERS */
-main section,
-.card {
-    border: 1px solid #eee;
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.7);
-}
-
-
-/* CENTER HEADER & IMAGE */
-.site-header {
-    text-align: center;
-}
-
 
 /* TYPOGRAPHY */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-}
-
 h1 {
-    font-size: 2.4rem;
-    letter-spacing: .5px;
+    font-size: clamp(2rem, 3.2vw, 2.6rem);
+    letter-spacing: .3px;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: 700;
 }
 
 h3 {
     font-size: 1rem;
     font-weight: 600;
-    color: #444;
+    color: var(--muted);
 }
 
 p {
-    line-height: 1.6;
+    margin: .5rem 0 1rem;
 }
 
-
-/* BACKGROUND IMAGE*/
-html,
-body {
-    height: 100%;
-    margin: 0;
-    background-image: url(images/background.png);
-    background-size: cover;
+/* ACCESSIBLE FOCUS */
+:focus-visible {
+    outline: 3px solid var(--coral);
+    outline-offset: 3px;
 }
 
-/* HOMEPAGE STYLING */
-.intro {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 1rem;
-    padding: 2rem;
+/* LAYOUT CONTAINER */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* SECTION / CARDS */
+section,
+.card {
+    background: rgba(255, 255, 255, .70);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* HEADER + NAV (FLEX #1) */
+.site-header {
     text-align: center;
+    margin-bottom: 1rem;
 }
 
-.profile-pic {
-    max-width: 25%;
-    height: auto;
-    display: block;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: white;
-    margin: 1rem;
-}
-
-.intro-text {
-    max-width: 400px;
-    margin: 1rem;
-}
-
-.intro-text h2 {
-    color: #a464d3;
-}
-
-.intro-text p {
-    color: #444;
-}
-
-/*MODULE 7 ADD ON'S*/
-
-/*REQUIREMENT: FLEX CONTAINER*/
 #nav_menu ul {
     list-style: none;
-    margin: 0;
-    padding: .6rem;
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     flex-wrap: wrap;
-    /* prevents overflow on small screens*/
     justify-content: center;
+    padding: .6rem;
 }
 
-
-#nav_menu li {
-    margin: 0;
-    padding: 0;
-}
-
+/* base pill */
 #nav_menu a {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 40px;
     padding: 0 1rem;
-    text-decoration: none;
     font-weight: 600;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 2px solid #d8add4;
+    color: var(--sage);
+    background: rgba(255, 255, 255, .70);
+    border: 2px solid var(--sage);
     border-radius: 999px;
-    transition: all 0.3 ease;
+    transition: transform .06s ease, background .25s ease, color .25s ease, box-shadow .25s ease;
+    will-change: transform;
 }
 
+/* current page pill stays filled */
+#nav_menu .current a {
+    background: var(--sage);
+    color: #fff;
+}
+
+/* hover/focus lift for any link */
 #nav_menu a:hover,
 #nav_menu a:focus {
-    background-color: #8fb472;
-    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
 }
 
-#nav_menu .current a {
-    background-color: #8fb472;
-    color: #fff;
-}
-
-@media (max-width:380px) {
-    #nav_menu a {
-        padding: 0 .75rem;
-    }
-}
-
-/* ABOUT PAGE */
-.about {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 1.25rem;
-    max-width: 900px;
-    margin: 2rem auto;
+/* HOME / INTRO */
+.intro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
     padding: 2rem;
-    background: rgba(255, 255, 255, .6);
     border-radius: 1rem;
-    align-items: start;
+    background: rgba(255, 255, 255, .70);
 }
 
-.about-pic {
-    width: 200px;
-    /* keeps it small */
-    aspect-ratio: 1 / 1;
-    /* perfect square */
-    object-fit: cover;
-    /* crop nicely inside the circle */
+.profile-pic {
+    width: 180px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
-    /* circle */
-    background: #fff;
-    display: block;
-    object-position: 50% 20%;
+    object-fit: cover;
+    border: 4px solid var(--soft);
+    box-shadow: 0 0 0 3px rgba(216, 226, 220, .35);
+}
+
+.intro-text {
+    max-width: 420px;
+}
+
+.intro-text h2 {
+    color: var(--coral);
 }
 
 
-/* REQUIREMENT: GRID LAYOUT (MAIN) GALLERY PAGE & RESPONSIVE IMAGE GRID */
-.grid-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    max-width: 1100px;
-    margin: 1rem auto 2rem;
-}
-
-/* REQUIREMENT: SCALABLE IMAGES */
-.grid-gallery img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.grid-gallery figure {
-    background: #fff;
-    border-radius: .75rem;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
-}
-
-.grid-gallery figcaption {
-    padding: .5rem .75rem;
-    color: #444;
-    font-size: .9rem;
-}
-
-/* BLOG & LINKS SIMPLE LAYOUTS */
+/* BLOG & LINKS */
 .article {
     max-width: 800px;
-    margin: 2rem auto;
-    padding: 1.5rem;
+    margin: 0 auto;
 }
 
 .post {
-    background: rgba(255, 255, 255, .6);
+    background: rgba(255, 255, 255, .70);
     border-radius: 1rem;
     padding: 1.25rem 1.5rem;
 }
 
 .links {
-    max-width: 700px;
-    margin: 2rem auto;
-    padding: 1rem 2rem;
+    max-width: 720px;
+    margin: 0 auto;
 }
 
 .link-list {
     line-height: 1.9;
 }
 
-/* REQUIREMENT: MEDIA QUERIES (TWO) BREAKPOINT # 1 TABLET 900PX */
-@media (max-width: 900px) {
-    .about {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+/* FOOTER (FLEX #2) */
+.site-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: .9rem;
+    background: rgba(255, 255, 255, .10);
+    border-radius: var(--radius);
+}
 
-    .about-pic {
-        margin-inline: auto;
-    }
-
+/* RESPONSIVE */
+@media (max-width:900px) {
     .grid-gallery {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* REQUIREMENT BREAKPOINT # 2 SMALL PHONES 480PX */
-@media (max-width: 480px) {
+@media (max-width:480px) {
     #nav_menu ul {
         justify-content: center;
     }
 
-    /* keep nav from cutting off */
     .grid-gallery {
         grid-template-columns: 1fr;
     }
 }
 
-/* REQUIREMENT: FLEXBOX #2 FOOTER */
-.site-footer {
-    display: flex;
-    justify-content: center;
-    /* center horizontally */
-    align-items: center;
-    /* center vertically */
+/* LINKS SECTION */
+.links {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, .70);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.link-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.link-grid a {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: .25rem;
     padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    font-size: 0.9rem;
+    background: #fff;
+    border: 1px solid var(--soft);
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+    color: var(--text);
+    transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.link-grid a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+    border-color: var(--sage);
+}
+
+.lg-emoji {
+    font-size: 1.4rem;
+}
+
+.lg-title {
+    font-weight: 700;
+    color: var(--sage);
+}
+
+.lg-sub {
+    font-size: .9rem;
+    color: var(--muted);
+}
+
+/* GALLERY GRID */
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.grid-gallery figure {
+    background: rgba(255, 255, 255, .70);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    text-align: center;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.grid-gallery figure:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+
+.grid-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.grid-gallery figcaption {
+    padding: .75rem;
+    font-size: .95rem;
+    color: var(--muted);
+}
+
+/* SPOTIFY */
+.spotify {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, .70);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.spotify h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--sage);
+}
+
+/* puts links and spotify side by side on wide screens :p */
+@media (min-width: 900px) {
+    .links-page {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        /* links wider, spotify narrower */
+        gap: 1.25rem;
+    }
+}
+
+
+/* matching the grid and alinging things nicely */
+.links-page {
+    align-items: start;
+}
+
+/* when Spotify is inside the links grid, don't constrain it */
+.links-page .spotify {
+    max-width: none;
+    /* override 720px */
+    margin: 0;
+    /* no auto-centering in a grid column */
+    width: 100%;
+}
+
+/* small spacing so the list and spotify don't crowd each other */
+.link-grid {
+    margin-bottom: 1rem;
+}
+
+/* tightening the Spotify heading and add a soft shadow to the player */
+.spotify h2 {
+    margin: .25rem 0 .75rem;
+    letter-spacing: .2px;
+}
+
+.spotify iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+}
+
+/* collapse to one column on mobile */
+@media (max-width: 900px) {
+    .links-page {
+        display: block;
+    }
 }
