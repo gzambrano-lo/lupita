@@ -2,65 +2,131 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lupe Zambrano</title>
-    <link rel="stylesheet" href="../styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lupe Zambrano — About</title>
+  <meta name="description"
+    content="About Lupe (Lupita): IT + web dev student, puzzle lover, and maker of tiny websites, crafts, and garden notes." />
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-32.png">
+  <link rel="shortcut icon" href="../images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-32.png">
 </head>
 
 <body>
-    <header class="site-header">
-        <h1>about</h1>
-    </header>
-    <!--REQUIREMENT: FLEX CONTAINER #2-->
-    <nav id="nav_menu" aria-label="Main">
-        <ul>
-            <li><a href="../index.html">home</a></li>
-            <li class="current"><a href="about.html">about</a></li>
-            <li><a href="gallery.html">media log</a></li>
-            <li><a href="blog.html">blog</a></li>
-            <li><a href="links.html">links</a></li>
+  <header class="site-header">
+    <h1>about</h1>
+  </header>
+
+  <nav id="nav_menu" aria-label="Main">
+    <ul>
+      <li><a href="../index.html">home</a></li>
+      <li class="current"><a href="about.html" aria-current="page">about</a></li>
+      <li><a href="gallery.html">media log</a></li>
+      <li><a href="blog.html">blog</a></li>
+      <li><a href="links.html">links</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- intro: text (left) + music card (right) -->
+    <section class="intro">
+      <div class="intro-text">
+        <h2 id="about-heading">about me</h2>
+        <p class="lede">i'm lupe (lupita en español). i study IT + web dev and collect hobbies the way other people
+          collect keychains.</p>
+
+        <h3>early days</h3>
+        <p>tiny backyard gardens, dial-up internet, and a camcorder that ate tapes — that's where i learned to tinker…
+        </p>
+
+        <h3>why tech</h3>
+        <p>i like puzzles. code is just puzzles that talk back. i'm learning front-end first, then security basics and
+          python.</p>
+
+        <h3>things i make</h3>
+        <ul class="tight">
+          <li>little websites and shiny CSS experiments</li>
+          <li>handmade stuff: embroidery, clay, and chaotic kid crafts</li>
+          <li>photos and notes from my “tiny garden” project</li>
         </ul>
-    </nav>
 
+        <h3>now</h3>
+        <p>balancing school, two kiddos, and a brain that thrives on projects. this site is my scrapbook of learning and
+          trying.</p>
+      </div>
 
-    <br>
+      <section class="card music-card">
+        <h4>lupita's music library <i class="fa-solid fa-music" aria-hidden="true"></i></h4>
+        <img class="music-thumb" src="../images/music.png" alt="lupita's music library thumbnail" />
+        <iframe src="https://open.spotify.com/embed/playlist/7GwWCqZL4QzLVSJfrqAo7n?utm_source=generator&theme=0"
+          width="100%" height="152" frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </section>
+    </section>
 
-    
-<main class="intro">
-        <!--SCALABLE IMAGE-->
-        <div class="intro-text">
-            <h2 id="about-heading">about me</h2>
+    <!-- two bottom cards -->
+    <div class="about-extra">
+      <section class="card">
+        <h2>my story</h2>
+        <p><em>content note:</em> mentions of past substance use and a past suicide attempt.</p>
 
-      <p class="lede">i'm lupe (lupita en español). i study IT + web dev and collect hobbies the way other people collect keychains.</p>
+        <details class="expand">
+          <summary>full story</summary>
+          <p>after high school i didn't really have a clear path. in 2019 i went through a rough patch with my mental
+            health and ended up hospitalized. that experience pushed me to finally get into therapy and psych care, and
+            i've been slowly figuring myself out since then.</p>
 
-      <h3>early days</h3>
-      <p>tiny backyard gardens, dial-up internet, and a camcorder that ate tapes — that's where i learned to tinker…</p>
+          <p> for a while i worked nights as a caregiver for two nonverbal men with autism. that job really shaped me.
+            it
+            taught me patience and showed me how unfair the world can be to people with disabilities. it's something
+            i'llalways care about and advocate for.</p>
 
-      <h3>why tech</h3>
-      <p>i like puzzles. code is just puzzles that talk back. i'm learning front-end first, then security basics and python.</p>
+          <p> becoming a mom changed everything. i had my son when i was 21 and then my daughter in 2022. i stepped away
+            from caregiving when i realized i couldn't give it my whole self anymore. after that i tried warehouse work
+            for a bit. i learned a lot about people and the trucking world, but i knew i wanted something different.</p>
 
-      <h3>things i make</h3>
-      <ul class="tight">
-        <li>little websites and shiny CSS experiments</li>
-        <li>handmade stuff: embroidery, clay, and chaotic kid crafts</li>
-        <li>photos and notes from my “tiny garden” project</li>
-      </ul>
+          <p>that's when i leaned into tech. i joined climb hire, started working on my compTIA a+ (core 1 down,
+            planning to finish certification soon), and now i'm studying IT and web development in college. its a new
+            direction, but it feels like the right one.</p>
 
-      <blockquote class="pull">“build small, but keep building.”</blockquote>
+          <p>these days i'm focused on taking care of my kids, keeping up with school, and building something more
+            stable for us.</p>
+        </details>
 
-      <h3>now</h3>
-      <p>balancing school, two kiddos, and a brain that thrives on projects. this site is my scrapbook of learning and trying.</p>
+        <p class="meta" style="font-size:.9rem;color:var(--muted);margin-top:.5rem;">
+          need help? in the u.s., call or text <strong>988</strong> for the Suicide &amp; Crisis Lifeline.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>video that matters to me</h2>
+        <p>this is something i usually only share with people i'm close to, but it felt important to bring awareness to
+          it.</p>
+
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/iraGmA7-9FA"
+            title="Borderline Personality Disorder explained by Borderline Bill" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy" allowfullscreen></iframe>
         </div>
-    </main>
+      </section>
+    </div>
+  </main>
 
-
-  
-
-    <footer class="site-footer" role="contentinfo">
-        <p>&copy; Guadalupe Zambrano 2025</p>
-    </footer>
-
+  <footer class="site-footer">
+    <p>&copy; Guadalupe Zambrano 2025</p>
+  </footer>
 </body>
 
 </html>

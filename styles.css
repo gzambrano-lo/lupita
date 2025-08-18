@@ -1,4 +1,4 @@
-/* 8-15-25 RESET FOR MODULE 8 SUBMISSION */
+/* BASE ELEMENTS */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,23 +16,39 @@ a {
     color: inherit;
 }
 
-/*THEME / PALETTE */
+/* THEME TOKENS / PALETTE (color, radii, shadows) */
 :root {
+    /* "brand" palette */
     --cream: #F7EDE2;
     --soft: #D8E2DC;
     --pink: #F5CAC3;
     --sage: #84A59D;
     --coral: #F28482;
 
+    /* my neutrals */
     --text: #333333;
     --muted: #555555;
     --card: #FFFFFF;
     --border: #E5E7EB;
+
+    /* for shape and depth */
     --radius: 12px;
-    --shadow: 0 2px 12px rgba(0, 0, 0, .06);
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* GLOBAL */
+/* fonts */
+body {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Poppins", "Nunito", system-ui, sans-serif;
+}
+
+
+/* DOCUMENT / BACKGROUND */
 html,
 body {
     height: 100%;
@@ -49,8 +65,8 @@ body {
 
     /* soft checker overlay */
     background-image:
-        linear-gradient(90deg, rgba(132, 165, 157, .14) 50%, rgba(0, 0, 0, 0) 50%),
-        linear-gradient(180deg, rgba(132, 165, 157, .14) 50%, rgba(0, 0, 0, 0) 50%);
+        linear-gradient(90deg, rgba(132, 165, 157, 0.14) 50%, rgba(0, 0, 0, 0) 50%),
+        linear-gradient(180deg, rgba(132, 165, 157, 0.14) 50%, rgba(0, 0, 0, 0) 50%);
     background-size: 180px 180px;
     background-position: 0 0, 0 0;
     background-attachment: fixed;
@@ -59,7 +75,7 @@ body {
 /* TYPOGRAPHY */
 h1 {
     font-size: clamp(2rem, 3.2vw, 2.6rem);
-    letter-spacing: .3px;
+    letter-spacing: 0.3px;
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -76,25 +92,25 @@ h3 {
 }
 
 p {
-    margin: .5rem 0 1rem;
+    margin: 0.5rem 0 1rem;
 }
 
-/* ACCESSIBLE FOCUS */
+/* KEYBOARD FOCUS */
 :focus-visible {
     outline: 3px solid var(--coral);
     outline-offset: 3px;
 }
 
-/* LAYOUT CONTAINER */
+/* PAGE CONTAINER */
 main {
     max-width: 1100px;
     margin: 0 auto;
 }
 
-/* SECTION / CARDS */
+/* CARD (frosted panel look) */
 section,
 .card {
-    background: rgba(255, 255, 255, .70);
+    background: rgba(255, 255, 255, 0.7);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -102,7 +118,7 @@ section,
     margin-bottom: 1.5rem;
 }
 
-/* HEADER + NAV (FLEX #1) */
+/* HEADER + NAV (pills) */
 .site-header {
     text-align: center;
     margin-bottom: 1rem;
@@ -114,10 +130,10 @@ section,
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
-    padding: .6rem;
+    padding: 0.6rem;
 }
 
-/* base pill */
+/* base pill button */
 #nav_menu a {
     display: flex;
     align-items: center;
@@ -126,11 +142,20 @@ section,
     padding: 0 1rem;
     font-weight: 600;
     color: var(--sage);
-    background: rgba(255, 255, 255, .70);
+    background: rgba(255, 255, 255, 0.7);
     border: 2px solid var(--sage);
     border-radius: 999px;
-    transition: transform .06s ease, background .25s ease, color .25s ease, box-shadow .25s ease;
+    transition:
+        transform 0.25s ease,
+        background .25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
     will-change: transform;
+}
+
+#nav_menu a:focus-visible {
+    outline: 3px solid var(--coral);
+    outline-offset: 3px;
 }
 
 /* current page pill stays filled */
@@ -143,22 +168,21 @@ section,
 #nav_menu a:hover,
 #nav_menu a:focus {
     transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* HOME / INTRO */
-.intro {
+/* HOME HERO / INTRO (avatar + tagline) */
+.home-intro {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 1.5rem;
-    text-align: center;
+    text-align: left;
     padding: 2rem;
     border-radius: 1rem;
-    background: rgba(255, 255, 255, .70);
 }
 
+/* avatar */
 .profile-pic {
     width: 180px;
     aspect-ratio: 1/1;
@@ -168,74 +192,75 @@ section,
     box-shadow: 0 0 0 3px rgba(216, 226, 220, .35);
 }
 
+/* reserve fixed space for the avatar in the home hero */
+.home-intro .profile-pic {
+    flex: 0 0 180px;
+}
+
+/* text block next to avatar */
 .intro-text {
     max-width: 420px;
+}
+
+.home-intro .intro-text {
+    flex: 1;
+    max-width: 600px;
 }
 
 .intro-text h2 {
     color: var(--coral);
 }
 
+/* stack on small screens */
+@media (max-width: 600px) {
+    .home-intro {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 
-/* BLOG & LINKS */
+/* BLOG & LINKS WRAPPER */
 .article {
     max-width: 800px;
     margin: 0 auto;
 }
 
 .post {
-    background: rgba(255, 255, 255, .70);
+    background: rgba(255, 255, 255, .7);
     border-radius: 1rem;
     padding: 1.25rem 1.5rem;
+    border: 1px solid var(--border);
+}
+
+.article .post+.post {
+    margin-top: 1.25rem;
+}
+
+.post h2 {
+    margin-bottom: .25rem;
+}
+
+.meta {
+    font-size: .9rem;
+    color: var(--muted);
+    margin-bottom: .5rem;
 }
 
 .links {
     max-width: 720px;
-    margin: 0 auto;
+    margin: 2rem auto;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, .7);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 }
 
 .link-list {
     line-height: 1.9;
 }
 
-/* FOOTER (FLEX #2) */
-.site-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    font-size: .9rem;
-    background: rgba(255, 255, 255, .10);
-    border-radius: var(--radius);
-}
 
-/* RESPONSIVE */
-@media (max-width:900px) {
-    .grid-gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width:480px) {
-    #nav_menu ul {
-        justify-content: center;
-    }
-
-    .grid-gallery {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* LINKS SECTION */
-.links {
-    max-width: 720px;
-    margin: 2rem auto;
-    padding: 1.25rem 1.5rem;
-    background: rgba(255, 255, 255, .70);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-}
-
+/* LINKS GRID (CARDS)*/
 .link-grid {
     list-style: none;
     margin: 0;
@@ -248,19 +273,19 @@ section,
 .link-grid a {
     display: grid;
     grid-template-rows: auto auto auto;
-    gap: .25rem;
+    gap: 0.25rem;
     padding: 1rem;
     background: #fff;
     border: 1px solid var(--soft);
     border-radius: 16px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+    box-shadow: var(--shadow);
     color: var(--text);
-    transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+    transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .link-grid a:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
     border-color: var(--sage);
 }
 
@@ -274,11 +299,11 @@ section,
 }
 
 .lg-sub {
-    font-size: .9rem;
+    font-size: 0.9rem;
     color: var(--muted);
 }
 
-/* GALLERY GRID */
+/* GALLERY GRID (MEDIA LOG CARDS) */
 .grid-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -287,18 +312,18 @@ section,
 }
 
 .grid-gallery figure {
-    background: rgba(255, 255, 255, .70);
+    background: rgba(255, 255, 255, 0.7);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     overflow: hidden;
     text-align: center;
-    transition: transform .2s ease, box-shadow .2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .grid-gallery figure:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .grid-gallery img {
@@ -308,75 +333,237 @@ section,
 }
 
 .grid-gallery figcaption {
-    padding: .75rem;
-    font-size: .95rem;
+    padding: 0.75rem;
+    font-size: 0.95rem;
     color: var(--muted);
 }
 
-/* SPOTIFY */
-.spotify {
-    max-width: 720px;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, .70);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+/* PROGRESS BARS */
+.progress {
+    height: 8px;
+    background: rgba(132, 165, 157, 0.18);
+
+    /* faint sage */
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: .35rem;
 }
 
-.spotify h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-    color: var(--sage);
+.progress-bar {
+    height: 100%;
+    width: var(--pct, 0%);
+    background: var(--sage);
+
+    /* default */
+    border-radius: inherit;
+    transition: width 0.4s ease,
+        background 0.3s ease;
 }
 
-/* puts links and spotify side by side on wide screens :p */
+/* states */
+.progress.done .progress-bar {
+    background: var(--coral);
+    /* finished */
+}
+
+.progress.in-progress .progress-bar {
+    background: var(--sage);
+    /* ongoing */
+}
+
+.progress.not-started .progress-bar {
+    background: var(--border);
+    /* grayish */
+}
+
+.progress-label {
+    font-size: .85rem;
+    color: var(--muted);
+    margin-top: .25rem;
+}
+
+
+/* ABOUT PAGE LAYOUT COMPONENTS */
 @media (min-width: 900px) {
-    .links-page {
+    .intro {
         display: grid;
-        grid-template-columns: 1.4fr 1fr;
-        /* links wider, spotify narrower */
-        gap: 1.25rem;
+        grid-template-columns: minmax(420px, 1fr) 360px;
+        /* text | music card */
+        gap: 2rem;
+        align-items: start;
     }
 }
 
-
-/* matching the grid and alinging things nicely */
-.links-page {
+/* ABOUT PAGE — LAYOUT + COMPONENTS */
+/* 2-column wrapper under the hero (left: story, right: video) */
+.about-extra {
+    max-width: 1100px;
+    margin: 1rem auto 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
     align-items: start;
 }
 
-/* when Spotify is inside the links grid, don't constrain it */
-.links-page .spotify {
-    max-width: none;
-    /* override 720px */
-    margin: 0;
-    /* no auto-centering in a grid column */
-    width: 100%;
+@media (min-width: 900px) {
+    .about-extra {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
-/* small spacing so the list and spotify don't crowd each other */
-.link-grid {
-    margin-bottom: 1rem;
+/* only the ABOUT page uses the 2-column hero layout */
+@media (min-width: 900px) {
+    .about-intro {
+        display: grid;
+        grid-template-columns: minmax(420px, 1fr) 360px;
+        /* text | side card */
+        gap: 2rem;
+        align-items: start;
+    }
 }
 
-/* tightening the Spotify heading and add a soft shadow to the player */
-.spotify h2 {
-    margin: .25rem 0 .75rem;
-    letter-spacing: .2px;
+/* music thumbnail + embed card */
+.music-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 1rem;
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, .7);
+    box-shadow: var(--shadow);
 }
 
-.spotify iframe {
+.music-card h4 {
+    font-size: .95rem;
+    letter-spacing: .3px;
+    color: var(--muted);
+    text-align: center;
+    margin: 0 0 4px 0;
+}
+
+.music-card img {
     display: block;
+    margin: 0 auto;
+    width: 180px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.music-card iframe {
     width: 100%;
+    height: 152px;
     border: 0;
     border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
 }
 
-/* collapse to one column on mobile */
-@media (max-width: 900px) {
-    .links-page {
-        display: block;
+/* reusable music thumbnail (no inline styles needed) */
+.music-thumb {
+    display: block;
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto 12px auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+/* responsive 16:9 video wrapper */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-top: 1rem;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* list spacing inside the about intro text */
+.intro-text ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin: .25rem 0 .75rem;
+}
+
+.intro-text li {
+    margin: .15rem 0;
+}
+
+/* ACCESSIBILITY / MOTION */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
     }
+
+    #nav_menu a:hover,
+    #nav_menu a:focus,
+    .link-grid a:hover,
+    .grid-gallery figure:hover {
+        transform: none !important;
+    }
+}
+
+/* FOOTER */
+.site-footer {
+    max-width: 1100px;
+    width: 100%;
+    margin: 1.5rem auto 0;
+    padding: 1rem;
+    font-size: .9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, .10);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+/* TABLE EXTRA CREDIT */ 
+/* a11y helper for captions */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* simple table styling */
+.watch-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.watch-table th,
+.watch-table td {
+    padding: .6rem .75rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+.watch-table thead th {
+    background: var(--soft);
+    color: #26322f;
+    font-weight: 700;
+}
+
+.watch-table tr:nth-child(even) td {
+    background: rgba(255, 255, 255, .6);
+}
+
+.watch-table tr:hover td {
+    background: rgba(245, 202, 195, .25);
 }
