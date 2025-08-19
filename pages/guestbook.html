@@ -41,32 +41,22 @@
                 anonymous by default — don't include your name or handle unless you want me to reply.
             </p>
 
-            <form action="https://formspree.io/f/mjkodnvr" method="POST" class="guestbook-form"
-                aria-describedby="anon-note" accept-charset="UTF-8">
-                <!-- honeypot (spam trap) -->
-                <input type="text" name="website" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true" />
+            <form action="https://formspree.io/f/mjkodnvr" method="POST" class="guestbook-form">
+                <input type="text" name="website" class="hp" tabindex="-1" aria-hidden="true">
 
                 <label for="message">your message</label>
-                <textarea id="message" name="message" rows="6" maxlength="1200"
-                    placeholder="say hi, leave feedback, or make a request 💌" required></textarea>
-                <small class="char-count"><span id="chars">0</span>/1200</small>
+                <textarea id="message" name="message" rows="6" maxlength="1200" required></textarea>
 
-                <!-- optional handle -->
                 <label for="contact">how to reach you (optional)</label>
-                <input id="contact" name="contact" type="text" placeholder="@insta, discord, number…" />
+                <input id="contact" name="contact" type="text" placeholder="insta, discord, number…">
 
-                <!-- subject shown in your inbox -->
-                <input type="hidden" name="_subject" value="New guestbook entry ✨" />
-
-                <!-- redirect after submit -->
-                <input type="hidden" name="_next" value="https://gzambrano-lo.github.io/pages/guestbook-success.html" />
-
+                <input type="hidden" name="_subject" value="New guestbook entry ✨">
                 <button type="submit" class="btn">send</button>
             </form>
 
             <p class="privacy-note">
                 i don't collect personally identifying info here. third-party email processing may do basic spam checks.
-                keep it anonymous by not adding names/handles.
+                keep it anonymous by not adding names/handles!
             </p>
         </section>
     </main>
@@ -75,19 +65,6 @@
         <p>&copy; Guadalupe Zambrano 2025</p>
     </footer>
 
-    <!-- tiny enhancement: live char count + "sending…" lock; page still works without JS -->
-    <script>
-        const form = document.querySelector('.guestbook-form');
-        if (form) {
-            const ta = document.getElementById('message');
-            const out = document.getElementById('chars');
-            const btn = form.querySelector('button[type="submit"]');
-            function update() { if (out && ta) out.textContent = ta.value.length; }
-            update();
-            ta && ta.addEventListener('input', update);
-            form.addEventListener('submit', () => { if (btn) { btn.disabled = true; btn.textContent = 'sending…'; } });
-        }
-    </script>
 </body>
 
 </html>
