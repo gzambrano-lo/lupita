@@ -527,7 +527,7 @@ section,
     border: 1px solid var(--border);
 }
 
-/* TABLE EXTRA CREDIT */ 
+/* TABLE EXTRA CREDIT */
 /* a11y helper for captions */
 .sr-only {
     position: absolute;
@@ -566,4 +566,73 @@ section,
 
 .watch-table tr:hover td {
     background: rgba(245, 202, 195, .25);
+}
+
+/* GUESTBOOK */ 
+.form-card {
+    max-width: 720px;
+    margin: 2rem auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.25rem;
+}
+
+.form-title {
+    font-family: "Poppins", system-ui, sans-serif;
+    margin-bottom: .25rem;
+}
+
+.form-subtitle,
+.privacy-note {
+    color: var(--muted);
+    font-size: .95rem;
+    margin-bottom: 1rem;
+}
+
+.guestbook-form label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: .35rem;
+    font-weight: 600;
+}
+
+.guestbook-form input[type="text"],
+.guestbook-form textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: .75rem .9rem;
+    font: inherit;
+    background: #fff;
+}
+
+.guestbook-form textarea {
+    resize: vertical;
+}
+
+.btn {
+    margin-top: 1rem;
+    padding: .7rem 1rem;
+    border: 0;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: var(--sage);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn:hover {
+    filter: brightness(.95);
+}
+
+/* honeypot field (hidden from humans) */
+.hp {
+    position: absolute;
+    left: -5000px;
+    height: 0;
+    width: 0;
+    opacity: 0;
 }
