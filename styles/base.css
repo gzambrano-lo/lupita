@@ -1,0 +1,95 @@
+/* images */
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* document */
+html,
+body {
+    height: 100%;
+}
+
+/* body */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    padding: 2rem;
+
+    /* background */
+    background-color: var(--cream);
+    background-image:
+        linear-gradient(90deg, rgba(132, 165, 157, 0.14) 50%, rgba(0, 0, 0, 0) 50%),
+        linear-gradient(180deg, rgba(132, 165, 157, 0.14) 50%, rgba(0, 0, 0, 0) 50%);
+    background-size: 180px 180px;
+    background-position: 0 0, 0 0;
+    background-attachment: fixed;
+}
+
+/* headings */
+h1 {
+    font-size: clamp(2rem, 3.2vw, 2.6rem);
+    letter-spacing: 0.3px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+/* paragraphs*/
+p {
+    margin: 0.5rem 0 1rem;
+}
+
+/* keyboard focus */
+:focus-visible {
+    outline: 3px solid var(--coral);
+    outline-offset: 3px;
+}
+
+/* skip link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--coral);
+  color: white;
+  z-index: 1000;
+}
+
+/* reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

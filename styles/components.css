@@ -1,116 +1,7 @@
-/* BASE ELEMENTS */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-    height: auto;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* THEME TOKENS / PALETTE (color, radii, shadows) */
-:root {
-    /* "brand" palette */
-    --cream: #F7EDE2;
-    --soft: #D8E2DC;
-    --pink: #F5CAC3;
-    --sage: #84A59D;
-    --coral: #F28482;
-
-    /* my neutrals */
-    --text: #333333;
-    --muted: #555555;
-    --card: #FFFFFF;
-    --border: #E5E7EB;
-
-    /* for shape and depth */
-    --radius: 12px;
-    --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-}
-
-/* fonts */
-body {
-    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-}
-
-h1,
-h2,
-h3 {
-    font-family: "Poppins", "Nunito", system-ui, sans-serif;
-}
-
-
-/* DOCUMENT / BACKGROUND */
-html,
-body {
-    height: 100%;
-}
-
-body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text);
-    line-height: 1.6;
-    padding: 2rem;
-
-    /* cream base */
-    background-color: var(--cream);
-
-    /* soft checker overlay */
-    background-image:
-        linear-gradient(90deg, rgba(132, 165, 157, 0.14) 50%, rgba(0, 0, 0, 0) 50%),
-        linear-gradient(180deg, rgba(132, 165, 157, 0.14) 50%, rgba(0, 0, 0, 0) 50%);
-    background-size: 180px 180px;
-    background-position: 0 0, 0 0;
-    background-attachment: fixed;
-}
-
-/* TYPOGRAPHY */
-h1 {
-    font-size: clamp(2rem, 3.2vw, 2.6rem);
-    letter-spacing: 0.3px;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-h2 {
-    font-size: 1.35rem;
-    font-weight: 700;
-}
-
-h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--muted);
-}
-
-p {
-    margin: 0.5rem 0 1rem;
-}
-
-/* KEYBOARD FOCUS */
-:focus-visible {
-    outline: 3px solid var(--coral);
-    outline-offset: 3px;
-}
-
-/* PAGE CONTAINER */
-main {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* CARD (frosted panel look) */
+/* cards generic panel */
 section,
 .card {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, .7);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
@@ -118,22 +9,8 @@ section,
     margin-bottom: 1.5rem;
 }
 
-/* HEADER + NAV (pills) */
-.site-header {
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-#nav_menu ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0.6rem;
-}
-
-/* base pill button */
+/* nav "pill" button (visuals only) */
+/* nav list and layout lives in layout.css */
 #nav_menu a {
     display: flex;
     align-items: center;
@@ -142,47 +19,34 @@ section,
     padding: 0 1rem;
     font-weight: 600;
     color: var(--sage);
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, .7);
     border: 2px solid var(--sage);
     border-radius: 999px;
-    transition:
-        transform 0.25s ease,
-        background .25s ease,
-        color 0.25s ease,
-        box-shadow 0.25s ease;
+    transition: transform .25s, color .25s, box-shadow .25s;
     will-change: transform;
 }
 
-#nav_menu a:focus-visible {
-    outline: 3px solid var(--coral);
-    outline-offset: 3px;
-}
-
-/* current page pill stays filled */
 #nav_menu .current a {
     background: var(--sage);
     color: #fff;
 }
 
-/* hover/focus lift for any link */
 #nav_menu a:hover,
 #nav_menu a:focus {
     transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
 }
 
-/* HOME HERO / INTRO (avatar + tagline) */
+/* home hero avatar + tagline */
 .home-intro {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     gap: 1.5rem;
     text-align: left;
     padding: 2rem;
     border-radius: 1rem;
 }
 
-/* avatar */
 .profile-pic {
     width: 180px;
     aspect-ratio: 1/1;
@@ -192,12 +56,10 @@ section,
     box-shadow: 0 0 0 3px rgba(216, 226, 220, .35);
 }
 
-/* reserve fixed space for the avatar in the home hero */
 .home-intro .profile-pic {
     flex: 0 0 180px;
 }
 
-/* text block next to avatar */
 .intro-text {
     max-width: 420px;
 }
@@ -212,14 +74,14 @@ section,
 }
 
 /* stack on small screens */
-@media (max-width: 600px) {
+@media (max-width:600px) {
     .home-intro {
         flex-direction: column;
         text-align: center;
     }
 }
 
-/* BLOG & LINKS WRAPPER */
+/* blog and link wrappers + posts */
 .article {
     max-width: 800px;
     margin: 0 auto;
@@ -227,9 +89,9 @@ section,
 
 .post {
     background: rgba(255, 255, 255, .7);
+    border: 1px solid var(--border);
     border-radius: 1rem;
     padding: 1.25rem 1.5rem;
-    border: 1px solid var(--border);
 }
 
 .article .post+.post {
@@ -246,6 +108,7 @@ section,
     margin-bottom: .5rem;
 }
 
+/* links panel and link grid cards */
 .links {
     max-width: 720px;
     margin: 2rem auto;
@@ -259,8 +122,6 @@ section,
     line-height: 1.9;
 }
 
-
-/* LINKS GRID (CARDS)*/
 .link-grid {
     list-style: none;
     margin: 0;
@@ -273,19 +134,19 @@ section,
 .link-grid a {
     display: grid;
     grid-template-rows: auto auto auto;
-    gap: 0.25rem;
+    gap: .25rem;
     padding: 1rem;
     background: #fff;
     border: 1px solid var(--soft);
     border-radius: 16px;
     box-shadow: var(--shadow);
     color: var(--text);
-    transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    transition: transform .15s, box-shadow .2s, border-color .2s;
 }
 
 .link-grid a:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .08);
     border-color: var(--sage);
 }
 
@@ -299,11 +160,11 @@ section,
 }
 
 .lg-sub {
-    font-size: 0.9rem;
+    font-size: .9rem;
     color: var(--muted);
 }
 
-/* GALLERY GRID (MEDIA LOG CARDS) */
+/* media log (also called gallery) */
 .grid-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -312,38 +173,35 @@ section,
 }
 
 .grid-gallery figure {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, .7);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     overflow: hidden;
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform .2s, box-shadow .2s;
 }
 
 .grid-gallery figure:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
 }
 
 .grid-gallery img {
     width: 100%;
     height: auto;
-    display: block;
 }
 
 .grid-gallery figcaption {
-    padding: 0.75rem;
-    font-size: 0.95rem;
+    padding: .75rem;
+    font-size: .95rem;
     color: var(--muted);
 }
 
-/* PROGRESS BARS */
+/* progress bars */
 .progress {
     height: 8px;
-    background: rgba(132, 165, 157, 0.18);
-
-    /* faint sage */
+    background: rgba(132, 165, 157, .18);
     border-radius: 999px;
     overflow: hidden;
     margin-top: .35rem;
@@ -353,27 +211,20 @@ section,
     height: 100%;
     width: var(--pct, 0%);
     background: var(--sage);
-
-    /* default */
     border-radius: inherit;
-    transition: width 0.4s ease,
-        background 0.3s ease;
+    transition: width .4s;
 }
 
-/* states */
 .progress.done .progress-bar {
     background: var(--coral);
-    /* finished */
 }
 
 .progress.in-progress .progress-bar {
     background: var(--sage);
-    /* ongoing */
 }
 
 .progress.not-started .progress-bar {
     background: var(--border);
-    /* grayish */
 }
 
 .progress-label {
@@ -382,20 +233,16 @@ section,
     margin-top: .25rem;
 }
 
-
-/* ABOUT PAGE LAYOUT COMPONENTS */
-@media (min-width: 900px) {
+/* about page layout + music/video components */
+@media (min-width:900px) {
     .intro {
         display: grid;
         grid-template-columns: minmax(420px, 1fr) 360px;
-        /* text | music card */
         gap: 2rem;
         align-items: start;
     }
 }
 
-/* ABOUT PAGE — LAYOUT + COMPONENTS */
-/* 2-column wrapper under the hero (left: story, right: video) */
 .about-extra {
     max-width: 1100px;
     margin: 1rem auto 0;
@@ -405,24 +252,22 @@ section,
     align-items: start;
 }
 
-@media (min-width: 900px) {
+@media (min-width:900px) {
     .about-extra {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-/* only the ABOUT page uses the 2-column hero layout */
-@media (min-width: 900px) {
+@media (min-width:900px) {
     .about-intro {
         display: grid;
         grid-template-columns: minmax(420px, 1fr) 360px;
-        /* text | side card */
         gap: 2rem;
         align-items: start;
     }
 }
 
-/* music thumbnail + embed card */
+/* music card */
 .music-card {
     display: flex;
     flex-direction: column;
@@ -438,14 +283,13 @@ section,
     letter-spacing: .3px;
     color: var(--muted);
     text-align: center;
-    margin: 0 0 4px 0;
+    margin: 0 0 4px;
 }
 
 .music-card img {
     display: block;
     margin: 0 auto;
     width: 180px;
-    height: auto;
     border-radius: 12px;
     box-shadow: var(--shadow);
 }
@@ -457,17 +301,16 @@ section,
     border-radius: 12px;
 }
 
-/* reusable music thumbnail (no inline styles needed) */
 .music-thumb {
     display: block;
     max-width: 200px;
     height: auto;
-    margin: 0 auto 12px auto;
+    margin: 0 auto 12px;
     border-radius: 12px;
     box-shadow: var(--shadow);
 }
 
-/* responsive 16:9 video wrapper */
+/* responsive 16:9 */
 .video-wrapper {
     position: relative;
     padding-bottom: 56.25%;
@@ -486,7 +329,7 @@ section,
     border: 0;
 }
 
-/* list spacing inside the about intro text */
+/* lists inside about intro text */
 .intro-text ul {
     list-style: disc;
     padding-left: 1.25rem;
@@ -497,51 +340,7 @@ section,
     margin: .15rem 0;
 }
 
-/* ACCESSIBILITY / MOTION */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        transition: none !important;
-    }
-
-    #nav_menu a:hover,
-    #nav_menu a:focus,
-    .link-grid a:hover,
-    .grid-gallery figure:hover {
-        transform: none !important;
-    }
-}
-
-/* FOOTER */
-.site-footer {
-    max-width: 1100px;
-    width: 100%;
-    margin: 1.5rem auto 0;
-    padding: 1rem;
-    font-size: .9rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, .10);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border);
-}
-
-/* TABLE EXTRA CREDIT */
-/* a11y helper for captions */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-/* simple table styling */
+/* tables (media log extra credit) */
 .watch-table {
     width: 100%;
     border-collapse: collapse;
@@ -568,7 +367,7 @@ section,
     background: rgba(245, 202, 195, .25);
 }
 
-/* GUESTBOOK */ 
+/* guestbook form */
 .form-card {
     max-width: 720px;
     margin: 2rem auto;
@@ -628,11 +427,66 @@ section,
     filter: brightness(.95);
 }
 
-/* honeypot field (hidden from humans) */
+/* honeypot */
 .hp {
     position: absolute;
     left: -5000px;
     height: 0;
     width: 0;
     opacity: 0;
+}
+
+/* about: equal-height rows */
+.about-intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* stack on mobile */
+    gap: 1.25rem;
+    align-items: stretch;
+}
+
+@media (min-width: 900px) {
+    .about-intro {
+        grid-template-columns: minmax(420px, 1fr) 360px;
+    }
+}
+
+.about-extra {
+    /* stack on mobile */
+    display: grid;
+    grid-template-columns: 1fr;
+    /* equal height */
+    gap: 1.25rem;
+    align-items: stretch;
+    
+}
+
+@media (min-width: 900px) {
+    .about-extra {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* make each card fill the row track height */
+.about-intro .card,
+.about-extra .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* responsive video that fits in card */
+.video-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-top: .75rem;
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
 }

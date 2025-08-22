@@ -1,0 +1,18 @@
+:root {
+    /* "brand" palette */
+    --cream: #F7EDE2;
+    --soft: #D8E2DC;
+    --pink: #F5CAC3;
+    --sage: #84A59D;
+    --coral: #F28482;
+
+    /* my neutrals */
+    --text: #333333;
+    --muted: #555555;
+    --card: #FFFFFF;
+    --border: #E5E7EB;
+
+    /* for shape and depth */
+    --radius: 12px;
+    --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}

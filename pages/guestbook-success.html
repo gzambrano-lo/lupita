@@ -4,7 +4,12 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>thanks!</title>
-  <link rel="stylesheet" href="../styles.css">
+   <!-- styles: reset → tokens → base → layout → components -->
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+  <link rel="stylesheet" href="../styles/components.css">
 </head>
 <body>
   <header class="site-header">
@@ -25,8 +30,8 @@
   <main class="page guestbook-page">
     <section class="form-card">
       <h2 class="form-title">got your note 💖</h2>
-      <p class="form-subtitle">it’s sitting in my inbox.</p>
-      <p>if you left contact info, i’ll reply when i can. if not, it stays anonymous.</p>
+      <p class="form-subtitle">it's sitting in my inbox.</p>
+      <p>if you left contact info, i'll reply when i can. if not, it stays anonymous.</p>
 
       <p style="margin-top:1rem;">
         <a class="btn" href="guestbook.html">write another</a>
@@ -40,11 +45,5 @@
     <p>&copy; Guadalupe Zambrano 2025</p>
   </footer>
 
-  <!-- optional auto-redirect back to the guestbook after 3 seconds.
-       remove the comments below to enable. change 3000 to your preferred delay.
-  <script>
-    setTimeout(() => { window.location.href = 'guestbook.html'; }, 3000);
-  </script>
-  -->
 </body>
 </html>

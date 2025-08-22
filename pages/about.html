@@ -1,29 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lupe Zambrano — About</title>
-  <meta name="description"
-    content="About Lupe (Lupita): IT + web dev student, puzzle lover, and maker of tiny websites, crafts, and garden notes." />
-  <!-- GOOGLE FONTS -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>about — lupe zambrano</title>
+
+  <!-- google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
     rel="stylesheet">
-  <!-- FONT AWESOME -->
+
+  <!-- icons (optional) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="../styles.css" />
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-32.png">
-  <link rel="shortcut icon" href="../images/favicon-32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon-32.png">
+
+  <!-- css -->
+  <link rel="stylesheet" href="../styles/reset.css" />
+  <link rel="stylesheet" href="../styles/tokens.css" />
+  <link rel="stylesheet" href="../styles/base.css" />
+  <link rel="stylesheet" href="../styles/layout.css" />
+  <link rel="stylesheet" href="../styles/components.css" />
 </head>
 
 <body>
+  <a class="skip-link" href="#main">skip to main content</a>
+
   <header class="site-header">
     <h1>about</h1>
   </header>
@@ -32,18 +34,20 @@
     <ul>
       <li><a href="../index.html">home</a></li>
       <li class="current"><a href="about.html" aria-current="page">about</a></li>
-      <li><a href="gallery.html">media log</a></li>
+      <li><a href="media-log.html">media log</a></li>
       <li><a href="blog.html">blog</a></li>
       <li><a href="links.html">links</a></li>
       <li><a href="guestbook.html">guestbook</a></li>
     </ul>
   </nav>
 
-  <main>
-    <!-- intro: text (left) + music card (right) -->
-    <section class="intro">
-      <div class="intro-text">
-        <h2 id="about-heading">about me</h2>
+  <main id="main" class="container">
+
+    <!-- top: intro text + music card -->
+    <section class="about-intro">
+      <!-- text -->
+      <article class="card">
+        <h2>hi, i'm lupe! ✨</h2>
         <p class="lede">i'm lupe (lupita en español). i study IT + web dev and collect hobbies the way other people
           collect keychains.</p>
 
@@ -65,20 +69,22 @@
         <h3>now</h3>
         <p>balancing school, two kiddos, and a brain that thrives on projects. this site is my scrapbook of learning and
           trying.</p>
-      </div>
+      </article>
 
-      <section class="card music-card">
+      <!-- music -->
+      <aside class="card music-card">
         <h4>lupita's music library <i class="fa-solid fa-music" aria-hidden="true"></i></h4>
         <img class="music-thumb" src="../images/music.png" alt="lupita's music library thumbnail" />
         <iframe src="https://open.spotify.com/embed/playlist/7GwWCqZL4QzLVSJfrqAo7n?utm_source=generator&theme=0"
           width="100%" height="152" frameborder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </section>
+      </aside>
     </section>
 
-    <!-- two bottom cards -->
-    <div class="about-extra">
-      <section class="card">
+    <!-- bottom: two equal-height cards -->
+    <section class="about-extra">
+      <!-- left card -->
+      <article class="card">
         <h2>my story</h2>
         <p><em>content note:</em> mentions of past substance use and a past suicide attempt.</p>
 
@@ -88,18 +94,17 @@
             health and ended up hospitalized. that experience pushed me to finally get into therapy and psych care, and
             i've been slowly figuring myself out since then.</p>
 
-          <p> for a while i worked nights as a caregiver for two nonverbal men with autism. that job really shaped me.
-            it
+          <p>for a while i worked nights as a caregiver for two nonverbal men with autism. that job really shaped me. it
             taught me patience and showed me how unfair the world can be to people with disabilities. it's something
-            i'llalways care about and advocate for.</p>
+            i'll always care about and advocate for.</p>
 
-          <p> becoming a mom changed everything. i had my son when i was 21 and then my daughter in 2022. i stepped away
+          <p>becoming a mom changed everything. i had my son when i was 21 and then my daughter in 2022. i stepped away
             from caregiving when i realized i couldn't give it my whole self anymore. after that i tried warehouse work
             for a bit. i learned a lot about people and the trucking world, but i knew i wanted something different.</p>
 
           <p>that's when i leaned into tech. i joined climb hire, started working on my compTIA a+ (core 1 down,
-            planning to finish certification soon), and now i'm studying IT and web development in college. its a new
-            direction, but it feels like the right one.</p>
+            planning to finish certification soon), and now i'm studying IT and web development in college. it’s a new
+            direction, but it feels right.</p>
 
           <p>these days i'm focused on taking care of my kids, keeping up with school, and building something more
             stable for us.</p>
@@ -108,21 +113,26 @@
         <p class="meta" style="font-size:.9rem;color:var(--muted);margin-top:.5rem;">
           need help? in the u.s., call or text <strong>988</strong> for the Suicide &amp; Crisis Lifeline.
         </p>
-      </section>
+        <div style="margin-top:auto"></div>
+      </article>
 
-      <section class="card">
+      <!-- right card -->
+      <article class="card">
         <h2>video that matters to me</h2>
         <p>this is something i usually only share with people i'm close to, but it felt important to bring awareness to
           it.</p>
 
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/iraGmA7-9FA"
-            title="Borderline Personality Disorder explained by Borderline Bill" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        <div class="video-wrapper" aria-label="YouTube video">
+          <iframe src="https://www.youtube-nocookie.com/embed/iraGmA7-9FA"
+            title="Borderline Personality Disorder explained by Borderline Bill"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             loading="lazy" allowfullscreen></iframe>
         </div>
-      </section>
-    </div>
+
+        <div style="margin-top:auto"></div>
+      </article>
+    </section>
+
   </main>
 
   <footer class="site-footer">

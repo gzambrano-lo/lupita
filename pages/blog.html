@@ -1,80 +1,107 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Lupe's Blog</title>
-    <meta name="description" content="Lupe's blog: study notes, tiny wins, and late-night dev logs." />
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
-        rel="stylesheet">
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="../styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>blog — lupe's blog posts</title>
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+
+  <!-- styles: reset → tokens → base → layout → components -->
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+  <link rel="stylesheet" href="../styles/components.css">
 </head>
 
 <body>
-    <header class="site-header">
-        <h1>blog</h1>
-    </header>
+  <!-- header -->
+  <header class="site-header">
+    <h1>blog</h1>
+  </header>
 
-    <nav id="nav_menu" aria-label="Main">
+  <!-- main nav -->
+  <nav id="nav_menu" aria-label="Main">
+    <ul>
+      <li><a href="../index.html">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="media-log.html">media log</a></li>
+      <li class="current"><a href="blog.html" aria-current="page">blog</a></li>
+      <li><a href="links.html">links</a></li>
+      <li><a href="guestbook.html">guestbook</a></li>
+    </ul>
+  </nav>
+
+  <!-- main -->
+  <main id="main" class="container">
+    <!-- blog wrapper (narrows line length and handles post gaps) -->
+    <section class="article">
+
+      <!-- post 1 -->
+      <article class="post">
+        <header>
+          <h2>kitten visitors 🐾</h2>
+          <p class="meta">
+            <time datetime="2025-08-17">posted aug 17, 2025</time>
+          </p>
+        </header>
+        <p>
+          we found three little kittens hiding under our porch. today i bought them some kibble
+          (for proper nutrition) and left it out for them. last night i even gave them a tube of old
+          pâté from the fridge — not exactly ideal, but i wanted to help! i really hope they start
+          to trust me soon. maybe enough to take them to a vet straight from me one day. ♡
+        </p>
+      </article>
+
+      <!-- post 2 -->
+      <article class="post">
+        <header>
+          <h2>site tweak diary ✨</h2>
+          <p class="meta">
+            <time datetime="2025-08-16">posted aug 16, 2025</time>
+          </p>
+        </header>
+        <p>
+          i finally cooked up the new layout! split the CSS by tokens/base/layout/components
+          and i'm proud of how clean it feels. nav pills got a tiny lift, cards feel snappier,
+          and the media grid loads faster (hello 1200/900 square thumbs).
+          next: polish the links page to match!
+        </p>
         <ul>
-            <li><a href="../index.html">home</a></li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="gallery.html">media log</a></li>
-            <li class="current"><a href="blog.html" aria-current="page">blog</a></li>
-            <li><a href="links.html">links</a></li>
-            <li><a href="guestbook.html">guestbook</a></li>
+          <li>updated fonts + spacing</li>
+          <li>better card shadows + borders</li>
+          <li>faster media thumbnails (1200/900 square)</li>
         </ul>
-    </nav>
+      </article>
 
-    <main class="page article">
-        <article class="post">
-            <h2>kitten visitors</h2>
-            <p class="meta">posted aug 17, 2025</p>
-            <p>yesterday i found three little kittens hiding under our porch 🐾 today i bought them some kibble (for
-                proper nutrition) and left it out for them. last night i even gave them a tube of old pâté from the
-                fridge and they licked the bowl clean. i really hope they start to trust me soon… maybe enough to take
-                tube treats straight from me one day.</p>
-        </article>
+      <!-- post 3 -->
+      <article class="post">
+        <header>
+          <h2>a longer note on “lore” posts</h2>
+          <p class="meta">
+            <time datetime="2025-08-13">posted aug 13, 2025</time>
+          </p>
+        </header>
+        <p>
+          i wrote a longer “about me” lore post! probably going to link it from the media log too.
+          sharing this with css155, stomach doing backflips lol. it's late but i'm proud.
+          please roast (kindly)! what's confusing, slow, or ugly so i can fix it? ♡
+        </p>
+      </article>
 
-        <article class="post">
-            <h2>nightshift devlog</h2>
-            <p class="meta">posted aug 16, 2025</p>
-            <p>my sleep schedule is officially cooked 😂 i've been up late tweaking this site, but honestly it's been
-                super rewarding and i'm proud of how far it's come.</p>
-            <h3>today's wins</h3>
-            <ul>
-                <li>built the <em>media log</em> for shows + games</li>
-                <li>spotify embed on the links page, styled to match</li>
-                <li>micro-hover on the nav + cards (feels snappier)</li>
-                <li>resized images (1200/600/square) so the grid loads fast</li>
-            </ul>
-            <h3>next up</h3>
-            <ul>
-                <li>write a longer “about me” lore post</li>
-                <li>progress bars for the media log</li>
-                <li>tighten mobile spacing</li>
-            </ul>
-            <p>sleep soon… probably. worth it ✨ sharing this with css155, stomach doing backflips lol. it's late but i'm
-                proud. pls roast (kindly) + tell me what's confusing, slow, or ugly so i can fix it 😌</p>
-        </article>
+    </section>
+  </main>
 
-        <article class="post">
-            <h2>learning flex &amp; grid</h2>
-            <p class="meta">posted aug 15, 2025</p>
-            <p>this week i built a flex nav and a grid gallery, then tested two breakpoints…</p>
-        </article>
-    </main>
-
-    <footer class="site-footer">
-        <p>&copy; Guadalupe Zambrano 2025</p>
-    </footer>
+  <!-- footer -->
+  <footer class="site-footer">
+    <p>&copy; Guadalupe Zambrano 2025</p>
+  </footer>
 </body>
-
 </html>
