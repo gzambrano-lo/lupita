@@ -490,3 +490,12 @@ section,
     height: 100%;
     border: 0;
 }
+
+.alien-img {
+    width: 50%;
+    height: auto;
+}
+
+.book-link {
+    color: var(--sage);
+}
