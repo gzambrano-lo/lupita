@@ -164,40 +164,6 @@ section,
     color: var(--muted);
 }
 
-/* media log (also called gallery) */
-.grid-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.grid-gallery figure {
-    background: rgba(255, 255, 255, .7);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    text-align: center;
-    transition: transform .2s, box-shadow .2s;
-}
-
-.grid-gallery figure:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
-}
-
-.grid-gallery img {
-    width: 100%;
-    height: auto;
-}
-
-.grid-gallery figcaption {
-    padding: .75rem;
-    font-size: .95rem;
-    color: var(--muted);
-}
-
 /* progress bars */
 .progress {
     height: 8px;
@@ -231,6 +197,36 @@ section,
     font-size: .85rem;
     color: var(--muted);
     margin-top: .25rem;
+}
+
+/* progress bar tweaks  */
+.progress {
+    height: 8px;
+    background: rgba(132, 165, 157, .18);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: .35rem;
+}
+
+.progress-bar {
+    height: 100%;
+    width: var(--pct, 0%);
+    background: var(--sage);
+    border-radius: inherit;
+    transition: width .4s;
+}
+
+.progress.done .progress-bar {
+    background: var(--coral);
+}
+
+.progress.not-started .progress-bar {
+    background: var(--border);
+}
+
+.progress-label {
+    font-size: .85rem;
+    color: var(--muted);
 }
 
 /* about page layout + music/video components */
@@ -340,32 +336,6 @@ section,
     margin: .15rem 0;
 }
 
-/* tables (media log extra credit) */
-.watch-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.watch-table th,
-.watch-table td {
-    padding: .6rem .75rem;
-    border: 1px solid var(--border);
-    text-align: left;
-}
-
-.watch-table thead th {
-    background: var(--soft);
-    color: #26322f;
-    font-weight: 700;
-}
-
-.watch-table tr:nth-child(even) td {
-    background: rgba(255, 255, 255, .6);
-}
-
-.watch-table tr:hover td {
-    background: rgba(245, 202, 195, .25);
-}
 
 /* guestbook form */
 .form-card {
@@ -458,7 +428,7 @@ section,
     /* equal height */
     gap: 1.25rem;
     align-items: stretch;
-    
+
 }
 
 @media (min-width: 900px) {

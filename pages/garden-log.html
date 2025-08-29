@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>garden log - lupe zambrano</title>
+    <meta name="description" content="my garden! a log of what im growing." />
+
+    <!-- google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+
+    <!-- styles: reset → tokens → base → layout → components -->
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/tokens.css">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/media-log.css">
+    <link rel="stylesheet" href="../styles/garden-log.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>garden log</h1>
+    </header>
+
+    <nav id="nav_menu" aria-label="Main">
+        <ul>
+            <li><a href="../index.html">home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="media-log.html" aria-current="page">media log</a></li>
+            <li><a href="blog.html">blog</a></li>
+            <li><a href="links.html">links</a></li>
+            <li><a href="guestbook.html">guestbook</a></li>
+            <li class="current"><a href="garden-log.html">garden log</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="card mushroom-card">
+            
+            <div class="mushroom-anim" role="img" aria-label="smiling mushroom bobbing with sparkles">
+                <svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg">
+                    <title>cute bobbing mushroom</title>
+
+                    <!-- ground shadow -->
+                    <ellipse class="shadow" cx="100" cy="150" rx="46" ry="10" />
+
+                    <!-- whole mushy boi -->
+                    <g class="mushroom">
+                        <!-- stem -->
+                        <rect class="stem" x="74" y="88" width="52" height="48" rx="18" />
+                        <!-- cap -->
+                        <path class="cap" d="M30,86
+                             C30,52 68,32 100,32
+                             C132,32 170,52 170,86
+                             C170,94 162,100 150,102
+                             C130,105 70,105 50,102
+                             C38,100 30,94 30,86Z" />
+                        <!-- cap spots -->
+                        <circle class="spot s" cx="78" cy="64" r="9" />
+                        <circle class="spot s" cx="122" cy="58" r="7" />
+                        <circle class="spot s" cx="104" cy="78" r="6" />
+                        <circle class="spot s" cx="60" cy="78" r="6" />
+
+                        <!-- face -->
+                        <circle class="eye" cx="88" cy="106" r="3.5" />
+                        <circle class="eye" cx="112" cy="106" r="3.5" />
+                        <path class="smile" d="M90,114 Q100,120 105,111" fill="none" stroke-width="2.5"
+                            stroke-linecap="round" />
+                        <circle class="cheek" cx="80" cy="113" r="4" />
+                        <circle class="cheek" cx="120" cy="113" r="4" />
+                    </g>
+
+                    <!-- sparkles -->
+                    <g class="sparkle s1">
+                        <path d="M100 22 l4 8 8 4 -8 4 -4 8 -4-8 -8-4 8-4z" />
+                    </g>
+                    <g class="sparkle s2">
+                        <path d="M38 54 l3 6 6 3 -6 3 -3 6 -3-6 -6-3 6-3z" />
+                    </g>
+                    <g class="sparkle s3">
+                        <path d="M162 58 l3 6 6 3 -6 3 -3 6 -3-6 -6-3 6-3z" />
+                    </g>
+                </svg>
+            </div>
+            <img src="../images/coming-soon.png" alt="coming soon">
+        </section>
+    </main>
+</body>
+
+<footer class="site-footer">
+    <p>&copy; Guadalupe Zambrano 2025</p>
+</footer>
+
+</html>

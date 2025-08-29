@@ -14,15 +14,15 @@
         rel="stylesheet">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
-   
-     <!-- styles: reset → tokens → base → layout → components -->
+
+    <!-- styles: reset → tokens → base → layout → components → media-log -->
     <link rel="stylesheet" href="../styles/reset.css">
-     <link rel="stylesheet" href="../styles/tokens.css">
+    <link rel="stylesheet" href="../styles/tokens.css">
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/layout.css">
     <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/media-log.css">
 </head>
-
 
 <body>
     <header class="site-header">
@@ -37,128 +37,177 @@
             <li><a href="blog.html">blog</a></li>
             <li><a href="links.html">links</a></li>
             <li><a href="guestbook.html">guestbook</a></li>
+            <li><a href="garden-log.html">garden log</a></li>
         </ul>
     </nav>
 
     <main class="gallery page">
         <section class="grid-gallery">
-            <!-- show 1 -->
-            <figure class="watch-item">
-                <img src="../images/shows/apothecary-diaries.png" alt="The Apothecary Diaries poster" />
-                <figcaption>
-                    <h3 class="watch-title">the apothecary diaries</h3>
-                    <p class="watch-ep">ep <strong>48</strong> / 48</p>
-                    <div class="progress done" role="progressbar" aria-label="apothecary diaries progress"
-                        aria-valuemin="0" aria-valuemax="48" aria-valuenow="48">
-                        <div class="progress-bar" style="--pct: 100%;"></div>
-                    </div>
-                    <div class="progress-label">100%</div>
-                    <p class="watch-thoughts">feeling like crying cus i'm going to miss maomao and jinshi. this was my
-                        comfort show.</p>
-                </figcaption>
-            </figure>
+            <!-- card 1 -->
+            <a class="card-link" href="https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
+                target="_blank" style="text-decoration: none; color: inherit;">
+                <figure class="watch-item">
+                    <img src="../images/shows/apothecary-diaries.png" alt="the apothecary diaries poster" />
+                    <figcaption>
+                        <h3 class="watch-title">the apothecary diaries</h3>
+                        <p class="watch-ep">ep <strong>48</strong> / 48</p>
 
-            <!-- show 2 -->
-            <figure class="watch-item">
-                <img src="../images/shows/hikaru.png" alt="The Summer Hikaru Died cover art" />
-                <figcaption>
-                    <h3 class="watch-title">the summer hikaru died</h3>
-                    <p class="watch-ep">ep <strong>3</strong> / 12</p>
-                    <div class="progress in-progress" role="progressbar" aria-label="the summer hikaru died progress"
-                        aria-valuemin="0" aria-valuemax="8" aria-valuenow="3">
-                        <div class="progress-bar" style="--pct: 38%;"></div>
-                    </div>
-                    <div class="progress-label">38%</div>
-                    <p class="watch-thoughts">creepy, unsettling… raw chicken brainworms 😭 but i can't stop.</p>
-                </figcaption>
-            </figure>
+                        <div class="progress done" role="progressbar" aria-label="apothecary diaries progress"
+                            aria-valuemin="0" aria-valuemax="48" aria-valuenow="48">
+                            <div class="progress-bar" style="--pct: 100%;"></div>
+                        </div>
 
-            <!-- game -->
-            <figure class="watch-item">
-                <img src="../images/shows/genshin.png" alt="Genshin Impact promo art" />
-                <figcaption>
-                    <h3 class="watch-title">genshin impact</h3>
-                    <p class="watch-ep">AR <strong>32</strong> / 60</p>
-                    <div class="progress in-progress" role="progressbar" aria-label="genshin adventure rank progress"
-                        aria-valuemin="0" aria-valuemax="60" aria-valuenow="32">
-                        <div class="progress-bar" style="--pct: 53%;"></div>
-                    </div>
-                    <div class="progress-label">53%</div>
-                    <p class="watch-thoughts">grinding primos + vibing in liyue. still salty about my pulls. don't ask
-                        to play co-op, i'm actually bad at every game i touch 😂</p>
-                </figcaption>
-            </figure>
+                        <div class="progress-label">100%</div>
+                        <p class="watch-thoughts">feeling like crying cus i'm going to miss maomao and jinshi. this was
+                            my
+                            comfort show.</p>
+                    </figcaption>
+                </figure>
+            </a>
 
-            <!-- little nightmares -->
-            <figure class="watch-item">
-                <img src="../images/shows/little-nightmares.png" alt="little nightmares II" />
-                <figcaption>
-                    <h3 class="watch-title">little nightmares II</h3>
-                    <p class="watch-ep">not started</p>
-                    <div class="progress not-started" role="progressbar" aria-label="mystery show progress"
-                        aria-valuemin="0" aria-valuemax="12" aria-valuenow="0">
-                        <div class="progress-bar" style="--pct: 0%;"></div>
-                    </div>
-                    <div class="progress-label">0%</div>
-                    <p class="watch-thoughts">completed the main storyline, currently exploring the kids' DLC chapters,
-                        and planning to start Little Nightmares II next</p>
-                </figcaption>
-            </figure>
+            <!-- card 2 -->
+            <a class="card-link" href="https://www.netflix.com/title/82036950" target="_blank">
+                <figure class="watch-item">
+                    <img src="../images/shows/hikaru.png" alt="The Summer Hikaru Died cover art" />
+                    <figcaption>
+                        <h3 class="watch-title">the summer hikaru died</h3>
+                        <p class="watch-ep">ep <strong>3</strong> / 12</p>
 
+                        <div class="progress in-progress" role="progressbar"
+                            aria-label="the summer hikaru died progress" aria-valuemin="0" aria-valuemax="8"
+                            aria-valuenow="3">
+                            <div class="progress-bar" style="--pct: 38%;"></div>
+                        </div>
 
-            <!-- death stranding -->
-            <figure class="watch-item">
-                <img src="../images/shows/death-stranding.png" alt="death stranding" />
-                <figcaption>
-                    <h3 class="watch-title">death stranding</h3>
-                    <p class="watch-ep">not started</p>
-                    <div class="progress not-started" role="progressbar" aria-label="mystery show progress"
-                        aria-valuemin="0" aria-valuemax="12" aria-valuenow="0">
-                        <div class="progress-bar" style="--pct: 0%;"></div>
-                    </div>
-                    <div class="progress-label">0%</div>
-                    <p class="watch-thoughts">slowly making my way through and really enjoying the experience so far.
-                        the ambience is unreal—kind of lonely but peaceful too. i've only gotten to the point of the
-                        first real mission, but i'm excited to see where it goes</p>
-                </figcaption>
-            </figure>
+                        <div class="progress-label">38%</div>
+
+                        <p class="watch-thoughts">creepy, unsettling… raw chicken brainworms 😭 but i can't stop.</p>
+                    </figcaption>
+                </figure>
+            </a>
+
+            <!-- card 3 -->
+            <a class="card-link" href="https://www.hoyolab.com/circles/2/30/feed?page_type=30&page_sort=hot"
+                target="_blank">
+                <figure class="watch-item">
+                    <img src="../images/shows/genshin.png" alt="genshin impact promo art" />
+                    <figcaption>
+                        <h3 class="watch-title">genshin impact</h3>
+                        <p class="watch-ep">AR <strong>32</strong> / 60</p>
+
+                        <div class="progress in-progress" role="progressbar"
+                            aria-label="genshin adventure rank progress" aria-valuemin="0" aria-valuemax="60"
+                            aria-valuenow="32">
+                            <div class="progress-bar" style="--pct: 53%;"></div>
+                        </div>
+
+                        <div class="progress-label">53%</div>
+
+                        <p class="watch-thoughts">grinding primos + vibing in liyue. still salty about my pulls. don't
+                            ask
+                            to play co-op, i'm actually bad at every game i touch 😂</p>
+                    </figcaption>
+                </figure>
+            </a>
+
+            <!-- card 4 -->
+            <a class="card-link" href="https://www.bandainamcoent.com/games/little-nightmares-2?ref=producthunt"
+                target="_blank">
+                <figure class="watch-item">
+                    <img src="../images/shows/little-nightmares.png" alt="little nightmares II" />
+                    <figcaption>
+                        <h3 class="watch-title">little nightmares II</h3>
+                        <p class="watch-ep">not started</p>
+
+                        <div class="progress not-started" role="progressbar" aria-label="mystery show progress"
+                            aria-valuemin="0" aria-valuemax="12" aria-valuenow="0">
+                            <div class="progress-bar" style="--pct: 0%;"></div>
+                        </div>
+
+                        <div class="progress-label">0%</div>
+
+                        <p class="watch-thoughts">completed the main storyline, currently exploring the kids' DLC
+                            chapters,
+                            and planning to start Little Nightmares II next</p>
+                    </figcaption>
+                </figure>
+            </a>
+
+            <!-- card 5 -->
+            <a class="card-link" href="https://deathstrandingpc.505games.com/en/" target="_blank">
+                <figure class="watch-item">
+                    <img src="../images/shows/death-stranding.png" alt="death stranding" />
+                    <figcaption>
+                        <h3 class="watch-title">death stranding</h3>
+                        <p class="watch-ep">not started</p>
+
+                        <div class="progress not-started" role="progressbar" aria-label="mystery show progress"
+                            aria-valuemin="0" aria-valuemax="12" aria-valuenow="0">
+                            <div class="progress-bar" style="--pct: 0%;"></div>
+                        </div>
+
+                        <div class="progress-label">0%</div>
+
+                        <p class="watch-thoughts">slowly making my way through and really enjoying the experience so
+                            far.
+                            the ambience is unreal—kind of lonely but peaceful too. i've only gotten to the point of the
+                            first real mission, but i'm excited to see where it goes</p>
+                    </figcaption>
+                </figure>
+            </a>
         </section>
-      <div style="overflow-x: auto">
-        <section class="card">
-            <h2>media log at a glance</h2>
-            <table class="watch-table">
-                <caption class="sr-only">current shows and games progress</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">title</th>
-                        <th scope="col">type</th>
-                        <th scope="col">status</th>
-                        <th scope="col">progress</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>the apothecary diaries</td>
-                        <td>anime</td>
-                        <td>finished</td>
-                        <td>48 / 48</td>
-                    </tr>
-                    <tr>
-                        <td>the summer hikaru died</td>
-                        <td>anime</td>
-                        <td>reading</td>
-                        <td>3 / 12</td>
-                    </tr>
-                    <tr>
-                        <td>genshin impact</td>
-                        <td>game (PC)</td>
-                        <td>playing</td>
-                        <td>AR 32</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-</div>  
+
+        <!--media log at a glance, table-->
+
+        <div style="overflow-x: auto">
+            <section class="card">
+                <h2>media log at a glance</h2>
+                <br>
+                <table class="watch-table">
+                    <caption class="sr-only">current shows and games progress</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">title</th>
+                            <th scope="col">type</th>
+                            <th scope="col">status</th>
+                            <th scope="col">progress</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>the apothecary diaries</td>
+                            <td>anime</td>
+                            <td>finished</td>
+                            <td>48 / 48</td>
+                        </tr>
+                        <tr>
+                            <td>the summer hikaru died</td>
+                            <td>anime</td>
+                            <td>reading</td>
+                            <td>3 / 12</td>
+                        </tr>
+                        <tr>
+                            <td>genshin impact</td>
+                            <td>game (PC)</td>
+                            <td>playing</td>
+                            <td>AR 32</td>
+                        </tr>
+                        <tr>
+                            <td>little nightmares II</td>
+                            <td>game (switch)</td>
+                            <td>prepping to play</td>
+                            <td>n/a</td>
+                        </tr>
+                        <tr>
+                            <td>death stranding</td>
+                            <td>game (PC)</td>
+                            <td>n/a</td>
+                            <td>n/a</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
     </main>
 
     <footer class="site-footer">

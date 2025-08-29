@@ -1,0 +1,146 @@
+.mushroom-card {
+    text-align: center;
+}
+
+.mushroom-title {
+    margin-bottom: .5rem;
+    color: var(--sage);
+}
+
+/* size + centering */
+.mushroom-anim {
+    width: 260px;
+    margin: 0 auto;
+}
+
+.mushroom-anim svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* palette (uses your tokens) */
+.mushroom-anim .cap {
+    fill: var(--coral);
+}
+
+.mushroom-anim .stem {
+    fill: #fff;
+    stroke: var(--soft);
+    stroke-width: 2;
+}
+
+.mushroom-anim .spot {
+    fill: var(--soft);
+    opacity: .95;
+}
+
+.mushroom-anim .eye {
+    fill: #26322f;
+}
+
+/* dark text tone */
+.mushroom-anim .smile {
+    stroke: #26322f;
+}
+
+.mushroom-anim .cheek {
+    fill: var(--coral);
+    opacity: .35;
+}
+
+.mushroom-anim .sparkle path {
+    fill: var(--coral);
+}
+
+.mushroom-anim .shadow {
+    fill: rgba(0, 0, 0, .10);
+}
+
+/* animations */
+@keyframes bob {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes shadow-squish {
+
+    0%,
+    100% {
+        transform: scaleX(1);
+        opacity: .26;
+    }
+
+    50% {
+        transform: scaleX(.88);
+        opacity: .18;
+    }
+}
+
+@keyframes spot-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(.6);
+    }
+
+    40% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-8px) scale(.6);
+    }
+}
+
+/* apply animations */
+.mushroom-anim .mushroom {
+    animation: bob 2.6s ease-in-out infinite;
+    transform-origin: 50% 80%;
+}
+
+.mushroom-anim .shadow {
+    animation: shadow-squish 2.6s ease-in-out infinite;
+    transform-origin: 50% 50%;
+}
+
+.mushroom-anim .spot.s {
+    animation: spot-pulse 2.6s ease-in-out infinite;
+}
+
+.mushroom-anim .sparkle {
+    opacity: 0;
+    animation: twinkle 2.6s ease-in-out infinite;
+}
+
+.mushroom-anim .sparkle.s1 {
+    animation-delay: .1s;
+}
+
+.mushroom-anim .sparkle.s2 {
+    animation-delay: 1.0s;
+}
+
+.mushroom-anim .sparkle.s3 {
+    animation-delay: 1.6s;
+}
