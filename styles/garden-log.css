@@ -87,3 +87,9 @@
     }
 }
 
+.card-img,
+.card-image {
+    width: 90px;
+    margin-bottom: 0.5rem;
+    image-rendering: pixelated;
+}
