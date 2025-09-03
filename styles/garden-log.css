@@ -1,146 +1,89 @@
-.mushroom-card {
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    width: 220px;
     text-align: center;
+    font-family: monospace;
+    color: var(text);
 }
 
-.mushroom-title {
-    margin-bottom: .5rem;
-    color: var(--sage);
+.card-img {
+    width: 90px;
+    margin-bottom: 0.5rem;
+    image-rendering: pixelated;
 }
 
-/* size + centering */
-.mushroom-anim {
-    width: 260px;
-    margin: 0 auto;
+.card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--soft);
+    margin: 0.3rem 0;
 }
 
-.mushroom-anim svg {
-    display: block;
-    width: 100%;
-    height: auto;
+.card-details {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(soft);
+    line-height: 1.5;
 }
 
-/* palette (uses your tokens) */
-.mushroom-anim .cap {
-    fill: var(--coral);
+.card-details li {
+    margin-bottom: 0.25rem;
 }
 
-.mushroom-anim .stem {
-    fill: #fff;
-    stroke: var(--soft);
-    stroke-width: 2;
+
+/* tag system */
+.tags {
+    margin: 0.5rem 0;
 }
 
-.mushroom-anim .spot {
-    fill: var(--soft);
-    opacity: .95;
+.tag {
+    margin: 0.5rem 0;
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    margin: 0.2rem;
+    color: var(--text);
 }
 
-.mushroom-anim .eye {
-    fill: #26322f;
+.tag.indoors {
+    background: var(pink);
 }
 
-/* dark text tone */
-.mushroom-anim .smile {
-    stroke: #26322f;
+.tag.outdoors {
+    background: var(--sage);
 }
 
-.mushroom-anim .cheek {
-    fill: var(--coral);
-    opacity: .35;
+.tag.easy {
+    background: var(--cream);
 }
 
-.mushroom-anim .sparkle path {
-    fill: var(--coral);
+.tag.annual {
+    background: var(--coral);
 }
 
-.mushroom-anim .shadow {
-    fill: rgba(0, 0, 0, .10);
+.tag.nightshade {
+    background: var(--soft)
 }
 
-/* animations */
-@keyframes bob {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-6px);
-    }
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    margin: 2rem auto;
+    max-width: 1000px;
 }
 
-@keyframes shadow-squish {
-
-    0%,
-    100% {
-        transform: scaleX(1);
-        opacity: .26;
-    }
-
-    50% {
-        transform: scaleX(.88);
-        opacity: .18;
+@media (max-width: 520px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
     }
 }
 
-@keyframes spot-pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.06);
-    }
-}
-
-@keyframes twinkle {
-    0% {
-        opacity: 0;
-        transform: translateY(0) scale(.6);
-    }
-
-    40% {
-        opacity: 1;
-        transform: translateY(-4px) scale(1);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(-8px) scale(.6);
-    }
-}
-
-/* apply animations */
-.mushroom-anim .mushroom {
-    animation: bob 2.6s ease-in-out infinite;
-    transform-origin: 50% 80%;
-}
-
-.mushroom-anim .shadow {
-    animation: shadow-squish 2.6s ease-in-out infinite;
-    transform-origin: 50% 50%;
-}
-
-.mushroom-anim .spot.s {
-    animation: spot-pulse 2.6s ease-in-out infinite;
-}
-
-.mushroom-anim .sparkle {
-    opacity: 0;
-    animation: twinkle 2.6s ease-in-out infinite;
-}
-
-.mushroom-anim .sparkle.s1 {
-    animation-delay: .1s;
-}
-
-.mushroom-anim .sparkle.s2 {
-    animation-delay: 1.0s;
-}
-
-.mushroom-anim .sparkle.s3 {
-    animation-delay: 1.6s;
-}

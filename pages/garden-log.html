@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="../styles/components.css">
     <link rel="stylesheet" href="../styles/media-log.css">
     <link rel="stylesheet" href="../styles/garden-log.css">
+    <link rel="stylesheet" href="/styles/music.css">
+    <script src="/scripts/music.js" defer></script>
+
 </head>
 
 <body>
@@ -45,56 +48,281 @@
     </nav>
 
     <main>
-        <section class="card mushroom-card">
-            
-            <div class="mushroom-anim" role="img" aria-label="smiling mushroom bobbing with sparkles">
-                <svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg">
-                    <title>cute bobbing mushroom</title>
 
-                    <!-- ground shadow -->
-                    <ellipse class="shadow" cx="100" cy="150" rx="46" ry="10" />
-
-                    <!-- whole mushy boi -->
-                    <g class="mushroom">
-                        <!-- stem -->
-                        <rect class="stem" x="74" y="88" width="52" height="48" rx="18" />
-                        <!-- cap -->
-                        <path class="cap" d="M30,86
-                             C30,52 68,32 100,32
-                             C132,32 170,52 170,86
-                             C170,94 162,100 150,102
-                             C130,105 70,105 50,102
-                             C38,100 30,94 30,86Z" />
-                        <!-- cap spots -->
-                        <circle class="spot s" cx="78" cy="64" r="9" />
-                        <circle class="spot s" cx="122" cy="58" r="7" />
-                        <circle class="spot s" cx="104" cy="78" r="6" />
-                        <circle class="spot s" cx="60" cy="78" r="6" />
-
-                        <!-- face -->
-                        <circle class="eye" cx="88" cy="106" r="3.5" />
-                        <circle class="eye" cx="112" cy="106" r="3.5" />
-                        <path class="smile" d="M90,114 Q100,120 105,111" fill="none" stroke-width="2.5"
-                            stroke-linecap="round" />
-                        <circle class="cheek" cx="80" cy="113" r="4" />
-                        <circle class="cheek" cx="120" cy="113" r="4" />
-                    </g>
-
-                    <!-- sparkles -->
-                    <g class="sparkle s1">
-                        <path d="M100 22 l4 8 8 4 -8 4 -4 8 -4-8 -8-4 8-4z" />
-                    </g>
-                    <g class="sparkle s2">
-                        <path d="M38 54 l3 6 6 3 -6 3 -3 6 -3-6 -6-3 6-3z" />
-                    </g>
-                    <g class="sparkle s3">
-                        <path d="M162 58 l3 6 6 3 -6 3 -3 6 -3-6 -6-3 6-3z" />
-                    </g>
-                </svg>
+        <!--grid wrapper-->
+        <section class="card-grid">
+            <!--plant card 1-->
+            <div class="card">
+                <!--plant image-->
+                <img src="/images/garden-log/spider.png" alt="spider plant" class="card-image">
+                <!--plant title-->
+                <h2>spider plant</h2>
+                <!--tag to show plant difficulty level + when to plant -->
+                <div class="tags">
+                    <span class="tag indoors">indoors</span>
+                    <span class="tag easy">easy</span>
+                </div>
+                <!--plant details-->
+                <ul class="card-details">
+                    <li>stage of growth: fast grower, matures in 1-2 yrs</li>
+                    <li>watering needs: light, water abt once a week. let soil dry in between</li>
+                    <li>sunlight requirements: full sun</li>
+                    <li>last cared for: watered 9.2</li>
+                    <li>care type: very easy, beginner-friendly</li>
+                    <li>note: produces spiderettes (baby plants) u can propagate</li>
+                </ul>
             </div>
-            <img src="../images/coming-soon.png" alt="coming soon">
+
+            <!--plant card 2-->
+            <div class="card">
+                <!--plant image-->
+                <img src="/images/garden-log/flame.png" alt="flame bonsai" class="card-image">
+                <!--plant title-->
+                <h2>flame bonsai</h2>
+                <!--tag to show plant difficulty level + when to plant -->
+                <div class="tags">
+                    <span class="tag indoors">indoors</span>
+                    <span class="tag easy">intermediate</span>
+                </div>
+                <!--plant details-->
+                <ul class="card-details">
+                    <li>stage of growth: sapplings → flowers after 5-10 yrs</li>
+                    <li>watering needs: moderate; keep soil evenly moist but not soggy</li>
+                    <li>sunlight requirements: full sun, lots of warmth</li>
+                    <li>last cared for: 9.1 </li>
+                    <li>care type: intermediate (needs patiences and heat)</li>
+                    <li>note: stunning red-orange blooms once mature</li>
+                </ul>
+            </div>
+
+            <!--plant card 3-->
+            <div class="card">
+                <!--plant image-->
+                <img src="/images/garden-log/kalanchoe.png" alt="kalanchoe" class="card-image">
+                <!--plant title-->
+                <h2>kalanchoe</h2>
+                <!--tag to show plant difficulty level + when to plant -->
+                <div class="tags">
+                    <span class="tag indoors">indoors</span>
+                    <span class="tag easy">easy</span>
+                </div>
+                <!--plant details-->
+                <ul class="card-details">
+                    <li>stage of growth: compact succulent; blooms after abt 2 years</li>
+                    <li>watering needs: every 2-3 weeks. let soil dry between waterings</li>
+                    <li>sunlight requirements: bright, indirect light (can handle some direct tho)</li>
+                    <li>last cared for: 9.2</li>
+                    <li>care type: easy, drought-tolerant</li>
+                    <li>note: produces long lasting clusters of colorful flowers</li>
+                </ul>
+            </div>
+
+            <!--plant card 4-->
+            <div class="card">
+                <!--plant image-->
+                <img src="/images/garden-log/basil.png" alt="basil" class="card-image">
+                <!--plant title-->
+                <h2>basil</h2>
+                <!--tag to show plant difficulty level + when to plant -->
+                <div class="tags">
+                    <span class="tag indoors">indoors</span>
+                    <span class="tag easy">easy</span>
+                </div>
+                <!--plant details-->
+                <ul class="card-details">
+                    <li>stage of growth: fast annual; matures in 60-90 days</li>
+                    <li>watering needs: frequent but keep soil consistently moist not soggy</li>
+                    <li>sunlight requirements: full sun abt 6+ hrs in a day</li>
+                    <li>last cared for: 9.1</li>
+                    <li>care type: easy, but needs regular harvesting</li>
+                    <li>note: pinch flower buds to keep leaves tender</li>
+                </ul>
+            </div>
+
+            <!--plant card 5-->
+            <div class="card">
+                <!--plant image-->
+                <img src="/images/garden-log/pink-syngonium.png" alt="pink-syngonium" class="card-image">
+                <!--plant title-->
+                <h2>pink-syngonium</h2>
+                <!--tag to show plant difficulty level + when to plant -->
+                <div class="tags">
+                    <span class="tag indoors">indoors</span>
+                    <span class="tag easy">easy</span>
+                </div>
+                <!--plant details-->
+                <ul class="card-details">
+                    <li>stage of growth: matures in 1-2 yrs</li>
+                    <li>watering needs: weekly, u kno the drill. moist but not soggy</li>
+                    <li>sunlight requirements: bright, indirect light (too much fades the pink)</li>
+                    <li>last cared for: 9.2</li>
+                    <li>care type: easy to moderate. loves humidity</li>
+                    <li>note: grows bushy at first then starts to vine</li>
+                </ul>
+            </div>
+
+            <!--plant card 6-->
+            <div class="card">
+                <!--plant image-->
+                <img src="/images/garden-log/rosewood.png" alt="brazilian rosewood bonsai" class="card-image">
+                <!--plant title-->
+                <h2>brazilian rosewood bonsai</h2>
+                <!--tag to show plant difficulty level + when to plant -->
+                <div class="tags">
+                    <span class="tag indoors">indoors</span>
+                    <span class="tag easy">easy</span>
+                </div>
+                <!--plant details-->
+                <ul class="card-details">
+                    <li>stage of growth: </li>
+                    <li>watering needs: </li>
+                    <li>sunlight requirements: </li>
+                    <li>last cared for: </li>
+                    <li>care type: </li>
+                    <li>note: </li>
+                </ul>
+            </div>
+
+            <!--plant card 7-->
+            <div class="card">
+                <!--plant image-->
+                <img src="/images/garden-log/sunflower.png" alt="sunflower" class="card-image">
+                <!--plant title-->
+                <h2>sunflower</h2>
+                <!--tag to show plant difficulty level + when to plant -->
+                <div class="tags">
+                    <span class="tag indoors">indoors</span>
+                    <span class="tag easy">easy</span>
+                </div>
+                <!--plant details-->
+                <ul class="card-details">
+                    <li>stage of growth: </li>
+                    <li>watering needs: </li>
+                    <li>sunlight requirements: </li>
+                    <li>last cared for: </li>
+                    <li>care type: </li>
+                    <li>note: </li>
+                </ul>
+            </div>
+
+            <!--plant card 8-->
+            <div class="card">
+                <!--plant image-->
+                <img src="/images/garden-log/tomatillo-morado.png" alt="tomatillo-morado" class="card-image">
+                <!--plant title-->
+                <h2>toamatillo-morado</h2>
+                <!--tag to show plant difficulty level + when to plant -->
+                <div class="tags">
+                    <span class="tag indoors">indoors</span>
+                    <span class="tag easy">easy</span>
+                </div>
+                <!--plant details-->
+                <ul class="card-details">
+                    <li>stage of growth: </li>
+                    <li>watering needs: </li>
+                    <li>sunlight requirements: </li>
+                    <li>last cared for: </li>
+                    <li>care type: </li>
+                    <li>note: </li>
+                </ul>
+            </div>
+
+            <!--plant card 9-->
+            <div class="card">
+                <!--plant image-->
+                <img src="/images/garden-log/zucchini.png" alt="zucchini" class="card-image">
+                <!--plant title-->
+                <h2>zucchini</h2>
+                <!--tag to show plant difficulty level + when to plant -->
+                <div class="tags">
+                    <span class="tag indoors">indoors</span>
+                    <span class="tag easy">easy</span>
+                </div>
+                <!--plant details-->
+                <ul class="card-details">
+                    <li>stage of growth: </li>
+                    <li>watering needs: </li>
+                    <li>sunlight requirements: </li>
+                    <li>last cared for: </li>
+                    <li>care type: </li>
+                    <li>note: </li>
+                </ul>
+            </div>
+
+            <!--plant card 10-->
+            <div class="card">
+                <!--plant image-->
+                <img src="/images/garden-log/tomatillo-verde.png" alt="tomatillo-verde" class="card-image">
+                <!--plant title-->
+                <h2>tomatillo verde</h2>
+                <!--tag to show plant difficulty level + when to plant -->
+                <div class="tags">
+                    <span class="tag indoors">indoors</span>
+                    <span class="tag easy">easy</span>
+                </div>
+                <!--plant details-->
+                <ul class="card-details">
+                    <li>stage of growth: </li>
+                    <li>watering needs: </li>
+                    <li>sunlight requirements: </li>
+                    <li>last cared for: </li>
+                    <li>care type: </li>
+                    <li>note: </li>
+                </ul>
+            </div>
+
+            <!--plant card 11-->
+            <div class="card">
+                <!--plant image-->
+                <img src="/images/garden-log/carrot.png" alt="carrot" class="card-image">
+                <!--plant title-->
+                <h2>scarlet nantes carrot</h2>
+                <!--tag to show plant difficulty level + when to plant -->
+                <div class="tags">
+                    <span class="tag indoors">indoors</span>
+                    <span class="tag easy">easy</span>
+                </div>
+                <!--plant details-->
+                <ul class="card-details">
+                    <li>stage of growth: </li>
+                    <li>watering needs: </li>
+                    <li>sunlight requirements: </li>
+                    <li>last cared for: </li>
+                    <li>care type: </li>
+                    <li>note: </li>
+                </ul>
+            </div>
         </section>
     </main>
+
+    <!-- floating pill yt music player -->
+    <button class="music-pill" id="musicPill" aria-haspopup="dialog" aria-controls="musicModal"
+        aria-label="play garden song">♪ play</button>
+
+    <!-- modal -->
+    <div class="music-modal" id="musicModal" role="dialog" aria-modal="true" aria-labelledby="musicTitle" hidden>
+        <div class="music-modal__backdrop" id="musicBackdrop"></div>
+        <div class="music-modal__card" role="document">
+            <header class="music-modal__header">
+                <h3 id="musicTitle">garden song</h3>
+                <button class="music-close" id="musicClose" aria-label="close">✕</button>
+            </header>
+            <div class="music-modal__body" id="musicBody">
+                <!-- cover shown first; clicking swaps to iframe -->
+                <button class="music-cover" id="musicCover" aria-label="play now">
+                    <span class="music-note">♪</span>
+                    <span>click to play</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- tiny floating dock (shown after play) -->
+    <div id="musicDock" class="music-dock" hidden>
+        <div class="music-dock__card">
+            <button id="dockClose" class="dock-close" aria-label="stop music">✿</button>
+            <div id="dockBody"></div>
+        </div>
+    </div>
 </body>
 
 <footer class="site-footer">
