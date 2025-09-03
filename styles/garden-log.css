@@ -60,11 +60,11 @@
 }
 
 .tag.easy {
-    background: var(--cream);
+    background: var(--coral);
 }
 
 .tag.annual {
-    background: var(--coral);
+    background: var(--sage);
 }
 
 .tag.nightshade {
@@ -92,4 +92,5 @@
     width: 90px;
     margin-bottom: 0.5rem;
     image-rendering: pixelated;
+    
 }
