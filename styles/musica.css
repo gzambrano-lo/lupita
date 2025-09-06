@@ -1,0 +1,244 @@
+.music-page {
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 0 14px;
+}
+
+.box {
+  background: var(--card);
+  border: 1px solid var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px 16px 22px;
+  margin: 18px 0;
+  position: relative;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed color-mix(in srgb, var(--border), 80% transparent);
+  border-radius: calc(var(--radius) - 6px);
+  pointer-events: none;
+}
+
+.doodle-title {
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--sage);
+  background:
+    repeating-linear-gradient(45deg,
+      color-mix(in srgb, var(--soft) 60%, white) 0 6px,
+      transparent 6px 12px);
+  border-radius: calc(var(--radius) - 2px);
+  border: 1px dashed var(--border);
+  padding: 8px 12px;
+  margin: -6px auto 12px;
+  width: fit-content;
+}
+
+.embed {
+  aspect-ratio: 16 / 9;
+  border-radius: calc(var(--radius) + 2px);
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--shadow);
+
+}
+
+.embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 2px 12px;
+}
+
+.chip {
+  background: var(--pink);
+  color: var(--text);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: .85rem;
+  border: 1px solid color-mix(in srgb, var(--pink) 60%, var(--border));
+}
+
+.chip--alt {
+  background: var(--soft);
+  border-color: var(--border);
+}
+
+.notes {
+  color: var(--text);
+  line-height: 1.55;
+  font-size: .95rem;
+  margin: 12px 2px 14px;
+}
+
+.bandcamp {
+  border-radius: calc(var(--radius) + 2px);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.music-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin-top: 18px;
+}
+
+.track-card {
+  position: relative;
+  aspect-ratio: 16/9;
+  display: block;
+  border-radius: calc(var(--radius) + 2px);
+  overflow: hidden;
+  text-decoration: none;
+  background: var(--soft);
+  box-shadow: var(--shadow);
+}
+
+.track-card .title {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  color: #fff;
+  font-weight: 600;
+  font-size: .95rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+}
+
+.track-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, .55), rgba(0, 0, 0, .05));
+}
+
+@media (max-width:700px) {
+  .box {
+    padding: 14px;
+  }
+
+  .doodle-title {
+    font-size: 1rem;
+  }
+}
+
+/* ===== zine stack ===== */
+.zine-list {
+  display: grid;
+  gap: 18px;
+  margin: 20px 0 60px;
+}
+
+@media (min-width:900px) {
+
+  /* two-column collage feel on wide screens */
+  .zine-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.entry {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 14px 16px;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.entry::before {
+  /* dashed inner edge = scrapbook */
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px dashed color-mix(in srgb, var(--border) 80%, transparent);
+  border-radius: calc(var(--radius) - 6px);
+  pointer-events: none;
+}
+
+/* header row */
+.entry-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.entry-title {
+  color: var(--sage);
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.stamp {
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--soft);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.tags {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* lined-paper note */
+.note {
+  margin-top: 10px;
+  padding: 6px 10px 8px 12px;
+  border-left: 3px solid var(--coral);
+  color: var(--text);
+  font-size: .95rem;
+  line-height: 1.55;
+  border-radius: 6px;
+  /* subtle lines */
+  background:
+    linear-gradient(transparent 23px, color-mix(in srgb, var(--cream) 75%, white) 23px) 0 0/100% 46px;
+  background-attachment: local;
+}
+
+/* washi tape */
+.tape {
+  position: absolute;
+  left: 18px;
+  top: -10px;
+  width: 86px;
+  height: 22px;
+  transform: rotate(-3deg);
+  background: color-mix(in srgb, var(--soft) 70%, white);
+  border: 1px dashed color-mix(in srgb, var(--border) 80%, transparent);
+  border-radius: 6px;
+  opacity: .9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .10);
+}
+
+.tape--pink {
+  background: color-mix(in srgb, var(--pink) 55%, white);
+}
+
+.tape::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .35) 0 8px, transparent 8px 16px);
+  mix-blend-mode: multiply;
+  opacity: .35;
+  border-radius: inherit;
+}
