@@ -469,3 +469,21 @@ section,
 .book-link {
     color: var(--sage);
 }
+
+details {
+  margin: 1em 0;
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fdfdfd; /* adjust to your cream background */
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: #444;
+}
+
+details[open] {
+  background-color: #f7f7f7; /* subtle contrast when open */
+}
