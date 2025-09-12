@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>learn to code - lupe zambrano</title>
+
+    <!-- google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- icons (optional) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/tokens.css" />
+    <link rel="stylesheet" href="../styles/base.css" />
+    <link rel="stylesheet" href="../styles/layout.css" />
+    <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="../styles/post-toggle.css">
+</head>
+
+<body>
+
+
+    <header class="site-header">
+        <h1>learn to code</h1>
+    </header>
+
+    <nav id="nav_menu" aria-label="Main">
+        <ul>
+            <li><a href="../index.html">home</a></li>
+            <li><a href="about.html" aria-current="page">about</a></li>
+            <li><a href="media-log.html">media log</a></li>
+            <li><a href="blog.html">blog</a></li>
+            <li><a href="links.html">links</a></li>
+            <li><a href="guestbook.html">guestbook</a></li>
+            <li><a href="garden-log.html">garden log</a></li>
+            <li><a href="music.html">music</a></li>
+            <li class="current"><a href="learn-to-code.html">learn to code</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <details class="post-card">
+
+            <summary class="post-cover">
+                <h2>tool box</h2>
+            </summary>
+
+            <article class="post">
+                <h2>bulleted lists dont have to be boring</h2>
+                <p>
+                    <a href="https://emojipedia.org/" target="_blank" class="highlight-link">emojipedia</a> is a really
+                    useful tool for web developers, especially when you're making lists. it can even double as your
+                    bullet point source.
+                </p>
+
+                <h2>a refresher on the html for a list</h2>
+
+
+                <pre><code>&lt;ul&gt;
+  &lt;li&gt;first item&lt;/li&gt;
+  &lt;li&gt;second item&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+                <h2>how to change the bullets in a list:</h2>
+                <p>by default, browsers will put a solid round dot in front of each list item.</p>
+                <!--default bullets-->
+                <ul>
+                    <li>example here with default dot!</li>
+                    <li>not very aesthetic</li>
+                </ul>
+
+                <p>but you can change them! here's the same list, but with an emoji from emojipedia:</p>
+
+                <!--custom bullets-->
+                <ul class="fancy-list">
+                    <li>example with a custom bullet</li>
+                    <li>so much cuter</li>
+                </ul>
+
+                <h2>the css that makes it happen:</h2>
+                <pre><code>.fancy-list {
+    list-style-type: none; 
+    padding-left: -; 
+}
+
+.fancy-list li::before {
+    content: "🍄"; 
+    color: var(--coral);     
+}
+</code></pre>
+
+                <p class="tip">put the fancy-list tag inside your opening ul tag</p>
+
+                <h2>here's what's happening:</h2>
+                <ul class="explain">
+                    <li><code>list-style-type: none;</code> kills the default dots.</li>
+                    <li><code>padding-left: 0;</code> realigns the text.</li>
+                    <li><code>li::before</code> lets you place something before each item.</li>
+                    <li><code>content: "🍄";</code> that “something” is your emoji.</li>
+                    <li><code>color: var(--coral);</code> uses your brand color.</li>
+                </ul>
+
+            </article>
+        </details>
+
+    </main>
+
+</body>
+
+</html>
