@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>gallery — lupe zambrano</title>
+    <meta name="description" content="a scrolling archive of images i love—like old tumblr.">
+
+    <!-- fonts / icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+
+    <!-- your site styles -->
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/tokens.css">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/components.css">
+
+    <!-- gallery styles -->
+    <link rel="stylesheet" href="../styles/gallery.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <h1>gallery</h1>
+    </header>
+
+    <nav id="nav_menu" aria-label="Main">
+        <ul>
+            <li><a href="../index.html">home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="media-log.html">media log</a></li>
+            <li><a href="blog.html">blog</a></li>
+            <li><a href="links.html">links</a></li>
+            <li><a href="guestbook.html">guestbook</a></li>
+            <li><a href="garden-log.html">garden log</a></li>
+            <li><a href="music.html">music</a></li>
+            <li><a href="learn-to-code.html">learn to code</a></li>
+            <li class="current"><a href="gallery.html">gallery</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <!-- the grid -->
+        <section class="tumblr-archive" aria-label="image gallery">
+            <!-- one tile = anchor (opens full) + image + tiny caption -->
+            <a class="tile" href="/images/gallery/me-hand-in-shirt.jpg" target="_blank" rel="noopener">
+                <figure>
+                    <img src="/images/gallery/me-hand-in-shirt.jpg" alt="avi doodle" loading="lazy" />
+                    <figcaption>feeling bonita</figcaption>
+                </figure>
+            </a>
+
+            <a class="tile" href="/images/gallery/me-coraline.jpg" target="_blank" rel="noopener">
+                <figure>
+                    <img src="/images/gallery/me-coraline.jpg" alt="placeholder plant" loading="lazy" />
+                    <figcaption>🌚</figcaption>
+                </figure>
+            </a>
+
+            <a class="tile" href="../images/gallery/mascara-eyelid.jpg" target="_blank" rel="noopener">
+                <figure>
+                    <img src="../images/gallery/mascara-eyelid.jpg" alt="music cover" loading="lazy" />
+                    <figcaption>music cover</figcaption>
+                </figure>
+            </a>
+
+            <a class="title" href="/images/gallery/bangs.jpg" target="_blank rel=noopener">
+                <figure>
+                <img src="/images/gallery/bangs.jpg" alt="picture of me with bangs" loading="lazy"/>
+                <figcaption>bang moment</figcaption>
+                </figure>
+            </a>
+
+
+
+            <!-- duplicate & change paths/alt/captions as you add more -->
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; Guadalupe Zambrano 2025</p>
+    </footer>
+</body>
+
+</html>

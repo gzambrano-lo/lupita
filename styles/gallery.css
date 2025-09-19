@@ -1,0 +1,49 @@
+/* grid archive */
+.tumblr-archive {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-3, 12px);
+}
+
+/* each tile = link */
+.tumblr-archive .tile {
+  text-decoration: none;
+  color: inherit;
+}
+
+.tumblr-archive figure {
+  background: var(--surface, #fff);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: var(--shadow, 0 6px 20px rgba(0,0,0,.06));
+  overflow: hidden;
+  border: 1px solid var(--pill, #efeff4);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.tumblr-archive figure:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+.tumblr-archive img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tumblr-archive figcaption {
+  padding: .5rem .65rem;
+  font-size: .9rem;
+  color: var(--muted, #6b7280);
+  border-top: 1px solid var(--pill, #efeff4);
+  text-align: center;
+}
+
+/* optional “big tile” variations */
+.tumblr-archive .tile.wide figure { grid-column: span 2; }
+.tumblr-archive .tile.tall figure { grid-row: span 2; }
+
+/* wider container on desktop */
+@media (min-width: 768px) {
+  .container { max-width: 1100px; }
+}
