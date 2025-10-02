@@ -1,25 +1,56 @@
+.plant-array {
+    max-width: 1100px;
+    margin-inline: auto;
+    padding: 1.25rem 1rem 2rem;
+    border: 0;
+    box-shadow: none;
+}
+
+.array-title {
+    text-align: center;
+    font-size: clamp (1.25rem, 2.2vw 1.6rem);
+    margin: .25rem 0 .25rem;
+}
+
+.array-title span {
+    margin-right: .4rem;
+}
+
+.intro-text {
+    text-align: center;
+    opacity: .85;
+    margin: 0 0 1.25rem;
+}
+
 .card {
     background: var(--card);
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
-    padding: 1rem;
-    width: 220px;
+    padding: .9rem 9rem 1rem;
+    width: 100%;
+    max-width: 210px;
     text-align: center;
     font-family: monospace;
-    color: var(text);
+    color: var(--text);
+    transition: transform .15s ease, box-shadow .15s ease;
 }
 
-.card-img {
-    width: 90px;
+.card-image {
+    width: 84px;
+    display: block;
+    margin-inline: auto;
     margin-bottom: 0.5rem;
     image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    display: block;
+    margin-inline: auto;
 }
 
 .card-title {
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-size: .96rem;
+    line-height: 1.25;
     color: var(--soft);
-    margin: 0.3rem 0;
+    margin: 0.25rem 0;
 }
 
 .card-details {
@@ -28,7 +59,7 @@
     margin: 0.5rem 0 0;
     text-align: center;
     font-size: 0.85rem;
-    color: var(soft);
+    color: var(--soft);
     line-height: 1.5;
 }
 
@@ -36,14 +67,17 @@
     margin-bottom: 0.25rem;
 }
 
-
-/* tag system */
-.tags {
-    margin: 0.5rem 0;
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    margin: 2rem auto;
+    max-width: 1000px;
 }
 
 .tag {
-    margin: 0.5rem 0;
     padding: 0.2rem 0.6rem;
     border-radius: 8px;
     font-size: 0.75rem;
@@ -71,26 +105,10 @@
     background: var(--soft)
 }
 
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
-    justify-items: center;
-    margin: 2rem auto;
-    max-width: 1000px;
-}
 
 @media (max-width: 520px) {
     .card-grid {
         grid-template-columns: 1fr;
         justify-items: center;
     }
-}
-
-.card-img,
-.card-image {
-    width: 90px;
-    margin-bottom: 0.5rem;
-    image-rendering: pixelated;
-    
 }
