@@ -1,4 +1,4 @@
-/* grid layout (keeps your current gap/sizing) */
+/* grid layout (keeps current gap/sizing) */
 .grid-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -37,7 +37,7 @@
 /* consistent poster sizing (prevents uneven heights) */
 .watch-item > img {
   width: 100%;
-  aspect-ratio: 3 / 4;       /* adjust to your art (2/3 or 3/4) */
+  aspect-ratio: 3 / 4;       /* adjust art (2/3 or 3/4) */
   object-fit: cover;
   display: block;
 }

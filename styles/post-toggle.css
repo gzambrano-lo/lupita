@@ -19,7 +19,7 @@
   cursor: pointer;
   user-select: none;
 }
-.post-cover::-webkit-details-marker { display: none; } /* Safari/Chrome marker */
+.post-cover::-webkit-details-marker { display: none; } /* safari/chrome marker */
 .post-cover::after{
   content: "▸";
   margin-left: auto;
@@ -39,7 +39,7 @@
   margin: 0; font-size: .85rem; color: #666;
 }
 
-/* Body */
+/* body */
 .post-body{
   padding: 12px 14px 16px;
   line-height: 1.6;
