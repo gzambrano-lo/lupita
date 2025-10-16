@@ -50,28 +50,136 @@
 
     <main class="container">
         <!-- the grid -->
-        <section class="tumblr-archive" aria-label="image gallery">
-            <!-- one tile = anchor (opens full) + image + tiny caption -->
-            
 
-            <a class="tile" href="../images/gallery/me-coraline.jpg" target="_blank" rel="noopener">
-                <figure>
-                    <img src="../images/gallery/me-coraline.jpg" alt="placeholder plant" loading="lazy" />
-                    <figcaption>🌚</figcaption>
-                </figure>
-            </a>
+        <!-- featured carousel -->
+        <section class="carousel" data-autoplay="5000" data-loop="true" aria-label="featured images">
+            <div class="carousel__viewport">
+                <div class="carousel__track"><!-- slides will be injected by JS --></div>
+            </div>
 
-
-
-
-
-            <!-- duplicate & change paths/alt/captions as you add more -->
+            <button class="carousel__btn carousel__btn--prev" aria-label="Previous">⟨</button>
+            <button class="carousel__btn carousel__btn--next" aria-label="Next">⟩</button>
+            <div class="carousel__dots" aria-label="Slide indicators"></div>
         </section>
     </main>
 
     <footer class="site-footer">
         <p>&copy; Guadalupe Zambrano 2025</p>
     </footer>
+
+    <script>
+        (function () {
+            const root = document.querySelector('.carousel');
+            if (!root) return;
+
+            const track = root.querySelector('.carousel__track');
+            const dotsWrap = root.querySelector('.carousel__dots');
+            const prevBtn = root.querySelector('.carousel__btn--prev');
+            const nextBtn = root.querySelector('.carousel__btn--next');
+
+            // --- OPTION A: Auto-build slides from your grid (first 8 images) ---
+            const tiles = Array.from(document.querySelectorAll('.tumblr-archive .tile')).slice(0, 8);
+            tiles.forEach(tile => {
+                const img = tile.querySelector('img');
+                const cap = tile.querySelector('figcaption')?.textContent?.trim() || '';
+                const slide = document.createElement('figure');
+                slide.className = 'carousel__slide';
+                slide.innerHTML = `
+      <a href="${tile.getAttribute('href') || img.src}" target="_blank" rel="noopener">
+        <img src="${img.src}" alt="${img.alt || 'gallery image'}" loading="eager">
+      </a>
+      ${cap ? `<figcaption class="carousel__caption">${cap}</figcaption>` : ''}
+    `;
+                track.appendChild(slide);
+            });
+
+            const slides = Array.from(root.querySelectorAll('.carousel__slide'));
+            if (slides.length === 0) return;
+
+            // Build dots
+            slides.forEach((_, i) => {
+                const b = document.createElement('button');
+                b.className = 'carousel__dot';
+                b.type = 'button';
+                b.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                b.addEventListener('click', () => goTo(i, true));
+                dotsWrap.appendChild(b);
+            });
+
+            let index = 0;
+            const loop = root.dataset.loop === 'true';
+            const autoplayMs = parseInt(root.dataset.autoplay, 10);
+            let timer = null;
+
+            function updateUI() {
+                track.style.transform = `translate3d(${-index * 100}%,0,0)`;
+                slides.forEach((s, i) => {
+                    s.setAttribute('aria-hidden', String(i !== index));
+                    s.setAttribute('aria-label', `${i + 1} of ${slides.length}`);
+                });
+                Array.from(dotsWrap.children).forEach((d, i) => {
+                    d.setAttribute('aria-current', i === index ? 'true' : 'false');
+                });
+                if (!loop) {
+                    prevBtn.disabled = index === 0;
+                    nextBtn.disabled = index === slides.length - 1;
+                }
+            }
+
+            function goTo(i, user = false) {
+                if (i < 0) i = loop ? slides.length - 1 : 0;
+                if (i > slides.length - 1) i = loop ? 0 : slides.length - 1;
+                index = i;
+                updateUI();
+                if (user) restartAutoplay();
+            }
+            function next() { goTo(index + 1); }
+            function prev() { goTo(index - 1); }
+
+            prevBtn.addEventListener('click', prev);
+            nextBtn.addEventListener('click', next);
+
+            root.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+            });
+
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            function startAutoplay() {
+                if (!autoplayMs || prefersReduced) return;
+                clearInterval(timer);
+                timer = setInterval(next, autoplayMs);
+            }
+            function stopAutoplay() { clearInterval(timer); }
+            function restartAutoplay() { stopAutoplay(); startAutoplay(); }
+
+            root.addEventListener('mouseenter', stopAutoplay);
+            root.addEventListener('mouseleave', startAutoplay);
+            root.addEventListener('focusin', stopAutoplay);
+            root.addEventListener('focusout', startAutoplay);
+
+            // Basic swipe
+            let startX = 0, dx = 0, dragging = false;
+            const minSwipe = 36;
+            function onDown(e) { dragging = true; startX = (e.touches ? e.touches[0].clientX : e.clientX); dx = 0; track.style.transition = 'none'; }
+            function onMove(e) { if (!dragging) return; const x = (e.touches ? e.touches[0].clientX : e.clientX); dx = x - startX; const pct = (dx / root.clientWidth) * 100; track.style.transform = `translate3d(${(-index * 100 + pct)}%,0,0)`; }
+            function onUp() { if (!dragging) return; track.style.transition = ''; if (Math.abs(dx) > minSwipe) { dx < 0 ? next() : prev(); } else { updateUI(); } dragging = false; dx = 0; }
+
+            track.addEventListener('mousedown', onDown);
+            window.addEventListener('mousemove', onMove);
+            window.addEventListener('mouseup', onUp);
+            track.addEventListener('touchstart', onDown, { passive: true });
+            track.addEventListener('touchmove', onMove, { passive: true });
+            track.addEventListener('touchend', onUp);
+
+            updateUI();
+            startAutoplay();
+
+            // Expose tiny API if needed elsewhere
+            root.carousel = { next, prev, goTo: (i) => goTo(i, true), startAutoplay, stopAutoplay };
+        })();
+    </script>
+
 </body>
 
 </html>

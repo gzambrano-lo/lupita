@@ -1,3 +1,129 @@
+/* === Carousel (Gallery) === */
+.carousel {
+  --radius: 16px;
+  --shadow: 0 14px 32px rgba(0, 0, 0, .22), 0 1px 0 rgba(255, 255, 255, .03);
+  --ink: var(--nav-ink, #0f172a);
+  --card: color-mix(in oklab, white 85%, transparent);
+  --accent: var(--accent, #E86F5C);
+
+  width: min(100%, 980px);
+  margin: 18px auto 28px;
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: clip;
+  user-select: none;
+}
+
+.carousel__viewport {
+  overflow: hidden;
+}
+
+.carousel__track {
+  display: flex;
+  transition: transform .5s ease;
+  will-change: transform;
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #0b0b0b;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel__caption {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  background: color-mix(in oklab, black 40%, transparent);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  backdrop-filter: blur(4px);
+}
+
+/* controls */
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid #00000022;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .22);
+  cursor: pointer;
+}
+
+.carousel__btn--prev {
+  left: 10px;
+}
+
+.carousel__btn--next {
+  right: 10px;
+}
+
+.carousel__btn[disabled] {
+  opacity: .45;
+  pointer-events: none;
+}
+
+/* dots */
+.carousel__dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 6px 0;
+}
+
+.carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #fff;
+  opacity: .45;
+  border: 0;
+  cursor: pointer;
+}
+
+.carousel__dot[aria-current="true"] {
+  opacity: 1;
+  outline: 2px solid var(--accent);
+}
+
+/* motion sensitivity */
+@media (prefers-reduced-motion: reduce) {
+  .carousel__track {
+    transition: none;
+  }
+}
+
+
+
 /* grid archive */
 .tumblr-archive {
   display: grid;
@@ -14,7 +140,7 @@
 .tumblr-archive figure {
   background: var(--surface, #fff);
   border-radius: var(--radius-lg, 16px);
-  box-shadow: var(--shadow, 0 6px 20px rgba(0,0,0,.06));
+  box-shadow: var(--shadow, 0 6px 20px rgba(0, 0, 0, .06));
   overflow: hidden;
   border: 1px solid var(--pill, #efeff4);
   transition: transform .15s ease, box-shadow .15s ease;
@@ -22,7 +148,7 @@
 
 .tumblr-archive figure:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
 }
 
 .tumblr-archive img {
@@ -40,10 +166,17 @@
 }
 
 /* optional “big tile” variations */
-.tumblr-archive .tile.wide figure { grid-column: span 2; }
-.tumblr-archive .tile.tall figure { grid-row: span 2; }
+.tumblr-archive .tile.wide figure {
+  grid-column: span 2;
+}
+
+.tumblr-archive .tile.tall figure {
+  grid-row: span 2;
+}
 
 /* wider container on desktop */
 @media (min-width: 768px) {
-  .container { max-width: 1100px; }
+  .container {
+    max-width: 1100px;
+  }
 }
