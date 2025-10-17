@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>gallery — lupe zambrano</title>
-    <meta name="description" content="a scrolling archive of images i love—like old tumblr.">
+    <meta name="description" content="a scrolling scrapbook of images i love—like old tumblr.">
 
     <!-- fonts / icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,8 +21,6 @@
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/layout.css">
     <link rel="stylesheet" href="../styles/components.css">
-
-    <!-- gallery styles -->
     <link rel="stylesheet" href="../styles/gallery.css">
 </head>
 
@@ -41,7 +39,6 @@
             <li><a href="guestbook.html">guestbook</a></li>
             <li><a href="garden-log.html">garden log</a></li>
             <li><a href="music.html">music</a></li>
-            <li><a href="learn-to-code.html">learn to code</a></li>
             <li class="current"><a href="gallery.html">gallery</a></li>
             <li><a href="bleach-shrine.html">bleach shrine</a></li>
             <li><a href="project-senpai.html">project senpai</a></li>
@@ -49,137 +46,85 @@
     </nav>
 
     <main class="container">
-        <!-- the grid -->
+        <section class="tumblr-archive" aria-label="image scrapbook">
 
-        <!-- featured carousel -->
-        <section class="carousel" data-autoplay="5000" data-loop="true" aria-label="featured images">
-            <div class="carousel__viewport">
-                <div class="carousel__track"><!-- slides will be injected by JS --></div>
-            </div>
 
-            <button class="carousel__btn carousel__btn--prev" aria-label="Previous">⟨</button>
-            <button class="carousel__btn carousel__btn--next" aria-label="Next">⟩</button>
-            <div class="carousel__dots" aria-label="Slide indicators"></div>
+            <a class="tile" href="https://x.com/shunyayamashita" target="_blank" rel="noopener">
+                <figure>
+                    <img src="../images/gallery/101720251.jpeg" alt="cozy rooftop at sunset">
+                </figure>
+            </a>
+
+            <a class="tile" href="" target="_blank" rel="noopener">
+                <figure>
+                    <img src="../images/gallery/101720252.jpg" alt="soft pastel street view">
+                </figure>
+            </a>
+
+            <a class="tile" href="" target="_blank" rel="noopener">
+                <figure>
+                    <img src="../images/gallery/101720253.jpeg">
+                </figure>
+            </a>
+
+            <a class="tile" href="https://www.pinterest.com/hyutt221/_created/" target="_blank" rel="noopener">
+                <figure>
+                    <img src="../images/gallery/101720254.jpg">
+                </figure>
+            </a>
+
+            <a class="tile" href="https://www.pinterest.com/hyutt221/_created/" target="_blank" rel="noopener">
+                <figure>
+                    <img src="../images/gallery/101720255.jpg">
+                </figure>
+            </a>
+
+            <a class="tile" href="https://x.com/ystty0" target="_blank" rel="noopener">
+                <figure>
+                    <img src="../images/gallery/101720256.jpg">
+                </figure>
+            </a>
+
+            <a class="tile" target="_blank" rel="noopener">
+                <figure>
+                <img src="../images/gallery/101720257.jpg">
+                </figure>
+            </a>
+
+            
+            <a class="tile" target="_blank" rel="noopener">
+                <figure>
+                <img src="../images/gallery/101720258.jpg">
+                </figure>
+            </a>
+            
+
         </section>
+
+
+
+
     </main>
 
     <footer class="site-footer">
-        <p>&copy; Guadalupe Zambrano 2025</p>
+        <div class="footer-wrap">
+            <p class="footer-credit">© 2025 Guadalupe Zambrano ~ site designed & built by me! ♡</p>
+            <p class="footer-note">
+                this is a personal scrapbook. i don't claim ownership of images.
+                if any work here belongs to you and you'd like <strong>credit added</strong> or the image
+                <strong>removed</strong>,
+                please <a href="../pages/guestbook.html">contact me</a>.
+                i'm also happy to <strong>boost your art</strong> with links to your site or socials. ♥
+            </p>
+
+            <p class="footer-note">
+                click on any card to visit the artist's source when available.
+                many images are discovered through pinterest, and while i make every effort to find and credit
+                original artists, it's not always possible to verify every source. if i got anything wrong, please
+                do not hesitate to reach out. 
+            </p>
+        </div>
     </footer>
-
-    <script>
-        (function () {
-            const root = document.querySelector('.carousel');
-            if (!root) return;
-
-            const track = root.querySelector('.carousel__track');
-            const dotsWrap = root.querySelector('.carousel__dots');
-            const prevBtn = root.querySelector('.carousel__btn--prev');
-            const nextBtn = root.querySelector('.carousel__btn--next');
-
-            // --- OPTION A: Auto-build slides from your grid (first 8 images) ---
-            const tiles = Array.from(document.querySelectorAll('.tumblr-archive .tile')).slice(0, 8);
-            tiles.forEach(tile => {
-                const img = tile.querySelector('img');
-                const cap = tile.querySelector('figcaption')?.textContent?.trim() || '';
-                const slide = document.createElement('figure');
-                slide.className = 'carousel__slide';
-                slide.innerHTML = `
-      <a href="${tile.getAttribute('href') || img.src}" target="_blank" rel="noopener">
-        <img src="${img.src}" alt="${img.alt || 'gallery image'}" loading="eager">
-      </a>
-      ${cap ? `<figcaption class="carousel__caption">${cap}</figcaption>` : ''}
-    `;
-                track.appendChild(slide);
-            });
-
-            const slides = Array.from(root.querySelectorAll('.carousel__slide'));
-            if (slides.length === 0) return;
-
-            // Build dots
-            slides.forEach((_, i) => {
-                const b = document.createElement('button');
-                b.className = 'carousel__dot';
-                b.type = 'button';
-                b.setAttribute('aria-label', `Go to slide ${i + 1}`);
-                b.addEventListener('click', () => goTo(i, true));
-                dotsWrap.appendChild(b);
-            });
-
-            let index = 0;
-            const loop = root.dataset.loop === 'true';
-            const autoplayMs = parseInt(root.dataset.autoplay, 10);
-            let timer = null;
-
-            function updateUI() {
-                track.style.transform = `translate3d(${-index * 100}%,0,0)`;
-                slides.forEach((s, i) => {
-                    s.setAttribute('aria-hidden', String(i !== index));
-                    s.setAttribute('aria-label', `${i + 1} of ${slides.length}`);
-                });
-                Array.from(dotsWrap.children).forEach((d, i) => {
-                    d.setAttribute('aria-current', i === index ? 'true' : 'false');
-                });
-                if (!loop) {
-                    prevBtn.disabled = index === 0;
-                    nextBtn.disabled = index === slides.length - 1;
-                }
-            }
-
-            function goTo(i, user = false) {
-                if (i < 0) i = loop ? slides.length - 1 : 0;
-                if (i > slides.length - 1) i = loop ? 0 : slides.length - 1;
-                index = i;
-                updateUI();
-                if (user) restartAutoplay();
-            }
-            function next() { goTo(index + 1); }
-            function prev() { goTo(index - 1); }
-
-            prevBtn.addEventListener('click', prev);
-            nextBtn.addEventListener('click', next);
-
-            root.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowRight') next();
-                if (e.key === 'ArrowLeft') prev();
-            });
-
-            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            function startAutoplay() {
-                if (!autoplayMs || prefersReduced) return;
-                clearInterval(timer);
-                timer = setInterval(next, autoplayMs);
-            }
-            function stopAutoplay() { clearInterval(timer); }
-            function restartAutoplay() { stopAutoplay(); startAutoplay(); }
-
-            root.addEventListener('mouseenter', stopAutoplay);
-            root.addEventListener('mouseleave', startAutoplay);
-            root.addEventListener('focusin', stopAutoplay);
-            root.addEventListener('focusout', startAutoplay);
-
-            // Basic swipe
-            let startX = 0, dx = 0, dragging = false;
-            const minSwipe = 36;
-            function onDown(e) { dragging = true; startX = (e.touches ? e.touches[0].clientX : e.clientX); dx = 0; track.style.transition = 'none'; }
-            function onMove(e) { if (!dragging) return; const x = (e.touches ? e.touches[0].clientX : e.clientX); dx = x - startX; const pct = (dx / root.clientWidth) * 100; track.style.transform = `translate3d(${(-index * 100 + pct)}%,0,0)`; }
-            function onUp() { if (!dragging) return; track.style.transition = ''; if (Math.abs(dx) > minSwipe) { dx < 0 ? next() : prev(); } else { updateUI(); } dragging = false; dx = 0; }
-
-            track.addEventListener('mousedown', onDown);
-            window.addEventListener('mousemove', onMove);
-            window.addEventListener('mouseup', onUp);
-            track.addEventListener('touchstart', onDown, { passive: true });
-            track.addEventListener('touchmove', onMove, { passive: true });
-            track.addEventListener('touchend', onUp);
-
-            updateUI();
-            startAutoplay();
-
-            // Expose tiny API if needed elsewhere
-            root.carousel = { next, prev, goTo: (i) => goTo(i, true), startAutoplay, stopAutoplay };
-        })();
-    </script>
-
 </body>
 
 </html>
