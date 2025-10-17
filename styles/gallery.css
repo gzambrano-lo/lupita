@@ -64,11 +64,11 @@
 }
 
 /* ===========================
-   Footer tweaks (optional)
+   Footer tweaks 
    =========================== */
 
 .site-footer{
-  /* layout.css already sets sizing/card styles; we center footer here */
+  /* layout.css already sets sizing/card styles; center footer here */
   display: flex;
   flex-direction: column;
   align-items: center;
