@@ -523,72 +523,227 @@ details[open] {
 }
 
 .highlight-link {
-  color: var(--sage);
-  text-decoration: underline;
+    color: var(--sage);
+    text-decoration: underline;
 }
+
 .highlight-link:hover {
-  color: #5e7d75; /* darker sage for hover */
+    color: #5e7d75;
+    /* darker sage for hover */
 }
 
 /* remove normal bullets */
 .fancy-list {
-  list-style-type: none;
-  padding-left: 0;
+    list-style-type: none;
+    padding-left: 0;
 }
 
 /* add emoji bullets */
 .fancy-list li::before {
-  content: "🍄";
-  color: var(--coral); /* from your tokens.css */
+    content: "🍄";
+    color: var(--coral);
+    /* from your tokens.css */
 }
 
 .tip {
-  margin: 1rem 0;
-  padding: .6rem .8rem;
-  background: #fff;
-  border: 1px dashed var(--sage);
-  border-radius: var(--radius);
-  color: var(--muted);
-  font-size: .9rem;
+    margin: 1rem 0;
+    padding: .6rem .8rem;
+    background: #fff;
+    border: 1px dashed var(--sage);
+    border-radius: var(--radius);
+    color: var(--muted);
+    font-size: .9rem;
 }
 
 .explain {
-  margin: 1rem 0 1rem 1.25rem;
-  list-style-type: disc;
+    margin: 1rem 0 1rem 1.25rem;
+    list-style-type: disc;
 }
 
 .explain li {
-  margin-bottom: .35rem;
+    margin-bottom: .35rem;
 }
 
 .post h2 {
-  font-size: 1.3rem;
-  border-bottom: 2px solid var(--sage);
-  padding-bottom: .25rem;
-  margin-top: 1.5rem;
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--sage);
+    padding-bottom: .25rem;
+    margin-top: 1.5rem;
 }
 
 .post h3 {
-  font-size: 1.1rem;
-  color: var(--muted);
-  margin-top: 1.25rem;
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-top: 1.25rem;
 }
 
 .post pre {
-  background: var(--cream);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: .75rem 1rem;
-  overflow-x: auto;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: .95rem;
-  line-height: 1.4;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: .75rem 1rem;
+    overflow-x: auto;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: .95rem;
+    line-height: 1.4;
 }
 
 .gas-list {
-  list-style: none;        
+    list-style: none;
 }
 
 .gas-list li {
-  margin: 0.25em 0;        
+    margin: 0.25em 0;
+}
+
+/* --- cozy muted coral banner --- */
+.alert {
+    /* warmer, desaturated coral base */
+    --bg: color-mix(in oklab, var(--coral), var(--sage) 30%);
+    --ink: color-mix(in oklab, var(--coral), black 40%);
+    --bd: color-mix(in oklab, var(--coral), var(--sage) 55%);
+
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: .75rem 1rem;
+    align-items: start;
+
+    max-width: 1100px;
+    margin: 0.75rem auto 1.25rem;
+    padding: 1.1rem 1.4rem;
+
+    background: rgba(242, 132, 130, 0.15);
+    /* transparent coral overlay */
+    border: 1px solid var(--bd);
+    border-radius: calc(var(--radius) + 10px);
+    backdrop-filter: blur(6px);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    color: var(--ink);
+}
+
+/* icon + title */
+.alert-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+    color: var(--ink);
+    opacity: 0.8;
+    transform: translateY(2px);
+}
+
+.alert-title {
+    font-family: "Poppins", system-ui, sans-serif;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+}
+
+.alert p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: color-mix(in oklab, var(--text), var(--coral) 20%);
+}
+
+/* dismiss button */
+.alert-close {
+    appearance: none;
+    border: 0;
+    background: rgba(255, 255, 255, 0.25);
+    color: var(--ink);
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    align-self: start;
+    transition: all 0.25s ease;
+}
+
+.alert-close:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* faint soft outline */
+.alert::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4) inset;
+    pointer-events: none;
+}
+
+/* badges */
+.badges {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    margin: .25rem 0 .35rem;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+    padding: 0 .6rem;
+    border-radius: 999px;
+    font: 700 .75rem/1 "Poppins", system-ui, sans-serif;
+    border: 1px solid transparent;
+    letter-spacing: .3px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 1px 0 rgba(0, 0, 0, .04);
+}
+
+.badge-18 {
+    color: #fff;
+    background: color-mix(in oklab, var(--coral), black 10%);
+    border-color: color-mix(in oklab, var(--coral), white 40%);
+}
+
+.badge-nsfw {
+    color: #fff;
+    background: color-mix(in oklab, var(--coral), var(--sage) 20%);
+    border-color: color-mix(in oklab, var(--coral), white 35%);
+}
+
+.cw-note {
+    margin: .25rem 0 0;
+    opacity: .9;
+    font-size: .92rem;
+    color: color-mix(in oklab, var(--text), var(--muted) 30%);
+}
+
+/* improve spacing inside the welcome alert */
+.alert.alert-welcome .alert-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    /* adds space between paragraphs, badges, etc */
+}
+
+/* add extra top/bottom margin to badges + note */
+.alert .badges {
+    margin: 0.25rem 0 0.5rem;
+}
+
+.alert .cw-note {
+    margin-top: 0.4rem;
+    line-height: 1.45;
+}
+
+/* optional: make divider lighter + spaced out */
+.alert-divider {
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0.8rem 0;
+    opacity: 0.6;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px dashed color-mix(in oklab, var(--sage), white 40%);
+    margin: 1.25rem 0;
+    opacity: 0.8;
 }

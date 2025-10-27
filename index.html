@@ -52,6 +52,47 @@
 
   <!-- main content -->
   <main id="main" class="container">
+    <!-- welcome banner -->
+    <section class="alert alert-welcome" role="status" aria-live="polite">
+      <div class="alert-icon" aria-hidden="true">✨</div>
+
+      <div class="alert-content">
+        <p class="alert-title">welcome to my personal site! ✨</p>
+
+        <p>
+          this is a personal hobby & digital scrapbook where i share projects, thoughts, and creative experiments.
+          i don't claim ownership of any linked or embedded media. all rights belong to their original creators.
+          if you'd like something removed, please <a href="/pages/guestbook.html">leave a note</a> or
+          <a href="mailto:gzamlo98@gmail.com">email me</a> and i'll take care of it 🫡
+        </p>
+
+        <hr class="alert-divider">
+
+        <p>
+          <strong>notita:</strong> este es un proyecto personal y un “diario digital” donde comparto ideas,
+          proyectos y cosas que me inspiran.
+          no reclamo propiedad sobre el contenido enlazado o incrustado. todos los derechos pertenecen a sus creadores
+          originales.
+          si algo necesita ser retirado, por favor <a href="/pages/guestbook.html">déjame un mensaje</a> o
+          <a href="mailto:gzamlo98@gmail.com">envíame un correo</a> y con gusto lo quitaré 🫡
+        </p>
+
+        <p class="badges">
+          <span class="badge badge-18" title="18+ content">18+</span>
+          <span class="badge badge-nsfw" title="Not Safe For Work">NSFW</span>
+        </p>
+
+        <p class="cw-note">
+          content note: some pages may include 18+ / nsfw material (art, language). viewer discretion advised.
+          <br>
+          <em>nota:</em> algunas páginas pueden incluir contenido para mayores de 18 años / nsfw. se recomienda
+          discreción.
+        </p>
+      </div>
+
+      <button class="alert-close" type="button" aria-label="dismiss" title="dismiss">🌼</button>
+    </section>
+
 
     <!-- home intro (avatar + tagline) -->
     <section class="home-intro card">
@@ -66,17 +107,38 @@
     <!-- site concept / about this site -->
     <section class="card">
       <h2>what is this website?</h2>
+
       <p>
-        this is my little space on the internet, part of the <strong>indie web</strong>.
-        the indie web is about creating personal websites instead of relying only on big social media platforms.
-        think of it like an online scrapbook! a place where i can share my thoughts, keep a media log of anime
-        shows i'm watching or plan to watch, post blogs, and just have fun experimenting with web design!
+        this is my little corner of the internet. part of the <strong>indie web</strong>. the indie web is all about
+        creating
+        personal websites instead of relying only on big social media platforms. think of it like an online scrapbook:
+        a space where i can share my thoughts, keep a media log of anime i'm watching or plan to watch, post blogs,
+        and just have fun experimenting with web design.
       </p>
+
       <p>
-        here you will find a mix of personal projects, things i enjoy, and random bits of my life.
-        feel free to explore and sign my guestbook if you stop by 💌
+        you'll find a mix of personal projects, things i enjoy, and random bits of my life here. feel free to explore,
+        look around, and sign my guestbook if you stop by 💌
+      </p>
+
+      <hr class="divider">
+
+      <h3>¿qué es este sitio web?</h3>
+
+      <p>
+        este es mi pequeño rincón del internet, parte del <strong>indie web</strong>. el indie web trata de crear
+        sitios personales en lugar de depender solo de las grandes plataformas de redes sociales. es como un
+        diario digital o foto álbum en línea: un espacio donde comparto mis pensamientos, llevo un registro de los animes
+        que veo o quiero ver, escribo blogs y experimento con el diseño web por diversión.
+      </p>
+
+      <p>
+        aquí encontrarás una mezcla de proyectos personales, cosas que disfruto y pedacitos de mi vida. si pasas por
+        aquí,
+        siéntete libre de explorar y firmar mi libro de visitas 💌
       </p>
     </section>
+
 
     <!-- indie web video -->
     <section class="card">
@@ -93,7 +155,7 @@
 
       <p class="meta" style="margin-top:.5rem">
         marighoul's video explaining the indie web. what it is, why it matters, and why its so inspiring!
-        check out their site ->
+        check out their site ➡️
         <a href="https://marighoul.com/" target="_blank" rel="noopener">marighoul.com</a>
       </p>
     </section>
@@ -104,6 +166,12 @@
   <footer class="site-footer">
     <p>&copy; Guadalupe Zambrano 2025</p>
   </footer>
+
+  <script>
+    addEventListener('click', (e) => {
+      if (e.target.matches('.alert-close')) e.target.closest('.alert')?.remove();
+    });
+  </script>
 </body>
 
 
