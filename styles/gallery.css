@@ -1,12 +1,10 @@
-/* ===========================
-   Gallery (Tumblr/Pinterest)
-   =========================== */
+/* gallery in tumblr and pinterest style*/
 
 /* grid */
 .tumblr-archive{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 12px; /* uses your soft spacing; override with --space-3 if you have it */
+  gap: 12px; /* soft spacing */
 }
 
 /* each tile = link */
@@ -32,6 +30,17 @@
   height: auto;
 }
 
+/* gif resizing */
+.tumblr-archive video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius, 12px);
+  object-fit: cover; 
+  aspect-ratio: 5/9;
+}
+
+
 /* caption */
 .tumblr-archive figcaption{
   padding: .5rem .65rem;
@@ -53,7 +62,7 @@
 .tumblr-archive .tile.wide figure{ grid-column: span 2; }
 .tumblr-archive .tile.tall figure{ grid-row: span 2; }
 
-/* reduced motion: keep things calm */
+/* reduced motion */
 @media (prefers-reduced-motion: reduce){
   .tumblr-archive figure{ transition: none; }
 }
@@ -63,9 +72,7 @@
   .tumblr-archive{ gap: 10px; }
 }
 
-/* ===========================
-   Footer tweaks 
-   =========================== */
+/* footer cleanup */
 
 .site-footer{
   /* layout.css already sets sizing/card styles; center footer here */
@@ -109,3 +116,5 @@
   width: 100%;
   margin-bottom: 8px;
 }
+
+

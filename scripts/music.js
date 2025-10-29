@@ -52,7 +52,7 @@ pill?.addEventListener("click", () => {
 
 dockClose?.addEventListener("click", stopAndHideDock);
 
-// allow Esc to stop + hide
+// allow esc to stop + hide
 window.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !dock.hidden) stopAndHideDock();
 });

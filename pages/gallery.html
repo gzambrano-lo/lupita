@@ -15,13 +15,14 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <!-- your site styles -->
+    <!-- site styles -->
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/tokens.css">
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/layout.css">
     <link rel="stylesheet" href="../styles/components.css">
     <link rel="stylesheet" href="../styles/gallery.css">
+    <link rel="stylesheet" href="../styles/gallery-player.css">
 </head>
 
 <body>
@@ -46,8 +47,40 @@
     </nav>
 
     <main class="container">
+
+        <section class="alert alert-info" role="status" aria-live="polite">
+            <div class="alert-icon" aria-hidden="true">🎧</div>
+
+            <div class="alert-content">
+                <p class="alert-title">music while you scroll</p>
+                <p>
+                    there's a small player in the bottom-left corner. click <strong>♪ play</strong> to start it,
+                    then keep browsing. the video stays hidden, it's just cozy audio ♡.
+                    you can <strong>next</strong>/<strong>previous</strong> tracks from the dock or use
+                    <kbd>J</kbd>/<kbd>K</kbd>.
+                </p>
+            </div>
+
+            <button class="alert-close" type="button" aria-label="dismiss" title="dismiss">🌼</button>
+        </section>
+
         <section class="tumblr-archive" aria-label="image scrapbook">
 
+            <!--template! copy and paste, fill in to add new pix. 
+            <a class="tile" href="" target="_blank" rel="noopener">
+                <figure>
+                    <img src="" alt="">
+                </figure>
+            </a>-->
+
+            <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+                <figure>
+                    <video autoplay loop muted playsinline>
+                        <source src="../images/doom-scroll/cutie.mp4" type="video/mp4">
+                        sorry! your browser can't play this clip ♡
+                    </video>
+                </figure>
+            </a>
 
             <a class="tile" href="https://x.com/shunyayamashita" target="_blank" rel="noopener">
                 <figure>
@@ -55,13 +88,13 @@
                 </figure>
             </a>
 
-            <a class="tile" href="" target="_blank" rel="noopener">
+            <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
                 <figure>
                     <img src="../images/gallery/101720252.jpg" alt="soft pastel street view">
                 </figure>
             </a>
 
-            <a class="tile" href="" target="_blank" rel="noopener">
+            <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
                 <figure>
                     <img src="../images/gallery/101720253.jpeg">
                 </figure>
@@ -85,23 +118,71 @@
                 </figure>
             </a>
 
-            <a class="tile" target="_blank" rel="noopener">
+            <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
                 <figure>
-                <img src="../images/gallery/101720257.jpg">
+                    <img src="../images/gallery/101720257.jpg">
                 </figure>
             </a>
 
-            
-            <a class="tile" target="_blank" rel="noopener">
+
+            <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
                 <figure>
-                <img src="../images/gallery/101720258.jpg">
+                    <img src="../images/gallery/101720258.jpg">
                 </figure>
             </a>
-            
+
 
         </section>
 
+        <!-- floating pill -->
+        <button class="music-pill" id="musicPill" aria-haspopup="dialog" aria-controls="musicModal"
+            aria-label="play scrapbook tune">♪ play</button>
 
+        <!-- modal (optional; can stay hidden or removed) -->
+        <div class="music-modal" id="musicModal" role="dialog" aria-modal="true" aria-labelledby="musicTitle" hidden>
+            <div class="music-modal__backdrop" id="musicBackdrop"></div>
+            <div class="music-modal__card" role="document">
+                <header class="music-modal__header">
+                    <h3 id="musicTitle">scrapbook tune</h3>
+                    <button class="music-close" id="musicClose" aria-label="close">✕</button>
+                </header>
+
+                <div class="music-modal__body" id="musicBody">
+                    <!-- cover shown first; clicking swaps to iframe -->
+                    <button class="music-cover" id="musicCover" aria-label="play now">
+                        <span class="music-note">♪</span>
+                        <span>click to play</span>
+                    </button>
+
+                    <!-- optional: fallback audio if you don’t want YouTube -->
+                    <!-- <audio id="fallbackAudio" src="../audio/yourtrack.mp3" preload="none" controls class="is-hidden"></audio> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- tiny floating dock (shows after first play) -->
+        <div id="musicDock" class="music-dock" hidden>
+            <div class="music-dock__card">
+                <!-- stop / close -->
+                <button id="dockClose" class="dock-close" aria-label="stop music">✿</button>
+
+                <!-- playback controls -->
+                <div class="dock-controls" role="group" aria-label="player controls">
+                    <button id="dockPrev" class="dock-btn" aria-label="previous track">⟵</button>
+                    <button id="dockNext" class="dock-btn" aria-label="next track">⟶</button>
+                </div>
+
+                <!-- label / status -->
+                <span id="dockLabel" class="dock-label" aria-live="polite">♪ now playing</span>
+
+                <!-- hidden iframe audio/video -->
+                <div id="dockBody"></div>
+            </div>
+        </div>
+
+        <!-- player logic -->
+
+        <script src="../scripts/gallery-player.js" defer></script>
 
 
     </main>
@@ -121,7 +202,7 @@
                 click on any card to visit the artist's source when available.
                 many images are discovered through pinterest, and while i make every effort to find and credit
                 original artists, it's not always possible to verify every source. if i got anything wrong, please
-                do not hesitate to reach out. 
+                do not hesitate to reach out.
             </p>
         </div>
     </footer>
