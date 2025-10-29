@@ -1,211 +1,187 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>gallery — lupe zambrano</title>
-    <meta name="description" content="a scrolling scrapbook of images i love—like old tumblr.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>gallery — lupe zambrano</title>
+  <meta name="description" content="a scrolling scrapbook of images i love—like old tumblr.">
 
-    <!-- fonts / icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+  <!-- fonts / icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <!-- site styles -->
-    <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/tokens.css">
-    <link rel="stylesheet" href="../styles/base.css">
-    <link rel="stylesheet" href="../styles/layout.css">
-    <link rel="stylesheet" href="../styles/components.css">
-    <link rel="stylesheet" href="../styles/gallery.css">
-    <link rel="stylesheet" href="../styles/gallery-player.css">
+  <!-- site styles -->
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/gallery.css">
+
+  <!-- player styles (audio-only dock) -->
+  <link rel="stylesheet" href="../styles/gallery-player.css">
 </head>
 
 <body>
-    <header class="site-header">
-        <h1>gallery</h1>
-    </header>
+  <header class="site-header">
+    <h1>gallery</h1>
+  </header>
 
-    <nav id="nav_menu" aria-label="Main">
-        <ul>
-            <li><a href="../index.html">home</a></li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="media-log.html">media log</a></li>
-            <li><a href="blog.html">blog</a></li>
-            <li><a href="links.html">links</a></li>
-            <li><a href="guestbook.html">guestbook</a></li>
-            <li><a href="garden-log.html">garden log</a></li>
-            <li><a href="music.html">music</a></li>
-            <li class="current"><a href="gallery.html">gallery</a></li>
-            <li><a href="bleach-shrine.html">bleach shrine</a></li>
-            <li><a href="project-senpai.html">project senpai</a></li>
-        </ul>
-    </nav>
+  <nav id="nav_menu" aria-label="Main">
+    <ul>
+      <li><a href="../index.html">home</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="media-log.html">media log</a></li>
+      <li><a href="blog.html">blog</a></li>
+      <li><a href="links.html">links</a></li>
+      <li><a href="guestbook.html">guestbook</a></li>
+      <li><a href="garden-log.html">garden log</a></li>
+      <li><a href="music.html">music</a></li>
+      <li class="current"><a href="gallery.html" aria-current="page">gallery</a></li>
+      <li><a href="bleach-shrine.html">bleach shrine</a></li>
+      <li><a href="project-senpai.html">project senpai</a></li>
+    </ul>
+  </nav>
 
-    <main class="container">
+  <main id="main" class="container">
+    <!-- how-to banner -->
+    <section class="alert alert-info" role="status" aria-live="polite">
+      <div class="alert-icon" aria-hidden="true">🎧</div>
+      <div class="alert-content">
+        <p class="alert-title">music while you scroll</p>
+        <p>
+          there’s a small player in the bottom-left corner. click <strong>♪ play</strong> to start it,
+          then keep browsing. the video stays hidden—just cozy audio ♡.
+          you can <strong>next</strong>/<strong>previous</strong> tracks from the dock or use
+          <kbd>J</kbd>/<kbd>K</kbd>. press <kbd>M</kbd> to mute/unmute.
+        </p>
+      </div>
+      <button class="alert-close" type="button" aria-label="dismiss" title="dismiss">🌼</button>
+    </section>
 
-        <section class="alert alert-info" role="status" aria-live="polite">
-            <div class="alert-icon" aria-hidden="true">🎧</div>
+    <!-- gallery grid -->
+    <section class="tumblr-archive" aria-label="image scrapbook">
 
-            <div class="alert-content">
-                <p class="alert-title">music while you scroll</p>
-                <p>
-                    there's a small player in the bottom-left corner. click <strong>♪ play</strong> to start it,
-                    then keep browsing. the video stays hidden, it's just cozy audio ♡.
-                    you can <strong>next</strong>/<strong>previous</strong> tracks from the dock or use
-                    <kbd>J</kbd>/<kbd>K</kbd>.
-                </p>
-            </div>
+      <!-- mp4 tile -->
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <video autoplay loop muted playsinline>
+            <source src="../images/doom-scroll/cutie.mp4" type="video/mp4">
+            sorry! your browser can't play this clip ♡
+          </video>
+        </figure>
+      </a>
 
-            <button class="alert-close" type="button" aria-label="dismiss" title="dismiss">🌼</button>
-        </section>
+      <a class="tile" href="https://x.com/shunyayamashita" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/101720251.jpeg" alt="cozy rooftop at sunset">
+        </figure>
+      </a>
 
-        <section class="tumblr-archive" aria-label="image scrapbook">
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/101720252.jpg" alt="soft pastel street view">
+        </figure>
+      </a>
 
-            <!--template! copy and paste, fill in to add new pix. 
-            <a class="tile" href="" target="_blank" rel="noopener">
-                <figure>
-                    <img src="" alt="">
-                </figure>
-            </a>-->
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/101720253.jpeg" alt="">
+        </figure>
+      </a>
 
-            <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
-                <figure>
-                    <video autoplay loop muted playsinline>
-                        <source src="../images/doom-scroll/cutie.mp4" type="video/mp4">
-                        sorry! your browser can't play this clip ♡
-                    </video>
-                </figure>
-            </a>
+      <a class="tile" href="https://www.pinterest.com/hyutt221/_created/" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/101720254.jpg" alt="">
+        </figure>
+      </a>
 
-            <a class="tile" href="https://x.com/shunyayamashita" target="_blank" rel="noopener">
-                <figure>
-                    <img src="../images/gallery/101720251.jpeg" alt="cozy rooftop at sunset">
-                </figure>
-            </a>
+      <a class="tile" href="https://www.pinterest.com/hyutt221/_created/" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/101720255.jpg" alt="">
+        </figure>
+      </a>
 
-            <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
-                <figure>
-                    <img src="../images/gallery/101720252.jpg" alt="soft pastel street view">
-                </figure>
-            </a>
+      <a class="tile" href="https://x.com/ystty0" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/101720256.jpg" alt="">
+        </figure>
+      </a>
 
-            <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
-                <figure>
-                    <img src="../images/gallery/101720253.jpeg">
-                </figure>
-            </a>
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/101720257.jpg" alt="">
+        </figure>
+      </a>
 
-            <a class="tile" href="https://www.pinterest.com/hyutt221/_created/" target="_blank" rel="noopener">
-                <figure>
-                    <img src="../images/gallery/101720254.jpg">
-                </figure>
-            </a>
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/101720258.jpg" alt="">
+        </figure>
+      </a>
 
-            <a class="tile" href="https://www.pinterest.com/hyutt221/_created/" target="_blank" rel="noopener">
-                <figure>
-                    <img src="../images/gallery/101720255.jpg">
-                </figure>
-            </a>
+    </section>
 
-            <a class="tile" href="https://x.com/ystty0" target="_blank" rel="noopener">
-                <figure>
-                    <img src="../images/gallery/101720256.jpg">
-                </figure>
-            </a>
+    <!-- floating pill -->
+    <button class="music-pill" id="musicPill" aria-haspopup="dialog" aria-controls="musicModal"
+      aria-label="play scrapbook tune">♪ play</button>
 
-            <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
-                <figure>
-                    <img src="../images/gallery/101720257.jpg">
-                </figure>
-            </a>
+    <!-- modal (kept for reuse; not used on this page) -->
+    <div class="music-modal" id="musicModal" role="dialog" aria-modal="true" aria-labelledby="musicTitle" hidden>
+      <div class="music-modal__backdrop" id="musicBackdrop"></div>
+      <div class="music-modal__card" role="document">
+        <header class="music-modal__header">
+          <h3 id="musicTitle">scrapbook tune</h3>
+          <button class="music-close" id="musicClose" aria-label="close">✕</button>
+        </header>
+        <div class="music-modal__body" id="musicBody">
+          <button class="music-cover" id="musicCover" aria-label="play now">
+            <span class="music-note">♪</span><span>click to play</span>
+          </button>
+          <!-- <audio id="fallbackAudio" src="../audio/yourtrack.mp3" preload="none" controls class="is-hidden"></audio> -->
+        </div>
+      </div>
+    </div>
 
+    <!-- corner dock player -->
+    <div id="musicDock" class="music-dock" hidden>
+      <div class="music-dock__card">
+        <button id="dockClose" class="dock-close" aria-label="stop music">✿</button>
 
-            <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
-                <figure>
-                    <img src="../images/gallery/101720258.jpg">
-                </figure>
-            </a>
-
-
-        </section>
-
-        <!-- floating pill -->
-        <button class="music-pill" id="musicPill" aria-haspopup="dialog" aria-controls="musicModal"
-            aria-label="play scrapbook tune">♪ play</button>
-
-        <!-- modal (optional; can stay hidden or removed) -->
-        <div class="music-modal" id="musicModal" role="dialog" aria-modal="true" aria-labelledby="musicTitle" hidden>
-            <div class="music-modal__backdrop" id="musicBackdrop"></div>
-            <div class="music-modal__card" role="document">
-                <header class="music-modal__header">
-                    <h3 id="musicTitle">scrapbook tune</h3>
-                    <button class="music-close" id="musicClose" aria-label="close">✕</button>
-                </header>
-
-                <div class="music-modal__body" id="musicBody">
-                    <!-- cover shown first; clicking swaps to iframe -->
-                    <button class="music-cover" id="musicCover" aria-label="play now">
-                        <span class="music-note">♪</span>
-                        <span>click to play</span>
-                    </button>
-
-                    <!-- optional: fallback audio if you don’t want YouTube -->
-                    <!-- <audio id="fallbackAudio" src="../audio/yourtrack.mp3" preload="none" controls class="is-hidden"></audio> -->
-                </div>
-            </div>
+        <div class="dock-controls" role="group" aria-label="player controls">
+          <button id="dockPrev" class="dock-btn" aria-label="previous track">⟵</button>
+          <button id="dockNext" class="dock-btn" aria-label="next track">⟶</button>
+          <button id="dockMute" class="dock-btn" aria-label="unmute" title="unmute (m)">🔇</button>
         </div>
 
-        <!-- tiny floating dock (shows after first play) -->
-        <div id="musicDock" class="music-dock" hidden>
-            <div class="music-dock__card">
-                <!-- stop / close -->
-                <button id="dockClose" class="dock-close" aria-label="stop music">✿</button>
+        <span id="dockLabel" class="dock-label" aria-live="polite">♪ now playing</span>
 
-                <!-- playback controls -->
-                <div class="dock-controls" role="group" aria-label="player controls">
-                    <button id="dockPrev" class="dock-btn" aria-label="previous track">⟵</button>
-                    <button id="dockNext" class="dock-btn" aria-label="next track">⟶</button>
-                </div>
+        <!-- hidden iframe lives here (audio-only) -->
+        <div id="dockBody"></div>
+      </div>
+    </div>
 
-                <!-- label / status -->
-                <span id="dockLabel" class="dock-label" aria-live="polite">♪ now playing</span>
+    <!-- player logic -->
+    <script src="../scripts/gallery-player.js" defer></script>
+  </main>
 
-                <!-- hidden iframe audio/video -->
-                <div id="dockBody"></div>
-            </div>
-        </div>
-
-        <!-- player logic -->
-
-        <script src="../scripts/gallery-player.js" defer></script>
-
-
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-wrap">
-            <p class="footer-credit">© 2025 Guadalupe Zambrano ~ site designed & built by me! ♡</p>
-            <p class="footer-note">
-                this is a personal scrapbook. i don't claim ownership of images.
-                if any work here belongs to you and you'd like <strong>credit added</strong> or the image
-                <strong>removed</strong>,
-                please <a href="../pages/guestbook.html">contact me</a>.
-                i'm also happy to <strong>boost your art</strong> with links to your site or socials. ♥
-            </p>
-
-            <p class="footer-note">
-                click on any card to visit the artist's source when available.
-                many images are discovered through pinterest, and while i make every effort to find and credit
-                original artists, it's not always possible to verify every source. if i got anything wrong, please
-                do not hesitate to reach out.
-            </p>
-        </div>
-    </footer>
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <p class="footer-credit">© 2025 Guadalupe Zambrano ~ site designed & built by me! ♡</p>
+      <p class="footer-note">
+        this is a personal scrapbook. i don't claim ownership of images.
+        if any work here belongs to you and you'd like <strong>credit added</strong> or the image
+        <strong>removed</strong>, please <a href="../pages/guestbook.html">contact me</a>.
+        i'm also happy to <strong>boost your art</strong> with links to your site or socials. ♥
+      </p>
+      <p class="footer-note">
+        click on any card to visit the artist's source when available. many images are discovered through pinterest,
+        and while i make every effort to find and credit original artists, it's not always possible to verify every
+        source. if i got anything wrong, please do not hesitate to reach out.
+      </p>
+    </div>
+  </footer>
 </body>
-
 </html>
