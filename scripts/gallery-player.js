@@ -3,8 +3,8 @@
 (() => {
   // ===== your playlist (video IDs only; order matters) =====
   const YT_PLAYLIST = [
-    'VgckulYQmh4', // 6
-    'ZP-EMaoTB-k', // 1
+    'VgckulYQmh4', // 1
+    'ZP-EMaoTB-k', // 2
     'rxaKVeiBiOE', // 3
     'O1KGn5aDnck', // 4
     'WaVYr1APEyo', // 5
