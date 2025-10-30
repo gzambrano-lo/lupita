@@ -54,7 +54,7 @@
         <p class="alert-title">music while you scroll</p>
         <p>
           there's a small player in the bottom-left corner. click <strong>♪ play</strong> to start it,
-          then keep browsing. the video stays hidden—just cozy audio ♡.
+          then keep browsing. the video stays hidden. just cozy audio ♡.
           you can <strong>next</strong>/<strong>previous</strong> tracks from the dock or use
           <kbd>J</kbd>/<kbd>K</kbd>. press <kbd>M</kbd> to mute/unmute.
         </p>
@@ -66,6 +66,19 @@
 
     
     <section class="tumblr-archive" aria-label="image scrapbook">
+
+       <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/103025.jpg" alt="whoisluvme">
+        </figure>
+      </a>
+
+
+      <a class="tile" href="https://www.instagram.com/whoisluvme/" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/1030251.jpg" alt="whoisluvme">
+        </figure>
+      </a>
 
       <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
         <figure>
@@ -198,5 +211,26 @@
       </p>
     </div>
   </footer>
+
+    <!-- banner js-->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const banner = document.querySelector('.alert');
+      const closeBtn = document.querySelector('.alert-close');
+
+      // keep it dismissed across visits
+      if (localStorage.getItem('galleryAlertDismissed') === '1' && banner) {
+        banner.remove(); // or: banner.setAttribute('hidden', '');
+      }
+
+      if (banner && closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          banner.remove(); // or: banner.setAttribute('hidden', '');
+          localStorage.setItem('galleryAlertDismissed', '1');
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>

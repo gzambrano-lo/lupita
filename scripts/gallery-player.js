@@ -5,7 +5,6 @@
   const YT_PLAYLIST = [
     'VgckulYQmh4', // 6
     'ZP-EMaoTB-k', // 1
-    'Ol0-9Ob-QNk', // 2
     'rxaKVeiBiOE', // 3
     'O1KGn5aDnck', // 4
     'WaVYr1APEyo', // 5
