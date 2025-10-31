@@ -3,10 +3,10 @@
    ========================================= */
 
 /* for coders!!! -> fallback tokens (use your site tokens if you have any) */
-:root{
+:root {
   --gp-z: 1100;
   --gp-radius: var(--radius, 12px);
-  --gp-shadow: var(--shadow, 0 2px 12px rgba(0,0,0,.06));
+  --gp-shadow: var(--shadow, 0 2px 12px rgba(0, 0, 0, .06));
   --gp-text: var(--text, #333);
   --gp-muted: var(--muted, #555);
   --gp-card: var(--card, #fff);
@@ -21,7 +21,7 @@
 /* -------------------------------------
    floating play pill
 -------------------------------------- */
-.music-pill{
+.music-pill {
   position: fixed;
   right: 1.2rem;
   bottom: 1.2rem;
@@ -38,14 +38,30 @@
   cursor: pointer;
   transition: transform .18s ease, bg .18s ease, box-shadow .18s ease;
 }
-.music-pill:hover{ background: var(--gp-cream); transform: translateY(-1px); }
-.music-pill.playing{ animation: gp-pulse 2s ease-in-out infinite; }
-@keyframes gp-pulse{
-  0%,100%{ box-shadow: 0 0 0 rgba(242,132,130,0); }
-  50%    { box-shadow: 0 0 12px rgba(242,132,130,.45); }
+
+.music-pill:hover {
+  background: var(--gp-cream);
+  transform: translateY(-1px);
 }
+
+.music-pill.playing {
+  animation: gp-pulse 2s ease-in-out infinite;
+}
+
+@keyframes gp-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(242, 132, 130, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 12px rgba(242, 132, 130, .45);
+  }
+}
+
 /* optional text that appears when playing */
-.music-pill.playing::after{
+.music-pill.playing::after {
   content: " ♪ now playing";
   margin-left: .35rem;
   font-weight: 700;
@@ -55,66 +71,131 @@
 /* -------------------------------------
    modal (not used on gallery; kept for reuse)
 -------------------------------------- */
-.music-modal[hidden]{ display:none !important; }
-.music-modal{
-  position: fixed; inset: 0; z-index: calc(var(--gp-z) + 2);
+.music-modal[hidden] {
+  display: none !important;
 }
-.music-modal__backdrop{
-  position: absolute; inset: 0;
-  background: rgba(0,0,0,.28); backdrop-filter: blur(2px);
+
+.music-modal {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--gp-z) + 2);
 }
-.music-modal__card{
-  position: absolute; left: 50%; top: 18%; transform: translateX(-50%);
+
+.music-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .28);
+  backdrop-filter: blur(2px);
+}
+
+.music-modal__card {
+  position: absolute;
+  left: 50%;
+  top: 18%;
+  transform: translateX(-50%);
   width: min(320px, 92vw);
   background: var(--gp-card);
   border: 1px solid var(--gp-border);
   border-radius: var(--gp-radius);
-  box-shadow: 0 12px 48px rgba(0,0,0,.18);
-  overflow: hidden; animation: gp-fadeUp .28s ease;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, .18);
+  overflow: hidden;
+  animation: gp-fadeUp .28s ease;
 }
-@keyframes gp-fadeUp{
-  from{ opacity:0; transform: translate(-50%, -8px); }
-  to  { opacity:1; transform: translate(-50%, 0); }
+
+@keyframes gp-fadeUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 }
-.music-modal__header{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:.7rem .9rem; border-bottom:1px solid var(--gp-border);
+
+.music-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .7rem .9rem;
+  border-bottom: 1px solid var(--gp-border);
 }
-.music-modal__header h3{ margin:0; font-size:1rem; color: var(--gp-sage); }
-.music-close{ background:transparent; border:0; color:var(--gp-muted); cursor:pointer; }
-.music-close:hover{ color: var(--gp-text); }
-.music-modal__body{ padding:.9rem; }
+
+.music-modal__header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--gp-sage);
+}
+
+.music-close {
+  background: transparent;
+  border: 0;
+  color: var(--gp-muted);
+  cursor: pointer;
+}
+
+.music-close:hover {
+  color: var(--gp-text);
+}
+
+.music-modal__body {
+  padding: .9rem;
+}
 
 /* cover (shown before iframe if you ever use modal) */
-.music-cover{
-  width:100%; aspect-ratio:16/9; display:grid; place-items:center; gap:.28rem;
+.music-cover {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: grid;
+  place-items: center;
+  gap: .28rem;
   border-radius: var(--gp-radius);
   background: linear-gradient(135deg, var(--gp-cream), var(--gp-soft));
-  color: var(--gp-text); border:1px solid var(--gp-border); box-shadow: var(--gp-shadow);
-  font-weight:700; cursor:pointer;
+  color: var(--gp-text);
+  border: 1px solid var(--gp-border);
+  box-shadow: var(--gp-shadow);
+  font-weight: 700;
+  cursor: pointer;
 }
-.music-note{ font-size:1.5rem; color: var(--gp-coral); }
+
+.music-note {
+  font-size: 1.5rem;
+  color: var(--gp-coral);
+}
 
 /* shared player sizing (modal use) */
-.music-iframe, .music-video{
-  display:block; width:100%; aspect-ratio:16/9; border:0; border-radius: var(--gp-radius);
+.music-iframe,
+.music-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: 0;
+  border-radius: var(--gp-radius);
 }
 
 /* -------------------------------------
    mini dock (gallery aesthetic)
 -------------------------------------- */
-.music-dock[hidden]{ display:none !important; }
-.music-dock{
+.music-dock[hidden] {
+  display: none !important;
+}
+
+.music-dock {
   position: fixed;
   left: 1.25rem;
   bottom: 1.25rem;
   z-index: calc(var(--gp-z) + 1);
 }
-.music-dock__card{
+
+.music-dock__card {
   position: relative;
-  display:flex; align-items:center; gap:.55rem;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
   padding: .5rem .9rem;
-  min-width: 200px;                /* stays visible even when iframe is hidden */
+  min-width: 200px;
+  /* stays visible even when iframe is hidden */
   background: color-mix(in oklab, var(--gp-soft) 72%, white);
   border: 1px solid var(--gp-border);
   border-radius: 999px;
@@ -123,17 +204,29 @@
 }
 
 /* close flower */
-.dock-close{
-  width: 30px; height: 30px; display:grid; place-items:center;
-  border-radius: 50%; border: 1px solid var(--gp-border);
-  background: var(--gp-cream); color: var(--gp-sage);
-  cursor: pointer; font-weight:700;
+.dock-close {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--gp-border);
+  background: var(--gp-cream);
+  color: var(--gp-sage);
+  cursor: pointer;
+  font-weight: 700;
   transition: bg.2s ease, transform .2s ease, color .2s ease;
 }
-.dock-close:hover{ transform: scale(1.06); background: var(--gp-pink); color:#fff; }
+
+.dock-close:hover {
+  transform: scale(1.06);
+  background: var(--gp-pink);
+  color: #fff;
+}
 
 /* hide the youtube rectangle — keep audio only */
-#dockBody iframe, #dockBody video{
+#dockBody iframe,
+#dockBody video {
   width: 0 !important;
   height: 0 !important;
   opacity: 0 !important;
@@ -142,45 +235,87 @@
 }
 
 /* tiny equalizer so there’s a visible “playing” cue */
-.music-dock__card::after{
+.music-dock__card::after {
   content: '';
   display: inline-block;
-  width: 28px; height: 10px; margin-left: .25rem;
+  width: 28px;
+  height: 10px;
+  margin-left: .25rem;
   background:
-    linear-gradient(var(--gp-sage),var(--gp-sage)) 0 100% / 3px 40% no-repeat,
-    linear-gradient(var(--gp-sage),var(--gp-sage)) 8px 100% / 3px 60% no-repeat,
-    linear-gradient(var(--gp-sage),var(--gp-sage)) 16px 100% / 3px 35% no-repeat,
-    linear-gradient(var(--gp-sage),var(--gp-sage)) 24px 100% / 3px 50% no-repeat;
+    linear-gradient(var(--gp-sage), var(--gp-sage)) 0 100% / 3px 40% no-repeat,
+    linear-gradient(var(--gp-sage), var(--gp-sage)) 8px 100% / 3px 60% no-repeat,
+    linear-gradient(var(--gp-sage), var(--gp-sage)) 16px 100% / 3px 35% no-repeat,
+    linear-gradient(var(--gp-sage), var(--gp-sage)) 24px 100% / 3px 50% no-repeat;
   animation: gp-bars 1s ease-in-out infinite;
 }
-@keyframes gp-bars{
-  0%,100%{ background-size: 3px 40%, 3px 60%, 3px 35%, 3px 50%; }
-  50%     { background-size: 3px 65%, 3px 30%, 3px 55%, 3px 25%; }
+
+@keyframes gp-bars {
+
+  0%,
+  100% {
+    background-size: 3px 40%, 3px 60%, 3px 35%, 3px 50%;
+  }
+
+  50% {
+    background-size: 3px 65%, 3px 30%, 3px 55%, 3px 25%;
+  }
 }
 
 /* -------------------------------------
    utilities & accessibility
 -------------------------------------- */
-.is-hidden{ display:none !important; }
-:focus-visible{ outline: 3px solid var(--gp-coral); outline-offset: 3px; }
+.is-hidden {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: 3px solid var(--gp-coral);
+  outline-offset: 3px;
+}
 
 /* -------------------------------------
    responsive & reduced motion
 -------------------------------------- */
-@media (max-width: 520px){
-  .music-pill{ right: .9rem; bottom: .9rem; }
-  .music-dock{ left: .75rem; bottom: .75rem; }
-}
-@media (prefers-reduced-motion: reduce){
-  *{ animation: none !important; transition: none !important; }
+@media (max-width: 520px) {
+  .music-pill {
+    right: .9rem;
+    bottom: .9rem;
+  }
+
+  .music-dock {
+    left: .75rem;
+    bottom: .75rem;
+  }
 }
 
-.dock-controls { display:flex; gap:.35rem; margin-left:.1rem; }
-.dock-btn{
-  width:28px; height:28px; display:grid; place-items:center;
-  border-radius:999px; border:1px solid var(--gp-border);
-  background: var(--gp-card); color: var(--gp-text);
-  font-weight:700; cursor:pointer;
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.dock-controls {
+  display: flex;
+  gap: .35rem;
+  margin-left: .1rem;
+}
+
+.dock-btn {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--gp-border);
+  background: var(--gp-card);
+  color: var(--gp-text);
+  font-weight: 700;
+  cursor: pointer;
   transition: bg .2s ease, transform .15s ease;
 }
-.dock-btn:hover{ background: var(--gp-cream); transform: translateY(-1px); }
+
+.dock-btn:hover {
+  background: var(--gp-cream);
+  transform: translateY(-1px);
+}

@@ -9,8 +9,7 @@
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
     rel="stylesheet">
 
   <!-- icons -->
@@ -22,6 +21,7 @@
   <link rel="stylesheet" href="../styles/base.css" />
   <link rel="stylesheet" href="../styles/layout.css" />
   <link rel="stylesheet" href="../styles/components.css" />
+  <link rel="stylesheet" href="../styles/about.css" />
 </head>
 
 <body>
@@ -65,31 +65,57 @@
           <summary>español</summary>
           <p>
             hago sitios pequeños, juego con colores y guardo ideas a medio terminar como si fueran postales.
-            me gusta construir rincones suaves del internet: espacios tranquilos y un poco nostálgicos, más humanos que perfectos.
+            me gusta construir rincones suaves del internet: espacios tranquilos y un poco nostálgicos, más humanos que
+            perfectos.
           </p>
 
           <p>
-            casi todo lo que hago aquí es experimentar y dejar registro. una mezcla de cosas que aprendo, notas, y cosas que me hacen feliz.
-            trato esta pagina web como un cuaderno digital. un lugar para aprender, probar y soltar lo que llevo en la cabeza.
+            casi todo lo que hago aquí es experimentar y dejar registro. una mezcla de cosas que aprendo, notas, y cosas
+            que me hacen feliz.
+            trato esta pagina web como un cuaderno digital. un lugar para aprender, probar y soltar lo que llevo en la
+            cabeza.
           </p>
         </details>
       </article>
 
-      <aside class="card music-card">
-        <h4>currently looping <i class="fa-solid fa-music" aria-hidden="true"></i></h4>
-        <img class="music-thumb" src="../images/music.png" alt="playlist thumbnail" />
-        <iframe src="https://open.spotify.com/embed/playlist/7GwWCqZL4QzLVSJfrqAo7n?utm_source=generator&theme=0"
-          width="100%" height="152" frameborder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <aside class="card listening-card" aria-labelledby="listening-title">
+        <h4 id="listening-title">listening now <i class="fa-solid fa-music" aria-hidden="true"></i></h4>
+
+        <ul class="tracklist">
+          <a href="https://www.youtube.com/watch?v=cU6ZGcn3ndI" blank="noopener">
+            <li class="track">
+              <img src="../images/gallery/todoeltiempo.jpg" alt="Todo el Verano cover" class="track-cover">
+              <div class="track-info">
+                <p class="track-title">te pienso todo el tiempo</p>
+                <p class="track-artist">todo el verano, la femme d'argent</p>
+              </div>
+            </li>
+          </a>
+
+          <!-- tempalte for adding more
+          <li class="track">
+            <img src="imagepath" alt="cover ur ass with accsblty" class="track-cover">
+            <div class="track-info">
+              <p class="track-title">song name</p>
+              <p class="track-artist">author</p>
+            </div>
+          </li>-->
+        </ul>
+
+        <p class="meta" style="margin-top:.5rem">
+          a few songs looping lately 🎧
+        </p>
       </aside>
+
     </section>
 
     <section class="about-extra">
       <article class="card">
         <h2>what i'm learning</h2>
         <p>
-          i'm teaching myself front-end development: html, css, and accessibility  and slowly working through
-          javascript and python basics. i like understanding how things work under the hood, even if i break them a few times first.
+          i'm teaching myself front-end development: html, css, and accessibility and slowly working through
+          javascript and python basics. i like understanding how things work under the hood, even if i break them a few
+          times first.
         </p>
 
         <p>

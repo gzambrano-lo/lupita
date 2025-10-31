@@ -1,0 +1,38 @@
+/* blinkies grid, blinkies styling */
+.blinkies-card .meta {
+    margin-top: .25rem;
+    color: var(--muted);
+}
+
+.blinkies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+    gap: .5rem;
+    align-items: start;
+}
+
+.blinky {
+    display: inline-flex;
+    width: 88px;
+    height: 31px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    transition: transform .08s ease;
+}
+
+.blinky:hover {
+    transform: translateY(-1px);
+}
+
+
+/* accessibility: respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .blinky img {
+        animation: none !important;
+    }
+}

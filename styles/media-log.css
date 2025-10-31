@@ -8,17 +8,21 @@
 
 /* make each card-link act like a real card container */
 .grid-gallery .card-link {
-  display: block;            /* important: anchors are inline by default */
-  height: 100%;              /* so the link fills the grid track */
+  display: block;
+  /* important: anchors are inline by default */
+  height: 100%;
+  /* so the link fills the grid track */
   text-decoration: none;
   color: inherit;
 }
 
 /* card visuals */
 .watch-item {
-  display: flex;             /* equal height internals */
+  display: flex;
+  /* equal height internals */
   flex-direction: column;
-  height: 100%;              /* figure fills the link */
+  height: 100%;
+  /* figure fills the link */
   background: rgba(255, 255, 255, .7);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -35,9 +39,10 @@
 }
 
 /* consistent poster sizing (prevents uneven heights) */
-.watch-item > img {
+.watch-item>img {
   width: 100%;
-  aspect-ratio: 3 / 4;       /* adjust art (2/3 or 3/4) */
+  aspect-ratio: 3 / 4;
+  /* adjust art (2/3 or 3/4) */
   object-fit: cover;
   display: block;
 }
@@ -50,34 +55,33 @@
   display: flex;
   flex-direction: column;
   gap: .35rem;
-  flex: 1;                   /* lets caption stretch to fill height */
+  flex: 1;
 }
 
 
 /* tables (media log extra credit) */
 .watch-table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .watch-table th,
 .watch-table td {
-    padding: .6rem .75rem;
-    border: 1px solid var(--border);
-    text-align: left;
+  padding: .6rem .75rem;
+  border: 1px solid var(--border);
+  text-align: left;
 }
 
 .watch-table thead th {
-    background: var(--soft);
-    color: #26322f;
-    font-weight: 700;
+  background: var(--soft);
+  color: #26322f;
+  font-weight: 700;
 }
 
 .watch-table tr:nth-child(even) td {
-    background: rgba(255, 255, 255, .6);
+  background: rgba(255, 255, 255, .6);
 }
 
 .watch-table tr:hover td {
-    background: rgba(245, 202, 195, .25);
+  background: rgba(245, 202, 195, .25);
 }
-

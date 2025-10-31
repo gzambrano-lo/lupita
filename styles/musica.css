@@ -230,7 +230,7 @@
 }
 
 
-.note--soft{
+.note--soft {
   background: color-mix(in srgb, var(--soft) 28%, white);
   border: 1px solid var(--border);
   border-radius: calc(var(--radius) - 2px);
@@ -243,18 +243,37 @@ details.lyrics {
   border: 1px dashed color-mix(in oklab, var(--sage), white 40%);
   border-radius: var(--radius);
   padding: .6rem .8rem;
-  background: rgba(255,255,255,.75);
+  background: rgba(255, 255, 255, .75);
   margin-top: .6rem;
 }
+
 .lyric-summary {
   cursor: pointer;
   font-weight: 700;
   color: var(--sage);
   list-style: none;
 }
-details.lyrics > summary::-webkit-details-marker { display: none; }
-details.lyrics[open] { box-shadow: var(--shadow); }
-.lyric-body { margin-top: .5rem; color: var(--muted); }
-.lyric-note { font-size: .9rem; opacity: .9; }
 
-.lyric-body { white-space: pre-line; }  /* keeps \n as real line breaks */
+details.lyrics>summary::-webkit-details-marker {
+  display: none;
+}
+
+details.lyrics[open] {
+  box-shadow: var(--shadow);
+}
+
+.lyric-body {
+  margin-top: .5rem;
+  color: var(--muted);
+}
+
+.lyric-note {
+  font-size: .9rem;
+  opacity: .9;
+}
+
+.lyric-body {
+  white-space: pre-line;
+}
+
+/* keeps \n as real line breaks */
