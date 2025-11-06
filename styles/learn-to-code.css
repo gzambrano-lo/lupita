@@ -1,0 +1,65 @@
+/* styling just for the “learn to code” page — where i explain, break things, and show how it all works */
+
+/* headings + code blocks */
+.post h2 {
+  font-size: 1.3rem;
+  border-bottom: 2px solid var(--sage);
+  padding-bottom: .25rem;
+  margin-top: 1.5rem;
+}
+.post h3 {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-top: 1.25rem;
+}
+.post pre {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .75rem 1rem;
+  overflow-x: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .95rem;
+  line-height: 1.4;
+}
+
+/* cute emoji lists */
+.fancy-list { list-style: none; padding-left: 0; }
+.fancy-list li { position: relative; padding-left: 1.6rem; line-height: 1.6; }
+.fancy-list li::before {
+  content: "🍄";
+  position: absolute; left: 0; top: .05rem;
+  color: var(--coral);
+}
+
+/* small notes + explanations */
+.explain { margin: 1rem 0 1rem 1.25rem; list-style-type: disc; }
+.explain li { margin-bottom: .35rem; }
+.tip {
+  margin: 1rem 0;
+  padding: .6rem .8rem;
+  background: #fff;
+  border: 1px dashed var(--sage);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* snippet sections (the “copy this” code bits) */
+.post .snippet { margin: .25rem 0 1rem; }
+.post h2 + .snippet { margin-top: .5rem; }
+.post .snippet pre { margin: 0; }
+.post .snippet-label {
+  text-align: left;
+  margin: 0 0 .25rem;
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+/* figcaption alignment tweak for the tutorials */
+.post h2 + figure figcaption {
+  text-align: left;
+  margin: .25rem 0 .5rem;
+  font-size: .9rem;
+  color: var(--muted);
+}
