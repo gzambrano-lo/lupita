@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="../styles/layout.css" />
     <link rel="stylesheet" href="../styles/components.css" />
     <link rel="stylesheet" href="../styles/musica.css" />
-    <link rel="stylesheet" href="../styles/project-senpai.css">
+    <link rel="stylesheet" href="../styles/project-senpai.css"/>
+    <link rel="stylesheet" href="../styles/index.css"/>
 </head>
 
 
@@ -49,7 +50,26 @@
             <li class="current"><a href="project-senpai.html">project senpai</a></li>
         </ul>
     </nav>
+
     <main>
+
+        <!-- welcome banner -->
+        <section class="alert alert-welcome" role="status" aria-live="polite">
+            <div class="alert-icon" aria-hidden="true">✨</div>
+
+            <div class="alert-content">
+                <p class="alert-title">(︶︹︺) crunchyroll put their compiled season 1 video on their private so i'll be
+                    adding a recap video instead.
+                </p>
+
+                <p>
+
+                </p>
+            </div>
+
+            <button class="alert-close" type="button" aria-label="dismiss" title="dismiss">🌼</button>
+        </section>
+
         <section class="af-player box">
             <div class="af-chrome">
                 <div class="af-bar">
@@ -64,7 +84,7 @@
                     <div class="af-screen">
                         <div class="embed">
                             <iframe name="player"
-                                src="https://www.youtube-nocookie.com/embed/61_bdpLqcc8?si=Rz5tqv1fnZqW85ky"
+                                src="https://www.youtube.com/embed/_PHj7C7z2gM?si=dalKWEdCxNBb_tz-"
                                 title="Chainsaw Man Season 1" loading="lazy" allowfullscreen
                                 referrerpolicy="strict-origin-when-cross-origin"></iframe>
                         </div>
@@ -105,21 +125,18 @@
             </div>
         </section>
 
-        <!--chatango-->
-        <section class="chat-wrap">
-            <h2 class="sr-only">Community Chat</h2>
-            <script id="cid0020000421423052564" data-cfasync="false" async src="https://st.chatango.com/js/gz/emb.js"
-                style="width:100%;max-width:720px;height:520px;">
-                    { "handle": "project-senpai", "arch": "js", "styles": { "a": "E86F5C", "b": 100, "c": "2A2A2A", "d": "FFFFFF", "k": "E86F5C", "l": "6B7280", "m": "F9F2E8", "p": "10", "q": "E86F5C", "r": 98, "t": 1, "usricon": 0 } }
-                </script>
-        </section>
 
 
     </main>
+    <script>
+        addEventListener('click', (e) => {
+            if (e.target.matches('.alert-close')) e.target.closest('.alert')?.remove();
+        });
+    </script>
 </body>
 <!-- footer -->
 <footer class="site-footer">
-    <p>&copy; Guadalupe Zambrano 2025</p>
+    <p>&copy; Lupita Zambrano 2025</p>
 </footer>
 
 </html>
