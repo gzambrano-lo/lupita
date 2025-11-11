@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>lupe zambrano</title>
 
   <!-- google fonts -->
@@ -15,7 +15,7 @@
   <!-- icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-  <!-- my styles (load in this order) -->
+  <!-- my styles -->
   <link rel="stylesheet" href="styles/reset.css">
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
@@ -24,84 +24,120 @@
   <link rel="stylesheet" href="styles/index.css">
 </head>
 
-
 <body>
-
   <!-- header -->
   <header class="site-header">
-    <h1>lupe zambrano</h1>
+    <div class="hero">
+      <h1 class="hero-title">✨ lupe zambrano ✨</h1>
+
+      <!-- full tab nav -->
+      <nav id="nav_menu" aria-label="Main" class="hero-tabs">
+        <ul>
+          <li class="current"><a href="index.html">home</a></li>
+          <li><a href="pages/about.html">about</a></li>
+          <li><a href="pages/media-log.html">media log</a></li>
+          <li><a href="pages/blog.html">blog</a></li>
+          <li><a href="pages/links.html">links</a></li>
+          <li><a href="pages/guestbook.html">guestbook</a></li>
+          <li><a href="pages/garden-log.html">garden log</a></li>
+          <li><a href="pages/music.html">music</a></li>
+          <li><a href="pages/learn-to-code.html">learn to code</a></li>
+          <li><a href="pages/gallery.html">gallery</a></li>
+          <li><a href="pages/bleach-shrine.html">bleach shrine</a></li>
+          <li><a href="pages/project-senpai.html">project senpai</a></li>
+        </ul>
+      </nav>
+
+
+    </div>
   </header>
 
-  <!-- primary nav -->
-  <nav id="nav_menu" aria-label="Main">
-    <ul>
-      <li class="current"><a href="index.html">home</a></li>
-      <li><a href="pages/about.html">about</a></li>
-      <li><a href="pages/media-log.html">media log</a></li>
-      <li><a href="pages/blog.html">blog</a></li>
-      <li><a href="pages/links.html">links</a></li>
-      <li><a href="pages/guestbook.html">guestbook</a></li>
-      <li><a href="pages/garden-log.html">garden log</a></li>
-      <li><a href="pages/music.html">music</a></li>
-      <li><a href="pages/learn-to-code.html">learn to code</a></li>
-      <li><a href="pages/gallery.html">gallery</a></li>
-      <li><a href="pages/bleach-shrine.html">bleach shrine</a></li>
-      <li><a href="pages/project-senpai.html">project senpai</a></li>
-    </ul>
-  </nav>
-
-
-  <!-- main content -->
   <main id="main" class="container">
-    <!-- welcome banner -->
+    <!-- coral alert -->
     <section class="alert alert-welcome" role="status" aria-live="polite">
       <div class="alert-icon" aria-hidden="true">✨</div>
-
       <div class="alert-content">
         <p class="alert-title">welcome to my personal site! ✨</p>
-
         <p>
           this is a personal hobby & digital scrapbook where i share projects, thoughts, and creative experiments.
           i don't claim ownership of any linked or embedded media. all rights belong to their original creators.
           if you'd like something removed, please <a href="/pages/guestbook.html">leave a note</a> or
           <a href="mailto:gzamlo98@gmail.com">email me</a> and i'll take care of it 🫡
         </p>
-
         <hr class="alert-divider">
-
         <p>
           <strong>notita:</strong> este es un proyecto personal y un “diario digital” donde comparto ideas,
           proyectos y cosas que me inspiran.
-          no reclamo propiedad sobre el contenido enlazado o incrustado. todos los derechos pertenecen a sus creadores
+          no reclamo propiedad sobre el contenido enlazado. todos los derechos pertenecen a sus creadores
           originales.
-          si algo necesita ser retirado, por favor <a href="/pages/guestbook.html">déjame un mensaje</a> o
-          envíame un correo y con gusto lo quitaré 🫡
+          si algo necesita ser retirado, por favor o envíame un un mensaje y con gusto lo quitaré 🫡
         </p>
-
         <p class="badges">
-          <span class="badge badge-18" title="18+ content">18+</span>
-          <span class="badge badge-nsfw" title="Not Safe For Work">NSFW</span>
+          <span class="badge badge-18" title="18+ content">🔞18+</span>
+          <span class="badge badge-nsfw" title="Not Safe For Work">🚫NSFW</span>
         </p>
-
         <p class="cw-note">
           content note: some pages may include 18+ / nsfw material (art, language). viewer discretion advised.
-          <br>
-          <em>nota:</em> algunas páginas pueden incluir contenido para mayores de 18 años / nsfw. se recomienda
+          <br><em>nota:</em> algunas páginas pueden incluir contenido para mayores de 18 años / nsfw. se recomienda
           discreción.
         </p>
       </div>
-
       <button class="alert-close" type="button" aria-label="dismiss" title="dismiss">🌼</button>
     </section>
 
-
-    <!-- home intro (avatar + tagline) -->
-    <section class="home-intro card">
+    <!-- intro (avatar + tagline) -->
+    <section class="card home-hello">
       <img src="images/gallery/kobeni.jpg" alt="Lupita's avatar" class="profile-pic">
       <div class="intro-text">
-        <h2>hi, i'm lupe / lupita</h2>
-        <p class="tagline">anime watcher • student • mom • sanrio enjoyer</p>
-        <p class="tagline">leo sun • pisces moon • aries rising ✨</p>
+        <h2>hi, i'm lupe! <span aria-hidden="true">👋</span></h2>
+        <p>i build soft, cozy corners of the web. quiet, nostalgic spaces that feel more human than company.</p>
+        <p>this site is my digital sketchbook: experiments, notes, and things that make me happy.</p>
+      </div>
+    </section>
+
+    <!-- currently -->
+    <section class="card">
+      <h2 class="section-title">currently</h2>
+      <div class="tiles-4">
+        <article class="mini-card">
+          <h3><span class="i">🎵</span> listening to</h3>
+          <p>sucola</p>
+        </article>
+        <article class="mini-card">
+          <h3><span class="i">📚</span> reading</h3>
+          <p><em>smashed</em></p>
+        </article>
+        <article class="mini-card">
+          <h3><span class="i">🧪</span> working on</h3>
+          <p>cool new web projects!</p>
+        </article>
+        <article class="mini-card">
+          <h3><span class="i">🌱</span> learning</h3>
+          <p>javascript</p>
+        </article>
+      </div>
+    </section>
+
+    <!--  stats -->
+    <section class="card">
+      <h2 class="section-title">stats</h2>
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-value">3</div>
+          <div class="stat-label">websites built</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">∞</div>
+          <div class="stat-label">cups of coffee</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">24/7</div>
+          <div class="stat-label">learning mode</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">passion driven</div>
+        </div>
       </div>
     </section>
 
@@ -109,83 +145,61 @@
     <section class="card blinkies-card" aria-labelledby="blinkies-title">
       <h2 id="blinkies-title">blinkies & buttons ╰✿´⌣`✿╯♡</h2>
       <p class="meta"></p>
-
       <div class="blinkies">
-        <!-- my site blinky. my very first gif -->
         <a class="blinky" href="https://lupitazambrano.com" target="_blank" rel="noopener">
-          <img src="/images/lupita_z_88x31.gif" alt="lupitazambrano.com" width="88" height="31" loading="lazy"
-            decoding="async">
+          <img src="/images/lupita_z_88x31.gif" alt="lupitazambrano.com" width="88" height="31" loading="lazy">
         </a>
-
-        <!-- wired collective! my first webring i was invited to -->
-        <a class="blinky" href="https://wiredcollective.neocities.org/"><img
-            src="https://wiredcollective.neocities.org/webringimages/wiredcollectivebutton.png"
-            alt="WIRED COLLECTIVE WEBRING"></a>
-
+        <a class="blinky" href="https://wiredcollective.neocities.org/">
+          <img src="https://wiredcollective.neocities.org/webringimages/wiredcollectivebutton.png"
+            alt="WIRED COLLECTIVE WEBRING">
+        </a>
       </div>
     </section>
 
-    <!-- site concept / about this site -->
-
+    <!-- what is this website -->
     <section class="card">
       <h2>what is this website?</h2>
-
       <p>
         this is my little corner of the internet. part of the <strong>indie web</strong>. the indie web is all about
-        creatings
-        personal websites instead of relying only on big social media platforms. think of it like an online scrapbook:
-        a space where i can share my thoughts, keep a media log of anime i'm watching or plan to watch, post blogs,
-        and just have fun experimenting with web design.
+        creating personal websites instead of relying only on big social media platforms. think of it like an online
+        scrapbook: a space where i can share my thoughts, keep a media log of anime i'm watching or plan to watch, post
+        blogs, and just have fun experimenting with web design.
       </p>
-
       <p>
         you'll find a mix of personal projects, things i enjoy, and random bits of my life here. feel free to explore,
         look around, and sign my guestbook if you stop by 💌
       </p>
-
       <hr class="divider">
-
       <h3>¿qué es este sitio web?</h3>
-
       <p>
-        este es mi pequeño rincón del internet, parte del <strong>indie web</strong>. el indie web trata de crear
-        sitios personales en lugar de depender solo de las grandes plataformas de redes sociales. es como un
-        diario digital o foto álbum en línea: un espacio donde comparto mis pensamientos, llevo un registro de los
-        animes
-        que veo o quiero ver, escribo blogs y experimento con el diseño web por diversión.
+        este es mi pequeño rincón del internet, parte del <strong>indie web</strong>. el indie web trata de crear sitios
+        personales en lugar de depender solo de las grandes plataformas de redes sociales. es como un diario digital o
+        foto álbum en línea: un espacio donde comparto mis pensamientos, llevo un registro de los animes que veo o
+        quiero ver, escribo blogs y experimento con el diseño web por diversión.
       </p>
-
       <p>
         aquí encontrarás una mezcla de proyectos personales, cosas que disfruto y pedacitos de mi vida. si pasas por
-        aquí,
-        siéntete libre de explorar y firmar mi libro de visitas 💌
+        aquí, siéntete libre de explorar y firmar mi libro de visitas 💌
       </p>
     </section>
 
-
     <!-- indie web video -->
     <section class="card">
-      <h2>what is the indie web?</h2>
-
-      <!-- responsive 16:9 video wrapper (CSS handles sizing) -->
+      <h2>wtf is the indie web?</h2>
       <div class="video-wrapper">
         <iframe src="https://www.youtube-nocookie.com/embed/Tv223kX0SRg" title="Marighoul: What is the Indie Web?"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-        </iframe>
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
-
       <p class="meta" style="margin-top:.5rem">
-        marighoul's video explaining the indie web. what it is, why it matters, and why its so inspiring!
-        check out their site ➡️
+        marighoul's video explaining the indie web. what it is, why it matters, and why it's so inspiring! check out
+        their site ➡️
         <a href="https://marighoul.com/" target="_blank" rel="noopener">marighoul.com</a>
       </p>
     </section>
-
   </main>
 
-  <!-- footer -->
   <footer class="site-footer">
     <p>&copy; Lupita Zambrano 2025</p>
   </footer>
@@ -196,6 +210,5 @@
     });
   </script>
 </body>
-
 
 </html>

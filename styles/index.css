@@ -36,3 +36,108 @@
         animation: none !important;
     }
 }
+
+/* --- hero --- */
+.hero { max-width: 1100px; margin: 0 auto 1rem; padding-top: .25rem; }
+.hero-title {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  letter-spacing: .3px;
+}
+.hero-sub {
+  text-align: center;
+  color: var(--muted);
+  margin-top: .25rem;
+}
+.hero-tabs { margin-top: .6rem; }
+.alert-mini{
+  margin: .9rem auto 0;
+  max-width: 960px;
+  background: rgba(242,132,130,.15);
+  color: color-mix(in oklab, var(--coral), black 35%);
+  border: 1px solid color-mix(in oklab, var(--coral), var(--sage) 55%);
+  border-radius: calc(var(--radius) + 8px);
+  padding: .7rem 1rem;
+  display: grid;
+  gap: .25rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,.05), inset 0 1px 0 rgba(255,255,255,.4);
+}
+
+/* --- hello (avatar + text) --- */
+.home-hello {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+@media (max-width: 600px){
+  .home-hello { grid-template-columns: 1fr; text-align: center; }
+  .home-hello .profile-pic { margin-inline: auto; }
+}
+.home-hello h2 {
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  color: var(--coral);
+  margin: 0 0 .35rem;
+}
+
+/* --- “currently” tiles --- */
+.section-title { margin-bottom: .6rem; }
+.tiles-4{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: .8rem;
+}
+@media (max-width: 900px){ .tiles-4{ grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 520px){ .tiles-4{ grid-template-columns: 1fr; } }
+
+.mini-card{
+  background: rgba(255,255,255,.75);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .9rem;
+  box-shadow: var(--shadow);
+  transition: transform .12s ease, box-shadow .2s ease;
+}
+.mini-card:hover{ transform: translateY(-2px); box-shadow: 0 8px 18px rgba(0,0,0,.08); }
+.mini-card h3{
+  display:flex; align-items:center; gap:.45rem;
+  font-size: .95rem; color: var(--muted); margin:0 0 .35rem;
+}
+.mini-card p{ margin: 0; font-weight: 600; color: var(--text); }
+.mini-card .i{ font-size: 1.1rem; }
+
+/* --- fun stats --- */
+.stats-grid{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: .9rem;
+}
+@media (max-width: 900px){ .stats-grid{ grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 520px){ .stats-grid{ grid-template-columns: 1fr; } }
+
+.stat{
+  display:grid; place-items:center;
+  gap:.35rem; padding: 1rem .75rem;
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.72);
+  box-shadow: var(--shadow);
+}
+.stat-value{
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: var(--sage);
+}
+.stat-label{ color: var(--muted); font-size: .92rem; }
+
+/* tiny polish so your plaid BG feels like the screenshot */
+body{
+  background-image:
+    linear-gradient(90deg, rgba(132,165,157,0.14) 50%, transparent 50%),
+    linear-gradient(180deg, rgba(132,165,157,0.14) 50%, transparent 50%),
+    radial-gradient(80% 80% at 50% 0%, rgba(255,255,255,.6), rgba(255,255,255,0) 70%);
+}
