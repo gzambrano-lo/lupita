@@ -257,3 +257,20 @@ body {
     linear-gradient(180deg, rgba(132, 165, 157, .14) 50%, transparent 50%),
     radial-gradient(80% 80% at 50% 0%, rgba(255, 255, 255, .6), rgba(255, 255, 255, 0) 70%);
 }
+
+#lineAnim {
+  width: 90px;
+  height: auto;
+  margin: .25rem 0 .5rem .3rem;
+  opacity: .9;
+  display: block;
+  transform: translateY(-6px);
+}
+
+@media (max-width: 600px) {
+  #lineAnim {
+    width: 70px;
+    margin: .2rem auto .5rem;
+    transform: translateY(-4px);
+  }
+}
