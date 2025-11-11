@@ -1,11 +1,5 @@
 (() => {
-  const YT_PLAYLIST = [
-    'VgckulYQmh4',
-    'ZP-EMaoTB-k',
-    'rxaKVeiBiOE',
-    'O1KGn5aDnck',
-    'WaVYr1APEyo',
-  ];
+  const YT_PLAYLIST = ['VgckulYQmh4','ZP-EMaoTB-k','rxaKVeiBiOE','O1KGn5aDnck','WaVYr1APEyo'];
 
   const pill = document.getElementById('musicPill');
   const dock = document.getElementById('musicDock');
@@ -17,13 +11,13 @@
   const dockLabel = document.getElementById('dockLabel');
 
   let iframe;
-  let index = 0;
   let muted = true;
+  let started = false;
 
-  function srcFor(i) {
+  function srcFor(startIndex = 0) {
     const params = new URLSearchParams({
       autoplay: 1,
-      mute: muted ? 1 : 0,
+      mute: 1,
       controls: 0,
       playsinline: 1,
       rel: 0,
@@ -31,16 +25,19 @@
       loop: 1,
       playlist: YT_PLAYLIST.join(','),
       enablejsapi: 1,
-      origin: location.origin
+      origin: (location.origin && location.origin !== 'null') ? location.origin : undefined,
+      index: startIndex
     });
-    return `https://www.youtube-nocookie.com/embed/${YT_PLAYLIST[i]}?${params.toString()}`;
+    return `https://www.youtube-nocookie.com/embed/${YT_PLAYLIST[startIndex]}?${params.toString()}`;
   }
 
   function ensureIframe() {
     if (!iframe) {
       iframe = document.createElement('iframe');
       iframe.className = 'music-iframe';
-      iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      iframe.setAttribute('title', 'YouTube player');
+      iframe.src = srcFor(0);
     }
   }
 
@@ -55,36 +52,52 @@
     }
   }
 
-  function mount(i) {
-    ensureIframe();
-    iframe.src = srcFor(i);
-    dockBody.innerHTML = '';
-    dockBody.appendChild(iframe);
-    updateUI();
+  function yt(cmd) {
+    if (!iframe || !iframe.contentWindow) return;
+    iframe.contentWindow.postMessage(JSON.stringify({
+      event: 'command',
+      func: cmd,
+      args: []
+    }), '*');
   }
 
-  function startDock() { mount(index); }
+  function startDock() {
+    ensureIframe();
+    if (dockBody && !dockBody.contains(iframe)) {
+      dockBody.innerHTML = '';
+      dockBody.appendChild(iframe);
+    }
+    updateUI();
+    started = true;
+    yt('playVideo');
+  }
 
   function stopDock() {
     if (dock) dock.hidden = true;
     pill?.classList.remove('playing');
-    if (iframe) iframe.src = iframe.src;
     if (dockLabel) dockLabel.textContent = 'paused';
+    yt('pauseVideo');
   }
 
   function nextTrack() {
-    index = (index + 1) % YT_PLAYLIST.length;
-    mount(index);
+    if (!started) return startDock();
+    yt('nextVideo');
   }
 
   function prevTrack() {
-    index = (index - 1 + YT_PLAYLIST.length) % YT_PLAYLIST.length;
-    mount(index);
+    if (!started) return startDock();
+    yt('previousVideo');
   }
 
   function toggleMute() {
+    if (!started) return startDock();
     muted = !muted;
-    mount(index);
+    if (muted) {
+      yt('mute');
+    } else {
+      yt('unMute');
+    }
+    updateUI();
   }
 
   pill?.addEventListener('click', startDock);
