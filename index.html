@@ -100,6 +100,8 @@
         <h2>hi, i'm lupe!
           <span id="handAnim" class="lottie" aria-hidden="true"></span>
         </h2>
+        <div id="lineAnim" class="lottie hello-line"></div>
+
         <p>i built this site just for fun and i ended up really liking it.</p>
         <p>anyone is free to look through and take my code, i don't care.</p>
         <p>if you'd like feedback or want to swap ideas, you can reach me through my guestbook.</p>
@@ -221,25 +223,12 @@
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-
-      const banner = document.querySelector('.alert.alert-welcome');
-      const closeBtn = banner?.querySelector('.alert-close');
-      const KEY = 'welcomeBannerDismissed';
-
-      if (localStorage.getItem(KEY) === '1') {
-        banner?.remove();
-      } else if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-          banner.remove();
-          localStorage.setItem(KEY, '1');
-        });
-      }
-
       const opts = { renderer: 'svg', loop: true, autoplay: true };
 
       const sparkleLeft = document.getElementById('sparkleLeft');
       const sparkleRight = document.getElementById('sparkleRight');
       const handAnim = document.getElementById('handAnim');
+      const lineAnim = document.getElementById('lineAnim');
 
       const fallback = (el, emoji) => { if (el) el.textContent = emoji; };
 
@@ -258,8 +247,24 @@
 
       if (handAnim)
         lottie.loadAnimation({ ...opts, container: handAnim, path: 'animations/wave-hand.json' });
+
+      if (lineAnim) {
+        const anim = lottie.loadAnimation({
+          ...opts,
+          container: lineAnim,
+          path: 'animations/line.json',
+          loop: true,
+          autoplay: true,
+          rendererSettings: { preserveAspectRatio: 'xMidYMid meet' }
+        });
+        anim.setSpeed(0.5); 
+      }
     });
   </script>
+</body>
+
+</html>
+
 
 
 

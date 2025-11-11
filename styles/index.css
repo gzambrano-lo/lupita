@@ -234,3 +234,17 @@ body {
   width: 100%;
 }
 
+.hello-line {
+  width: 140px;
+  max-width: 45%;
+  margin: .4rem 0 1.25rem;
+  opacity: .9;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .hello-line {
+    width: 100px;
+    margin: .3rem auto 1rem;
+  }
+}
