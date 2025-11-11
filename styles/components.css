@@ -397,3 +397,27 @@ summary {
 details[open] {
     background-color: #f7f7f7;
 }
+
+.alert-close {
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--coral), white 75%);
+    border: 1px solid var(--bd);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset;
+    line-height: 1;
+    font-size: 1.05rem;
+    cursor: pointer;
+
+    justify-self: end;
+    align-self: start;
+}
+
+.alert-close:hover {
+    filter: brightness(.96);
+    transform: translateY(-1px);
+}

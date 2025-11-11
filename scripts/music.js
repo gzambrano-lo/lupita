@@ -1,6 +1,3 @@
-// scripts/music.js — minimal + clean (no modal)
-
-// your YouTube embed (autoplays after user click)
 const YT_URL =
     "https://www.youtube.com/embed/oZAnZqp6LIU?si=5jE7xRpC4WKw12BE";
 

@@ -44,20 +44,81 @@
             <li><a href="music.html">music</a></li>
             <li><a href="learn-to-code.html">learn to code</a></li>
             <li><a href="gallery.html">gallery</a></li>
-             <li><a href="bleach-shrine.html">bleach shrine</a></li>
-             <li><a href="project-senpai.html">project senpai</a></li>
+            <li><a href="bleach-shrine.html">bleach shrine</a></li>
+            <li><a href="project-senpai.html">project senpai</a></li>
         </ul>
     </nav>
 
     <main>
         <section class="plant-array">
-            <h2 class="array-title">🌿 my pixel garden: under construction</h2>
+            <h2 class="array-title">🌿 my pixel garden (first season)</h2>
 
-                <div class="card">
-                    <img class="card-image" src="../images/garden-log/spider.png" alt="spider plant">
-                    <h2 class="card-title">non-variegated spider plant</h2>
-            </div>
+            <article class="plant-card" data-type="indoor" data-skill="easy">
+                <img class="plant-img" src="../images/garden-log/spider.png" alt="spider plant" loading="lazy"
+                    decoding="async">
+                <header class="plant-head">
+                    <h3 class="plant-title">non-variegated spider plant</h3>
+                    <span class="badge">indoor</span>
+                    <span class="badge soft">easy</span>
+                </header>
+
+                <dl class="plant-facts">
+                    <div>
+                        <dt>light</dt>
+                        <dd>bright-indirect ☀️</dd>
+                    </div>
+                    <div>
+                        <dt>water</dt>
+                        <dd>when top 1-2 cm are dry (~5-7 days)</dd>
+                    </div>
+                    <div>
+                        <dt>notes</dt>
+                        <dd>overwatered once → trimmed soggy roots; bounced back fast.</dd>
+                    </div>
+                    <div>
+                        <dt>status</dt>
+                        <dd class="ok">thriving</dd>
+                    </div>
+                </dl>
+
+                <footer class="plant-foot">
+                    <time datetime="2025-10-18" title="added">added oct 18</time>
+                    <time datetime="2025-11-08" title="last updated">• updated nov 8</time>
+                </footer>
+            </article>
+
+            <article class="plant-card" data-type="herb" data-skill="medium">
+                <img class="plant-img" src="../images/garden-log/basil.png" alt="basil plant in pot" loading="lazy"
+                    decoding="async">
+                <header class="plant-head">
+                    <h3 class="plant-title">basil</h3>
+                </header>
+                <dl class="plant-facts">
+                    <div>
+                        <dt>light</dt>
+                        <dd>full sun (6-8h)</dd>
+                    </div>
+                    <div>
+                        <dt>water</dt>
+                        <dd>keep evenly moist; hates cold nights</dd>
+                    </div>
+                    <div>
+                        <dt>notes</dt>
+                        <dd>leggy at first → started pinching tops; bushier now.</dd>
+                    </div>
+                    <div>
+                        <dt>status</dt>
+                        <dd class="learn">learning</dd>
+                    </div>
+                </dl>
+                <footer class="plant-foot">
+                    <time datetime="2025-10-25">added oct 25</time>
+                    <span>• goal: try bottom watering</span>
+                </footer>
+            </article>
+
         </section>
+
     </main>
 
     <button class="music-pill" id="musicPill" aria-haspopup="dialog" aria-controls="musicModal"

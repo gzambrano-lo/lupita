@@ -1,114 +1,147 @@
 .plant-array {
-    max-width: 1100px;
-    margin-inline: auto;
-    padding: 1.25rem 1rem 2rem;
-    border: 0;
-    box-shadow: none;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 1.25rem 1rem 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: row dense;
 }
 
 .array-title {
-    text-align: center;
-    font-size: clamp (1.25rem, 2.2vw 1.6rem);
-    margin: .25rem 0 .25rem;
+  text-align: center;
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  margin: .25rem 0 .25rem;
+  grid-column: 1 / -1;
 }
 
-.array-title span {
-    margin-right: .4rem;
+.array-intro {
+  text-align: center;
+  opacity: .85;
+  margin: 0 0 1.25rem;
+  grid-column: 1 / -1;
 }
 
-.intro-text {
-    text-align: center;
-    opacity: .85;
-    margin: 0 0 1.25rem;
+.plant-card {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: .75rem;
+  align-items: start;
+  background: color-mix(in srgb, var(--soft) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  border-radius: var(--radius);
+  padding: .7rem .9rem;
+  box-shadow: var(--shadow);
 }
 
-.card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    padding: .9rem 9rem 1rem;
-    width: 100%;
-    max-width: 210px;
-    text-align: center;
-    font-family: monospace;
-    color: var(--text);
-    transition: transform .15s ease, box-shadow .15s ease;
+.plant-img {
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+  border-radius: calc(var(--radius) - 4px);
+  background: color-mix(in srgb, var(--soft) 35%, transparent);
 }
 
-.card-image {
-    width: 84px;
-    display: block;
-    margin-inline: auto;
-    margin-bottom: 0.5rem;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-    display: block;
-    margin-inline: auto;
+.plant-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem .5rem;
+  align-items: center;
 }
 
-.card-title {
-    font-size: .96rem;
-    line-height: 1.25;
-    color: var(--soft);
-    margin: 0.25rem 0;
+.plant-title {
+  font-size: 1rem;
+  margin: 0 .25rem 0 0;
 }
 
-.card-details {
-    list-style: none;
-    padding: 0;
-    margin: 0.5rem 0 0;
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--soft);
-    line-height: 1.5;
+.badge {
+  font: 600 .72rem/1 var(--font-ui, "Nunito", system-ui);
+  padding: .15rem .45rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
 }
 
-.card-details li {
-    margin-bottom: 0.25rem;
+.badge.soft {
+  background: color-mix(in srgb, var(--soft) 40%, transparent);
 }
 
-.card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
-    justify-items: center;
-    margin: 2rem auto;
-    max-width: 1000px;
+.badge.outline {
+  background: transparent;
+  border: 1px dashed var(--border);
+}
+
+.plant-facts {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: .5rem .9rem;
+  margin: .25rem 0 .25rem;
+}
+
+.plant-facts dt {
+  font-weight: 700;
+  text-transform: lowercase;
+  opacity: .75;
+}
+
+.plant-facts dd {
+  margin: 0;
+}
+
+.plant-foot {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+  font-size: .85rem;
+  opacity: .85;
+}
+
+.plant-facts .ok {
+  color: var(--good, #2e7d32);
+  font-weight: 700;
+}
+
+.plant-facts .learn {
+  color: var(--warn, #8a6d00);
+  font-weight: 700;
+}
+
+.plant-facts .watch {
+  color: var(--info, #005b8a);
+  font-weight: 700;
+}
+
+@media (min-width: 700px) {
+  .plant-array {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
 }
 
 .tag {
-    padding: 0.2rem 0.6rem;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    margin: 0.2rem;
-    color: var(--text);
+  padding: .2rem .6rem;
+  border-radius: 8px;
+  font-size: .75rem;
+  margin: .2rem;
+  color: var(--text);
 }
 
 .tag.indoors {
-    background: var(pink);
+  background: var(--pink);
 }
 
 .tag.outdoors {
-    background: var(--sage);
+  background: var(--sage);
 }
 
 .tag.easy {
-    background: var(--coral);
+  background: var(--coral);
 }
 
 .tag.annual {
-    background: var(--sage);
+  background: var(--sage);
 }
 
 .tag.nightshade {
-    background: var(--soft)
-}
-
-
-@media (max-width: 520px) {
-    .card-grid {
-        grid-template-columns: 1fr;
-        justify-items: center;
-    }
+  background: var(--soft);
 }
