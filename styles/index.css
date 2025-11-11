@@ -28,8 +28,7 @@
   transform: translateY(-1px);
 }
 
-
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion:reduce) {
   .blinky img {
     animation: none !important;
   }
@@ -41,12 +40,31 @@
   padding-top: .25rem;
 }
 
+/* HERO TITLE (final) */
 .hero-title {
   font-family: "Poppins", system-ui, sans-serif;
   font-weight: 700;
-  text-align: center;
   font-size: clamp(1.9rem, 3.4vw, 2.6rem);
   letter-spacing: .3px;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+}
+
+.hero-title .lottie {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.hero-title .lottie>svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .hero-sub {
@@ -80,7 +98,7 @@
   align-items: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
   .home-hello {
     grid-template-columns: 1fr;
     text-align: center;
@@ -107,13 +125,13 @@
   gap: .8rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width:900px) {
   .tiles-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width:520px) {
   .tiles-4 {
     grid-template-columns: 1fr;
   }
@@ -158,13 +176,13 @@
   gap: .9rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width:900px) {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width:520px) {
   .stats-grid {
     grid-template-columns: 1fr;
   }
@@ -195,36 +213,7 @@
 
 body {
   background-image:
-    linear-gradient(90deg, rgba(132, 165, 157, 0.14) 50%, transparent 50%),
-    linear-gradient(180deg, rgba(132, 165, 157, 0.14) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(132, 165, 157, .14) 50%, transparent 50%),
+    linear-gradient(180deg, rgba(132, 165, 157, .14) 50%, transparent 50%),
     radial-gradient(80% 80% at 50% 0%, rgba(255, 255, 255, .6), rgba(255, 255, 255, 0) 70%);
-}
-
-.hero-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .4rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-}
-
-.hero-title .lottie {
-  width: 28px;
-  height: 28px;
-  display: block;
-}
-
-.hero-title .lottie {
-  width: 44px;
-  height: 44px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.hero-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
 }
