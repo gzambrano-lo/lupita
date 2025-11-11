@@ -421,3 +421,22 @@ details[open] {
     filter: brightness(.96);
     transform: translateY(-1px);
 }
+
+.alert.alert-welcome .badges {
+    display: flex;
+    gap: .4rem;
+    align-items: center;
+    margin: .25rem 0 .35rem;
+}
+
+.alert.alert-welcome .badge {
+    display: inline-flex;
+    align-items: center;
+    height: 22px;
+    padding: 0 .55rem;
+    border-radius: 999px;
+    border: 1px solid var(--bd);
+    background: rgba(255, 255, 255, .6);
+    font: 700 .72rem/1 "Poppins", system-ui, sans-serif;
+    letter-spacing: .2px;
+}

@@ -64,7 +64,6 @@
   <main id="main" class="container">
     <!-- coral alert -->
     <section class="alert alert-welcome" role="status" aria-live="polite">
-      <div class="alert-icon" aria-hidden="true">✨</div>
       <div class="alert-content">
         <p class="alert-title">welcome to my personal site! ✨</p>
         <p>
@@ -174,7 +173,7 @@
 
     <!-- what is this website -->
     <section class="card">
-      <h2>what is this website?</h2>
+      <h2>wtf is this website?</h2>
       <p>
         this is my little corner of the internet. part of the <strong>indie web</strong>. the indie web is all about
         creating personal websites instead of relying only on big social media platforms. think of it like an online
@@ -222,12 +221,25 @@
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
+
+      const banner = document.querySelector('.alert.alert-welcome');
+      const closeBtn = banner?.querySelector('.alert-close');
+      const KEY = 'welcomeBannerDismissed';
+
+      if (localStorage.getItem(KEY) === '1') {
+        banner?.remove();
+      } else if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          banner.remove();
+          localStorage.setItem(KEY, '1');
+        });
+      }
+
       const opts = { renderer: 'svg', loop: true, autoplay: true };
 
       const sparkleLeft = document.getElementById('sparkleLeft');
       const sparkleRight = document.getElementById('sparkleRight');
       const handAnim = document.getElementById('handAnim');
-
 
       const fallback = (el, emoji) => { if (el) el.textContent = emoji; };
 
@@ -239,25 +251,13 @@
       }
 
       if (sparkleLeft)
-        lottie.loadAnimation({
-          ...opts,
-          container: sparkleLeft,
-          path: 'animations/sparkle-left.json'
-        });
+        lottie.loadAnimation({ ...opts, container: sparkleLeft, path: 'animations/sparkle-left.json' });
 
       if (sparkleRight)
-        lottie.loadAnimation({
-          ...opts,
-          container: sparkleRight,
-          path: 'animations/sparkle-right.json'
-        });
+        lottie.loadAnimation({ ...opts, container: sparkleRight, path: 'animations/sparkle-right.json' });
 
       if (handAnim)
-        lottie.loadAnimation({
-          ...opts,
-          container: handAnim,
-          path: 'animations/wave-hand.json'
-        });
+        lottie.loadAnimation({ ...opts, container: handAnim, path: 'animations/wave-hand.json' });
     });
   </script>
 
