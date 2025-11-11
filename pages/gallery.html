@@ -7,22 +7,18 @@
   <title>gallery — lupe zambrano</title>
   <meta name="description" content="a scrolling scrapbook of images i love—like old tumblr.">
 
-  <!-- fonts / icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-  <!-- site styles -->
   <link rel="stylesheet" href="../styles/reset.css">
   <link rel="stylesheet" href="../styles/tokens.css">
   <link rel="stylesheet" href="../styles/base.css">
   <link rel="stylesheet" href="../styles/layout.css">
   <link rel="stylesheet" href="../styles/components.css">
   <link rel="stylesheet" href="../styles/gallery.css">
-
-  <!-- player styles (audio-only dock) -->
   <link rel="stylesheet" href="../styles/gallery-player.css">
 </head>
 
@@ -49,7 +45,6 @@
   </nav>
 
   <main id="main" class="container">
-    <!-- how-to banner -->
     <section class="alert alert-info" role="status" aria-live="polite">
       <div class="alert-icon" aria-hidden="true">🎧</div>
       <div class="alert-content">
@@ -64,7 +59,6 @@
       <button class="alert-close" type="button" aria-label="dismiss" title="dismiss">🌼</button>
     </section>
 
-    <!-- gallery grid -->
 
 
     <section class="tumblr-archive" aria-label="image scrapbook">
@@ -120,7 +114,6 @@
         </figure>
       </a>
 
-      <!-- mp4 tile -->
       <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
         <figure>
           <video autoplay loop muted playsinline>
@@ -180,11 +173,9 @@
 
     </section>
 
-    <!-- floating pill -->
     <button class="music-pill" id="musicPill" aria-haspopup="dialog" aria-controls="musicModal"
       aria-label="play scrapbook tune">♪ play</button>
 
-    <!-- modal (kept for reuse; not used on this page) -->
     <div class="music-modal" id="musicModal" role="dialog" aria-modal="true" aria-labelledby="musicTitle" hidden>
       <div class="music-modal__backdrop" id="musicBackdrop"></div>
       <div class="music-modal__card" role="document">
@@ -196,12 +187,10 @@
           <button class="music-cover" id="musicCover" aria-label="play now">
             <span class="music-note">♪</span><span>click to play</span>
           </button>
-          <!-- <audio id="fallbackAudio" src="../audio/yourtrack.mp3" preload="none" controls class="is-hidden"></audio> -->
         </div>
       </div>
     </div>
 
-    <!-- corner dock player -->
     <div id="musicDock" class="music-dock" hidden>
       <div class="music-dock__card">
         <button id="dockClose" class="dock-close" aria-label="stop music">✿</button>
@@ -214,12 +203,10 @@
 
         <span id="dockLabel" class="dock-label" aria-live="polite">♪ now playing</span>
 
-        <!-- hidden iframe lives here (audio-only) -->
         <div id="dockBody"></div>
       </div>
     </div>
 
-    <!-- player logic -->
     <script src="../scripts/gallery-player.js" defer></script>
   </main>
 
@@ -240,7 +227,6 @@
     </div>
   </footer>
 
-  <!-- banner js-->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const banner = document.querySelector('.alert');

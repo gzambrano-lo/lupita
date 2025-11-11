@@ -7,17 +7,14 @@
     <title>garden log - lupe zambrano</title>
     <meta name="description" content="my garden! a log of what im growing." />
 
-    <!-- google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
         rel="stylesheet">
 
-    <!-- font awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <!-- styles: reset → tokens → base → layout → components -->
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/tokens.css">
     <link rel="stylesheet" href="../styles/base.css">
@@ -27,7 +24,6 @@
     <link rel="stylesheet" href="../styles/garden-log.css">
     <link rel="stylesheet" href="../styles/music.css">
 
-    <!-- js -->
     <script src="../scripts/music.js" defer></script>
 </head>
 
@@ -54,7 +50,6 @@
     </nav>
 
     <main>
-        <!--plant array grid-->
         <section class="plant-array">
             <h2 class="array-title">🌿 my pixel garden: under construction</h2>
 
@@ -65,11 +60,9 @@
         </section>
     </main>
 
-    <!-- floating pill yt music player -->
     <button class="music-pill" id="musicPill" aria-haspopup="dialog" aria-controls="musicModal"
         aria-label="play garden song">♪ play</button>
 
-    <!-- modal -->
     <div class="music-modal" id="musicModal" role="dialog" aria-modal="true" aria-labelledby="musicTitle" hidden>
         <div class="music-modal__backdrop" id="musicBackdrop"></div>
         <div class="music-modal__card" role="document">
@@ -78,7 +71,6 @@
                 <button class="music-close" id="musicClose" aria-label="close">✕</button>
             </header>
             <div class="music-modal__body" id="musicBody">
-                <!-- cover shown first; clicking swaps to iframe -->
                 <button class="music-cover" id="musicCover" aria-label="play now">
                     <span class="music-note">♪</span>
                     <span>click to play</span>
@@ -87,7 +79,6 @@
         </div>
     </div>
 
-    <!-- tiny floating dock (shown after play) -->
     <div id="musicDock" class="music-dock" hidden>
         <div class="music-dock__card">
             <button id="dockClose" class="dock-close" aria-label="stop music">✿</button>
