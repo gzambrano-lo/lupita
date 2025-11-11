@@ -223,8 +223,22 @@
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      const opts = { renderer: 'svg', loop: true, autoplay: true };
 
+      const banner = document.querySelector('.alert.alert-welcome');
+      const closeBtn = banner?.querySelector('.alert-close');
+      const KEY = 'welcomeBannerDismissed';
+
+      if (localStorage.getItem(KEY) === '1') {
+        banner?.remove();
+      } else {
+        closeBtn?.addEventListener('click', () => {
+          banner.remove();
+          localStorage.setItem(KEY, '1');
+        });
+      }
+
+  
+      const opts = { renderer: 'svg', loop: true, autoplay: true };
       const sparkleLeft = document.getElementById('sparkleLeft');
       const sparkleRight = document.getElementById('sparkleRight');
       const handAnim = document.getElementById('handAnim');
@@ -253,20 +267,12 @@
           ...opts,
           container: lineAnim,
           path: 'animations/line.json',
-          loop: true,
-          autoplay: true,
           rendererSettings: { preserveAspectRatio: 'xMidYMid meet' }
         });
-        anim.setSpeed(0.5); 
+        anim.setSpeed(0.5);
       }
     });
   </script>
-</body>
-
-</html>
-
-
-
 
 </body>
 
