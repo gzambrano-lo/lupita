@@ -40,14 +40,12 @@
   padding-top: .25rem;
 }
 
-/* HERO TITLE (final) */
 .hero-title {
   font-family: "Poppins", system-ui, sans-serif;
   font-weight: 700;
   font-size: clamp(1.9rem, 3.4vw, 2.6rem);
   letter-spacing: .3px;
   text-align: center;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,7 +91,7 @@
 
 .home-hello {
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: 160px minmax(0, 1fr);
   gap: 1.25rem;
   align-items: center;
 }
@@ -109,10 +107,52 @@
   }
 }
 
-.home-hello h2 {
+.home-hello h2,
+.intro-text h2 {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
   font-size: clamp(1.2rem, 2vw, 1.4rem);
   color: var(--coral);
-  margin: 0 0 .35rem;
+  margin: 0 0 .3rem;
+}
+
+.lottie {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.lottie>svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#handAnim {
+  width: 28px;
+  height: 28px;
+}
+
+.hello-line {
+  width: 90px;
+  max-width: 45%;
+  margin: .25rem 0 .8rem .2rem;
+  display: block;
+  opacity: .9;
+}
+
+@media (max-width:600px) {
+  #handAnim {
+    width: 22px;
+    height: 22px;
+  }
+
+  .hello-line {
+    width: 70px;
+    margin: .2rem auto .7rem;
+  }
 }
 
 .section-title {
@@ -216,66 +256,4 @@ body {
     linear-gradient(90deg, rgba(132, 165, 157, .14) 50%, transparent 50%),
     linear-gradient(180deg, rgba(132, 165, 157, .14) 50%, transparent 50%),
     radial-gradient(80% 80% at 50% 0%, rgba(255, 255, 255, .6), rgba(255, 255, 255, 0) 70%);
-}
-
-.lottie {
-  width: 32px;
-  height: 32px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.home-hello {
-  grid-template-columns: 160px minmax(0, 1fr);
-}
-
-.home-hello .intro-text {
-  max-width: none;
-  width: 100%;
-}
-
-.hello-line {
-  width: 140px;
-  max-width: 45%;
-  margin: .4rem 0 1.25rem;
-  opacity: .9;
-  display: block;
-}
-
-@media (max-width: 600px) {
-  .hello-line {
-    width: 100px;
-    margin: .3rem auto 1rem;
-  }
-}
-
-.intro-text h2 {
-  display: flex;
-  align-items: center;
-  gap: .4rem;
-  font-size: clamp(1.2rem, 2vw, 1.4rem);
-  color: var(--coral);
-  margin: 0 0 .3rem;
-}
-
-#handAnim {
-  width: 28px;
-  height: 28px;
-}
-
-.hello-line {
-  width: 90px;
-  margin: .25rem 0 .8rem .2rem; 
-  display: block;
-}
-
-@media (max-width: 600px) {
-  #handAnim {
-    width: 22px;
-    height: 22px;
-  }
-  .hello-line {
-    width: 70px;
-    margin: .2rem auto .7rem;
-  }
 }
