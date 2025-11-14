@@ -10,40 +10,14 @@
   const dockMute = document.getElementById('dockMute');
   const dockLabel = document.getElementById('dockLabel');
 
-  let iframe;
+  let player = null;
+  let playerReady = false;
   let muted = true;
-  let started = true;
-
-  function srcFor(startIndex = 0) {
-    const params = new URLSearchParams({
-      autoplay: 0, // was 1
-      mute: 1,
-      controls: 0,
-      playsinline: 1,
-      rel: 0,
-      modestbranding: 1,
-      loop: 1,
-      playlist: YT_PLAYLIST.join(','),
-      enablejsapi: 1,
-      origin: (location.origin && location.origin !== 'null') ? location.origin : undefined,
-      index: startIndex
-    });
-    return `https://www.youtube-nocookie.com/embed/${YT_PLAYLIST[startIndex]}?${params.toString()}`;
-  }
-
-  function ensureIframe() {
-    if (!iframe) {
-      iframe = document.createElement('iframe');
-      iframe.className = 'music-iframe';
-      iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-      iframe.setAttribute('title', 'YouTube player');
-      iframe.src = srcFor(0);
-    }
-  }
+  let started = false;
 
   function updateUI() {
     if (dock) dock.hidden = false;
-    pill?.classList.add('playing');
+    if (pill) pill.classList.add('playing');
     if (dockLabel) dockLabel.textContent = muted ? 'now playing (muted)' : 'now playing';
     if (dockMute) {
       dockMute.textContent = muted ? '🔇' : '🔊';
@@ -52,59 +26,60 @@
     }
   }
 
-  function yt(cmd) {
-    if (!iframe || !iframe.contentWindow) return;
-    iframe.contentWindow.postMessage(JSON.stringify({
-      event: 'command',
-      func: cmd,
-      args: []
-    }), '*');
-  }
-
   function startDock() {
-    ensureIframe();
-    if (dockBody && !dockBody.contains(iframe)) {
-      dockBody.innerHTML = '';
-      dockBody.appendChild(iframe);
+    if (!dock || !pill) return;
+    dock.hidden = false;
+    pill.classList.add('playing');
+    started = true;
+    if (playerReady && player) {
+      if (muted) player.mute();
+      else player.unMute();
+      player.playVideo();
     }
     updateUI();
-    started = true;
-    // no yt('playVideo') here – iOS needs the tap inside the iframe
   }
 
   function stopDock() {
     if (dock) dock.hidden = true;
-    pill?.classList.remove('playing');
+    if (pill) pill.classList.remove('playing');
     if (dockLabel) dockLabel.textContent = 'paused';
-    yt('pauseVideo');
+    if (playerReady && player) player.pauseVideo();
   }
 
   function nextTrack() {
-    if (!started) return startDock();
-    yt('nextVideo');
+    if (!started) {
+      startDock();
+      return;
+    }
+    if (playerReady && player) player.nextVideo();
   }
 
   function prevTrack() {
-    if (!started) return startDock();
-    yt('previousVideo');
+    if (!started) {
+      startDock();
+      return;
+    }
+    if (playerReady && player) player.previousVideo();
   }
 
   function toggleMute() {
-    if (!started) return startDock();
+    if (!started) {
+      startDock();
+      return;
+    }
     muted = !muted;
-    if (muted) {
-      yt('mute');
-    } else {
-      yt('unMute');
+    if (playerReady && player) {
+      if (muted) player.mute();
+      else player.unMute();
     }
     updateUI();
   }
 
-  pill?.addEventListener('click', startDock);
-  dockClose?.addEventListener('click', stopDock);
-  dockNext?.addEventListener('click', nextTrack);
-  dockPrev?.addEventListener('click', prevTrack);
-  dockMute?.addEventListener('click', toggleMute);
+  pill && pill.addEventListener('click', startDock);
+  dockClose && dockClose.addEventListener('click', stopDock);
+  dockNext && dockNext.addEventListener('click', nextTrack);
+  dockPrev && dockPrev.addEventListener('click', prevTrack);
+  dockMute && dockMute.addEventListener('click', toggleMute);
 
   window.addEventListener('keydown', (e) => {
     const t = e.target;
@@ -113,6 +88,32 @@
     if (e.key === 'j' || e.key === 'J' || e.key === 'ArrowLeft') prevTrack();
     if (e.key === 'm' || e.key === 'M') toggleMute();
   });
+
+  window.onYouTubeIframeAPIReady = function () {
+    if (!dockBody) return;
+    player = new YT.Player(dockBody, {
+      width: '100%',
+      height: '100%',
+      videoId: YT_PLAYLIST[0],
+      playerVars: {
+        autoplay: 0,
+        controls: 0,
+        rel: 0,
+        playsinline: 1,
+        loop: 1,
+        modestbranding: 1,
+        playlist: YT_PLAYLIST.join(',')
+      },
+      events: {
+        onReady: function () {
+          playerReady = true;
+          if (muted && player) player.mute();
+          const iframe = dockBody.querySelector('iframe');
+          if (iframe) iframe.classList.add('music-iframe');
+        }
+      }
+    });
+  };
 
   window.GalleryMusic = { startDock, stopDock, nextTrack, prevTrack, toggleMute };
 })();
