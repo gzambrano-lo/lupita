@@ -114,7 +114,11 @@
       <div class="tiles-4">
         <a href="https://www.youtube.com/watch?v=qGP0BW1jYtg" target="_blank">
           <article class="mini-card">
-            <h3><span class="i">🎵</span> listening to</h3>
+            <h3>
+              <span id="currentMusicAnim" class="lottie lottie-inline" aria-hidden="true"></span>
+              listening to
+            </h3>
+
             <p>sucola</p>
           </article>
         </a>
@@ -223,44 +227,62 @@
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-
       const banner = document.querySelector('.alert.alert-welcome');
       const closeBtn = banner?.querySelector('.alert-close');
       const KEY = 'welcomeBannerDismissed';
 
       if (localStorage.getItem(KEY) === '1') {
         banner?.remove();
-      } else {
-        closeBtn?.addEventListener('click', () => {
+      } else if (banner && closeBtn) {
+        closeBtn.addEventListener('click', () => {
           banner.remove();
           localStorage.setItem(KEY, '1');
         });
       }
 
-  
       const opts = { renderer: 'svg', loop: true, autoplay: true };
+
       const sparkleLeft = document.getElementById('sparkleLeft');
       const sparkleRight = document.getElementById('sparkleRight');
       const handAnim = document.getElementById('handAnim');
       const lineAnim = document.getElementById('lineAnim');
+      const currentMusicAnim = document.getElementById('currentMusicAnim');
 
-      const fallback = (el, emoji) => { if (el) el.textContent = emoji; };
+      const fallback = (el, emoji) => {
+        if (el) el.textContent = emoji;
+      };
 
       if (!window.lottie) {
         fallback(sparkleLeft, '✨');
         fallback(sparkleRight, '✨');
         fallback(handAnim, '👋');
+        fallback(currentMusicAnim, '🎵');
         return;
       }
 
-      if (sparkleLeft)
-        lottie.loadAnimation({ ...opts, container: sparkleLeft, path: 'animations/sparkle-left.json' });
+      if (sparkleLeft) {
+        lottie.loadAnimation({
+          ...opts,
+          container: sparkleLeft,
+          path: 'animations/sparkle-left.json'
+        });
+      }
 
-      if (sparkleRight)
-        lottie.loadAnimation({ ...opts, container: sparkleRight, path: 'animations/sparkle-right.json' });
+      if (sparkleRight) {
+        lottie.loadAnimation({
+          ...opts,
+          container: sparkleRight,
+          path: 'animations/sparkle-right.json'
+        });
+      }
 
-      if (handAnim)
-        lottie.loadAnimation({ ...opts, container: handAnim, path: 'animations/wave-hand.json' });
+      if (handAnim) {
+        lottie.loadAnimation({
+          ...opts,
+          container: handAnim,
+          path: 'animations/wave-hand.json'
+        });
+      }
 
       if (lineAnim) {
         const anim = lottie.loadAnimation({
@@ -271,8 +293,17 @@
         });
         anim.setSpeed(0.5);
       }
+
+      if (currentMusicAnim) {
+        lottie.loadAnimation({
+          ...opts,
+          container: currentMusicAnim,
+          path: 'animations/music.json'
+        });
+      }
     });
   </script>
+
 
 </body>
 

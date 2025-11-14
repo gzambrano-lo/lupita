@@ -259,18 +259,31 @@ body {
 }
 
 #lineAnim {
-  width: 90px;
+  width: 100px;
+  max-width: 40vw;
   height: auto;
-  margin: .25rem 0 .5rem .3rem;
-  opacity: .9;
+  margin: .4rem 0 0;
+  opacity: 1;
   display: block;
-  transform: translateY(-6px);
+  transform: translateY(0);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   #lineAnim {
-    width: 70px;
-    margin: .2rem auto .5rem;
-    transform: translateY(-4px);
+    width: 80px;
+    max-width: 55vw;
+    margin: .4rem auto 0;
   }
+}
+
+.lottie-inline {
+  width: 32px;
+  height: 32px;
+  margin-right: .5rem;
+}
+
+#lineAnim svg {
+  width: 100%;
+  height: auto;
+  display: block;
 }

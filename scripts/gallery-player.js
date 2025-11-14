@@ -12,11 +12,11 @@
 
   let iframe;
   let muted = true;
-  let started = false;
+  let started = true;
 
   function srcFor(startIndex = 0) {
     const params = new URLSearchParams({
-      autoplay: 1,
+      autoplay: 0, // was 1
       mute: 1,
       controls: 0,
       playsinline: 1,
@@ -69,7 +69,7 @@
     }
     updateUI();
     started = true;
-    yt('playVideo');
+    // no yt('playVideo') here – iOS needs the tap inside the iframe
   }
 
   function stopDock() {
