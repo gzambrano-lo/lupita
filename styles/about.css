@@ -213,3 +213,19 @@
         grid-template-columns: 1fr;
     }
 }
+
+.dash li {
+    list-style: none;
+    position: relative;
+    padding-left: 1.1rem;
+}
+
+.dash li::before {
+    content: "♥";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: color-mix(in srgb, var(--coral) 70%, white);
+    font-size: .8rem;
+}
+

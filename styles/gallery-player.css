@@ -1,8 +1,3 @@
-/* =========================================
-   gallery-player.css  —  cute audio-only dock
-   ========================================= */
-
-/* for coders!!! -> fallback tokens (use your site tokens if you have any) */
 :root {
   --gp-z: 1100;
   --gp-radius: var(--radius, 12px);
@@ -18,9 +13,6 @@
   --gp-coral: var(--coral, #F28482);
 }
 
-/* -------------------------------------
-   floating play pill
--------------------------------------- */
 .music-pill {
   position: fixed;
   right: 1.2rem;
@@ -36,7 +28,7 @@
   letter-spacing: .2px;
   box-shadow: var(--gp-shadow);
   cursor: pointer;
-  transition: transform .18s ease, bg .18s ease, box-shadow .18s ease;
+  transition: transform .18s ease, background-color .18s ease, box-shadow .18s ease;
 }
 
 .music-pill:hover {
@@ -60,7 +52,6 @@
   }
 }
 
-/* optional text that appears when playing */
 .music-pill.playing::after {
   content: " ♪ now playing";
   margin-left: .35rem;
@@ -68,9 +59,6 @@
   color: var(--gp-sage);
 }
 
-/* -------------------------------------
-   modal (not used on gallery; kept for reuse)
--------------------------------------- */
 .music-modal[hidden] {
   display: none !important;
 }
@@ -133,6 +121,7 @@
   border: 0;
   color: var(--gp-muted);
   cursor: pointer;
+  transition: background-color .2s ease, transform .2s ease, color .2s ease;
 }
 
 .music-close:hover {
@@ -143,10 +132,9 @@
   padding: .9rem;
 }
 
-/* cover (shown before iframe if you ever use modal) */
 .music-cover {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16 / 9;
   display: grid;
   place-items: center;
   gap: .28rem;
@@ -164,19 +152,15 @@
   color: var(--gp-coral);
 }
 
-/* shared player sizing (modal use) */
 .music-iframe,
 .music-video {
   display: block;
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16 / 9;
   border: 0;
   border-radius: var(--gp-radius);
 }
 
-/* -------------------------------------
-   mini dock (gallery aesthetic)
--------------------------------------- */
 .music-dock[hidden] {
   display: none !important;
 }
@@ -191,20 +175,21 @@
 .music-dock__card {
   position: relative;
   display: flex;
-  align-items: center;
-  gap: .55rem;
-  padding: .5rem .9rem;
-  min-width: 200px;
-  /* stays visible even when iframe is hidden */
+  flex-direction: column;
+  align-items: stretch;
+  gap: .4rem;
+  padding: .7rem .9rem .8rem;
+  min-width: 260px;
+  max-width: 90vw;
   background: color-mix(in oklab, var(--gp-soft) 72%, white);
   border: 1px solid var(--gp-border);
-  border-radius: 999px;
+  border-radius: var(--gp-radius);
   box-shadow: var(--gp-shadow);
   backdrop-filter: blur(8px);
 }
 
-/* close flower */
 .dock-close {
+  align-self: flex-end;
   width: 30px;
   height: 30px;
   display: grid;
@@ -215,7 +200,7 @@
   color: var(--gp-sage);
   cursor: pointer;
   font-weight: 700;
-  transition: bg.2s ease, transform .2s ease, color .2s ease;
+  transition: background-color .2s ease, transform .2s ease, color .2s ease;
 }
 
 .dock-close:hover {
@@ -224,81 +209,13 @@
   color: #fff;
 }
 
-/* hide the youtube rectangle — keep audio only */
-#dockBody iframe,
-#dockBody video {
-  width: 0 !important;
-  height: 0 !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  position: absolute !important;
-}
-
-/* tiny equalizer so there’s a visible “playing” cue */
-.music-dock__card::after {
-  content: '';
-  display: inline-block;
-  width: 28px;
-  height: 10px;
-  margin-left: .25rem;
-  background:
-    linear-gradient(var(--gp-sage), var(--gp-sage)) 0 100% / 3px 40% no-repeat,
-    linear-gradient(var(--gp-sage), var(--gp-sage)) 8px 100% / 3px 60% no-repeat,
-    linear-gradient(var(--gp-sage), var(--gp-sage)) 16px 100% / 3px 35% no-repeat,
-    linear-gradient(var(--gp-sage), var(--gp-sage)) 24px 100% / 3px 50% no-repeat;
-  animation: gp-bars 1s ease-in-out infinite;
-}
-
-@keyframes gp-bars {
-
-  0%,
-  100% {
-    background-size: 3px 40%, 3px 60%, 3px 35%, 3px 50%;
-  }
-
-  50% {
-    background-size: 3px 65%, 3px 30%, 3px 55%, 3px 25%;
-  }
-}
-
-/* -------------------------------------
-   utilities & accessibility
--------------------------------------- */
-.is-hidden {
-  display: none !important;
-}
-
-:focus-visible {
-  outline: 3px solid var(--gp-coral);
-  outline-offset: 3px;
-}
-
-/* -------------------------------------
-   responsive & reduced motion
--------------------------------------- */
-@media (max-width: 520px) {
-  .music-pill {
-    right: .9rem;
-    bottom: .9rem;
-  }
-
-  .music-dock {
-    left: .75rem;
-    bottom: .75rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
 .dock-controls {
   display: flex;
-  gap: .35rem;
-  margin-left: .1rem;
+  justify-content: center;
+  align-items: center;
+  gap: .45rem;
+  width: 100%;
+  margin: .1rem 0 .2rem;
 }
 
 .dock-btn {
@@ -312,10 +229,74 @@
   color: var(--gp-text);
   font-weight: 700;
   cursor: pointer;
-  transition: bg .2s ease, transform .15s ease;
+  transition: background-color .2s ease, transform .15s ease;
 }
 
 .dock-btn:hover {
   background: var(--gp-cream);
   transform: translateY(-1px);
+}
+
+.dock-hide {
+  font-size: 1rem;
+  padding-top: 1px;
+}
+
+.dock-label {
+  font-size: .85rem;
+  color: var(--gp-muted);
+  text-align: center;
+  width: 100%;
+}
+
+#dockBody iframe,
+#dockBody video {
+  display: block;
+  width: 260px;
+  max-width: 80vw;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--gp-radius);
+}
+
+.music-dock.collapsed .dock-label,
+.music-dock.collapsed #dockBody {
+  display: none;
+}
+
+.music-dock.collapsed .dock-hide {
+  transform: rotate(180deg);
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: 3px solid var(--gp-coral);
+  outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+  .music-pill {
+    right: .9rem;
+    bottom: .9rem;
+  }
+
+  .music-dock {
+    left: .75rem;
+    bottom: .75rem;
+  }
+
+  #dockBody iframe,
+  #dockBody video {
+    width: 220px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }

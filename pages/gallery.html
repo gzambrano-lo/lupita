@@ -20,11 +20,21 @@
   <link rel="stylesheet" href="../styles/components.css">
   <link rel="stylesheet" href="../styles/gallery.css">
   <link rel="stylesheet" href="../styles/gallery-player.css">
+
+  <!--vanilla-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
+
+  <!--js-->
+  <script src="/scripts/site.js" defer></script>
 </head>
 
 <body>
   <header class="site-header">
-    <h1>gallery</h1>
+    <h1 class="hero-title">
+      <span class="lottie header-sparkle" data-lottie="sparkle-left" aria-hidden="true"></span>
+      gallery
+      <span class="lottie header-sparkle" data-lottie="sparkle-right" aria-hidden="true"></span>
+    </h1>
   </header>
 
   <nav id="nav_menu" aria-label="Main">
@@ -62,6 +72,66 @@
 
 
     <section class="tumblr-archive" aria-label="image scrapbook">
+
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/pigtails.jpg" alt="picture of girl with red hair">
+        </figure>
+      </a>
+
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/crumb.jpg" alt="picture of girl with red hair">
+        </figure>
+      </a>
+
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/cutie.jpg" alt="picture of girl with red hair">
+        </figure>
+      </a>
+
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/lipstick.jpg" alt="picture of girl with red hair">
+        </figure>
+      </a>
+
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/lavender.jpg" alt="picture of girl with red hair">
+        </figure>
+      </a>
+
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/redhead.jpg" alt="picture of girl with red hair">
+        </figure>
+      </a>
+
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/girlfriend_little_thunder.jpg" alt="picture of girl drinking water">
+        </figure>
+      </a>
+
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/reze.jpg" alt="picture of reze from chainsaw man">
+        </figure>
+      </a>
+
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/brunettepink.jpg" alt="hastiem_">
+        </figure>
+      </a>
+
+      <a class="tile" href="unknown-source.html" target="_blank" rel="noopener">
+        <figure>
+          <img src="../images/gallery/reze_mame1645.jpg" alt="hastiem_">
+        </figure>
+      </a>
 
       <a class="tile"
         href="https://x.com/HastiEM_/status/1985294542107484344?fbclid=IwY2xjawN4bPhleHRuA2FlbQIxMABicmlkETFvUElDaUNxYWFUTDZhQThXc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHi6aOe7j69SqUA-1Og83LCtT0FWB4i1dWFBPTeGrgoLsNy53vr2MHEG2X2_R_aem_5MVwqhNpeAn095diKaXHgQ"
@@ -199,6 +269,7 @@
           <button id="dockPrev" class="dock-btn" aria-label="previous track">⟵</button>
           <button id="dockNext" class="dock-btn" aria-label="next track">⟶</button>
           <button id="dockMute" class="dock-btn" aria-label="unmute" title="unmute (m)">🔇</button>
+          <button id="dockHide" class="dock-btn dock-hide" aria-label="hide player" title="hide">▾</button>
         </div>
 
         <span id="dockLabel" class="dock-label" aria-live="polite">♪ now playing</span>
