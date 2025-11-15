@@ -60,10 +60,16 @@
       <div class="alert-content">
         <p class="alert-title">music while you scroll</p>
         <p>
-          there's a small player in the bottom-left corner. click <strong>♪ play</strong> to start it,
-          then keep browsing.
-          you can <strong>next</strong>/<strong>previous</strong> tracks from the dock or use
-          <kbd>J</kbd>/<kbd>K</kbd>. press <kbd>M</kbd> to mute/unmute.
+          there's a tiny music dock in the bottom-left corner. click
+          <strong>♪ play</strong> to start it, then keep browsing.
+        </p>
+        <p>
+          use the buttons to <strong>go back</strong> / <strong>skip</strong> and
+          <strong>mute / unmute</strong>. tap the little arrow to
+          <strong>collapse or expand</strong> the video frame, and the flower
+          button to <strong>stop</strong> the music.
+          you can also use <kbd>J</kbd>/<kbd>K</kbd> to go to the
+          previous/next track and <kbd>M</kbd> to mute or unmute.
         </p>
       </div>
       <button class="alert-close" type="button" aria-label="dismiss" title="dismiss">🌼</button>
@@ -245,6 +251,7 @@
 
     <button class="music-pill" id="musicPill" aria-haspopup="dialog" aria-controls="musicModal"
       aria-label="play scrapbook tune">♪ play</button>
+    <span id="miniNowPlaying" class="mini-now-playing" hidden>♪ playing…</span>
 
     <div class="music-modal" id="musicModal" role="dialog" aria-modal="true" aria-labelledby="musicTitle" hidden>
       <div class="music-modal__backdrop" id="musicBackdrop"></div>
@@ -269,14 +276,14 @@
           <button id="dockPrev" class="dock-btn" aria-label="previous track">⟵</button>
           <button id="dockNext" class="dock-btn" aria-label="next track">⟶</button>
           <button id="dockMute" class="dock-btn" aria-label="unmute" title="unmute (m)">🔇</button>
-          <button id="dockHide" class="dock-btn dock-hide" aria-label="hide player" title="hide">▾</button>
+          <button id="dockHide" class="dock-btn dock-hide" aria-label="collapse player" title="collapse">▾</button>
         </div>
 
-        <span id="dockLabel" class="dock-label" aria-live="polite">♪ now playing</span>
 
         <div id="dockBody"></div>
       </div>
     </div>
+
 
     <script src="../scripts/gallery-player.js" defer></script>
   </main>

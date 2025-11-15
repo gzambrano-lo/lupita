@@ -300,3 +300,141 @@
     transition: none !important;
   }
 }
+
+
+.music-dock[hidden] {
+  display: none !important;
+}
+
+.music-dock {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: calc(var(--gp-z) + 1);
+}
+
+
+
+.music-dock__card {
+  display: grid;
+  grid-template-columns: 1fr auto; 
+  grid-auto-rows: auto;
+  column-gap: 0.5rem;
+  row-gap: 0.35rem;
+  align-items: center;
+  padding: 0.55rem 0.75rem 0.8rem; 
+  min-width: 280px;
+  max-width: 320px;
+  background: color-mix(in srgb, var(--gp-soft) 75%, white);
+  border-radius: var(--gp-radius);
+  border: 1px solid var(--gp-border);
+  box-shadow: var(--gp-shadow);
+}
+
+.dock-controls {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dock-btn {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--gp-border);
+  background: var(--gp-card);
+  color: var(--gp-text);
+  font-weight: 700;
+  cursor: pointer;
+  transition: bg 0.15s ease, transform 0.12s ease;
+}
+
+.dock-btn:hover {
+  background: var(--gp-cream);
+  transform: translateY(-1px);
+}
+
+
+.dock-hide {
+  margin-left: 0.2rem;
+}
+
+.dock-close {
+  grid-column: 2;
+  grid-row: 1;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--gp-border);
+  background: var(--gp-cream);
+  color: var(--gp-sage);
+  cursor: pointer;
+  font-weight: 700;
+  transition: bb 0.15s ease, transform 0.15s ease, color 0.15s ease;
+}
+
+.dock-close:hover {
+  transform: scale(1.06);
+  background: var(--gp-pink);
+  color: #fff;
+}
+
+.dock-label {
+  grid-column: 1 / -1;
+  font-size: 0.82rem;
+  color: var(--gp-muted);
+  text-align: center;
+  margin-top: 0.1rem;
+}
+
+#dockBody {
+  grid-column: 1 / -1;
+  margin-top: 0.3rem;
+}
+
+#dockBody iframe,
+#dockBody video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--gp-radius);
+  border: 1px solid var(--gp-border);
+}
+
+
+.music-dock.collapsed .music-dock__card {
+  padding-block: 0.5rem;
+}
+
+.music-dock.collapsed #dockBody {
+  display: none;
+}
+
+.music-dock.collapsed .dock-label {
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+}
+
+.music-dock.collapsed .dock-hide {
+  transform: rotate(180deg);
+}
+
+
+@media (max-width: 700px) {
+  .music-dock {
+    left: 0.75rem;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  }
+
+  .music-dock__card {
+    min-width: 260px;
+    max-width: 280px;
+  }
+}
