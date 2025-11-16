@@ -1,5 +1,6 @@
 (() => {
   const YT_PLAYLIST = [
+    'zZ2f9sQn77Q',
     'PqN8IN8TMC8',
     '5kV5cdaQh1M',
     'cU6ZGcn3ndI',
