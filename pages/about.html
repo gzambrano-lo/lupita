@@ -19,12 +19,14 @@
   <link rel="stylesheet" href="../styles/layout.css" />
   <link rel="stylesheet" href="../styles/components.css" />
   <link rel="stylesheet" href="../styles/about.css" />
+  <link rel="stylesheet" href="../styles/carousel.css" />
 
   <!--vanilla-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
 
   <!--js-->
   <script src="/scripts/site.js" defer></script>
+  <script src="/scripts/carousel.js" defer></script>
 </head>
 
 <body>
@@ -126,6 +128,34 @@
           can also connect with me on <a class="highlight-link" href="links.html">my socials</a>.
         </p>
       </article>
+
+      <!--image carousel-->
+      <article class="about-card carousel js-carousel" data-carousel="about-photos">
+        <h3 data-ico="📷">meeee</h3>
+
+        <div class="carousel-frame" data-carousel-frame>
+          <ul class="carousel-track" data-carousel-track>
+
+            <li class="carousel-slide" data-carousel-slide>
+              <img src="../images/about/me1.jpg" alt="">
+            </li>
+
+            <li class="carousel-slide" data-carousel-slide>
+              <img src="../images/about/me2.jpg" alt="">
+            </li>
+
+          </ul>
+
+          <button class="carousel-arrow carousel-arrow--prev" type="button" data-carousel-prev
+            aria-label="Previous image">‹</button>
+          <button class="carousel-arrow carousel-arrow--next" type="button" data-carousel-next
+            aria-label="Next image">›</button>
+        </div>
+
+        <div class="carousel-dots" data-carousel-dots aria-label="Select image"></div>
+      </article>
+
+
     </section>
 
   </main>
