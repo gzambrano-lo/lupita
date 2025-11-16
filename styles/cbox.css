@@ -1,0 +1,126 @@
+.chatbox-card {
+  background: rgba(255, 255, 255, .7);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  position: relative;
+}
+
+.chatbox-card::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 16%;
+  width: 88px;
+  height: 20px;
+  background: linear-gradient(135deg,
+      color-mix(in srgb, var(--soft) 80%, #fff),
+      color-mix(in srgb, var(--soft) 55%, #fff));
+  opacity: .9;
+  border-radius: 999px;
+  transform: rotate(-4deg);
+  box-shadow: 0 3px 6px rgb(0 0 0 / .12);
+  pointer-events: none;
+}
+
+.chatbox-header {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+.chatbox-card .section-title {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-bottom: 0;
+  font-size: 1.15rem;
+}
+
+.chatbox-card .section-title::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  margin-left: .4rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--pink) 85%, transparent),
+    transparent
+  );
+  opacity: .75;
+}
+
+.chatbox-card .section-title .i {
+  font-size: 1.3rem;
+}
+
+.chatbox-card .meta {
+  font-size: .85rem;
+  opacity: .8;
+}
+
+.chatbox-header .meta::before {
+  content: "♡";
+  margin-right: .25rem;
+  font-size: .85rem;
+  opacity: .7;
+}
+
+.chatbox-frame {
+  border-radius: var(--radius);
+  padding: 1rem;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--cream) 80%, #fff),
+      color-mix(in srgb, var(--soft) 55%, #fff),
+      color-mix(in srgb, var(--sage, var(--soft)) 65%, #fff)
+    );
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  box-shadow: var(--shadow);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.chatbox-frame:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgb(0 0 0 / .12);
+}
+
+.chatbox-frame iframe {
+  width: 100%;
+  height: clamp(260px, 48vh, 380px);
+  border: none;
+  display: block;
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.chatbox-note {
+  text-align: right;
+  font-size: .8rem;
+  opacity: .75;
+}
+
+@media (max-width: 640px) {
+  .chatbox-card {
+    gap: .5rem;
+  }
+
+  .chatbox-card .section-title::after {
+    display: none;
+  }
+
+  .chatbox-frame {
+    padding: .6rem;
+  }
+
+  .chatbox-frame iframe {
+    height: 320px;
+  }
+}
