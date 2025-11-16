@@ -166,15 +166,19 @@
 
 .dash li {
     position: relative;
-    padding-left: 1.15rem;
+    padding-left: 1.5rem;
     margin: .35rem 0;
+    line-height: 1.5;
 }
 
 .dash li::before {
-    content: "—";
+    content: "♡";
     position: absolute;
-    left: 0;
-    color: var(--muted);
+    left: 0.2rem;
+    top: 0.25em;
+    font-size: .8rem;
+    font-family: "Nunito", system-ui, sans-serif;
+    color: color-mix(in srgb, var(--coral) 75%, var(--soft));
 }
 
 .chips {
