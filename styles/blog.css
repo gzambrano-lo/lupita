@@ -1,0 +1,41 @@
+.blog-post {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.post-date {
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.example-block {
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: var(--surface-2);
+}
+
+.example-title {
+  margin-bottom: 0.7rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent-coral-soft);
+}
+
+.example-img img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  margin-bottom: 0.3rem;
+}
+
+.example-img figcaption {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-bottom: 1rem;
+}
+
+.example-text {
+  line-height: 1.5;
+}
