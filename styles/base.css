@@ -98,12 +98,12 @@ p {
 /* anchor positioning to the header */
 .site-header { position: relative; }
 
-/* place the image ABOVE the header/nav */
+
 .site-header > .header-logo{
   position: absolute;
   left: 50%;
-  bottom: 100%;                /* pin to the top edge of the header */
-  transform: translate(-50%, -8px);  /* small gap above the nav */
+  bottom: 100%;                
+  transform: translate(-50%, -8px);  
   width: clamp(300px, 45vw, 520px);
   z-index: 1000;
   pointer-events: none;

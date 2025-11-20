@@ -1,0 +1,129 @@
+.shrine-grid {
+    max-width: 1100px;
+    margin: 2rem auto 3rem;
+    column-count: 3;
+    column-gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+    .shrine-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .shrine-grid {
+        column-count: 1;
+    }
+}
+
+.shrine-grid .entry {
+    display: inline-block;
+    width: 100%;
+    break-inside: avoid;
+    margin: 0 0 1.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem 1.1rem 0.9rem;
+    position: relative;
+}
+
+.shrine-grid .entry-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0.6rem;
+}
+
+.entry-title {
+    margin: 0;
+    color: var(--sage);
+    font-weight: 700;
+    letter-spacing: .02em;
+}
+
+.tags {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 0.15rem;
+}
+
+.chip {
+    background: var(--pink);
+    color: var(--text);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: .85rem;
+    border: 1px solid color-mix(in srgb, var(--pink) 60%, var(--border));
+}
+
+.chip--alt {
+    background: var(--soft);
+    border-color: var(--border);
+}
+
+.shrine-grid .embed,
+.shrine-grid img {
+    width: 100%;
+    display: block;
+    border-radius: calc(var(--radius) - 2px);
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+}
+
+.embed {
+    aspect-ratio: 16 / 9;
+    border-radius: calc(var(--radius) + 2px);
+    overflow: hidden;
+    background: #000;
+    box-shadow: var(--shadow);
+    line-height: 0;
+}
+
+.embed iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.shrine-grid .entry p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+.tape {
+    position: absolute;
+    left: 1.1rem;
+    top: -0.7rem;
+    width: 78px;
+    height: 20px;
+    transform: rotate(-3deg);
+    background: color-mix(in srgb, var(--soft) 70%, white);
+    border: 1px dashed color-mix(in srgb, var(--border) 80%, transparent);
+    border-radius: 6px;
+    opacity: .9;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .10);
+}
+
+.tape::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg,
+            rgba(255, 255, 255, .35) 0 8px,
+            transparent 8px 16px);
+    mix-blend-mode: multiply;
+    opacity: .35;
+    border-radius: inherit;
+}
+
+.tape--pink {
+    background: color-mix(in srgb, var(--pink) 55%, white);
+}
