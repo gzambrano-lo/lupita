@@ -105,7 +105,6 @@
   letter-spacing: 0.5px;
 }
 
-/* metadata */
 .bubblegum .watch-meta {
   text-align: center;
   color: var(--muted);
@@ -113,7 +112,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* cute pill */
 .status-pill.pinky {
   display: inline-block;
   margin: 0.25rem auto 0.75rem;
@@ -126,7 +124,6 @@
   box-shadow: 0 2px 6px rgba(242, 132, 130, 0.4);
 }
 
-/* blurb */
 .bubblegum .watch-thoughts {
   font-size: 0.9rem;
   color: var(--text);
@@ -135,15 +132,11 @@
   padding: 0 0.5rem 0.75rem;
 }
 
-/* image */
 .bubblegum .watch-img {
   border-radius: 0;
-  /* keep same as other posters */
   box-shadow: none;
-  /* optional, keeps it clean */
 }
 
-/* pill row */
 .meta-pills {
   display: flex;
   flex-wrap: wrap;
@@ -152,18 +145,17 @@
   margin-bottom: 0.75rem;
 }
 
-/* base pill */
+
 .meta-pill {
   display: inline-block;
   padding: 0.2rem 0.7rem;
   border-radius: 999px;
   font-size: 0.75rem;
-  background: var(--soft);      /* minty/soft token */
+  background: var(--soft);      
   color: var(--muted);
   white-space: nowrap;
 }
 
-/* highlight pill for author */
 .meta-pill-main {
   background: var(--coral);
   color: #fff;
