@@ -85,3 +85,87 @@
 .watch-table tr:hover td {
   background: rgba(245, 202, 195, .25);
 }
+
+/* bubblegum card styling */
+.watch-item.bubblegum {
+  /* keep same structure as other cards, just tint + border */
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 2px solid var(--pink);
+  box-shadow: var(--shadow);
+}
+
+/* title */
+.watch-item.bubblegum .watch-title {
+  color: var(--coral);
+  /* your coral token */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.5px;
+}
+
+/* metadata */
+.bubblegum .watch-meta {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+/* cute pill */
+.status-pill.pinky {
+  display: inline-block;
+  margin: 0.25rem auto 0.75rem;
+  background: var(--coral);
+  color: #fff;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(242, 132, 130, 0.4);
+}
+
+/* blurb */
+.bubblegum .watch-thoughts {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.55;
+  text-align: center;
+  padding: 0 0.5rem 0.75rem;
+}
+
+/* image */
+.bubblegum .watch-img {
+  border-radius: 0;
+  /* keep same as other posters */
+  box-shadow: none;
+  /* optional, keeps it clean */
+}
+
+/* pill row */
+.meta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+/* base pill */
+.meta-pill {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: var(--soft);      /* minty/soft token */
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+/* highlight pill for author */
+.meta-pill-main {
+  background: var(--coral);
+  color: #fff;
+  font-weight: 600;
+}
