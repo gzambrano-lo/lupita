@@ -57,6 +57,28 @@
 
     <main>
 
+        <!--websetsbylynn -->
+        <details class="post-card">
+            <summary class="post-cover">
+                <h2>websets by lynn</h2>
+            </summary>
+
+            <article class="post">
+                <h2>web sets by lynn</h2>
+                <p>
+                    found <a href="https://websetsbylynn.neocities.org/" target="_blank" rel="noopener"
+                        class="highlight-link">websets by lynn</a>
+                    —
+                    this website is a neat neocities resource hub offering free backgrounds, button sets, glitter
+                    fills
+                    and layout tools! everything is ready to use and perfect for mockups, placeholders, or giving a page
+                    that nostalgic web flair without drawing your assets up from scratch. this website is very cute!
+                </p>
+
+            </article>
+        </details>
+
+        <!--cute bulleted lists-->
         <details class="post-card">
 
             <summary class="post-cover">
@@ -90,10 +112,12 @@
 
                 <p>but you can change them! here's the same list, but with an emoji from emojipedia:</p>
 
+
                 <ul class="fancy-list">
                     <li>example with a custom bullet</li>
                     <li>so much cuter</li>
                 </ul>
+
 
                 <h2>the css that makes it happen:</h2>
                 <pre><code>.fancy-list {
@@ -109,18 +133,23 @@
 
                 <p class="tip">put the fancy-list tag inside your opening ul tag</p>
 
+                <p class="tip">i called mine <code>fancy-list</code>, but you can pick any name you like! just remember
+                    to use that same name inside your <code>&lt;ul&gt;</code> tag, otherwise your cute custom bullets
+                    won't show up.</p>
+
                 <h2>here's what's happening:</h2>
                 <ul class="explain">
                     <li><code>list-style-type: none;</code> kills the default dots.</li>
                     <li><code>padding-left: 0;</code> realigns the text.</li>
                     <li><code>li::before</code> lets you place something before each item.</li>
-                    <li><code>content: "🍄";</code> that “something” is your emoji.</li>
-                    <li><code>color: var(--coral);</code> uses your brand color.</li>
+                    <li><code>content: "something";</code> that “something” is your emoji.</li>
+                    <li><code>color: var(--coral);</code> pick your color! i used my color token here</li>
                 </ul>
 
             </article>
         </details>
 
+        <!--88x31 buttons-->
         <details class="post-card">
             <summary class="post-cover">
                 <h2>88x31 buttons</h2>
@@ -138,7 +167,7 @@
                     a teeny banner (exactly <strong>88x31px</strong>) you can trade, collect, and stick on your site.
                     think stickers for your web notebook.
                 </p>
-                <ul>
+                <ul class="fancy-list">
                     <li><a href="https://88x31.datakra.sh/" target="_blank" rel="noopener">build a button</a></li>
                     <li><a href="https://ezgif.com/maker/ezgif-6164d3ba2571a3-split.html" target="_blank"
                             rel="noopener">make it blinky</a></li>
@@ -154,6 +183,7 @@
             </article>
         </details>
 
+        <!--svg logo website-->
         <details class="post-card">
             <summary class="post-cover">
                 <h2>svg logos for quick mockups</h2>
@@ -168,16 +198,12 @@
                     mockups
                     when you don't feel like redrawing icons just to fill space.
                 </p>
-
-                <p>
-                    it's small stuff like this that makes designing layouts faster. drop in a logo, test color balance,
-                    move on.
-                </p>
             </article>
         </details>
 
-
     </main>
+
+    <!--footer-->
     <footer class="site-footer">
         <p>&copy; Lupita Zambrano 2025</p>
     </footer>
