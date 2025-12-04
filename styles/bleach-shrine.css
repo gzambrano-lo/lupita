@@ -127,3 +127,7 @@
 .tape--pink {
     background: color-mix(in srgb, var(--pink) 55%, white);
 }
+
+.highlight-link {
+    color: var(--sage);
+}
