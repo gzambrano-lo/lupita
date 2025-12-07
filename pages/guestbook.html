@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/layout.css">
     <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/guestbook.css">
 
     <!--vanilla-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
@@ -57,36 +58,27 @@
         <section class="form-card">
             <h2 class="form-title">leave me a note ✍️</h2>
             <p class="form-subtitle" id="anon-note">
-                anonymous by default — don't include your name or handle unless you want me to reply.
+                anonymous by default. don't include your name or handle unless you want me to reply.
             </p>
 
-            <form action="https://formspree.io/f/" method="POST" class="guestbook-form">
+            <form action="https://formspree.io/f/xgvjdvlj" method="POST" class="guestbook-form">
+                <!-- real subject -->
+                <label for="subject">subject</label>
+                <input id="subject" name="subject" type="text" maxlength="120" />
+
+                <!-- honeypot (hidden with CSS) -->
                 <input type="text" name="website" class="hp" tabindex="-1" aria-hidden="true">
 
                 <label for="message">your message</label>
                 <textarea id="message" name="message" rows="6" maxlength="1200" required></textarea>
 
-                <label for="contact">how to reach you (optional)</label>
+                <label for="contact">if you want me to contact you back</label>
                 <input id="contact" name="contact" type="text" placeholder="insta, discord, number…">
 
                 <input type="hidden" name="_subject" value="New guestbook entry ✨">
                 <button type="submit" class="btn">send</button>
 
                 <input type="hidden" name="_next" value="">
-            </form>
-
-            <!-- modify this form HTML and place wherever you want your form -->
-            <form action="https://formspree.io/f/xgvjdvlj" method="POST">
-                <label >
-                    Your email:
-                    <input type="email" name="email">
-                </label>
-                <label>
-                    Your message:
-                    <textarea name="message"></textarea>
-                </label>
-                <!-- your other form fields go here -->
-                <button type="submit">Send</button>
             </form>
 
             <p class="privacy-note">
@@ -97,7 +89,7 @@
     </main>
 
     <footer class="site-footer">
-        <p>&copy; lupita zambrano 2025 ☆(>ᴗ•)</p>
+        <p>&copy; lupita zambrano 2025 ☆(>ᴗ•) </p>
     </footer>
 
 </body>

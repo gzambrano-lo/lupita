@@ -1,0 +1,102 @@
+/* --- guestbook layout --- */
+
+.guestbook-page .form-card {
+    width: min(100%, 720px);
+    margin-inline: auto;
+    border-radius: 1.75rem;
+    padding: clamp(1.75rem, 4vw, 2.5rem);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+}
+
+.guestbook-page .form-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
+}
+
+.guestbook-page .form-subtitle {
+    font-size: 0.9rem;
+    color: #707070;
+}
+
+/* --- form controls --- */
+
+.guestbook-page .guestbook-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-top: 1.4rem;
+}
+
+.guestbook-page .guestbook-form label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: lowercase;
+    letter-spacing: 0.03em;
+    color: #606060;
+}
+
+/* hide honeypot for humans */
+.guestbook-page .guestbook-form .hp {
+    position: absolute;
+    left: -9999px;
+}
+
+/* inputs + textarea */
+.guestbook-page .guestbook-form input:not(.hp),
+.guestbook-page .guestbook-form textarea {
+    font: inherit;
+    border-radius: 999px;
+    border: 1px solid #e2d9cf;
+    padding: 0.7rem 0.9rem;
+    background: #fffdf9;
+    color: #2f2f2f;
+    transition: border-color 0.15s ease,
+                box-shadow 0.15s ease,
+                background-color 0.15s ease;
+}
+
+/* textarea needs a different radius */
+.guestbook-page .guestbook-form textarea {
+    border-radius: 1.1rem;
+    resize: vertical;
+    min-height: 8rem;
+}
+
+/* focus state */
+.guestbook-page .guestbook-form input:not(.hp):focus,
+.guestbook-page .guestbook-form textarea:focus {
+    outline: none;
+    border-color: #8ab9a0;
+    box-shadow: 0 0 0 2px rgba(138, 185, 160, 0.25);
+    background-color: #ffffff;
+}
+
+/* placeholder text */
+.guestbook-page .guestbook-form ::placeholder {
+    color: #b4a69a;
+    font-size: 0.85rem;
+}
+
+/* send button tweaks */
+.guestbook-page .guestbook-form .btn {
+    align-self: flex-end;
+    margin-top: 0.8rem;
+    padding-inline: 1.5rem;
+}
+
+/* tiny print */
+.guestbook-page .privacy-note {
+    margin-top: 1.1rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #7a7168;
+}
+
+/* a bit more breathing room on wider screens */
+@media (min-width: 768px) {
+    .guestbook-page .form-card {
+        padding: 2.25rem 2.75rem;
+    }
+}
