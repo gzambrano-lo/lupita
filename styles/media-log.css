@@ -151,7 +151,7 @@
   padding: 0.2rem 0.7rem;
   border-radius: 999px;
   font-size: 0.75rem;
-  background: var(--soft);      
+  background: var(--soft);
   color: var(--muted);
   white-space: nowrap;
 }
@@ -160,4 +160,11 @@
   background: var(--coral);
   color: #fff;
   font-weight: 600;
+}
+
+.status-pill.warning {
+  background: rgba(120, 80, 160, 0.15);
+  color: #6b4fa3;
+  border: 1px solid rgba(120, 80, 160, 0.35);
+  font-style: italic;
 }
