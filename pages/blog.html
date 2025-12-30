@@ -67,6 +67,51 @@
         </p>
       </article>
 
+      <!-- post 22 -->
+      <details class="post-card">
+        <summary class="post-cover">
+          <h2><time datetime="2025-12-30">12/30/25</time></h2>
+        </summary>
+
+        <article class="post">
+          <header>
+            <h2>tinywebpractice: soft blog, real backend</h2>
+            <p class="meta">
+              <time datetime="2025-12-30">posted dec 30, 2025</time>
+            </p>
+          </header>
+
+          <p>
+            i built <strong>tinywebpractice</strong> as a quiet little site! soft colors, glassy cards,
+            and space to think, but i wanted it to be more than just a static diary.
+          </p>
+
+          <p>
+            behind the scenes, it's a real tiny full-stack project. the frontend is plain
+            html, css, and js hosted on github pages. the backend is a cloudflare worker
+            with a d1 database handling posts.
+          </p>
+
+          <p>
+            instead of committing a new file every time i write, i made a private admin page.
+            when i post, it sends a request to the worker, checks an admin key, and saves the entry
+            remotely. the blog page just fetches and renders them.
+          </p>
+
+          <p>
+            i like this setup because it keeps the site fast and simple, but gives me freedom.
+            no cms, no framework, no heavy tooling... just small pieces i understand end-to-end.
+          </p>
+
+          <p class="read-more">
+            <a href="https://tinywebpractice.github.io/tiny/" class="highlight-link" target="_blank"
+              rel="noopener noreferrer">
+              visit tinywebpractice →
+            </a>
+          </p>
+        </article>
+      </details>
+
       <!-- post 21 -->
       <details class="post-card">
         <summary class="post-cover">
