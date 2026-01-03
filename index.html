@@ -26,9 +26,8 @@
   <link rel="stylesheet" href="styles/about.css">
   <link rel="stylesheet" href="styles/post-toggle.css">
 
-  <!--vanilla-->
+  <!-- lottie -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
-
 </head>
 
 <body>
@@ -36,9 +35,9 @@
   <header class="site-header">
     <div class="hero">
       <h1 class="hero-title">
-        <span id="sparkleLeft" class="lottie"></span>
+        <span id="sparkleLeft" class="lottie" aria-hidden="true"></span>
         lupe zambrano
-        <span id="sparkleRight" class="lottie"></span>
+        <span id="sparkleRight" class="lottie" aria-hidden="true"></span>
       </h1>
 
       <!-- full tab nav -->
@@ -62,6 +61,7 @@
   </header>
 
   <main id="main" class="container">
+
     <!-- coral alert -->
     <section class="alert alert-welcome" role="status" aria-live="polite">
       <div class="alert-content">
@@ -72,32 +72,38 @@
           if you'd like something removed, please <a href="/pages/guestbook.html">leave me a note</a> or
           <a href="mailto:gzamlo98@gmail.com">send an email</a> and i'll take care of it 🫡
         </p>
+
         <hr class="alert-divider">
+
         <p>
           <strong>notita:</strong> este es un proyecto personal y un “diario digital” donde comparto ideas,
-          proyectos y cosas que me inspiran.
-          no reclamo propiedad sobre el contenido enlazado; todos los derechos son de sus creadores
-          originales.
-          si algo necesita ser retirado, por favor déjame un mensajito o mándame un correo y con gusto lo quito 🫡
+          proyectos y cosas que me inspiran. no reclamo propiedad sobre el contenido enlazado; todos los derechos son de
+          sus creadores originales. si algo necesita ser retirado, por favor déjame un mensajito o mándame un correo y
+          con gusto lo quito 🫡
         </p>
+
         <hr class="alert-divider">
+
         <p class="cw-note">
           content note: some pages may include 18+ / nsfw material (art, jokes, language). viewer discretion advised.
           <br><em>nota:</em> algunas páginas pueden incluir contenido para mayores de 18 años / nsfw. se recomienda
           discreción.
         </p>
       </div>
+
       <button class="alert-close" type="button" aria-label="dismiss" title="dismiss">🌼</button>
     </section>
 
     <!-- intro (avatar + tagline) -->
     <section class="card home-intro">
-      <img src="images/gallery/kobeni.jpg" alt="Lupita's avatar" class="profile-pic">
+      <img src="images/gallery/kobeni.jpg" alt="Lupe's avatar" class="profile-pic" loading="lazy">
       <div class="intro-text">
-        <h2>hi, i'm lupe!
+        <h2>
+          hi, i'm lupe!
           <span id="handAnim" class="lottie" aria-hidden="true"></span>
         </h2>
-        <div id="lineAnim" class="lottie hello-line"></div>
+
+        <div id="lineAnim" class="lottie hello-line" aria-hidden="true"></div>
 
         <p>
           i made this site just for fun and accidentally fell in love with it.
@@ -109,237 +115,232 @@
 
     <!-- currently -->
     <section class="card card-taped">
-      <h2 class="section-title">
-        <span class="i">⏱️</span> currently
-      </h2>
+      <h2 class="section-title"><span class="i">⏱️</span> currently</h2>
       <p class="meta-note">tiny snapshot of my brain right now</p>
 
-      <div class="tiles-4">
-        <a href="https://www.youtube.com/watch?v=qGP0BW1jYtg" target="_blank">
-          <article class="mini-card">
-            <h3>
-              <span id="currentMusicAnim" class="lottie lottie-inline" aria-hidden="true"></span>
-              listening to
-            </h3>
-            <p><em>sucola</em></p>
-          </article>
-        </a>
-        <a href="https://junjiitomanga.fandom.com/wiki/Smashed" target="_blank">
-          <article class="mini-card">
-            <h3><span class="i">📚</span> reading</h3>
-            <p><em>smashed</em> by junji ito</p>
-          </article>
-        </a>
-        <article class="mini-card">
-          <h3><span class="i">🧪</span> working on</h3>
-          <p>little websites for people i love</p>
-        </article>
-        <article class="mini-card">
-          <h3><span class="i">🌱</span> learning</h3>
-          <p>more javascript, slowly but surely</p>
-        </article>
-      </div>
+      <ul class="now-list">
+        <li class="now-item">
+          <span class="now-label">listening</span>
+          <a class="now-value" href="https://www.youtube.com/watch?v=vh5VKyJkiBU&list=RDvh5VKyJkiBU&start_radio=1"
+            target="_blank" rel="noopener">
+            part time
+          </a>
+        </li>
+
+        <li class="now-item">
+          <span class="now-label">reading</span>
+          <a class="now-value" href="https://junjiitomanga.fandom.com/wiki/Smashed" target="_blank" rel="noopener">
+            smashed — junji ito
+          </a>
+        </li>
+
+        <li class="now-item">
+          <span class="now-label">working on</span>
+          <a class="now-value" href="https://tinywebpractice.github.io/tiny/index.html" target="_blank" rel="noopener">
+            tinywebpractice
+          </a>
+        </li>
+
+        <li class="now-item">
+          <span class="now-label">learning</span>
+          <span class="now-value">more javascript, slowly but surely</span>
+        </li>
+      </ul>
     </section>
 
-    <!-- stats -->
-    <section class="card card-taped">
-      <h2 class="section-title">
-        <span class="i">📊</span> stats
-      </h2>
-      <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-value">5</div>
-          <div class="stat-label">websites stitched together</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">∞</div>
-          <div class="stat-label">cups of coffee & tea</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">24/7</div>
-          <div class="stat-label">learning mode</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">100%</div>
-          <div class="stat-label">heart poured into it</div>
-        </div>
-      </div>
-    </section>
 
     <!-- blinkies -->
     <section class="card card-taped blinkies-card" aria-labelledby="blinkies-title">
       <h2 id="blinkies-title" class="section-title">
-        <span class="i">✨</span>
-        blinkies & buttons ╰✿´⌣`✿╯♡
+        <span class="i">✨</span> blinkies & buttons ╰✿´⌣`✿╯♡
       </h2>
 
       <div class="blinkies">
         <a class="blinky" href="https://lupitazambrano.com" target="_blank" rel="noopener">
           <img src="/images/lupita_z_88x31.gif" alt="lupitazambrano.com" width="88" height="31" loading="lazy">
         </a>
-        <a class="blinky" href="https://wiredcollective.neocities.org/">
+
+        <a class="blinky" href="https://wiredcollective.neocities.org/" target="_blank" rel="noopener">
           <img src="https://wiredcollective.neocities.org/webringimages/wiredcollectivebutton.png"
-            alt="WIRED COLLECTIVE WEBRING">
+            alt="WIRED COLLECTIVE WEBRING" width="88" height="31" loading="lazy">
         </a>
       </div>
     </section>
 
-    <!-- what is this website -->
-    <section class="card">
-
-
-      <h2 class="section-title">
-        <span class="i">📝</span> wtf is this website?
+    <!-- about this place (everything in one calm drawer) -->
+    <section class="card card-taped about-drawer" aria-labelledby="about-drawer-title">
+      <h2 id="about-drawer-title" class="section-title">
+        <span class="i">📖</span> about this place
       </h2>
 
-      <details class="post-card">
-        <summary>click me to read abt it ₊˚ʚ ᗢ₊˚✧ ﾟ.</summary> 
-        <p>
-          this is my little corner of the internet, part of the <strong>indie web</strong>. the indie web is all about
-          making personal sites instead of living only on big social media platforms.
-          think of it like an online scrapbook: a place where i can ramble, keep a media log of anime i'm watching or
-          plan to watch, post blogs, and experiment with web design just because it’s fun.
-        </p>
-        <p>
-          you'll find a mix of personal projects, things i enjoy, and little pieces of my life here.
-          feel free to wander around, bookmark anything you like, and sign my guestbook if you stop by 💌
-        </p>
-        <hr class="divider">
-        <h3>¿qué es este sitio web?</h3>
-        <p>
-          este es mi pequeño rincón del internet, parte del <strong>indie web</strong>. el indie web se trata de crear
-          sitios personales en lugar de depender solo de las grandes plataformas de redes sociales.
-          es como un diario digital o álbum en línea: un espacio donde comparto mis pensamientos, llevo un registro de
-          los
-          animes que veo o quiero ver, escribo blogs y juego con el diseño web por gusto.
-        </p>
-        <p>
-          aquí encontrarás una mezcla de proyectos personales, cosas que disfruto y pedacitos de mi vida.
-          si pasas por aquí, siéntete libre de explorar y firmar mi libro de visitas 💌
-        </p>
-      </details>
-    </section>
+      <p class="meta-note">if you're curious — open a tab. if not, keep scrolling ♡</p>
 
-    <!-- my sales pitch-->
-    <section class="card card-taped">
-      <h2 class="section-title">
-        <span class="i">💻</span> want your own cute website?
-      </h2>
-      <!-- english -->
-      <details>
-        <summary>click me to read abt it ₊˚ʚ ᗢ₊˚✧ ﾟ.</summary>
-        <div class="lang-block">
-          <p>
-            if you don't want to rely on linktree or campsite, or you're not ready for wix/squarespace yet,
-            i can build you a personalized website — simple, cute, and just for you.
-          </p>
-          <p>
-            i'm still a beginner, so my prices are low while i learn. i hand-code everything
-            myself and keep things clean, soft, and cozy.
-          </p>
-          <h3 class="subheading">what i offer:</h3>
-          <ul class="dash">
-            <li>a working link in 24 hours</li>
-            <li>custom colors + layout that match your vibe</li>
-            <li>mobile-friendly design</li>
-            <li>help with your domain + hosting if you want your own .com</li>
-            <li>soft, human, non-template style</li>
-            <li>real-time updates + screenshots as i build</li>
-          </ul>
-          <h3 class="subheading">who i build for:</h3>
-          <ul class="dash">
-            <li>creators of all kinds</li>
-            <li>small business owners</li>
-            <li>influencers & streamers</li>
-            <li>artists, writers, & musicians</li>
-            <li>anyone who wants a soft, custom space online</li>
-          </ul>
+      <div class="drawer-stack">
+        <!-- 1: what is this site -->
+        <details class="post-card drawer-item">
+          <summary class="post-cover drawer-cover">what is this website?</summary>
+          <div class="post-body">
+            <p>
+              this is my little corner of the internet, part of the <strong>indie web</strong>. the indie web is all
+              about making personal sites instead of living only on big social media platforms.
+              think of it like an online scrapbook: a place where i can ramble, keep a media log, post blogs,
+              and experiment with web design just because it’s fun.
+            </p>
+            <p>
+              you'll find a mix of personal projects, things i enjoy, and little pieces of my life here.
+              feel free to wander around, bookmark anything you like, and sign my guestbook if you stop by 💌
+            </p>
 
-          <p class="meta-note">
-            <small>
-              most developers charge $350–$2,000+ for a small custom site. since i'm still building my portfolio,
-              i'm keeping mine around $75–$150 to stay beginner-friendly and accessible (⌒_⌒;) ♥
-              or for free if you're really really nice to me~
-            </small>
-          </p>
-        </div>
-        <hr class="divider">
-        <!-- spanish -->
-        <div class="lang-block">
-          <p>
-            si no quieres depender de linktree o campsite, o todavía no estás lista para wix/squarespace,
-            puedo crearte un sitio web personalizado: sencillo, bonito y hecho a tu medida.
-          </p>
-          <p>
-            aún soy principiante, así que mis precios son bajos mientras sigo aprendiendo. pero codifico
-            todo a mano y mantengo un estilo limpio, tierno y estético.
-          </p>
+            <hr class="divider">
 
-          <h3 class="subheading">lo que ofrezco:</h3>
-          <ul class="dash">
-            <li>un enlace funcional en 24 horas</li>
-            <li>colores + diseño que combinen con tu vibra</li>
-            <li>diseño responsivo para celular</li>
-            <li>ayuda con tu dominio + hosting si quieres tu propio .com</li>
-            <li>estilo suave, humano y sin plantillas</li>
-            <li>actualizaciones en tiempo real + capturas mientras construyo</li>
-          </ul>
+            <h3>¿qué es este sitio web?</h3>
+            <p>
+              este es mi pequeño rincón del internet, parte del <strong>indie web</strong>. el indie web se trata de
+              crear sitios personales en lugar de depender solo de las grandes plataformas.
+              es como un diario digital: un espacio donde comparto mis pensamientos, llevo un registro de lo que veo,
+              escribo blogs y juego con el diseño web por gusto.
+            </p>
+            <p>
+              aquí encontrarás una mezcla de proyectos personales, cosas que disfruto y pedacitos de mi vida.
+              si pasas por aquí, siéntete libre de explorar y firmar mi libro de visitas 💌
+            </p>
+          </div>
+        </details>
 
-          <h3 class="subheading">para quién construyo:</h3>
-          <ul class="dash">
-            <li>creadores de todo tipo</li>
-            <li>pequeños negocios</li>
-            <li>influencers y streamers</li>
-            <li>artistas, escritores y músicos</li>
-            <li>cualquier persona que quiera un espacio web suave y personal</li>
-          </ul>
-        </div>
+        <!-- 2: indie web -->
+        <details class="post-card drawer-item">
+          <summary class="post-cover drawer-cover">
+            what is the indie web? <span class="meta-note" style="margin-left:.4rem">(video)</span>
+          </summary>
 
-        <p class="meta-note">
-          <small>
-            la mayoría de desarrolladores cobran $350–$2,000+ por un sitio pequeño. como aún estoy
-            armando mi portafolio, los míos están entre $75–$150 para mantenerlos accesibles para principiantes. ♡
-          </small>
-        </p>
-      </details>
-    </section>
+          <div class="post-body">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube-nocookie.com/embed/Tv223kX0SRg" title="Marighoul: What is the Indie Web?"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+            </div>
 
-    <!-- indie web video -->
-    <section class="card">
-      <h2 class="section-title">
-        <span class="i">🌐</span> wtf is the indie web?
-      </h2>
-      <div class="video-wrapper">
-        <iframe src="https://www.youtube-nocookie.com/embed/Tv223kX0SRg" title="Marighoul: What is the Indie Web?"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="meta" style="margin-top:.5rem">
+              marighoul's video explaining the indie web: what it is, why it matters, and why it's so inspiring.
+              check out their site ➜
+              <a href="https://marighoul.com/" target="_blank" rel="noopener">marighoul.com</a>
+            </p>
+          </div>
+        </details>
+
+        <!-- 3: soft pitch -->
+        <details class="post-card drawer-item drawer-pitch">
+          <summary class="post-cover drawer-cover">want a website like this?</summary>
+
+          <div class="post-body">
+            <p class="meta-note" style="margin-top:0">
+              low-pressure note: i sometimes build tiny sites for other people too.
+            </p>
+
+            <div class="lang-block">
+              <p>
+                if you don't want to rely on linktree or campsite, or you're not ready for wix/squarespace yet,
+                i can build you a personalized website — simple, cute, and just for you.
+              </p>
+              <p>
+                i'm still a beginner, so my prices are low while i learn. i hand-code everything
+                myself and keep things clean, soft, and cozy.
+              </p>
+
+              <h3 class="subheading">what i offer:</h3>
+              <ul class="dash">
+                <li>a working link in 24 hours</li>
+                <li>custom colors + layout that match your vibe</li>
+                <li>mobile-friendly design</li>
+                <li>help with your domain + hosting if you want your own .com</li>
+                <li>soft, human, non-template style</li>
+                <li>real-time updates + screenshots as i build</li>
+              </ul>
+
+              <h3 class="subheading">who i build for:</h3>
+              <ul class="dash">
+                <li>creators of all kinds</li>
+                <li>small business owners</li>
+                <li>influencers & streamers</li>
+                <li>artists, writers, & musicians</li>
+                <li>anyone who wants a soft, custom space online</li>
+              </ul>
+
+              <p class="meta-note">
+                <small>
+                  most developers charge $350–$2,000+ for a small custom site. since i'm still building my portfolio,
+                  i'm keeping mine around $75–$150 to stay beginner-friendly and accessible (⌒_⌒;) ♥
+                </small>
+              </p>
+
+              <p class="meta-note">
+                <small>
+                  best way to reach me: <a href="mailto:gzamlo98@gmail.com">gzamlo98@gmail.com</a>
+                  (or the <a href="/pages/guestbook.html">guestbook</a>)
+                </small>
+              </p>
+            </div>
+
+            <hr class="divider">
+
+            <div class="lang-block">
+              <p>
+                si no quieres depender de linktree o campsite, o todavía no estás lista para wix/squarespace,
+                puedo crearte un sitio web personalizado: sencillo, bonito y hecho a tu medida.
+              </p>
+              <p>
+                aún soy principiante, así que mis precios son bajos mientras sigo aprendiendo. pero codifico
+                todo a mano y mantengo un estilo limpio, tierno y estético.
+              </p>
+
+              <h3 class="subheading">lo que ofrezco:</h3>
+              <ul class="dash">
+                <li>un enlace funcional en 24 horas</li>
+                <li>colores + diseño que combinen con tu vibra</li>
+                <li>diseño responsivo para celular</li>
+                <li>ayuda con tu dominio + hosting si quieres tu propio .com</li>
+                <li>estilo suave, humano y sin plantillas</li>
+                <li>actualizaciones en tiempo real + capturas mientras construyo</li>
+              </ul>
+
+              <h3 class="subheading">para quién construyo:</h3>
+              <ul class="dash">
+                <li>creadores de todo tipo</li>
+                <li>pequeños negocios</li>
+                <li>influencers y streamers</li>
+                <li>artistas, escritores y músicos</li>
+                <li>cualquier persona que quiera un espacio web suave y personal</li>
+              </ul>
+
+              <p class="meta-note">
+                <small>
+                  la mayoría de desarrolladores cobran $350–$2,000+ por un sitio pequeño. como aún estoy
+                  armando mi portafolio, los míos están entre $75–$150 para mantenerlos accesibles. ♡
+                </small>
+              </p>
+            </div>
+          </div>
+        </details>
       </div>
-      <p class="meta" style="margin-top:.5rem">
-        marighoul's video explaining the indie web: what it is, why it matters, and why it's so inspiring.
-        check out their site ➜
-        <a href="https://marighoul.com/" target="_blank" rel="noopener">marighoul.com</a>
-      </p>
     </section>
 
     <!-- cbox -->
     <section class="card card-taped chatbox-card" id="chat">
       <header class="chatbox-header">
-        <h2 class="section-title">
-          <span class="i">💬</span> comment box
-        </h2>
-        <p class="meta-note">
-          leave me a little note, song rec, or link to your site (⁀ᗢ⁀)
-        </p>
+        <h2 class="section-title"><span class="i">💬</span> comment box</h2>
+        <p class="meta-note">leave me a little note, song rec, or link to your site (⁀ᗢ⁀)</p>
       </header>
+
       <div class="chatbox-frame">
         <iframe src="https://www3.cbox.ws/box/?boxid=3550275&boxtag=FWuK6g" title="lupe's chatbox" loading="lazy"
-          allow="autoplay" allowtransparency="true" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto">
-        </iframe>
+          allow="autoplay" allowtransparency="true" frameborder="0" marginheight="0" marginwidth="0"
+          scrolling="auto"></iframe>
       </div>
 
       <p class="meta chatbox-note">powered by cbox • please be kind (^‿^)</p>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -348,6 +349,7 @@
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
+      // welcome banner dismiss
       const banner = document.querySelector('.alert.alert-welcome');
       const closeBtn = banner?.querySelector('.alert-close');
       const KEY = 'welcomeBannerDismissed';
@@ -361,6 +363,7 @@
         });
       }
 
+      // lottie
       const opts = { renderer: 'svg', loop: true, autoplay: true };
 
       const sparkleLeft = document.getElementById('sparkleLeft');
@@ -378,50 +381,40 @@
         fallback(sparkleRight, '✨');
         fallback(handAnim, '👋');
         fallback(currentMusicAnim, '🎵');
-        return;
+      } else {
+        if (sparkleLeft) {
+          lottie.loadAnimation({ ...opts, container: sparkleLeft, path: 'animations/sparkle-left.json' });
+        }
+        if (sparkleRight) {
+          lottie.loadAnimation({ ...opts, container: sparkleRight, path: 'animations/sparkle-right.json' });
+        }
+        if (handAnim) {
+          lottie.loadAnimation({ ...opts, container: handAnim, path: 'animations/wave-hand.json' });
+        }
+        if (lineAnim) {
+          const anim = lottie.loadAnimation({
+            ...opts,
+            container: lineAnim,
+            path: 'animations/line.json',
+            rendererSettings: { preserveAspectRatio: 'xMidYMid meet' }
+          });
+          anim.setSpeed(0.5);
+        }
+        if (currentMusicAnim) {
+          lottie.loadAnimation({ ...opts, container: currentMusicAnim, path: 'animations/music.json' });
+        }
       }
 
-      if (sparkleLeft) {
-        lottie.loadAnimation({
-          ...opts,
-          container: sparkleLeft,
-          path: 'animations/sparkle-left.json'
+      // about drawer: only one open at a time
+      const drawerDetails = document.querySelectorAll('.about-drawer details');
+      drawerDetails.forEach(d => {
+        d.addEventListener('toggle', () => {
+          if (!d.open) return;
+          drawerDetails.forEach(other => {
+            if (other !== d) other.open = false;
+          });
         });
-      }
-
-      if (sparkleRight) {
-        lottie.loadAnimation({
-          ...opts,
-          container: sparkleRight,
-          path: 'animations/sparkle-right.json'
-        });
-      }
-
-      if (handAnim) {
-        lottie.loadAnimation({
-          ...opts,
-          container: handAnim,
-          path: 'animations/wave-hand.json'
-        });
-      }
-
-      if (lineAnim) {
-        const anim = lottie.loadAnimation({
-          ...opts,
-          container: lineAnim,
-          path: 'animations/line.json',
-          rendererSettings: { preserveAspectRatio: 'xMidYMid meet' }
-        });
-        anim.setSpeed(0.5);
-      }
-
-      if (currentMusicAnim) {
-        lottie.loadAnimation({
-          ...opts,
-          container: currentMusicAnim,
-          path: 'animations/music.json'
-        });
-      }
+      });
     });
   </script>
 </body>

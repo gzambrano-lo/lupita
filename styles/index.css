@@ -287,3 +287,157 @@ body {
   height: auto;
   display: block;
 }
+
+/* about drawer (home page) */
+.about-drawer .drawer-stack {
+  display: grid;
+  gap: .65rem;
+  margin-top: .25rem;
+}
+
+.about-drawer .drawer-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+/* make the summary look like a soft menu row */
+.about-drawer details>summary {
+  cursor: pointer;
+  list-style: none;
+  padding: .85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, .72);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.about-drawer details>summary::-webkit-details-marker {
+  display: none;
+}
+
+/* open state feels "selected" */
+.about-drawer details[open]>summary {
+  border-color: color-mix(in oklab, var(--sage), var(--border) 60%);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .07);
+}
+
+/* body spacing */
+.about-drawer .drawer-body {
+  margin-top: .6rem;
+  padding: .2rem .15rem 0;
+}
+
+/* chevron rotate */
+.about-drawer .chev {
+  display: inline-block;
+  transition: transform .15s ease;
+  opacity: .7;
+}
+
+.about-drawer details[open] .chev {
+  transform: rotate(180deg);
+}
+
+/* make the pitch feel quieter */
+.about-drawer .drawer-pitch>summary {
+  font-weight: 700;
+  color: color-mix(in oklab, var(--text), var(--muted) 40%);
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .about-drawer .chev {
+    transition: none;
+  }
+}
+
+/* CURRENTLY makeover */
+.now-list {
+  list-style: none;
+  margin: .6rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: .55rem;
+}
+
+.now-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: .75rem;
+  align-items: baseline;
+  padding: .75rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, .72);
+  box-shadow: var(--shadow);
+}
+
+.now-label {
+  font-size: .85rem;
+  color: var(--muted);
+  letter-spacing: .2px;
+}
+
+.now-value {
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.now-value:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 520px) {
+  .now-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* STATS makeover */
+.stat-chips {
+  margin-top: .6rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .7rem;
+}
+
+.chip {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+  gap: .75rem;
+  padding: .85rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, .72);
+  box-shadow: var(--shadow);
+}
+
+.chip-num {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--sage);
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(132, 165, 157, .12);
+}
+
+.chip-text {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+@media (max-width: 520px) {
+  .stat-chips {
+    grid-template-columns: 1fr;
+  }
+}
