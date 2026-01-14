@@ -270,6 +270,7 @@
 }
 
 .term:hover::after,
+.term:focus::after,
 .term:focus-visible::after {
   opacity: 1;
   transform: translateY(0);
