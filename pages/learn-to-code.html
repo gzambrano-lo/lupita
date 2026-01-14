@@ -56,6 +56,402 @@
     </nav>
 
     <main>
+
+        <!--networking 101-->
+        <details class="post-card">
+            <summary class="post-cover">
+                <h2>networking 101 (´꒳`)♡</h2>
+            </summary>
+
+            <article class="post">
+                <h2>what is a network?</h2>
+                <p>
+                    a network can be very small, like two computers connected by a cable in a home
+                    setup, or extremely large, like the internet, which connects devices all over
+                    the world.
+                </p>
+
+                <p>
+                    networks can include things like phones, personal computers, servers, printers,
+                    security systems, and even wearable devices.
+                </p>
+
+                <p>
+                    these devices communicate using different types of connections, such as wired
+                    cables, fiber optics, or wireless signals.
+                </p>
+
+                <p>
+                    this section focuses on the basics of how networks work and how technicians
+                    support and maintain them.
+                </p>
+
+                <h2>network models</h2>
+                <p>
+                    in networking, a topology is a way of describing how a network is organized and
+                    how its parts relate to each other.
+                </p>
+
+                <p>
+                    to really understand a network, you need to look at it in two different ways:
+                    how it physically exists, and how it logically operates.
+                </p>
+
+                <h3>physical topology</h3>
+                <p>
+                    physical topology refers to the tangible parts of a network. this includes
+                    computers, switches, routers, and the cables or wireless signals that connect
+                    them.
+                </p>
+
+                <p>
+                    it's what you would see if you could lay the entire network out in front of you
+                    in our real world.
+                </p>
+
+                <h3>logical topology</h3>
+                <p>
+                    logical topology focuses on how the network functions rather than how it looks.
+                    it describes how software controls connections, manages access, and allows data
+                    to move between devices.
+                </p>
+
+                <p>
+                    this includes how users and applications gain access to the network and how
+                    resources like programs and data are shared.
+                </p>
+
+                <p class="tip">
+                    if physical topology is the visible world of devices and cables, logical topology
+                    is the unseen layer. the “wired” space where information flows. basically, this
+                    is where <em>lain</em> exists ( ´ ꒳ ` ) ♡
+                </p>
+
+                <p>
+                    this part introduces network models, which help explain how computers relate to
+                    each other on a network and how access to resources is managed.
+                </p>
+
+                <p>
+                    later on, physical components and physical topologies are covered, but for now
+                    the focus is on how networks function at the software and operating system level.
+                </p>
+
+                <p>
+                    controlling who can access network resources is handled by the operating systems
+                    used on the network. the operating system determines how users and programs
+                    connect and interact.
+                </p>
+
+                <p>
+                    most networks follow one of two models: peer-to-peer or client-server.
+                </p>
+
+                <p>
+                    a peer-to-peer model allows devices like desktops, laptops, tablets, or phones
+                    to share resources directly with each other.
+                </p>
+
+                <p>
+                    the client-server model relies on a dedicated system that manages access for the
+                    entire network. this typically requires a network operating system that controls
+                    users, permissions, and shared resources.
+                </p>
+
+                <p>
+                    examples of<span class="term" data-def="network operating system">
+                        NOS
+                    </span> include server-based versions of windows
+                    and linux distributions designed specifically for managing networks:
+                </p>
+
+                <ul class="dash">
+                    <li><a href="https://en.wikipedia.org/wiki/Windows_Server_2025">windows server</a></li>
+                    <li><a href="https://linuxconfig.org/ubuntu-server-tutorial-for-beginners">ubuntu server</a></li>
+                    <li><a href="https://phoenixnap.com/kb/what-is-rhel">red hat enterprise</a></li>
+                </ul>
+
+                <h2>peer-to-peer network model</h2>
+                <p>
+                    in a peer-to-peer (p2p) network, each computer is responsible for managing access
+                    to its own resources. there is no central system controlling the network.
+                </p>
+
+                <p>
+                    the computers on the network (often called nodes or hosts) form a group that
+                    shares resources directly with one another. each device handles its own users,
+                    security settings, and shared files.
+                </p>
+
+                <p>
+                    p2p networks can use many common operating systems, such as windows, linux, macos,
+                    or chrome os on desktops and laptops, and ios or android on mobile devices.
+                </p>
+
+                <p>
+                    devices in a p2p network share resources using built-in file sharing features or
+                    user accounts. many operating systems can share files with other devices even if
+                    they are running different operating systems.
+                </p>
+
+                <p>
+                    in some setups, each computer keeps its own list of users and permissions. access
+                    to files and folders is based on these local settings, which can become difficult
+                    to manage as the network grows.
+                </p>
+
+                <p>
+                    p2p networks are generally best for small environments, usually fewer than about
+                    15 computers.
+                </p>
+
+                <h4>advantages of peer-to-peer networks</h4>
+                <ul class="dash">
+                    <li>simple to set up and configure</li>
+                    <li>useful when time or technical expertise is limited</li>
+                    <li>usually less expensive than networks that require a dedicated server</li>
+                </ul>
+
+                <h4>disadvantages of peer-to-peer networks</h4>
+                <ul class="dash">
+                    <li>
+                        not <span class="term"
+                            data-def="scalable means a system can grow easily without becoming hard to manage">
+                            scalable.
+                        </span> managing the network becomes harder as more devices are added
+                    </li>
+
+                    <li>
+                        security can be weak in simple setups, making shared data easier to access
+                        without proper authorization
+                    </li>
+
+                    <li>
+                        not practical for managing many users or shared resources
+                    </li>
+
+                    <li>
+                        difficult to maintain a centralized
+                        <span class="term"
+                            data-def="a server is a computer or program that provides resources or services to other devices">
+                            server
+                        </span>
+                        using only peer-to-peer file sharing
+                    </li>
+                </ul>
+
+                <h2>client-server network model</h2>
+                <p>
+                    in a client-server network, access to shared resources is controlled by a central
+                    system rather than by individual computers.
+                </p>
+
+                <p>
+                    when windows server manages sign-ins and permissions for a group of computers,
+                    that logical group is called a
+                    <span class="term"
+                        data-def="a logical group of computers managed centrally by a server for authentication and access control">
+                        domain
+                    </span>
+                </p>
+
+                <p>
+                    the centralized database that stores user accounts and security information is
+                    called
+                    <span class="term"
+                        data-def="active directory is a centralized database that stores user accounts, passwords, and permissions for a network">
+                        ad (active directory)
+                    </span>
+                </p>
+
+                <p>
+                    each user is assigned a domain-level account by a network administrator, and
+                    access to network resources is controlled through
+                    <span class="term"
+                        data-def="active directory domain services manages authentication, authorization, and directory services in a domain">
+                        ad ds (active directory domain services)
+                    </span>
+                </p>
+
+                <p>
+                    a user can sign in from any computer on the network and access resources based on
+                    the permissions assigned to their account.
+                </p>
+
+                <p>
+                    in this model, a device making a request for data or services is called the
+                    <span class="term"
+                        data-def="a computer or device that requests services or resources from a server">
+                        client
+                    </span>
+                    clients can still run applications locally and store files on their own devices,
+                    but shared resources are controlled centrally.
+                </p>
+
+                <h4>what the network operating system (nos) handles</h4>
+                <ul class="dash">
+                    <li>managing shared data and other network resources</li>
+                    <li>ensuring only authorized users can access the network</li>
+                    <li>controlling which files and resources users can read or modify</li>
+                    <li>restricting when and from where users can sign in</li>
+                    <li>defining the rules computers use to communicate</li>
+                    <li>in some cases, delivering applications or shared files to clients</li>
+                </ul>
+
+                <p>
+                    because servers must handle requests from many clients at the same time, they
+                    usually require more processing power, memory, storage, and network bandwidth
+                    than client machines.
+                </p>
+
+                <p>
+                    for reliability, servers may use <span class="term" data-def="redundant array of independent disks">
+                        raid,
+                    </span>
+                    which helps protect data if a drive fails.
+                </p>
+
+                <h4>advantages of client-server networks</h4>
+                <ul class="dash">
+                    <li>user accounts and passwords are managed in one central location</li>
+                    <li>access to shared resources can be assigned to individual users or groups</li>
+                    <li>network issues can often be monitored and resolved from one place</li>
+                    <li>more <span class="term"
+                            data-def="scalable means you can add many users and devices without the system becoming difficult to manage">
+                            scalable
+                        </span> than peer-to-peer networks</li>
+                </ul>
+
+                <h2>network services</h2>
+                <p>
+                    networks provide more than just connections between devices. they also make
+                    resources available, such as applications and the data those applications use.
+                </p>
+
+                <p>
+                    in addition to shared resources, networks rely on services that handle how
+                    devices connect, communicate, and exchange information with each other.
+                </p>
+
+                <p>
+                    together, these shared resources and supporting functions are referred to as
+                    <span class="term"
+                        data-def="network services are the functions and resources a network provides that allow devices to communicate, share data, and access applications">
+                        network services
+                    </span>
+                </p>
+
+                <p>
+                    this section focuses on common network services that are typically present on
+                    most networks.
+                </p>
+
+                <p>
+                    network services usually involve at least two endpoint devices. one device
+                    requests data or a service, and another device provides it.
+                </p>
+
+                <p>
+                    the requesting device is known as the client, while the device supplying the
+                    resource or service is the server.
+                </p>
+
+                <p>
+                    for example, when someone uses a web browser to load a webpage, the browser sends
+                    a request to a web server, which responds by sending the requested data back.
+                </p>
+
+                <p>
+                    the client and server do not need to be on the same local network. they can
+                    communicate across multiple connected networks, such as through the internet.
+                </p>
+
+                <p class="tip">
+                    web browsing is a basic example of a client requesting a service from a server,
+                    even when they're far apart.
+                </p>
+
+                <h2>network protocols</h2>
+                <p>
+                    devices communicate using shared rules called
+                    <span class="term" data-def="">protocols</span>.
+                    these rules define how data is requested, sent, and understood.
+                </p>
+
+                <p>
+                    most modern networks rely on the
+                    <span class="term" data-def="">tcp/ip</span>
+                    protocol suite to support communication across local networks and the internet.
+                </p>
+                <h3>web services</h3>
+                <p>
+                    web traffic typically uses
+                    <span class="term" data-def="">http</span>.
+                    when encryption is added, the protocol becomes
+                    <span class="term" data-def="">https</span>
+                    (http secure)
+                </p>
+
+                <p>
+                    secure web communication relies on encryption protocols such as
+                    <span class="term" data-def="">ssl</span>
+                    and
+                    <span class="term" data-def="">tls</span>
+                </p>
+
+                <p>
+                    many popular web servers are
+                    <span class="term" data-def="">open source</span>
+                </p>
+                <h3>email services</h3>
+
+                <p>
+                    email is sent using
+                    <span class="term" data-def="">smtp</span>
+                </p>
+
+                <p>
+                    clients retrieve email using
+                    <span class="term" data-def="">pop3</span>
+                    or
+                    <span class="term" data-def="">imap4</span>
+                </p>
+                <h3>dns service</h3>
+
+                <p>
+                    <span class="term" data-def="">dns</span>
+                    helps clients locate servers by translating names into ip addresses
+                </p>
+                <h3>file transfer services</h3>
+
+                <p>
+                    <span class="term" data-def="">ftp</span>
+                    is used to transfer files between systems
+                </p>
+
+                <p>
+                    secure file transfer options include
+                    <span class="term" data-def="">ftps</span>
+                    and
+                    <span class="term" data-def="">sftp</span>
+                </p>
+                <h3>remote access services</h3>
+
+                <p>
+                    <span class="term" data-def="">telnet</span>
+                    is an older remote access protocol that does not encrypt data.
+                </p>
+
+                <p>
+                    modern secure remote access uses
+                    <span class="term" data-def="">ssh</span>
+                    or
+                    <span class="term" data-def="">rdp</span>
+                </p>
+
+            </article>
+        </details>
+
         <!-- computer science -->
         <details class="post-card">
             <summary class="post-cover">
@@ -244,7 +640,7 @@
 
     <!--footer-->
     <footer class="site-footer">
-     <p>&copy; lupita zambrano ☆(>ᴗ•) 2025</p>
+        <p>&copy; lupita zambrano ☆(>ᴗ•) 2025</p>
     </footer>
 </body>
 

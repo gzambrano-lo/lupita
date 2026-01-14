@@ -1,17 +1,39 @@
-/* styling just for the “learn to code” page — where i explain, break things, and show how it all works */
+/* learn to code page */
 
-/* headings + code blocks */
+.post {
+  max-width: 100%;
+  margin: 0;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
 .post h2 {
   font-size: 1.3rem;
-  border-bottom: 2px solid var(--sage);
+  border-bottom: 2px solid color-mix(in srgb, var(--sage) 65%, transparent);
   padding-bottom: .25rem;
-  margin-top: 1.5rem;
+  margin-top: 1.4rem;
+}
+
+.post h2::before {
+  content: "♡";
+  margin-right: .45rem;
+  color: var(--coral);
 }
 
 .post h3 {
+  display: inline-block;
   font-size: 1.1rem;
+  margin-top: 1.1rem;
+  padding: .18rem .65rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--border) 85%, transparent);
+  background: linear-gradient(135deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, .45));
+  font-weight: 700;
   color: var(--muted);
-  margin-top: 1.25rem;
+}
+
+.post p {
+  line-height: 1.85;
+  margin: .6rem 0 1rem;
 }
 
 .post pre {
@@ -25,7 +47,68 @@
   line-height: 1.4;
 }
 
-/* cute emoji lists */
+.post-card {
+  margin-block: 1.5rem;
+  background: rgba(255, 255, 255, .55);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow);
+  overflow: visible;
+  backdrop-filter: blur(6px);
+}
+
+.post-card>summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+}
+
+.post-card>summary::-webkit-details-marker {
+  display: none;
+}
+
+.post-card>summary h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: .3px;
+}
+
+.post-card>summary::after {
+  content: "▾";
+  font-size: 1rem;
+  color: var(--muted);
+  transition: transform .18s ease;
+}
+
+.post-card[open]>summary::after {
+  transform: rotate(-180deg);
+}
+
+@media (hover:hover) {
+  .post-card>summary:hover {
+    background: rgba(245, 202, 195, .18);
+  }
+}
+
+.post-card>summary:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 4px;
+}
+
+/* flatten inner card spacing */
+.post-card>.post {
+  padding: 1.2rem 0 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+
+/* lists + helpers */
 .fancy-list {
   list-style: none;
   padding-left: 0;
@@ -45,7 +128,6 @@
   color: var(--coral);
 }
 
-/* small notes + explanations */
 .explain {
   margin: 1rem 0 1rem 1.25rem;
   list-style-type: disc;
@@ -55,64 +137,51 @@
   margin-bottom: .35rem;
 }
 
+/* taped tip */
 .tip {
-  margin: 1rem 0;
-  padding: .6rem .8rem;
-  background: #fff;
-  border: 1px dashed var(--sage);
-  border-radius: var(--radius);
-  color: var(--muted);
-  font-size: .9rem;
-}
-
-/* snippet sections (the “copy this” code bits) */
-.post .snippet {
-  margin: .25rem 0 1rem;
-}
-
-.post h2+.snippet {
-  margin-top: .5rem;
-}
-
-.post .snippet pre {
-  margin: 0;
-}
-
-.post .snippet-label {
-  text-align: left;
-  margin: 0 0 .25rem;
-  font-size: .9rem;
-  color: var(--muted);
-}
-
-/* figcaption alignment tweak for the tutorials */
-.post h2+figure figcaption {
-  text-align: left;
-  margin: .25rem 0 .5rem;
-  font-size: .9rem;
-  color: var(--muted);
-}
-
-.post-card {
-  margin-block: 1.5rem;
+  position: relative;
+  margin: 1rem 0 1.25rem;
+  padding: .85rem 1rem;
   border-radius: 1rem;
-  padding: 1.25rem;
+  border: 1px dashed var(--sage);
+  background: rgba(255, 255, 255, .78);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .06);
+  color: var(--muted);
+  font-size: .9rem;
 }
 
-/* make the videos responsive */
+.tip::before {
+  content: "";
+  position: absolute;
+  left: .75rem;
+  top: -.45rem;
+  width: 64px;
+  height: 16px;
+  transform: rotate(-2deg);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--soft) 70%, white);
+  border: 1px dashed color-mix(in srgb, var(--border) 80%, transparent);
+  opacity: .95;
+}
+
+.tip em {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--sage);
+}
+
+/* responsive videos */
 .video-wrapper {
   position: relative;
   width: 100%;
   max-width: 640px;
   margin: 1rem auto;
   padding-bottom: 56.25%;
-  /* 16:9 ratio */
   height: 0;
   overflow: hidden;
-  border-radius: 0.75rem;
+  border-radius: .75rem;
 }
 
-/* iframe fills the wrapper */
 .video-wrapper iframe {
   position: absolute;
   inset: 0;
@@ -120,9 +189,92 @@
   height: 100%;
 }
 
-/* little styling for your memory line */
 .transistor-note {
   margin-top: 1.5rem;
-  font-size: 0.95rem;
+  font-size: .95rem;
   line-height: 1.5;
+}
+
+.dash {
+  list-style: none;
+  padding-left: 0;
+  margin: .5rem 0 1.25rem;
+}
+
+.dash li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin: .35rem 0;
+}
+
+.dash li::before {
+  content: "♡";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--coral);
+  opacity: .9;
+}
+
+.post a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--coral) 55%, transparent);
+  text-underline-offset: .18em;
+}
+
+.post a:hover {
+  text-decoration-color: var(--coral);
+}
+
+.post h2 {
+  scroll-margin-top: 1rem;
+}
+
+.post h2+p {
+  margin-top: .75rem;
+}
+
+.post p+h2 {
+  margin-top: 1.6rem;
+}
+
+.term {
+  position: relative;
+  font-weight: 700;
+  color: var(--coral);
+  cursor: help;
+  z-index:1
+}
+
+.term::after {
+  content: attr(data-def);
+  position: absolute;
+  left: 0;
+  bottom: 125%;
+  width: max-content;
+  max-width: 260px;
+  padding: .5rem .65rem;
+  background: rgba(255, 255, 255, .95);
+  border: 1px solid var(--border);
+  border-radius: .6rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .12);
+  font-size: .85rem;
+  line-height: 1.4;
+  color: var(--text);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity .15s ease, transform .15s ease;
+  z-index: 999;
+}
+
+.term:hover::after,
+.term:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h4 {
+  color: var(--sage);
 }
