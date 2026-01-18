@@ -279,3 +279,19 @@
 h4 {
   color: var(--sage);
 }
+
+@media (max-width: 640px) {
+  .term::after {
+    left: 50%;
+    bottom: auto;
+    top: 125%;
+    width: min(260px, 85vw);
+    transform: translate(-50%, -4px);
+  }
+
+  .term:hover::after,
+  .term:focus::after,
+  .term:focus-visible::after {
+    transform: translate(-50%, 0);
+  }
+}
