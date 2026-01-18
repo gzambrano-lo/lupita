@@ -258,6 +258,9 @@
   background: rgba(255, 255, 255, .95);
   border: 1px solid var(--border);
   border-radius: .6rem;
+  background-clip: padding-box;
+  isolation: isolate;
+  z-index: 1000;
   box-shadow: 0 8px 18px rgba(0, 0, 0, .12);
   font-size: .85rem;
   line-height: 1.4;
@@ -284,8 +287,8 @@ h4 {
 @media (max-width: 640px) {
   .term::after {
     position: fixed;
-    left: 1rem;
-    right: 1rem;
+    left: max(1rem, env(safe-area-inset-left, 0px));
+    right: max(1rem, env(safe-area-inset-right, 0px));
     bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
     top: auto;
     width: auto;
