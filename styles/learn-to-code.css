@@ -267,6 +267,7 @@
   transform: translateY(4px);
   transition: opacity .15s ease, transform .15s ease;
   z-index: 999;
+  box-sizing: border-box;
 }
 
 .term:hover::after,
@@ -285,7 +286,8 @@ h4 {
     left: 50%;
     bottom: auto;
     top: 125%;
-    width: min(260px, 85vw);
+    width: min(260px, 90vw);
+    max-width: calc(100vw - 2rem);
     transform: translate(-50%, -4px);
   }
 
