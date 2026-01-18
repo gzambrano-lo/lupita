@@ -275,7 +275,8 @@
 
 .term:hover::after,
 .term:focus::after,
-.term:focus-visible::after {
+.term:focus-visible::after,
+.term.is-active::after {
   opacity: 1;
   transform: translateY(0);
 }
