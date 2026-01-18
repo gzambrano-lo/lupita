@@ -29,27 +29,30 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const positionTooltip = (term) => {
     const rect = term.getBoundingClientRect();
-    const vv = window.visualViewport || { width: window.innerWidth, height: window.innerHeight, offsetLeft: 0, offsetTop: 0 };
+    const scrollX = window.scrollX || window.pageXOffset || 0;
+    const scrollY = window.scrollY || window.pageYOffset || 0;
+    const viewportWidth = document.documentElement.clientWidth;
+    const viewportHeight = window.innerHeight;
     const padding = 12;
     const gap = 10;
 
-    tooltip.style.left = '0px';
+    tooltip.style.left = '-9999px';
     tooltip.style.top = '0px';
     tooltip.style.right = 'auto';
     tooltip.style.bottom = 'auto';
 
     const tipRect = tooltip.getBoundingClientRect();
-    const fitsBelow = rect.bottom + gap + tipRect.height + padding <= vv.height;
+    const fitsBelow = rect.bottom + gap + tipRect.height + padding <= viewportHeight;
 
     const center = rect.left + rect.width / 2;
     let left = center - tipRect.width / 2;
-    left = Math.max(padding, Math.min(left, vv.width - padding - tipRect.width));
+    left = Math.max(padding, Math.min(left, viewportWidth - padding - tipRect.width));
 
     let top = fitsBelow ? rect.bottom + gap : rect.top - gap - tipRect.height;
-    top = Math.max(padding, Math.min(top, vv.height - padding - tipRect.height));
+    top = Math.max(padding, Math.min(top, viewportHeight - padding - tipRect.height));
 
-    tooltip.style.left = `${left + (vv.offsetLeft || 0)}px`;
-    tooltip.style.top = `${top + (vv.offsetTop || 0)}px`;
+    tooltip.style.left = `${left + scrollX}px`;
+    tooltip.style.top = `${top + scrollY}px`;
   };
 
   const toggleTerm = (term) => {

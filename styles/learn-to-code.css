@@ -299,7 +299,7 @@ h4 {
 }
 
 .term-tooltip {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   right: auto;
