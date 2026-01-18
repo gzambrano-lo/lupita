@@ -35,6 +35,13 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.addEventListener('click', () => closeAll());
-  document.addEventListener('touchstart', () => closeAll(), { passive: true });
+  document.addEventListener('click', (event) => {
+    if (event.target.closest('.term')) return;
+    closeAll();
+  });
+
+  document.addEventListener('pointerdown', (event) => {
+    if (event.target.closest('.term')) return;
+    closeAll();
+  });
 });
