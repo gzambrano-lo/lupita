@@ -284,6 +284,18 @@ h4 {
   color: var(--sage);
 }
 
+@media (hover: none) {
+  .term {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .term:active::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 640px) {
   .term::after {
     position: fixed;
