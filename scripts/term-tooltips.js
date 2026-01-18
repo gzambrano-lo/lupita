@@ -21,6 +21,13 @@ window.addEventListener('DOMContentLoaded', () => {
   terms.forEach((term) => {
     term.setAttribute('role', 'button');
     term.setAttribute('aria-expanded', 'false');
+    if (!term.hasAttribute('tabindex')) term.setAttribute('tabindex', '0');
+
+    term.addEventListener('touchend', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleTerm(term);
+    }, { passive: false });
 
     term.addEventListener('click', (event) => {
       event.stopPropagation();
