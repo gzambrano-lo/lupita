@@ -255,7 +255,7 @@
   width: max-content;
   max-width: 260px;
   padding: .5rem .65rem;
-  background: rgba(255, 255, 255, .95);
+  background: #fff;
   border: 1px solid var(--border);
   border-radius: .6rem;
   background-clip: padding-box;
@@ -291,7 +291,7 @@ h4 {
     right: max(1rem, env(safe-area-inset-right, 0px));
     bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
     top: auto;
-    width: auto;
+    width: calc(100vw - 2rem);
     max-width: 360px;
     margin: 0 auto;
     transform: translateY(8px);
