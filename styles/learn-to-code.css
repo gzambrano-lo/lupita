@@ -283,12 +283,13 @@ h4 {
 
 @media (max-width: 640px) {
   .term::after {
+    position: fixed;
     left: 50%;
-    bottom: auto;
-    top: 125%;
-    width: min(260px, 90vw);
-    max-width: calc(100vw - 2rem);
-    transform: translate(-50%, -4px);
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+    top: auto;
+    width: min(320px, 92vw);
+    max-width: 92vw;
+    transform: translate(-50%, 8px);
   }
 
   .term:hover::after,
