@@ -284,17 +284,19 @@ h4 {
 @media (max-width: 640px) {
   .term::after {
     position: fixed;
-    left: 50%;
+    left: 1rem;
+    right: 1rem;
     bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
     top: auto;
-    width: min(320px, 92vw);
-    max-width: 92vw;
-    transform: translate(-50%, 8px);
+    width: auto;
+    max-width: 360px;
+    margin: 0 auto;
+    transform: translateY(8px);
   }
 
   .term:hover::after,
   .term:focus::after,
   .term:focus-visible::after {
-    transform: translate(-50%, 0);
+    transform: translateY(0);
   }
 }
