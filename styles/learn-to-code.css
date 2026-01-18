@@ -300,12 +300,13 @@ h4 {
 
 .term-tooltip {
   position: fixed;
-  left: max(1rem, env(safe-area-inset-left, 0px));
-  right: max(1rem, env(safe-area-inset-right, 0px));
-  bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+  left: 0;
+  top: 0;
+  right: auto;
+  bottom: auto;
   width: min(360px, calc(100vw - 2rem));
   max-width: 360px;
-  margin: 0 auto;
+  margin: 0;
   padding: .65rem .85rem;
   border-radius: .75rem;
   background: #fff;
