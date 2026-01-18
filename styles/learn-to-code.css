@@ -298,17 +298,42 @@ h4 {
   }
 }
 
+.term-tooltip {
+  position: fixed;
+  left: max(1rem, env(safe-area-inset-left, 0px));
+  right: max(1rem, env(safe-area-inset-right, 0px));
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
+  width: min(360px, calc(100vw - 2rem));
+  max-width: 360px;
+  margin: 0 auto;
+  padding: .65rem .85rem;
+  border-radius: .75rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .14);
+  color: var(--text);
+  font-size: .9rem;
+  line-height: 1.4;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity .15s ease, transform .15s ease;
+  z-index: 1001;
+}
+
+.term-tooltip p {
+  margin: 0;
+}
+
+.term-tooltip.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 @media (max-width: 640px) {
   .term::after {
-    position: fixed;
-    left: max(1rem, env(safe-area-inset-left, 0px));
-    right: max(1rem, env(safe-area-inset-right, 0px));
-    bottom: calc(env(safe-area-inset-bottom, 0px) + 1rem);
-    top: auto;
-    width: calc(100vw - 2rem);
-    max-width: 360px;
-    margin: 0 auto;
-    transform: translateY(8px);
+    display: none;
   }
 
   .term:hover::after,
