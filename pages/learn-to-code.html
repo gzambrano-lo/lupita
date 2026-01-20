@@ -470,7 +470,9 @@ tcp/ip is a collection of communication rules that networks use to send data acr
                         downloads messages to the client and usually removes them from the server.
                     </li>
                     <li>
-                        <span class="term" data-def="" tabindex="0">imap4</span>
+                        <span class="term"
+                            data-def="internet message access protocol. imap is an email protocol that lets users read, reply to, and organize message while they stay stored on the mail server. this makes imap ideal for checking email from multiple devices. the current and most commonly used version of imap is imap4."
+                            tabindex="0">imap4</span>
                         keeps messages on the server so they can be accessed from multiple devices.
                     </li>
                 </ul>
@@ -486,7 +488,8 @@ tcp/ip is a collection of communication rules that networks use to send data acr
                 <h3>dns service</h3>
 
                 <p>
-                    <span class="term" data-def="" tabindex="0">dns</span>
+                    <span class="term" data-def="domain name system. dns is a system that organizes and matches website names to their corresponding IP addresses.
+it uses a hierarchical structure so names can be looked up efficiently across the internet." tabindex="0">dns</span>
                     works like a contacts list for the internet. instead of remembering long ip
                     addresses, we use easy names like google.com, and dns looks up the correct address for us.
                 </p>
@@ -498,14 +501,18 @@ tcp/ip is a collection of communication rules that networks use to send data acr
                 <h3>file transfer services</h3>
 
                 <p>
-                    <span class="term" data-def="" tabindex="0">ftp</span>
+                    <span class="term"
+                        data-def="file transfer protocol. an application layer protocol used to send and receive files between computers over a tcp/ip network."
+                        tabindex="0">ftp</span>
                     is a service used to move files between two computers on a network.
                 </p>
 
                 <p>
                     regular ftp does not encrypt data, which makes it insecure, but when encryption is added using
                     ssl/tls it becomes
-                    <span class="term" data-def="" tabindex="0">ftps</span>, which is much safer.
+                    <span class="term"
+                        data-def="file transfer protocol secure. a version of ftp that uses ssl/tls encryption for added security during file transfers."
+                        tabindex="0">ftps</span>, which is much safer.
                 </p>
 
                 <p>
@@ -520,15 +527,21 @@ tcp/ip is a collection of communication rules that networks use to send data acr
                 </p>
 
                 <p>
-                    <span class="term" data-def="" tabindex="0">telnet</span>
+                    <span class="term"
+                        data-def="a terminal emulation protocol used to connect to remote computers over tcp/ip. it does not encrypt data, which makes it insecure and rarely recommended for use."
+                        tabindex="0">telnet</span>
                     is an older tool that allows command-line access, but it does not encrypt data, which makes it
                     insecure. because of this, it has mostly been replaced by more secure options.
                 </p>
 
                 <p>
-                    <span class="term" data-def="" tabindex="0">ssh</span>
+                    <span class="term"
+                        data-def="secure shell. a remote access utility that provides authentication and encryption. it is commonly used to log into a host, run commands, and copy files to or from that host."
+                        tabindex="0">ssh</span>
                     is commonly used on linux systems and creates an encrypted connection between two computers, while
-                    <span class="term" data-def="" tabindex="0">rdp</span>
+                    <span class="term"
+                        data-def="remote desktop protocol. an application-layer protocol that uses tcp/ip to transmit graphics and text over a remote client–host connection. it also handles session management, licensing, and encrypted communication."
+                        tabindex="0">rdp</span>
                     is used on windows to securely access another computer's desktop.
                 </p>
 
