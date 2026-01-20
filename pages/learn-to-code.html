@@ -451,51 +451,90 @@ tcp/ip is a collection of communication rules that networks use to send data acr
                 <h3>email services</h3>
 
                 <p>
-                    email is sent using
-                    <span class="term"
-                        data-def="simple mail transfer protocol. smtp is a application-layer protocol used to send email. it is responsible for moving email messages from one mail server to another."
-                        tabindex="0">smtp</span>
+                    email uses different protocols depending on whether a message is being sent or received.
                 </p>
 
                 <p>
-                    clients retrieve email using
                     <span class="term"
-                        data-def="pop3 allows an email client to download messages from a mail server to a local device. after the messages are downloaded, they are usually deleted from the server, which means the email is stored only on that device."
-                        tabindex="0">pop3</span>
-                    or
-                    <span class="term" data-def="" tabindex="0">imap4</span>
+                        data-def="simple mail transfer protocol. smtp is a application-layer protocol used to send email. it is responsible for moving email messages from one mail server to another."
+                        tabindex="0">smtp</span>
+                    sends mail from the client to the sender's mail server and then to the recipient's mail server.
+                    once the message arrives, it stays on the recipient's server until the user checks their email.
                 </p>
+
+                <ul class="dash">
+                    <li>
+                        <span class="term"
+                            data-def="pop3 allows an email client to download messages from a mail server to a local device. after the messages are downloaded, they are usually deleted from the server, which means the email is stored only on that device."
+                            tabindex="0">pop3</span>
+                        downloads messages to the client and usually removes them from the server.
+                    </li>
+                    <li>
+                        <span class="term" data-def="" tabindex="0">imap4</span>
+                        keeps messages on the server so they can be accessed from multiple devices.
+                    </li>
+                </ul>
+
+                <p>
+                    both pop3 and imap4 can use ssl or tls for security. email servers like microsoft exchange server
+                    manage email, while clients such as outlook or browser-based apps like gmail allow users to read and
+                    send messages.
+                </p>
+
+                <img class="post-illustration" src="../images/learn-to-code/pop3.png">
+
                 <h3>dns service</h3>
 
                 <p>
                     <span class="term" data-def="" tabindex="0">dns</span>
-                    helps clients locate servers by translating names into ip addresses
+                    works like a contacts list for the internet. instead of remembering long ip
+                    addresses, we use easy names like google.com, and dns looks up the correct address for us.
+                </p>
+
+                <p>
+                    companies, internet providers, and public services like google or cloudflare run dns servers so
+                    devices can find websites and network resources quickly and reliably.
                 </p>
                 <h3>file transfer services</h3>
 
                 <p>
                     <span class="term" data-def="" tabindex="0">ftp</span>
-                    is used to transfer files between systems
+                    is a service used to move files between two computers on a network.
                 </p>
 
                 <p>
-                    secure file transfer options include
-                    <span class="term" data-def="" tabindex="0">ftps</span>
-                    and
-                    <span class="term" data-def="" tabindex="0">sftp</span>
+                    regular ftp does not encrypt data, which makes it insecure, but when encryption is added using
+                    ssl/tls it becomes
+                    <span class="term" data-def="" tabindex="0">ftps</span>, which is much safer.
+                </p>
+
+                <p>
+                    while web browsers can act as basic ftp clients, dedicated ftp programs offer more features and
+                    better control for file transfers.
                 </p>
                 <h3>remote access services</h3>
 
                 <p>
-                    <span class="term" data-def="" tabindex="0">telnet</span>
-                    is an older remote access protocol that does not encrypt data.
+                    some network protocols let a technician remote in, meaning they can access and control another
+                    computer from their own device.
                 </p>
 
                 <p>
-                    modern secure remote access uses
+                    <span class="term" data-def="" tabindex="0">telnet</span>
+                    is an older tool that allows command-line access, but it does not encrypt data, which makes it
+                    insecure. because of this, it has mostly been replaced by more secure options.
+                </p>
+
+                <p>
                     <span class="term" data-def="" tabindex="0">ssh</span>
-                    or
+                    is commonly used on linux systems and creates an encrypted connection between two computers, while
                     <span class="term" data-def="" tabindex="0">rdp</span>
+                    is used on windows to securely access another computer's desktop.
+                </p>
+
+                <p>
+                    these tools are often used when a vendor needs to connect to a company computer to troubleshoot
+                    software, where the vendor's computer acts as the client and the company computer is the host.
                 </p>
 
             </article>
