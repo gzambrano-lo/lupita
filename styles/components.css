@@ -174,10 +174,14 @@ section,
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
+    grid-auto-rows: 1fr;
 }
 
 .link-grid a {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
     grid-template-rows: auto auto auto;
     gap: .25rem;
     padding: 1rem;
@@ -193,6 +197,10 @@ section,
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, .08);
     border-color: var(--sage);
+}
+
+.link-grid li {
+  height: 100%;
 }
 
 .lg-emoji {

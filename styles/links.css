@@ -1,0 +1,11 @@
+.no-link {
+  cursor: default;
+}
+
+.link-grid li > a,
+.link-grid li > .no-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
