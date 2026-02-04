@@ -66,45 +66,87 @@ p {
 
 /* skip link */
 .skip-link {
-  position: absolute;
-  left: -999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 .skip-link:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  margin: 1rem;
-  padding: 0.5rem 1rem;
-  background: var(--coral);
-  color: white;
-  z-index: 1000;
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--coral);
+    color: white;
+    z-index: 1000;
 }
 
 /* reduce motion */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 
 /* anchor positioning to the header */
-.site-header { position: relative; }
+.site-header {
+    position: relative;
+}
 
 
-.site-header > .header-logo{
-  position: absolute;
-  left: 50%;
-  bottom: 100%;                
-  transform: translate(-50%, -8px);  
-  width: clamp(300px, 45vw, 520px);
-  z-index: 1000;
-  pointer-events: none;
+.site-header>.header-logo {
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translate(-50%, -8px);
+    width: clamp(300px, 45vw, 520px);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* scrollbar tokens (optional) */
+:root {
+    --scroll-track: var(--soft);
+    --scroll-thumb: var(--sage);
+    --scroll-thumb-hover: var(--coral);
+    --scroll-border: var(--cream);
+}
+
+/* firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+
+/* webkit (chrome/edge/safari) */
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+    border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--pink), var(--scroll-thumb));
+    border-radius: 999px;
+    border: 3px solid var(--scroll-border);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--coral), var(--scroll-thumb-hover));
+}
+
+*::-webkit-scrollbar-corner {
+    background: var(--scroll-track);
 }
