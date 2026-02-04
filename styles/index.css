@@ -139,6 +139,11 @@
   .home-hello .profile-pic {
     margin-inline: auto;
   }
+
+  .intro-text h2 {
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .home-hello h2,
