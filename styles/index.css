@@ -75,6 +75,40 @@
   margin-top: .6rem;
 }
 
+@media (max-width:600px) {
+  .hero {
+    margin-bottom: .5rem;
+    padding-top: 0;
+  }
+
+  .hero-title {
+    flex-wrap: wrap;
+    gap: .35rem;
+    line-height: 1.1;
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  .hero-title .lottie {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-tabs {
+    margin-top: .5rem;
+  }
+
+  .hero-tabs ul {
+    gap: .5rem;
+    padding: .4rem;
+  }
+
+  .hero-tabs a {
+    height: 34px;
+    padding: 0 .7rem;
+    font-size: .9rem;
+  }
+}
+
 .alert-mini {
   margin: .9rem auto 0;
   max-width: 960px;
