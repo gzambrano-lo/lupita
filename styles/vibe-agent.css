@@ -108,6 +108,8 @@
     border-radius: 12px;
     border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
     background: #fff;
+    color: var(--text);
+    font-weight: 600;
     cursor: pointer;
     transition: background .12s ease, transform .12s ease;
 }
@@ -224,6 +226,9 @@ section[aria-labelledby="vibe-agent-title"] {
 
     .va-btn {
         width: 100%;
+        background: color-mix(in srgb, var(--coral) 28%, #fff);
+        border-color: color-mix(in srgb, var(--coral) 42%, var(--border));
+        color: color-mix(in srgb, var(--text) 88%, #000);
     }
 
     .va-controls {
