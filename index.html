@@ -25,6 +25,8 @@
   <link rel="stylesheet" href="styles/cbox.css">
   <link rel="stylesheet" href="styles/about.css">
   <link rel="stylesheet" href="styles/post-toggle.css">
+  <link rel="stylesheet" href="styles/vibe-agent.css">
+
 
   <!-- lottie -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
@@ -113,7 +115,7 @@
     <!-- blinkies -->
     <section class="card card-taped blinkies-card" aria-labelledby="blinkies-title">
       <h2 id="blinkies-title" class="section-title">
-        <span class="i">✨</span> blinkies & buttons ╰✿´⌣`✿╯♡
+        blinkies & buttons ╰✿´⌣`✿╯♡
       </h2>
 
       <div class="blinkies">
@@ -131,7 +133,7 @@
     <!-- about this place (everything in one calm drawer) -->
     <section class="card card-taped about-drawer" aria-labelledby="about-drawer-title">
       <h2 id="about-drawer-title" class="section-title">
-        <span class="i">📖</span> about this place
+        about this place
       </h2>
 
       <p class="meta-note">if you're curious — open a tab. if not, keep scrolling ♡</p>
@@ -289,7 +291,7 @@
     <!-- cbox -->
     <section class="card card-taped chatbox-card" id="chat">
       <header class="chatbox-header">
-        <h2 class="section-title"><span class="i">💬</span> comment box</h2>
+        <h2 class="section-title">comment box</h2>
         <p class="meta-note">leave me a little note, song rec, or link to your site (⁀ᗢ⁀)</p>
       </header>
 
@@ -301,6 +303,30 @@
 
       <p class="meta chatbox-note">powered by cbox • please be kind (^‿^)</p>
     </section>
+
+    <section class="card card-taped" aria-labelledby="vibe-agent-title">
+      <h2 id="vibe-agent-title" class="section-title"><span class="i"></span>lupita.ai</h2>
+      <p class="meta-note">unstable ai. use gently.</p>
+      <div id="vibe-agent" class="va">
+        <div class="va-header">
+          <span>lupita.ai</span>
+          <span id="va-state" class="va-pill">calm</span>
+        </div>
+
+        <div id="va-log" class="va-log" aria-live="polite"></div>
+
+        <form id="va-form" class="va-form">
+          <input id="va-input" class="va-input" placeholder="say something..." autocomplete="off" />
+          <button class="va-btn" type="submit">send</button>
+        </form>
+
+        <div class="va-controls">
+          <button id="va-reset" class="va-link" type="button">reset</button>
+          <button id="va-toggle" class="va-link" type="button">toggle chaos</button>
+        </div>
+      </div>
+    </section>
+
 
   </main>
 
@@ -378,6 +404,9 @@
       });
     });
   </script>
+  <script src="scripts/vibe-agent.js" defer></script>
+
+
 </body>
 
 </html>
