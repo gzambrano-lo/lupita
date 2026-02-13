@@ -14,11 +14,10 @@
     let chaos = false;
     const states = ["calm", "anxious", "rage", "numb", "embarrassed"];
     let state = "calm";
-    let typingEl = null;
 
     const tone = {
         calm: {
-            opener: ["okay okay we can handle this", "cill out. ur good.", "we got this. slowly."],
+            opener: ["okay okay we can handle this", "chill out. ur good.", "we got this. slowly."],
             style: "helpful"
         },
         anxious: {
@@ -45,21 +44,6 @@
         div.textContent = text;
         logEl.appendChild(div);
         logEl.scrollTop = logEl.scrollHeight;
-    }
-
-    function showTyping() {
-        if (typingEl) return;
-        typingEl = document.createElement("div");
-        typingEl.className = "va-msg va-bot va-typing";
-        typingEl.innerHTML = "<span></span><span></span><span></span>";
-        logEl.appendChild(typingEl);
-        logEl.scrollTop = logEl.scrollHeight;
-    }
-
-    function hideTyping() {
-        if (!typingEl) return;
-        typingEl.remove();
-        typingEl = null;
     }
 
     function pick(arr) {
@@ -136,6 +120,7 @@
             throw new Error("Worker returned HTTP " + response.status);
         }
 
+        // THE BUG THAT KEPT KILLING ME 
         const data = await response.json();
 
         return {
@@ -159,17 +144,15 @@
         input.value = "";
         input.focus();
 
-        showTyping();
         try {
             const fromWorker = await respondViaWorker(text);
             setState(fromWorker.nextState);
-            hideTyping();
 
+            // only add one bot message (no duplicates)
             addMsg(fromWorker.reply || "no reply came back from worker.", "bot");
         } catch (err) {
             console.error("[vibe-agent] worker failed, using local fallback:", err);
             setState(maybeSwitchState(text));
-            hideTyping();
             addMsg(respondLocal(text), "bot");
         }
     });
