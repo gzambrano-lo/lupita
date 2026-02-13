@@ -39,3 +39,55 @@
 .example-text {
   line-height: 1.5;
 }
+
+/* study-music post embeds */
+.post .video-wrapper,
+.post .video-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0.6rem 0 1.1rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: #000;
+}
+
+.post .video-wrapper iframe,
+.post .video-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* cleaner 5-track spacing */
+.post .track-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.post .track-item {
+  margin: 0 0 1.4rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed color-mix(in srgb, var(--border) 80%, transparent);
+}
+
+.post .track-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.post .track-title {
+  font-size: 1.02rem;
+  margin: 0 0 0.35rem;
+  color: var(--text);
+}
+
+.post .track-note {
+  margin-top: 0.3rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
