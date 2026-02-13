@@ -104,18 +104,35 @@
 }
 
 .va-btn {
+    appearance: none;
+    -webkit-appearance: none;
     padding: 10px 14px;
     border-radius: 12px;
     border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
     background: #fff;
     color: var(--text);
+    -webkit-text-fill-color: var(--text);
     font-weight: 600;
+    opacity: 1;
     cursor: pointer;
     transition: background .12s ease, transform .12s ease;
 }
 
 .va-btn:hover {
     background: color-mix(in srgb, var(--cream) 45%, #fff);
+    color: var(--text);
+    -webkit-text-fill-color: var(--text);
+}
+
+.va-btn:focus-visible {
+    color: var(--text);
+    -webkit-text-fill-color: var(--text);
+}
+
+.va-btn:disabled {
+    opacity: 1;
+    color: var(--text);
+    -webkit-text-fill-color: var(--text);
 }
 
 .va-btn:active {
@@ -229,6 +246,7 @@ section[aria-labelledby="vibe-agent-title"] {
         background: color-mix(in srgb, var(--coral) 28%, #fff);
         border-color: color-mix(in srgb, var(--coral) 42%, var(--border));
         color: color-mix(in srgb, var(--text) 88%, #000);
+        -webkit-text-fill-color: color-mix(in srgb, var(--text) 88%, #000);
     }
 
     .va-controls {
