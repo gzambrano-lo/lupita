@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>02/24/2026 - lupe zambrano</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../../styles/reset.css">
+  <link rel="stylesheet" href="../../styles/tokens.css">
+  <link rel="stylesheet" href="../../styles/base.css">
+  <link rel="stylesheet" href="../../styles/layout.css">
+  <link rel="stylesheet" href="../../styles/components.css">
+  <link rel="stylesheet" href="../../styles/blog.css">
+  <link rel="stylesheet" href="../../styles/blog-post.css">
+  <link rel="stylesheet" href="../../styles/2026-02-24.css">
+
+  <script src="/scripts/site.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <h1 class="hero-title">blog</h1>
+  </header>
+
+  <nav id="nav_menu" aria-label="Main">
+    <ul>
+      <li><a href="../../index.html">home</a></li>
+      <li><a href="../about.html">about</a></li>
+      <li><a href="../media-log.html">media log</a></li>
+      <li class="current"><a href="../blog.html" aria-current="page">blog</a></li>
+      <li><a href="../links.html">links</a></li>
+      <li><a href="../guestbook.html">guestbook</a></li>
+      <li><a href="../garden-log.html">garden log</a></li>
+      <li><a href="../music.html">music</a></li>
+      <li><a href="../learn-to-code.html">learn to code</a></li>
+      <li><a href="../gallery.html">gallery</a></li>
+      <li><a href="../bleach-shrine.html">bleach shrine</a></li>
+      <li><a href="../project-senpai.html">project senpai</a></li>
+    </ul>
+  </nav>
+
+  <main id="main" class="container">
+    <article class="post audio-post">
+      <header>
+        <h2>tuesday</h2>
+        <p class="meta">
+          <time datetime="2026-02-24">posted february 24, 2026</time>
+        </p>
+      </header>
+
+      <div class="music-player">
+
+        <div class="album-art">
+          <img src="../../images/blog/cartel_de_santa.png" alt="Cover art">
+        </div>
+
+        <div class="track-info">
+          <div class="track-title">la pelotona (instrumental)</div>
+          <div class="track-artist">cartel de santa</div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progressBar" role="slider" aria-label="Seek">
+            <div class="progress-fill" id="progressFill"></div>
+            <div class="progress-handle" id="progressHandle"></div>
+          </div>
+          <div class="time-display">
+            <span id="timeCurrent">0:00</span>
+            <span id="timeTotal">0:00</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="control-btn" type="button" aria-label="Previous track">|&lt;</button>
+          <button class="play-btn" id="playBtn" type="button" aria-label="Play or pause">
+            <span id="playIcon">play</span>
+            <span id="pauseIcon" hidden>pause</span>
+          </button>
+          <button class="control-btn" type="button" aria-label="Next track">&gt;|</button>
+        </div>
+
+        <div class="volume-wrap">
+          <span class="volume-label">vol</span>
+          <div class="volume-slider" id="volumeSlider" role="slider" aria-label="Volume">
+            <div class="volume-fill" id="volumeFill"></div>
+            <div class="volume-handle" id="volumeHandle"></div>
+          </div>
+        </div>
+
+        <button id="playFallbackBtn" class="audio-fallback-btn" type="button">play audio</button>
+
+        <audio id="laPelotonaAudio" autoplay loop preload="metadata">
+          <source src="../../audio/la_pelotona_cartel_de_santa_instrumental.mp4" type="audio/mp4">
+          your browser does not support the audio element.
+        </audio>
+      </div>
+
+
+
+      <!-- pix -->
+      <section class="post-gallery" aria-label="Photo gallery">
+
+        <div class="post-gallery-grid">
+          <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-01.jpg" alt="Photo 1 description" loading="lazy">
+          </figure>
+          <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-02.jpg" alt="Photo 2 description" loading="lazy">
+          </figure>
+          <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-03.jpg" alt="Photo 3 description" loading="lazy">
+          </figure>
+          <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-04.jpg" alt="Photo 4 description" loading="lazy">
+          </figure>
+          <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-05.jpg" alt="Photo 5 description" loading="lazy">
+          </figure>
+          <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-06.jpg" alt="Photo 6 description" loading="lazy">
+          </figure>
+          <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-07.jpg" alt="Photo 7 description" loading="lazy">
+          </figure>
+          <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-08.jpg" alt="Photo 8 description" loading="lazy">
+          </figure>
+          <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-09.jpg" alt="Photo 9 description" loading="lazy">
+          </figure>
+          <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-10.jpg" alt="Photo 10 description" loading="lazy">
+          </figure>
+          <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-11.jpg" alt="Photo 11 description" loading="lazy">
+          </figure>
+          <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-12.jpg" alt="Photo 12 description" loading="lazy">
+          </figure>
+          <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-13.jpg" alt="Photo 13 description" loading="lazy">
+          </figure>
+           <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-14.jpg" alt="Photo 14 description" loading="lazy">
+          </figure>
+           <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-15.jpg" alt="Photo 15 description" loading="lazy">
+          </figure>
+           <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-16.jpg" alt="Photo 16 description" loading="lazy">
+          </figure>
+           <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-17.jpg" alt="Photo 17 description" loading="lazy">
+          </figure>
+           <figure class="post-gallery-item">
+            <img src="../../images/blog/2026-02-24/photo-18.jpg" alt="Photo 18 description" loading="lazy">
+          </figure>
+        </div>
+
+        <p class="read-more">
+          <a href="../blog.html" class="highlight-link">&larr; back to blog</a>
+        </p>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; lupita zambrano ☆(>ᴗ•) 2025</p>
+  </footer>
+
+  <script>
+    (function () {
+      const audio = document.getElementById("laPelotonaAudio");
+      const playBtn = document.getElementById("playBtn");
+      const playIcon = document.getElementById("playIcon");
+      const pauseIcon = document.getElementById("pauseIcon");
+      const fallbackBtn = document.getElementById("playFallbackBtn");
+
+      const progressBar = document.getElementById("progressBar");
+      const progressFill = document.getElementById("progressFill");
+      const progressHandle = document.getElementById("progressHandle");
+      const timeCurrent = document.getElementById("timeCurrent");
+      const timeTotal = document.getElementById("timeTotal");
+
+      const volumeSlider = document.getElementById("volumeSlider");
+      const volumeFill = document.getElementById("volumeFill");
+      const volumeHandle = document.getElementById("volumeHandle");
+
+      function formatTime(sec) {
+        if (!Number.isFinite(sec)) return "0:00";
+        const m = Math.floor(sec / 60);
+        const s = Math.floor(sec % 60);
+        return m + ":" + String(s).padStart(2, "0");
+      }
+
+      function setPlayingUI(isPlaying) {
+        playIcon.hidden = isPlaying;
+        pauseIcon.hidden = !isPlaying;
+        fallbackBtn.hidden = isPlaying;
+      }
+
+      function updateProgressUI() {
+        const pct = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+        progressFill.style.width = pct + "%";
+        progressHandle.style.left = pct + "%";
+        timeCurrent.textContent = formatTime(audio.currentTime);
+        timeTotal.textContent = formatTime(audio.duration);
+      }
+
+      function updateVolumeUI(value) {
+        const v = Math.max(0, Math.min(1, value));
+        const pct = v * 100;
+        volumeFill.style.width = pct + "%";
+        volumeHandle.style.left = pct + "%";
+      }
+
+      async function togglePlay() {
+        if (audio.paused) await audio.play();
+        else audio.pause();
+      }
+
+      playBtn.addEventListener("click", function () {
+        togglePlay().catch(function () {
+          fallbackBtn.hidden = false;
+        });
+      });
+
+      fallbackBtn.addEventListener("click", function () {
+        audio.play().then(function () {
+          setPlayingUI(true);
+        }).catch(function () {
+          fallbackBtn.hidden = false;
+        });
+      });
+
+      progressBar.addEventListener("click", function (e) {
+        const rect = progressBar.getBoundingClientRect();
+        const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        if (audio.duration) audio.currentTime = pct * audio.duration;
+      });
+
+      volumeSlider.addEventListener("click", function (e) {
+        const rect = volumeSlider.getBoundingClientRect();
+        const v = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        audio.volume = v;
+        updateVolumeUI(v);
+      });
+
+      audio.addEventListener("loadedmetadata", updateProgressUI);
+      audio.addEventListener("timeupdate", updateProgressUI);
+      audio.addEventListener("play", function () { setPlayingUI(true); });
+      audio.addEventListener("pause", function () { setPlayingUI(false); });
+
+      audio.volume = 0.7;
+      updateVolumeUI(0.7);
+      fallbackBtn.hidden = true;
+
+      audio.play().then(function () {
+        setPlayingUI(true);
+      }).catch(function () {
+        setPlayingUI(false);
+        fallbackBtn.hidden = false;
+      });
+    })();
+  </script>
+</body>
+
+</html>
