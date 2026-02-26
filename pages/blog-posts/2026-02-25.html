@@ -112,18 +112,29 @@
                 </p>
                 <p><strong>timestamps from that video description:</strong></p>
                 <ul class="dash">
-                    <li>0:00 - head empty - tsundere twintails</li>
-                    <li>3:00 - cute circus - tsundere twintails</li>
-                    <li>6:02 - cat cafe - tsundere twintails</li>
-                    <li>9:04 - cat cafe - kosu</li>
-                    <li>11:18 - a cat in a sea of soap - noboko</li>
-                    <li>14:58 - strawberry cake - noboko</li>
-                    <li>19:52 - fun at the beach - new super mario bros</li>
-                    <li>21:13 - tomodachi collection demo - mii maker</li>
-                    <li>22:26 - cats on mars - yoko kanno</li>
-                    <li>25:31 - neko atsume backround music</li>
-                    <li>28:31 - three year shmee - cheesy hfj</li>
-                    <li>31:12 - bee - groovydominoes52</li>
+                    <li><button class="ts-jump" type="button" data-seek="0">0:00 - head empty - tsundere
+                            twintails</button></li>
+                    <li><button class="ts-jump" type="button" data-seek="180">3:00 - cute circus - tsundere
+                            twintails</button></li>
+                    <li><button class="ts-jump" type="button" data-seek="362">6:02 - cat cafe - tsundere
+                            twintails</button></li>
+                    <li><button class="ts-jump" type="button" data-seek="544">9:04 - cat cafe - kosu</button></li>
+                    <li><button class="ts-jump" type="button" data-seek="678">11:18 - a cat in a sea of soap -
+                            noboko</button></li>
+                    <li><button class="ts-jump" type="button" data-seek="898">14:58 - strawberry cake -
+                            noboko</button></li>
+                    <li><button class="ts-jump" type="button" data-seek="1192">19:52 - fun at the beach - new super
+                            mario bros</button></li>
+                    <li><button class="ts-jump" type="button" data-seek="1273">21:13 - tomodachi collection demo - mii
+                            maker</button></li>
+                    <li><button class="ts-jump" type="button" data-seek="1346">22:26 - cats on mars - yoko
+                            kanno</button></li>
+                    <li><button class="ts-jump" type="button" data-seek="1531">25:31 - neko atsume backround
+                            music</button></li>
+                    <li><button class="ts-jump" type="button" data-seek="1711">28:31 - three year shmee - cheesy
+                            hfj</button></li>
+                    <li><button class="ts-jump" type="button" data-seek="1872">31:12 - bee -
+                            groovydominoes52</button></li>
                 </ul>
                 <p><strong>disclaimer:</strong> this is a non-commercial fan page. i claim no credit for the music,
                     audio, or any copyrighted material. full credit belongs to the original artists and rights holders.
@@ -155,7 +166,7 @@
                     vic's pizzeria and somehow managed to stomach a pepsi and a slice of cheese pizza. which was wild,
                     because i could not even keep water down at the time.</p>
                 <p>in my mind, i never thought i could get pregnant. like... ever. so there i was, taking the most
-                    expensive and slightly embarrassing pregnancy test of my life at urgent care. love that for me.</p>
+                    expensive and slightly embarrassing pregnancy test of my life at urgent care (ᵕ—ᴗ—)</p>
                 <p>and now here we are. i sometimes feel like i manifested him because i used to dream about having a
                     little boy. and a couple years later, boom. there he was.</p>
                 <p>he is the sweetest soul. because of him, i see life more tenderly. softer. slower. more intentional.
@@ -185,8 +196,10 @@
         (function () {
             const audio = document.getElementById("postAudio");
             const audioToggleBtn = document.getElementById("audioToggleBtn");
+            const tsButtons = document.querySelectorAll(".ts-jump");
             const AUDIO_PREF_KEY = "audio_disabled_2026_02_25";
             let audioDisabled = localStorage.getItem(AUDIO_PREF_KEY) === "1";
+            let updateAudioToggleUI = function () { };
 
             if (audio) {
                 audio.volume = 0.7;
@@ -203,7 +216,7 @@
             }
 
             if (audioToggleBtn && audio) {
-                function updateAudioToggleUI() {
+                updateAudioToggleUI = function () {
                     if (audioDisabled) {
                         audioToggleBtn.textContent = "audio off";
                         audioToggleBtn.setAttribute("aria-pressed", "true");
@@ -229,6 +242,20 @@
                     }
 
                     updateAudioToggleUI();
+                });
+            }
+
+            if (audio && tsButtons.length) {
+                tsButtons.forEach(function (btn) {
+                    btn.addEventListener("click", async function () {
+                        const seekTo = Number(btn.getAttribute("data-seek")) || 0;
+                        audio.currentTime = seekTo;
+                        audioDisabled = false;
+                        audio.muted = false;
+                        localStorage.setItem(AUDIO_PREF_KEY, "0");
+                        updateAudioToggleUI();
+                        await audio.play().catch(function () { });
+                    });
                 });
             }
 
