@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../../styles/components.css">
     <link rel="stylesheet" href="../../styles/blog.css">
     <link rel="stylesheet" href="../../styles/blog-post.css">
+    <link rel="stylesheet" href="../../styles/click-counter.css">
     <script src="/scripts/site.js" defer></script>
 </head>
 
@@ -186,6 +187,12 @@
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                 </iframe>
             </div>
+            <div class="click-row" aria-label="click counter">
+                <button id="clickBtn" class="pill-btn" type="button">click me</button>
+                <button class="pill-btn count-pill" type="button" aria-live="polite" tabindex="-1">
+                    clicks: <span id="clickCount">0</span>
+                </button>
+            </div>
 
              <p class="read-more">
                 <a href="../blog.html" class="highlight-link">← back to blog</a>
@@ -197,6 +204,39 @@
     <footer class="site-footer">
         <p>&copy; lupita zambrano ☆(>ᴗ•) 2025</p>
     </footer>
+    <script>
+        (function () {
+            const clickBtn = document.getElementById("clickBtn");
+            const clickCount = document.getElementById("clickCount");
+            const COUNTER_API = "https://site-counters.gzamlo98.workers.dev/api/counter?slug=2026-02-23";
+
+            if (clickBtn && clickCount) {
+                async function loadCount() {
+                    try {
+                        const res = await fetch(COUNTER_API, { method: "GET" });
+                        if (!res.ok) throw new Error("failed to load counter");
+                        const data = await res.json();
+                        clickCount.textContent = Number(data.count) || 0;
+                    } catch (err) {
+                        console.error(err);
+                    }
+                }
+
+                clickBtn.addEventListener("click", async function () {
+                    try {
+                        const res = await fetch(COUNTER_API, { method: "POST" });
+                        if (!res.ok) throw new Error("failed to increment counter");
+                        const data = await res.json();
+                        clickCount.textContent = Number(data.count) || 0;
+                    } catch (err) {
+                        console.error(err);
+                    }
+                });
+
+                loadCount();
+            }
+        })();
+    </script>
 
     <script src="/scripts/blog-carousel.js" defer></script>
 

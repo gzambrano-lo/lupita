@@ -1,0 +1,38 @@
+.click-row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.click-row .pill-btn {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.6rem 1rem;
+}
+
+#clickBtn {
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+#clickBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+#clickBtn:active {
+  transform: translateY(0);
+  box-shadow: none;
+  border-color: var(--sage);
+}
+
+.count-pill {
+  background: var(--cream);
+  border-color: var(--pink);
+}
