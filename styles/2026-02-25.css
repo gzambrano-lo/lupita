@@ -111,14 +111,16 @@
 }
 
 .credit-note .dash li::before {
-  content: "\2665";
+  content: "\2665\FE0E";
   position: absolute;
   left: 0;
-  top: 0;
+  top: 0.2em;
   color: color-mix(in srgb, var(--coral) 70%, white);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-family: "Segoe UI Symbol", "Arial Unicode MS", sans-serif;
   line-height: 1;
+  font-variant-emoji: text;
+  text-rendering: geometricPrecision;
 }
 
 .ts-jump {
