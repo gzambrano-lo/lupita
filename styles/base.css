@@ -17,6 +17,11 @@ body {
     height: 100%;
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 /* body */
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -149,4 +154,10 @@ p {
 
 *::-webkit-scrollbar-corner {
     background: var(--scroll-track);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0.9rem;
+    }
 }
