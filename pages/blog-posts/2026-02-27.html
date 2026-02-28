@@ -61,9 +61,10 @@
                     <span class="meta-sep" aria-hidden="true">&middot;</span>
                     <span class="audio-credit-note">
                         <span class="audio-credit-prefix"></span>
-                        soundtrack from the film
+                        soundtrack from film:
                         <a href="https://www.netflix.com/us-es/title/70057941" target="_blank" rel="noopener noreferrer"
                             class="audio-credit-link">amarte duele</a>
+                        
                     </span>
                 </p>
             </header>
@@ -89,8 +90,7 @@
             </section>
 
             <div aria-hidden="true" style="display:none;">
-                <audio id="postAudio" loop preload="metadata">
-                    <source src="/audio/llevarte_a_marte.mp4" type="audio/mp4">
+                <audio id="postAudio" preload="metadata">
                     your browser does not support the audio element.
                 </audio>
             </div>
@@ -134,16 +134,21 @@
 
                 <p>why do i always do that.</p>
             </section>
-            <!--
+
             <aside class="credit-note" aria-label="audio and link note">
                 <ul class="dash">
                     <li>
-                        optional timestamp jump:
-                        <button class="ts-jump" type="button" data-seek="42">jump to 0:42</button>
+                        <button class="ts-jump" type="button" data-track="0" data-seek="0">
+                            llevarte a marte by natalia lafourcade 
+                        </button>
                     </li>
-                    <li>replace this note with your own links/credits if needed.</li>
+                    <li>
+                        <button class="ts-jump" type="button" data-track="1" data-seek="0">
+                            cuento by ximena sariñana
+                        </button>
+                    </li>
                 </ul>
-            </aside>-->
+            </aside>
 
             <div class="click-row" aria-label="head pat counter">
                 <button id="headPatBtn" class="pill-btn" type="button">head pat</button>
@@ -168,12 +173,25 @@
             const audio = document.getElementById("postAudio");
             const btn = document.getElementById("audioToggleBtn");
             const PREF = "audio_disabled_2026_02_27";
+            const TRACKS = [
+                "/audio/llevarte_a_marte.mp4",
+                "/audio/cuento.mkv"
+            ];
+            let trackIndex = 0;
             let audioDisabled = localStorage.getItem(PREF) === "1";
 
             if (!audio || !btn) return;
 
             audio.volume = 0.7;
             audio.muted = audioDisabled;
+            audio.loop = false;
+            audio.src = TRACKS[trackIndex];
+
+            function setTrack(index) {
+                trackIndex = index % TRACKS.length;
+                audio.src = TRACKS[trackIndex];
+                audio.load();
+            }
 
             function render() {
                 btn.textContent = audioDisabled ? "turn audio back on" : "kill audio";
@@ -183,6 +201,11 @@
             function startAudio() {
                 if (!audioDisabled) audio.play().catch(function () { });
             }
+
+            audio.addEventListener("ended", function () {
+                setTrack((trackIndex + 1) % TRACKS.length);
+                if (!audioDisabled) audio.play().catch(function () { });
+            });
 
             window.addEventListener("click", startAudio, { once: true });
             window.addEventListener("keydown", startAudio, { once: true });
@@ -240,9 +263,20 @@
             tsButtons.forEach(function (jumpBtn) {
                 jumpBtn.addEventListener("click", function () {
                     const seekTo = Number(jumpBtn.getAttribute("data-seek"));
+                    const targetTrack = Number(jumpBtn.getAttribute("data-track"));
                     if (!audio || Number.isNaN(seekTo)) return;
-                    audio.currentTime = Math.max(0, seekTo);
-                    if (!audioDisabled) audio.play().catch(function () { });
+                    const seekAndPlay = function () {
+                        audio.currentTime = Math.max(0, seekTo);
+                        if (!audioDisabled) audio.play().catch(function () { });
+                    };
+
+                    if (!Number.isNaN(targetTrack) && targetTrack !== trackIndex) {
+                        setTrack(targetTrack);
+                        audio.addEventListener("loadedmetadata", seekAndPlay, { once: true });
+                        return;
+                    }
+
+                    seekAndPlay();
                 });
             });
         })();
