@@ -454,6 +454,18 @@ details[open] {
     background-color: #f7f7f7;
 }
 
+.alert details,
+.alert details[open] {
+    margin-top: .6rem;
+    background: transparent;
+    border: 1px solid color-mix(in oklab, var(--bd), white 25%);
+    border-radius: 12px;
+}
+
+.alert summary {
+    color: var(--ink);
+}
+
 .alert-close {
     appearance: none;
     display: inline-grid;
