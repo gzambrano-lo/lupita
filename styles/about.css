@@ -158,6 +158,15 @@
     font-size: 1.05rem;
 }
 
+.about-card.carousel .carousel-frame {
+    max-width: 370px;
+    margin: 0 auto;
+}
+
+.about-card.carousel .carousel-slide img {
+    aspect-ratio: 3 / 4;
+}
+
 .dash {
     list-style: none;
     margin: 0;
@@ -215,6 +224,10 @@
 
     .about-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-card.carousel .carousel-frame {
+        max-width: none;
     }
 }
 
