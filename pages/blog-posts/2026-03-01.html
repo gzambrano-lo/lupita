@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03/01/2026 - lupe zambrano</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../../styles/reset.css">
+    <link rel="stylesheet" href="../../styles/tokens.css">
+    <link rel="stylesheet" href="../../styles/base.css?v=20260226a">
+    <link rel="stylesheet" href="../../styles/layout.css">
+    <link rel="stylesheet" href="../../styles/components.css">
+    <link rel="stylesheet" href="../../styles/blog.css">
+    <link rel="stylesheet" href="../../styles/blog-post.css">
+    <link rel="stylesheet" href="../../styles/click-counter.css">
+    <link rel="stylesheet" href="../../styles/2026-03-01.css?v=20260301a">
+    <script src="/scripts/site.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <h1 class="hero-title">blog</h1>
+    </header>
+
+    <nav id="nav_menu" aria-label="Main">
+        <ul>
+            <li><a href="../../index.html">home</a></li>
+            <li><a href="../about.html">about</a></li>
+            <li><a href="../media-log.html">media log</a></li>
+            <li class="current"><a href="../blog.html" aria-current="page">blog</a></li>
+            <li><a href="../links.html">links</a></li>
+            <li><a href="../guestbook.html">guestbook</a></li>
+            <li><a href="../garden-log.html">garden log</a></li>
+            <li><a href="../music.html">music</a></li>
+            <li><a href="../learn-to-code.html">learn to code</a></li>
+            <li><a href="../gallery.html">gallery</a></li>
+            <li><a href="../bleach-shrine.html">bleach shrine</a></li>
+            <li><a href="../project-senpai.html">project senpai</a></li>
+        </ul>
+    </nav>
+
+    <main id="main" class="container">
+        <article class="post post-bones">
+            <header>
+                <h2>sunday</h2>
+                <p class="meta">
+                    <time datetime="2026-03-01">posted march 1, 2026</time>
+                </p>
+                <p class="meta meta-translation" lang="es-MX">
+                    publicado el 1 de marzo de 2026
+                </p>
+            </header>
+
+            <section aria-label="post content" class="post-section">
+                <p>this post is basically a little listening log. most of these tracks sit in the same lane, but a few
+                    others pull the page into different corners of my playlist brain.</p>
+                <p class="translation" lang="es-MX">este post básicamente es un pequeño registro de lo que he estado
+                    escuchando. la mayoría de estas canciones van por el mismo rollo, pero hay algunas que jalan la
+                    página hacia otros rincones de mi cerebro musical.</p>
+                <p>instead of burying them in a plain list, each song gets its own player inside a card so the page
+                    reads
+                    more like a mini music shelf.</p>
+                <p class="translation" lang="es-MX">en vez de enterrarlas en una lista simple, cada canción tiene su
+                    propio reproductor dentro de una tarjetita, para que la página se sienta más como una mini repisa
+                    musical.</p>
+            </section>
+
+            <aside class="entry-note" aria-label="entry note">
+                <p>the little custom players keep the shelf feeling cohesive, and they stack more cleanly once the page
+                    gets narrow on mobile.</p>
+                <p class="translation" lang="es-MX">estos reproductores pequenos hacen que la repisa se vea mas unida y
+                    se acomodan mejor cuando la pagina se hace angosta en celular.</p>
+            </aside>
+
+            <section class="song-shelf" aria-labelledby="song-shelf-title">
+                <div class="song-shelf-heading">
+                    <h3 id="song-shelf-title">today's songs</h3>
+                    <p>the reggaeton mexicano pile got bigger, there is a small house pocket now, and one track still
+                        sits off to the side.</p>
+                    <p class="translation" lang="es-MX">la pila de reggaeton mexicano crecio, ahora tambien hay un
+                        rinconcito de house, y todavia hay una cancion que queda aparte.</p>
+                </div>
+
+                <div class="song-groups">
+                    <section class="genre-panel" aria-labelledby="genre-panel-main">
+                        <div class="panel-heading">
+                            <p class="panel-kicker">main set</p>
+                            <p class="panel-kicker panel-kicker-translation" lang="es-MX">seleccion principal</p>
+                        </div>
+
+                        <div class="song-card-grid">
+                            <article class="song-card">
+                                <div class="song-card-head">
+                                    <h5>la reina del tacuyaba</h5>
+                                    <p>charly gynn, pepo mix, tzunami</p>
+                                </div>
+                                <div class="song-player">
+                                    <button class="song-play-btn" type="button" data-play-btn
+                                        aria-label="Play la reina del tacuyaba">play</button>
+                                    <div class="song-progress" data-progress role="progressbar"
+                                        aria-label="Track progress" aria-valuemin="0" aria-valuemax="100"
+                                        aria-valuenow="0">
+                                        <span class="song-progress-fill" data-progress-fill></span>
+                                    </div>
+                                    <div class="song-time">
+                                        <span data-time-current>0:00</span>
+                                        <span data-time-total>0:00</span>
+                                    </div>
+                                </div>
+                                <audio preload="metadata">
+                                    <source src="https://media.lupitazambrano.com/26-03-01/charly_gynn_la_reina_del_tacuyaba.mp4"
+                                        type="audio/mp4">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </article>
+
+                            <article class="song-card">
+                                <div class="song-card-head">
+                                    <h5>vaqueritas</h5>
+                                    <p>denna la porri, tbx</p>
+                                </div>
+                                <div class="song-player">
+                                    <button class="song-play-btn" type="button" data-play-btn
+                                        aria-label="Play vaqueritas">play</button>
+                                    <div class="song-progress" data-progress role="progressbar"
+                                        aria-label="Track progress" aria-valuemin="0" aria-valuemax="100"
+                                        aria-valuenow="0">
+                                        <span class="song-progress-fill" data-progress-fill></span>
+                                    </div>
+                                    <div class="song-time">
+                                        <span data-time-current>0:00</span>
+                                        <span data-time-total>0:00</span>
+                                    </div>
+                                </div>
+                                <audio preload="metadata">
+                                    <source src="https://media.lupitazambrano.com/26-03-01/denna_la_porri_vaqueritas%20audio.mp4"
+                                        type="audio/mp4">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </article>
+
+                            <article class="song-card">
+                                <div class="song-card-head">
+                                    <h5>betty puu</h5>
+                                    <p>charly gynn, dj antena, brand randall</p>
+                                </div>
+                                <div class="song-player">
+                                    <button class="song-play-btn" type="button" data-play-btn
+                                        aria-label="Play betty puu">play</button>
+                                    <div class="song-progress" data-progress role="progressbar"
+                                        aria-label="Track progress" aria-valuemin="0" aria-valuemax="100"
+                                        aria-valuenow="0">
+                                        <span class="song-progress-fill" data-progress-fill></span>
+                                    </div>
+                                    <div class="song-time">
+                                        <span data-time-current>0:00</span>
+                                        <span data-time-total>0:00</span>
+                                    </div>
+                                </div>
+                                <audio preload="metadata">
+                                    <source src="https://media.lupitazambrano.com/26-03-01/betty_puu.mp3" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </article>
+
+                            <article class="song-card">
+                                <div class="song-card-head">
+                                    <h5>dandole al cumbiaton</h5>
+                                    <p>pepo mix</p>
+                                </div>
+                                <div class="song-player">
+                                    <button class="song-play-btn" type="button" data-play-btn
+                                        aria-label="Play dandole al cumbiaton">play</button>
+                                    <div class="song-progress" data-progress role="progressbar"
+                                        aria-label="Track progress" aria-valuemin="0" aria-valuemax="100"
+                                        aria-valuenow="0">
+                                        <span class="song-progress-fill" data-progress-fill></span>
+                                    </div>
+                                    <div class="song-time">
+                                        <span data-time-current>0:00</span>
+                                        <span data-time-total>0:00</span>
+                                    </div>
+                                </div>
+                                <audio preload="metadata">
+                                    <source src="https://media.lupitazambrano.com/26-03-01/dandole_al_cumbiaton_pepo_mix.mp4"
+                                        type="audio/mp4">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </article>
+
+                            <article class="song-card">
+                                <div class="song-card-head">
+                                    <h5>lo roce</h5>
+                                    <p>charly gynn</p>
+                                </div>
+                                <div class="song-player">
+                                    <button class="song-play-btn" type="button" data-play-btn
+                                        aria-label="Play lo roce">play</button>
+                                    <div class="song-progress" data-progress role="progressbar"
+                                        aria-label="Track progress" aria-valuemin="0" aria-valuemax="100"
+                                        aria-valuenow="0">
+                                        <span class="song-progress-fill" data-progress-fill></span>
+                                    </div>
+                                    <div class="song-time">
+                                        <span data-time-current>0:00</span>
+                                        <span data-time-total>0:00</span>
+                                    </div>
+                                </div>
+                                <audio preload="metadata">
+                                    <source src="https://media.lupitazambrano.com/26-03-01/lo_roce_charly_gynn.mp3" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </article>
+
+                            <article class="song-card">
+                                <div class="song-card-head">
+                                    <h5>tuma</h5>
+                                    <p>bellakath</p>
+                                </div>
+                                <div class="song-player">
+                                    <button class="song-play-btn" type="button" data-play-btn
+                                        aria-label="Play tuma">play</button>
+                                    <div class="song-progress" data-progress role="progressbar"
+                                        aria-label="Track progress" aria-valuemin="0" aria-valuemax="100"
+                                        aria-valuenow="0">
+                                        <span class="song-progress-fill" data-progress-fill></span>
+                                    </div>
+                                    <div class="song-time">
+                                        <span data-time-current>0:00</span>
+                                        <span data-time-total>0:00</span>
+                                    </div>
+                                </div>
+                                <audio preload="metadata">
+                                    <source src="https://media.lupitazambrano.com/26-03-01/tuma_bellakath.mp4" type="audio/mp4">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </article>
+
+                            <article class="song-card">
+                                <div class="song-card-head">
+                                    <h5>gata en celo</h5>
+                                    <p>denna la porri</p>
+                                </div>
+                                <div class="song-player">
+                                    <button class="song-play-btn" type="button" data-play-btn
+                                        aria-label="Play gata en celo">play</button>
+                                    <div class="song-progress" data-progress role="progressbar"
+                                        aria-label="Track progress" aria-valuemin="0" aria-valuemax="100"
+                                        aria-valuenow="0">
+                                        <span class="song-progress-fill" data-progress-fill></span>
+                                    </div>
+                                    <div class="song-time">
+                                        <span data-time-current>0:00</span>
+                                        <span data-time-total>0:00</span>
+                                    </div>
+                                </div>
+                                <audio preload="metadata">
+                                    <source src="https://media.lupitazambrano.com/26-03-01/gata_en_celo_denna_la_porri.mp4" type="audio/mp4">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </article>
+
+                            <article class="song-card">
+                                <div class="song-card-head">
+                                    <h5>2012</h5>
+                                    <p>joss ml, enayy</p>
+                                </div>
+                                <div class="song-player">
+                                    <button class="song-play-btn" type="button" data-play-btn
+                                        aria-label="Play 2012 by joss ml and enayy">play</button>
+                                    <div class="song-progress" data-progress role="progressbar"
+                                        aria-label="Track progress" aria-valuemin="0" aria-valuemax="100"
+                                        aria-valuenow="0">
+                                        <span class="song-progress-fill" data-progress-fill></span>
+                                    </div>
+                                    <div class="song-time">
+                                        <span data-time-current>0:00</span>
+                                        <span data-time-total>0:00</span>
+                                    </div>
+                                </div>
+                                <audio preload="metadata">
+                                    <source src="https://media.lupitazambrano.com/26-03-01/joss_ml_enayy_2012.mp4" type="audio/mp4">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="genre-panel genre-panel-alt" aria-labelledby="genre-panel-alt">
+                        <div class="panel-heading">
+                            <p class="panel-kicker">curveball</p>
+                            <p class="panel-kicker panel-kicker-translation" lang="es-MX">la diferente</p>
+                        </div>
+
+                        <article class="song-card song-card-featured">
+                            <div class="song-card-head">
+                                <span class="song-chip song-chip-alt">odd one out</span>
+                                <span class="song-chip song-chip-alt song-chip-translation" lang="es-MX">la que no
+                                    encaja</span>
+                                <h5>2 easy</h5>
+                                <p>paeka</p>
+                            </div>
+                            <div class="song-player">
+                                <button class="song-play-btn" type="button" data-play-btn
+                                    aria-label="Play 2 easy">play</button>
+                                <div class="song-progress" data-progress role="progressbar" aria-label="Track progress"
+                                    aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                    <span class="song-progress-fill" data-progress-fill></span>
+                                </div>
+                                <div class="song-time">
+                                    <span data-time-current>0:00</span>
+                                    <span data-time-total>0:00</span>
+                                </div>
+                            </div>
+                            <audio preload="metadata">
+                                <source src="https://media.lupitazambrano.com/26-03-01/2_easy_paeka.mp4" type="audio/mp4">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </article>
+                    </section>
+                </div>
+
+                <section class="genre-panel house-panel" aria-labelledby="genre-panel-house">
+                    <div class="panel-heading">
+                        <p class="panel-kicker">house set</p>
+                        <p class="panel-kicker panel-kicker-translation" lang="es-MX">seleccion house</p>
+                    </div>
+
+                    <div class="song-card-grid">
+                        <article class="song-card">
+                            <div class="song-card-head">
+                                <h5>right now</h5>
+                                <p>lnrt</p>
+                            </div>
+                            <div class="song-player">
+                                <button class="song-play-btn" type="button" data-play-btn
+                                    aria-label="Play right now">play</button>
+                                <div class="song-progress" data-progress role="progressbar" aria-label="Track progress"
+                                    aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                    <span class="song-progress-fill" data-progress-fill></span>
+                                </div>
+                                <div class="song-time">
+                                    <span data-time-current>0:00</span>
+                                    <span data-time-total>0:00</span>
+                                </div>
+                            </div>
+                            <audio preload="metadata">
+                                <source src="https://media.lupitazambrano.com/26-03-01/lnrt_right_now.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </article>
+
+                        <article class="song-card">
+                            <div class="song-card-head">
+                                <h5>lo subo bajo</h5>
+                                <p>italo</p>
+                            </div>
+                            <div class="song-player">
+                                <button class="song-play-btn" type="button" data-play-btn
+                                    aria-label="Play lo subo lo bajo">play</button>
+                                <div class="song-progress" data-progress role="progressbar" aria-label="Track progress"
+                                    aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                    <span class="song-progress-fill" data-progress-fill></span>
+                                </div>
+                                <div class="song-time">
+                                    <span data-time-current>0:00</span>
+                                    <span data-time-total>0:00</span>
+                                </div>
+                            </div>
+                            <audio preload="metadata">
+                                <source src="https://media.lupitazambrano.com/26-03-01/lo_subo_bajo_italo.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </article>
+
+                        <article class="song-card">
+                            <div class="song-card-head">
+                                <h5>start movin</h5>
+                                <p>chronosonder</p>
+                            </div>
+                            <div class="song-player">
+                                <button class="song-play-btn" type="button" data-play-btn
+                                    aria-label="Play start movin">play</button>
+                                <div class="song-progress" data-progress role="progressbar" aria-label="Track progress"
+                                    aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                    <span class="song-progress-fill" data-progress-fill></span>
+                                </div>
+                                <div class="song-time">
+                                    <span data-time-current>0:00</span>
+                                    <span data-time-total>0:00</span>
+                                </div>
+                            </div>
+                            <audio preload="metadata">
+                                <source src="https://media.lupitazambrano.com/26-03-01/start_movin_chronosonder.mp4" type="audio/mp4">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </article>
+
+                        <article class="song-card">
+                            <div class="song-card-head">
+                                <h5>call me</h5>
+                                <p>lnrt</p>
+                            </div>
+                            <div class="song-player">
+                                <button class="song-play-btn" type="button" data-play-btn
+                                    aria-label="Play call me">play</button>
+                                <div class="song-progress" data-progress role="progressbar" aria-label="Track progress"
+                                    aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                                    <span class="song-progress-fill" data-progress-fill></span>
+                                </div>
+                                <div class="song-time">
+                                    <span data-time-current>0:00</span>
+                                    <span data-time-total>0:00</span>
+                                </div>
+                            </div>
+                            <audio preload="metadata">
+                                <source src="https://media.lupitazambrano.com/26-03-01/LNRT_Call_Me.mp4" type="audio/mp4">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </article>
+                    </div>
+                </section>
+            </section>
+
+            <div class="click-row" aria-label="head pat counter">
+                <button id="headPatBtn" class="pill-btn" type="button">head pat</button>
+                <button class="pill-btn count-pill" type="button" aria-live="polite" tabindex="-1">
+                    total head pats: <span id="headPatCount">0</span>
+                </button>
+            </div>
+
+            <p class="read-more">
+                <a href="../blog.html" class="highlight-link">&larr; back to blog</a>
+            </p>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; lupita zambrano 2025</p>
+    </footer>
+
+    <script>
+        (function () {
+            const headPatBtn = document.getElementById("headPatBtn");
+            const headPatCount = document.getElementById("headPatCount");
+            const COUNTER_API = "https://site-counters.gzamlo98.workers.dev/api/counter?slug=2026-03-01";
+
+            if (!headPatBtn || !headPatCount) return;
+
+            async function loadCount() {
+                try {
+                    const res = await fetch(COUNTER_API, { method: "GET" });
+                    if (!res.ok) throw new Error("failed to load counter");
+                    const data = await res.json();
+                    headPatCount.textContent = Number(data.count) || 0;
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+
+            headPatBtn.addEventListener("click", async function () {
+                try {
+                    const res = await fetch(COUNTER_API, { method: "POST" });
+                    if (!res.ok) throw new Error("failed to increment counter");
+                    const data = await res.json();
+                    headPatCount.textContent = Number(data.count) || 0;
+                } catch (err) {
+                    console.error(err);
+                }
+            });
+
+            loadCount();
+        })();
+    </script>
+    <script>
+        (function () {
+            const cards = Array.from(document.querySelectorAll(".song-card"));
+
+            function formatTime(seconds) {
+                if (!Number.isFinite(seconds)) return "0:00";
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return mins + ":" + String(secs).padStart(2, "0");
+            }
+
+            cards.forEach(function (card) {
+                const audio = card.querySelector("audio");
+                const playBtn = card.querySelector("[data-play-btn]");
+                const progress = card.querySelector("[data-progress]");
+                const progressFill = card.querySelector("[data-progress-fill]");
+                const timeCurrent = card.querySelector("[data-time-current]");
+                const timeTotal = card.querySelector("[data-time-total]");
+
+                if (!audio || !playBtn || !progress || !progressFill || !timeCurrent || !timeTotal) return;
+
+                function updateUI() {
+                    const pct = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+                    progressFill.style.width = pct + "%";
+                    progress.setAttribute("aria-valuenow", String(Math.round(pct)));
+                    timeCurrent.textContent = formatTime(audio.currentTime);
+                    timeTotal.textContent = formatTime(audio.duration);
+                    playBtn.textContent = audio.paused ? "play" : "pause";
+                    playBtn.setAttribute("aria-pressed", String(!audio.paused));
+                }
+
+                playBtn.addEventListener("click", function () {
+                    if (audio.paused) {
+                        cards.forEach(function (otherCard) {
+                            const otherAudio = otherCard.querySelector("audio");
+                            if (otherAudio && otherAudio !== audio && !otherAudio.paused) {
+                                otherAudio.pause();
+                            }
+                        });
+                        audio.play().catch(function (err) {
+                            console.error(err);
+                        });
+                    } else {
+                        audio.pause();
+                    }
+                });
+
+                progress.addEventListener("click", function (event) {
+                    const rect = progress.getBoundingClientRect();
+                    const pct = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+                    if (audio.duration) {
+                        audio.currentTime = pct * audio.duration;
+                    }
+                });
+
+                audio.addEventListener("loadedmetadata", updateUI);
+                audio.addEventListener("timeupdate", updateUI);
+                audio.addEventListener("play", updateUI);
+                audio.addEventListener("pause", updateUI);
+                audio.addEventListener("ended", function () {
+                    audio.currentTime = 0;
+                    updateUI();
+                });
+
+                updateUI();
+            });
+        })();
+    </script>
+</body>
+
+</html>

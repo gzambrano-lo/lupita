@@ -1,0 +1,406 @@
+.post-bones {
+    --post-accent: var(--coral);
+    --post-accent-soft: color-mix(in srgb, var(--pink) 58%, #fff);
+}
+
+.post-bones .meta {
+    margin-bottom: 1.5rem;
+}
+
+.post-bones .meta-translation {
+    margin-top: -1rem;
+    color: var(--sage);
+    font-size: 0.92rem;
+}
+
+.post-bones .post-section p {
+    margin: 0 0 1rem;
+}
+
+.post-bones .translation {
+    margin-top: -0.55rem;
+    color: var(--sage);
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+.post-bones .entry-note {
+    border-left: 4px solid var(--post-accent);
+    background: linear-gradient(135deg, var(--post-accent-soft), var(--card));
+    border-radius: 0.75rem;
+    padding: 1rem 1.1rem;
+    margin: 1.5rem 0;
+}
+
+.post-bones .song-shelf {
+    margin: 2rem 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.post-bones .song-shelf-heading {
+    margin-bottom: 1rem;
+}
+
+.post-bones .song-shelf-heading h3 {
+    margin: 0 0 0.4rem;
+}
+
+.post-bones .song-shelf-heading p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.post-bones .song-groups {
+    display: grid;
+    gap: 1rem;
+}
+
+.post-bones .genre-panel {
+    background: color-mix(in srgb, var(--card) 84%, var(--cream));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.post-bones .genre-panel-alt {
+    background: color-mix(in srgb, var(--card) 82%, var(--soft));
+    border-color: var(--border);
+}
+
+.post-bones .panel-heading {
+    margin-bottom: 0.95rem;
+}
+
+.post-bones .panel-heading h4,
+.post-bones .song-card-head h5 {
+    margin: 0;
+}
+
+.post-bones .panel-heading h4 {
+    font-size: 1.02rem;
+    line-height: 1.25;
+    color: var(--text);
+}
+
+.post-bones .panel-kicker {
+    margin: 0 0 0.25rem;
+    color: var(--post-accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.post-bones .panel-kicker-translation {
+    margin-top: 0;
+    color: var(--sage);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+}
+
+.post-bones .genre-panel-alt .panel-kicker {
+    color: var(--sage);
+}
+
+.post-bones .song-card-grid {
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.post-bones .song-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) - 2px);
+    padding: 1rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+.post-bones .song-card-featured {
+    background: color-mix(in srgb, var(--card) 88%, var(--soft));
+}
+
+.post-bones .song-card-head {
+    margin-bottom: 0.85rem;
+}
+
+.post-bones .song-card-head h5 {
+    font-size: 0.98rem;
+    line-height: 1.3;
+    color: var(--text);
+}
+
+.post-bones .song-card-head p {
+    margin: 0.2rem 0 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.post-bones .song-player {
+    display: grid;
+    gap: 0.55rem;
+    align-items: start;
+    padding-top: 0.75rem;
+    border-top: 1px solid color-mix(in srgb, var(--border) 80%, #fff);
+}
+
+.post-bones .song-play-btn {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--sage), var(--soft));
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    text-transform: lowercase;
+    padding: 0.45rem 0.85rem;
+    cursor: pointer;
+    min-width: 4.9rem;
+    justify-self: start;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.post-bones .song-play-btn[aria-pressed="true"] {
+    background: linear-gradient(135deg, var(--coral), var(--pink));
+}
+
+.post-bones .song-play-btn:hover,
+.post-bones .song-play-btn:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.post-bones .song-progress {
+    position: relative;
+    height: 0.6rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--soft) 72%, #fff);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.post-bones .song-progress-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0;
+    background: linear-gradient(90deg, var(--pink), var(--coral), var(--sage));
+    border-radius: inherit;
+}
+
+.post-bones .song-time {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.post-bones .genre-panel .song-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.post-bones .song-chip {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--pink) 72%, #fff);
+    color: var(--coral);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.post-bones .song-chip-alt {
+    background: color-mix(in srgb, var(--soft) 82%, #fff);
+    color: var(--sage);
+}
+
+.post-bones .song-chip-translation {
+    margin-left: 0.35rem;
+}
+
+.post-bones .song-card audio {
+    display: none;
+}
+
+.post-bones .music-discovery-section {
+    margin: 2rem 0 1.4rem;
+}
+
+.post-bones .music-discovery-section h3 {
+    margin: 0 0 0.8rem;
+}
+
+.post-bones .music-window {
+    background: #e7eaeb;
+    border: 1px solid #d1d8da;
+    border-radius: 0.9rem;
+    padding: 0.75rem;
+    box-shadow: 0 7px 24px rgba(40, 58, 59, 0.12);
+}
+
+.post-bones .music-window-top {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.7rem 0.8rem;
+    border-radius: 0.65rem;
+    background: #b9c3bf;
+    margin-bottom: 0.7rem;
+}
+
+.post-bones .music-window-dots {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.post-bones .music-window-dots span {
+    width: 0.58rem;
+    height: 0.58rem;
+    border-radius: 999px;
+    background: #e4bdb8;
+}
+
+.post-bones .music-window-top h4 {
+    margin: 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.post-bones .music-window-body {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.post-bones .music-video-frame {
+    border: 1px solid #c8cecf;
+    border-radius: 0.72rem;
+    background: linear-gradient(135deg, #abbec2, #8c9faa);
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.post-bones .music-video-embed {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.post-bones .music-recommendations {
+    background: #dde1e2;
+    border: 1px solid #cfd5d7;
+    border-radius: 0.72rem;
+    padding: 0.8rem;
+}
+
+.post-bones .music-recommendations-title {
+    margin: 0 0 0.65rem;
+    font-weight: 700;
+    color: #668c89;
+}
+
+.post-bones .music-recommendations ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.post-bones .music-recommendations a {
+    display: block;
+    padding: 0.55rem 0.65rem;
+    border: 1px solid #c8ced0;
+    border-radius: 0.62rem;
+    text-decoration: none;
+    color: #1f2a2d;
+    background: #f1f2f3;
+}
+
+.post-bones .music-recommendations a:hover,
+.post-bones .music-recommendations a:focus-visible {
+    background: #fff;
+}
+
+.post-bones .single-gif-section {
+    margin-top: 2rem;
+}
+
+.post-bones .single-gif-section h3 {
+    margin-bottom: 0.9rem;
+}
+
+.post-bones .photo-card {
+    overflow: hidden;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #fff;
+}
+
+.post-bones .single-gif-card {
+    max-width: 420px;
+}
+
+.post-bones .photo-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+@media (min-width: 820px) {
+    .post-bones .song-groups {
+        grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.9fr);
+        align-items: start;
+    }
+
+    .post-bones .song-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .post-bones .music-window-body {
+        grid-template-columns: minmax(0, 1fr) 260px;
+    }
+}
+
+@media (min-width: 1080px) {
+    .post-bones .song-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .post-bones .translation,
+    .post-bones .meta-translation {
+        font-size: 0.9rem;
+    }
+
+    .post-bones .genre-panel {
+        padding: 0.9rem;
+    }
+
+    .post-bones .song-card {
+        padding: 0.9rem;
+    }
+
+    .post-bones .panel-heading {
+        margin-bottom: 0.8rem;
+    }
+
+    .post-bones .song-card-head {
+        margin-bottom: 0.7rem;
+    }
+
+    .post-bones .song-play-btn {
+        padding-inline: 0.8rem;
+    }
+}
