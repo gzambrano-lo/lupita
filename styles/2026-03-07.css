@@ -658,25 +658,31 @@
 }
 
 @media (max-width: 620px) {
+    .post-daily-desk .music-player-card {
+        padding: 0.85rem;
+    }
+
     .post-daily-desk .track-meta {
         display: block;
         min-height: auto;
-        margin-bottom: 0.8rem;
-        padding-right: 2.7rem;
+        margin-bottom: 0.7rem;
+        padding-right: 0;
     }
 
     .post-daily-desk .track-meta > div {
         position: static;
+        display: block;
         transform: none;
+        width: 100%;
         max-width: none;
-        padding-top: 0.15rem;
+        padding: 0.1rem 2.9rem 0 0.2rem;
         text-align: center;
     }
 
     .post-daily-desk .track-meta h3 {
-        font-size: clamp(1.05rem, 6.8vw, 1.35rem);
-        line-height: 1.18;
-        text-wrap: balance;
+        font-size: clamp(1rem, 5.8vw, 1.25rem);
+        line-height: 1.22;
+        overflow-wrap: break-word;
     }
 
     .post-daily-desk .credits-menu-btn {
@@ -719,6 +725,11 @@
     .post-daily-desk .player-btn-primary {
         width: 2.7rem;
         height: 2.7rem;
+    }
+
+    .post-daily-desk .player-note {
+        font-size: 0.84rem;
+        line-height: 1.45;
     }
 
 }
