@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>03/07/2026 - lupe zambrano</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../../styles/reset.css">
+    <link rel="stylesheet" href="../../styles/tokens.css">
+    <link rel="stylesheet" href="../../styles/base.css?v=20260226a">
+    <link rel="stylesheet" href="../../styles/layout.css">
+    <link rel="stylesheet" href="../../styles/components.css">
+    <link rel="stylesheet" href="../../styles/blog.css">
+    <link rel="stylesheet" href="../../styles/blog-post.css">
+    <link rel="stylesheet" href="../../styles/click-counter.css">
+    <link rel="stylesheet" href="../../styles/2026-03-07.css?v=20260308w">
+    <script src="/scripts/site.js" defer></script>
+</head>
+
+<body class="post-page post-page-2026-03-07">
+    <header class="site-header">
+        <h1 class="hero-title" data-i18n="site.blogTitle">blog</h1>
+    </header>
+
+    <nav id="nav_menu" aria-label="Main">
+        <ul>
+            <li><a href="../../index.html" data-i18n="nav.home">home</a></li>
+            <li><a href="../about.html" data-i18n="nav.about">about</a></li>
+            <li><a href="../media-log.html" data-i18n="nav.mediaLog">media log</a></li>
+            <li class="current"><a href="../blog.html" aria-current="page" data-i18n="nav.blog">blog</a></li>
+            <li><a href="../links.html" data-i18n="nav.links">links</a></li>
+            <li><a href="../guestbook.html" data-i18n="nav.guestbook">guestbook</a></li>
+            <li><a href="../garden-log.html" data-i18n="nav.gardenLog">garden log</a></li>
+            <li><a href="../music.html" data-i18n="nav.music">music</a></li>
+            <li><a href="../learn-to-code.html" data-i18n="nav.learnToCode">learn to code</a></li>
+            <li><a href="../gallery.html" data-i18n="nav.gallery">gallery</a></li>
+            <li><a href="../bleach-shrine.html" data-i18n="nav.bleachShrine">bleach shrine</a></li>
+            <li><a href="../project-senpai.html" data-i18n="nav.projectSenpai">project senpai</a></li>
+        </ul>
+    </nav>
+
+    <main id="main" class="container">
+        <article class="post post-daily-desk">
+            <header>
+                <div class="post-header-row">
+                    <h2 data-i18n="post.day">saturday</h2>
+                    <button id="langToggleBtn" class="lang-toggle-btn" type="button" aria-pressed="false">EN / ES</button>
+                </div>
+                <p class="meta">
+                    <time datetime="2026-03-07" data-i18n="post.date">posted march 7, 2026</time>
+                </p>
+            </header>
+
+            <section class="alert post-language-note" role="status" aria-live="polite">
+                <div class="alert-content">
+                    <p class="alert-title" data-i18n="alert.title">bilingual note</p>
+                    <p data-i18n="alert.body">this page has an english / spanish toggle. i'm working on making the whole site bilingual, but it'll take me some time. thank you for visiting, i want to kiss you on the mouth mwah</p>
+                </div>
+                <button class="alert-close post-language-note-close" type="button" id="languageNoteCloseBtn" aria-label="dismiss bilingual note" title="dismiss">✕</button>
+            </section>
+
+            <section class="post-section intro-card" aria-label="post intro">
+                <p data-i18n="intro.p1">
+                    lately music players and ui design have been living in my head. i keep finding myself thinking
+                    about layouts, components, and how things should feel when someone interacts with a page.
+                </p>
+                <p data-i18n="intro.p2">
+                    i also finally figured out what r2 bucket storage is, which immediately sent me down a rabbit hole
+                    of rethinking parts of my website.
+                </p>
+                <p data-i18n="intro.p3">
+                    at the same time i'm finishing up the quarter, so most of my energy is going toward wrapping up
+                    assignments, but ideas for other projects keep popping up.
+                </p>
+                <p data-i18n="intro.p4">a few things on my mind right now:</p>
+                <ul class="heart-list">
+                    <li data-i18n="intro.idea1">finishing the quarter strong</li>
+                    <li data-i18n="intro.idea2">casaingles</li>
+                    <li data-i18n="intro.idea3">somushroom.org</li>
+                    <li data-i18n="intro.idea4">the somushroom app</li>
+                </ul>
+                <p data-i18n="intro.p5">
+                    just writing them down here so i don't lose them + accountability
+                </p>
+            </section>
+
+            <section class="music-shell" aria-labelledby="track-title">
+                <article class="music-player-card">
+                    <div class="track-meta">
+                        <div>
+                            <h3 id="track-title">sin cara</h3>
+                        </div>
+                        <button class="credits-menu-btn" type="button" id="creditsToggleBtn" aria-expanded="false"
+                            aria-controls="creditsPanel" aria-label="Show artist information">
+                            <span class="credits-menu-icon" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="progress-wrap">
+                        <span class="time-stamp" id="timeCurrent">0:00</span>
+                        <button class="timeline" type="button" id="timeline" aria-label="Seek within track">
+                            <span class="timeline-fill" id="timelineFill"></span>
+                            <span class="timeline-thumb" id="timelineThumb"></span>
+                        </button>
+                        <span class="time-stamp" id="timeTotal">0:00</span>
+                    </div>
+
+                    <div class="player-controls" aria-label="Audio controls">
+                        <button class="player-btn player-btn-ghost" type="button" id="rewindBtn"
+                            aria-label="Previous track">
+                            <span class="media-icon media-icon-skip-back" aria-hidden="true"></span>
+                        </button>
+                        <button class="player-btn player-btn-primary" type="button" id="playPauseBtn"
+                            aria-label="Play track" aria-pressed="false">
+                            <span class="media-icon media-icon-play" id="playPauseIcon" aria-hidden="true"></span>
+                        </button>
+                        <button class="player-btn player-btn-ghost" type="button" id="forwardBtn"
+                            aria-label="Next track">
+                            <span class="media-icon media-icon-skip-forward" aria-hidden="true"></span>
+                        </button>
+                    </div>
+
+                    <audio id="postAudio" preload="metadata">
+                        <source id="postAudioSource"
+                            src="https://media.lupitazambrano.com/03-07-26/ochy_lilwillyshawty_sin_cara%20_video_oficial.mp4"
+                            type="audio/mp4">
+                        your browser does not support the audio element.
+                    </audio>
+                </article>
+
+                <div class="credits-popover" id="creditsPanel" aria-label="track credits" hidden>
+                    <p class="credits-popover-title" data-i18n="credits.title">artist info</p>
+                    <p class="credits-meta-line" id="creditMainArtistRow"><span data-i18n="credits.mainArtist">main artist</span><span class="credits-meta-value"
+                            id="creditMainArtist">ochy</span></p>
+                    <p class="credits-meta-line" id="creditFeaturedArtistRow"><span data-i18n="credits.featuredArtist">featured artist</span><span
+                            class="credits-meta-value" id="creditFeaturedArtist">lil willy shawty</span></p>
+                    <p class="credits-meta-line" id="creditLyricistRow"><span data-i18n="credits.lyricist">lyricist</span><span class="credits-meta-value"
+                            id="creditLyricist">jakuji 'ochy' vallejos</span></p>
+                    <p class="credits-meta-line" id="creditComposerRow"><span data-i18n="credits.composer">composer</span><span class="credits-meta-value"
+                            id="creditComposer">jakuji 'ochy' vallejos</span></p>
+                    <p class="credits-meta-line" id="creditProducerRow" hidden><span data-i18n="credits.producer">producer, recorded by, mixer</span><span
+                            class="credits-meta-value" id="creditProducer"></span></p>
+                    <p class="credits-meta-line" id="creditMastererRow" hidden><span data-i18n="credits.masterer">masterer</span><span
+                            class="credits-meta-value" id="creditMasterer"></span></p>
+                    <p class="credits-meta-line" id="creditStudioPersonnelRow" hidden><span data-i18n="credits.studioPersonnel">studio personnel</span><span
+                            class="credits-meta-value" id="creditStudioPersonnel"></span></p>
+                    <div class="credits-links" aria-label="listen on music platforms">
+                        <a class="credits-link credits-link-apple" id="appleMusicLink"
+                            href="https://music.apple.com/pa/song/sin-cara-feat-lil-willy-shawty/1681042440"
+                            target="_blank" rel="noopener noreferrer" aria-label="Open on Apple Music">
+                            <svg viewBox="0 0 361 361" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="appleMusicGradient" x1="180" x2="180" y1="358.605" y2="7.759"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop offset="0" stop-color="#fa233b"></stop>
+                                        <stop offset="1" stop-color="#fb5c74"></stop>
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    d="M360 112.61c0-4.3 0-8.6-.02-12.9-.02-3.62-.06-7.24-.16-10.86-.21-7.89-.68-15.84-2.08-23.64-1.42-7.92-3.75-15.29-7.41-22.49a75.633 75.633 0 0 0-33.06-33.05c-7.19-3.66-14.56-5.98-22.47-7.41C287 .86 279.04.39 271.15.18c-3.62-.1-7.24-.14-10.86-.16-4.3-.02-8.6-.02-12.9-.02H112.61c-4.3 0-8.6 0-12.9.02-3.62.02-7.24.06-10.86.16C80.96.4 73 .86 65.2 2.27c-7.92 1.42-15.28 3.75-22.47 7.41A75.633 75.633 0 0 0 9.67 42.73c-3.66 7.2-5.99 14.57-7.41 22.49C.86 73.02.39 80.98.18 88.86.08 92.48.04 96.1.02 99.72 0 104.01 0 108.31 0 112.61v134.77c0 4.3 0 8.6.02 12.9.02 3.62.06 7.24.16 10.86.21 7.89.68 15.84 2.08 23.64 1.42 7.92 3.75 15.29 7.41 22.49a75.633 75.633 0 0 0 33.06 33.05c7.19 3.66 14.56 5.98 22.47 7.41 7.8 1.4 15.76 1.87 23.65 2.08 3.62.1 7.24.14 10.86.16 4.3.03 8.6.02 12.9.02h134.77c4.3 0 8.6 0 12.9-.02 3.62-.02 7.24-.06 10.86-.16 7.89-.21 15.85-.68 23.65-2.08 7.92-1.42 15.28-3.75 22.47-7.41a75.633 75.633 0 0 0 33.06-33.05c3.66-7.2 5.99-14.57 7.41-22.49 1.4-7.8 1.87-15.76 2.08-23.64.1-3.62.14-7.24.16-10.86.03-4.3.02-8.6.02-12.9V112.61z"
+                                    fill="url(#appleMusicGradient)"></path>
+                                <path
+                                    d="M254.5 55c-.87.08-8.6 1.45-9.53 1.64l-107 21.59-.04.01c-2.79.59-4.98 1.58-6.67 3-2.04 1.71-3.17 4.13-3.6 6.95-.09.6-.24 1.82-.24 3.62v133.92c0 3.13-.25 6.17-2.37 8.76s-4.74 3.37-7.81 3.99l-6.99 1.41c-8.84 1.78-14.59 2.99-19.8 5.01-4.98 1.93-8.71 4.39-11.68 7.51-5.89 6.17-8.28 14.54-7.46 22.38.7 6.69 3.71 13.09 8.88 17.82 3.49 3.2 7.85 5.63 12.99 6.66 5.33 1.07 11.01.7 19.31-.98 4.42-.89 8.56-2.28 12.5-4.61 3.9-2.3 7.24-5.37 9.85-9.11 2.62-3.75 4.31-7.92 5.24-12.35.96-4.57 1.19-8.7 1.19-13.26V142.81c0-6.22 1.76-7.86 6.78-9.08 0 0 88.94-17.94 93.09-18.75 5.79-1.11 8.52.54 8.52 6.61v79.29c0 3.14-.03 6.32-2.17 8.92-2.12 2.59-4.74 3.37-7.81 3.99l-6.99 1.41c-8.84 1.78-14.59 2.99-19.8 5.01-4.98 1.93-8.71 4.39-11.68 7.51-5.89 6.17-8.49 14.54-7.67 22.38.7 6.69 3.92 13.09 9.09 17.82 3.49 3.2 7.85 5.56 12.99 6.6 5.33 1.07 11.01.69 19.31-.98 4.42-.89 8.56-2.22 12.5-4.55 3.9-2.3 7.24-5.37 9.85-9.11 2.62-3.75 4.31-7.92 5.24-12.35.96-4.57 1-8.7 1-13.26V64.46c.02-6.16-3.23-9.96-9.02-9.46z"
+                                    fill="#fff"></path>
+                            </svg>
+                        </a>
+                        <a class="credits-link credits-link-spotify" id="spotifyLink"
+                            href="https://open.spotify.com/track/3Nv8Mje384DgxNqdME7oS8?si=797063dec9bc4bef"
+                            target="_blank" rel="noopener noreferrer" aria-label="Open on Spotify">
+                            <svg viewBox="0 0 256 256" aria-hidden="true">
+                                <path
+                                    d="M128 0C57.308 0 0 57.309 0 128c0 70.696 57.309 128 128 128 70.697 0 128-57.304 128-128C256 57.314 198.697.007 127.998.007l.001-.006Zm58.699 184.614c-2.293 3.76-7.215 4.952-10.975 2.644-30.053-18.357-67.885-22.515-112.44-12.335a7.981 7.981 0 0 1-9.552-6.007 7.968 7.968 0 0 1 6-9.553c48.76-11.14 90.583-6.344 124.323 14.276 3.76 2.308 4.952 7.215 2.644 10.975Zm15.667-34.853c-2.89 4.695-9.034 6.178-13.726 3.289-34.406-21.148-86.853-27.273-127.548-14.92-5.278 1.594-10.852-1.38-12.454-6.649-1.59-5.278 1.386-10.842 6.655-12.446 46.485-14.106 104.275-7.273 143.787 17.007 4.692 2.89 6.175 9.034 3.286 13.72v-.001Zm1.345-36.293C162.457 88.964 94.394 86.71 55.007 98.666c-6.325 1.918-13.014-1.653-14.93-7.978-1.917-6.328 1.65-13.012 7.98-14.935C93.27 62.027 168.434 64.68 215.929 92.876c5.702 3.376 7.566 10.724 4.188 16.405-3.362 5.69-10.73 7.565-16.4 4.187h-.006Z"
+                                    fill="#1ED760"></path>
+                            </svg>
+                        </a>
+                        <a class="credits-link credits-link-youtube" id="youtubeLink"
+                            href="https://youtu.be/5Ajau22MVSM?si=MPOHh7OheFE6WxFi"
+                            target="_blank" rel="noopener noreferrer" aria-label="Open on YouTube">
+                            <svg viewBox="0 0 256 180" aria-hidden="true">
+                                <path
+                                    d="M250.346 28.075A32.18 32.18 0 0 0 227.69 5.418C207.824 0 127.87 0 127.87 0S47.912.164 28.046 5.582A32.18 32.18 0 0 0 5.39 28.24c-6.009 35.298-8.34 89.084.165 122.97a32.18 32.18 0 0 0 22.656 22.657c19.866 5.418 99.822 5.418 99.822 5.418s79.955 0 99.82-5.418a32.18 32.18 0 0 0 22.657-22.657c6.338-35.348 8.291-89.1-.164-123.134Z"
+                                    fill="red"></path>
+                                <path d="m102.421 128.06 66.328-38.418-66.328-38.418z" fill="#fff"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <p class="player-note" data-i18n="player.note">
+                    i wanted this player to feel a little more interactive, so the svg logos also work as direct links
+                    to the song in your preferred music app.
+                </p>
+            </section>
+
+            <section class="post-section ascii-card" aria-label="ascii art">
+                <pre class="ascii-art" role="img" aria-label="cute ascii face">
+⠀⠀⠀⠀⢀⣤⠤⣄⠀⠀⠀⠀⣠⠤⣄⠀⠀⠀
+⠀⠀⠀⢠⠞⠀⠀⠈⢷⠀⠀⡜⠃⠀⠈⢳⠀⠀
+⠀⠀⠀⣾⠀⠀⠀⠀⠘⡇⢰⠅⠀⠀⠀⠸⡇⠀
+⠀⠀⠀⣿⠀⠀⠀⠀⠀⡇⣾⠀⠀⠀⠀⢸⠃⠀
+⠀⠀⠀⢹⡀⠀⠀⠀⠀⡇⣿⠀⠀⠀⠀⡾⠀⠀
+⠀⠀⠀⠸⡇⠀⠀⠀⠀⠷⠿⠀⠀⠀⢰⠇⠀⠀
+⠀⢀⡴⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢶⡀⠀
+⢰⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡄
+⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷
+⢹⠀⠀⠀⢰⡆⠀⠀⠀⠀⠀⠀⢀⣄⠀⠀⠀⡟
+⠈⢧⡀⠀⠀⠀⠀⠀⢄⡀⣀⠀⠀⠁⠀⠀⣸⠃
+⠀⠈⠻⢦⣀⠀⠀⠀⠚⠙⠂⠀⠀⠀⣀⡴⠋⠀
+⠀⠀⠀⠀⠈⠉⠓⠒⠲⠶⠶⠒⠒⠋⠁⠀⠀⠀
+                </pre>
+            </section>
+
+            <section class="post-section closing-note" aria-label="mental health note">
+                <p data-i18n="mental.p1">
+                    the last couple weeks have been a little chaotic mentally.
+                </p>
+                <p data-i18n="mental.p2">
+                    i keep going back and forth between two thoughts: maybe college just isn't right for me right now
+                    because i can't give it my full attention... and at the same time this might be the only
+                    opportunity i get to do this with a grant. so i keep telling myself to push through.
+                </p>
+                <p data-i18n="mental.p3">
+                    but i'm tired.
+                </p>
+                <p data-i18n="mental.p4">
+                    i miss being outside more. walking, gardening, driving out toward the mountain. lately everything
+                    has been screens, assignments, and technology and my brain feels like it's running hot all the
+                    time.
+                </p>
+                <p data-i18n="mental.p5">
+                    my professor has honestly been really patient with me. i've been one of his shittiest students for
+                    a few classes now, which weirdly makes it feel worse when i'm struggling to keep up lately. mental
+                    health has been kicking my ass a little and it's hard not to feel guilty about that.
+                </p>
+                <p data-i18n="mental.p6">
+                    on top of that my ocd has been doing this thing where i get stuck in smell-checking loops.
+                    apparently it's really common. your brain swears something smells off, so you keep searching for
+                    the source. but the more you check, the more real it feels. today i spent like 30 minutes panic
+                    cleaning because i was convinced something smelled wrong.
+                </p>
+            </section>
+
+            <section class="post-section media-card" aria-label="pictures and gifs">
+                <p class="media-card-title" data-i18n="media.title">pictures + gifs</p>
+                <div class="daily-media-grid portrait-media-grid">
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/asset-01.gif" alt="March 7 gif 1" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/asset-06.jpg" alt="March 7 photo 6" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/asset-02.gif" alt="March 7 gif 2" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/asset-07.jpg" alt="March 7 photo 7" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/asset-03.gif" alt="March 7 gif 3" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/asset-08.jpg" alt="March 7 photo 8" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/asset-04.gif" alt="March 7 gif 4" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/asset-09.jpg" alt="March 7 photo 9" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/asset-05.gif" alt="March 7 gif 5" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/asset-11.jpg" alt="March 7 photo 11" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/asset-12.jpg" alt="March 7 photo 12" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/asset-13.jpg" alt="March 7 photo 13" loading="lazy"></figure>
+                </div>
+            </section>
+
+            <section class="post-section media-card" aria-label="me a decade ago photos">
+                <p class="media-card-title" data-i18n="media.decadeAgoTitle">it was never just a phase mom</p>
+                <div class="daily-media-grid">
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/me-1.JPG" alt="Me a decade ago photo 1" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/me-2.JPG" alt="Me a decade ago photo 2" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/me-3.JPG" alt="Me a decade ago photo 3" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/me-4.JPG" alt="Me a decade ago photo 4" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/me-5.JPG" alt="Me a decade ago photo 5" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/me-6.JPG" alt="Me a decade ago photo 6" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/me-7.JPG" alt="Me a decade ago photo 7" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/me-8.JPG" alt="Me a decade ago photo 8" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/me-9.JPG" alt="Me a decade ago photo 9" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/me-10.JPG" alt="Me a decade ago photo 10" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/me-11.JPG" alt="Me a decade ago photo 11" loading="lazy"></figure>
+                    <figure class="daily-media-item"><img src="../../images/blog/2026-03-07/me-12.JPG" alt="Me a decade ago photo 12" loading="lazy"></figure>
+                </div>
+            </section>
+
+            <div class="click-row" aria-label="head pat counter">
+                <button id="headPatBtn" class="pill-btn" type="button" data-i18n="counter.button">head pat</button>
+                <button class="pill-btn count-pill" type="button" aria-live="polite" tabindex="-1">
+                    <span data-i18n="counter.totalLabel">total head pats:</span> <span id="headPatCount">0</span>
+                </button>
+            </div>
+
+            <p class="read-more">
+                <a href="../blog.html" class="highlight-link" data-i18n="post.backLink">&larr; back to blog</a>
+            </p>
+
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p data-i18n="footer.copy">&copy; lupita zambrano 2025</p>
+    </footer>
+
+    <script>
+        (function () {
+            const langToggleBtn = document.getElementById("langToggleBtn");
+            const languageNote = document.querySelector(".post-language-note");
+            const languageNoteCloseBtn = document.getElementById("languageNoteCloseBtn");
+            const i18nNodes = Array.from(document.querySelectorAll("[data-i18n]"));
+            const STORAGE_KEY = "post-2026-03-07-language";
+            const translations = {
+                en: {
+                    pageTitle: "03/07/2026 - lupe zambrano",
+                    "site.blogTitle": "blog",
+                    "nav.home": "home",
+                    "nav.about": "about",
+                    "nav.mediaLog": "media log",
+                    "nav.blog": "blog",
+                    "nav.links": "links",
+                    "nav.guestbook": "guestbook",
+                    "nav.gardenLog": "garden log",
+                    "nav.music": "music",
+                    "nav.learnToCode": "learn to code",
+                    "nav.gallery": "gallery",
+                    "nav.bleachShrine": "bleach shrine",
+                    "nav.projectSenpai": "project senpai",
+                    "post.kicker": "now playing",
+                    "post.day": "saturday",
+                    "post.date": "posted march 7, 2026",
+                    "intro.p1": "lately music players and ui design have been living in my head. i keep finding myself thinking about layouts, components, and how things should feel when someone interacts with a page.",
+                    "intro.p2": "i also finally figured out what r2 bucket storage is, which immediately sent me down a rabbit hole of rethinking parts of my website.",
+                    "intro.p3": "at the same time i'm finishing up the quarter, so most of my energy is going toward wrapping up assignments, but ideas for other projects keep popping up.",
+                    "intro.p4": "a few things on my mind right now:",
+                    "intro.idea1": "finishing the quarter strong",
+                    "intro.idea2": "casaingles",
+                    "intro.idea3": "somushroom.org",
+                    "intro.idea4": "the somushroom app",
+                    "intro.p5": "just writing them down here so i don't lose them + accountability",
+                    "alert.title": "bilingual note",
+                    "alert.body": "this page has an english / spanish toggle! i'm working on making the whole site bilingual, but it'll take me some time. thank you for visiting bb. i want to kiss you on the mouth. mwah",
+                    "media.title": "pictures + gifs",
+                    "media.decadeAgoTitle": "it was never just a phase mom",
+                    "credits.title": "artist info",
+                    "credits.mainArtist": "main artist",
+                    "credits.featuredArtist": "featured artist",
+                    "credits.lyricist": "lyricist",
+                    "credits.composer": "composer",
+                    "credits.producer": "producer, recorded by, mixer",
+                    "credits.masterer": "masterer",
+                    "credits.studioPersonnel": "studio personnel",
+                    "player.note": "i wanted this player to feel a little more interactive, so the svg logos also work as direct links to the song in your preferred music app.",
+                    "mental.p1": "the last couple weeks have been a little chaotic mentally.",
+                    "mental.p2": "i keep going back and forth between two thoughts: maybe college just isn't right for me right now because i can't give it my full attention... and at the same time this might be the only opportunity i get to do this with a grant. so i keep telling myself to push through.",
+                    "mental.p3": "but i'm tired.",
+                    "mental.p4": "i miss being outside more. walking, gardening, driving out toward the mountain. lately everything has been screens, assignments, and technology and my brain feels like it's running hot all the time.",
+                    "mental.p5": "my professor has honestly been really patient with me. i've been one of his shittiest students for a few classes now, which weirdly makes it feel worse when i'm struggling to keep up lately. mental health has been kicking my ass a little and it's hard not to feel guilty about that.",
+                    "mental.p6": "on top of that my ocd has been doing this thing where i get stuck in smell-checking loops. apparently it's really common. your brain swears something smells off, so you keep searching for the source. but the more you check, the more real it feels. today i spent like 30 minutes panic cleaning because i was convinced something smelled wrong.",
+                    "counter.button": "head pat",
+                    "counter.totalLabel": "total head pats:",
+                    "post.backLink": "\u2190 back to blog",
+                    "footer.copy": "\u00a9 lupita zambrano 2025"
+                },
+                es: {
+                    pageTitle: "07/03/2026 - lupe zambrano",
+                    "site.blogTitle": "blog",
+                    "nav.home": "inicio",
+                    "nav.about": "sobre mi",
+                    "nav.mediaLog": "registro multimedia",
+                    "nav.blog": "blog",
+                    "nav.links": "links",
+                    "nav.guestbook": "libro de visitas",
+                    "nav.gardenLog": "registro del jard\u00edn",
+                    "nav.music": "m\u00fasica",
+                    "nav.learnToCode": "aprender a programar",
+                    "nav.gallery": "galer\u00eda",
+                    "nav.bleachShrine": "santuario bleach",
+                    "nav.projectSenpai": "proyecto senpai",
+                    "post.kicker": "sonando ahora",
+                    "post.day": "s\u00e1bado",
+                    "post.date": "publicado el 7 de marzo de 2026",
+                    "intro.p1": "ultimamente no puedo parar de pensar en los reproductores de m\u00fasica y el dise\u00f1o de interfaces. me doy cuento que sigo pensando mucho en layouts, componentes y en c\u00f3mo deber\u00eda sentirse una p\u00e1gina cuando alguien interact\u00faa con ella.",
+                    "intro.p2": "tambi\u00e9n por fin entend\u00ed qu\u00e9 es el almacenamiento en una cubeta r2, y eso me mand\u00f3 directo a un rabbit hole de replantearme partes de mi sitio web.",
+                    "intro.p3": "al mismo tiempo estoy cerrando la cora, as\u00ed que casi toda mi energ\u00eda est\u00e1 en terminar tareas, pero siguen apareciendo ideas para otros proyectos.",
+                    "intro.p4": "algunas cosas que tengo en la cabeza ahorita:",
+                    "intro.idea1": "terminar bien la cora",
+                    "intro.idea2": "casaingles para mi mami",
+                    "intro.idea3": "somushroom.org",
+                    "intro.idea4": "la app de somushroom (red social)",
+                    "intro.p5": "solo las estoy escribiendo aqu\u00ed para no olvidarme de ellas",
+                    "alert.title": "nota biling\u00fce",
+                    "alert.body": "esta p\u00e1gina tiene un selector de ingl\u00e9s / espa\u00f1ol. estoy trabajando en hacer todo el sitio biling\u00fce, pero me va a tomar tiempo. gracias por visitar. te quiero dar un besito en la trompita. mwah",
+                    "media.title": "fotos + gifs",
+                    "media.decadeAgoTitle": "soy darks",
+                    "credits.title": "info del artista",
+                    "credits.mainArtist": "artista principal",
+                    "credits.featuredArtist": "artista invitado",
+                    "credits.lyricist": "letrista",
+                    "credits.composer": "compositor",
+                    "credits.producer": "producci\u00f3n, grabaci\u00f3n y mezcla",
+                    "credits.masterer": "masterizaci\u00f3n",
+                    "credits.studioPersonnel": "personal de estudio",
+                    "player.note": "quer\u00eda que este reproductor se sintiera un poquito m\u00e1s interactivo, as\u00ed que los logos svg tambi\u00e9n funcionan como enlaces directos a la canci\u00f3n en tu app de m\u00fasica preferida.",
+                    "mental.p1": "estas \u00faltimas semanas han estado un poco ca\u00f3ticas mentalmente.",
+                    "mental.p2": "sigo yendo y viniendo entre dos pensamientos: tal vez la universidad simplemente no es lo correcto para m\u00ed ahorita porque no puedo darle toda mi atenci\u00f3n... y al mismo tiempo esta podr\u00eda ser la \u00fanica oportunidad que tenga de hacerlo con una beca. as\u00ed que me sigo diciendo que aguante y siga adelante.",
+                    "mental.p3": "pero estoy cansada.",
+                    "mental.p4": "extra\u00f1o estar m\u00e1s afuera. caminar, jardinear, manejar hacia la monta\u00f1a. \u00faltimamente todo ha sido pantallas, tareas y tecnolog\u00eda, y siento que mi cerebro est\u00e1 recalentado todo el tiempo.",
+                    "mental.p5": "la verdad mi profesor ha sido muy paciente conmigo. he sido una de sus peores estudiantes por varias clases ya, y eso de alguna forma hace que se sienta peor cuando me est\u00e1 costando seguir el ritmo. mi salud mental me ha estado pegando un poco fuerte y es dif\u00edcil no sentir culpa por eso.",
+                    "mental.p6": "encima de eso, mi toc ha estado haciendo esa cosa en la que me quedo atrapada en loops de revisar olores. por lo visto es bastante com\u00fan. tu cerebro jura que algo huele raro, entonces sigues buscando la fuente. pero entre m\u00e1s revisas, m\u00e1s real se siente. hoy pas\u00e9 como 30 minutos limpiando en p\u00e1nico porque estaba convencida de que algo ol\u00eda mal.",
+                    "counter.button": "palmadita",
+                    "counter.totalLabel": "palmaditas totales:",
+                    "post.backLink": "\u2190 volver al blog",
+                    "footer.copy": "\u00a9 lupita zambrano 2025"
+                }
+            };
+
+            if (!langToggleBtn || !i18nNodes.length) return;
+
+            function getSavedLanguage() {
+                try {
+                    return localStorage.getItem(STORAGE_KEY) || "en";
+                } catch (err) {
+                    console.error(err);
+                    return "en";
+                }
+            }
+
+            function saveLanguage(language) {
+                try {
+                    localStorage.setItem(STORAGE_KEY, language);
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+
+            function applyLanguage(language) {
+                const copy = translations[language] || translations.en;
+
+                i18nNodes.forEach(function (node) {
+                    const key = node.dataset.i18n;
+                    if (copy[key]) {
+                        node.textContent = copy[key];
+                    }
+                });
+
+                document.title = copy.pageTitle;
+                document.documentElement.lang = language;
+                langToggleBtn.textContent = "EN / ES";
+                langToggleBtn.setAttribute("aria-pressed", language === "es" ? "true" : "false");
+                langToggleBtn.setAttribute(
+                    "aria-label",
+                    language === "es" ? "Cambiar el idioma de la pagina a ingles" : "Switch page language to Spanish"
+                );
+
+                saveLanguage(language);
+            }
+
+            langToggleBtn.addEventListener("click", function () {
+                const nextLanguage = document.documentElement.lang === "es" ? "en" : "es";
+                applyLanguage(nextLanguage);
+            });
+
+            if (languageNote && languageNoteCloseBtn) {
+                languageNoteCloseBtn.addEventListener("click", function () {
+                    languageNote.hidden = true;
+                    languageNote.style.display = "none";
+                });
+            }
+
+            applyLanguage(getSavedLanguage());
+        })();
+    </script>
+    <script>
+        (function () {
+            const headPatBtn = document.getElementById("headPatBtn");
+            const headPatCount = document.getElementById("headPatCount");
+            const COUNTER_API = "https://site-counters.gzamlo98.workers.dev/api/counter?slug=2026-03-07";
+
+            if (!headPatBtn || !headPatCount) return;
+
+            async function loadCount() {
+                try {
+                    const res = await fetch(COUNTER_API, { method: "GET" });
+                    if (!res.ok) throw new Error("failed to load counter");
+                    const data = await res.json();
+                    headPatCount.textContent = Number(data.count) || 0;
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+
+            headPatBtn.addEventListener("click", async function () {
+                try {
+                    const res = await fetch(COUNTER_API, { method: "POST" });
+                    if (!res.ok) throw new Error("failed to increment counter");
+                    const data = await res.json();
+                    headPatCount.textContent = Number(data.count) || 0;
+                } catch (err) {
+                    console.error(err);
+                }
+            });
+
+            loadCount();
+        })();
+    </script>
+    <script>
+        (function () {
+            const audio = document.getElementById("postAudio");
+            const playPauseBtn = document.getElementById("playPauseBtn");
+            const playPauseIcon = document.getElementById("playPauseIcon");
+            const rewindBtn = document.getElementById("rewindBtn");
+            const forwardBtn = document.getElementById("forwardBtn");
+            const timeline = document.getElementById("timeline");
+            const timelineFill = document.getElementById("timelineFill");
+            const timelineThumb = document.getElementById("timelineThumb");
+            const timeCurrent = document.getElementById("timeCurrent");
+            const timeTotal = document.getElementById("timeTotal");
+            const creditsToggleBtn = document.getElementById("creditsToggleBtn");
+            const creditsPanel = document.getElementById("creditsPanel");
+            const trackTitle = document.getElementById("track-title");
+            const postAudioSource = document.getElementById("postAudioSource");
+            const creditMainArtistRow = document.getElementById("creditMainArtistRow");
+            const creditMainArtist = document.getElementById("creditMainArtist");
+            const creditFeaturedArtistRow = document.getElementById("creditFeaturedArtistRow");
+            const creditFeaturedArtist = document.getElementById("creditFeaturedArtist");
+            const creditLyricistRow = document.getElementById("creditLyricistRow");
+            const creditLyricist = document.getElementById("creditLyricist");
+            const creditComposerRow = document.getElementById("creditComposerRow");
+            const creditComposer = document.getElementById("creditComposer");
+            const creditProducerRow = document.getElementById("creditProducerRow");
+            const creditProducer = document.getElementById("creditProducer");
+            const creditMastererRow = document.getElementById("creditMastererRow");
+            const creditMasterer = document.getElementById("creditMasterer");
+            const creditStudioPersonnelRow = document.getElementById("creditStudioPersonnelRow");
+            const creditStudioPersonnel = document.getElementById("creditStudioPersonnel");
+            const appleMusicLink = document.getElementById("appleMusicLink");
+            const spotifyLink = document.getElementById("spotifyLink");
+            const youtubeLink = document.getElementById("youtubeLink");
+
+            if (!audio) return;
+
+            const playlist = [
+                {
+                    title: "i know i'm funny haha",
+                    src: "https://media.lupitazambrano.com/03-07-26/faye_webste%20_%20i_know_im_funny_haha.mp3",
+                    type: "audio/mpeg",
+                    credits: {
+                        mainArtist: "faye webster",
+                        featuredArtist: "",
+                        lyricist: "",
+                        composer: "",
+                        producer: "drew vandeburg",
+                        masterer: "joe lambert",
+                        studioPersonnel: ""
+                    },
+                    links: {
+                        apple: "https://music.apple.com/us/song/i-know-im-funny-haha/1561398239",
+                        spotify: "https://open.spotify.com/track/3V66T9O5aOycr8raWMpyLP?si=d3bd885cd83c4099",
+                        youtube: "https://youtu.be/gmuNjoR8jUI?si=d2UGh1w8ZjwoWO5X"
+                    }
+                },
+                {
+                    title: "sappho",
+                    src: "https://media.lupitazambrano.com/03-07-26/frankie_cosmos%20_sappho_.mp3",
+                    type: "audio/mpeg",
+                    credits: {
+                        mainArtist: "frankie cosmos",
+                        featuredArtist: "",
+                        lyricist: "",
+                        composer: "",
+                        producer: "",
+                        masterer: "",
+                        studioPersonnel: ""
+                    },
+                    links: {
+                        apple: "https://music.apple.com/us/song/sappho/1079006548",
+                        spotify: "https://open.spotify.com/track/5DIGt883aHs3KqWSziy4gR?si=02af009bb59d49e2",
+                        youtube: "https://youtu.be/wJHqigsu5qQ?si=1jg5_dHQ-thjQELw"
+                    }
+                },
+                {
+                    title: "shaping up to be",
+                    src: "https://media.lupitazambrano.com/03-07-26/shaping_up_to_be_jasmine_rodgers.mp3",
+                    type: "audio/mpeg",
+                    credits: {
+                        mainArtist: "jasmine rodgers",
+                        featuredArtist: "",
+                        lyricist: "",
+                        composer: "",
+                        producer: "",
+                        masterer: "",
+                        studioPersonnel: ""
+                    },
+                    links: {
+                        apple: "https://music.apple.com/us/song/shaping-up-to-be/1166698160",
+                        spotify: "https://open.spotify.com/track/6vDUFfMpRhigI3ZZzm0yiR?si=07c4d5919913456d",
+                        youtube: "https://youtu.be/uLk6bL57Ls4?si=IoGiV9gw-YPQTEUJ"
+                    }
+                },
+                {
+                    title: "crawling",
+                    src: "https://media.lupitazambrano.com/03-07-26/boa_crawling.mp3",
+                    type: "audio/mpeg",
+                    credits: {
+                        mainArtist: "bôa",
+                        featuredArtist: "",
+                        lyricist: "",
+                        composer: "jasmine rodgers and lee sullivan",
+                        producer: "",
+                        masterer: "",
+                        studioPersonnel: ""
+                    },
+                    links: {
+                        apple: "https://music.apple.com/us/song/crawling/1754022813",
+                        spotify: "https://open.spotify.com/track/2YaHTP42DWqVHwub9QV3DK?si=3fdc6cb774ca4a7d",
+                        youtube: "https://youtu.be/p7hT24-hmEE?si=IHfAjzwzO7h0NFdV"
+                    }
+                },
+                {
+                    title: "wake up",
+                    src: "https://media.lupitazambrano.com/03-07-26/kowloon_wake_up.mp3",
+                    type: "audio/mpeg",
+                    credits: {
+                        mainArtist: "kowloon",
+                        featuredArtist: "",
+                        lyricist: "",
+                        composer: "kowloon",
+                        producer: "",
+                        masterer: "",
+                        studioPersonnel: ""
+                    },
+                    links: {
+                        apple: "https://music.apple.com/us/song/wake-up/1773385122",
+                        spotify: "https://open.spotify.com/track/2nTIQ7oSznqUb6A6MkjK2B?si=e7939d1d2c694f1c",
+                        youtube: "https://youtu.be/2Id2hNfVjZQ?si=dAkICwDdQKCsA_Xu"
+                    }
+                },
+                {
+                    title: "sin cara",
+                    src: "https://media.lupitazambrano.com/03-07-26/ochy_lilwillyshawty_sin_cara%20_video_oficial.mp4",
+                    type: "audio/mp4",
+                    credits: {
+                        mainArtist: "ochy",
+                        featuredArtist: "lil willy shawty",
+                        lyricist: "jakuji 'ochy' vallejos",
+                        composer: "jakuji 'ochy' vallejos",
+                        producer: "",
+                        masterer: "",
+                        studioPersonnel: ""
+                    },
+                    links: {
+                        apple: "https://music.apple.com/pa/song/sin-cara-feat-lil-willy-shawty/1681042440",
+                        spotify: "https://open.spotify.com/track/3Nv8Mje384DgxNqdME7oS8?si=797063dec9bc4bef",
+                        youtube: "https://youtu.be/5Ajau22MVSM?si=MPOHh7OheFE6WxFi"
+                    }
+                },
+                {
+                    title: "total desnudos",
+                    src: "https://media.lupitazambrano.com/03-07-26/milo_mae_total_desnudos.mp3",
+                    type: "audio/mpeg",
+                    credits: {
+                        mainArtist: "milo mae",
+                        featuredArtist: "",
+                        lyricist: "pablo andres narvaez",
+                        composer: "julio jair troncoso",
+                        producer: "",
+                        masterer: "",
+                        studioPersonnel: "milo mae"
+                    },
+                    links: {
+                        apple: "https://music.apple.com/us/album/total-desnudos-single/1851814088",
+                        spotify: "https://open.spotify.com/track/4tm4qn0cXxm2Dm4JGfCr5E?si=7ab67d783cad4426",
+                        youtube: "https://youtu.be/f51hwVkdD8A?si=Wi6UmqgNwZNNYgZV"
+                    }
+                }
+            ];
+
+            let currentTrackIndex = 0;
+
+            function formatTime(seconds) {
+                if (!Number.isFinite(seconds)) return "0:00";
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return mins + ":" + String(secs).padStart(2, "0");
+            }
+
+            function renderTrack(index, shouldAutoplay) {
+                const track = playlist[index];
+                currentTrackIndex = index;
+
+                trackTitle.textContent = track.title;
+                creditMainArtist.textContent = track.credits.mainArtist;
+                creditFeaturedArtist.textContent = track.credits.featuredArtist;
+                creditLyricist.textContent = track.credits.lyricist;
+                creditComposer.textContent = track.credits.composer;
+                creditProducer.textContent = track.credits.producer;
+                creditMasterer.textContent = track.credits.masterer;
+                creditStudioPersonnel.textContent = track.credits.studioPersonnel;
+
+                creditMainArtistRow.hidden = !track.credits.mainArtist;
+                creditFeaturedArtistRow.hidden = !track.credits.featuredArtist;
+                creditLyricistRow.hidden = !track.credits.lyricist;
+                creditComposerRow.hidden = !track.credits.composer;
+                creditProducerRow.hidden = !track.credits.producer;
+                creditMastererRow.hidden = !track.credits.masterer;
+                creditStudioPersonnelRow.hidden = !track.credits.studioPersonnel;
+
+                appleMusicLink.href = track.links.apple || "#";
+                spotifyLink.href = track.links.spotify || "#";
+                youtubeLink.href = track.links.youtube || "#";
+
+                appleMusicLink.hidden = !track.links.apple;
+                spotifyLink.hidden = !track.links.spotify;
+                youtubeLink.hidden = !track.links.youtube;
+
+                postAudioSource.src = track.src;
+                postAudioSource.type = track.type;
+                audio.load();
+                updatePlayerUI();
+
+                if (shouldAutoplay) {
+                    audio.play().catch(function (err) {
+                        console.error(err);
+                    });
+                }
+            }
+
+            function goToTrack(index, shouldAutoplay) {
+                if (index < 0 || index >= playlist.length) return;
+                renderTrack(index, shouldAutoplay);
+            }
+
+            function updatePlayerUI() {
+                const percent = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+                timelineFill.style.width = percent + "%";
+                timelineThumb.style.left = percent + "%";
+                timeCurrent.textContent = formatTime(audio.currentTime);
+                timeTotal.textContent = formatTime(audio.duration);
+                playPauseIcon.className = audio.paused ? "media-icon media-icon-play" : "media-icon media-icon-pause";
+                playPauseBtn.setAttribute("aria-label", audio.paused ? "Play track" : "Pause track");
+                playPauseBtn.setAttribute("aria-pressed", audio.paused ? "false" : "true");
+            }
+
+            playPauseBtn.addEventListener("click", function () {
+                if (audio.paused) {
+                    audio.play().catch(function (err) {
+                        console.error(err);
+                    });
+                } else {
+                    audio.pause();
+                }
+            });
+
+            rewindBtn.addEventListener("click", function () {
+                const shouldAutoplay = !audio.paused;
+                goToTrack(currentTrackIndex - 1, shouldAutoplay);
+            });
+
+            forwardBtn.addEventListener("click", function () {
+                const shouldAutoplay = !audio.paused;
+                goToTrack(currentTrackIndex + 1, shouldAutoplay);
+            });
+
+            timeline.addEventListener("click", function (event) {
+                const rect = timeline.getBoundingClientRect();
+                const ratio = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+                if (audio.duration) {
+                    audio.currentTime = ratio * audio.duration;
+                }
+            });
+
+            function closeCredits() {
+                creditsPanel.setAttribute("hidden", "");
+                creditsToggleBtn.setAttribute("aria-expanded", "false");
+            }
+
+            function openCredits() {
+                creditsPanel.removeAttribute("hidden");
+                creditsToggleBtn.setAttribute("aria-expanded", "true");
+            }
+
+            creditsToggleBtn.addEventListener("click", function () {
+                const isOpen = !creditsPanel.hasAttribute("hidden");
+                if (isOpen) {
+                    closeCredits();
+                } else {
+                    openCredits();
+                }
+            });
+
+            document.addEventListener("click", function (event) {
+                if (creditsPanel.hasAttribute("hidden")) return;
+                if (creditsPanel.contains(event.target) || creditsToggleBtn.contains(event.target)) return;
+                closeCredits();
+            });
+
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && !creditsPanel.hasAttribute("hidden")) {
+                    closeCredits();
+                }
+            });
+
+            audio.addEventListener("loadedmetadata", updatePlayerUI);
+            audio.addEventListener("timeupdate", updatePlayerUI);
+            audio.addEventListener("play", updatePlayerUI);
+            audio.addEventListener("pause", updatePlayerUI);
+            audio.addEventListener("ended", function () {
+                if (currentTrackIndex < playlist.length - 1) {
+                    goToTrack(currentTrackIndex + 1, true);
+                    return;
+                }
+                audio.currentTime = 0;
+                audio.pause();
+                updatePlayerUI();
+            });
+
+            renderTrack(0, false);
+            updatePlayerUI();
+        })();
+    </script>
+</body>
+
+</html>
