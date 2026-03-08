@@ -659,11 +659,30 @@
 
 @media (max-width: 620px) {
     .post-daily-desk .track-meta {
-        min-height: 2rem;
+        display: block;
+        min-height: auto;
+        margin-bottom: 0.8rem;
+        padding-right: 2.7rem;
     }
 
     .post-daily-desk .track-meta > div {
-        max-width: calc(100% - 3.1rem);
+        position: static;
+        transform: none;
+        max-width: none;
+        padding-top: 0.15rem;
+        text-align: center;
+    }
+
+    .post-daily-desk .track-meta h3 {
+        font-size: clamp(1.05rem, 6.8vw, 1.35rem);
+        line-height: 1.18;
+        text-wrap: balance;
+    }
+
+    .post-daily-desk .credits-menu-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 
     .post-daily-desk .credits-popover {
@@ -675,11 +694,13 @@
     }
 
     .post-daily-desk .progress-wrap {
-        grid-template-columns: 1fr;
+        grid-template-columns: auto 1fr auto;
+        gap: 0.5rem;
     }
 
     .post-daily-desk .time-stamp {
         min-width: auto;
+        font-size: 0.8rem;
     }
 
     .post-daily-desk .progress-wrap .time-stamp:last-child {
