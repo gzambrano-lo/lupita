@@ -1,0 +1,71 @@
+.language-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.35rem;
+}
+
+.lang-toggle-btn {
+    flex: 0 0 auto;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--language-toggle-border, color-mix(in srgb, var(--border) 88%, #fff));
+    border-radius: 999px;
+    background: var(--language-toggle-bg, color-mix(in srgb, var(--card) 94%, #fff));
+    color: var(--language-toggle-color, var(--sage));
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.lang-toggle-btn:hover,
+.lang-toggle-btn:focus-visible {
+    background: var(--language-toggle-hover-bg, color-mix(in srgb, var(--soft) 70%, #fff));
+    border-color: var(--language-toggle-hover-border, color-mix(in srgb, var(--sage) 24%, var(--border)));
+    transform: translateY(-1px);
+}
+
+.lang-toggle-btn[aria-pressed="true"] {
+    background: var(--language-toggle-active-bg, color-mix(in srgb, var(--soft) 78%, #fff));
+    border-color: var(--language-toggle-active-border, color-mix(in srgb, var(--sage) 28%, var(--border)));
+    color: var(--language-toggle-active-color, var(--coral));
+}
+
+.language-note {
+    margin: 0 0 0.8rem;
+    border-color: var(--language-note-border, color-mix(in srgb, var(--coral) 24%, var(--border)));
+    background: var(--language-note-bg, color-mix(in srgb, var(--card) 92%, var(--cream)));
+}
+
+.language-note .alert-title {
+    color: var(--language-note-title, var(--coral));
+}
+
+.language-note.alert {
+    padding: 0.95rem 1.05rem;
+}
+
+.language-note-close {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    color: var(--language-note-close-color, var(--coral));
+    background: var(--language-note-close-bg, color-mix(in srgb, var(--soft) 76%, #fff));
+}
+
+[hidden].language-note {
+    display: none;
+}
+
+@media (max-width: 620px) {
+    .language-toggle-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.55rem;
+    }
+}

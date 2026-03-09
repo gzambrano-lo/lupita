@@ -23,8 +23,10 @@
     <link rel="stylesheet" href="../../styles/blog.css">
     <link rel="stylesheet" href="../../styles/blog-post.css">
     <link rel="stylesheet" href="../../styles/click-counter.css">
+    <link rel="stylesheet" href="../../styles/language-toggle.css">
     <link rel="stylesheet" href="../../styles/2026-03-07.css?v=20260308x">
     <script src="/scripts/site.js" defer></script>
+    <script src="/scripts/language-toggle.js" defer></script>
 </head>
 
 <body class="post-page post-page-2026-03-07">
@@ -52,21 +54,21 @@
     <main id="main" class="container">
         <article class="post post-daily-desk">
             <header>
-                <div class="post-header-row">
+                <div class="post-header-row language-toggle-row">
                     <h2 data-i18n="post.day">saturday</h2>
-                    <button id="langToggleBtn" class="lang-toggle-btn" type="button" aria-pressed="false">EN / ES</button>
+                    <button class="lang-toggle-btn" type="button" data-language-toggle aria-pressed="false">EN / ES</button>
                 </div>
                 <p class="meta">
                     <time datetime="2026-03-07" data-i18n="post.date">posted march 7, 2026</time>
                 </p>
             </header>
 
-            <section class="alert post-language-note" role="status" aria-live="polite">
+            <section class="alert post-language-note language-note" role="status" aria-live="polite" data-language-note>
                 <div class="alert-content">
                     <p class="alert-title" data-i18n="alert.title">bilingual note</p>
                     <p data-i18n="alert.body">this page has an english / spanish toggle. i'm working on making the whole site bilingual, but it'll take me some time. thank you for visiting, i want to kiss you on the mouth mwah</p>
                 </div>
-                <button class="alert-close post-language-note-close" type="button" id="languageNoteCloseBtn" aria-label="dismiss bilingual note" title="dismiss">✕</button>
+                <button class="alert-close post-language-note-close language-note-close" type="button" data-language-note-close data-i18n-aria-label="alert.dismissLabel" data-i18n-title="alert.dismissTitle" aria-label="dismiss bilingual note" title="dismiss">X</button>
             </section>
 
             <section class="post-section intro-card" aria-label="post intro">
@@ -308,14 +310,16 @@
         <p data-i18n="footer.copy">&copy; lupita zambrano 2025</p>
     </footer>
 
-    <script>
-        (function () {
-            const langToggleBtn = document.getElementById("langToggleBtn");
-            const languageNote = document.querySelector(".post-language-note");
-            const languageNoteCloseBtn = document.getElementById("languageNoteCloseBtn");
-            const i18nNodes = Array.from(document.querySelectorAll("[data-i18n]"));
-            const STORAGE_KEY = "post-2026-03-07-language";
-            const translations = {
+    <script id="languageToggleConfig" type="application/json">
+        {
+            "storageKey": "site-language",
+            "defaultLanguage": "en",
+            "toggleLabel": "EN / ES",
+            "toggleAria": {
+                "enToEs": "Switch page language to Spanish",
+                "esToEn": "Cambiar el idioma de la pagina a ingles"
+            },
+            "translations": {
                 en: {
                     pageTitle: "03/07/2026 - lupe zambrano",
                     "site.blogTitle": "blog",
@@ -345,6 +349,8 @@
                     "intro.p5": "just writing them down here so i don't lose them + accountability",
                     "alert.title": "bilingual note",
                     "alert.body": "this page has an english / spanish toggle! i'm working on making the whole site bilingual, but it'll take me some time. thank you for visiting bb. i want to kiss you on the mouth. mwah",
+                    "alert.dismissLabel": "dismiss bilingual note",
+                    "alert.dismissTitle": "dismiss",
                     "media.title": "pictures + gifs",
                     "media.decadeAgoTitle": "it was never just a phase mom",
                     "credits.title": "artist info",
@@ -396,6 +402,8 @@
                     "intro.p5": "solo las estoy escribiendo aqu\u00ed para no olvidarme de ellas",
                     "alert.title": "nota biling\u00fce",
                     "alert.body": "esta p\u00e1gina tiene un selector de ingl\u00e9s / espa\u00f1ol. estoy trabajando en hacer todo el sitio biling\u00fce, pero me va a tomar tiempo. gracias por visitar. te quiero dar un besito en la trompita. mwah",
+                    "alert.dismissLabel": "cerrar nota biling\u00fce",
+                    "alert.dismissTitle": "cerrar",
                     "media.title": "fotos + gifs",
                     "media.decadeAgoTitle": "soy darks",
                     "credits.title": "info del artista",
@@ -418,63 +426,8 @@
                     "post.backLink": "\u2190 volver al blog",
                     "footer.copy": "\u00a9 lupita zambrano 2025"
                 }
-            };
-
-            if (!langToggleBtn || !i18nNodes.length) return;
-
-            function getSavedLanguage() {
-                try {
-                    return localStorage.getItem(STORAGE_KEY) || "en";
-                } catch (err) {
-                    console.error(err);
-                    return "en";
-                }
             }
-
-            function saveLanguage(language) {
-                try {
-                    localStorage.setItem(STORAGE_KEY, language);
-                } catch (err) {
-                    console.error(err);
-                }
-            }
-
-            function applyLanguage(language) {
-                const copy = translations[language] || translations.en;
-
-                i18nNodes.forEach(function (node) {
-                    const key = node.dataset.i18n;
-                    if (copy[key]) {
-                        node.textContent = copy[key];
-                    }
-                });
-
-                document.title = copy.pageTitle;
-                document.documentElement.lang = language;
-                langToggleBtn.textContent = "EN / ES";
-                langToggleBtn.setAttribute("aria-pressed", language === "es" ? "true" : "false");
-                langToggleBtn.setAttribute(
-                    "aria-label",
-                    language === "es" ? "Cambiar el idioma de la pagina a ingles" : "Switch page language to Spanish"
-                );
-
-                saveLanguage(language);
-            }
-
-            langToggleBtn.addEventListener("click", function () {
-                const nextLanguage = document.documentElement.lang === "es" ? "en" : "es";
-                applyLanguage(nextLanguage);
-            });
-
-            if (languageNote && languageNoteCloseBtn) {
-                languageNoteCloseBtn.addEventListener("click", function () {
-                    languageNote.hidden = true;
-                    languageNote.style.display = "none";
-                });
-            }
-
-            applyLanguage(getSavedLanguage());
-        })();
+        }
     </script>
     <script>
         (function () {

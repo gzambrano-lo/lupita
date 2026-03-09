@@ -12,6 +12,17 @@
     --desk-accent: #d9798f;
     --desk-accent-soft: #fde8ec;
     --desk-secondary: #7b9d8a;
+    --language-toggle-color: #6d8f86;
+    --language-toggle-hover-bg: color-mix(in srgb, var(--desk-accent-soft) 56%, #fff);
+    --language-toggle-hover-border: color-mix(in srgb, var(--desk-accent) 24%, var(--border));
+    --language-toggle-active-bg: color-mix(in srgb, var(--desk-accent-soft) 70%, #fff);
+    --language-toggle-active-border: color-mix(in srgb, var(--desk-accent) 28%, var(--border));
+    --language-toggle-active-color: var(--desk-accent);
+    --language-note-border: color-mix(in srgb, var(--desk-accent) 28%, var(--border));
+    --language-note-bg: color-mix(in srgb, var(--card) 92%, var(--cream));
+    --language-note-title: #7d5560;
+    --language-note-close-color: #a56c7a;
+    --language-note-close-bg: color-mix(in srgb, var(--desk-accent-soft) 78%, #fff);
 }
 
 .post-daily-desk .post-kicker {
@@ -23,72 +34,12 @@
     text-transform: uppercase;
 }
 
-.post-daily-desk .post-header-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 0.35rem;
-}
-
 .post-daily-desk .post-header-row h2 {
     margin: 0;
 }
 
 .post-daily-desk .meta {
     margin-bottom: 0.55rem;
-}
-
-.post-daily-desk .post-language-note {
-    margin: 0 0 0.65rem;
-    border-color: color-mix(in srgb, var(--desk-accent) 28%, var(--border));
-    background: linear-gradient(90deg, color-mix(in srgb, var(--desk-accent-soft) 78%, #fff), #fff6f7);
-}
-
-.post-daily-desk .post-language-note .alert-title {
-    color: #7d5560;
-}
-
-.post-daily-desk .post-language-note.alert {
-    padding: 0.95rem 1.05rem;
-}
-
-.post-daily-desk .post-language-note-close {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    color: #a56c7a;
-    background: color-mix(in srgb, var(--desk-accent-soft) 78%, #fff);
-}
-
-.post-daily-desk .lang-toggle-btn {
-    flex: 0 0 auto;
-    padding: 0.4rem 0.8rem;
-    border: 1px solid color-mix(in srgb, var(--border) 88%, #fff);
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--card) 94%, #fff);
-    color: #6d8f86;
-    font: inherit;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
-}
-
-.post-daily-desk .lang-toggle-btn:hover,
-.post-daily-desk .lang-toggle-btn:focus-visible {
-    background: color-mix(in srgb, var(--desk-accent-soft) 56%, #fff);
-    border-color: color-mix(in srgb, var(--desk-accent) 24%, var(--border));
-    transform: translateY(-1px);
-}
-
-.post-daily-desk .lang-toggle-btn[aria-pressed="true"] {
-    background: color-mix(in srgb, var(--desk-accent-soft) 70%, #fff);
-    border-color: color-mix(in srgb, var(--desk-accent) 28%, var(--border));
-    color: var(--desk-accent);
 }
 
 .post-daily-desk .post-section {
@@ -732,12 +683,4 @@
         line-height: 1.45;
     }
 
-}
-
-@media (max-width: 620px) {
-    .post-daily-desk .post-header-row {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 0.55rem;
-    }
 }

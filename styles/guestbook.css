@@ -1,5 +1,19 @@
 /* --- guestbook layout --- */
 
+.guestbook-page {
+    --language-toggle-color: #6d8f86;
+    --language-toggle-hover-bg: color-mix(in srgb, #f7dfe6 52%, #fff);
+    --language-toggle-hover-border: color-mix(in srgb, #d98ba0 26%, var(--border));
+    --language-toggle-active-bg: color-mix(in srgb, #f7dfe6 70%, #fff);
+    --language-toggle-active-border: color-mix(in srgb, #d98ba0 30%, var(--border));
+    --language-toggle-active-color: #c86e85;
+    --language-note-border: color-mix(in srgb, #d98ba0 24%, var(--border));
+    --language-note-bg: color-mix(in srgb, var(--card) 92%, var(--cream));
+    --language-note-title: #8b5c69;
+    --language-note-close-color: #a56c7a;
+    --language-note-close-bg: color-mix(in srgb, #fde8ec 78%, #fff);
+}
+
 .guestbook-page .form-card {
     width: min(100%, 720px);
     margin-inline: auto;
@@ -13,6 +27,18 @@
 .guestbook-page .form-title {
     font-size: 1.4rem;
     margin-bottom: 0.25rem;
+}
+
+.guestbook-page .guestbook-language-row {
+    margin-bottom: 0.65rem;
+}
+
+.guestbook-page .guestbook-language-row .form-title {
+    margin-bottom: 0;
+}
+
+.guestbook-page .guestbook-language-note {
+    margin-bottom: 1rem;
 }
 
 .guestbook-page .form-subtitle {

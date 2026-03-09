@@ -19,79 +19,149 @@
     <link rel="stylesheet" href="../styles/base.css">
     <link rel="stylesheet" href="../styles/layout.css">
     <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/language-toggle.css">
     <link rel="stylesheet" href="../styles/guestbook.css">
 
-    <!--vanilla-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
-
-    <!--js-->
     <script src="/scripts/site.js" defer></script>
+    <script src="/scripts/language-toggle.js" defer></script>
 </head>
 
 <body>
     <header class="site-header">
         <h1 class="hero-title">
             <span class="lottie header-sparkle" data-lottie="sparkle-left" aria-hidden="true"></span>
-            guestbook
+            <span data-i18n="page.heroTitle">guestbook</span>
             <span class="lottie header-sparkle" data-lottie="sparkle-right" aria-hidden="true"></span>
         </h1>
     </header>
 
     <nav id="nav_menu" aria-label="Main">
         <ul>
-            <li><a href="../index.html">home</a></li>
-            <li><a href="about.html">about</a></li>
-            <li><a href="media-log.html">media log</a></li>
-            <li><a href="blog.html">blog</a></li>
-            <li><a href="links.html">links</a></li>
-            <li class="current"><a href="guestbook.html">guestbook</a></li>
-            <li><a href="garden-log.html">garden log</a></li>
-            <li><a href="music.html">music</a></li>
-            <li><a href="learn-to-code.html">learn to code</a></li>
-            <li><a href="gallery.html">gallery</a></li>
-            <li><a href="bleach-shrine.html">bleach shrine</a></li>
-            <li><a href="project-senpai.html">project senpai</a></li>
+            <li><a href="../index.html" data-i18n="nav.home">home</a></li>
+            <li><a href="about.html" data-i18n="nav.about">about</a></li>
+            <li><a href="media-log.html" data-i18n="nav.mediaLog">media log</a></li>
+            <li><a href="blog.html" data-i18n="nav.blog">blog</a></li>
+            <li><a href="links.html" data-i18n="nav.links">links</a></li>
+            <li class="current"><a href="guestbook.html" data-i18n="nav.guestbook">guestbook</a></li>
+            <li><a href="garden-log.html" data-i18n="nav.gardenLog">garden log</a></li>
+            <li><a href="music.html" data-i18n="nav.music">music</a></li>
+            <li><a href="learn-to-code.html" data-i18n="nav.learnToCode">learn to code</a></li>
+            <li><a href="gallery.html" data-i18n="nav.gallery">gallery</a></li>
+            <li><a href="bleach-shrine.html" data-i18n="nav.bleachShrine">bleach shrine</a></li>
+            <li><a href="project-senpai.html" data-i18n="nav.projectSenpai">project senpai</a></li>
         </ul>
     </nav>
 
     <main class="page guestbook-page">
         <section class="form-card">
-            <h2 class="form-title">leave me a note ✍️</h2>
-            <p class="form-subtitle" id="anon-note">
-                anonymous by default. don't include your name or handle unless you want me to reply.
+            <div class="language-toggle-row guestbook-language-row">
+                <h2 class="form-title" data-i18n="form.title">leave me a note</h2>
+                <button class="lang-toggle-btn" type="button" data-language-toggle aria-pressed="false">EN / ES</button>
+            </div>
+
+            <p class="form-subtitle" id="anon-note" data-i18n="form.subtitle">
+                this is a little guestbook where you can leave me a message (even hate mail :p). it goes straight to my
+                email. messages are anonymous by default. only include your name or handle if you want me to reply. the
+                subject field is optional, but it helps me sort things when i'm checking my inbox.
             </p>
 
             <form action="https://formspree.io/f/xgvjdvlj" method="POST" class="guestbook-form">
-                <!-- real subject -->
-                <label for="subject">subject</label>
+                <label for="subject" data-i18n="form.subjectLabel">subject</label>
                 <input id="subject" name="subject" type="text" maxlength="120" />
 
-                <!-- honeypot (hidden with CSS) -->
                 <input type="text" name="website" class="hp" tabindex="-1" aria-hidden="true">
 
-                <label for="message">your message</label>
+                <label for="message" data-i18n="form.messageLabel">your message</label>
                 <textarea id="message" name="message" rows="6" maxlength="1200" required></textarea>
 
-                <label for="contact">if you want me to contact you back</label>
-                <input id="contact" name="contact" type="text" placeholder="insta, discord, number…">
+                <label for="contact" data-i18n="form.contactLabel">if you want me to contact you back</label>
+                <input id="contact" name="contact" type="text" data-i18n-placeholder="form.contactPlaceholder" placeholder="insta, discord, number...">
 
-                <input type="hidden" name="_subject" value="New guestbook entry ✨">
-                <button type="submit" class="btn">send</button>
+                <input type="hidden" name="_subject" data-i18n-value="form.hiddenSubject" value="New guestbook entry">
+                <button type="submit" class="btn" data-i18n="form.submit">send</button>
 
                 <input type="hidden" name="_next" value="">
             </form>
 
             <p class="privacy-note">
-                i don't collect personally identifying info here. third-party email processing may do basic spam checks.
-                keep it anonymous by not adding names/handles!
+                <span data-i18n="privacy.body">i don't collect personal info here. formspree handles the form and may run basic spam checks. see their</span>
+                <a href="https://formspree.io/privacy" target="_blank" rel="noopener" class="highlight-link" data-i18n="privacy.link">privacy policy here</a>
             </p>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; lupita zambrano 2025 ☆(>ᴗ•) </p>
+        <p data-i18n="footer.copy">&copy; lupita zambrano 2025</p>
     </footer>
 
+    <script id="languageToggleConfig" type="application/json">
+        {
+            "storageKey": "site-language",
+            "defaultLanguage": "en",
+            "toggleLabel": "EN / ES",
+            "toggleAria": {
+                "enToEs": "Switch page language to Spanish",
+                "esToEn": "Cambiar el idioma de la pagina a ingles"
+            },
+            "translations": {
+                "en": {
+                    "pageTitle": "guestbook - lupe zambrano",
+                    "page.heroTitle": "guestbook",
+                    "nav.home": "home",
+                    "nav.about": "about",
+                    "nav.mediaLog": "media log",
+                    "nav.blog": "blog",
+                    "nav.links": "links",
+                    "nav.guestbook": "guestbook",
+                    "nav.gardenLog": "garden log",
+                    "nav.music": "music",
+                    "nav.learnToCode": "learn to code",
+                    "nav.gallery": "gallery",
+                    "nav.bleachShrine": "bleach shrine",
+                    "nav.projectSenpai": "project senpai",
+                    "form.title": "leave me a note",
+                    "form.subtitle": "this is a little guestbook where you can leave me a message (even hate mail :p). it goes straight to my email. messages are anonymous by default. only include your name or handle if you want me to reply. the subject field is optional, but it helps me sort things when i'm checking my inbox.",
+                    "form.subjectLabel": "subject",
+                    "form.messageLabel": "your message",
+                    "form.contactLabel": "if you want me to contact you back",
+                    "form.contactPlaceholder": "insta, discord, number...",
+                    "form.hiddenSubject": "New guestbook entry",
+                    "form.submit": "send",
+                    "privacy.body": "i don't collect personal info here. formspree handles the form and may run basic spam checks. see their",
+                    "privacy.link": "privacy policy here",
+                    "footer.copy": "\u00a9 lupita zambrano 2025"
+                },
+                "es": {
+                    "pageTitle": "libro de visitas - lupe zambrano",
+                    "page.heroTitle": "libro de visitas",
+                    "nav.home": "inicio",
+                    "nav.about": "sobre mi",
+                    "nav.mediaLog": "registro multimedia",
+                    "nav.blog": "blog",
+                    "nav.links": "links",
+                    "nav.guestbook": "libro de visitas",
+                    "nav.gardenLog": "registro del jardin",
+                    "nav.music": "musica",
+                    "nav.learnToCode": "aprender a programar",
+                    "nav.gallery": "galeria",
+                    "nav.bleachShrine": "santuario bleach",
+                    "nav.projectSenpai": "proyecto senpai",
+                    "form.title": "dejame una notita",
+                    "form.subtitle": "este es un librito de visitas donde me puedes dejar un mensaje, incluso hate mail :p. me llega directo a mi correo electronico. los mensajes son anonimos por default. solo pon tu nombre o usuario si quieres que te responda. el campo de asunto es opcional, pero me ayuda a darle mas atencion a tu mensaje si le pones algo interesante.",
+                    "form.subjectLabel": "asunto",
+                    "form.messageLabel": "tu mensaje",
+                    "form.contactLabel": "si quieres que te contacte de regreso",
+                    "form.contactPlaceholder": "insta, discord, numero...",
+                    "form.hiddenSubject": "Nueva entrada del libro de visitas",
+                    "form.submit": "enviar",
+                    "privacy.body": "no recopilo informacion personal aqui. formspree procesa el formulario y puede hacer revisiones basicas de spam. mira su",
+                    "privacy.link": "politica de privacidad aqui",
+                    "footer.copy": "\u00a9 lupita zambrano 2025"
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
