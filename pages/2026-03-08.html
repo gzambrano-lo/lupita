@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03/08/2026 - lupe zambrano</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/tokens.css">
+    <link rel="stylesheet" href="../styles/base.css?v=20260226a">
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/blog.css">
+    <link rel="stylesheet" href="../styles/blog-post.css">
+    <link rel="stylesheet" href="../styles/click-counter.css">
+    <link rel="stylesheet" href="../styles/language-toggle.css">
+    <link rel="stylesheet" href="../styles/2026-03-08.css?v=20260309a">
+    <script src="/scripts/site.js" defer></script>
+    <script src="/scripts/language-toggle.js" defer></script>
+</head>
+
+<body class="post-page post-page-2026-03-08">
+    <header class="site-header">
+        <h1 class="hero-title" data-i18n="site.blogTitle">blog</h1>
+    </header>
+
+    <nav id="nav_menu" aria-label="Main">
+        <ul>
+            <li><a href="../index.html" data-i18n="nav.home">home</a></li>
+            <li><a href="about.html" data-i18n="nav.about">about</a></li>
+            <li><a href="media-log.html" data-i18n="nav.mediaLog">media log</a></li>
+            <li class="current"><a href="blog.html" aria-current="page" data-i18n="nav.blog">blog</a></li>
+            <li><a href="links.html" data-i18n="nav.links">links</a></li>
+            <li><a href="guestbook.html" data-i18n="nav.guestbook">guestbook</a></li>
+            <li><a href="garden-log.html" data-i18n="nav.gardenLog">garden log</a></li>
+            <li><a href="music.html" data-i18n="nav.music">music</a></li>
+            <li><a href="learn-to-code.html" data-i18n="nav.learnToCode">learn to code</a></li>
+            <li><a href="gallery.html" data-i18n="nav.gallery">gallery</a></li>
+            <li><a href="bleach-shrine.html" data-i18n="nav.bleachShrine">bleach shrine</a></li>
+            <li><a href="project-senpai.html" data-i18n="nav.projectSenpai">project senpai</a></li>
+        </ul>
+    </nav>
+
+    <main id="main" class="container">
+        <article class="post post-dessert-devlog">
+            <header>
+                <div class="post-header-row language-toggle-row">
+                    <h2 data-i18n="post.day">sunday</h2>
+                    <button class="lang-toggle-btn" type="button" data-language-toggle aria-pressed="false">EN / ES</button>
+                </div>
+                <p class="meta">
+                    <time datetime="2026-03-08" data-i18n="post.date">posted march 8, 2026</time>
+                </p>
+            </header>
+
+            <section class="ambient-audio-tools" aria-label="page audio controls">
+                <button class="audio-toggle-btn" type="button" id="audioToggleBtn" aria-pressed="false">play audio</button>
+                <p class="audio-meta">
+                    <span class="audio-meta-label" data-i18n="audio.metaLabel">audio:</span>
+                    <span data-i18n="audio.metaBody">Kimi Ni Todoke's OST "Pure" (Waltz)</span>
+                </p>
+                <audio id="pageAudio" preload="metadata" loop>
+                    <source src="../images/audio/kimi_ni_todoke_ost_pure_waltz.mp3" type="audio/mpeg">
+                    your browser does not support the audio element.
+                </audio>
+            </section>
+
+            <section class="post-section journal-entry" aria-label="dessert dev log entry">
+                <p data-i18n="entry.p1">
+                    tonight's kitchen experiment was a little cheesecake mousse layered with strawberry compote. piped
+                    everything into glasses and finished them with pistachio cream and a chocolate drizzle.
+                </p>
+
+                <figure class="dessert-photo">
+                    <img src="https://cdn.discordapp.com/attachments/1217157565394325527/1480497130371154072/IMG_5366.jpg?ex=69afe3e6&is=69ae9266&hm=9cc63b412b683c883f0885462e5963225bbdc9a0d6a5442c1e93746aafe45fe2&"
+                        alt="Finished cheesecake mousse desserts in glasses topped with strawberry compote, pistachio cream, and chocolate drizzle."
+                        loading="lazy">
+                </figure>
+
+                <figure class="journal-media" aria-labelledby="kitchen-clip-caption">
+                    <div class="journal-video-shell">
+                        <video class="journal-video" preload="metadata" playsinline muted data-dessert-video>
+                            <source src="../images/videos/2026-03-08/cheesecake_mousse.mov" type="video/quicktime">
+                            your browser does not support the video tag.
+                        </video>
+                        <button class="journal-video-overlay" type="button" data-video-toggle aria-label="Play taste test video">
+                            <span class="journal-video-overlay-text" data-i18n="video.play">play clip</span>
+                        </button>
+                    </div>
+                    <figcaption class="journal-media-caption" id="kitchen-clip-caption" data-i18n="media.caption">
+                        the taste test revealed the fatal flaw: too much drizzle.
+                    </figcaption>
+                </figure>
+
+                <p data-i18n="entry.p2">
+                    visually very cute, but flavor-wise it leaned a little too sweet. next version probably gets lemon
+                    in the compote and only one drizzle instead of two.
+                </p>
+            </section>
+
+            <aside class="meal-aside" aria-label="dinner note">
+                <p class="meal-aside-label" data-i18n="aside.label">cane corso meal</p>
+                <p data-i18n="aside.body">
+                    for dinner i made what i've now decided to call my cane corso meal: roasted sweet potatoes and
+                    ground beef. simple, slightly suspicious looking, but actually very good.
+                </p>
+            </aside>
+
+            <section class="post-section thought-entry" aria-label="written reflection">
+                <p data-i18n="thought.p1">this isn't really a new discovery, but recently i had space to actually sit with the thought.</p>
+                <p data-i18n="thought.p2">an internet stranger sent me an unsolicited photo of his penis and then casually informed me that my instagram pictures had "helped him finish."</p>
+                <p data-i18n="thought.p3">which led me down a strange line of thinking.</p>
+                <p data-i18n="thought.p4">because the photos in question were just normal selfies. not suggestive ones. just me thinking about lighting, angles, and whether my eyeliner looked even that day.</p>
+                <p data-i18n="thought.p5">yet somewhere in the digital wilderness a man had apparently formed enough of an attachment to those images to have a very personal experience about them.</p>
+                <p data-i18n="thought.p6">what fascinated me wasn't even the act itself, but the mindset.</p>
+                <p data-i18n="thought.p7">because at least for me, the idea of using someone's photos that way without explicit consent feels... almost like a violation. it just doesn't occur to me as a neutral activity.</p>
+                <p data-i18n="thought.p8">in the age of ai, you can actually ask about this kind of behavior. so i did.</p>
+                <p data-i18n="thought.p9">the explanation was something like: familiarity, emotional proximity, imagination filling in the gaps. the brain tends to react more strongly to someone it perceives as "real" than to anonymous content.</p>
+                <p data-i18n="thought.p10">which makes sense from a behavioral standpoint.</p>
+                <p data-i18n="thought.p11">however, observing the phenomenon in its natural habitat still produces the same reaction one might have while watching an unusual animal behavior through laboratory glass:</p>
+                <p data-i18n="thought.p12">a long pause.</p>
+                <p data-i18n="thought.p13">a few notes scribbled in the margin.</p>
+                <p data-i18n="thought.p14">and the quiet scientific question:</p>
+                <p><em data-i18n="thought.p15">why are you like this.</em></p>
+            </section>
+
+            <figure class="memory-photo">
+                <img src="../images/blog/2026-03-07/marley.JPG" alt="Marley the first year I bought her" loading="lazy">
+                <figcaption data-i18n="aside.marleyCaption">marley the first year i bought her. she was only $50 bucks!! yeaaa</figcaption>
+            </figure>
+
+            <figure class="memory-photo">
+                <img src="../images/blog/2026-03-08/asset-03.JPG" alt="March 8 photo" loading="lazy">
+            </figure>
+
+            <div class="click-row" aria-label="head pat counter">
+                <button id="headPatBtn" class="pill-btn" type="button" data-i18n="counter.button">head pat</button>
+                <button class="pill-btn count-pill" type="button" aria-live="polite" tabindex="-1">
+                    <span data-i18n="counter.totalLabel">total head pats:</span> <span id="headPatCount">0</span>
+                </button>
+            </div>
+
+            <p class="read-more">
+                <a href="blog.html" class="highlight-link" data-i18n="post.backLink">&larr; back to blog</a>
+            </p>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p data-i18n="footer.copy">&copy; lupita zambrano 2025</p>
+        <p class="footer-support">
+            <a href="https://buymeacoffee.com/lupitazambrano" target="_blank" rel="noopener noreferrer" data-i18n="footer.support">if u like what i post and want to, you know, buy me taco bell or something</a>
+        </p>
+    </footer>
+
+    <script id="languageToggleConfig" type="application/json">
+        {
+            "storageKey": "site-language",
+            "defaultLanguage": "en",
+            "toggleLabel": "EN / ES",
+            "toggleAria": {
+                "enToEs": "Switch page language to Spanish",
+                "esToEn": "Cambiar el idioma de la pagina a ingles"
+            },
+            "translations": {
+                "en": {
+                    "pageTitle": "03/08/2026 - lupe zambrano",
+                    "site.blogTitle": "blog",
+                    "nav.home": "home",
+                    "nav.about": "about",
+                    "nav.mediaLog": "media log",
+                    "nav.blog": "blog",
+                    "nav.links": "links",
+                    "nav.guestbook": "guestbook",
+                    "nav.gardenLog": "garden log",
+                    "nav.music": "music",
+                    "nav.learnToCode": "learn to code",
+                    "nav.gallery": "gallery",
+                    "nav.bleachShrine": "bleach shrine",
+                    "nav.projectSenpai": "project senpai",
+                    "post.day": "sunday",
+                    "post.date": "posted march 8, 2026",
+                    "audio.metaLabel": "audio:",
+                    "audio.metaBody": "kimi ni todoke's ost \"pure\" (waltz)",
+                    "entry.p1": "tonight's kitchen experiment was a little cheesecake mousse layered with strawberry compote. piped everything into glasses and finished them with pistachio cream and a chocolate drizzle.",
+                    "video.play": "play clip",
+                    "media.caption": "the taste test revealed the fatal flaw: too much drizzle.",
+                    "entry.p2": "visually very cute, but flavor-wise it leaned a little too sweet. next version probably gets lemon in the compote and only one drizzle instead of two.",
+                    "aside.label": "cane corso meal",
+                    "aside.body": "for dinner i made what i've now decided to call my cane corso meal: roasted sweet potatoes and ground beef. simple, slightly suspicious looking, but actually very good.",
+                    "aside.marleyCaption": "marley the first year i bought her. she was only $50 bucks!! yeaaa",
+                    "thought.p1": "this isn't really a new discovery, but recently i had space to actually sit with the thought.",
+                    "thought.p2": "an internet stranger sent me an unsolicited photo of his penis and then casually informed me that my pictures had \"helped him finish.\"",
+                    "thought.p3": "which led me down a strange line of thinking.",
+                    "thought.p4": "because the photos in question were just normal selfies. not suggestive ones. just me thinking about lighting, angles, and whether my eyeliner looked even that day.",
+                    "thought.p5": "yet somewhere in the digital wilderness a man had apparently formed enough of an attachment to those images to have a very personal experience about them.",
+                    "thought.p6": "what fascinated me wasn't even the act itself, but the mindset.",
+                    "thought.p7": "because at least for me, the idea of using someone's photos that way without explicit consent feels... almost like a violation. it just doesn't occur to me as a neutral activity.",
+                    "thought.p8": "in the age of ai, you can actually ask about this kind of behavior. so i did.",
+                    "thought.p9": "the explanation was something like: familiarity, emotional proximity, imagination filling in the gaps. the brain tends to react more strongly to someone it perceives as \"real\" than to anonymous content.",
+                    "thought.p10": "which makes sense from a behavioral standpoint.",
+                    "thought.p11": "however, observing the phenomenon in its natural habitat still produces the same reaction one might have while watching an unusual animal behavior through laboratory glass:",
+                    "thought.p12": "a long pause.",
+                    "thought.p13": "a few notes scribbled in the margin.",
+                    "thought.p14": "and the quiet scientific question:",
+                    "thought.p15": "why are you like this.",
+                    "counter.button": "head pat",
+                    "counter.totalLabel": "total head pats:",
+                    "post.backLink": "\u2190 back to blog",
+                    "footer.copy": "\u00a9 lupita zambrano 2025",
+                    "footer.support": "if u like what i post and want to, you know, buy me taco bell or something"
+                },
+                "es": {
+                    "pageTitle": "08/03/2026 - lupe zambrano",
+                    "site.blogTitle": "blog",
+                    "nav.home": "inicio",
+                    "nav.about": "sobre mi",
+                    "nav.mediaLog": "registro multimedia",
+                    "nav.blog": "blog",
+                    "nav.links": "links",
+                    "nav.guestbook": "libro de visitas",
+                    "nav.gardenLog": "registro del jardin",
+                    "nav.music": "musica",
+                    "nav.learnToCode": "aprender a programar",
+                    "nav.gallery": "galeria",
+                    "nav.bleachShrine": "santuario bleach",
+                    "nav.projectSenpai": "proyecto senpai",
+                    "post.day": "domingo",
+                    "post.date": "publicado el 8 de marzo de 2026",
+                    "audio.metaLabel": "audio:",
+                    "audio.metaBody": "ost de kimi ni todoke \"pure\" (waltz)",
+                    "entry.p1": "el experimento de cocina de esta noche fue una mini mousse de cheesecake en capas con compota de fresa. puse todo en vasitos y los termine con crema de pistache y un drizzle de chocolate.",
+                    "video.play": "reproducir clip",
+                    "media.caption": "la prueba de sabor revelo el error fatal: demasiado drizzle.",
+                    "entry.p2": "visualmente quedo muy cute, pero en sabor se fue un poquito demasiado dulce. la siguiente version probablemente lleve limon en la compota y solo un drizzle en vez de dos.",
+                    "aside.label": "comida de perro",
+                    "aside.body": "para cenar hice lo que ya decidí llamar mi comida de perro: camotes rostizados y carne molida. simple, medio sospechosa a la vista, pero la verdad muy rica.",
+                    "aside.marleyCaption": "marley el primer año que la compré. ¡solo me costó 50 dólares! yeaaa",
+                    "thought.p1": "en realidad no es un descubrimiento nuevo, pero recientemente tuve espacio para sentarme de verdad con esa idea.",
+                    "thought.p2": "un desconocido de internet me mando una foto no solicitada de su pene y luego me informo casualmente que mis fotos lo habian \"ayudado a terminar.\"",
+                    "thought.p3": "y eso me llevo a una linea de pensamiento bastante rara.",
+                    "thought.p4": "porque las fotos en cuestion eran solo selfies normales. nada sugerente. solo yo pensando en la luz, los angulos y si mi delineado se veia parejo ese dia.",
+                    "thought.p5": "y aun asi, en algun lugar del desierto digital, un hombre al parecer habia formado suficiente apego a esas imagenes como para tener una experiencia muy personal con ellas.",
+                    "thought.p6": "lo que me fascinaba ni siquiera era el acto en si, sino la mentalidad.",
+                    "thought.p7": "porque al menos para mi, la idea de usar las fotos de alguien de esa manera sin consentimiento explicito se siente... casi como una violacion. simplemente no se me ocurre como una actividad neutral.",
+                    "thought.p8": "en la era de la ai, de hecho puedes preguntar sobre este tipo de comportamiento. asi que eso hice.",
+                    "thought.p9": "la explicacion era algo asi: familiaridad, proximidad emocional, imaginacion llenando los huecos. el cerebro tiende a reaccionar con mas fuerza ante alguien que percibe como \"real\" que ante contenido anonimo.",
+                    "thought.p10": "lo cual tiene sentido desde un punto de vista conductual.",
+                    "thought.p11": "sin embargo, observar el fenomeno en su habitat natural sigue produciendo la misma reaccion que uno tendria al mirar un comportamiento animal inusual a traves del vidrio de un laboratorio:",
+                    "thought.p12": "una pausa larga.",
+                    "thought.p13": "unas cuantas notas garabateadas al margen.",
+                    "thought.p14": "y la pregunta cientifica, dicha en voz baja:",
+                    "thought.p15": "por que eres asi.",
+                    "counter.button": "palmadita",
+                    "counter.totalLabel": "palmaditas totales:",
+                    "post.backLink": "\u2190 volver al blog",
+                    "footer.copy": "\u00a9 lupita zambrano 2025",
+                    "footer.support": "si te gusta lo que publico y me quieres, no sé, invitar un taco bell o algo"
+                }
+            }
+        }
+    </script>
+
+    <script>
+        (function () {
+            const dessertVideo = document.querySelector("[data-dessert-video]");
+            const videoToggleButton = document.querySelector("[data-video-toggle]");
+            const pageAudio = document.getElementById("pageAudio");
+            const audioToggleBtn = document.getElementById("audioToggleBtn");
+            const headPatBtn = document.getElementById("headPatBtn");
+            const headPatCount = document.getElementById("headPatCount");
+            const COUNTER_API = "https://site-counters.gzamlo98.workers.dev/api/counter?slug=2026-03-08";
+            let pageAudioStarted = false;
+
+            function syncAudioUi() {
+                if (!pageAudio || !audioToggleBtn) return;
+                const playing = !pageAudio.paused;
+                const isSpanish = document.documentElement.lang === "es";
+                audioToggleBtn.textContent = playing
+                    ? (isSpanish ? "matar audio" : "kill audio")
+                    : (isSpanish ? "reproducir audio" : "play audio");
+                audioToggleBtn.setAttribute("aria-pressed", playing ? "true" : "false");
+                audioToggleBtn.setAttribute(
+                    "aria-label",
+                    playing
+                        ? (isSpanish ? "Detener el audio de la pagina" : "Stop page audio")
+                        : (isSpanish ? "Reproducir el audio de la pagina" : "Play page audio")
+                );
+            }
+
+            function syncVideoUi() {
+                if (!dessertVideo) return;
+                const playing = !dessertVideo.paused && !dessertVideo.ended;
+                document.documentElement.classList.toggle("dessert-video-playing", playing);
+                if (videoToggleButton) {
+                    videoToggleButton.setAttribute(
+                        "aria-label",
+                        playing
+                            ? (document.documentElement.lang === "es" ? "Pausar video de prueba de sabor" : "Pause taste test video")
+                            : (document.documentElement.lang === "es" ? "Reproducir video de prueba de sabor" : "Play taste test video")
+                    );
+                }
+            }
+
+            if (dessertVideo) {
+                if (videoToggleButton) {
+                    videoToggleButton.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        if (dessertVideo.paused || dessertVideo.ended) {
+                            dessertVideo.play().catch(function (error) {
+                                console.error(error);
+                            });
+                        } else {
+                            dessertVideo.pause();
+                        }
+                    });
+                }
+
+                dessertVideo.addEventListener("click", function () {
+                    if (dessertVideo.paused || dessertVideo.ended) {
+                        dessertVideo.play().catch(function (error) {
+                            console.error(error);
+                        });
+                    } else {
+                        dessertVideo.pause();
+                    }
+                });
+
+                ["play", "pause", "ended"].forEach(function (eventName) {
+                    dessertVideo.addEventListener(eventName, syncVideoUi);
+                });
+
+                syncVideoUi();
+            }
+
+            if (pageAudio && audioToggleBtn) {
+                function startPageAudioOnce() {
+                    if (pageAudioStarted) return;
+                    pageAudioStarted = true;
+                    pageAudio.play().catch(function (error) {
+                        pageAudioStarted = false;
+                        console.error(error);
+                    });
+                }
+
+                audioToggleBtn.addEventListener("click", function () {
+                    if (pageAudio.paused) {
+                        startPageAudioOnce();
+                    } else {
+                        pageAudio.pause();
+                        pageAudio.currentTime = 0;
+                        pageAudioStarted = false;
+                    }
+                });
+
+                ["play", "pause", "ended"].forEach(function (eventName) {
+                    pageAudio.addEventListener(eventName, syncAudioUi);
+                });
+
+                document.addEventListener("pointerdown", startPageAudioOnce, { once: true });
+
+                document.querySelector("[data-language-toggle]")?.addEventListener("click", function () {
+                    setTimeout(syncAudioUi, 0);
+                });
+
+                syncAudioUi();
+            }
+
+            if (!headPatBtn || !headPatCount) return;
+
+            async function loadCount() {
+                try {
+                    const res = await fetch(COUNTER_API, { method: "GET" });
+                    if (!res.ok) throw new Error("failed to load counter");
+                    const data = await res.json();
+                    headPatCount.textContent = Number(data.count) || 0;
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+
+            headPatBtn.addEventListener("click", async function () {
+                try {
+                    const res = await fetch(COUNTER_API, { method: "POST" });
+                    if (!res.ok) throw new Error("failed to increment counter");
+                    const data = await res.json();
+                    headPatCount.textContent = Number(data.count) || 0;
+                } catch (err) {
+                    console.error(err);
+                }
+            });
+
+            loadCount();
+        })();
+    </script>
+</body>
+
+</html>

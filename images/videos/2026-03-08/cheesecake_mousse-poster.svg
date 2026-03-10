@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1200" viewBox="0 0 960 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Cheesecake mousse video poster</title>
+  <desc id="desc">A soft frosted pink window poster for the cheesecake mousse taste test video.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff8fb"/>
+      <stop offset="100%" stop-color="#f9efef"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffafc" stop-opacity="0.97"/>
+      <stop offset="100%" stop-color="#f7e8ea" stop-opacity="0.93"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="1200" rx="44" fill="url(#bg)"/>
+  <rect x="88" y="112" width="784" height="976" rx="36" fill="url(#glass)" stroke="#e8cbd1" stroke-width="3"/>
+  <rect x="88" y="112" width="784" height="86" rx="36" fill="#f6dce2" fill-opacity="0.72"/>
+  <circle cx="146" cy="156" r="12" fill="#efbcc7"/>
+  <circle cx="182" cy="156" r="12" fill="#f5e0c6"/>
+  <circle cx="218" cy="156" r="12" fill="#d8e4de"/>
+  <circle cx="480" cy="556" r="84" fill="#fffefe" fill-opacity="0.86"/>
+  <circle cx="480" cy="556" r="58" fill="#40383d"/>
+  <polygon points="462,518 462,594 524,556" fill="#f4d8de"/>
+  <text x="480" y="880" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="46" font-weight="700" fill="#7f9b94">cheesecake mousse</text>
+  <text x="480" y="934" text-anchor="middle" font-family="Nunito, Arial, sans-serif" font-size="28" fill="#8f7e77">taste test footage</text>
+</svg>

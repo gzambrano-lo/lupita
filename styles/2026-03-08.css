@@ -1,0 +1,304 @@
+.post-page-2026-03-08 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-page-2026-03-08 main {
+    flex: 1;
+}
+
+.post-dessert-devlog {
+    --dessert-accent: #d88392;
+    --dessert-accent-soft: #f9e8e6;
+    --dessert-sage: #90a9a2;
+    display: grid;
+    gap: 0.95rem;
+    padding-bottom: 0.15rem;
+}
+
+.post-dessert-devlog .post-kicker {
+    margin: 0 0 0.45rem;
+    color: var(--dessert-accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.post-dessert-devlog .meta {
+    margin: 0.05rem 0 0;
+    font-size: 0.96rem;
+    color: color-mix(in srgb, var(--text) 88%, var(--dessert-sage));
+}
+
+.post-dessert-devlog > header,
+.post-dessert-devlog .ambient-audio-tools,
+.post-dessert-devlog .journal-entry,
+.post-dessert-devlog .meal-aside,
+.post-dessert-devlog .thought-entry,
+.post-dessert-devlog .memory-photo,
+.post-dessert-devlog .click-row,
+.post-dessert-devlog .read-more {
+    width: min(100%, 37rem);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-dessert-devlog .language-toggle-row {
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.post-dessert-devlog .language-toggle-row h2 {
+    margin-bottom: 0;
+    line-height: 1.05;
+}
+
+.post-dessert-devlog .post-section {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+.post-dessert-devlog .ambient-audio-tools {
+    margin-top: -0.05rem;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.post-dessert-devlog .audio-toggle-btn {
+    padding: 0.28rem 0.62rem;
+    border: 1px solid color-mix(in srgb, var(--border) 88%, #fff);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--desk-accent-soft, #f9e8e6) 58%, #fff);
+    color: var(--dessert-sage);
+    font: inherit;
+    font-size: 0.69rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: lowercase;
+    cursor: pointer;
+}
+
+.post-dessert-devlog .audio-toggle-btn[aria-pressed="true"] {
+    color: var(--dessert-accent);
+    background: color-mix(in srgb, var(--dessert-accent-soft) 70%, #fff);
+    border-color: color-mix(in srgb, var(--dessert-accent) 24%, var(--border));
+}
+
+.post-dessert-devlog .audio-meta {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.35;
+}
+
+.post-dessert-devlog .audio-meta-label {
+    color: var(--dessert-sage);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+}
+
+.post-dessert-devlog .ambient-audio-tools audio {
+    display: none;
+}
+
+.post-dessert-devlog .journal-entry p {
+    margin: 0;
+    max-width: 34rem;
+}
+
+.post-dessert-devlog .journal-entry > p + p,
+.post-dessert-devlog .journal-entry > figure + p {
+    margin-top: 0.85rem;
+}
+
+.post-dessert-devlog .dessert-photo {
+    width: min(100%, 26rem);
+    margin: 0.95rem auto 1.05rem;
+}
+
+.post-dessert-devlog .dessert-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border: 1px solid color-mix(in srgb, var(--border) 88%, #fff);
+    border-radius: 0.75rem;
+    background: #f4eee8;
+    box-shadow: 0 4px 12px rgba(86, 68, 60, 0.06);
+}
+
+.post-dessert-devlog .journal-media {
+    width: min(100%, 26rem);
+    margin: 0 auto 1rem;
+}
+
+.post-dessert-devlog .journal-video-shell {
+    position: relative;
+}
+
+.post-dessert-devlog .journal-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border: 1px solid color-mix(in srgb, var(--border) 88%, #fff);
+    border-radius: 0.75rem;
+    background: #f4eee8;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(86, 68, 60, 0.06);
+    accent-color: var(--sage);
+}
+
+.post-dessert-devlog .journal-video-overlay {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 0.75rem;
+    background: linear-gradient(180deg, rgba(250, 247, 242, 0.08), rgba(144, 169, 162, 0.18));
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.18s ease, background-color 0.18s ease;
+}
+
+.post-dessert-devlog .journal-video-overlay:hover,
+.post-dessert-devlog .journal-video-overlay:focus-visible {
+    background: linear-gradient(180deg, rgba(250, 247, 242, 0.05), rgba(144, 169, 162, 0.24));
+}
+
+.dessert-video-playing .post-dessert-devlog .journal-video-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.post-dessert-devlog .journal-video-overlay-text {
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(255, 252, 247, 0.86);
+    color: var(--dessert-sage);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.post-dessert-devlog .journal-media-caption {
+    margin-top: 0.38rem;
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.post-dessert-devlog .meal-aside {
+    margin: 0.05rem auto 0;
+    padding: 0.9rem 1rem;
+    border-left: 3px solid color-mix(in srgb, var(--dessert-sage) 82%, #fff);
+    border-radius: 0.65rem;
+    background: color-mix(in srgb, var(--card) 92%, var(--cream));
+    box-shadow: none;
+}
+
+.post-dessert-devlog .meal-aside-label {
+    display: block;
+    width: 100%;
+    margin: 0 0 0.55rem;
+    padding: 0 0 0.15rem;
+    color: var(--dessert-sage);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.post-dessert-devlog .meal-aside p:last-child {
+    margin: 0;
+}
+
+.post-dessert-devlog .thought-entry p {
+    margin: 0;
+    max-width: 34rem;
+}
+
+.post-dessert-devlog .thought-entry p + p {
+    margin-top: 0.82rem;
+}
+
+.post-dessert-devlog .memory-photo {
+    width: min(100%, 26rem);
+    margin: 0.1rem auto 0;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--border) 88%, #fff);
+    border-radius: 0.75rem;
+    background: #f4eee8;
+    box-shadow: 0 4px 12px rgba(86, 68, 60, 0.06);
+}
+
+.post-dessert-devlog .memory-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.post-dessert-devlog .memory-photo figcaption {
+    padding: 0.75rem 0.85rem 0.9rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+.post-page-2026-03-08 .site-footer {
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: center;
+}
+
+.post-page-2026-03-08 .footer-support {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+.post-page-2026-03-08 .footer-support a {
+    color: var(--dessert-sage);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.14em;
+}
+
+.post-page-2026-03-08 .footer-support a:hover {
+    color: color-mix(in srgb, var(--dessert-sage) 75%, var(--coral));
+}
+
+@media (max-width: 640px) {
+    .post-dessert-devlog {
+        gap: 0.8rem;
+    }
+
+    .post-dessert-devlog .ambient-audio-tools {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .post-dessert-devlog .dessert-photo,
+    .post-dessert-devlog .journal-media,
+    .post-dessert-devlog .meal-aside,
+    .post-dessert-devlog .memory-photo {
+        width: 100%;
+    }
+}

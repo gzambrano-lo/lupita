@@ -585,6 +585,26 @@ body {
   color: #fff;
 }
 
+#nav_menu a {
+  color: #cfcfcf;
+  background: #121212;
+  border-color: #3a3a3a;
+  box-shadow: none;
+}
+
+#nav_menu a:hover,
+#nav_menu a:focus {
+  color: #fff;
+  background: #181818;
+  border-color: #555;
+}
+
+#nav_menu .current a {
+  color: #fff;
+  background: #5a5a5a;
+  border-color: #6a6a6a;
+}
+
 .post,
 section,
 .entry-note,
