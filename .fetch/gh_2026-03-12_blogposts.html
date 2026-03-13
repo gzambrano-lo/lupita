@@ -60,52 +60,72 @@
             <section class="dream-hero" aria-labelledby="dream-hero-heading">
                 <div class="dream-copy">
                     <header class="dream-header">
-                        <p class="post-kicker">soft eerie portrait study</p>
-                        <h2 class="dream-title" id="dream-hero-heading">march 12, 2026</h2>
+                        <h2 class="dream-title" id="dream-hero-heading">thoorsday</h2>
                         <p class="meta"><time datetime="2026-03-12">posted march 12, 2026</time></p>
                     </header>
 
-                    <p class="dream-label">photo diary hero</p>
-                    <h3>dream haze, low light, a little haunted, still gentle.</h3>
-                    <p class="dream-intro">
-                        a portrait-first blog hero with scribbled eyes, a built-in song, and the kind of soft tension
-                        that feels diary-like instead of theatrical.
+                    <h3>the fire that drives you will also burn you a little.</h3>
+                    <p class="dream-content">
+                        my music taste started with my step dad's cd collection. disturbed, soulfly, sepultura,
+                        slipknot, creedence clearwater revival, the cranberries, rammstein (and way too much more to
+                        list...) were always around
+                        growing up. he loved collecting full discographies, and that trait definitely rubbed off on me.
                     </p>
 
-                    <ul class="dream-notes" aria-label="visual notes">
-                        <li>hand-drawn eye marks sit directly over the portrait and flicker just enough to feel alive.</li>
-                        <li>the palette stays low-contrast and personal: dusty rose, sage, cream, muted plum, faded charcoal.</li>
-                        <li>everything is framed as one finished composition instead of stacked widgets.</li>
-                    </ul>
-
-                    <p>
-                        the media files live off-page instead of being bundled into the layout, so the portrait and songs
-                        can stream in without turning the post itself into a giant file. the player just points to those
-                        hosted assets and swaps them in as you click around the tracklist.
+                    <p class="dream-content">
+                        from my mom it was a completely different soundtrack: paulina rubio,
+                        jenni rivera, gloria trevi, los temerarios, kumbia kingz, cumbia,
+                        reggaeton, and those random mixed cds from the swap meet that somehow
+                        ended up everywhere.
                     </p>
 
-                    <p>
-                        the face edits are lightweight svg marks layered right over the portrait, and the streaming icons
-                        in the drawer are svg too. a bunch of anchor tags wrap the route links, platform buttons, and
-                        little navigation moments so the whole page still behaves like a normal blog post instead of a
-                        trapped single-purpose widget.
+                    <p class="dream-content"> i was ripping and burning everything. youtube to mp3, importing it into
+                        itunes, fixing metadata bc i couldn't stand listening to tracks named things like "Pi3rc3 th3
+                        v3il - cArApHeRnElIa".</p>
+
+                    <p class="dream-content">at one point i had the entire juicy j discography on an ipod nano… which i
+                        tragically lost
+                        somewhere in tennessee.
                     </p>
 
-                    <p>
-                        the player is driven by a small inline javascript script that updates the audio source, progress
-                        bar, drawer metadata, and queue state together. the tracklist doubles as a set of buttons that
-                        jumps you straight to the song you want, and the hamburger button opens the attached drawer with
-                        artist info and link-out details.
+                    <p class="dream-content">
+                        the face markings are simple svg paths layered over the portrait. they're positioned with css so
+                        they sit right on the eyes and mouth, like little hand-drawn edits on top of the photo.
                     </p>
 
+                    <p class="dream-content">
+                        the portrait and song files are being pulled in from hosted media instead of living inside the
+                        page itself, which keeps the post lighter and lets the player swap tracks without reloading the
+                        whole thing.
+                    </p>
+
+                    <p class="dream-content">
+                        the platform logos in the drawer are svg too. a bunch of anchor tags wrap the nav links,
+                        external platform buttons, and route changes so the page
+                        still works like a regular blog post even though it feels more interactive.
+                    </p>
+
+                    <p class="dream-content">
+                        the music widget runs on a small javascript script that updates the audio source, progress
+                        state,
+                        drawer credits, and active queue item together. the tracklist also works like a button list that
+                        jumps straight to the song you want, and the hamburger icon is there to reveal artist
+                        information
+                        and platform links.
+                    </p>
+
+                    <p class="dream-content">
+                        anyway, completely unrelated, but i'm craving something sweet. i kind of want to
+                        bake bread, but it's way too late for all that kneading, rising, shaping, and
+                        waiting for it to rise again. maybe another night. i'm honestly just waiting for
+                        this quarter to be over because school has me tired.
+                    </p>
                 </div>
 
                 <figure class="portrait-stage">
                     <div class="portrait-frame">
-                        <!-- Replace the image path below with your portrait image if it changes. -->
                         <img src="../../images/blog/2026-03-12/asset-01.png"
-                            alt="Portrait of Lupita with hand-drawn X marks over both eyes."
-                            class="portrait-image">
+                            alt="Portrait of Lupita with hand-drawn X marks over both eyes." class="portrait-image">
 
                         <div class="portrait-atmosphere" aria-hidden="true"></div>
 
@@ -122,7 +142,8 @@
                         </svg>
 
                         <svg class="mouth-scribble" viewBox="0 0 220 120" aria-hidden="true">
-                            <path class="mouth-line mouth-line-frown" d="M24 48 C 68 46, 101 46, 126 50 C 146 53, 162 64, 184 84"></path>
+                            <path class="mouth-line mouth-line-frown"
+                                d="M24 48 C 68 46, 101 46, 126 50 C 146 53, 162 64, 184 84"></path>
                             <path class="mouth-line mouth-line-smile" d="M20 44 C 58 92, 122 98, 198 54"></path>
                         </svg>
                     </div>
@@ -131,13 +152,13 @@
                         <div class="player-shell" data-player-shell>
                             <div class="player-topline">
                                 <div>
-                                    <p class="dream-player-label">background track</p>
-                                <h4 class="dream-player-song" id="player-title" data-track-title>todas mueren por mi</h4>
+                                    <h4 class="dream-player-song" id="player-title" data-track-title>todas mueren por mi
+                                    </h4>
                                 </div>
 
                                 <div class="player-top-actions">
                                     <button class="player-info-toggle" type="button" data-player-info-toggle
-                                        aria-expanded="false" aria-controls="player-info-dot"
+                                        aria-expanded="false" aria-controls="player-info-post"
                                         aria-label="Show artist info and links">
                                         <span class="player-menu-icon" aria-hidden="true">
                                             <span></span>
@@ -151,7 +172,6 @@
 
                             <div class="audio-shell" data-audio-shell>
                                 <div class="audio-row">
-                                    <!-- Replace the playlist URLs in the inline script below if you want different tracks. -->
                                     <audio preload="metadata" data-audio-player>
                                         <source data-audio-source
                                             src="https://media.lupitazambrano.com/03-12-26/Todas%20Mueren%20por%20M%C3%AD.mp3"
@@ -162,9 +182,9 @@
                                     <span class="player-time-current" data-time-current aria-hidden="true">0:00</span>
 
                                     <div class="progress-cluster">
-                                        <label class="sr-only" for="dream-progress-dot">Track progress</label>
-                                        <input id="dream-progress-dot" class="player-range" type="range" min="0" max="100"
-                                            value="0" step="0.1" data-audio-progress>
+                                        <label class="sr-only" for="dream-progress-post">Track progress</label>
+                                        <input id="dream-progress-post" class="player-range" type="range" min="0"
+                                            max="100" value="0" step="0.1" data-audio-progress>
                                     </div>
 
                                     <span class="player-time-total" data-time-total aria-hidden="true">0:00</span>
@@ -184,13 +204,9 @@
                                         <span class="player-skip-icon" aria-hidden="true"></span>
                                     </button>
                                 </div>
-
-                                <p class="player-note">
-                                    a custom pastel player so the song feels embedded in the page. no autoplay with sound.
-                                </p>
                             </div>
 
-                            <div class="player-drawer" id="player-info-dot" data-player-drawer hidden>
+                            <div class="player-drawer" id="player-info-post" data-player-drawer hidden>
                                 <div class="player-drawer-inner">
                                     <div class="player-drawer-card">
                                         <p class="player-drawer-label">artist info</p>
@@ -205,32 +221,38 @@
                                                 <dd class="player-meta-value" data-meta-value-2>Cartel De Santa</dd>
                                             </div>
                                             <div class="player-meta-row">
-                                                <dt class="player-meta-term" data-meta-label-3>composition &amp; lyrics</dt>
-                                                <dd class="player-meta-value" data-meta-value-3>Eduardo Davalos De Luna, J. Roberts</dd>
+                                                <dt class="player-meta-term" data-meta-label-3>composition &amp; lyrics
+                                                </dt>
+                                                <dd class="player-meta-value" data-meta-value-3>Eduardo Davalos De Luna,
+                                                    J. Roberts</dd>
                                             </div>
                                             <div class="player-meta-row">
-                                                <dt class="player-meta-term" data-meta-label-4>production &amp; engineering</dt>
+                                                <dt class="player-meta-term" data-meta-label-4>production &amp;
+                                                    engineering</dt>
                                                 <dd class="player-meta-value" data-meta-value-4>Jason Roberts</dd>
                                             </div>
                                         </dl>
 
                                         <div class="player-links" aria-label="external music links">
-                                            <a class="player-link player-link-spotify" data-link-spotify href="https://open.spotify.com/track/57DZJLuPk9a5ULzdER3ZFy?si=afbfd3589a4b4917" target="_blank"
-                                                rel="noopener noreferrer" aria-label="Open Spotify">
+                                            <a class="player-link player-link-spotify" data-link-spotify
+                                                href="https://open.spotify.com/track/57DZJLuPk9a5ULzdER3ZFy?si=afbfd3589a4b4917"
+                                                target="_blank" rel="noopener noreferrer" aria-label="Open Spotify">
                                                 <svg viewBox="0 0 24 24" aria-hidden="true">
                                                     <path fill="currentColor"
                                                         d="M12 1.5a10.5 10.5 0 1 0 10.5 10.5A10.5 10.5 0 0 0 12 1.5Zm4.83 15.13a.66.66 0 0 1-.91.21 8.82 8.82 0 0 0-8.98-.68.66.66 0 1 1-.59-1.18 10.14 10.14 0 0 1 10.33.78.66.66 0 0 1 .15.87Zm1.3-2.42a.83.83 0 0 1-1.14.26 10.95 10.95 0 0 0-10.99-.79.83.83 0 1 1-.7-1.5 12.62 12.62 0 0 1 12.68.92.83.83 0 0 1 .15 1.11Zm.11-2.61A13.63 13.63 0 0 0 4.9 10.54a1 1 0 0 1-.8-1.83 15.63 15.63 0 0 1 15.31 1.2 1 1 0 0 1-1.17 1.69Z" />
                                                 </svg>
                                             </a>
-                                            <a class="player-link player-link-apple" data-link-apple href="https://music.apple.com/uy/song/todas-mueren-por-m%C3%AD/309682087" target="_blank"
-                                                rel="noopener noreferrer" aria-label="Open Apple Music">
+                                            <a class="player-link player-link-apple" data-link-apple
+                                                href="https://music.apple.com/uy/song/todas-mueren-por-m%C3%AD/309682087"
+                                                target="_blank" rel="noopener noreferrer" aria-label="Open Apple Music">
                                                 <svg viewBox="0 0 24 24" aria-hidden="true">
                                                     <path fill="currentColor"
                                                         d="M17.58 3.15a3.9 3.9 0 0 1-.93 2.83 3.32 3.32 0 0 1-2.61 1.28 3.67 3.67 0 0 1 .96-2.73 3.74 3.74 0 0 1 2.58-1.38Zm2.88 13.69A8.25 8.25 0 0 1 19 19.52c-.9 1.16-1.83 2.31-3.28 2.34-1.42.03-1.88-.84-3.5-.84s-2.13.82-3.46.87c-1.4.06-2.46-1.24-3.37-2.39C3.52 16.98 2 13.18 3.96 10.09a5.15 5.15 0 0 1 4.34-2.63c1.35-.03 2.62.9 3.49.9s2.5-1.1 4.2-.94a5 5 0 0 1 3.9 2.1 4.42 4.42 0 0 0-2.35 3.94 4.3 4.3 0 0 0 2.92 4.08Z" />
                                                 </svg>
                                             </a>
-                                            <a class="player-link player-link-youtube" data-link-youtube href="https://www.youtube.com/watch?v=Ts0HFemlZCU&list=RDTs0HFemlZCU&start_radio=1" target="_blank"
-                                                rel="noopener noreferrer" aria-label="Open YouTube">
+                                            <a class="player-link player-link-youtube" data-link-youtube
+                                                href="https://www.youtube.com/watch?v=Ts0HFemlZCU&list=RDTs0HFemlZCU&start_radio=1"
+                                                target="_blank" rel="noopener noreferrer" aria-label="Open YouTube">
                                                 <svg viewBox="0 0 24 24" aria-hidden="true">
                                                     <path fill="currentColor"
                                                         d="M21.58 7.19a2.8 2.8 0 0 0-1.96-1.98C17.89 4.75 12 4.75 12 4.75s-5.89 0-7.62.46A2.8 2.8 0 0 0 2.42 7.2C1.95 8.94 1.95 12 1.95 12s0 3.06.47 4.8a2.8 2.8 0 0 0 1.96 1.98c1.73.46 7.62.46 7.62.46s5.89 0 7.62-.46a2.8 2.8 0 0 0 1.96-1.98c.47-1.74.47-4.8.47-4.8s0-3.06-.47-4.81ZM9.95 15.04V8.96L15.5 12l-5.55 3.04Z" />
@@ -250,9 +272,6 @@
                         </div>
                     </section>
 
-                    <figcaption class="portrait-caption">
-                        the glow, grain, portrait scale, and eye placement are all exposed in the css for quick art direction tweaks.
-                    </figcaption>
                 </figure>
 
                 <div class="click-row" aria-label="head pat counter">
@@ -393,9 +412,8 @@
                     src: "https://media.lupitazambrano.com/03-12-26/No%20Vacation%20-%20Yam%20Yam.mp3",
                     meta: [
                         ["artist / performer", "Yam Yam"],
-                        ["song", "No Vacation"],
-                        ["album", "rosenrot"],
-                        ["note", "Apple Music and YouTube links available"]
+                        ["song", "no vacation"],
+                        ["note", "apple music & yt links available"]
                     ],
                     links: {
                         spotify: "#",
@@ -411,7 +429,7 @@
                         ["produced by", "Alejandro Rosso"],
                         ["performing artists", "Plastilina Mosh"],
                         ["written by", "Alejandro Rosso & Jonas Gonzalez"],
-                        ["album", "Aquamosh (1998)"]
+                        ["album", "aquamosh (1998)"]
                     ],
                     links: {
                         spotify: "https://open.spotify.com/track/1ajV3m0YsatQSOxglUjpPh?si=8b7bffb4e24843d2",
@@ -424,10 +442,10 @@
                     artist: "cartel de santa",
                     src: "https://media.lupitazambrano.com/03-12-26/Cartel%20De%20Santa%20-%20Cannabis%20Sativa%20Letra.mp3",
                     meta: [
-                        ["production", "Cartel de Santa Production Team"],
-                        ["artist / performer", "Cartel de Santa"],
+                        ["production", "cartel de santa production team"],
+                        ["artist / performer", "cartel de santa"],
                         ["primary vocalist / writer", "Babo"],
-                        ["album", "Golpe Avisa (2014)"]
+                        ["album", "golpe avisa (2014)"]
                     ],
                     links: {
                         spotify: "https://open.spotify.com/track/1XB2YcW0XQDXLilwLOqWtH?si=37f2984259774c4e",
@@ -474,7 +492,7 @@
                     meta: [
                         ["artist / performer", "Rammstein"],
                         ["song", "Te Quiero Puta"],
-                        ["album", "Not provided"],
+                        ["album", "rosenrot"],
                         ["note", "Direct audio provided by user"]
                     ],
                     links: {
@@ -585,8 +603,7 @@
                     src: "https://media.lupitazambrano.com/03-12-26/Fee%20Fi%20Fo.mp3",
                     meta: [
                         ["song", "Fee Fi Fo"],
-                        ["artist / performer", "Not provided"],
-                        ["credits", "Not provided"],
+                        ["artist / performer", "the cranberries"],
                         ["note", "Spotify, Apple Music, and YouTube links available"]
                     ],
                     links: {
@@ -603,7 +620,7 @@
                         ["lyricist / composer", "Ramiro Hernandez"],
                         ["artist / performer", "The Ynoe"],
                         ["youtube session", "The Cypher Effect Mic Check Session 12"],
-                        ["spotify", "Track listing provided by user"]
+
                     ],
                     links: {
                         spotify: "https://open.spotify.com/track/5uwOh61hKGNChCfm5ZAYR7?si=7b3ca7dbfdb74eb5",
