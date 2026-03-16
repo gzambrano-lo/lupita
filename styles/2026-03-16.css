@@ -46,6 +46,9 @@
     --bundle-shadow: 0 18px 44px rgba(89, 57, 40, 0.08);
     overflow: hidden;
     padding: var(--post-pad-y) var(--post-pad-x) calc(var(--post-pad-y) + 0.1rem);
+    background: transparent;
+    border: 0;
+    box-shadow: none;
 }
 
 .post-page-2026-03-16 .post-daily-bundle,
@@ -67,7 +70,14 @@
 
 .post-page-2026-03-16 .bundle-intro {
     max-width: 62ch;
+    width: min(100%, 38rem);
     margin-inline: auto;
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 1rem;
+    background: rgba(255, 251, 247, 0.56);
+    box-shadow: 0 10px 24px rgba(89, 57, 40, 0.06);
+    backdrop-filter: blur(6px);
     color: var(--bundle-ink);
     font-size: 1.02rem;
     line-height: 1.75;
@@ -75,12 +85,20 @@
 }
 
 .post-page-2026-03-16 .ambient-audio-tools {
+    width: min(100%, 30rem);
+    margin-inline: auto;
     margin-top: calc(var(--section-gap) * -0.15);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.55rem;
     flex-wrap: wrap;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 1rem;
+    background: rgba(255, 251, 247, 0.58);
+    box-shadow: 0 10px 24px rgba(89, 57, 40, 0.06);
+    backdrop-filter: blur(6px);
 }
 
 .post-page-2026-03-16 .audio-toggle-btn {
@@ -154,7 +172,8 @@
 }
 
 .post-page-2026-03-16 .video-card {
-    margin: 0;
+    width: min(100%, 31.5rem);
+    margin-inline: auto;
     padding: var(--card-pad);
     border: 1px solid var(--bundle-border);
     border-radius: 1rem;
@@ -221,6 +240,8 @@
 }
 
 .post-page-2026-03-16 .birthday-collage {
+    width: min(100%, 31.5rem);
+    margin-inline: auto;
     display: grid;
     gap: var(--card-pad);
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -247,6 +268,8 @@
 }
 
 .post-page-2026-03-16 .birthday-note-card {
+    width: min(100%, 38rem);
+    margin-inline: auto;
     padding: calc(var(--card-pad) + 0.05rem);
     border: 1px solid var(--bundle-border);
     border-radius: 1rem;
@@ -304,6 +327,19 @@
 
 .post-page-2026-03-16 .read-more {
     margin-top: calc(var(--section-gap) + 0.15rem);
+    text-align: center;
+}
+
+.post-page-2026-03-16 .read-more a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 999px;
+    background: rgba(255, 251, 247, 0.58);
+    box-shadow: 0 10px 24px rgba(89, 57, 40, 0.06);
+    backdrop-filter: blur(6px);
 }
 
 .post-page-2026-03-16 .click-row {
@@ -381,7 +417,7 @@
     }
 
     .post-page-2026-03-16 .post-daily-bundle {
-        border-radius: 1.2rem;
+        border-radius: 0;
     }
 
     .post-page-2026-03-16 .post-daily-bundle header {
@@ -402,12 +438,14 @@
     .post-page-2026-03-16 .bundle-intro {
         font-size: 0.98rem;
         line-height: 1.68;
+        padding: 0.82rem 0.88rem;
     }
 
     .post-page-2026-03-16 .ambient-audio-tools {
         align-items: center;
         flex-direction: column;
         gap: 0.18rem;
+        padding: 0.72rem 0.8rem;
     }
 
     .post-page-2026-03-16 .audio-toggle-btn {
