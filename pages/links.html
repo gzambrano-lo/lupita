@@ -119,26 +119,36 @@
   </footer>
   <script>
     (function () {
-      const items = document.querySelectorAll('.lottie[data-lottie]');
-      const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
+      function initLottie() {
+        if (!window.lottie) return;
+        const items = document.querySelectorAll('.lottie[data-lottie]');
+        const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-      items.forEach(el => {
-        const anim = lottie.loadAnimation({
-          container: el,
-          renderer: 'svg',
-          loop: true,
-          autoplay: !mql.matches,
-          path: el.getAttribute('data-lottie')
+        items.forEach(el => {
+          const anim = lottie.loadAnimation({
+            container: el,
+            renderer: 'svg',
+            loop: true,
+            autoplay: !mql.matches,
+            path: el.getAttribute('data-lottie')
+          });
+
+          const link = el.closest('a');
+          if (link) {
+            link.addEventListener('mouseenter', () => { if (!mql.matches) anim.play(); });
+            link.addEventListener('mouseleave', () => { if (!mql.matches) anim.stop(); });
+          }
+
+          mql.addEventListener?.('change', e => e.matches ? anim.stop() : anim.play());
         });
+      }
 
-        const link = el.closest('a');
-        if (link) {
-          link.addEventListener('mouseenter', () => { if (!mql.matches) anim.play(); });
-          link.addEventListener('mouseleave', () => { if (!mql.matches) anim.stop(); });
-        }
-
-        mql.addEventListener?.('change', e => e.matches ? anim.stop() : anim.play());
-      });
+      if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        // DOM parsed; run after microtask to let deferred scripts execute
+        setTimeout(initLottie, 0);
+      } else {
+        window.addEventListener('DOMContentLoaded', initLottie, { once: true });
+      }
     })();
   </script>
 
