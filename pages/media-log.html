@@ -5,25 +5,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>media log - lupe zambrano</title>
-    <meta name="description" content="What I'm watching and playing right now—shows, manga, and games." />
+    <meta name="description" content="What I'm watching and playing right now - shows, manga, and games." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
-
-    <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/tokens.css">
-    <link rel="stylesheet" href="../styles/base.css">
-    <link rel="stylesheet" href="../styles/layout.css">
-    <link rel="stylesheet" href="../styles/components.css">
-    <link rel="stylesheet" href="../styles/media-log.css">
-    <!--vanilla-->
+    <link rel="stylesheet" href="../styles/reset.css?v=20260321a">
+    <link rel="stylesheet" href="../styles/tokens.css?v=20260321a">
+    <link rel="stylesheet" href="../styles/base.css?v=20260321a">
+    <link rel="stylesheet" href="../styles/layout.css?v=20260321a">
+    <link rel="stylesheet" href="../styles/components.css?v=20260321a">
+    <link rel="stylesheet" href="../styles/media-log.css?v=20260321b">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
-
-    <!--js-->
-    <script src="/scripts/site.js" defer></script>
+    <script src="/scripts/site.js?v=20260321a" defer></script>
 </head>
 
 <body>
@@ -53,439 +49,504 @@
     </nav>
 
     <main class="gallery page">
-        <section class="grid-gallery">
 
-            <!-- friendly rivalry -->
-            <a class="card-link" target="_blank" href="https://mydramalist.com/764499-friendly-competition">
+        <section class="intro-card card">
+            <h2>what i'm watching and playing right now</h2>
+            <p>shows, manga, and games. updated whenever i feel like it. the poster card is a link to the show, manga,
+                or game.</p>
+        </section>
+
+        <section class="grid-gallery" aria-label="Media log entries">
+            <article class="media-card-frame">
                 <figure class="watch-item bubblegum">
-                    <img src="../images/shows/friendly_rivarly.jpg" alt="Friendly Rivalry (2025)" class="watch-img" />
-
+                    <a class="card-media-link" target="_blank" rel="noopener noreferrer"
+                        href="https://mydramalist.com/764499-friendly-competition">
+                        <img src="../images/shows/friendly_rivarly.jpg" alt="Friendly Rivalry (2025)"
+                            class="watch-img" />
+                    </a>
                     <figcaption>
-                        <h3 class="watch-title">friendly rivalry</h3>
-
-                        <!-- release date, episode count, genre, source -->
-                        <div class="watch-meta meta-pills">
-                            <span class="meta-pill">2025</span>
-                            <span class="meta-pill">16 eps</span>
-                            <span class="meta-pill">psychological thriller</span>
-                            <span class="meta-pill meta-pill-main">adapted from webtoon</span>
+                        <h3 class="watch-title"><a class="card-title-link" target="_blank" rel="noopener noreferrer"
+                                href="https://mydramalist.com/764499-friendly-competition">friendly rivalry</a></h3>
+                        <div class="progress in-progress" role="progressbar" aria-label="friendly rivalry progress"
+                            aria-valuemin="0" aria-valuemax="16" aria-valuenow="10">
+                            <div class="progress-bar" style="--pct: 63%;"></div>
                         </div>
-
-                        <span class="status-pill pinky">♡ currently watching ♡</span>
-
-                        <span class="status-pill warning">
-                            ⚠︎ bullying, power imbalance, psychological manipulation ⚠︎
-                        </span>
-
-                        <p class="watch-thoughts">
-                            elite school politics but make it dark.<br>
-                            what starts as admiration turns into obsession real fast.
-                            the tension between woo seul gi and yoo je yi is unsettling in the
-                            quietest way, like you're constantly waiting for something to snap.<br>
-                            it's glossy, uncomfortable, and very much about control, class, and
-                            desire disguised as friendship.
-                        </p>
+                        <div class="progress-label">63%</div>
+                        <p class="watch-thoughts">elite school politics but make it dark.<br>what starts as admiration
+                            turns into obsession real fast. the tension between woo seul gi and yoo je yi is unsettling
+                            in the quietest way, like you're constantly waiting for something to snap.<br>it's glossy,
+                            uncomfortable, and very much about control, class, and desire disguised as friendship.</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">10 / 16 episodes</p>
+                                <div class="watch-meta meta-pills">
+                                    <span class="meta-pill">2025</span>
+                                    <span class="meta-pill">16 eps</span>
+                                    <span class="meta-pill">psychological thriller</span>
+                                    <span class="meta-pill meta-pill-main">adapted from webtoon</span>
+                                </div>
+                                <span class="status-pill warning">content note: bullying, power imbalance, psychological
+                                    manipulation</span>
+                            </div>
+                        </details>
                     </figcaption>
                 </figure>
-            </a>
+            </article>
 
-
-            <!-- frieren: beyond journey's end -->
-            <a class="card-link" target="_blank" href="https://www.netflix.com/browse?jbv=81726714">
+            <article class="media-card-frame">
                 <figure class="watch-item bubblegum">
-                    <img src="../images/shows/frieren.webp" alt="Frieren: Beyond Journey's End key visual"
-                        class="watch-img">
-
+                    <a class="card-media-link" target="_blank" rel="noopener noreferrer"
+                        href="https://www.netflix.com/browse?jbv=81726714">
+                        <img src="../images/shows/frieren.webp" alt="Frieren: Beyond Journey's End key visual"
+                            class="watch-img">
+                    </a>
                     <figcaption>
-                        <h3 class="watch-title">frieren: beyond journey's end</h3>
-
-                        <!--release date, episode count, genre, author-->
-                        <div class="watch-meta meta-pills">
-                            <span class="meta-pill">2023</span>
-                            <span class="meta-pill">28 eps</span>
-                            <span class="meta-pill">fantasy</span>
-                             <span class="meta-pill meta-pill-main">studio madhouse</span>
-                        </div>
-
-                        <span class="status-pill pinky">♡ currently watching (ep 28) ♡</span>
-
-                        <span class="status-pill warning">
-                            ⚠︎ not for anyone avoiding their grief. this will make you cry!! ⚠︎
-                        </span>
-
-                        <p class="watch-thoughts">
-                            this show is peaceful asf. its like… the adventure already happened,
-                            and now you're watching what comes <i>after</i> the “happily ever after.”<br>
-                            frieren's whole thing is learning what humans meant to her while she was busy
-                            outliving everyone like it was normal.<br>
-                            it's cozy, heartbreaking, and weirdly healing. plus the magic is so pretty it feels
-                            like watching a lullaby.
-                        </p>
-                    </figcaption>
-                </figure>
-            </a>
-
-            <!-- solo camping for two -->
-            <a class="card-link" target="_blank"
-                href="https://www.crunchyroll.com/series/G3KHEVDZ8/solo-camping-for-two">
-                <figure class="watch-item bubblegum">
-                    <img src="../images/shows/solo_camping.png" alt="Solo Camping for Two First Volume Cover"
-                        class="watch-img">
-                    <figcaption>
-                        <h3 class="watch-title">solo camping for two</h3>
-                        <!--release data, episode length, genre, author-->
-                        <div class="watch-meta meta-pills">
-                            <span class="meta-pill">2018</span>
-                            <span class="meta-pill">20 eps</span>
-                            <span class="meta-pill">seinen</span>
-                            <span class="meta-pill meta-pill-main">written by aya satsuki, 2+</span>
-                            <span class="meta-pill meta-pill-main">studio synergysp</span>
-                        </div>
-                        <span class="status-pill pinky">♡ on my watchlist ♡</span>
-                        <p class="watch-thoughts">
-                            starts off as peak adult serenity: a dude finally living his best quiet, solo-camping
-                            life.<br>
-                            then a chaotic girl wanders straight into his campsite, strips like it's the women's locker
-                            room,
-                            and somehow decides <i>he's</i> the intruder.<br>
-                            equal parts peaceful nature vibes and “why is this happening to me” comedy. a cozy show
-                            with
-                            a side of unhinged energy.
-                        </p>
-                    </figcaption>
-                </figure>
-            </a>
-
-            <!-- it's disgusting to call this love -->
-            <a class="card-link" target="_blank" href="https://www.crunchyroll.com/series/GG5H5X7ZE/koikimo">
-                <figure class="watch-item bubblegum">
-                    <img src="../images/shows/itsdisgustingtocallthislove.jpg"
-                        alt="It's Disgusting to Call This Love key art" class="watch-img">
-                    <figcaption>
-                        <h3 class="watch-title">it's disgusting to call this love</h3>
-                        <!--release data, episode length, genre, author-->
-                        <div class="watch-meta meta-pills">
-                            <span class="meta-pill">2021</span>
-                            <span class="meta-pill">12 eps</span>
-                            <span class="meta-pill">romance / comedy</span>
-                            <span class="meta-pill meta-pill-main">written by mogusu</span>
-                            <span class="meta-pill meta-pill-main">published by ichijinsha</span>
-                        </div>
-                        <span class="status-pill pinky">♡ on my watchlist ♡</span>
-                        <p class="watch-thoughts">
-                            office worker ryō catches feelings for a literal high-schooler (😭). <br>
-                            ichika looks at him like he's something she stepped on. and somehow he takes that as
-                            romantic interest.<br>
-                            the art is cute, the premise is a war crime, and i'm only here because i love watching
-                            disaster unfold in real time.
-                        </p>
-                    </figcaption>
-                </figure>
-            </a>
-
-
-            <!-- card 10 -->
-            <a class="card-link" target="_blank" href="https://gachiakuta-anime.com/en/">
-                <figure class="watch-item">
-                    <img src="../images/shows/OIP.webp" alt="Gachiakuta key art">
-                    <figcaption>
-                        <h3 class="watch-title">gachiakuta</h3>
-                        <p class="watch-ep">ep 20 / 2x</p>
-
-                        <div class="progress completed" role="progressbar" aria-label="gachiakuta watch progress"
-                            aria-valuemin="0" aria-valuemax="20" aria-valuenow="2x">
+                        <h3 class="watch-title"><a class="card-title-link" target="_blank" rel="noopener noreferrer"
+                                href="https://www.netflix.com/browse?jbv=81726714">frieren: beyond journey's end</a>
+                        </h3>
+                        <div class="progress completed" role="progressbar" aria-label="frieren progress"
+                            aria-valuemin="0" aria-valuemax="28" aria-valuenow="28">
                             <div class="progress-bar" style="--pct: 100%;"></div>
                         </div>
                         <div class="progress-label">100%</div>
-
-
-                        <p class="watch-thoughts">
-                            still gritty, still chaotic, but my patience is hanging by a thread. the art direction?
-                            it's still strong. the graffiti look's starting to feel a little corny. trying too hard to
-                            be edgy.
-                            the main dude's attitude though...absolute garbage lmao. i'm only pushing through now out of
-                            pure stubbornness.
-                        </p>
-                        <p>
-                            i just need to finish it so i can officially say, “yeah, i watched that.” no
-                            rewatches. 😤 wtf amo's story made me want to throw up. ain't no way in hell those boots
-                            smelled good
-                        </p>
+                        <p class="watch-thoughts">this show is peaceful asf. it's like the adventure already happened,
+                            and now you're watching what comes <i>after</i> the "happily ever after."<br>frieren's whole
+                            thing is learning what humans meant to her while she was busy outliving everyone like it was
+                            normal.<br>it's cozy, heartbreaking, and weirdly healing. plus the magic is so pretty it
+                            feels like watching a lullaby.</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">28 / 28 episodes</p>
+                                <div class="watch-meta meta-pills">
+                                    <span class="meta-pill">2023</span>
+                                    <span class="meta-pill">28 eps</span>
+                                    <span class="meta-pill">fantasy</span>
+                                    <span class="meta-pill meta-pill-main">studio madhouse</span>
+                                </div>
+                                <span class="status-pill warning">content note: grief, loss, quiet emotional
+                                    damage</span>
+                            </div>
+                        </details>
                     </figcaption>
                 </figure>
-            </a>
+            </article>
 
-
-            <a class="card-link" href="https://suikagame.com/" target="_blank">
-                <figure class="watch-item">
-                    <img src="../images/shows/suika.webp" alt="suika game watermelon merge" />
+            <article class="media-card-frame">
+                <figure class="watch-item bubblegum">
+                    <a class="card-media-link" target="_blank" rel="noopener noreferrer"
+                        href="https://www.crunchyroll.com/series/G3KHEVDZ8/solo-camping-for-two">
+                        <img src="../images/shows/solo_camping.png" alt="Solo Camping for Two first volume cover"
+                            class="watch-img">
+                    </a>
                     <figcaption>
-                        <h3 class="watch-title">suika game</h3>
-                        <p class="watch-ep">score: too shy to say 🍉</p>
+                        <h3 class="watch-title"><a class="card-title-link" target="_blank" rel="noopener noreferrer"
+                                href="https://www.crunchyroll.com/series/G3KHEVDZ8/solo-camping-for-two">solo camping
+                                for two</a></h3>
+                        <div class="progress not-started" role="progressbar" aria-label="solo camping for two progress"
+                            aria-valuemin="0" aria-valuemax="20" aria-valuenow="0">
+                            <div class="progress-bar" style="--pct: 0%;"></div>
+                        </div>
+                        <div class="progress-label">0%</div>
+                        <p class="watch-thoughts">starts off as peak adult serenity: a dude finally living his best
+                            quiet, solo-camping life.<br>then a chaotic girl wanders straight into his campsite, strips
+                            like it's the women's locker room, and somehow decides <i>he's</i> the intruder.<br>equal
+                            parts peaceful nature vibes and "why is this happening to me" comedy. a cozy show with a
+                            side of unhinged energy.</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">0 / 20 episodes</p>
+                                <div class="watch-meta meta-pills">
+                                    <span class="meta-pill">2018</span>
+                                    <span class="meta-pill">20 eps</span>
+                                    <span class="meta-pill">seinen</span>
+                                    <span class="meta-pill meta-pill-main">written by aya satsuki</span>
+                                    <span class="meta-pill meta-pill-main">studio synergysp</span>
+                                </div>
+                            </div>
+                        </details>
+                    </figcaption>
+                </figure>
+            </article>
 
+            <article class="media-card-frame">
+                <figure class="watch-item bubblegum">
+                    <a class="card-media-link" target="_blank" rel="noopener noreferrer"
+                        href="https://www.crunchyroll.com/series/GG5H5X7ZE/koikimo">
+                        <img src="../images/shows/itsdisgustingtocallthislove.jpg"
+                            alt="It's Disgusting to Call This Love key art" class="watch-img">
+                    </a>
+                    <figcaption>
+                        <h3 class="watch-title"><a class="card-title-link" target="_blank" rel="noopener noreferrer"
+                                href="https://www.crunchyroll.com/series/GG5H5X7ZE/koikimo">it's disgusting to call this
+                                love</a></h3>
+                        <div class="progress not-started" role="progressbar" aria-label="koikimo progress"
+                            aria-valuemin="0" aria-valuemax="12" aria-valuenow="0">
+                            <div class="progress-bar" style="--pct: 0%;"></div>
+                        </div>
+                        <div class="progress-label">0%</div>
+                        <p class="watch-thoughts">office worker ryo catches feelings for a literal
+                            high-schooler.<br>ichika looks at him like he's something she stepped on, and somehow he
+                            takes that as romantic interest.<br>the art is cute, the premise is a war crime, and i'm
+                            only here because i love watching disaster unfold in real time.</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">0 / 12 episodes</p>
+                                <div class="watch-meta meta-pills">
+                                    <span class="meta-pill">2021</span>
+                                    <span class="meta-pill">12 eps</span>
+                                    <span class="meta-pill">romance / comedy</span>
+                                    <span class="meta-pill meta-pill-main">written by mogusu</span>
+                                    <span class="meta-pill meta-pill-main">published by ichijinsha</span>
+                                </div>
+                            </div>
+                        </details>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article class="media-card-frame">
+                <figure class="watch-item">
+                    <a class="card-media-link" href="https://suikagame.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="../images/shows/suika.webp" alt="Suika Game watermelon merge">
+                    </a>
+                    <figcaption>
+                        <h3 class="watch-title"><a class="card-title-link" href="https://suikagame.com/" target="_blank"
+                                rel="noopener noreferrer">suika game</a></h3>
                         <div class="progress" role="progressbar" aria-label="suika game progress" aria-valuemin="0"
                             aria-valuemax="100" aria-valuenow="60">
                             <div class="progress-bar" style="--pct: 60%;"></div>
                         </div>
                         <div class="progress-label">60%</div>
-
-                        <p class="watch-thoughts">
-                            cute fruit merge game where you drop tiny fruits and watch them combine into bigger ones
-                            until your box overflows. its simple, colorful, and somehow way too addictive. every time
-                            i almost get the watermelon, i choke 😭.
-                        </p>
-                        <p>
-                            perfect little chill game for when i just need to zone out and listen to music. one more
-                            run, i swear.
-                        </p>
+                        <p class="watch-thoughts">cute fruit merge game where you drop tiny fruits and watch them
+                            combine into bigger ones until your box overflows. it's simple, colorful, and somehow way
+                            too addictive. every time i almost get the watermelon, i choke.</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">score: too shy to say</p>
+                                <p>arcade puzzle game. no seasons. currently just chasing a better run.</p>
+                            </div>
+                        </details>
                     </figcaption>
                 </figure>
-            </a>
+            </article>
 
-            <!-- card 9 -->
-            <a class="card-link" href="https://www.crunchyroll.com/series/GT00362335/yano-kuns-ordinary-days"
-                target="_blank">
+            <article class="media-card-frame">
                 <figure class="watch-item">
-                    <img src="../images/shows/yano-kun.webp" alt="yano-kun and kiyoko manga cover" />
+                    <a class="card-media-link"
+                        href="https://www.crunchyroll.com/series/GT00362335/yano-kuns-ordinary-days" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="../images/shows/yano-kun.webp" alt="Yano-kun and Kiyoko manga cover">
+                    </a>
                     <figcaption>
-                        <h3 class="watch-title">yano-kun's ordinary days</h3>
-                        <p class="watch-ep">ep 1 / ?</p>
-
-                        <div class="progress" role="progressbar" aria-label="yano-kun reading progress"
+                        <h3 class="watch-title"><a class="card-title-link"
+                                href="https://www.crunchyroll.com/series/GT00362335/yano-kuns-ordinary-days"
+                                target="_blank" rel="noopener noreferrer">yano-kun's ordinary days</a></h3>
+                        <div class="progress" role="progressbar" aria-label="yano-kun viewing progress"
                             aria-valuemin="0" aria-valuemax="10" aria-valuenow="1">
                             <div class="progress-bar" style="--pct: 10%;"></div>
                         </div>
                         <div class="progress-label">10%</div>
-
-                        <p class="watch-thoughts">
-                            kiyoko yoshida is the class rep who worries way too much, especially about tsuyoshi yano,
-                            the quiet boy who always shows up with new bruises. as she keeps looking out for him, the
-                            two start getting closer in unexpected ways. it's a soft, awkward story about care,
-                            connection, and learning what's really going on behind someone's smile.
-                        </p>
-                        <p>
-                            i just started this one but it feels really sweet so far. kiyoko's anxiety feels super
-                            relatable, and yano's dumb mystery has me curious.
-                        </p>
+                        <p class="watch-thoughts">kiyoko yoshida is the class rep who worries way too much, especially
+                            about tsuyoshi yano, the quiet boy who always shows up with new bruises. as she keeps
+                            looking out for him, the two start getting closer in unexpected ways.</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">ep 1 / ?</p>
+                                <p>rom-com anime. season count still unclear from current release info, but i'm only at
+                                    episode 1.</p>
+                            </div>
+                        </details>
                     </figcaption>
                 </figure>
-            </a>
+            </article>
 
-            <!-- card 8 -->
-            <a class="card-link" href="https://www.disneyplus.com/browse/entity-02a3c8c0-4f1d-4610-bbb4-5b8e9468d7b1"
-                target="_blank">
+            <article class="media-card-frame">
                 <figure class="watch-item">
-                    <img src="../images/shows/bleach.avif" alt="bleach thousand-year blood war" />
+                    <a class="card-media-link"
+                        href="https://www.disneyplus.com/browse/entity-02a3c8c0-4f1d-4610-bbb4-5b8e9468d7b1"
+                        target="_blank" rel="noopener noreferrer">
+                        <img src="../images/shows/bleach.avif" alt="Bleach Thousand-Year Blood War">
+                    </a>
                     <figcaption>
-                        <h3 class="watch-title">bleach: thousand-year blood war</h3>
-                        <p class="watch-ep">ep 26 / 26</p>
-
-                        <div class="progress" role="progressbar" aria-label="tybw watch progress" aria-valuemin="0"
-                            aria-valuemax="26" aria-valuenow="26">
+                        <h3 class="watch-title"><a class="card-title-link"
+                                href="https://www.disneyplus.com/browse/entity-02a3c8c0-4f1d-4610-bbb4-5b8e9468d7b1"
+                                target="_blank" rel="noopener noreferrer">bleach: thousand-year blood war</a></h3>
+                        <div class="progress completed" role="progressbar"
+                            aria-label="bleach thousand-year blood war progress" aria-valuemin="0" aria-valuemax="26"
+                            aria-valuenow="26">
                             <div class="progress-bar" style="--pct: 100%;"></div>
                         </div>
                         <div class="progress-label">100%</div>
-
-                        <p class="watch-thoughts">
-                            after years away, ichigo kurosaki returns to the battlefield in the final arc of bleach.
-                            the quincy king, yhwach, leads an invasion of soul society that threatens to erase the
-                            balance between worlds. old captains rise, new powers awaken, and every fight feels
-                            personal. the animation and soundtrack go crazy. studio pierrot really brought the
-                            story's climax to life.
-                        </p>
-                        <p>
-                            i hate uryu. never liked him but this arc made me HATE HIS GUTS
-                        </p>
-                        <p>
-                            the anime adapts the manga's final arc (vol. 55-74) and is split into 4 parts. parts 1–2
-                            are out now; parts 3-4 will finish the saga.
-                        </p>
+                        <p class="watch-thoughts">after years away, ichigo kurosaki returns to the battlefield in the
+                            final arc of bleach. the quincy king, yhwach, leads an invasion of soul society that
+                            threatens to erase the balance between worlds. old captains rise, new powers awaken, and
+                            every fight feels personal.</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">ep 26 / 26</p>
+                                <p>studio pierrot. final arc adaptation. planned as 4 parts total; parts 1-2 are the
+                                    material i've finished so far.</p>
+                            </div>
+                        </details>
                     </figcaption>
                 </figure>
-            </a>
+            </article>
 
-            <!-- card 7 -->
-            <a class="card-link" href="https://www.crunchyroll.com/series/GVDHX8QNW/chainsaw-man" target="_blank">
+            <article class="media-card-frame">
                 <figure class="watch-item">
-                    <img src="../images/shows/chainsaw-man.jpg" alt="chainsaw man" />
+                    <a class="card-media-link" href="https://www.crunchyroll.com/series/GVDHX8QNW/chainsaw-man"
+                        target="_blank" rel="noopener noreferrer">
+                        <img src="../images/shows/chainsaw-man.jpg" alt="Chainsaw Man">
+                    </a>
                     <figcaption>
-                        <h3 class="watch-title">chainsaw man</h3>
-                        <p class="watch-ep">ep 12 / 12</p>
-
+                        <h3 class="watch-title"><a class="card-title-link"
+                                href="https://www.crunchyroll.com/series/GVDHX8QNW/chainsaw-man" target="_blank"
+                                rel="noopener noreferrer">chainsaw man</a></h3>
                         <div class="progress completed" role="progressbar" aria-label="chainsaw man progress"
                             aria-valuemin="0" aria-valuemax="12" aria-valuenow="12">
                             <div class="progress-bar" style="--pct: 100%;"></div>
                         </div>
                         <div class="progress-label">100%</div>
-
-                        <p class="watch-thoughts">
-                            in a gritty, demon-infested version of japan, devils are born from human fears. and hunters
-                            are paid to kill them. denji, a broke teenager burdened by his dad's debts, works as a devil
-                            hunter with his chainsaw dog, pochita. after being betrayed and killed, denji fuses with
-                            pochita, gaining the power to transform parts of his body into a chainsaw. reborn as
-                            chainsaw
-                            man, he's recruited by makima to hunt devils under government control.
-                        </p>
-                        <p>
-                            if ur about to read the manga after watching the anime, you'll want to start at ch. 39 to
-                            pick up where episode 12 left off.
-                        </p>
+                        <p class="watch-thoughts">in a gritty, demon-infested version of japan, devils are born from
+                            human fears, and hunters are paid to kill them. denji, a broke teenager buried in his dad's
+                            debts, works as a devil hunter with his chainsaw dog, pochita. after being betrayed and
+                            killed, denji fuses with pochita and becomes chainsaw man.</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">ep 12 / 12</p>
+                                <p>studio mappa. 1 released anime season so far. manga handoff starts at chapter 39
+                                    after episode 12.</p>
+                            </div>
+                        </details>
                     </figcaption>
                 </figure>
-            </a>
+            </article>
 
-            <!-- card 6 -->
-            <a class="card-link" href="https://www.amazon.com/Perfect-World-1-Rie-Aruga/dp/1632368110" target="_blank">
+            <article class="media-card-frame">
                 <figure class="watch-item">
-                    <img src="../images/shows/perfect-world.jpg" alt="perfect world manga cover" />
+                    <a class="card-media-link" href="https://www.amazon.com/Perfect-World-1-Rie-Aruga/dp/1632368110"
+                        target="_blank" rel="noopener noreferrer">
+                        <img src="../images/shows/perfect-world.jpg" alt="Perfect World manga cover">
+                    </a>
                     <figcaption>
-                        <h3 class="watch-title">perfect world by rie aruga</h3>
-                        <p class="watch-ep">volume 8 / 12</p>
-
+                        <h3 class="watch-title"><a class="card-title-link"
+                                href="https://www.amazon.com/Perfect-World-1-Rie-Aruga/dp/1632368110" target="_blank"
+                                rel="noopener noreferrer">perfect world by rie aruga</a></h3>
                         <div class="progress" role="progressbar" aria-label="perfect world reading progress"
                             aria-valuemin="0" aria-valuemax="12" aria-valuenow="8">
                             <div class="progress-bar" style="--pct: 66%;"></div>
                         </div>
                         <div class="progress-label">66%</div>
-
-                        <p class="watch-thoughts">
-                            tsugumi kawana reunites with her high school crush, itsuki ayukawa, years after graduation.
-                            once full of dreams of becoming an architect, itsuki now uses a wheelchair after an accident
-                            that changed his life. as they reconnect, they face the challenges of love, disability, and
-                            societal expectations, learning what it really means to build a perfect world together.
-                        </p>
+                        <p class="watch-thoughts">tsugumi kawana reunites with her high school crush, itsuki ayukawa,
+                            years after graduation. once full of dreams of becoming an architect, itsuki now uses a
+                            wheelchair after an accident that changed his life. as they reconnect, they face the
+                            challenges of love, disability, and societal expectations.</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">volume 8 / 12</p>
+                                <p>manga by rie aruga. 12 volumes total.</p>
+                            </div>
+                        </details>
                     </figcaption>
                 </figure>
-            </a>
+            </article>
 
-            <!-- card 5 -->
-            <a class="card-link" href="https://deathstrandingpc.505games.com/en/" target="_blank">
+            <article class="media-card-frame">
                 <figure class="watch-item">
-                    <img src="../images/shows/death-stranding.png" alt="death stranding" />
+                    <a class="card-media-link" href="https://deathstrandingpc.505games.com/en/" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="../images/shows/death-stranding.png" alt="Death Stranding">
+                    </a>
                     <figcaption>
-                        <h3 class="watch-title">death stranding</h3>
-                        <p class="watch-ep">not started</p>
+                        <h3 class="watch-title"><a class="card-title-link"
+                                href="https://deathstrandingpc.505games.com/en/" target="_blank"
+                                rel="noopener noreferrer">death stranding</a></h3>
+                        <div class="progress in-progress" role="progressbar" aria-label="death stranding progress"
+                            aria-valuemin="0" aria-valuemax="14" aria-valuenow="1">
+                            <div class="progress-bar" style="--pct: 7%;"></div>
+                        </div>
+                        <div class="progress-label">7%</div>
+                        <p class="watch-thoughts">slowly making my way through and really enjoying the experience so
+                            far. the ambience is unreal, kind of lonely but peaceful too. i've only gotten to the point
+                            of the first real mission, but i'm excited to see where it goes.</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">chapter 1</p>
+                                <p>kojima productions. single-player story campaign. i'm still in the opening stretch.
+                                </p>
+                            </div>
+                        </details>
+                    </figcaption>
+                </figure>
+            </article>
 
-                        <div class="progress not-started" role="progressbar" aria-valuemin="0" aria-valuemax="12"
-                            aria-valuenow="0">
+            <article class="media-card-frame">
+                <figure class="watch-item">
+                    <a class="card-media-link"
+                        href="https://www.bandainamcoent.com/games/little-nightmares-2?ref=producthunt" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="../images/shows/little-nightmares.png" alt="Little Nightmares II">
+                    </a>
+                    <figcaption>
+                        <h3 class="watch-title"><a class="card-title-link"
+                                href="https://www.bandainamcoent.com/games/little-nightmares-2?ref=producthunt"
+                                target="_blank" rel="noopener noreferrer">little nightmares II</a></h3>
+                        <div class="progress not-started" role="progressbar" aria-label="little nightmares II progress"
+                            aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
                             <div class="progress-bar" style="--pct: 0%;"></div>
                         </div>
                         <div class="progress-label">0%</div>
-
-                        <p class="watch-thoughts">
-                            slowly making my way through and really enjoying the experience so far.
-                            the ambience is unreal—kind of lonely but peaceful too. i've only gotten to the point of the
-                            first real mission, but i'm excited to see where it goes
-                        </p>
+                        <p class="watch-thoughts">finished the first game's main story, still poking through the DLC
+                            chapters, and planning to start Little Nightmares II next.</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">up next</p>
+                                <p>follow-up to the first game. single main campaign. queued after i wrap the first
+                                    game's DLC.</p>
+                            </div>
+                        </details>
                     </figcaption>
                 </figure>
-            </a>
+            </article>
 
-            <!-- card 4 -->
-            <a class="card-link" href="https://www.bandainamcoent.com/games/little-nightmares-2?ref=producthunt"
-                target="_blank">
+            <article class="media-card-frame">
                 <figure class="watch-item">
-                    <img src="../images/shows/little-nightmares.png" alt="little nightmares II" />
+                    <a class="card-media-link"
+                        href="https://www.hoyolab.com/circles/2/30/feed?page_type=30&page_sort=hot" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="../images/shows/genshin-impact.jpg" alt="Genshin Impact promo art">
+                    </a>
                     <figcaption>
-                        <h3 class="watch-title">little nightmares II</h3>
-                        <p class="watch-ep">not started</p>
-
-                        <div class="progress not-started" role="progressbar" aria-valuemin="0" aria-valuemax="12"
-                            aria-valuenow="0">
-                            <div class="progress-bar" style="--pct: 0%;"></div>
-                        </div>
-                        <div class="progress-label">0%</div>
-
-                        <p class="watch-thoughts">
-                            completed the main storyline, currently exploring the kids' DLC chapters,
-                            and planning to start Little Nightmares II next
-                        </p>
-                    </figcaption>
-                </figure>
-            </a>
-
-            <!-- card 3 -->
-            <a class="card-link" href="https://www.hoyolab.com/circles/2/30/feed?page_type=30&page_sort=hot"
-                target="_blank">
-                <figure class="watch-item">
-                    <img src="../images/shows/genshin-impact.jpg" alt="genshin impact promo art" />
-                    <figcaption>
-                        <h3 class="watch-title">genshin impact</h3>
-                        <p class="watch-ep">AR <strong>32</strong> / 60</p>
-
-                        <div class="progress in-progress" role="progressbar" aria-valuemin="0" aria-valuemax="60"
-                            aria-valuenow="32">
+                        <h3 class="watch-title"><a class="card-title-link"
+                                href="https://www.hoyolab.com/circles/2/30/feed?page_type=30&page_sort=hot"
+                                target="_blank" rel="noopener noreferrer">genshin impact</a></h3>
+                        <div class="progress in-progress" role="progressbar" aria-label="genshin impact progress"
+                            aria-valuemin="0" aria-valuemax="60" aria-valuenow="32">
                             <div class="progress-bar" style="--pct: 53%;"></div>
                         </div>
                         <div class="progress-label">53%</div>
-
-                        <p class="watch-thoughts">
-                            grinding primos + vibing in liyue. still salty about my pulls. don't ask
-                            to play co-op, i'm actually bad at every game i touch 😂
-                        </p>
+                        <p class="watch-thoughts">grinding primos + vibing in liyue. still salty about my pulls. don't
+                            ask to play co-op, i'm actually bad at every game i touch.</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">AR <strong>32</strong> / 60</p>
+                                <p>open-world live service game. ongoing updates rather than seasons.</p>
+                            </div>
+                        </details>
                     </figcaption>
                 </figure>
-            </a>
+            </article>
 
-            <!-- card 2 -->
-            <a class="card-link" href="https://www.netflix.com/title/82036950" target="_blank">
+            <article class="media-card-frame">
                 <figure class="watch-item">
-                    <img src="../images/shows/hikaru.png" alt="The Summer Hikaru Died cover art" />
+                    <a class="card-media-link" href="https://www.netflix.com/title/82036950" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="../images/shows/hikaru.png" alt="The Summer Hikaru Died cover art">
+                    </a>
                     <figcaption>
-                        <h3 class="watch-title">the summer hikaru died</h3>
-                        <p class="watch-ep">ep <strong>3</strong> / 12</p>
-
-                        <div class="progress in-progress" role="progressbar" aria-valuemin="0" aria-valuemax="12"
+                        <h3 class="watch-title"><a class="card-title-link" href="https://www.netflix.com/title/82036950"
+                                target="_blank" rel="noopener noreferrer">the summer hikaru died</a></h3>
+                        <div class="progress in-progress" role="progressbar"
+                            aria-label="the summer hikaru died progress" aria-valuemin="0" aria-valuemax="12"
                             aria-valuenow="3">
                             <div class="progress-bar" style="--pct: 25%;"></div>
                         </div>
                         <div class="progress-label">25%</div>
-
-                        <p class="watch-thoughts">
-                            in a quiet mountain town, yoshiki's best friend hikaru dies.. then comes back. at first,
-                            everything feels normal, but something inside hikaru isn't human anymore. a slow, eerie
-                            story about grief, love and holding onto someone who's already gone.
+                        <p class="watch-thoughts">in a quiet mountain town, yoshiki's best friend hikaru dies, then
+                            comes back. at first, everything feels normal, but something inside hikaru isn't human
+                            anymore. a slow, eerie story about grief, love, and holding onto someone who's already gone.
                         </p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">ep <strong>3</strong> / 12</p>
+                                <p>horror drama anime. 12-episode season. currently near the beginning.</p>
+                            </div>
+                        </details>
                     </figcaption>
                 </figure>
-            </a>
+            </article>
 
-            <!-- card 1 -->
-            <a class="card-link" href="https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
-                target="_blank">
+            <article class="media-card-frame">
                 <figure class="watch-item">
-                    <img src="../images/shows/the-apothecary-diaries.jpeg" alt="the apothecary diaries poster" />
+                    <a class="card-media-link"
+                        href="https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries" target="_blank"
+                        rel="noopener noreferrer">
+                        <img src="../images/shows/the-apothecary-diaries.jpeg" alt="The Apothecary Diaries poster">
+                    </a>
                     <figcaption>
-                        <h3 class="watch-title">the apothecary diaries</h3>
-                        <p class="watch-ep">ep <strong>48</strong> / 48</p>
-
-                        <div class="progress done" role="progressbar" aria-valuemin="0" aria-valuemax="48"
-                            aria-valuenow="48">
+                        <h3 class="watch-title"><a class="card-title-link"
+                                href="https://www.crunchyroll.com/series/G3KHEVDJ7/the-apothecary-diaries"
+                                target="_blank" rel="noopener noreferrer">the apothecary diaries</a></h3>
+                        <div class="progress done" role="progressbar" aria-label="the apothecary diaries progress"
+                            aria-valuemin="0" aria-valuemax="48" aria-valuenow="48">
                             <div class="progress-bar" style="--pct: 100%;"></div>
                         </div>
                         <div class="progress-label">100%</div>
-
-                        <p class="watch-thoughts">
-                            set in an imperial palace full of secrets, mao mao, a sharp
-                            tongued apothecary, gets dragged into solving mysterious illnesses and poisonings. using her
-                            wit and curiosity, she uncovers court scandals while trying to keep her head down in a
-                            dangerous world.
-                        </p>
+                        <p class="watch-thoughts">set in an imperial palace full of secrets, mao mao, a sharp-tongued
+                            apothecary, gets dragged into solving mysterious illnesses and poisonings. using her wit and
+                            curiosity, she uncovers court scandals while trying to keep her head down in a dangerous
+                            world.</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">ep <strong>48</strong> / 48</p>
+                                <p>court mystery anime. 48 released episodes across the current run. main season
+                                    finished for me.</p>
+                            </div>
+                        </details>
                     </figcaption>
                 </figure>
-            </a>
+            </article>
+
+            <article class="media-card-frame">
+                <figure class="watch-item">
+                    <a class="card-media-link" target="_blank" rel="noopener noreferrer"
+                        href="https://gachiakuta-anime.com/en/">
+                        <img src="../images/shows/OIP.webp" alt="Gachiakuta key art">
+                    </a>
+                    <figcaption>
+                        <h3 class="watch-title"><a class="card-title-link" target="_blank" rel="noopener noreferrer"
+                                href="https://gachiakuta-anime.com/en/">gachiakuta</a></h3>
+                        <div class="progress completed" role="progressbar" aria-label="gachiakuta watch progress"
+                            aria-valuemin="0" aria-valuemax="20" aria-valuenow="20">
+                            <div class="progress-bar" style="--pct: 100%;"></div>
+                        </div>
+                        <div class="progress-label">100%</div>
+                        <p class="watch-thoughts">still gritty, still chaotic, but my patience is hanging by a thread.
+                            the art direction is still strong. the graffiti look is starting to feel a little corny,
+                            like it's trying too hard to be edgy. the main dude's attitude though... absolute garbage
+                            lmao. i pushed through out of pure stubbornness.</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">ep 20 / 20</p>
+                                <p>20-episode run. credits/staff page is linked on the official site. finished, no
+                                    interest in a rewatch.</p>
+                            </div>
+                        </details>
+                    </figcaption>
+                </figure>
+            </article>
         </section>
-
-
-
-        <!--media log at a glance, table-->
 
         <section class="card table-card">
             <div class="table-scroll">
                 <h2>media log at a glance</h2>
-                <br>
                 <table class="watch-table">
-                    <caption class="sr-only">current shows and games progress</caption>
+                    <caption class="sr-only">current shows, manga, and game progress</caption>
                     <thead>
                         <tr>
                             <th scope="col">title</th>
@@ -504,7 +565,7 @@
                         <tr>
                             <td>the summer hikaru died</td>
                             <td>anime</td>
-                            <td>reading</td>
+                            <td>watching</td>
                             <td>3 / 12</td>
                         </tr>
                         <tr>
@@ -516,38 +577,38 @@
                         <tr>
                             <td>little nightmares II</td>
                             <td>game (switch)</td>
-                            <td>prepping to play</td>
-                            <td>n/a</td>
+                            <td>up next</td>
+                            <td>not started</td>
                         </tr>
                         <tr>
                             <td>death stranding</td>
                             <td>game (PC)</td>
-                            <td>n/a</td>
-                            <td>n/a</td>
+                            <td>playing</td>
+                            <td>chapter 1</td>
                         </tr>
                         <tr>
                             <td>perfect world</td>
                             <td>manga</td>
                             <td>reading</td>
-                            <td>8/12</td>
+                            <td>8 / 12</td>
                         </tr>
                         <tr>
                             <td>chainsaw man</td>
-                            <td>manga/anime</td>
-                            <td>reading/watching</td>
-                            <td>12/12 s1 anime | ch. 39 manga</td>
+                            <td>anime / manga</td>
+                            <td>finished anime, reading manga</td>
+                            <td>12 / 12 anime, start manga at ch. 39</td>
                         </tr>
                         <tr>
                             <td>bleach: tybw</td>
                             <td>anime</td>
-                            <td>watching</td>
+                            <td>finished current parts</td>
                             <td>waiting for parts 3-4</td>
                         </tr>
                         <tr>
-                            <td>yano-kuns-ordinary-days</td>
+                            <td>yano-kun's ordinary days</td>
                             <td>anime</td>
                             <td>watching</td>
-                            <td>2/?</td>
+                            <td>1 / ?</td>
                         </tr>
                     </tbody>
                 </table>
@@ -556,9 +617,8 @@
     </main>
 
     <footer class="site-footer">
-        <p>&copy; lupita zambrano ☆(>ᴗ•) 2025</p>
+        <p>&copy; lupita zambrano 2025</p>
     </footer>
 </body>
 
 </html>
-
