@@ -54,6 +54,13 @@
             }
         });
 
+        document.querySelectorAll("[data-i18n-html]").forEach(function (node) {
+            const key = node.dataset.i18nHtml;
+            if (Object.prototype.hasOwnProperty.call(copy, key)) {
+                node.innerHTML = copy[key];
+            }
+        });
+
         document.querySelectorAll("[data-i18n-placeholder]").forEach(function (node) {
             const key = node.dataset.i18nPlaceholder;
             if (Object.prototype.hasOwnProperty.call(copy, key)) {

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../styles/base.css" />
     <link rel="stylesheet" href="../styles/layout.css" />
     <link rel="stylesheet" href="../styles/components.css" />
+    <link rel="stylesheet" href="../styles/language-toggle.css" />
     <link rel="stylesheet" href="../styles/musica.css" />
     <link rel="stylesheet" href="../styles/project-senpai.css" />
     <link rel="stylesheet" href="../styles/index.css" />
@@ -26,47 +27,47 @@
 
     <!--js-->
     <script src="/scripts/site.js" defer></script>
+    <script src="/scripts/language-toggle.js" defer></script>
 </head>
 
 <body>
     <header class="site-header">
         <h1 class="hero-title">
             <span class="lottie header-sparkle" data-lottie="sparkle-left" aria-hidden="true"></span>
-            project senpai
+            <span data-i18n="page.heroTitle">project senpai</span>
             <span class="lottie header-sparkle" data-lottie="sparkle-right" aria-hidden="true"></span>
         </h1>
     </header>
 
     <nav id="nav_menu" aria-label="Main">
         <ul>
-            <li><a href="../index.html">home</a></li>
-            <li><a href="about.html" aria-current="page">about</a></li>
-            <li><a href="media-log.html">media log</a></li>
-            <li><a href="blog.html">blog</a></li>
-            <li><a href="links.html">links</a></li>
-            <li><a href="guestbook.html">guestbook</a></li>
-            <li><a href="garden-log.html">garden log</a></li>
-            <li><a href="music.html">music</a></li>
-            <li><a href="learn-to-code.html">learn to code</a></li>
-            <li><a href="gallery.html">gallery</a></li>
-            <li><a href="bleach-shrine.html">bleach shrine</a></li>
-            <li class="current"><a href="project-senpai.html">project senpai</a></li>
+            <li><a href="../index.html" data-i18n="nav.home">home</a></li>
+            <li><a href="about.html" data-i18n="nav.about">about</a></li>
+            <li><a href="media-log.html" data-i18n="nav.mediaLog">media log</a></li>
+            <li><a href="blog.html" data-i18n="nav.blog">blog</a></li>
+            <li><a href="links.html" data-i18n="nav.links">links</a></li>
+            <li><a href="guestbook.html" data-i18n="nav.guestbook">guestbook</a></li>
+            <li><a href="garden-log.html" data-i18n="nav.gardenLog">garden log</a></li>
+            <li><a href="music.html" data-i18n="nav.music">music</a></li>
+            <li><a href="learn-to-code.html" data-i18n="nav.learnToCode">learn to code</a></li>
+            <li><a href="gallery.html" data-i18n="nav.gallery">gallery</a></li>
+            <li><a href="bleach-shrine.html" data-i18n="nav.bleachShrine">bleach shrine</a></li>
+            <li class="current"><a href="project-senpai.html" data-i18n="nav.projectSenpai">project senpai</a></li>
         </ul>
     </nav>
 
     <main>
 
         <section class="alert alert-welcome" role="status" aria-live="polite">
-            <div class="alert-icon" aria-hidden="true">✨</div>
-
+            <div class="language-toggle-row">
+                <button class="lang-toggle-btn" type="button" data-language-toggle aria-pressed="false">EN / ES</button>
+            </div>
             <div class="alert-content">
-                <p class="alert-title">(︶︹︺) crunchyroll put their compiled season 1 video on their private so i'll be
-                    adding a recap video instead.
-                </p>
-
-                <p>
-
-                </p>
+                <p class="alert-title" data-i18n-html="intro.body">welcome to project senpai! this is a love letter to the website <span
+                        class="site-highlight">animefreak.tv</span> that allowed me to explore and watch anime for free
+                    as a kid.
+                    this webpage is a collection of my favorite anime clips, trailers, and reccomendations. enjoy!
+                    ...could also include not anime related content •⩊• </p>
             </div>
 
             <button class="alert-close" type="button" aria-label="dismiss" title="dismiss">🌼</button>
@@ -74,21 +75,74 @@
 
         <section class="af-player box">
             <div class="af-chrome">
+
+                <!-- cunty faux browser/window header that creates the outer frame -->
                 <div class="af-bar">
+                    <!-- decorative window dots -->
                     <span class="af-dot"></span>
                     <span class="af-dot"></span>
                     <span class="af-dot"></span>
+                    <!-- frame title -->
+                    <strong class="af-title">blood in blood out</strong>
+                    <!-- decorative status badge -->
+                    <span class="af-badge">english / spanish</span>
+                </div>
+
+                <!-- main framed content area -->
+                <div class="af-body af-body--solo">
+                    <div class="af-screen">
+                        <!-- video viewport inside the frame -->
+                        <div class="embed embed--native-video">
+                            <video controls playsinline preload="metadata" crossorigin="anonymous"
+                                style="width:100%;height:auto;">
+                                <source
+                                    src="https://cdn.lupitazambrano.com/Blood_In_Blood_Out_Full_Movie_HD.mp4"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                        <p class="af-direct-link">
+                            if the player fails, <a href="blood-in-blood-out.html">open the standalone movie page</a>.
+                        </p>
+                        <!-- trigger warnings -->
+                        <div class="af-notes af-notes--warning" aria-label="content warnings">
+                            <span class="chip chip--warning-label">content warnings</span>
+                            <span class="chip chip--warning">violence</span>
+                            <span class="chip chip--warning">nudity</span>
+                            <span class="chip chip--warning">homophobia</span>
+                            <span class="chip chip--warning">drug abuse</span>
+                            <span class="chip chip--warning">strong language</span>
+                            <span class="chip chip--warning">death</span>
+                            <span class="chip chip--warning">racism</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="af-player box">
+            <div class="af-chrome">
+                <!-- cunty faux browser/window header that creates the outer frame -->
+                <div class="af-bar">
+                    <!-- Decorative window dots -->
+                    <span class="af-dot"></span>
+                    <span class="af-dot"></span>
+                    <span class="af-dot"></span>
+                    <!-- frame title -->
                     <strong class="af-title">chainsaw man season 1</strong>
+                    <!-- decorative status badge -->
                     <span class="af-badge">english dub</span>
                 </div>
 
+                <!-- main framed content area -->
                 <div class="af-body">
                     <div class="af-screen">
+                        <!-- embedded player viewport -->
                         <div class="embed">
                             <iframe name="player" src="https://www.youtube.com/embed/_PHj7C7z2gM?si=dalKWEdCxNBb_tz-"
                                 title="Chainsaw Man Season 1" loading="lazy" allowfullscreen
                                 referrerpolicy="strict-origin-when-cross-origin"></iframe>
                         </div>
+                        <!-- decorative chips below the player -->
                         <div class="af-notes">
                             <span class="chip chip--alt">1080p</span>
                             <span class="chip">youtube</span>
@@ -96,6 +150,7 @@
                         </div>
                     </div>
 
+                    <!-- Functional sidebar navigation for swapping videos -->
                     <aside class="af-episodes">
                         <h5 class="af-head">reccomended</h5>
                         <ol class="af-list">
@@ -113,7 +168,7 @@
                                     creepy train station scene</a></li>
                             <li><a target="player"
                                     href="https://www.youtube-nocookie.com/embed/0vLRyemJrfE?si=8bfVtX8EDonPScaA">denji's
-                                    First</a></li>
+                                    first</a></li>
                             <li><a target="player"
                                     href="https://www.youtube-nocookie.com/embed/r7Cth-IKaQU?si=GNAwzvAFH7qMolWC">power
                                     doesn't flush the toilet</a></li>
@@ -123,6 +178,10 @@
                             <li><a target="player"
                                     href="https://www.youtube.com/embed/LmZD-TU96q4?si=Ac0QiK0I_tSHp56z">kenshi yonezu -
                                     iris out</a></li>
+                            <li><a target="player"
+                                    href="https://www.youtube.com/embed/wBzKytMwxHc?si=PkyPeOFVl7M3uTxU">
+                                    city or a country mouse?
+                                </a></li>
 
                         </ol>
                     </aside>
@@ -138,10 +197,59 @@
             if (e.target.matches('.alert-close')) e.target.closest('.alert')?.remove();
         });
     </script>
-</body>
-<!-- footer -->
-<footer class="site-footer">
-    <p>&copy; lupita zambrano 2025</p>
-</footer>
+    <!-- footer -->
+    <footer class="site-footer">
+        <p data-i18n="footer.copy">&copy; lupita zambrano 2025</p>
+    </footer>
 
+    <script id="languageToggleConfig" type="application/json">
+    {
+        "storageKey": "site-language",
+        "defaultLanguage": "en",
+        "toggleLabel": "EN / ES",
+        "toggleAria": {
+            "enToEs": "Switch page language to Spanish",
+            "esToEn": "Cambiar el idioma de la pagina a ingles"
+        },
+        "translations": {
+            "en": {
+                "pageTitle": "project senpai - lupe zambrano",
+                "page.heroTitle": "project senpai",
+                "nav.home": "home",
+                "nav.about": "about",
+                "nav.mediaLog": "media log",
+                "nav.blog": "blog",
+                "nav.links": "links",
+                "nav.guestbook": "guestbook",
+                "nav.gardenLog": "garden log",
+                "nav.music": "music",
+                "nav.learnToCode": "learn to code",
+                "nav.gallery": "gallery",
+                "nav.bleachShrine": "bleach shrine",
+                "nav.projectSenpai": "project senpai",
+                "intro.body": "welcome to project senpai! this is a love letter to the website <span class=\"site-highlight\">animefreak.tv</span> that allowed me to explore and watch anime for free as a kid. this webpage is a collection of my favorite anime clips, trailers, and reccomendations. enjoy! ...could also include not anime related content •⩊•",
+                "footer.copy": "\u00a9 lupita zambrano 2025"
+            },
+            "es": {
+                "pageTitle": "proyecto senpai - lupe zambrano",
+                "page.heroTitle": "proyecto senpai",
+                "nav.home": "inicio",
+                "nav.about": "sobre mi",
+                "nav.mediaLog": "registro multimedia",
+                "nav.blog": "blog",
+                "nav.links": "links",
+                "nav.guestbook": "guestbook",
+                "nav.gardenLog": "registro del jardin",
+                "nav.music": "musica",
+                "nav.learnToCode": "aprender a programar",
+                "nav.gallery": "galeria",
+                "nav.bleachShrine": "santuario bleach",
+                "nav.projectSenpai": "proyecto senpai",
+                "intro.body": "bienvenida a proyecto senpai. esta pagina es una carta de amor al sitio <span class=\"site-highlight\">animefreak.tv</span>, que me permitio explorar y ver anime gratis cuando era nina. esta pagina es una coleccion de mis clips, trailers y recomendaciones favoritas. disfruta. ...tambien podria incluir cosas que no son anime •⩊•",
+                "footer.copy": "\u00a9 lupita zambrano 2025"
+            }
+        }
+    }
+    </script>
+</body>
 </html>

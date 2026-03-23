@@ -1,0 +1,137 @@
+<div class="pretty-music-player-block" data-pretty-music-player>
+    <section class="dream-player" aria-labelledby="pretty-player-title">
+        <div class="player-shell" data-player-shell>
+            <div class="player-topline">
+                <div>
+                    <h4 class="dream-player-song" id="pretty-player-title" data-track-title>track title</h4>
+                </div>
+
+                <div class="player-top-actions">
+                    <button class="player-info-toggle" type="button" data-player-info-toggle aria-expanded="false"
+                        aria-label="Show artist info and links">
+                        <span class="player-menu-icon" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                    <span class="player-orb" aria-hidden="true"></span>
+                </div>
+            </div>
+
+            <div class="audio-shell" data-audio-shell>
+                <div class="audio-row">
+                    <audio preload="metadata" data-audio-player>
+                        <source data-audio-source src="" type="audio/mpeg">
+                        your browser does not support the audio element.
+                    </audio>
+
+                    <span class="player-time-current" data-time-current aria-hidden="true">0:00</span>
+
+                    <div class="progress-cluster">
+                        <label class="sr-only" for="pretty-player-progress">Track progress</label>
+                        <input id="pretty-player-progress" class="player-range" type="range" min="0" max="100"
+                            value="0" step="0.1" data-audio-progress>
+                    </div>
+
+                    <span class="player-time-total" data-time-total aria-hidden="true">0:00</span>
+                </div>
+
+                <div class="player-controls" aria-label="Audio controls">
+                    <button class="player-btn player-btn-skip player-skip-back" type="button" data-audio-back
+                        aria-label="Play previous track">
+                        <span class="player-skip-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="player-btn player-btn-primary" type="button" data-audio-toggle data-state="paused"
+                        aria-label="Play track" aria-pressed="false">
+                        <span class="player-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="player-btn player-btn-skip player-skip-forward" type="button" data-audio-forward
+                        aria-label="Play next track">
+                        <span class="player-skip-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="player-drawer" data-player-drawer hidden>
+                <div class="player-drawer-inner">
+                    <div class="player-drawer-card">
+                        <p class="player-drawer-label">artist info</p>
+
+                        <dl class="player-meta-list">
+                            <div class="player-meta-row">
+                                <dt class="player-meta-term" data-meta-label-1>label one</dt>
+                                <dd class="player-meta-value" data-meta-value-1>value one</dd>
+                            </div>
+                            <div class="player-meta-row">
+                                <dt class="player-meta-term" data-meta-label-2>label two</dt>
+                                <dd class="player-meta-value" data-meta-value-2>value two</dd>
+                            </div>
+                            <div class="player-meta-row">
+                                <dt class="player-meta-term" data-meta-label-3>label three</dt>
+                                <dd class="player-meta-value" data-meta-value-3>value three</dd>
+                            </div>
+                            <div class="player-meta-row">
+                                <dt class="player-meta-term" data-meta-label-4>label four</dt>
+                                <dd class="player-meta-value" data-meta-value-4>value four</dd>
+                            </div>
+                        </dl>
+
+                        <div class="player-links" aria-label="external music links">
+                            <a class="player-link player-link-spotify" data-link-spotify href="#" target="_blank"
+                                rel="noopener noreferrer" aria-label="Open Spotify">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill="currentColor"
+                                        d="M12 1.5a10.5 10.5 0 1 0 10.5 10.5A10.5 10.5 0 0 0 12 1.5Zm4.83 15.13a.66.66 0 0 1-.91.21 8.82 8.82 0 0 0-8.98-.68.66.66 0 1 1-.59-1.18 10.14 10.14 0 0 1 10.33.78.66.66 0 0 1 .15.87Zm1.3-2.42a.83.83 0 0 1-1.14.26 10.95 10.95 0 0 0-10.99-.79.83.83 0 1 1-.7-1.5 12.62 12.62 0 0 1 12.68.92.83.83 0 0 1 .15 1.11Zm.11-2.61A13.63 13.63 0 0 0 4.9 10.54a1 1 0 0 1-.8-1.83 15.63 15.63 0 0 1 15.31 1.2 1 1 0 0 1-1.17 1.69Z" />
+                                </svg>
+                            </a>
+                            <a class="player-link player-link-apple" data-link-apple href="#" target="_blank"
+                                rel="noopener noreferrer" aria-label="Open Apple Music">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill="currentColor"
+                                        d="M17.58 3.15a3.9 3.9 0 0 1-.93 2.83 3.32 3.32 0 0 1-2.61 1.28 3.67 3.67 0 0 1 .96-2.73 3.74 3.74 0 0 1 2.58-1.38Zm2.88 13.69A8.25 8.25 0 0 1 19 19.52c-.9 1.16-1.83 2.31-3.28 2.34-1.42.03-1.88-.84-3.5-.84s-2.13.82-3.46.87c-1.4.06-2.46-1.24-3.37-2.39C3.52 16.98 2 13.18 3.96 10.09a5.15 5.15 0 0 1 4.34-2.63c1.35-.03 2.62.9 3.49.9s2.5-1.1 4.2-.94a5 5 0 0 1 3.9 2.1 4.42 4.42 0 0 0-2.35 3.94 4.3 4.3 0 0 0 2.92 4.08Z" />
+                                </svg>
+                            </a>
+                            <a class="player-link player-link-youtube" data-link-youtube href="#" target="_blank"
+                                rel="noopener noreferrer" aria-label="Open YouTube">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill="currentColor"
+                                        d="M21.58 7.19a2.8 2.8 0 0 0-1.96-1.98C17.89 4.75 12 4.75 12 4.75s-5.89 0-7.62.46A2.8 2.8 0 0 0 2.42 7.2C1.95 8.94 1.95 12 1.95 12s0 3.06.47 4.8a2.8 2.8 0 0 0 1.96 1.98c1.73.46 7.62.46 7.62.46s5.89 0 7.62-.46a2.8 2.8 0 0 0 1.96-1.98c.47-1.74.47-4.8.47-4.8s0-3.06-.47-4.81ZM9.95 15.04V8.96L15.5 12l-5.55 3.04Z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dream-queue" aria-labelledby="pretty-player-queue-title">
+        <div class="dream-queue-shell">
+            <p class="dream-queue-label" id="pretty-player-queue-title">tracklist</p>
+            <div class="dream-queue-list" data-track-queue></div>
+        </div>
+    </section>
+
+    <script type="application/json" data-pretty-player-playlist>
+        [
+            {
+                "title": "track title",
+                "artist": "artist name",
+                "src": "https://example.com/audio.mp3",
+                "type": "audio/mpeg",
+                "meta": [
+                    ["produced by", "producer name"],
+                    ["performing artists", "artist name"],
+                    ["album", "album name"],
+                    ["year", "2026"]
+                ],
+                "links": {
+                    "spotify": "https://open.spotify.com/",
+                    "apple": "https://music.apple.com/",
+                    "youtube": "https://www.youtube.com/"
+                }
+            }
+        ]
+    </script>
+</div>
