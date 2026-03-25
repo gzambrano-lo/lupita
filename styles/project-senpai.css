@@ -4,6 +4,12 @@
   text-align: center;
 }
 
+.alert-welcome .alert-title .site-highlight {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.25;
+}
+
 .af-player {
   --chrome: #1e1e1e;
   --crt: #000;
@@ -66,6 +72,22 @@
 @media (max-width: 800px) {
   .af-body {
     grid-template-columns: 1fr;
+  }
+
+  /* on small screens, keep the dot row but hide title/badge */
+  .af-bar {
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .af-bar .af-dot {
+    display: inline-block;
+  }
+
+  .af-bar .af-title,
+  .af-bar .af-badge {
+    display: none;
   }
 }
 
@@ -135,6 +157,7 @@
 }
 
 .af-notes--warning {
+  position: relative;
   justify-content: center;
   gap: 10px;
   margin-top: 12px;
@@ -172,6 +195,30 @@
   line-height: 1;
   font-size: 0.72rem;
   letter-spacing: 0.02em;
+}
+
+.af-notes--warning .af-notes-close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  width: 1.65rem;
+  height: 1.65rem;
+  border: 1px solid color-mix(in srgb, var(--border) 80%, #fff);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.af-notes--warning .af-notes-close:hover,
+.af-notes--warning .af-notes-close:focus-visible {
+  background: color-mix(in srgb, var(--soft) 70%, #fff);
+  color: var(--coral);
 }
 
 .af-notes--warning .chip--warning {

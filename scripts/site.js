@@ -13,6 +13,12 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  document.querySelectorAll('.af-notes--warning .af-notes-close').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      btn.closest('.af-notes--warning')?.remove();
+    });
+  });
+
   const fallback = (el, emoji) => {
     if (el && !el.hasChildNodes()) el.textContent = emoji;
   };
