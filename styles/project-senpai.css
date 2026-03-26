@@ -243,6 +243,23 @@
   background: linear-gradient(180deg, #fff, #f9ece8);
 }
 
+.af-video-title {
+  display: none;
+  margin: 12px 0 6px;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 800px) {
+  .af-video-title {
+    display: block;
+  }
+}
+
 /* episode list */
 .af-episodes {
   border: 1px dashed color-mix(in srgb, var(--border) 80%, transparent);
