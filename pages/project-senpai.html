@@ -192,12 +192,96 @@
             </div>
         </section>
 
+      <section class="af-player box">
+            <div class="af-chrome">
 
+                <!-- cunty faux browser/window header that creates the outer frame -->
+                <div class="af-bar">
+                    <!-- decorative window dots -->
+                    <span class="af-dot"></span>
+                    <span class="af-dot"></span>
+                    <span class="af-dot"></span>
+                    <!-- frame title -->
+                    <strong class="af-title">haibane renmei</strong>
+                    <!-- decorative status badge -->
+                    <span class="af-badge">english dub</span>
+                </div>
+
+                <!-- main framed content area -->
+                <div class="af-body af-body--solo">
+                    <div class="af-screen">
+                        <!-- video viewport inside the frame -->
+                        <div class="embed embed--native-video">
+                            <video controls playsinline preload="metadata"
+                                style="width:100%;height:auto;">
+                                <source
+                                    src="https://cdn.lupitazambrano.com/Haibane_Renmei_Full_Series_2002_ENG_Dub.mp4"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                        <h5 class="af-video-title">haibane renmei</h5>
+                        <!-- trigger warnings -->
+                        <div class="af-notes af-notes--warning" aria-label="content warnings">
+                            <button class="af-notes-close" type="button" aria-label="close content warnings">×</button>
+                            <span class="chip chip--warning-label">content warnings</span>                            
+                            <span class="chip chip--warning">suicidal ideations</span>
+                            <span class="chip chip--warning">gore</span>
+                        </div>
+                        <div class="af-notes af-notes--warning af-notes--timestamps" aria-label="haibane renmei episode timestamps">
+                            <button class="af-drawer-close af-timestamps-toggle" type="button" aria-label="close episode list" aria-expanded="true">×</button>
+                            <span class="chip chip--warning-label">episodes</span>
+                            <div class="af-timestamps-list">
+                                <button class="chip chip--warning af-timestamp-btn" type="button" data-video-seek="0">cocoon</button>
+                                <button class="chip chip--warning af-timestamp-btn" type="button" data-video-seek="1293">town and wall</button>
+                                <button class="chip chip--warning af-timestamp-btn" type="button" data-video-seek="2509">temple</button>
+                                <button class="chip chip--warning af-timestamp-btn" type="button" data-video-seek="3725">trash day</button>
+                                <button class="chip chip--warning af-timestamp-btn" type="button" data-video-seek="4942">library</button>
+                                <button class="chip chip--warning af-timestamp-btn" type="button" data-video-seek="6240">end of summer</button>
+                                <button class="chip chip--warning af-timestamp-btn" type="button" data-video-seek="7538">scar</button>
+                                <button class="chip chip--warning af-timestamp-btn" type="button" data-video-seek="8825">the bird</button>
+                                <button class="chip chip--warning af-timestamp-btn" type="button" data-video-seek="10124">well</button>
+                                <button class="chip chip--warning af-timestamp-btn" type="button" data-video-seek="11404">kuramori</button>
+                                <button class="chip chip--warning af-timestamp-btn" type="button" data-video-seek="12703">parting</button>
+                                <button class="chip chip--warning af-timestamp-btn" type="button" data-video-seek="13990">bell nuts</button>
+                                <button class="chip chip--warning af-timestamp-btn" type="button" data-video-seek="15288">reki's world</button>
+                            </div>
+                            <button class="chip chip--warning af-timestamps-open" type="button" aria-expanded="false" hidden>open episodes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
     <script>
         addEventListener('click', (e) => {
             if (e.target.matches('.alert-close')) e.target.closest('.alert')?.remove();
+            const drawerToggle = e.target.closest('.af-timestamps-toggle, .af-timestamps-open');
+            if (drawerToggle) {
+                const drawer = drawerToggle.closest('.af-notes--timestamps');
+                if (!drawer) return;
+
+                const isCollapsed = drawer.classList.toggle('is-collapsed');
+                const closeBtn = drawer.querySelector('.af-timestamps-toggle');
+                const openBtn = drawer.querySelector('.af-timestamps-open');
+
+                if (closeBtn) closeBtn.setAttribute('aria-expanded', String(!isCollapsed));
+                if (openBtn) {
+                    openBtn.hidden = !isCollapsed;
+                    openBtn.setAttribute('aria-expanded', String(!isCollapsed));
+                }
+                return;
+            }
+
+            const seekButton = e.target.closest('.af-timestamp-btn');
+            if (!seekButton) return;
+
+            const video = seekButton.closest('.af-screen')?.querySelector('video');
+            const seekTime = Number(seekButton.dataset.videoSeek || '0');
+            if (!video || Number.isNaN(seekTime)) return;
+
+            video.currentTime = seekTime;
+            video.play().catch(() => { });
         });
     </script>
     <!-- footer -->
