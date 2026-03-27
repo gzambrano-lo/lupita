@@ -98,6 +98,17 @@
     box-shadow: var(--shadow);
 }
 
+/* article footer */
+.article-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: center;
+    font-style: italic;
+}
+
 .carousel-track {
     position: relative;
 }
