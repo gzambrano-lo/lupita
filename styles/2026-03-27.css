@@ -1,0 +1,25 @@
+.post-page-2026-03-27 .post-music-shell {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.post-page-2026-03-27 .post-shell-header {
+  margin-bottom: 2rem;
+}
+
+.post-page-2026-03-27 .post-shell-card {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #fff8fb;
+  border: 1px solid rgba(214, 153, 177, 0.24);
+  border-radius: 20px;
+  box-shadow: 0 14px 34px rgba(117, 76, 94, 0.08);
+}
+
+.post-page-2026-03-27 .post-shell-card p:last-child {
+  margin-bottom: 0;
+}
+
+.post-page-2026-03-27 .post-shell-player {
+  margin-bottom: 2rem;
+}

@@ -267,38 +267,6 @@
   background: linear-gradient(180deg, #fff, #f9ece8);
 }
 
-.af-notes--timestamps {
-  margin-top: 0.75rem;
-}
-
-.af-timestamps-list {
-  display: contents;
-}
-
-.af-notes--warning .af-timestamp-btn {
-  appearance: none;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.af-notes--warning .af-timestamps-open {
-  appearance: none;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.af-notes--timestamps.is-collapsed {
-  padding-right: 0.75rem;
-}
-
-.af-notes--timestamps.is-collapsed .af-timestamps-toggle {
-  display: none;
-}
-
-.af-notes--timestamps.is-collapsed .af-timestamps-list {
-  display: none;
-}
-
 .af-video-title {
   display: none;
   margin: 12px 0 6px;
