@@ -161,3 +161,8 @@ p {
         padding: 0.9rem;
     }
 }
+
+#nav_menu.tab-nav .current .tab-nav-link
+{
+    color: var(--coral);
+}

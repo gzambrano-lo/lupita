@@ -158,6 +158,24 @@
     font-size: 1.05rem;
 }
 
+.dash li {
+    display: flex;
+    align-items: flex-start;
+    gap: .45rem;
+    padding-left: 0;
+}
+
+.dash li::before {
+    content: "♥";
+    position: static;
+    display: inline-block;
+    flex: 0 0 .8rem;
+    line-height: 1.5;
+    text-align: center;
+    transform: translateY(.12em);
+    font-family: "Nunito", system-ui, sans-serif;
+    color: color-mix(in srgb, var(--coral) 75%, var(--soft));
+}
 .about-card.carousel .carousel-frame {
     max-width: 370px;
     margin: 0 auto;
@@ -247,3 +265,119 @@
 }
 
 
+.about-card {
+    background: rgba(255, 255, 255, .74);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.7rem 1.9rem 1.8rem;
+}
+
+.about-card:hover {
+    transform: none;
+    box-shadow: var(--shadow);
+}
+
+.about-card::before {
+    display: none;
+}
+
+.about-card h3 {
+    margin: 0 0 1rem;
+    padding-bottom: .8rem;
+    border-bottom: 1px dashed color-mix(in srgb, var(--pink) 45%, var(--border) 55%);
+    font-family: "Poppins", system-ui, sans-serif;
+    font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--sage);
+}
+
+.about-card p,
+.about-card li,
+.about-card .chip,
+.about-card .highlight-link {
+    font-family: "Nunito", system-ui, sans-serif;
+    font-size: clamp(.98rem, 1.2vw, 1.03rem);
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.about-card p {
+    margin: 0 0 1rem;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+.about-card .highlight-link {
+    color: var(--sage);
+    text-underline-offset: .16em;
+}
+
+.chips {
+    gap: .65rem .7rem;
+}
+
+.chip {
+    padding: .26rem .85rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--soft) 32%, white 68%);
+    border: 1px solid color-mix(in srgb, var(--border) 70%, white 30%);
+    box-shadow: none;
+}
+
+.dash {
+    margin: 0;
+    padding: 0;
+}
+
+.dash li {
+    display: flex;
+    align-items: flex-start;
+    gap: .65rem;
+    margin: .55rem 0;
+    padding-left: 0;
+    list-style: none;
+    position: static;
+}
+
+.dash li::before {
+    content: "♥";
+    position: static;
+    display: inline-block;
+    flex: 0 0 auto;
+    margin-top: .16em;
+    color: color-mix(in srgb, var(--coral) 78%, white 22%);
+    font-size: .82rem;
+    line-height: 1;
+    transform: none;
+}
+
+.about-card p + .divider,
+.dash + .divider {
+    margin: 1rem 0 .95rem;
+    border-top: 1px dashed color-mix(in srgb, var(--pink) 45%, var(--border) 55%);
+    opacity: .9;
+}
+
+@media (max-width: 760px) {
+    .about-card {
+        padding: 1.3rem 1.2rem 1.4rem;
+        border-radius: var(--radius);
+    }
+
+    .about-card h3 {
+        margin-bottom: .85rem;
+        padding-bottom: .65rem;
+        font-size: 1.08rem;
+    }
+
+    .about-card p,
+    .about-card li,
+    .about-card .chip,
+    .about-card .highlight-link {
+        font-size: .96rem;
+    }
+}
