@@ -381,3 +381,23 @@
         font-size: .96rem;
     }
 }
+
+.dash li {
+    display: block;
+    position: relative;
+    margin: .55rem 0;
+    padding-left: 1.15rem;
+    list-style: none;
+}
+
+.dash li::before {
+    content: "♥";
+    position: absolute;
+    left: 0;
+    top: .28em;
+    display: block;
+    margin-top: 0;
+    color: color-mix(in srgb, var(--coral) 78%, white 22%);
+    font-size: .82rem;
+    line-height: 1;
+}
