@@ -153,16 +153,26 @@ section,
 
 @media (max-width:600px) {
     #nav_menu.tab-nav .tab-nav-list {
-        gap: .24rem;
-        row-gap: .34rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: .35rem;
+        width: min(100%, 22rem);
+        margin-inline: auto;
         padding: 0;
     }
 
+    #nav_menu.tab-nav .tab-nav-item {
+        width: auto;
+    }
+
     #nav_menu.tab-nav .tab-nav-link {
-        min-height: 33px;
-        padding: .4rem .78rem .32rem;
-        font-size: .88rem;
-        border-radius: 13px 13px 6px 6px;
+        width: auto;
+        min-height: 34px;
+        padding: .34rem .8rem .28rem;
+        font-size: .86rem;
+        border-radius: 12px 12px 6px 6px;
     }
 }
 
