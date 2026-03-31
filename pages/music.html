@@ -75,25 +75,22 @@
           </div>
 
           <div class="youtube-player-shell">
+            <audio preload="metadata" data-track-audio hidden>
+              <source data-track-audio-source src="" type="audio/mpeg">
+              your browser does not support the audio element.
+            </audio>
             <div class="player-controls" aria-label="Track controls">
               <button class="player-btn player-btn-skip player-skip-back" type="button" data-track-back
                 aria-label="Show previous track">
                 <span class="player-skip-icon" aria-hidden="true"></span>
               </button>
-              <button class="player-btn player-btn-primary" type="button" data-track-play aria-label="Play on YouTube">
+              <button class="player-btn player-btn-primary" type="button" data-track-play data-state="paused"
+                aria-label="Play track" aria-pressed="false">
                 <span class="player-icon" aria-hidden="true"></span>
               </button>
               <button class="player-btn player-btn-skip player-skip-forward" type="button" data-track-forward
                 aria-label="Show next track">
                 <span class="player-skip-icon" aria-hidden="true"></span>
-              </button>
-            </div>
-
-            <div class="youtube-frame-wrap">
-              <button class="youtube-thumb-card" type="button" data-track-thumb-button
-                aria-label="Open selected track on YouTube">
-                <img data-youtube-thumb src="" alt="" loading="lazy">
-                <span class="youtube-thumb-play" aria-hidden="true"></span>
               </button>
             </div>
 
@@ -120,6 +117,12 @@
                   </div>
                 </dl>
 
+                <div class="drawer-video-shell" data-drawer-video-shell>
+                  <iframe data-drawer-video src="" title="Selected track video" loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
                 <div class="player-links" aria-label="external music links">
                   <a class="player-link player-link-spotify" data-link-spotify href="#" target="_blank"
                     rel="noopener noreferrer" aria-label="Open Spotify">
@@ -128,11 +131,11 @@
                         d="M12 1.5a10.5 10.5 0 1 0 10.5 10.5A10.5 10.5 0 0 0 12 1.5Zm4.83 15.13a.66.66 0 0 1-.91.21 8.82 8.82 0 0 0-8.98-.68.66.66 0 1 1-.59-1.18 10.14 10.14 0 0 1 10.33.78.66.66 0 0 1 .15.87Zm1.3-2.42a.83.83 0 0 1-1.14.26 10.95 10.95 0 0 0-10.99-.79.83.83 0 1 1-.7-1.5 12.62 12.62 0 0 1 12.68.92.83.83 0 0 1 .15 1.11Zm.11-2.61A13.63 13.63 0 0 0 4.9 10.54a1 1 0 0 1-.8-1.83 15.63 15.63 0 0 1 15.31 1.2 1 1 0 0 1-1.17 1.69Z" />
                     </svg>
                   </a>
-                  <a class="player-link player-link-youtube" data-link-youtube href="#" target="_blank"
-                    rel="noopener noreferrer" aria-label="Open YouTube">
+                  <a class="player-link player-link-apple" data-link-apple href="#" target="_blank"
+                    rel="noopener noreferrer" aria-label="Open Apple Music">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <path fill="currentColor"
-                        d="M21.58 7.19a2.8 2.8 0 0 0-1.96-1.98C17.89 4.75 12 4.75 12 4.75s-5.89 0-7.62.46A2.8 2.8 0 0 0 2.42 7.2C1.95 8.94 1.95 12 1.95 12s0 3.06.47 4.8a2.8 2.8 0 0 0 1.96 1.98c1.73.46 7.62.46 7.62.46s5.89 0 7.62-.46a2.8 2.8 0 0 0 1.96-1.98c.47-1.74.47-4.8.47-4.8s0-3.06-.47-4.81ZM9.95 15.04V8.96L15.5 12l-5.55 3.04Z" />
+                        d="M17.58 3.15a3.9 3.9 0 0 1-.93 2.83 3.32 3.32 0 0 1-2.61 1.28 3.67 3.67 0 0 1 .96-2.73 3.74 3.74 0 0 1 2.58-1.38Zm2.88 13.69A8.25 8.25 0 0 1 19 19.52c-.9 1.16-1.83 2.31-3.28 2.34-1.42.03-1.88-.84-3.5-.84s-2.13.82-3.46.87c-1.4.06-2.46-1.24-3.37-2.39C3.52 16.98 2 13.18 3.96 10.09a5.15 5.15 0 0 1 4.34-2.63c1.35-.03 2.62.9 3.49.9s2.5-1.1 4.2-.94a5 5 0 0 1 3.9 2.1 4.42 4.42 0 0 0-2.35 3.94 4.3 4.3 0 0 0 2.92 4.08Z" />
                     </svg>
                   </a>
                 </div>
@@ -156,15 +159,17 @@
       const root = document.querySelector("[data-youtube-pretty-player]");
       if (!root) return;
 
-      const thumb = root.querySelector("[data-youtube-thumb]");
-      const thumbButton = root.querySelector("[data-track-thumb-button]");
       const title = root.querySelector("[data-track-title]");
       const note = root.querySelector("[data-track-note]");
+      const audio = root.querySelector("[data-track-audio]");
+      const audioSource = root.querySelector("[data-track-audio-source]");
       const metaDate = root.querySelector("[data-meta-date]");
       const metaTags = root.querySelector("[data-meta-tags]");
       const metaNote = root.querySelector("[data-meta-note]");
+      const drawerVideoShell = root.querySelector("[data-drawer-video-shell]");
+      const drawerVideo = root.querySelector("[data-drawer-video]");
       const spotifyLink = root.querySelector("[data-link-spotify]");
-      const youtubeLink = root.querySelector("[data-link-youtube]");
+      const appleLink = root.querySelector("[data-link-apple]");
       const queue = root.querySelector("[data-track-queue]");
       const backBtn = root.querySelector("[data-track-back]");
       const playBtn = root.querySelector("[data-track-play]");
@@ -175,16 +180,19 @@
     {
         "title":  "jmsn - love 2 u",
         "embed":  "https://www.youtube.com/embed/RuyvLzcnSeI?si=hlHHTM1jkJtT9juK",
+        "audioSrc": "https://media.lupitazambrano.com/music/JMSN_Love_2_U_.mp3",
         "note":  "cause right now it\u0027s you and me in perfect symmetry",
         "date":  "02/24/2026",
         "tags":  [
                      "soul/r\u0026b"
                  ],
-        "spotify":  ""
+        "spotify":  "https://open.spotify.com/track/4xxxx6lI7E9dcYcaJC5nF9?si=287a5b80d5f14303",
+        "apple": "https://music.apple.com/us/song/love-2-u/1570609696"
     },
     {
-        "title":  "jmsn- act like i\u0027m not here",
+        "title":  "jmsn - act like i\u0027m not here",
         "embed":  "https://www.youtube.com/embed/-Ve60OSVJIk?si=SA8ZPN3XfsGxtN1T",
+        "audioSrc": "https://media.lupitazambrano.com/music/JMSN_Act_Like_Im_Not_Here_.mp3",
         "note":  "my body and mind just can\u0027t agree",
         "date":  "02/24/2026",
         "tags":  [
@@ -195,36 +203,43 @@
     {
         "title":  "lucidbeatz - let u go",
         "embed":  "https://www.youtube.com/embed/fXF59UWr-tA?si=rw-uI8Qf7HmSgKJN",
+        "audioSrc": "https://media.lupitazambrano.com/music/Let_U_Go.mp3",
         "note":  "\u0026 when it\u0027s late at night, i think of what you\u0027re doing, do you think of me sometimes?",
         "date":  "02/24/2026",
         "tags":  [
                      "lo-fi type trap production"
                  ],
-        "spotify":  ""
+        "spotify":  "https://open.spotify.com/track/40TZnaw4eDPChJNHw2Swf3?si=7df214db11b646bd",
+        "apple": "https://music.apple.com/us/song/let-u-go/1682053641"
     },
     {
         "title":  "kami - home movies",
         "embed":  "https://www.youtube.com/embed/JQmn4DVmb7A?si=-q1QI5X4hWD1aecF",
+        "audioSrc": "https://media.lupitazambrano.com/music/Home_Movies.mp3",
         "note":  "i told her we can make that movie at home",
         "date":  "02/24/2026",
         "tags":  [
                      "indie rap"
                  ],
-        "spotify":  ""
+        "spotify":  "https://open.spotify.com/track/45bH8flNmjPj2LFHeODtXa?si=82c5d39f3bd34de6",
+        "apple": "https://music.apple.com/us/song/home-movies/1232090896"
     },
     {
         "title":  "cachirula - intro.mp3",
         "embed":  "https://www.youtube.com/embed/dp3pvXHGMFI?si=vWEKNnM0I1d13UAc",
+        "audioSrc": "https://media.lupitazambrano.com/music/intro_mp3.mp3",
         "note":  "i miss this era of cachirula. she is switching up her style now.",
         "date":  "02/16/26",
         "tags":  [
                      "reggeaton"
                  ],
-        "spotify":  ""
+        "spotify":  "https://open.spotify.com/track/69XahueM5WuJMg6OmeEL9g?si=8ef409476d8044f5",
+        "apple": "https://music.apple.com/us/song/intro-mp3/1788987833"
     },
     {
         "title":  "mumblr - masturbation",
         "embed":  "https://www.youtube.com/embed/HFL74yS7dOQ?si=KGK5RYX3MPAy_WiV",
+        "audioSrc": "https://media.lupitazambrano.com/music/Mumblr_Masturbation_Space_Jam_Sessions.mp3",
         "note":  "i just wanna play animal crossings!!",
         "date":  "02/14/2026",
         "tags":  [
@@ -235,6 +250,7 @@
     {
         "title":  "durand jones and the indications - sea gets hotter",
         "embed":  "https://www.youtube.com/embed/VzyE8WYHbiU?si=XtEfl7oZ3oDLM7M1",
+        "audioSrc": "https://media.lupitazambrano.com/music/Durand_Jones_The_Indications_Sea_Gets_Hotter_Live_Music_Sugars.mp3",
         "note":  "â™¡( â—¡â€¿â—¡ ) happy valentines day",
         "date":  "02/14/2026",
         "tags":  [
@@ -245,6 +261,7 @@
     {
         "title":  "aaron frazer - the makings of you",
         "embed":  "https://www.youtube.com/embed/ZjeolqTKxQQ?si=FUjR9tTNkqWOxouG",
+        "audioSrc": "https://media.lupitazambrano.com/music/Aaron_Frazer_The_Makings_of_You_Live_From_Easy_Eye_Sound.mp3",
         "note":  "cover of the original song by curtis mayfield.",
         "date":  "02/14/2026",
         "tags":  [
@@ -255,6 +272,7 @@
     {
         "title":  "pale jay - under the magnolia tree",
         "embed":  "https://www.youtube.com/embed/8YSMeFykdvU?si=JmRkAdBuJr0WaTsg",
+        "audioSrc": "https://media.lupitazambrano.com/music/Pale_Jay_Under_The_Magnolia_Tree.mp3",
         "note":  "oh baby, i\u0027ll miss you",
         "date":  "02/14/2026",
         "tags":  [
@@ -399,6 +417,7 @@
     {
         "title":  "iamddb - leaned out",
         "embed":  "https://www.youtube.com/embed/JJjVBe0zrHs?si=Cyq41PsCqDE6mRLW",
+        "audioSrc": "https://media.lupitazambrano.com/music/IAMDDB_LEANED_OUT.mp3",
         "note":  "my mind is blossoming lately",
         "date":  "9/12/25",
         "tags":  [
@@ -583,15 +602,11 @@
       if (!playlist.length) return;
 
       let currentIndex = 0;
+      let activeAudioSrc = "";
 
       function toWatchUrl(embedUrl) {
         const match = embedUrl.match(/embed\/([^?]+)/);
         return match ? "https://www.youtube.com/watch?v=" + match[1] : embedUrl;
-      }
-
-      function toThumbUrl(embedUrl) {
-        const match = embedUrl.match(/embed\/([^?]+)/);
-        return match ? "https://i.ytimg.com/vi/" + match[1] + "/hqdefault.jpg" : "";
       }
 
       function syncExternalLink(link, href) {
@@ -608,8 +623,21 @@
         }
       }
 
+      function syncPlayButton() {
+        if (!playBtn) return;
+
+        const track = playlist[currentIndex];
+        const hasDirectAudio = Boolean(track && track.audioSrc);
+        const isPlayingDirectAudio = Boolean(hasDirectAudio && audio && !audio.paused);
+
+        playBtn.dataset.state = isPlayingDirectAudio ? "playing" : "paused";
+        playBtn.setAttribute("aria-pressed", isPlayingDirectAudio ? "true" : "false");
+        playBtn.setAttribute("aria-label", isPlayingDirectAudio ? "Pause track" : "Play track");
+      }
+
       function syncDrawer(track) {
         const tagsText = track.tags.join(", ");
+        const embedUrl = track.embed || "";
 
         metaDate.closest(".player-meta-row").hidden = !track.date;
         metaTags.closest(".player-meta-row").hidden = !tagsText;
@@ -618,6 +646,12 @@
         metaDate.textContent = track.date;
         metaTags.textContent = tagsText;
         metaNote.textContent = track.note;
+
+        if (drawerVideoShell && drawerVideo) {
+          drawerVideoShell.hidden = !embedUrl;
+          drawerVideo.src = embedUrl;
+          drawerVideo.title = track.title + " music video";
+        }
       }
 
       function renderQueue() {
@@ -659,36 +693,62 @@
 
         currentIndex = index;
         title.textContent = track.title;
-        thumb.src = toThumbUrl(track.embed);
-        thumb.alt = track.title + " YouTube thumbnail";
         note.hidden = !track.note;
         note.textContent = track.note;
         syncExternalLink(spotifyLink, track.spotify);
-        syncExternalLink(youtubeLink, toWatchUrl(track.embed));
+        syncExternalLink(appleLink, track.apple);
         syncDrawer(track);
         renderQueue();
+        syncPlayButton();
 
-        if (autoplay && youtubeLink.href) {
-          window.open(youtubeLink.href, "_blank", "noopener,noreferrer");
+        if (audio && audioSource) {
+          const nextAudioSrc = track.audioSrc || "";
+          const shouldReloadAudio = nextAudioSrc !== activeAudioSrc;
+
+          if (shouldReloadAudio) {
+            audio.pause();
+            audioSource.src = nextAudioSrc;
+            audio.load();
+            activeAudioSrc = nextAudioSrc;
+            syncPlayButton();
+          }
+
+          if (autoplay && nextAudioSrc) {
+            audio.play().catch(function (error) {
+              console.error(error);
+            });
+            return;
+          }
+        }
+
+        if (autoplay && track.embed) {
+          window.open(toWatchUrl(track.embed), "_blank", "noopener,noreferrer");
         }
       }
 
       backBtn.addEventListener("click", function () {
-        renderTrack((currentIndex - 1 + playlist.length) % playlist.length, true);
+        renderTrack((currentIndex - 1 + playlist.length) % playlist.length, false);
       });
 
       forwardBtn.addEventListener("click", function () {
-        renderTrack((currentIndex + 1) % playlist.length, true);
+        renderTrack((currentIndex + 1) % playlist.length, false);
       });
 
       playBtn.addEventListener("click", function () {
+        const track = playlist[currentIndex];
+
+        if (audio && track && track.audioSrc && activeAudioSrc === track.audioSrc && !audio.paused) {
+          audio.pause();
+          return;
+        }
+
         renderTrack(currentIndex, true);
       });
 
-      if (thumbButton) {
-        thumbButton.addEventListener("click", function () {
-          renderTrack(currentIndex, true);
-        });
+      if (audio) {
+        audio.addEventListener("play", syncPlayButton);
+        audio.addEventListener("pause", syncPlayButton);
+        audio.addEventListener("ended", syncPlayButton);
       }
 
       if (infoToggle && drawer) {
@@ -701,6 +761,7 @@
       }
 
       renderTrack(0, false);
+      syncPlayButton();
     }());
   </script>
 </body>
