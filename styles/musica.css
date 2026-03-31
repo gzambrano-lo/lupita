@@ -125,6 +125,121 @@
   display: none;
 }
 
+@media (max-width: 700px) {
+  .music-page {
+    margin: 18px auto;
+    padding: 0 10px;
+  }
+
+  .music-page > .alert {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    padding: 0.95rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .youtube-pretty-player {
+    margin: 14px auto 28px;
+  }
+
+  .youtube-pretty-player .youtube-player-note {
+    padding: 0.9rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .youtube-pretty-player .player-drawer-card {
+    padding: 0.9rem 0.82rem 0.85rem;
+  }
+
+  .youtube-pretty-player .player-links {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .youtube-pretty-player .player-topline {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .youtube-pretty-player .player-topline > div:first-child {
+    grid-column: auto;
+    justify-self: stretch;
+  }
+
+  .youtube-pretty-player .player-top-actions {
+    grid-column: auto;
+    justify-self: center;
+  }
+
+  .youtube-pretty-player .dream-player-song {
+    font-size: clamp(1rem, 5vw, 1.22rem);
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  .youtube-pretty-player .player-controls {
+    gap: 0.7rem;
+  }
+
+  .youtube-pretty-player .queue-track {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 0.45rem;
+    padding: 0.48rem 0.16rem;
+  }
+
+  .youtube-pretty-player .queue-track-title {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.25;
+  }
+
+  .youtube-pretty-player .queue-track-marker {
+    margin-top: 0.38rem;
+  }
+
+  .youtube-pretty-player .drawer-video-shell {
+    margin-top: 0.8rem;
+    border-radius: 0.9rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .music-page {
+    padding: 0 6px;
+  }
+
+  .youtube-pretty-player .dream-player,
+  .youtube-pretty-player .dream-queue {
+    border-radius: 1.25rem;
+  }
+
+  .youtube-pretty-player .player-info-toggle {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
+  .youtube-pretty-player .player-btn-primary .player-icon,
+  .youtube-pretty-player .player-skip-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .youtube-pretty-player .player-link {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .youtube-pretty-player .player-link svg {
+    width: 1.55rem;
+    height: 1.55rem;
+  }
+}
+
 .box {
   background: var(--card);
   border: 1px solid var(--radius);
