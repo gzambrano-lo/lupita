@@ -62,42 +62,63 @@
   display: block;
 }
 
-.youtube-pretty-player .player-btn[data-state="paused"] .player-icon::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-38%, -50%);
-  width: 0;
-  height: 0;
-  border-top: 0.44rem solid transparent;
-  border-bottom: 0.44rem solid transparent;
-  border-left: 0.72rem solid currentColor;
+.youtube-pretty-player .player-btn-primary {
+  color: #ea8b93;
 }
 
-.youtube-pretty-player .player-btn[data-state="paused"] .player-icon::after {
+.youtube-pretty-player .player-btn-primary .player-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.youtube-pretty-player .player-icon-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.youtube-pretty-player .player-btn[data-state="paused"] .player-icon-play,
+.youtube-pretty-player .player-btn[data-state="playing"] .player-icon-pause {
+  opacity: 1;
+}
+
+.youtube-pretty-player .player-icon::before,
+.youtube-pretty-player .player-icon::after,
+.youtube-pretty-player .player-btn[data-state="paused"] .player-icon::before,
+.youtube-pretty-player .player-btn[data-state="paused"] .player-icon::after,
+.youtube-pretty-player .player-btn[data-state="playing"] .player-icon::before,
+.youtube-pretty-player .player-btn[data-state="playing"] .player-icon::after {
   content: none;
 }
 
-.youtube-pretty-player .player-btn[data-state="playing"] .player-icon::before,
-.youtube-pretty-player .player-btn[data-state="playing"] .player-icon::after {
-  content: "";
-  position: absolute;
-  top: 0.12rem;
-  width: 0.2rem;
-  height: 0.78rem;
-  border-radius: 999px;
-  background: currentColor;
-  transform: none;
-  border: 0;
+.youtube-pretty-player .player-btn-primary img,
+.youtube-pretty-player .player-btn-skip img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-.youtube-pretty-player .player-btn[data-state="playing"] .player-icon::before {
-  left: 0.2rem;
+.youtube-pretty-player .player-skip-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  position: relative;
 }
 
-.youtube-pretty-player .player-btn[data-state="playing"] .player-icon::after {
-  right: 0.2rem;
+.youtube-pretty-player .player-skip-icon::before,
+.youtube-pretty-player .player-skip-icon::after {
+  content: none;
+}
+
+.youtube-pretty-player .player-skip-back .player-skip-icon {
+  transform: scaleX(-1);
 }
 
 .youtube-pretty-player .player-drawer[hidden] {

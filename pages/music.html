@@ -82,15 +82,22 @@
             <div class="player-controls" aria-label="Track controls">
               <button class="player-btn player-btn-skip player-skip-back" type="button" data-track-back
                 aria-label="Show previous track">
-                <span class="player-skip-icon" aria-hidden="true"></span>
+                <span class="player-skip-icon" aria-hidden="true">
+                  <img src="../music-player/music-next-next-button-svgrepo-com.svg" alt="">
+                </span>
               </button>
               <button class="player-btn player-btn-primary" type="button" data-track-play data-state="paused"
                 aria-label="Play track" aria-pressed="false">
-                <span class="player-icon" aria-hidden="true"></span>
+                <span class="player-icon" aria-hidden="true">
+                  <img class="player-icon-svg player-icon-play" src="../music-player/music-play-play-button-svgrepo-com.svg" alt="">
+                  <img class="player-icon-svg player-icon-pause" src="../music-player/media-player-music-pause-svgrepo-com.svg" alt="">
+                </span>
               </button>
               <button class="player-btn player-btn-skip player-skip-forward" type="button" data-track-forward
                 aria-label="Show next track">
-                <span class="player-skip-icon" aria-hidden="true"></span>
+                <span class="player-skip-icon" aria-hidden="true">
+                  <img src="../music-player/music-next-next-button-svgrepo-com.svg" alt="">
+                </span>
               </button>
             </div>
 
@@ -251,7 +258,7 @@
         "title":  "durand jones and the indications - sea gets hotter",
         "embed":  "https://www.youtube.com/embed/VzyE8WYHbiU?si=XtEfl7oZ3oDLM7M1",
         "audioSrc": "https://media.lupitazambrano.com/music/Durand_Jones_The_Indications_Sea_Gets_Hotter_Live_Music_Sugars.mp3",
-        "note":  "â™¡( â—¡â€¿â—¡ ) happy valentines day",
+        "note":  "happy valentines day",
         "date":  "02/14/2026",
         "tags":  [
                      "soul"
@@ -283,6 +290,7 @@
     {
         "title":  "ramridddlz - bodmon",
         "embed":  "https://www.youtube.com/embed/hSbpaPoGYbU?si=HC3qTFv8kuF2jxzF",
+        "audioSrc": "https://media.lupitazambrano.com/music/Ramriddlz_Bodmon.mp3",
         "note":  "sweet and spicy too",
         "date":  "01/16/2026",
         "tags":  [
@@ -293,6 +301,7 @@
     {
         "title":  "yung lean - ginseng strip 2002",
         "embed":  "https://www.youtube.com/embed/vrQWhFysPKY?si=1zCaROUz6Doa-zlo",
+        "audioSrc": "https://media.lupitazambrano.com/music/Yung_Lean_Ginseng_Strip_2002.mp3",
         "note":  "emotional shawtys in this bitch",
         "date":  "01/16/2026",
         "tags":  [
@@ -375,7 +384,7 @@
     {
         "title":  "cachirula, loojan, emex, morrow, 8 a.m - doble d",
         "embed":  "https://www.youtube.com/embed/NdPPuIhHzHA?si=81L4c_OkS5kVamcH",
-        "note":  "dice que me ama, pero sÃ© que miente",
+        "note":  "dice que me ama, pero se que miente",
         "date":  "9/18/25",
         "tags":  [
                      "reggaetÃ³n"
@@ -500,10 +509,10 @@
     {
         "title":  "linea personal - malibu",
         "embed":  "https://www.youtube.com/embed/kVuxBRBgnOQ?si=TSDQkILxpostUq5x",
-        "note":  "i could loop this all day ðŸŽ¶",
+        "note":  "i could loop this all day",
         "date":  "9/7/25",
         "tags":  [
-                     "sierreÃ±o"
+                     "sierreno"
                  ],
         "spotify":  ""
     },
@@ -525,7 +534,7 @@
         "date":  "9/6/25",
         "tags":  [
                      "corridos tumbados",
-                     "sad sierreÃ±o"
+                     "sad sierreno"
                  ],
         "spotify":  ""
     },
@@ -535,7 +544,7 @@
         "note":  "not the official, just the one he cant quit. sierreÃ±o de la costa oeste requinto brillante + bajo suave. perfecto para salirnos de la fiesta",
         "date":  "9/6/25",
         "tags":  [
-                     "sierreÃ±o",
+                     "sierreno",
                      "warm bass"
                  ],
         "spotify":  ""
@@ -557,7 +566,7 @@
         "note":  "whip cracks, â€œtra tra,â€ and malilla being dangerously hot. im feral.",
         "date":  "9/6/25",
         "tags":  [
-                     "reggaetÃ³n reggaetÃ³nMexicano",
+                     "regaeton mexicano",
                      "malibaby"
                  ],
         "spotify":  ""
@@ -727,11 +736,15 @@
       }
 
       backBtn.addEventListener("click", function () {
-        renderTrack((currentIndex - 1 + playlist.length) % playlist.length, false);
+        const nextIndex = (currentIndex - 1 + playlist.length) % playlist.length;
+        const nextTrack = playlist[nextIndex];
+        renderTrack(nextIndex, Boolean(nextTrack && nextTrack.audioSrc));
       });
 
       forwardBtn.addEventListener("click", function () {
-        renderTrack((currentIndex + 1) % playlist.length, false);
+        const nextIndex = (currentIndex + 1) % playlist.length;
+        const nextTrack = playlist[nextIndex];
+        renderTrack(nextIndex, Boolean(nextTrack && nextTrack.audioSrc));
       });
 
       playBtn.addEventListener("click", function () {
