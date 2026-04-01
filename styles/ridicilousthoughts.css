@@ -39,6 +39,8 @@ body {
     );
   min-height: 100vh;
   padding: 40px 16px 80px;
+  position: relative;
+  overflow-x: hidden;
 }
 
 body.site-gingham {
@@ -49,6 +51,125 @@ body.site-gingham {
   background-size: 180px 180px;
   background-position: 0 0, 0 0;
   background-attachment: fixed;
+}
+
+.smoke-screen-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.16), transparent 28%),
+    radial-gradient(circle at 74% 18%, rgba(255, 255, 255, 0.12), transparent 24%),
+    radial-gradient(circle at 30% 76%, rgba(255, 255, 255, 0.10), transparent 26%),
+    rgba(247, 237, 226, 0.06);
+  backdrop-filter: blur(10px) saturate(0.95);
+  -webkit-backdrop-filter: blur(10px) saturate(0.95);
+  transition: opacity 0.45s ease, backdrop-filter 0.45s ease, -webkit-backdrop-filter 0.45s ease;
+}
+
+.smoke-screen-page .smoke-screen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0.3;
+  mix-blend-mode: multiply;
+}
+
+.smoke-screen-page.is-gated::before {
+  opacity: 1;
+  backdrop-filter: blur(16px) saturate(0.92);
+  -webkit-backdrop-filter: blur(16px) saturate(0.92);
+}
+
+.smoke-screen-page:not(.is-gated)::before {
+  opacity: 0;
+  backdrop-filter: blur(0) saturate(1);
+  -webkit-backdrop-filter: blur(0) saturate(1);
+}
+
+.smoke-screen-page .smoke-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  cursor: pointer;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.smoke-screen-page .smoke-gate__inner {
+  max-width: min(92vw, 28rem);
+  padding: 0.95rem 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  border-radius: 999px;
+  background: rgba(53, 47, 44, 0.46);
+  color: rgba(255, 247, 241, 0.98);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.smoke-screen-page:not(.is-gated) .smoke-gate {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.smoke-screen-page .visit-counter {
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.smoke-screen-page .visit-counter .count-pill {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(242, 132, 130, 0.28);
+  color: #6a4a4c;
+  box-shadow: 0 10px 24px rgba(90, 70, 50, 0.08);
+  white-space: normal;
+  text-align: center;
+  line-height: 1.45;
+}
+
+.smoke-screen-page .noise,
+.smoke-screen-page .lang-en.visible,
+.smoke-screen-page .lang-es.visible {
+  position: relative;
+  z-index: 2;
+}
+
+.smoke-screen-page .noise {
+  z-index: 5;
+}
+
+.smoke-screen-page .lang-en.visible,
+.smoke-screen-page .lang-es.visible {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(250, 246, 240, 0.62)),
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.42), transparent 28%),
+    radial-gradient(circle at 82% 18%, rgba(242, 132, 130, 0.07), transparent 24%),
+    radial-gradient(circle at 24% 78%, rgba(132, 165, 157, 0.07), transparent 26%),
+    linear-gradient(115deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.03) 16%,
+      transparent 28%,
+      rgba(255, 255, 255, 0.18) 38%,
+      transparent 48%,
+      rgba(0, 0, 0, 0.025) 62%,
+      transparent 74%,
+      rgba(255, 255, 255, 0.14) 84%,
+      transparent 100%);
 }
 
 .wrapper {
@@ -497,6 +618,30 @@ a.highlight-link:focus-visible {
 @media (max-width: 500px) {
   body { padding: 24px 12px 60px; }
   .card { padding: 20px 20px; }
+  .smoke-screen-page.is-gated::before {
+    backdrop-filter: blur(12px) saturate(0.92);
+    -webkit-backdrop-filter: blur(12px) saturate(0.92);
+  }
+  .smoke-screen-page .smoke-gate {
+    padding: 18px;
+  }
+  .smoke-screen-page .smoke-gate__inner {
+    width: min(100%, 22rem);
+    padding: 0.9rem 1rem;
+    border-radius: 22px;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    line-height: 1.4;
+    white-space: normal;
+  }
+  .smoke-screen-page .visit-counter {
+    margin-top: 1rem;
+  }
+  .smoke-screen-page .visit-counter .count-pill {
+    width: min(100%, 26rem);
+    padding: 0.7rem 0.9rem;
+    font-size: 0.82rem;
+  }
   .lang-en.visible,
   .lang-es.visible {
     padding: 16px;
@@ -537,6 +682,34 @@ a.highlight-link:focus-visible {
   }
   .subtitle::before {
     display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .smoke-screen-page .smoke-gate__inner {
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+  }
+
+  .smoke-screen-page .visit-counter .count-pill {
+    font-size: 0.76rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smoke-screen-page::before {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .smoke-screen-page .smoke-screen {
+    display: none;
+  }
+
+  .smoke-screen-page .lang-en.visible,
+  .smoke-screen-page .lang-es.visible,
+  .smoke-screen-page .noise {
+    transition: none;
   }
 }
 

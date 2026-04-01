@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Neighbor, My Bully</title>
+  <title>Smokescreen</title>
   <link rel="stylesheet" href="../../styles/reset.css" />
   <link rel="stylesheet" href="../../styles/tokens.css" />
   <link rel="stylesheet" href="../../styles/base.css" />
   <link rel="stylesheet" href="../../styles/layout.css" />
   <link rel="stylesheet" href="../../styles/components.css" />
+  <link rel="stylesheet" href="../../styles/click-counter.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
@@ -17,7 +18,11 @@
 
 </head>
 
-<body class="site-gingham">
+<body class="site-gingham smoke-screen-page">
+  <canvas class="smoke-screen" id="smoke-screen" aria-hidden="true"></canvas>
+  <div class="smoke-gate" id="smoke-gate" role="button" tabindex="0" aria-label="Click to enter">
+    <div class="smoke-gate__inner">click to enter</div>
+  </div>
   <div class="noise"></div>
 
   <!-- en v -->
@@ -28,12 +33,17 @@
         <button class="lang-btn" onclick="setLang('es')">ES</button>
       </div>
       <div class="tag">Personal Essay &nbsp;˖᯽˖&nbsp; For the ones who were made to feel small</div>
-      <h1>Sanitized</h1>
+      <h1>Smokescreen</h1>
       <div class="divider">︶⊹︶︶୨୧︶︶⊹︶</div>
       <p class="subtitle">On silence, survival, and the stories left out of the highlight reel.</p>
       <p class="subtitle">This essay reflects my personal memory and interpretation of childhood experiences. Memory is
         imperfect, and I am not claiming to know who this person is in his current private life or professional
         practice.</p>
+      <div class="click-row visit-counter" aria-label="page visit counter">
+        <div class="pill-btn count-pill" aria-live="polite">
+          this page was visited this many times: <span id="visitCount">0</span>
+        </div>
+      </div>
     </header>
 
     <article>
@@ -44,8 +54,8 @@
 
       <p>This is mine.</p>
 
-      <p>I reached out to <a class="highlight-link" href="https://www.instagram.com/irvingarcia" target="_blank">Irvin
-          Garcia</a> more than once. The first two times were on Instagram, quiet, private, nothing
+      <p>I reached out to <a class="highlight-link" href="https://www.instagram.com/irvingarcia"
+          target="_blank">Aspiring Resident Vato</a> more than once. The first two times were on Instagram, quiet, private, nothing
         public. No audience.
         No call-out. Just me, trying to open a door. Very lighthearded. Nothing.</p>
 
@@ -72,7 +82,8 @@
         life, curating
         his legacy.</p>
 
-      <p>But there's is a version of Irvin Garcia that I remember that doesn't exist in any of those spaces.</p>
+      <p>But there's is a version of Aspiring Resident Vato that I remember that doesn't exist in any of those spaces.
+      </p>
 
       <p>It's not the version that get's posted, or shared, or invited into rooms.</p>
 
@@ -86,11 +97,12 @@
         ugly. That you were stupid. Annoying. That you should just go away.</p>
 
       <p>Before I was seven, I already carried words that were never mine to carry. All fed to me by the boy who lived
-        next door, <a class="highlight-link" href="https://www.threads.com/@irvgarcia" target="_blank">Irvin Garcia.</a>
+        next door, <a class="highlight-link" href="https://www.threads.com/@irvgarcia" target="_blank">Aspiring Resident
+          Vato.</a>
       </p>
 
       <p>
-        Irvin was my next door neighbor. We lived next door to each other in a small duplex complex in
+        Aspiring Resident Vato was my next door neighbor. We lived next door to each other in a small duplex complex in
         Shelton, Washington. We did not share the same duplex, but ours were right next to each other. He shared his
         duplex with a Pacific islander family. I shared my duplex with a Guatemalan family. So my family and the
         Garcia family were the only two Mexican families in that little cul de sac.
@@ -111,14 +123,18 @@
       <div class="divider">︶⊹︶︶୨୧︶︶⊹︶</div>
 
       <p>The funniest thing about him was his beloved trampoline. Every other child that came by was allowed on it but
-        me. I tried finding ways around this, maybe if i asked his brother? "um no, you'd have to ask irvin." his
-        parents? "Um no, Irvin will say no." and honestly, the garcias weren't all bad. I liked playing with his little
+        me. I tried finding ways around this, maybe if i asked his brother? "um no, you'd have to ask Aspiring Resident
+        Vato." his
+        parents? "Um no, Aspiring Resident Vato will say no." and honestly, the garcias weren't all bad. I liked playing
+        with his little
         sister. The older brother was always nice, he had a kind face.</p>
 
-      <p>But Irvin? I could tell he didn't like me. It felt strange and pointed, like I had been decided on before
+      <p>But Aspiring Resident Vato? I could tell he didn't like me. It felt strange and pointed, like I had been
+        decided on before
         I even opened my mouth.</p>
 
-      <p>Irvin, I remember the day you told me you had something to show me in your garage. I was excited. Genuinely
+      <p>Aspiring Resident Vato, I remember the day you told me you had something to show me in your garage. I was
+        excited. Genuinely
         excited, because you had
         never been that nice to me before. I thought maybe something had shifted. Maybe today was different.
 
@@ -169,7 +185,8 @@
         documented,
         and it should make all of us deeply uncomfortable.</p>
 
-      <p>The same kids who learned early that dominance works… often carry those instincts into adulthood, into positions of power, including fields like medicine and leadership.</p>
+      <p>The same kids who learned early that dominance works… often carry those instincts into adulthood, into
+        positions of power, including fields like medicine and leadership.</p>
 
       <p>Think about what medicine requires at its core: the ability to see a person in front of you as fully human. To
         listen. To not let your ego override their pain. To sit with someone who is scared and make them feel safe.
@@ -180,7 +197,8 @@
         Maybe they didn't. What I know is that those early experiences changed the way I look at power, credentials,
         and the people who hold them.</p>
 
-      <p>For me, it raises bigger questions about how we think about who we trust in these roles, and how much of a person's story we actually see.</p>
+      <p>For me, it raises bigger questions about how we think about who we trust in these roles, and how much of a
+        person's story we actually see.</p>
 
       <p>And the rest of us, the ones who were told we were nothing, we're supposed to just scroll past it and feel
         inspired.</p>
@@ -191,7 +209,8 @@
         one job: to show you exactly what someone wants you to see and nothing else.</p>
 
       <p><a class="highlight-link" href="https://www.tiktok.com/discover/irvin-garcia-medical-school"
-          target="_blank">Irvin Garcia</a> has built his around <em>Foo's In Medicine.</em> Let's sit with that name for
+          target="_blank">Aspiring Resident Vato</a> has built his around <em>Foo's In Medicine.</em> Let's sit with
+        that name for
         a second. "Foo"
         from <em>fool</em>, spoken through a Chicano accent, the kind of word that comes from the block, from the
         culture, from a specific lived experience of being brown in America, typically in places like California,
@@ -275,6 +294,8 @@
         Written by someone who was told she was nothing, and refused to believe it forever.
       </div>
 
+      <div class="divider">︶⊹︶︶୨୧︶︶⊹︶</div>
+
       <figure class="post-image">
         <img src="../../images/blog/ridicilous_thoughts/asset-01.jpg"
           alt="me, around the time this story takes place, shelton washington" />
@@ -282,15 +303,47 @@
       </figure>
 
       <footer class="article-footer">
+        <p>he told me he was a child.</p>
+
+        <p>and he's right. he was. so was i.</p>
+
+        <p>but here's the difference: he got to grow up and decide it was in the past. he got to forgive himself,
+          move on, build a career, build a brand, build a following. he got to become someone new.</p>
+
+        <p>i got to carry it.</p>
+
+        <p>that's what people don't understand about childhood bullying. the one doing it gets to forget. the one
+          receiving it doesn't get that option. it becomes part of how you see yourself. how you walk into rooms.
+          whether you believe you deserve to take up space. whether you think you're worthy of basic dignity.</p>
+
+        <p>he moved on. i'm still working on it.</p>
+
+        <p>and i think about everyone else like me. the ones he called ugly. stupid. annoying. the ones he made feel
+          small. did he think about them when he forgave himself? did any of us get a say in that?</p>
+
+        <p>he recently posted about feeling like an imposter.</p>
+
+        <p>i don't know what that's about for him. maybe it's just the industry. maybe it's just the climb. but i do
+          think about the people who never got an apology. who never got acknowledgment. who are still carrying words
+          someone handed them before they were seven.</p>
+
+        <p>i wonder sometimes if real peace requires facing the people you hurt - not just the industry you're trying
+          to belong to. i wonder if you can fully feel like you belong somewhere when you never went back for the ones
+          you left behind.</p>
+
+        <p>forgiving yourself without accountability isn't healing. it's just moving on at someone else's expense.</p>
+
+        <p>but that's his work to do. not mine.</p>
+
         <div>
           <p>Protected Under</p>
           <ul class="unstyled-list">
             <li>U.S. First Amendment ❀ Free speech & Matters of Public Concern</li>
-            <li>Opinion Doctrine ❀  Personal Experience & Opinion Are Not Defamation</li>
-            <li>Truth as Absolute Defense ❀  Truth Is a Complete Defense To Defamation</li>
-            <li>Washington Anti-SLAPP ❀  RCW 4.24.525</li>
-            <li>California Anti-SLAPP ❀  CCP § 425.16</li>
-            <li>Fair Comment Doctrine ❀  Opinions on Matters of Public Concern</li>
+            <li>Opinion Doctrine ❀ Personal Experience & Opinion Are Not Defamation</li>
+            <li>Truth as Absolute Defense ❀ Truth Is a Complete Defense To Defamation</li>
+            <li>Washington Anti-SLAPP ❀ RCW 4.24.525</li>
+            <li>California Anti-SLAPP ❀ CCP § 425.16</li>
+            <li>Fair Comment Doctrine ❀ Opinions on Matters of Public Concern</li>
           </ul>
         </div>
 
@@ -340,8 +393,8 @@
 
       <p>Esta es la mia.</p>
 
-      <p>Me comunique con <a class="highlight-link" href="https://www.instagram.com/irvingarcia" target="_blank">Irvin
-          Garcia</a> mas de una vez. Las primeras dos veces fueron por Instagram, en privado, sin audiencia, sin
+      <p>Me comunique con <a class="highlight-link" href="https://www.instagram.com/irvingarcia"
+          target="_blank">Aspiring Resident Vato</a> mas de una vez. Las primeras dos veces fueron por Instagram, en privado, sin audiencia, sin
         confrontacion publica. Solo yo, intentando abrir una puerta. Con buena onda. Nada.</p>
 
       <p>Asi que fui mas lejos. Encontre su correo profesional a traves de su propio sitio de marketing, <a
@@ -365,7 +418,7 @@
           href="https://youtu.be/B3yOF0GbbqA?si=dwEEYtZnJi5R3BpL" target="_blank">@irvingarcia</a>, viviendo su mejor
         vida, curando su legado.</p>
 
-      <p>Pero hay una version de Irvin Garcia que yo recuerdo que no existe en ninguno de esos espacios.</p>
+      <p>Pero hay una version de Aspiring Resident Vato que yo recuerdo que no existe en ninguno de esos espacios.</p>
 
       <p>No es la version que se publica, ni la que se comparte, ni la que es invitada a los eventos.</p>
 
@@ -379,10 +432,11 @@
         te digan, una y otra vez, que eras fea. Que eras estupida. Molesta. Que te fueras de una vez.</p>
 
       <p>Antes de cumplir siete años, ya cargaba palabras que nunca fueron mias. Todas puestas en mi por el niño que
-        vivia al lado, <a class="highlight-link" href="https://www.threads.com/@irvgarcia" target="_blank">Irvin
-          Garcia.</a></p>
+        vivia al lado, <a class="highlight-link" href="https://www.threads.com/@irvgarcia" target="_blank">Resident
+          Vato.</a></p>
 
-      <p>Irvin era mi vecino de al lado. Viviamos en un pequeño complejo de duplex en Shelton, Washington. No
+      <p>Aspiring Resident Vato era mi vecino de al lado. Viviamos en un pequeño complejo de duplex en Shelton,
+        Washington. No
         compartiamos el mismo duplex, pero los nuestros estaban justo uno al lado del otro. Al compartia el suyo con una
         familia de las islas del Pacifico. Yo compartia el mio con una familia guatemalteca. Asi que mi familia y la
         familia Garcia eramos las unicas dos familias mexicanas en ese pequeño cul de sac.</p>
@@ -403,13 +457,16 @@
 
       <p>Lo más gracioso de él era su amado trampolín. Todos los demás niños que llegaban podían usarlo menos yo.
         Intenté encontrar la manera de evitar esto, ¿quizás si le preguntaba a su hermano? "um no, tendrías que
-        preguntarle a irvin." ¿a sus papás? "Um no, Irvin va a decir que no." Y honestamente, los García no eran todos
+        preguntarle a Aspiring Resident Vato." ¿a sus papás? "Um no, Aspiring Resident Vato va a decir que no." Y
+        honestamente, los García no eran todos
         malos. Me gustaba jugar con su hermanita. El hermano mayor siempre era amable, tenía una cara buena.</p>
 
-      <p>¿Pero Irvin? Podía notar que no le caía bien. Se sentía raro y dirigido, como si ya hubiera tomado una decisión
+      <p>¿Pero Aspiring Resident Vato? Podía notar que no le caía bien. Se sentía raro y dirigido, como si ya hubiera
+        tomado una decisión
         sobre mí antes de que yo abriera la boca.</p>
 
-      <p class="highlight-link">Irvin, recuerdo el día que me dijiste que tenías algo que mostrarme en tu garage. Estaba
+      <p class="highlight-link">Aspiring Resident Vato, recuerdo el día que me dijiste que tenías algo que mostrarme en
+        tu garage. Estaba
         emocionada. Genuinamente emocionada, porque nunca habías sido tan amable conmigo antes. Pensé que quizás algo
         había cambiado. Que tal vez ese día era diferente.
 
@@ -481,7 +538,8 @@
         tienen un solo trabajo: mostrarte exactamente lo que alguien quiere que veas, y nada más.</p>
 
       <p><a class="highlight-link" href="https://www.tiktok.com/discover/irvin-garcia-medical-school"
-          target="_blank">Irvin Garcia</a> construyó la suya alrededor de <em>Foo's In Medicine.</em> Quedémonos un
+          target="_blank">Aspiring Resident Vato</a> construyó la suya alrededor de <em>Foo's In Medicine.</em>
+        Quedémonos un
         momento con ese nombre. "Foo" de <em>fool</em>, dicho con acento chicano, el tipo de palabra que viene del
         barrio, de la cultura, de una experiencia vivida muy específica de ser moreno en América, típicamente en lugares
         como California, Chicago, Texas.</p>
@@ -698,6 +756,7 @@
     updateProgressBar();
     window.setInterval(advanceProgressBar, 3000);
   </script>
+  <script src="../../scripts/irvin-smoke.js"></script>
 </body>
 
 </html>
