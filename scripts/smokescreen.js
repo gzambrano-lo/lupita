@@ -2,13 +2,42 @@
   const body = document.body;
   const canvas = document.getElementById('smoke-screen');
   const gate = document.getElementById('smoke-gate');
-  const visitCount = document.getElementById('visitCount');
+  const visitCountNodes = Array.from(document.querySelectorAll('[data-visit-count]'));
   if (!canvas) return;
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const COUNTER_API = 'https://site-counters.gzamlo98.workers.dev/api/counter?slug=irvin-garcia-bullied-me';
 
   body?.classList.add('is-gated');
+
+  const ensureSpanishVisitCounter = () => {
+    const spanishRoot = document.getElementById('content-es');
+    if (!spanishRoot || spanishRoot.querySelector('[data-visit-count]')) return;
+
+    const spanishHeader = spanishRoot.querySelector('header');
+    if (!spanishHeader) return;
+
+    const row = document.createElement('div');
+    row.className = 'click-row visit-counter';
+    row.setAttribute('aria-label', 'contador de visitas de la pagina');
+
+    const pill = document.createElement('div');
+    pill.className = 'pill-btn count-pill';
+    pill.setAttribute('aria-live', 'polite');
+    pill.innerHTML = 'esta pagina fue vista esta cantidad de veces: <span data-visit-count>0</span>';
+
+    row.appendChild(pill);
+    spanishHeader.appendChild(row);
+    visitCountNodes.push(pill.querySelector('[data-visit-count]'));
+  };
+
+  const setVisitCount = (count) => {
+    for (const node of visitCountNodes) {
+      if (node) node.textContent = count;
+    }
+  };
+
+  ensureSpanishVisitCounter();
 
   const enterPage = () => {
     body?.classList.remove('is-gated');
@@ -25,24 +54,24 @@
   gate?.addEventListener('keydown', handleGateKeydown);
 
   async function loadVisitCount() {
-    if (!visitCount) return;
+    if (!visitCountNodes.length) return;
     try {
       const res = await fetch(COUNTER_API, { method: 'GET' });
       if (!res.ok) throw new Error('failed to load counter');
       const data = await res.json();
-      visitCount.textContent = Number(data.count) || 0;
+      setVisitCount(String(Number(data.count) || 0));
     } catch (err) {
       console.error(err);
     }
   }
 
   async function incrementVisitCount() {
-    if (!visitCount) return;
+    if (!visitCountNodes.length) return;
     try {
       const res = await fetch(COUNTER_API, { method: 'POST' });
       if (!res.ok) throw new Error('failed to increment counter');
       const data = await res.json();
-      visitCount.textContent = Number(data.count) || 0;
+      setVisitCount(String(Number(data.count) || 0));
     } catch (err) {
       console.error(err);
       loadVisitCount();
