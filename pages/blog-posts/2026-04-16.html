@@ -54,20 +54,6 @@
                 </p>
             </header>
 
-            <section class="ambient-audio-tools" aria-label="page audio controls">
-                <button class="audio-toggle-btn" type="button" id="audioToggleBtn" aria-pressed="false">play
-                    audio</button>
-                <p class="audio-meta">
-                    <span class="audio-meta-label">audio:</span>
-                    <span>3SOME</span>
-                </p>
-                <audio id="pageAudio" preload="metadata" loop>
-                    <source src="https://media.lupitazambrano.com/music/3SOME%20-%20Chzter%20FLVCKKA%20angely2k.mp3"
-                        type="audio/mpeg">
-                    your browser does not support the audio element.
-                </audio>
-            </section>
-
             <section class="post-section" aria-label="daily entry">
                 <img src="/images/blog/2026-04-16/asset-01.gif" alt="lain standing, dress flowing in the wind,"
                     class="post-image post-image-intro">
@@ -93,11 +79,6 @@
                     would envy. That is not a rounding error. That is infrastructure. That is an audience. That is a
                     community large enough to feel, to its members, like a mainstream one.
                     62 million is the number. Sit with that.</p>
-
-                <p>62 million views on content that treats the
-                    violation of women as a subject of casual group discussion is still a horrifying number. We should
-                    all be uncomfortable. The reach
-                    of it. The normalization of it. That part is real, and that part matters.</p>
 
                 <p>Now. Did you know about the <a
                         href="https://sacc.aware.org.sg/portfolio/sickening-crime-by-husbands-isnt-wife-sharing-its-rape-arising-from-toxic-masculinity/" class="highlight-link">Singapore's "wife-sharing" syndicate
@@ -243,52 +224,9 @@
 
     <script>
         (function () {
-            const pageAudio = document.getElementById("pageAudio");
-            const audioToggleBtn = document.getElementById("audioToggleBtn");
             const headPatBtn = document.getElementById("headPatBtn");
             const headPatCount = document.getElementById("headPatCount");
             const COUNTER_API = "https://site-counters.gzamlo98.workers.dev/api/counter?slug=2026-04-16";
-            let pageAudioStarted = false;
-
-            function syncAudioUi() {
-                if (!pageAudio || !audioToggleBtn) return;
-                const playing = !pageAudio.paused;
-                audioToggleBtn.textContent = playing ? "kill audio" : "play audio";
-                audioToggleBtn.setAttribute("aria-pressed", playing ? "true" : "false");
-                audioToggleBtn.setAttribute(
-                    "aria-label",
-                    playing ? "Stop page audio" : "Play page audio"
-                );
-            }
-
-            if (pageAudio && audioToggleBtn) {
-                function startPageAudioOnce() {
-                    if (pageAudioStarted) return;
-                    pageAudioStarted = true;
-                    pageAudio.play().catch(function (error) {
-                        pageAudioStarted = false;
-                        console.error(error);
-                    });
-                }
-
-                audioToggleBtn.addEventListener("click", function () {
-                    if (pageAudio.paused) {
-                        startPageAudioOnce();
-                    } else {
-                        pageAudio.pause();
-                        pageAudio.currentTime = 0;
-                        pageAudioStarted = false;
-                    }
-                });
-
-                ["play", "pause", "ended"].forEach(function (eventName) {
-                    pageAudio.addEventListener(eventName, syncAudioUi);
-                });
-
-                document.addEventListener("pointerdown", startPageAudioOnce, { once: true });
-                document.addEventListener("keydown", startPageAudioOnce, { once: true });
-                syncAudioUi();
-            }
 
             if (!headPatBtn || !headPatCount) return;
 
