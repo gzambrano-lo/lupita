@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>04/21/2026 - lupe zambrano</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
+
+    <link rel="stylesheet" href="../../styles/reset.css">
+    <link rel="stylesheet" href="../../styles/tokens.css">
+    <link rel="stylesheet" href="../../styles/base.css?v=20260226a">
+    <link rel="stylesheet" href="../../styles/layout.css">
+    <link rel="stylesheet" href="../../styles/components.css">
+    <link rel="stylesheet" href="../../styles/blog.css">
+    <link rel="stylesheet" href="../../styles/blog-post.css">
+    <link rel="stylesheet" href="../../styles/click-counter.css">
+    <link rel="stylesheet" href="../../styles/pretty-music-player.css">
+    <script src="/scripts/site.js" defer></script>
+    <script src="/scripts/term-tooltips.js" defer></script>
+    <script src="/scripts/pretty-music-player.js" defer></script>
+</head>
+
+<body class="post-page post-page-2026-04-21">
+    <header class="site-header">
+        <nav id="nav_menu" aria-label="Main" class="hero-tabs tab-nav">
+            <ul class="tab-nav-list">
+                <li class="tab-nav-item"><a class="tab-nav-link" href="/index.html">home</a></li>
+                <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/about.html">about</a></li>
+                <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/music.html">music</a></li>
+                <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/learn-to-code.html">learn to code</a></li>
+                <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/bleach-shrine.html">shrines</a></li>
+                <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/project-senpai.html">project senpai</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="container">
+        <article class="post">
+            <header>
+                <div class="post-header-row">
+                    <h2>tuesday</h2>
+                </div>
+                <p class="meta">
+                    <time datetime="2026-04-21">posted april 21, 2026</time>
+                </p>
+            </header>
+
+            <section class="post-section duck-player-card" aria-label="daily music player">
+                <img class="duck-player-art" src="/images/duck_player.gif" alt="">
+
+                <div class="pretty-music-player-block" data-pretty-music-player>
+                    <section class="dream-player" aria-label="music player">
+                        <div class="player-shell" data-player-shell>
+                            <div class="audio-shell" data-audio-shell>
+                                <div class="audio-row">
+                                    <audio preload="metadata" data-audio-player>
+                                        <source data-audio-source src="" type="audio/mpeg">
+                                        your browser does not support the audio element.
+                                    </audio>
+                                    <span class="player-time-current" data-time-current aria-hidden="true">0:00</span>
+
+                                    <div class="progress-cluster">
+                                        <input id="pretty-player-progress" class="player-range" type="range" min="0"
+                                            max="100" value="0" step="0.1" data-audio-progress>
+                                    </div>
+
+                                    <span class="player-time-total" data-time-total aria-hidden="true">0:00</span>
+                                </div>
+
+                                <div class="player-controls" aria-label="Audio controls">
+                                    <button class="player-btn player-btn-skip player-skip-back" type="button"
+                                        data-audio-back aria-label="Play previous track">
+                                        <span class="player-skip-icon" aria-hidden="true"></span>
+                                    </button>
+                                    <button class="player-btn player-btn-primary" type="button" data-audio-toggle
+                                        data-state="paused" aria-label="Play track" aria-pressed="false">
+                                        <span class="player-icon" aria-hidden="true"></span>
+                                    </button>
+                                    <button class="player-btn player-btn-skip player-skip-forward" type="button"
+                                        data-audio-forward aria-label="Play next track">
+                                        <span class="player-skip-icon" aria-hidden="true"></span>
+                                    </button>
+                                    <button class="player-info-toggle" type="button" data-player-info-toggle
+                                        aria-expanded="false" aria-label="Show track info and links">
+                                        <span class="player-menu-icon" aria-hidden="true">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="player-drawer" data-player-drawer hidden>
+                                <div class="player-drawer-inner">
+                                    <div class="player-drawer-card">
+                                        <p class="player-drawer-label">track info</p>
+
+                                        <dl class="player-meta-list">
+                                            <div class="player-meta-row">
+                                                <dt class="player-meta-term" data-meta-label-1>label one</dt>
+                                                <dd class="player-meta-value" data-meta-value-1>value one</dd>
+                                            </div>
+                                            <div class="player-meta-row">
+                                                <dt class="player-meta-term" data-meta-label-2>label two</dt>
+                                                <dd class="player-meta-value" data-meta-value-2>value two</dd>
+                                            </div>
+                                            <div class="player-meta-row">
+                                                <dt class="player-meta-term" data-meta-label-3>label three</dt>
+                                                <dd class="player-meta-value" data-meta-value-3>value three</dd>
+                                            </div>
+                                            <div class="player-meta-row">
+                                                <dt class="player-meta-term" data-meta-label-4>label four</dt>
+                                                <dd class="player-meta-value" data-meta-value-4>value four</dd>
+                                            </div>
+                                        </dl>
+
+                                        <div class="player-links" aria-label="external music links">
+                                            <a class="player-link player-link-spotify" data-link-spotify href="#"
+                                                target="_blank" rel="noopener noreferrer" aria-label="Open Spotify">
+                                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path fill="currentColor"
+                                                        d="M12 1.5a10.5 10.5 0 1 0 10.5 10.5A10.5 10.5 0 0 0 12 1.5Zm4.83 15.13a.66.66 0 0 1-.91.21 8.82 8.82 0 0 0-8.98-.68.66.66 0 1 1-.59-1.18 10.14 10.14 0 0 1 10.33.78.66.66 0 0 1 .15.87Zm1.3-2.42a.83.83 0 0 1-1.14.26 10.95 10.95 0 0 0-10.99-.79.83.83 0 1 1-.7-1.5 12.62 12.62 0 0 1 12.68.92.83.83 0 0 1 .15 1.11Zm.11-2.61A13.63 13.63 0 0 0 4.9 10.54a1 1 0 0 1-.8-1.83 15.63 15.63 0 0 1 15.31 1.2 1 1 0 0 1-1.17 1.69Z" />
+                                                </svg>
+                                            </a>
+                                            <a class="player-link player-link-apple" data-link-apple href="#"
+                                                target="_blank" rel="noopener noreferrer" aria-label="Open Apple Music">
+                                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path fill="currentColor"
+                                                        d="M17.58 3.15a3.9 3.9 0 0 1-.93 2.83 3.32 3.32 0 0 1-2.61 1.28 3.67 3.67 0 0 1 .96-2.73 3.74 3.74 0 0 1 2.58-1.38Zm2.88 13.69A8.25 8.25 0 0 1 19 19.52c-.9 1.16-1.83 2.31-3.28 2.34-1.42.03-1.88-.84-3.5-.84s-2.13.82-3.46.87c-1.4.06-2.46-1.24-3.37-2.39C3.52 16.98 2 13.18 3.96 10.09a5.15 5.15 0 0 1 4.34-2.63c1.35-.03 2.62.9 3.49.9s2.5-1.1 4.2-.94a5 5 0 0 1 3.9 2.1 4.42 4.42 0 0 0-2.35 3.94 4.3 4.3 0 0 0 2.92 4.08Z" />
+                                                </svg>
+                                            </a>
+                                            <a class="player-link player-link-youtube" data-link-youtube href="#"
+                                                target="_blank" rel="noopener noreferrer" aria-label="Open YouTube">
+                                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                                    <path fill="currentColor"
+                                                        d="M21.58 7.19a2.8 2.8 0 0 0-1.96-1.98C17.89 4.75 12 4.75 12 4.75s-5.89 0-7.62.46A2.8 2.8 0 0 0 2.42 7.2C1.95 8.94 1.95 12 1.95 12s0 3.06.47 4.8a2.8 2.8 0 0 0 1.96 1.98c1.73.46 7.62.46 7.62.46s5.89 0 7.62-.46a2.8 2.8 0 0 0 1.96-1.98c.47-1.74.47-4.8.47-4.8s0-3.06-.47-4.81ZM9.95 15.04V8.96L15.5 12l-5.55 3.04Z" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <script type="application/json" data-pretty-player-playlist>
+                        [
+                            {
+                                "title": "alta sonria - uylzon",
+                                "artist": "uylzon",
+                                "src": "https://media.lupitazambrano.com/music/Uylzon_%20Alta_Sonrisa_Visualizer.mp3",
+                                "type": "audio/mpeg",
+                                "meta": [
+                                    ["song title", "alta sonria"],
+                                    ["performing artists", "uylzon"],
+                                    ["file", "hosted audio"]
+                                ],
+                                "links": {
+                                    "spotify": "https://open.spotify.com/album/0wl3g8zcCtLflgeOpxCwfy?si=9006207087e84cf1",
+                                    "apple": "https://music.apple.com/us/album/alta-sonrisa-single/1815144758",
+                                    "youtube": "https://youtu.be/W8p1lFSsd6U?si=ok2O0l6GLnyypqY2"
+                                }
+                            },
+                            {
+                                "title": "3some - chzter flvukka angely2k",
+                                "artist": "chzter, flvkka, angely2k",
+                                "src": "https://media.lupitazambrano.com/music/3SOME%20-%20Chzter%20FLVCKKA%20angely2k.mp3",
+                                "type": "audio/mpeg",
+                                "meta": [
+                                    ["song title", "3some"],
+                                    ["performing artists", "chzter, flvkka, angely2k"],
+                                    ["file", "hosted audio"]
+                                ],
+                                "links": {
+                                    "spotify": "https://open.spotify.com/track/2yqLYNfSjy633HSNTNAU3s?si=05a4cba2bad848d1",
+                                    "apple": "https://music.apple.com/us/song/3some-feat-angely2k/1874430704",
+                                    "youtube": "https://youtu.be/wP4U2DNCTg0?si=-QmrNSso2mVJCh55"
+                                }
+                            },
+                            {
+                                "title": "2 peine - jossie air",
+                                "artist": "jossie air",
+                                "src": "https://media.lupitazambrano.com/music/JOSSIE_AIR_2_PEINE_Prod_Bigcvyu.mp3",
+                                "type": "audio/mpeg",
+                                "meta": [
+                                    ["song title", "2 peine"],
+                                    ["performing artists", "jossie air"],
+                                    ["file", "hosted audio"]
+                                ],
+                                "links": {
+                                    "spotify": "https://open.spotify.com/track/7dUiunLeCT06etmeJOmw8I?si=4c53008964a04c8f",
+                                    "apple": "https://music.apple.com/us/song/2-peine/1750269332",
+                                    "youtube": "https://youtu.be/jqxaHndkisA?si=mks_C4tU0IxodGtg"
+                                }
+                            }
+                        ]
+                    </script>
+                </div>
+            </section>
+
+            <div class="click-row" aria-label="head pat counter">
+                <button id="headPatBtn" class="pill-btn" type="button">head pat</button>
+                <button class="pill-btn count-pill" type="button" aria-live="polite" tabindex="-1">
+                    total head pats: <span id="headPatCount">0</span>
+                </button>
+            </div>
+
+            <p class="read-more">
+                <a href="../blog.html" class="highlight-link">&larr; back to blog</a>
+            </p>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; lupita zambrano 2025</p>
+    </footer>
+
+    <script>
+        (function () {
+            const headPatBtn = document.getElementById("headPatBtn");
+            const headPatCount = document.getElementById("headPatCount");
+            const COUNTER_API = "https://site-counters.gzamlo98.workers.dev/api/counter?slug=2026-04-21";
+
+            if (!headPatBtn || !headPatCount) return;
+
+            async function loadCount() {
+                try {
+                    const res = await fetch(COUNTER_API, { method: "GET" });
+                    if (!res.ok) throw new Error("failed to load counter");
+                    const data = await res.json();
+                    headPatCount.textContent = Number(data.count) || 0;
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+
+            headPatBtn.addEventListener("click", async function () {
+                try {
+                    const res = await fetch(COUNTER_API, { method: "POST" });
+                    if (!res.ok) throw new Error("failed to increment counter");
+                    const data = await res.json();
+                    headPatCount.textContent = Number(data.count) || 0;
+                } catch (err) {
+                    console.error(err);
+                }
+            });
+
+            loadCount();
+        })();
+    </script>
+</body>
+
+</html>

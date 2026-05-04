@@ -33,7 +33,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const paths = {
     'sparkle-left': '/animations/sparkle-left.json',
-    'sparkle-right': '/animations/sparkle-right.json'
+    'sparkle-right': '/animations/sparkle-right.json',
+    'new-sparkles': '/animations/new_sparkles.json'
   };
 
   document.querySelectorAll('[data-lottie]').forEach((el) => {

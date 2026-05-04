@@ -247,6 +247,78 @@
     width: min(220px, 60%);
 }
 
+.post-page-2026-04-21 .duck-player-card {
+    display: grid;
+    justify-items: center;
+    gap: 0.9rem;
+    width: min(100%, 38rem);
+    margin-inline: auto;
+    padding: 1.2rem 1.7rem 1.35rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: var(--shadow);
+}
+
+.post-page-2026-04-21 .pretty-music-player-block {
+    width: min(100%, 34rem);
+    margin-inline: auto;
+}
+
+.post-page-2026-04-21 .pretty-music-player-block .dream-player {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.post-page-2026-04-21 .pretty-music-player-block .dream-player::before {
+    content: none;
+}
+
+.post-page-2026-04-21 .pretty-music-player-block .player-controls {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto 1fr;
+    justify-content: stretch;
+    gap: 0.86rem;
+}
+
+.post-page-2026-04-21 .pretty-music-player-block .player-skip-back {
+    grid-column: 2;
+}
+
+.post-page-2026-04-21 .pretty-music-player-block .player-btn-primary {
+    grid-column: 3;
+}
+
+.post-page-2026-04-21 .pretty-music-player-block .player-skip-forward {
+    grid-column: 4;
+}
+
+.post-page-2026-04-21 .pretty-music-player-block .player-info-toggle {
+    grid-column: 5;
+    justify-self: end;
+    align-self: center;
+    width: 2.15rem;
+    height: 2.15rem;
+    border-radius: 0.8rem;
+}
+
+.post-page-2026-04-21 .pretty-music-player-block .player-menu-icon {
+    gap: 0.22rem;
+}
+
+.post-page-2026-04-21 .pretty-music-player-block .player-menu-icon span {
+    width: 0.92rem;
+    height: 2px;
+}
+
+.post-page-2026-04-21 .duck-player-art {
+    width: min(100%, 26rem);
+    margin: 0 auto;
+}
+
 /* image carousel */
 .post-carousel {
     position: relative;
