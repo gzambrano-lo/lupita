@@ -1,3 +1,12 @@
+<!--
+  !!!!!!!!!! Reusable music player component.
+  This is not a standalone HTML page, so it will look unstyled or incomplete if opened directly.
+  Copy/paste this block into a full page that also loads:
+  - styles/pretty-music-player.css
+  - scripts/pretty-music-player.js !!!!!!!!!!
+-->
+
+
 <div class="pretty-music-player-block" data-pretty-music-player>
     <section class="dream-player" aria-labelledby="pretty-player-title">
         <div class="player-shell" data-player-shell>
@@ -30,8 +39,8 @@
 
                     <div class="progress-cluster">
                         <label class="sr-only" for="pretty-player-progress">Track progress</label>
-                        <input id="pretty-player-progress" class="player-range" type="range" min="0" max="100"
-                            value="0" step="0.1" data-audio-progress>
+                        <input id="pretty-player-progress" class="player-range" type="range" min="0" max="100" value="0"
+                            step="0.1" data-audio-progress>
                     </div>
 
                     <span class="player-time-total" data-time-total aria-hidden="true">0:00</span>
