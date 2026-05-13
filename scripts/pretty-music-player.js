@@ -119,7 +119,7 @@
 
                 const text = document.createElement("span");
                 text.className = "queue-track-title";
-                text.textContent = String(track.title).toLowerCase();
+                text.textContent = String(track.queueTitle || track.title).toLowerCase();
 
                 const marker = document.createElement("span");
                 marker.className = "queue-track-marker";
