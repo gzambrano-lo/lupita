@@ -172,6 +172,17 @@
   margin-bottom: 0;
 }
 
+.article > details > .post ul {
+  margin: 0.85rem 0 0;
+  padding-left: 1.35rem;
+}
+
+.article > details > .post li {
+  margin: 0.28rem 0;
+  padding-left: 0.15rem;
+  line-height: 1.55;
+}
+
 .article > details > .post .read-more {
   margin-top: 0.75rem;
 }
