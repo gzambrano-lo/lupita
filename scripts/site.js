@@ -26,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (!window.lottie) {
     document.querySelectorAll('[data-lottie="sparkle-left"]').forEach(el => fallback(el, '✨'));
     document.querySelectorAll('[data-lottie="sparkle-right"]').forEach(el => fallback(el, '✨'));
+    document.querySelectorAll('[data-lottie="new-sparkles"]').forEach(el => fallback(el, 'new'));
     return;
   }
 
