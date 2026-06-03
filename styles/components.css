@@ -11,7 +11,9 @@ section,
 .section-title {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: .4rem;
+    line-height: 1.25;
     margin: 0 0 .5rem;
     font-size: 1.15rem;
 }
@@ -19,6 +21,7 @@ section,
 .section-title::after {
     content: "";
     flex: 1;
+    min-width: 4rem;
     height: 2px;
     margin-left: .4rem;
     border-radius: 999px;
@@ -93,6 +96,13 @@ section,
 #nav_menu a:focus {
     transform: translateY(-1px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+}
+
+@media (max-width: 520px) {
+    .section-title::after {
+        flex-basis: 100%;
+        margin-left: 0;
+    }
 }
 
 #nav_menu.hero-tabs.tab-nav {
@@ -177,15 +187,17 @@ section,
 }
 
 .home-intro {
-    display: flex;
+    --profile-size: clamp(120px, 16vw, 180px);
+    display: grid;
+    grid-template-columns: var(--profile-size) minmax(0, 1fr);
     align-items: center;
-    gap: 1.5rem;
-    padding: 2rem;
+    gap: clamp(1rem, 3vw, 1.5rem);
+    padding: clamp(1.25rem, 3vw, 2rem);
     border-radius: 1rem;
 }
 
 .profile-pic {
-    width: 180px;
+    width: min(100%, var(--profile-size, 180px));
     aspect-ratio: 1/1;
     border-radius: 50%;
     object-fit: cover;
@@ -194,7 +206,7 @@ section,
 }
 
 .home-intro .profile-pic {
-    flex: 0 0 180px;
+    justify-self: center;
 }
 
 .intro-text {
@@ -202,8 +214,7 @@ section,
 }
 
 .home-intro .intro-text {
-    flex: 1;
-    max-width: 600px;
+    max-width: 62ch;
 }
 
 .intro-text h2 {
@@ -212,7 +223,8 @@ section,
 
 @media (max-width:600px) {
     .home-intro {
-        flex-direction: column;
+        --profile-size: clamp(120px, 44vw, 160px);
+        grid-template-columns: 1fr;
         text-align: center;
     }
 }
