@@ -1,0 +1,424 @@
+.post-page-2026-06-02 {
+    --red-alert: rgba(88, 0, 24, 0);
+    --red-pulse: rgba(122, 8, 38, 0);
+    --red-vignette: rgba(38, 0, 12, 0);
+    overflow-x: hidden;
+    background-color: #eeeeee;
+    background-image:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.16) 50%, transparent 50%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.16) 50%, transparent 50%);
+    background-size: 116px 116px;
+    background-position: 0 0;
+    background-attachment: fixed;
+    transition: background-color 700ms ease;
+}
+
+.post-page-2026-06-02 .site-header {
+    margin-bottom: 2rem;
+}
+
+.post-page-2026-06-02 #nav_menu.tab-nav .tab-nav-link {
+    border-color: rgba(30, 30, 30, 0.42);
+    background: rgba(246, 246, 246, 0.82);
+    color: #4d5553;
+    box-shadow: none;
+}
+
+.post-page-2026-06-02 #nav_menu.tab-nav .tab-nav-link:hover,
+.post-page-2026-06-02 #nav_menu.tab-nav .tab-nav-link:focus,
+.post-page-2026-06-02 #nav_menu.tab-nav .tab-nav-link[aria-current="page"] {
+    border-color: rgba(88, 0, 28, 0.36);
+    background: rgba(255, 255, 255, 0.9);
+    color: #26171b;
+}
+
+.post-page-2026-06-02 main.container {
+    width: min(100%, 48rem);
+}
+
+.post-page-2026-06-02 .post {
+    position: relative;
+    overflow: hidden;
+    max-width: 43rem;
+    margin-inline: auto;
+    border: 1px solid rgba(34, 34, 34, 0.14);
+    border-radius: 18px;
+    background: rgba(247, 247, 245, 0.9);
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.11);
+}
+
+.post-page-2026-06-02 .post::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: rgba(88, 0, 28, 0.18);
+    opacity: 0;
+    transition: opacity 500ms ease;
+    pointer-events: none;
+}
+
+.post-page-2026-06-02 .post header {
+    width: min(100%, 37rem);
+    margin-inline: auto;
+}
+
+.post-page-2026-06-02 .post h2,
+.post-page-2026-06-02 .post h3 {
+    color: #63706c;
+}
+
+.post-page-2026-06-02 .post-section {
+    width: min(100%, 37rem);
+    margin-inline: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.post-page-2026-06-02 .post-section p {
+    color: #191919;
+}
+
+.post-page-2026-06-02 .site-footer {
+    width: min(100%, 43rem);
+    margin: 2rem auto 0;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(30, 30, 30, 0.12);
+    border-radius: 14px;
+    background: rgba(247, 247, 245, 0.72);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+    color: #4d5553;
+    font-size: 0.82rem;
+    text-align: center;
+}
+
+.post-page-2026-06-02 .site-footer p {
+    margin: 0;
+}
+
+.post-page-2026-06-02::before,
+.post-page-2026-06-02::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 650ms ease;
+}
+
+.post-page-2026-06-02::before {
+    background:
+        radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0) 0 35%, var(--red-pulse) 76%, var(--red-vignette) 100%),
+        linear-gradient(90deg, var(--red-alert), transparent 28% 72%, var(--red-alert));
+    mix-blend-mode: multiply;
+}
+
+.post-page-2026-06-02::after {
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(32, 0, 12, 0.08) 0,
+            rgba(32, 0, 12, 0.08) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+    mix-blend-mode: multiply;
+}
+
+.post-page-2026-06-02 .site-header,
+.post-page-2026-06-02 main.container {
+    transform-origin: center;
+}
+
+.post-page-2026-06-02.is-red-alert {
+    --red-alert: rgba(55, 0, 20, 0.48);
+    --red-pulse: rgba(96, 8, 35, 0.24);
+    --red-vignette: rgba(24, 0, 10, 0.66);
+    background-color: #e4dfdf;
+}
+
+.post-page-2026-06-02.is-red-alert::before {
+    animation: red-alert-fade 2.4s ease-in-out infinite;
+}
+
+.post-page-2026-06-02.is-red-alert::after {
+    opacity: 0.2;
+    animation: red-alert-static 360ms steps(2, end) infinite;
+}
+
+.post-page-2026-06-02.is-red-alert .site-header,
+.post-page-2026-06-02.is-red-alert main.container {
+    animation: red-alert-shake 115ms linear infinite;
+}
+
+.post-page-2026-06-02.is-red-alert .post {
+    border-color: rgba(116, 14, 44, 0.72);
+    background: rgba(238, 234, 234, 0.9);
+    box-shadow:
+        0 0 0 1px rgba(93, 0, 32, 0.22),
+        inset 0 0 46px rgba(88, 0, 28, 0.08),
+        0 18px 42px rgba(60, 0, 20, 0.22);
+}
+
+.post-page-2026-06-02.is-red-alert .post::before {
+    opacity: 1;
+}
+
+.post-page-2026-06-02 .ambient-audio-tools {
+    width: min(100%, 27rem);
+    margin: 0.9rem auto 1.55rem;
+    gap: 0.5rem;
+    padding: 0.48rem 0.68rem;
+    border: 1px solid rgba(28, 28, 28, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.035);
+    backdrop-filter: blur(4px);
+}
+
+.post-page-2026-06-02 .audio-toggle-btn {
+    min-height: 1.55rem;
+    padding: 0.18rem 0.62rem;
+    border: 1px solid rgba(28, 28, 28, 0.12);
+    border-radius: 999px;
+    background: rgba(245, 245, 245, 0.84);
+    color: #5f6967;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: lowercase;
+    box-shadow: none;
+}
+
+.post-page-2026-06-02 .audio-toggle-btn:hover,
+.post-page-2026-06-02 .audio-toggle-btn:focus {
+    color: #343837;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: none;
+}
+
+.post-page-2026-06-02 .audio-toggle-btn[aria-pressed="true"] {
+    border-color: rgba(88, 0, 28, 0.2);
+    background: rgba(88, 0, 28, 0.08);
+    color: #5a1428;
+}
+
+.post-page-2026-06-02 .audio-meta {
+    color: #414544;
+    font-size: 0.74rem;
+    line-height: 1.25;
+}
+
+.post-page-2026-06-02 .audio-meta-label {
+    color: #63706c;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.post-page-2026-06-02.is-red-alert .ambient-audio-tools {
+    border-color: rgba(88, 0, 28, 0.16);
+    background: rgba(250, 246, 247, 0.58);
+}
+
+.post-page-2026-06-02 .anger-gif-frame {
+    width: min(100%, 29rem);
+    margin: 1.35rem auto 1.45rem;
+    overflow: hidden;
+    border: 0;
+    border-radius: 0;
+    background-color: #eeeeee;
+    background-image:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.16) 50%, transparent 50%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.16) 50%, transparent 50%);
+    background-size: 116px 116px;
+    box-shadow: none;
+}
+
+.post-page-2026-06-02 .anger-gif-frame img {
+    width: 100%;
+    mix-blend-mode: multiply;
+}
+
+@keyframes red-alert-fade {
+    0% {
+        filter: saturate(1);
+        opacity: 0.06;
+    }
+
+    50% {
+        filter: saturate(1.25);
+        opacity: 0.72;
+    }
+
+    100% {
+        filter: saturate(1);
+        opacity: 0.06;
+    }
+}
+
+@keyframes red-alert-static {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(5px);
+    }
+}
+
+@keyframes red-alert-shake {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(1px, -1px) rotate(-0.18deg);
+    }
+
+    50% {
+        transform: translate(-1px, 1px) rotate(0.16deg);
+    }
+
+    75% {
+        transform: translate(1px, 1px) rotate(0.12deg);
+    }
+
+    100% {
+        transform: translate(-1px, -1px) rotate(-0.14deg);
+    }
+}
+
+@media (max-width: 760px) {
+    .post-page-2026-06-02 {
+        padding: 0.85rem;
+        background-size: 92px 92px;
+    }
+
+    .post-page-2026-06-02 .site-header {
+        margin-bottom: 1.25rem;
+    }
+
+    .post-page-2026-06-02 #nav_menu.hero-tabs.tab-nav {
+        width: min(100%, 31rem);
+    }
+
+    .post-page-2026-06-02 #nav_menu.tab-nav .tab-nav-list {
+        gap: 0.28rem;
+        row-gap: 0.36rem;
+        width: 100%;
+    }
+
+    .post-page-2026-06-02 #nav_menu.tab-nav .tab-nav-link {
+        min-height: 32px;
+        padding: 0.32rem 0.72rem 0.28rem;
+        border-radius: 10px;
+        font-size: 0.86rem;
+    }
+
+    .post-page-2026-06-02 main.container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .post-page-2026-06-02 .post {
+        max-width: 100%;
+        padding: 1.25rem 1.15rem 1.7rem;
+        border-radius: 14px;
+    }
+
+    .post-page-2026-06-02 .post header,
+    .post-page-2026-06-02 .post-section {
+        width: 100%;
+    }
+
+    .post-page-2026-06-02 .ambient-audio-tools {
+        width: min(100%, 25rem);
+        margin: 0.85rem auto 1.35rem;
+    }
+
+    .post-page-2026-06-02 .anger-gif-frame {
+        width: min(100%, 25rem);
+        background-size: 92px 92px;
+    }
+}
+
+@media (max-width: 520px) {
+    .post-page-2026-06-02 {
+        padding: 0.65rem;
+        background-size: 84px 84px;
+    }
+
+    .post-page-2026-06-02 #nav_menu.tab-nav .tab-nav-list {
+        justify-content: center;
+    }
+
+    .post-page-2026-06-02 #nav_menu.tab-nav .tab-nav-link {
+        min-height: 30px;
+        padding: 0.26rem 0.56rem 0.22rem;
+        font-size: 0.78rem;
+    }
+
+    .post-page-2026-06-02 .post {
+        padding: 1rem 0.9rem 1.35rem;
+        border-radius: 12px;
+    }
+
+    .post-page-2026-06-02 .post h2 {
+        font-size: 1.2rem;
+    }
+
+    .post-page-2026-06-02 .post h3 {
+        font-size: 0.96rem;
+    }
+
+    .post-page-2026-06-02 .post-section p {
+        font-size: 0.96rem;
+        line-height: 1.7;
+    }
+
+    .post-page-2026-06-02 .ambient-audio-tools {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        width: 100%;
+        padding: 0.5rem 0.58rem;
+        border-radius: 10px;
+    }
+
+    .post-page-2026-06-02 .audio-toggle-btn {
+        min-height: 1.45rem;
+        padding-inline: 0.52rem;
+        font-size: 0.68rem;
+    }
+
+    .post-page-2026-06-02 .audio-meta {
+        min-width: 0;
+        font-size: 0.68rem;
+        overflow-wrap: anywhere;
+    }
+
+    .post-page-2026-06-02 .anger-gif-frame {
+        width: calc(100% + 0.5rem);
+        max-width: none;
+        margin-inline: -0.25rem;
+        background-size: 84px 84px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .post-page-2026-06-02.is-red-alert::before,
+    .post-page-2026-06-02.is-red-alert::after,
+    .post-page-2026-06-02.is-red-alert .site-header,
+    .post-page-2026-06-02.is-red-alert main.container {
+        animation: none;
+    }
+
+    .post-page-2026-06-02.is-red-alert::before {
+        opacity: 0.58;
+    }
+}
