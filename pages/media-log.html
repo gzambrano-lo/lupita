@@ -24,11 +24,7 @@
 
 <body>
     <header class="site-header">
-        <h1 class="hero-title">
-            <span class="lottie header-sparkle" data-lottie="sparkle-left" aria-hidden="true"></span>
-            media log
-            <span class="lottie header-sparkle" data-lottie="sparkle-right" aria-hidden="true"></span>
-        </h1>
+
     </header>
 
     <nav id="nav_menu" aria-label="Main" class="hero-tabs tab-nav">
@@ -45,9 +41,13 @@
     <main class="gallery page">
 
         <section class="intro-card card">
-            <h2>what i'm watching and playing right now</h2>
-            <p>shows, manga, and games. updated whenever i feel like it. the poster card is a link to the show, manga,
-                or game.</p>
+            <h2 class="hero-title">
+                <span class="lottie header-sparkle" data-lottie="sparkle-left" aria-hidden="true"></span>
+                media log
+                <span class="lottie header-sparkle" data-lottie="sparkle-right" aria-hidden="true"></span>
+            </h2>
+            <p>what i'm watching and playing right now! shows, manga, and games. i do my best to update this page
+                regularly.</p>
         </section>
 
         <section class="grid-gallery" aria-label="Media log entries">
@@ -604,6 +604,47 @@
                     </figcaption>
                 </figure>
             </article>
+
+            <article class="media-card-frame">
+                <figure class="watch-item">
+                    <span class="lottie new" data-lottie="new-sparkles" aria-label="new"></span>
+                    <a class="card-media-link" target="_blank" rel="noopener noreferrer"
+                        href="https://press.wbd.com/us/property/miss-you-love-you/media-releases">
+                        <img src="../images/shows/miss_you_love_you.jpg" alt="Miss You, Love You movie poster">
+                    </a>
+                    <figcaption>
+                        <h3 class="watch-title"><a class="card-title-link" target="_blank" rel="noopener noreferrer"
+                                href="https://press.wbd.com/us/property/miss-you-love-you/media-releases">miss you,
+                                love you</a></h3>
+                        <div class="progress completed" role="progressbar" aria-label="miss you, love you watch progress"
+                            aria-valuemin="0" aria-valuemax="1" aria-valuenow="1">
+                            <div class="progress-bar" style="--pct: 100%;"></div>
+                        </div>
+                        <div class="progress-label">released</div>
+                        <p class="watch-thoughts">rotten tomatoes: "a blunt, grieving widow, diane patterson (allison
+                            janney) is forced to plan her husband's funeral with a total stranger: her estranged son's
+                            assistant, jamie simms (andrew rannells). as they fumble through grief and their strange,
+                            darkly funny circumstances, buried secrets and long-held resentments surface, but their
+                            partnership becomes an unlikely conduit for connection, laughter, and healing for this
+                            mother and her unexpected surrogate son."</p>
+                        <details class="media-drawer">
+                            <summary class="media-drawer-toggle">more info</summary>
+                            <div class="media-drawer-body">
+                                <p class="watch-ep">released may 29, 2026</p>
+                                <div class="watch-meta meta-pills">
+                                    <span class="meta-pill">2026</span>
+                                    <span class="meta-pill">film</span>
+                                    <span class="meta-pill">drama</span>
+                                    <span class="meta-pill">hbo</span>
+                                    <span class="meta-pill meta-pill-main">madison wells</span>
+                                </div>
+                                <p>directed and written by jim rash. produced by kevin j. walsh, nat faxon, gigi
+                                    pritzker, and rachel shane. distributed by hbo.</p>
+                            </div>
+                        </details>
+                    </figcaption>
+                </figure>
+            </article>
         </section>
 
         <section class="card table-card">
@@ -691,6 +732,12 @@
                             <td>manga</td>
                             <td>reading</td>
                             <td>5/28/26</td>
+                        </tr>
+                        <tr>
+                            <td>miss you, love you</td>
+                            <td>drama film</td>
+                            <td>released</td>
+                            <td>5/29/26</td>
                         </tr>
                     </tbody>
                 </table>
