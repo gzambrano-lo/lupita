@@ -269,6 +269,13 @@
                 </p>
             </section>
 
+            <div class="click-row" aria-label="head pat counter">
+                <button id="headPatBtn" class="pill-btn" type="button">head pat</button>
+                <button class="pill-btn count-pill" type="button" aria-live="polite" tabindex="-1">
+                    total head pats: <span id="headPatCount">0</span>
+                </button>
+            </div>
+
             <footer class="post-footer">
                 <nav class="post-nav" aria-label="Post navigation">
                     <a href="/pages/blog.html" class="highlight-link">back to blog</a>
@@ -284,9 +291,44 @@
 
     <script>
         (function () {
+            const headPatBtn = document.getElementById("headPatBtn");
+            const headPatCount = document.getElementById("headPatCount");
+            const COUNTER_API = "https://site-counters.gzamlo98.workers.dev/api/counter?slug=2026-06-02";
+
+            if (!headPatBtn || !headPatCount) return;
+
+            async function loadCount() {
+                try {
+                    const res = await fetch(COUNTER_API, { method: "GET" });
+                    if (!res.ok) throw new Error("failed to load counter");
+                    const data = await res.json();
+                    headPatCount.textContent = Number(data.count) || 0;
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+
+            headPatBtn.addEventListener("click", async function () {
+                try {
+                    const res = await fetch(COUNTER_API, { method: "POST" });
+                    if (!res.ok) throw new Error("failed to increment counter");
+                    const data = await res.json();
+                    headPatCount.textContent = Number(data.count) || 0;
+                } catch (err) {
+                    console.error(err);
+                }
+            });
+
+            loadCount();
+        })();
+    </script>
+
+    <script>
+        (function () {
             const pageAudio = document.getElementById("pageAudio");
             const audioToggleBtn = document.getElementById("audioToggleBtn");
             let pageAudioStarted = false;
+            const desktopQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
 
             function syncAudioUi() {
                 if (!pageAudio || !audioToggleBtn) return;
@@ -300,6 +342,10 @@
             }
 
             if (!pageAudio || !audioToggleBtn) return;
+
+            function isDesktopInteraction() {
+                return desktopQuery.matches;
+            }
 
             function startPageAudioOnce() {
                 if (pageAudioStarted) return;
@@ -320,12 +366,19 @@
                 }
             });
 
+            function startPageAudioFromPageInteraction(event) {
+                if (!isDesktopInteraction()) return;
+                if (event.target && event.target.closest("#audioToggleBtn")) return;
+                startPageAudioOnce();
+            }
+
             ["play", "pause", "ended"].forEach(function (eventName) {
                 pageAudio.addEventListener(eventName, syncAudioUi);
             });
 
-            document.addEventListener("pointerdown", startPageAudioOnce, { once: true });
-            document.addEventListener("keydown", startPageAudioOnce, { once: true });
+            ["pointerdown", "click", "keydown", "wheel"].forEach(function (eventName) {
+                document.addEventListener(eventName, startPageAudioFromPageInteraction, { once: true });
+            });
             syncAudioUi();
         })();
     </script>
