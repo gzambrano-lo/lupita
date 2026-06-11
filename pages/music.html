@@ -154,6 +154,10 @@
                         d="M21.58 7.19a2.94 2.94 0 0 0-2.07-2.08C17.69 4.6 12 4.6 12 4.6s-5.69 0-7.51.51A2.94 2.94 0 0 0 2.42 7.19 30.9 30.9 0 0 0 1.9 12a30.9 30.9 0 0 0 .52 4.81 2.94 2.94 0 0 0 2.07 2.08c1.82.51 7.51.51 7.51.51s5.69 0 7.51-.51a2.94 2.94 0 0 0 2.07-2.08A30.9 30.9 0 0 0 22.1 12a30.9 30.9 0 0 0-.52-4.81ZM9.96 15.2V8.8L15.6 12Z" />
                     </svg>
                   </a>
+                  <a class="player-link player-link-vinyl" data-link-vinyl href="#" target="_blank"
+                    rel="noopener noreferrer" aria-label="Open vinyl record link">
+                    <i class="fa-solid fa-record-vinyl" aria-hidden="true"></i>
+                  </a>
                 </div>
               </div>
             </div>
@@ -187,6 +191,7 @@
       const spotifyLink = root.querySelector("[data-link-spotify]");
       const appleLink = root.querySelector("[data-link-apple]");
       const youtubeLink = root.querySelector("[data-link-youtube]");
+      const vinylLink = root.querySelector("[data-link-vinyl]");
       const queue = root.querySelector("[data-track-queue]");
       const backBtn = root.querySelector("[data-track-back]");
       const playBtn = root.querySelector("[data-track-play]");
@@ -194,6 +199,32 @@
       const infoToggle = root.querySelector("[data-player-info-toggle]");
       const drawer = root.querySelector("[data-player-drawer]");
       const playlist = [
+        {
+          "title": "jennifer lara - we can make it work",
+          "embed": "https://www.youtube.com/embed/Hszc2VnIqPI",
+          "audioSrc": "https://media.lupitazambrano.com/music/Jennifer_Lara_We_can_make_it_work.mp3",
+          "note": "we can make it work.",
+          "date": "06/11/2026",
+          "tags": [
+            "reggae",
+            "lovers rock"
+          ],
+          "spotify": "",
+          "apple": "",
+          "youtube": "https://www.youtube.com/watch?v=Hszc2VnIqPI&list=RDHszc2VnIqPI&start_radio=1",
+          "vinyl": "https://www.walmart.com/ip/We-Can-Make-It-Work-Jennifer-Lara-Vinyl-Record/16326114952"
+        },
+        {
+          "title": "chosen few - dont keep me waitin",
+          "embed": "https://www.youtube.com/embed/J1hcm8k2MDM",
+          "audioSrc": "https://media.lupitazambrano.com/music/Dont_Keep_Me_Waiting.mp3",
+          "note": "dont keep me waitin.",
+          "date": "06/11/2026",
+          "tags": [],
+          "spotify": "https://open.spotify.com/track/4zFtnXdTOAM5AxRt9wM1jW?si=4890a8afb2644b7f",
+          "apple": "https://music.apple.com/us/song/dont-keep-me-waiting/1618381486",
+          "youtube": "https://www.youtube.com/watch?v=J1hcm8k2MDM&list=RDJ1hcm8k2MDM&start_radio=1",
+        },
         {
           "title": "rixxia - u r such a lame",
           "embed": "",
@@ -764,6 +795,7 @@
         syncExternalLink(spotifyLink, track.spotify);
         syncExternalLink(appleLink, track.apple);
         syncExternalLink(youtubeLink, track.youtube || (track.embed ? toWatchUrl(track.embed) : ""));
+        syncExternalLink(vinylLink, track.vinyl);
         syncDrawer(track);
         renderQueue();
         syncPlayButton();

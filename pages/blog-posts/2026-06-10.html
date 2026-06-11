@@ -238,12 +238,19 @@
 
             async function loadVisitorCount() {
                 try {
-                    const res = await fetch(VISITOR_COUNTER_API, { method: "GET" });
+                    const res = await fetch(VISITOR_COUNTER_API, {
+                        method: "GET",
+                        headers: {
+                            "Accept": "application/json"
+                        }
+                    });
                     if (!res.ok) throw new Error("failed to load visitor counter");
                     const data = await res.json();
-                    visitorCount.textContent = formatCount(data.count);
+                    visitorCount.textContent = formatCount(
+                        typeof data === "number" ? data : data.count
+                    );
                 } catch (err) {
-                    console.error(err);
+                    console.error("visitor counter error:", err);
                     visitorCount.textContent = "0000000";
                 }
             }

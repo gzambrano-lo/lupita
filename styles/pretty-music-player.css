@@ -549,6 +549,11 @@
     color: #ff2c20;
 }
 
+.pretty-music-player-block .player-link-vinyl {
+    color: #8aaba3;
+    font-size: 1.65rem;
+}
+
 .pretty-music-player-block audio {
     display: none;
 }
