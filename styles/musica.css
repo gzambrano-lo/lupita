@@ -1830,3 +1830,25 @@ details.lyrics[open] {
     transition: none;
   }
 }
+
+@media (max-width: 430px) {
+  .youtube-pretty-player > .dream-player .song-mood {
+    display: none !important;
+  }
+
+  .youtube-pretty-player > .dream-player .player-shell::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  .youtube-pretty-player > .dream-player .youtube-player-shell {
+    overflow: hidden;
+  }
+
+  .youtube-pretty-player > .dream-player .equalizer {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-self: stretch !important;
+    box-sizing: border-box;
+  }
+}
