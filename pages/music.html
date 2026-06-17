@@ -56,54 +56,124 @@
     <section class="pretty-music-player-block youtube-pretty-player" data-youtube-pretty-player>
       <section class="dream-player" aria-labelledby="music-player-title">
         <div class="player-shell">
-          <div class="player-topline">
-            <div>
-              <h4 class="dream-player-song" id="music-player-title" data-track-title>track title</h4>
+          <div class="now-playing-card">
+            <div class="cd-case" data-cover-frame>
+              <img class="track-cover" data-track-cover src="../images/music-player/default-cover.png" alt="">
+              <span class="cover-fallback" data-cover-fallback aria-hidden="true">no cover yet</span>
             </div>
 
-            <div class="player-top-actions">
-              <button class="player-info-toggle" type="button" data-player-info-toggle aria-expanded="false"
-                aria-label="Show track info and links">
-                <span class="player-menu-icon" aria-hidden="true">
+            <div class="now-playing-info">
+              <div class="player-topline">
+                <div>
+                  <p class="tiny-label">now playing on lupita.fm</p>
+                  <h4 class="dream-player-song" id="music-player-title" data-track-title>track title</h4>
+                  <p class="song-mood" data-track-mood hidden></p>
+                </div>
+
+                <div class="player-top-actions">
+                  <button class="player-info-toggle" type="button" data-player-info-toggle aria-expanded="false"
+                    aria-label="Show track info and links">
+                    <span class="player-menu-icon" aria-hidden="true">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </span>
+                  </button>
+                  <span class="player-orb" aria-hidden="true"></span>
+                </div>
+              </div>
+
+              <div class="youtube-player-shell">
+                <audio preload="metadata" data-track-audio hidden>
+                  <source data-track-audio-source src="" type="audio/mpeg">
+                  your browser does not support the audio element.
+                </audio>
+                <div class="player-controls" aria-label="Track controls">
+                  <button class="player-btn player-btn-skip player-skip-back" type="button" data-track-back
+                    aria-label="Show previous track">
+                    <span class="player-skip-icon" aria-hidden="true">
+                      <img src="../music-player/music-next-next-button-svgrepo-com.svg" alt="">
+                    </span>
+                  </button>
+                  <button class="player-btn player-btn-primary" type="button" data-track-play data-state="paused"
+                    aria-label="Play track" aria-pressed="false">
+                    <span class="player-icon" aria-hidden="true">
+                      <img class="player-icon-svg player-icon-play"
+                        src="../music-player/music-play-play-button-svgrepo-com.svg" alt="">
+                      <img class="player-icon-svg player-icon-pause"
+                        src="../music-player/media-player-music-pause-svgrepo-com.svg" alt="">
+                    </span>
+                  </button>
+                  <button class="player-btn player-btn-skip player-skip-forward" type="button" data-track-forward
+                    aria-label="Show next track">
+                    <span class="player-skip-icon" aria-hidden="true">
+                      <img src="../music-player/music-next-next-button-svgrepo-com.svg" alt="">
+                    </span>
+                  </button>
+                </div>
+
+                <div class="equalizer" aria-hidden="true">
                   <span></span>
                   <span></span>
                   <span></span>
-                </span>
-              </button>
-              <span class="player-orb" aria-hidden="true"></span>
-            </div>
-          </div>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
 
-          <div class="youtube-player-shell">
-            <audio preload="metadata" data-track-audio hidden>
-              <source data-track-audio-source src="" type="audio/mpeg">
-              your browser does not support the audio element.
-            </audio>
-            <div class="player-controls" aria-label="Track controls">
-              <button class="player-btn player-btn-skip player-skip-back" type="button" data-track-back
-                aria-label="Show previous track">
-                <span class="player-skip-icon" aria-hidden="true">
-                  <img src="../music-player/music-next-next-button-svgrepo-com.svg" alt="">
-                </span>
-              </button>
-              <button class="player-btn player-btn-primary" type="button" data-track-play data-state="paused"
-                aria-label="Play track" aria-pressed="false">
-                <span class="player-icon" aria-hidden="true">
-                  <img class="player-icon-svg player-icon-play"
-                    src="../music-player/music-play-play-button-svgrepo-com.svg" alt="">
-                  <img class="player-icon-svg player-icon-pause"
-                    src="../music-player/media-player-music-pause-svgrepo-com.svg" alt="">
-                </span>
-              </button>
-              <button class="player-btn player-btn-skip player-skip-forward" type="button" data-track-forward
-                aria-label="Show next track">
-                <span class="player-skip-icon" aria-hidden="true">
-                  <img src="../music-player/music-next-next-button-svgrepo-com.svg" alt="">
-                </span>
-              </button>
+                <p class="youtube-player-note note--soft" data-track-note hidden></p>
+              </div>
             </div>
-
-            <p class="youtube-player-note note--soft" data-track-note hidden></p>
           </div>
 
           <div class="player-drawer" data-player-drawer hidden>
@@ -165,12 +235,44 @@
         </div>
       </section>
 
-      <section class="dream-queue" aria-labelledby="music-queue-title">
-        <div class="dream-queue-shell">
-          <p class="dream-queue-label" id="music-queue-title">tracklist</p>
-          <div class="dream-queue-list" data-track-queue></div>
-        </div>
-      </section>
+      <div class="music-layout">
+        <section class="dream-queue" aria-labelledby="music-queue-title">
+          <div class="dream-queue-shell">
+            <p class="dream-queue-label" id="music-queue-title">tracklist</p>
+            <div class="dream-queue-list" data-track-queue></div>
+          </div>
+        </section>
+
+        <aside class="music-sidebar" aria-label="music page notes">
+          <section class="genre-widget music-sticker">
+            <p class="widget-title">sort by mood ♡</p>
+            <div class="genre-filter-bar" data-genre-filter-bar aria-label="filter tracklist by genre"></div>
+          </section>
+
+          <section class="listener-log music-sticker">
+            <h5>listener log</h5>
+            <div class="listener-log-scroll">
+              <p><strong>page intentions:</strong> my favorite songs, my love of little music players, and my white-knight urge to keep music free and self-hosted when i can. apple, spotify, and youtube links are here if you prefer streaming there, but this player should work too. lock your phone, skip around, no ads.</p>
+              <p><strong>06/11/2026:</strong> i caught myself following the sterile GUI path. so i added decorations.</p>
+            </div>
+            <p class="listener-log-date">last updated: <span data-listener-updated>06/11/2026</span></p>
+          </section>
+
+          <section class="repeat-card music-sticker">
+            <h5>currently on repeat</h5>
+            <img class="repeat-cover" src="../images/music-player/dont_keep_me_waiting.jpg"
+              alt="chosen few - dont keep me waitin cover art">
+            <p class="repeat-title">chosen few - dont keep me waitin</p>
+          </section>
+
+          <section class="music-mood music-sticker">
+            <h5>music mood</h5>
+            <p>nostalgic / soft / late night</p>
+          </section>
+
+          <p class="music-footnote">under construction</p>
+        </aside>
+      </div>
     </section>
   </main>
 
@@ -181,6 +283,13 @@
 
       const title = root.querySelector("[data-track-title]");
       const note = root.querySelector("[data-track-note]");
+      const mood = root.querySelector("[data-track-mood]");
+      const coverImg = root.querySelector("[data-track-cover]");
+      const coverFrame = root.querySelector("[data-cover-frame]");
+      const repeatTitle = root.querySelector("[data-repeat-title]");
+      const repeatCover = root.querySelector("[data-repeat-cover]");
+      const repeatPlays = root.querySelector("[data-repeat-plays]");
+      const listenerUpdated = root.querySelector("[data-listener-updated]");
       const audio = root.querySelector("[data-track-audio]");
       const audioSource = root.querySelector("[data-track-audio-source]");
       const metaDate = root.querySelector("[data-meta-date]");
@@ -193,17 +302,22 @@
       const youtubeLink = root.querySelector("[data-link-youtube]");
       const vinylLink = root.querySelector("[data-link-vinyl]");
       const queue = root.querySelector("[data-track-queue]");
+      const genreFilterBar = root.querySelector("[data-genre-filter-bar]");
       const backBtn = root.querySelector("[data-track-back]");
       const playBtn = root.querySelector("[data-track-play]");
       const forwardBtn = root.querySelector("[data-track-forward]");
       const infoToggle = root.querySelector("[data-player-info-toggle]");
       const drawer = root.querySelector("[data-player-drawer]");
+      const defaultCover = "../images/music-player/default-cover.png";
       const playlist = [
         {
           "title": "jennifer lara - we can make it work",
+          "cover": "../images/music-player/we_can_make_it_work.jpg",
           "embed": "https://www.youtube.com/embed/Hszc2VnIqPI",
           "audioSrc": "https://media.lupitazambrano.com/music/Jennifer_Lara_We_can_make_it_work.mp3",
           "note": "we can make it work.",
+          "mood": "sun through curtains, trying again anyway.",
+          "duration": "3:09",
           "date": "06/11/2026",
           "tags": [
             "reggae",
@@ -216,9 +330,12 @@
         },
         {
           "title": "chosen few - dont keep me waitin",
+          "cover": "../images/music-player/dont_keep_me_waiting.jpg",
           "embed": "https://www.youtube.com/embed/J1hcm8k2MDM",
           "audioSrc": "https://media.lupitazambrano.com/music/Dont_Keep_Me_Waiting.mp3",
           "note": "dont keep me waitin.",
+          "mood": "cute little impatient heart moment.",
+          "duration": "2:57",
           "date": "06/11/2026",
           "tags": [],
           "spotify": "https://open.spotify.com/track/4zFtnXdTOAM5AxRt9wM1jW?si=4890a8afb2644b7f",
@@ -227,9 +344,12 @@
         },
         {
           "title": "rixxia - u r such a lame",
+          "cover": "../images/music-player/u_are_such_a_lame.jpg",
           "embed": "",
           "audioSrc": "https://media.lupitazambrano.com/music/U_R_SUCH_A_LAME.mp3",
           "note": "ay, que hueva",
+          "mood": "scribbled in the margins with glitter pen.",
+          "duration": "2:31",
           "date": "03/31/2026",
           "tags": [],
           "spotify": "https://open.spotify.com/track/1Ybt52Gx6UdrI9z0qUbJP3?si=41c2da0fa9814afd",
@@ -241,8 +361,12 @@
           "embed": "",
           "audioSrc": "https://media.lupitazambrano.com/music/Julia_Hecht_Boy_I_Just_Blocked_You.mp3",
           "note": "said you loved me, so i blocked you!",
+          "duration": "2:38",
           "date": "03/31/2026",
-          "tags": [],
+          "tags": [
+            "cunty rap",
+            "diva rap"
+          ],
           "spotify": "https://open.spotify.com/track/0lGFA6ghKbnqGkylLdul3b?si=dac9b00c48f047e4",
           "apple": "https://music.apple.com/us/album/boy-i-just-blocked-you-single/1849669436",
           "youtube": "https://youtu.be/ZOY-AuC9Llw?si=qBBJcuaCayOpwmji"
@@ -259,7 +383,7 @@
           "spotify": "",
           "youtube": ""
 
-          },
+        },
         {
           "title": "jmsn - love 2 u",
           "embed": "https://www.youtube.com/embed/RuyvLzcnSeI?si=hlHHTM1jkJtT9juK",
@@ -512,6 +636,7 @@
         {
           "title": "deante\u0027 hitchcock - thinking \u0027bout you",
           "embed": "https://www.youtube.com/embed/POUdOMFmHA8?si=js3DtTYBSG5XlfzB",
+          "audioSrc": "https://media.lupitazambrano.com/music/Deante_Hitchcock_Thinking_Bout_You_Audio.mp3",
           "note": "i thought i had the right one the last time around but i think i love em all",
           "date": "9/17/25",
           "tags": [
@@ -533,8 +658,23 @@
           "spotify": ""
         },
         {
+          "title": "iamddb - more",
+          "embed": "https://www.youtube.com/embed/9jytbdG_f2Q",
+          "audioSrc": "https://media.lupitazambrano.com/music/IAMDDB_More_Official_Video.mp3",
+          "note": "i want more... can you give me more?",
+          "date": "9/12/25",
+          "tags": [
+            "r\u0026b",
+            "jazz trap"
+          ],
+          "spotify": "https://open.spotify.com/track/3cXKEUStZGykEj2KOf68J2?si=4b9ba61984954fb0",
+          "apple": "https://music.apple.com/ca/song/more/1275645965",
+          "youtube": "https://www.youtube.com/watch?v=9jytbdG_f2Q&list=RDB0TaUHptqKY&index=12"
+        },
+        {
           "title": "paperboy fabe, brent faiyaz - language",
           "embed": "https://www.youtube.com/embed/SUVahgS3Kxw?si=T3Xa7fsTzhmcmV2T",
+          "audioSrc": "https://media.lupitazambrano.com/music/Paperboy_Fabe_Language.mp3",
           "note": "it\u0027s your fault for loving me. you put your trust in me and i didnt ask. i didnt ask",
           "date": "9/12/25",
           "tags": [
@@ -545,13 +685,15 @@
         {
           "title": "ほんをよむ - hyakkei",
           "embed": "https://www.youtube.com/embed/xiWuxHO417M?si=GJZwFnNofSzmLrtw",
+          "audioSrc": "https://media.lupitazambrano.com/music/%E3%81%BE%E3%81%BB%E3%81%86%E3%81%AE%E3%81%98%E3%82%85%E3%81%86%E3%81%9F%E3%82%93.mp3",
           "note": "song is meant to be felt, not heard.",
           "date": "9/8/25",
           "tags": [
             "instrumental",
             "dreamy post-rock"
           ],
-          "spotify": ""
+          "spotify": "https://open.spotify.com/track/0gNpXNiopu6nXKRPnfQ89E?si=9116d664d00544a7",
+          "apple": "https://music.apple.com/ca/song/mahou-no-jyuutan/312105687"
         },
         {
           "title": "chuy montana, juanpa salazar - perdon mama",
@@ -700,6 +842,7 @@
 
       let currentIndex = 0;
       let activeAudioSrc = "";
+      let activeGenre = "all";
 
       function toWatchUrl(embedUrl) {
         const match = embedUrl.match(/embed\/([^?]+)/);
@@ -751,10 +894,72 @@
         }
       }
 
+      function syncCover(img, track) {
+        if (!img) return;
+
+        const coverSrc = track.cover || defaultCover;
+        img.hidden = false;
+        img.dataset.hasCover = track.cover ? "true" : "false";
+        img.src = coverSrc;
+        img.alt = track.cover ? track.title + " cover art" : "";
+      }
+
+      function getGenres() {
+        const genreSet = new Set();
+
+        playlist.forEach(function (track) {
+          (track.tags || []).forEach(function (tag) {
+            if (tag) genreSet.add(tag);
+          });
+        });
+
+        return Array.from(genreSet).sort(function (a, b) {
+          return a.localeCompare(b);
+        });
+      }
+
+      function renderGenreFilters() {
+        if (!genreFilterBar) return;
+
+        genreFilterBar.innerHTML = "";
+
+        ["all"].concat(getGenres()).forEach(function (genre) {
+          const button = document.createElement("button");
+          const isActive = genre === activeGenre;
+
+          button.type = "button";
+          button.className = "genre-filter-button" + (isActive ? " is-active" : "");
+          button.setAttribute("aria-pressed", isActive ? "true" : "false");
+          button.textContent = genre;
+
+          button.addEventListener("click", function () {
+            activeGenre = genre;
+            renderGenreFilters();
+            renderQueue();
+          });
+
+          genreFilterBar.appendChild(button);
+        });
+      }
+
       function renderQueue() {
         queue.innerHTML = "";
 
-        playlist.forEach(function (track, index) {
+        const visibleTracks = activeGenre === "all"
+          ? playlist.map(function (track, index) {
+            return { track: track, originalIndex: index };
+          })
+          : playlist
+            .map(function (track, index) {
+              return { track: track, originalIndex: index };
+            })
+            .filter(function (item) {
+              return item.track.tags && item.track.tags.includes(activeGenre);
+            });
+
+        visibleTracks.forEach(function (item) {
+          const track = item.track;
+          const index = item.originalIndex;
           const button = document.createElement("button");
           button.type = "button";
           button.className = "queue-track" + (index === currentIndex ? " is-active" : "");
@@ -773,8 +978,14 @@
           marker.className = "queue-track-marker";
           marker.setAttribute("aria-hidden", "true");
 
+          const duration = document.createElement("span");
+          duration.className = "queue-track-duration";
+          duration.textContent = track.duration || "";
+          duration.hidden = true;
+
           button.appendChild(number);
           button.appendChild(text);
+          button.appendChild(duration);
           button.appendChild(marker);
           button.addEventListener("click", function () {
             renderTrack(index, false);
@@ -790,8 +1001,24 @@
 
         currentIndex = index;
         title.textContent = track.title;
+        const moodText = track.mood || track.note || "";
         note.hidden = !track.note;
         note.textContent = track.note;
+        if (mood) {
+          mood.hidden = true;
+          mood.textContent = "";
+        }
+        if (coverFrame) {
+          coverFrame.classList.toggle("has-cover", Boolean(track.cover));
+          coverFrame.classList.remove("is-missing-cover");
+        }
+        if (coverImg) coverImg.hidden = false;
+        if (repeatCover) repeatCover.hidden = false;
+        syncCover(coverImg, track);
+        syncCover(repeatCover, track);
+        if (repeatTitle) repeatTitle.textContent = track.title;
+        if (repeatPlays) repeatPlays.textContent = String(((index * 3) + 7) % 19 + 3).padStart(2, "0");
+        if (listenerUpdated) listenerUpdated.textContent = track.date || "recently";
         syncExternalLink(spotifyLink, track.spotify);
         syncExternalLink(appleLink, track.apple);
         syncExternalLink(youtubeLink, track.youtube || (track.embed ? toWatchUrl(track.embed) : ""));
@@ -863,6 +1090,25 @@
         });
       }
 
+      if (coverImg && coverFrame) {
+        coverImg.addEventListener("load", function () {
+          coverFrame.classList.remove("is-missing-cover");
+          coverImg.hidden = false;
+        });
+
+        coverImg.addEventListener("error", function () {
+          coverFrame.classList.add("is-missing-cover");
+          coverImg.hidden = true;
+        });
+      }
+
+      if (repeatCover) {
+        repeatCover.addEventListener("error", function () {
+          repeatCover.hidden = true;
+        });
+      }
+
+      renderGenreFilters();
       renderTrack(0, false);
       syncPlayButton();
     }());
