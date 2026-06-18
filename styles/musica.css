@@ -2419,6 +2419,29 @@ details.lyrics[open] {
     display: block;
   }
 
+  .youtube-pretty-player > .dream-player .cover-fallback {
+    padding: 0.35rem;
+    font-size: 0;
+    line-height: 1;
+  }
+
+  .youtube-pretty-player > .dream-player .cover-fallback::before {
+    content: none;
+  }
+
+  .youtube-pretty-player > .dream-player .cover-fallback::after {
+    content: "no cover";
+    position: static;
+    display: block;
+    color: #946579;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 1.15;
+    text-align: center;
+    text-transform: lowercase;
+  }
+
   .youtube-pretty-player > .dream-player .player-top-actions {
     grid-area: menu;
     align-self: center;
