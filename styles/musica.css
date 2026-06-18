@@ -779,6 +779,82 @@ details.lyrics[open] {
   display: none;
 }
 
+@media (min-width: 769px) and (max-width: 1100px) {
+  .youtube-pretty-player > .dream-player .now-playing-card {
+    display: block;
+    min-width: 0;
+  }
+
+  .youtube-pretty-player > .dream-player .mobile-player-top {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.82fr) minmax(0, 1.18fr);
+    gap: clamp(1rem, 2.2vw, 1.35rem);
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .youtube-pretty-player > .dream-player .cd-case,
+  .youtube-pretty-player > .dream-player .now-playing-info,
+  .youtube-pretty-player > .dream-player .player-topline,
+  .youtube-pretty-player > .dream-player .youtube-player-shell {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .youtube-pretty-player > .dream-player .now-playing-info,
+  .youtube-pretty-player > .dream-player .youtube-player-shell {
+    overflow: hidden;
+  }
+
+  .youtube-pretty-player > .dream-player .player-topline {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .youtube-pretty-player > .dream-player .player-top-actions {
+    position: static;
+    grid-column: 2;
+    justify-self: end;
+  }
+
+  .youtube-pretty-player > .dream-player .player-info-toggle {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .youtube-pretty-player > .dream-player .dream-player-song,
+  .youtube-pretty-player > .dream-player .tiny-label {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .youtube-pretty-player > .dream-player .equalizer,
+  .youtube-pretty-player > .dream-player .youtube-player-note {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .youtube-pretty-player > .dream-player .equalizer {
+    display: flex;
+    gap: 3px;
+    overflow: hidden;
+  }
+
+  .youtube-pretty-player > .dream-player .equalizer span {
+    flex: 1 1 2px;
+    width: auto;
+    min-width: 1px;
+    max-width: 5px;
+  }
+
+  .youtube-pretty-player > .dream-player .youtube-player-note {
+    overflow-wrap: anywhere;
+  }
+}
+
 .song-mood {
   max-width: 42rem;
   margin: 0.48rem 0 0;
