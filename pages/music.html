@@ -57,121 +57,126 @@
       <section class="dream-player" aria-labelledby="music-player-title">
         <div class="player-shell">
           <div class="now-playing-card">
-            <div class="cd-case" data-cover-frame>
-              <img class="track-cover" data-track-cover src="../images/music-player/default-cover.png" alt="">
-              <span class="cover-fallback" data-cover-fallback aria-hidden="true">no cover yet</span>
-            </div>
-
-            <div class="now-playing-info">
-              <div class="player-topline">
-                <div>
-                  <p class="tiny-label">now playing on lupita.fm</p>
-                  <h4 class="dream-player-song" id="music-player-title" data-track-title>track title</h4>
-                  <p class="song-mood" data-track-mood hidden></p>
-                </div>
-
-                <div class="player-top-actions">
-                  <button class="player-info-toggle" type="button" data-player-info-toggle aria-expanded="false"
-                    aria-label="Show track info and links">
-                    <span class="player-menu-icon" aria-hidden="true">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </span>
-                  </button>
-                  <span class="player-orb" aria-hidden="true"></span>
-                </div>
+            <div class="mobile-player-top">
+              <div class="cd-case" data-cover-frame>
+                <img class="track-cover" data-track-cover src="../images/music-player/default-cover.png" alt="">
+                <span class="cover-fallback" data-cover-fallback aria-hidden="true">no cover yet</span>
               </div>
 
-              <div class="youtube-player-shell">
-                <audio preload="metadata" data-track-audio hidden>
-                  <source data-track-audio-source src="" type="audio/mpeg">
-                  your browser does not support the audio element.
-                </audio>
-                <div class="player-controls" aria-label="Track controls">
-                  <button class="player-btn player-btn-skip player-skip-back" type="button" data-track-back
-                    aria-label="Show previous track">
-                    <span class="player-skip-icon" aria-hidden="true">
-                      <img src="../music-player/music-next-next-button-svgrepo-com.svg" alt="">
-                    </span>
-                  </button>
-                  <button class="player-btn player-btn-primary" type="button" data-track-play data-state="paused"
-                    aria-label="Play track" aria-pressed="false">
-                    <span class="player-icon" aria-hidden="true">
-                      <img class="player-icon-svg player-icon-play"
-                        src="../music-player/music-play-play-button-svgrepo-com.svg" alt="">
-                      <img class="player-icon-svg player-icon-pause"
-                        src="../music-player/media-player-music-pause-svgrepo-com.svg" alt="">
-                    </span>
-                  </button>
-                  <button class="player-btn player-btn-skip player-skip-forward" type="button" data-track-forward
-                    aria-label="Show next track">
-                    <span class="player-skip-icon" aria-hidden="true">
-                      <img src="../music-player/music-next-next-button-svgrepo-com.svg" alt="">
-                    </span>
-                  </button>
+              <div class="now-playing-info">
+                <div class="player-topline">
+                  <div>
+                    <p class="tiny-label">now playing on lupita.fm</p>
+                    <h4 class="dream-player-song" id="music-player-title" data-track-title>
+                      <span class="track-title-full">track title</span>
+                      <span class="track-title-mobile">track title</span>
+                    </h4>
+                    <p class="song-mood" data-track-mood hidden></p>
+                  </div>
+
+                  <div class="player-top-actions">
+                    <button class="player-info-toggle" type="button" data-player-info-toggle aria-expanded="false"
+                      aria-label="Show track info and links">
+                      <span class="player-menu-icon" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </span>
+                    </button>
+                    <span class="player-orb" aria-hidden="true"></span>
+                  </div>
                 </div>
 
-                <div class="equalizer" aria-hidden="true">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
+                <div class="youtube-player-shell">
+                  <audio preload="metadata" data-track-audio hidden>
+                    <source data-track-audio-source src="" type="audio/mpeg">
+                    your browser does not support the audio element.
+                  </audio>
+                  <div class="player-controls" aria-label="Track controls">
+                    <button class="player-btn player-btn-skip player-skip-back" type="button" data-track-back
+                      aria-label="Show previous track">
+                      <span class="player-skip-icon" aria-hidden="true">
+                        <img src="../music-player/music-next-next-button-svgrepo-com.svg" alt="">
+                      </span>
+                    </button>
+                    <button class="player-btn player-btn-primary" type="button" data-track-play data-state="paused"
+                      aria-label="Play track" aria-pressed="false">
+                      <span class="player-icon" aria-hidden="true">
+                        <img class="player-icon-svg player-icon-play"
+                          src="../music-player/music-play-play-button-svgrepo-com.svg" alt="">
+                        <img class="player-icon-svg player-icon-pause"
+                          src="../music-player/media-player-music-pause-svgrepo-com.svg" alt="">
+                      </span>
+                    </button>
+                    <button class="player-btn player-btn-skip player-skip-forward" type="button" data-track-forward
+                      aria-label="Show next track">
+                      <span class="player-skip-icon" aria-hidden="true">
+                        <img src="../music-player/music-next-next-button-svgrepo-com.svg" alt="">
+                      </span>
+                    </button>
+                  </div>
 
-                <p class="youtube-player-note note--soft" data-track-note hidden></p>
+                  <div class="equalizer" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  </div>
+
+                  <p class="youtube-player-note note--soft" data-track-note hidden></p>
+                </div>
               </div>
             </div>
           </div>
@@ -849,10 +854,44 @@
       let currentIndex = 0;
       let activeAudioSrc = "";
       let activeGenre = "all";
+      let shuffleQueue = [];
+
+      function refillShuffleQueue() {
+        shuffleQueue = playlist
+          .map(function (track, index) {
+            return track.audioSrc ? index : -1;
+          })
+          .filter(function (index) {
+            return index !== -1 && index !== currentIndex;
+          });
+
+        for (let index = shuffleQueue.length - 1; index > 0; index -= 1) {
+          const randomIndex = Math.floor(Math.random() * (index + 1));
+          const temporaryIndex = shuffleQueue[index];
+          shuffleQueue[index] = shuffleQueue[randomIndex];
+          shuffleQueue[randomIndex] = temporaryIndex;
+        }
+      }
+
+      function playNextShuffledTrack() {
+        if (!shuffleQueue.length) {
+          refillShuffleQueue();
+        }
+
+        const nextIndex = shuffleQueue.shift();
+        if (typeof nextIndex === "number") {
+          renderTrack(nextIndex, true);
+        }
+      }
 
       function toWatchUrl(embedUrl) {
         const match = embedUrl.match(/embed\/([^?]+)/);
         return match ? "https://www.youtube.com/watch?v=" + match[1] : embedUrl;
+      }
+
+      function getSongTitle(fullTitle) {
+        const parts = String(fullTitle).split(/\s[-–—]\s/);
+        return parts.length > 1 ? parts.slice(1).join(" - ") : String(fullTitle);
       }
 
       function syncExternalLink(link, href) {
@@ -1006,7 +1045,15 @@
         if (!track) return;
 
         currentIndex = index;
-        title.textContent = track.title;
+        const fullTitle = title.querySelector(".track-title-full");
+        const mobileTitle = title.querySelector(".track-title-mobile");
+
+        if (fullTitle && mobileTitle) {
+          fullTitle.textContent = track.title;
+          mobileTitle.textContent = getSongTitle(track.title);
+        } else {
+          title.textContent = track.title;
+        }
         const moodText = track.mood || track.note || "";
         note.hidden = !track.note;
         note.textContent = track.note;
@@ -1059,12 +1106,14 @@
       }
 
       backBtn.addEventListener("click", function () {
+        shuffleQueue = [];
         const nextIndex = (currentIndex - 1 + playlist.length) % playlist.length;
         const nextTrack = playlist[nextIndex];
         renderTrack(nextIndex, Boolean(nextTrack && nextTrack.audioSrc));
       });
 
       forwardBtn.addEventListener("click", function () {
+        shuffleQueue = [];
         const nextIndex = (currentIndex + 1) % playlist.length;
         const nextTrack = playlist[nextIndex];
         renderTrack(nextIndex, Boolean(nextTrack && nextTrack.audioSrc));
@@ -1084,7 +1133,10 @@
       if (audio) {
         audio.addEventListener("play", syncPlayButton);
         audio.addEventListener("pause", syncPlayButton);
-        audio.addEventListener("ended", syncPlayButton);
+        audio.addEventListener("ended", function () {
+          syncPlayButton();
+          playNextShuffledTrack();
+        });
       }
 
       if (infoToggle && drawer) {

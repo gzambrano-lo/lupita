@@ -610,6 +610,10 @@ details.lyrics[open] {
   align-items: stretch;
 }
 
+.mobile-player-top {
+  display: contents;
+}
+
 .cd-case {
   position: relative;
   min-height: 285px;
@@ -769,6 +773,10 @@ details.lyrics[open] {
   text-align: left;
   white-space: normal;
   text-wrap: balance;
+}
+
+.track-title-mobile {
+  display: none;
 }
 
 .song-mood {
@@ -1612,6 +1620,10 @@ details.lyrics[open] {
 }
 
 @media (max-width: 760px) {
+  .youtube-pretty-player > .dream-player .youtube-player-note {
+    display: none !important;
+  }
+
   .youtube-pretty-player > .dream-player .now-playing-card {
     grid-template-columns: minmax(118px, 0.82fr) minmax(0, 1fr);
     gap: clamp(0.6rem, 2.4vw, 1rem);
@@ -1850,5 +1862,565 @@ details.lyrics[open] {
     max-width: 100% !important;
     justify-self: stretch !important;
     box-sizing: border-box;
+  }
+}
+
+/* Option B mobile player: art/title, controls, then equalizer. */
+@media (max-width: 768px) {
+  .youtube-pretty-player > .dream-player .now-playing-card {
+    display: block;
+  }
+
+  .youtube-pretty-player > .dream-player .mobile-player-top {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 0.9rem 0.85rem;
+    min-width: 0;
+  }
+
+  .youtube-pretty-player > .dream-player .cd-case {
+    flex: 0 0 clamp(88px, 25vw, 110px);
+    width: clamp(88px, 25vw, 110px);
+    min-height: 0;
+    align-self: center;
+    padding: 0.5rem;
+  }
+
+  .youtube-pretty-player > .dream-player .track-cover,
+  .youtube-pretty-player > .dream-player .cover-fallback {
+    width: 100%;
+  }
+
+  .youtube-pretty-player > .dream-player .cd-case::after {
+    max-width: 82%;
+    padding: 0.2rem 0.42rem;
+    font-size: 0.54rem;
+    white-space: nowrap;
+  }
+
+  .youtube-pretty-player > .dream-player .cover-fallback {
+    padding: 0.45rem;
+    font-size: 0.82rem;
+  }
+
+  .youtube-pretty-player > .dream-player .cover-fallback::after {
+    right: 0.35rem;
+    bottom: 0.35rem;
+    font-size: 0.48rem;
+  }
+
+  .youtube-pretty-player > .dream-player .now-playing-info {
+    display: contents;
+  }
+
+  .youtube-pretty-player > .dream-player .player-topline {
+    position: relative;
+    display: block;
+    flex: 1 1 0;
+    min-width: 0;
+    width: auto;
+    padding: 0 3.25rem 0 0;
+    margin: 0;
+    align-self: center;
+  }
+
+  .youtube-pretty-player > .dream-player .player-topline > div:first-child {
+    min-width: 0;
+  }
+
+  .youtube-pretty-player > .dream-player .player-top-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .youtube-pretty-player > .dream-player .player-info-toggle {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 1rem;
+  }
+
+  .youtube-pretty-player > .dream-player .tiny-label {
+    max-width: 100%;
+    margin: 0 0 0.42rem;
+    font-size: clamp(0.5rem, 1.8vw, 0.66rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .youtube-pretty-player > .dream-player .dream-player-song {
+    display: -webkit-box;
+    min-width: 0;
+    font-size: clamp(1.35rem, 5.5vw, 1.75rem);
+    line-height: 1.15;
+    text-align: left;
+    text-wrap: wrap;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .youtube-pretty-player > .dream-player .song-mood,
+  .youtube-pretty-player > .dream-player .youtube-player-note {
+    display: none !important;
+  }
+
+  .youtube-pretty-player > .dream-player .youtube-player-shell {
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: visible;
+  }
+
+  .youtube-pretty-player > .dream-player .player-controls {
+    display: flex;
+    order: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+  }
+
+  .youtube-pretty-player > .dream-player .player-btn,
+  .youtube-pretty-player > .dream-player .player-btn-skip {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    min-height: 56px;
+    border: 1px solid rgba(204, 129, 149, 0.42);
+    border-radius: 1.25rem;
+    background: linear-gradient(145deg, rgba(255, 244, 247, 0.98), rgba(250, 224, 233, 0.94));
+    box-shadow: 0 5px 10px rgba(139, 91, 109, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  .youtube-pretty-player > .dream-player .player-btn-primary {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    min-height: 64px;
+    border-radius: 1.4rem;
+  }
+
+  .youtube-pretty-player > .dream-player .player-btn-primary .player-icon,
+  .youtube-pretty-player > .dream-player .player-skip-icon {
+    width: 1.55rem;
+    height: 1.55rem;
+  }
+
+  .youtube-pretty-player > .dream-player .equalizer {
+    display: flex;
+    order: 1;
+    visibility: visible;
+    opacity: 1;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 44px;
+    height: 44px;
+    justify-self: stretch;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 3px;
+    padding: 0.55rem 0.7rem 0.35rem;
+    border-radius: 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .youtube-pretty-player > .dream-player .equalizer span {
+    flex: 1 1 3px;
+    width: auto;
+    max-width: 5px;
+    min-height: 7px;
+    max-height: 26px;
+  }
+
+  .youtube-pretty-player .queue-track {
+    transition:
+      transform 110ms ease,
+      background-color 110ms ease,
+      box-shadow 110ms ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  .youtube-pretty-player .queue-track.is-active {
+    background: linear-gradient(90deg, rgba(255, 238, 174, 0.92), rgba(255, 218, 233, 0.88));
+    color: #684f5a;
+    box-shadow:
+      inset 5px 0 0 #c96f8c,
+      0 3px 8px rgba(157, 91, 117, 0.16);
+  }
+
+  .youtube-pretty-player .queue-track.is-active .queue-track-title {
+    font-weight: 900;
+  }
+
+  .youtube-pretty-player .queue-track:active {
+    transform: scale(0.975);
+    background: rgba(255, 229, 239, 0.86);
+    box-shadow: inset 0 0 0 2px rgba(204, 129, 149, 0.32);
+  }
+
+  .youtube-pretty-player .queue-track.is-active:active {
+    background: linear-gradient(90deg, rgba(255, 233, 158, 0.96), rgba(255, 208, 227, 0.94));
+    box-shadow:
+      inset 5px 0 0 #bd5f7f,
+      inset 0 0 0 2px rgba(189, 95, 127, 0.18);
+  }
+}
+
+@media (max-width: 768px) and (hover: none),
+  (max-width: 768px) and (pointer: coarse) {
+  .youtube-pretty-player .queue-track:hover {
+    background: transparent;
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .youtube-pretty-player .queue-track.is-active:hover {
+    background: linear-gradient(90deg, rgba(255, 238, 174, 0.92), rgba(255, 218, 233, 0.88));
+    box-shadow:
+      inset 5px 0 0 #c96f8c,
+      0 3px 8px rgba(157, 91, 117, 0.16);
+  }
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  .youtube-pretty-player .queue-track {
+    transition: none;
+  }
+
+  .youtube-pretty-player .queue-track:active {
+    transform: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .youtube-pretty-player > .dream-player .mobile-player-top {
+    align-items: flex-start;
+    gap: 1.15rem 0.75rem;
+  }
+
+  .youtube-pretty-player > .dream-player .cd-case {
+    flex-basis: clamp(84px, 27vw, 96px);
+    width: clamp(84px, 27vw, 96px);
+  }
+
+  .youtube-pretty-player > .dream-player .player-topline {
+    align-self: stretch;
+    min-height: 96px;
+    padding: 0;
+  }
+
+  .youtube-pretty-player > .dream-player .tiny-label {
+    max-width: calc(100% - 52px);
+    margin-bottom: 0;
+    font-size: 0.46rem;
+  }
+
+  .youtube-pretty-player > .dream-player .dream-player-song {
+    margin-top: 0.8rem;
+    font-size: clamp(1.18rem, 6.2vw, 1.48rem);
+    line-height: 1.16;
+  }
+
+  .youtube-pretty-player > .dream-player .youtube-player-shell {
+    gap: 1rem;
+    padding-top: 0.15rem;
+  }
+
+  .youtube-pretty-player > .dream-player .player-controls {
+    gap: 16px;
+    padding-block: 0.1rem 0.2rem;
+  }
+
+  .youtube-pretty-player > .dream-player .equalizer {
+    margin-top: 0.1rem;
+  }
+}
+
+/* Strict mobile player grid. Keep this after earlier mobile refinements. */
+@media (max-width: 768px) {
+  .youtube-pretty-player > .dream-player .player-shell {
+    position: relative;
+  }
+
+  .youtube-pretty-player > .dream-player .now-playing-card {
+    position: relative;
+    display: block;
+  }
+
+  .youtube-pretty-player > .dream-player .mobile-player-top {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    grid-template-areas:
+      "cover info"
+      "controls controls"
+      "eq eq";
+    gap: 14px;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .youtube-pretty-player > .dream-player .cd-case {
+    grid-area: cover;
+    width: 96px;
+    min-width: 96px;
+    max-width: 96px;
+    min-height: 0;
+    padding: 0.5rem;
+    align-self: center;
+    box-sizing: border-box;
+  }
+
+  .youtube-pretty-player > .dream-player .now-playing-info,
+  .youtube-pretty-player > .dream-player .youtube-player-shell {
+    display: contents;
+  }
+
+  .youtube-pretty-player > .dream-player .player-topline {
+    position: static;
+    grid-area: info;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 0 58px 0 0;
+    margin: 0;
+    align-self: center;
+    box-sizing: border-box;
+  }
+
+  .youtube-pretty-player > .dream-player .player-topline > div:first-child {
+    min-width: 0;
+  }
+
+  .youtube-pretty-player > .dream-player .player-top-actions {
+    position: absolute;
+    z-index: 5;
+    top: 14px;
+    right: 14px;
+  }
+
+  .youtube-pretty-player > .dream-player .player-info-toggle {
+    position: static;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .youtube-pretty-player > .dream-player .tiny-label {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0;
+    font-size: clamp(0.46rem, 1.7vw, 0.62rem);
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+  }
+
+  .youtube-pretty-player > .dream-player .dream-player-song {
+    display: -webkit-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 6px 0 0;
+    font-size: clamp(1.25rem, 5.6vw, 1.65rem);
+    line-height: 1.08;
+    text-align: left;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .youtube-pretty-player > .dream-player .player-controls {
+    grid-area: controls;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0.1rem 0;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .youtube-pretty-player > .dream-player .player-btn,
+  .youtube-pretty-player > .dream-player .player-btn-skip {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    min-height: 56px;
+  }
+
+  .youtube-pretty-player > .dream-player .player-btn-primary {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    min-height: 64px;
+  }
+
+  .youtube-pretty-player > .dream-player .equalizer {
+    grid-area: eq;
+    display: flex;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0.1rem 0 0;
+    justify-self: stretch;
+    box-sizing: border-box;
+  }
+
+  .youtube-pretty-player > .dream-player .song-mood,
+  .youtube-pretty-player > .dream-player .youtube-player-note {
+    display: none !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .youtube-pretty-player > .dream-player .mobile-player-top {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .youtube-pretty-player > .dream-player .cd-case {
+    width: 88px;
+    min-width: 88px;
+    max-width: 88px;
+  }
+
+  .youtube-pretty-player > .dream-player .player-topline {
+    padding-right: 56px;
+  }
+
+  .youtube-pretty-player > .dream-player .player-top-actions {
+    top: 12px;
+    right: 12px;
+  }
+
+  .youtube-pretty-player > .dream-player .tiny-label {
+    font-size: 0.44rem;
+  }
+
+  .youtube-pretty-player > .dream-player .dream-player-song {
+    font-size: clamp(1.08rem, 6vw, 1.35rem);
+  }
+}
+
+/* Mobile top row: dedicated cover, text, and menu columns prevent overlap. */
+@media (max-width: 768px) {
+  .youtube-pretty-player > .dream-player .mobile-player-top {
+    grid-template-columns: 96px minmax(0, 1fr) 44px;
+    grid-template-areas:
+      "cover info menu"
+      "controls controls controls"
+      "eq eq eq";
+    column-gap: 12px;
+  }
+
+  .youtube-pretty-player > .dream-player .player-topline {
+    display: contents;
+    padding: 0;
+  }
+
+  .youtube-pretty-player > .dream-player .player-topline > div:first-child {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .youtube-pretty-player > .dream-player .player-top-actions {
+    position: static;
+    grid-area: menu;
+    width: 44px;
+    align-self: start;
+    justify-self: end;
+  }
+
+  .youtube-pretty-player > .dream-player .tiny-label {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .youtube-pretty-player > .dream-player .dream-player-song {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .youtube-pretty-player > .dream-player .mobile-player-top {
+    grid-template-columns: 88px minmax(0, 1fr) 44px;
+    column-gap: 10px;
+  }
+}
+
+/* Give the full now-playing badge its own mobile row. */
+@media (max-width: 768px) {
+  .youtube-pretty-player > .dream-player .mobile-player-top {
+    grid-template-areas:
+      "badge badge menu"
+      "cover title title"
+      "controls controls controls"
+      "eq eq eq";
+  }
+
+  .youtube-pretty-player > .dream-player .player-topline > div:first-child {
+    display: contents;
+  }
+
+  .youtube-pretty-player > .dream-player .tiny-label {
+    grid-area: badge;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    align-self: center;
+    justify-self: stretch;
+    margin: 0;
+    padding: 0.2rem 0.5rem;
+    font-size: clamp(0.52rem, 2vw, 0.64rem);
+    line-height: 1.1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    box-sizing: border-box;
+  }
+
+  .youtube-pretty-player > .dream-player .dream-player-song {
+    grid-area: title;
+    align-self: center;
+    margin: 0;
+    text-align: center;
+  }
+
+  .youtube-pretty-player > .dream-player .track-title-full {
+    display: none;
+  }
+
+  .youtube-pretty-player > .dream-player .track-title-mobile {
+    display: block;
+  }
+
+  .youtube-pretty-player > .dream-player .player-top-actions {
+    grid-area: menu;
+    align-self: center;
   }
 }
