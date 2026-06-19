@@ -37,6 +37,7 @@ html {
   width: 100%;
   display: grid;
   place-items: center;
+  align-content: center;
   padding-block: clamp(1rem, 5vh, 3rem);
 }
 
@@ -115,6 +116,25 @@ html {
 
 .gate-note {
   color: var(--gate-muted);
+}
+
+.gate-explanation {
+  width: min(100%, 23rem);
+  margin: clamp(2.5rem, 6vh, 4rem) auto 0;
+  color: var(--gate-muted);
+  font-size: clamp(0.72rem, 2.2vw, 0.8rem);
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  text-align: center;
+  opacity: 0.44;
+}
+
+.gate-explanation p {
+  margin: 0 0 1.15rem;
+}
+
+.gate-explanation p:last-child {
+  margin-bottom: 0;
 }
 
 .gate-button {
