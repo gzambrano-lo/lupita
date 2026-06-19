@@ -1,0 +1,220 @@
+html {
+  min-height: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.gate-page {
+  --gate-bg: #111313;
+  --gate-smoke: #252929;
+  --gate-card: rgba(15, 15, 15, 0.55);
+  --gate-text: #e8e8e8;
+  --gate-heading: #ddddda;
+  --gate-muted: #b9b9b9;
+  --gate-silver: #aeb5b5;
+  --gate-silver-bright: #d1d5d5;
+  --gate-border: rgba(255, 255, 255, 0.18);
+
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  color: var(--gate-text);
+  font-family: "Nunito", "Segoe UI", sans-serif;
+  line-height: 1.7;
+  background-color: var(--gate-bg);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)),
+    url("../images/gate-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.gate {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding-block: clamp(1rem, 5vh, 3rem);
+}
+
+.gate-card {
+  position: relative;
+  width: min(100%, 43rem);
+  padding: clamp(3.5rem, 9vw, 6rem) clamp(1.5rem, 8vw, 5.5rem);
+  overflow: hidden;
+  text-align: center;
+  background-color: var(--gate-card);
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 50%, transparent 50%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055) 50%, transparent 50%);
+  background-size: 74px 74px;
+  border: 1px solid var(--gate-border);
+  border-radius: var(--radius);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.46),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(10px);
+}
+
+.gate-card::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(
+    180deg,
+    rgba(10, 11, 11, 0.08),
+    rgba(10, 11, 11, 0.36)
+  );
+  pointer-events: none;
+}
+
+.gate-card h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 4.75rem;
+  color: var(--gate-heading);
+  font-family: "Poppins", "Nunito", sans-serif;
+  font-size: clamp(2.15rem, 7vw, 3rem);
+  font-weight: 600;
+  letter-spacing: 0.045em;
+  text-shadow: 0 0 24px rgba(220, 225, 225, 0.08);
+}
+
+.gate-card h1::after {
+  position: absolute;
+  top: calc(100% + 1.65rem);
+  left: 50%;
+  width: 6rem;
+  height: 2px;
+  content: "";
+  background: linear-gradient(90deg, transparent, var(--gate-silver), transparent);
+  border-radius: 999px;
+  transform: translateX(-50%);
+  opacity: 0.85;
+}
+
+.gate-message {
+  position: relative;
+  z-index: 1;
+  color: var(--gate-text);
+  font-size: clamp(1rem, 3.4vw, 1.12rem);
+  line-height: 1.85;
+}
+
+.gate-message p {
+  max-width: 33rem;
+  margin: 0 auto 2.25rem;
+}
+
+.gate-message p:first-child {
+  font-weight: 600;
+}
+
+.gate-note {
+  color: var(--gate-muted);
+}
+
+.gate-button {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 0.75rem;
+  padding: 0.75rem 2.5rem;
+  color: var(--gate-text);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--gate-silver);
+  border-radius: 16px 16px 8px 8px;
+  box-shadow:
+    0 0 18px rgba(190, 200, 200, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.gate-button::after {
+  margin-left: 0.85rem;
+  color: var(--gate-silver);
+  content: "\2192";
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.gate-button:hover {
+  color: var(--gate-silver-bright);
+  background: rgba(12, 12, 12, 0.62);
+  border-color: var(--gate-silver-bright);
+  box-shadow:
+    0 0 24px rgba(205, 215, 215, 0.18),
+    0 10px 24px rgba(0, 0, 0, 0.28);
+  transform: translateY(-2px);
+}
+
+.gate-button:hover::after {
+  color: var(--gate-silver-bright);
+  transform: translateX(2px);
+}
+
+.gate-button:focus-visible {
+  outline: 3px solid var(--gate-text);
+  outline-offset: 4px;
+}
+
+.gate-footer {
+  padding-top: 1.5rem;
+  color: var(--gate-muted);
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  opacity: 0.68;
+}
+
+.gate-footer p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .gate-page {
+    padding: 0.8rem;
+    background-attachment: scroll;
+    background-position: center center;
+  }
+
+  .gate {
+    padding-block: 0.75rem;
+  }
+
+  .gate-card {
+    padding: 3rem 1.25rem 2.75rem;
+    background-size: 56px 56px;
+  }
+
+  .gate-card h1 {
+    margin-bottom: 4rem;
+  }
+
+  .gate-message p {
+    margin-bottom: 1.8rem;
+  }
+
+  .gate-button {
+    padding-inline: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gate-button {
+    transition: none;
+  }
+}

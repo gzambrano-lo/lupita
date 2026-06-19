@@ -1179,6 +1179,24 @@
         playBtn.setAttribute("aria-label", isPlayingDirectAudio ? "Pause track" : "Play track");
       }
 
+      function getAudioMimeType(src) {
+        const pathname = String(src).split(/[?#]/)[0].toLowerCase();
+
+        if (pathname.endsWith(".mp4") || pathname.endsWith(".m4a")) {
+          return "audio/mp4";
+        }
+
+        if (pathname.endsWith(".ogg") || pathname.endsWith(".oga")) {
+          return "audio/ogg";
+        }
+
+        if (pathname.endsWith(".wav")) {
+          return "audio/wav";
+        }
+
+        return "audio/mpeg";
+      }
+
       function syncDrawer(track) {
         const tagsText = track.tags.join(", ");
         const embedUrl = track.embed || "";
@@ -1346,6 +1364,7 @@
           if (shouldReloadAudio) {
             audio.pause();
             audioSource.src = nextAudioSrc;
+            audioSource.type = getAudioMimeType(nextAudioSrc);
             audio.load();
             activeAudioSrc = nextAudioSrc;
             syncPlayButton();
