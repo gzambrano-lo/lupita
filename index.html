@@ -2,59 +2,116 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>lupe zambrano</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lupita zambrano</title>
 
-  <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
-    rel="stylesheet">
-
-  <!-- icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
-
-  <!-- my styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/reset.css">
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/components.css">
-  <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="styles/cbox.css">
-  <link rel="stylesheet" href="styles/about.css">
   <link rel="stylesheet" href="styles/post-toggle.css">
   <link rel="stylesheet" href="styles/vibe-agent.css?v=20260213b">
-
-
-  <!-- lottie -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
+  <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
-  <!-- header -->
-  <header class="site-header">
-    <div class="hero">
-    
-      <!-- full tab nav -->
-      <nav id="nav_menu" aria-label="Main" class="hero-tabs tab-nav">
-        <ul class="tab-nav-list">
-          <li class="tab-nav-item"><a class="tab-nav-link" href="/index.html" aria-current="page">home</a></li>
-          <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/about.html">about</a></li>
-          <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/music.html">music</a></li>
-          <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/learn-to-code.html">learn to code</a></li>
-          <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/bleach-shrine.html">shrines</a></li>
-          <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/project-senpai.html">project senpai</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <main class="scrapbook">
+    <nav class="paper-nav paper paper-card paper-strip" aria-label="Primary navigation">
+      <a href="index.html" aria-current="page">home</a>
+      <a href="pages/about.html">about</a>
+      <a href="pages/music.html">music</a>
+      <a href="pages/learn-to-code.html">learn to code</a>
+      <a href="pages/bleach-shrine.html">shrines</a>
+      <a href="pages/project-senpai.html">project senpai</a>
+    </nav>
 
-  <main id="main" class="container">
+    <div class="home-grid">
+    <section class="hero-paper paper paper-card">
+      <div class="polaroid">
+        <span class="tape-accent tape" aria-hidden="true"></span>
+        <img src="images/avatar.png" alt="Lupe's avatar">
+        <p>lupe (she/her)</p>
+      </div>
 
-    <!-- coral alert -->
-    <section class="alert alert-welcome" role="status" aria-live="polite">
+      <div class="intro">
+        <img class="scrap-icon hero-rainbow" src="images/icons/1197916dg40xkg8n1.gif" alt="" aria-hidden="true">
+        <h1>welcome to my website ♡</h1>
+        <p>
+          this is my first website ever made. it's a little messy, but it's mine and i love it.
+          it's a static html/css project with some vanilla js for fun interactions. i built it
+          to learn, experiment, and have a cozy corner of the internet to call my own.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="now-playing-card paper-card" aria-labelledby="now-playing-title">
+      <span class="tape-accent tape" aria-hidden="true"></span>
+      <p class="eyebrow">on repeat</p>
+      <h2 id="now-playing-title" class="section-title">now playing</h2>
+      <div class="album-note">
+        <span class="record" aria-hidden="true"></span>
+        <div>
+          <p class="track-title" data-home-track-title>Belanova — Rosa Pastel</p>
+          <p class="meta">a little soundtrack for browsing my corner of the web</p>
+        </div>
+      </div>
+      <audio preload="metadata" data-home-audio>
+        <source src="https://media.lupitazambrano.com/music/Belanova_Rosa_Pastel.mp3" type="audio/mpeg">
+        Your browser does not support the audio player.
+      </audio>
+      <div class="home-audio-controls">
+        <button class="home-audio-button home-audio-back" type="button" data-home-back aria-label="Previous track">
+          <img src="music-player/music-next-next-button-svgrepo-com.png" alt="">
+        </button>
+        <button class="home-audio-button home-audio-toggle" type="button" data-home-toggle aria-label="Play track"
+          aria-pressed="false">
+          <img data-home-toggle-icon src="music-player/music-play-play-button-svgrepo-com.png" alt="">
+        </button>
+        <button class="home-audio-button" type="button" data-home-next aria-label="Next track">
+          <img src="music-player/music-next-next-button-svgrepo-com.png" alt="">
+        </button>
+        <span class="home-audio-time" data-home-current>0:00</span>
+        <input class="home-audio-progress" data-home-progress type="range" min="0" max="100" value="0"
+          aria-label="Track progress">
+        <span class="home-audio-time" data-home-duration>0:00</span>
+      </div>
+      <div class="home-track-list" aria-label="Choose a track">
+        <button class="home-track is-active" type="button"
+          data-src="https://media.lupitazambrano.com/music/Belanova_Rosa_Pastel.mp3"
+          data-title="Belanova — Rosa Pastel" aria-pressed="true">Belanova — Rosa Pastel</button>
+        <button class="home-track" type="button"
+          data-src="https://media.lupitazambrano.com/music/54_Ultra_Upside_Down_Official_Music_Video.mp3"
+          data-title="54 Ultra — Upside Down" aria-pressed="false">54 Ultra — Upside Down</button>
+        <button class="home-track" type="button"
+          data-src="https://media.lupitazambrano.com/music/sucola_Remedy.mp3"
+          data-title="sucola — Remedy" aria-pressed="false">sucola — Remedy</button>
+        <button class="home-track" type="button"
+          data-src="https://media.lupitazambrano.com/music/Haruy_Saintwood.mp3"
+          data-title="Haruy — Saintwood" aria-pressed="false">Haruy — Saintwood</button>
+        <button class="home-track" type="button"
+          data-src="https://media.lupitazambrano.com/music/Mahalia_Sober.mp3"
+          data-title="Mahalia — Sober" aria-pressed="false">Mahalia — Sober</button>
+        <button class="home-track" type="button"
+          data-src="https://media.lupitazambrano.com/music/BRATTY_tdbn.mp3"
+          data-title="BRATTY — tdbn" aria-pressed="false">BRATTY — tdbn</button>
+        <button class="home-track" type="button"
+          data-src="https://media.lupitazambrano.com/music/Tu_Compa%C3%B1%C3%ADa_Coso.mp3"
+          data-title="Coso — Tu Compañía" aria-pressed="false">Coso — Tu Compañía</button>
+        <button class="home-track" type="button"
+          data-src="https://media.lupitazambrano.com/music/Carla_Morrison_Compartir.mp3"
+          data-title="Carla Morrison — Compartir" aria-pressed="false">Carla Morrison — Compartir</button>
+      </div>
+      <a class="music-page-link" href="pages/music.html">visit my music page &rarr;</a>
+    </section>
+
+    <section class="alert alert-welcome sticky-note" role="status" aria-live="polite">
       <div class="alert-content">
         <p class="alert-title">content note</p>
         <p class="cw-note">
@@ -62,67 +119,103 @@
           some pages may include 18+ / nsfw material (art, jokes, language). viewer discretion advised.
         </p>
       </div>
-
-
       <button class="alert-close" type="button" aria-label="dismiss" title="dismiss">🌼</button>
     </section>
 
-    <!-- intro (avatar + tagline) -->
-    <section class="card home-intro">
-      <img src="images/avatar.png" alt="Lupe's avatar" class="profile-pic" loading="lazy">
-      <div class="intro-text">
-        <h2>
-          hi, i'm lupe/lupita!
-          <span id="handAnim" class="lottie" aria-hidden="true"></span>
-        </h2>
-        <p>
-          this is my first website ever made. it's a little messy, but it's mine and i love it. it's a static html/css
-          project with some vanilla js for fun interactions. i built it to learn, experiment, and have a cozy corner of
-          the internet to call my own. you're welcome to peek at the code, borrow ideas, or remix anything that helps
-          you learn. pls report bugs if you find them. and if you ever want feedback or want to swap
-          ideas,
-          you can reach me through my guestbook ♡ thank you for choosing to be here instead of social media! long live
-          the indie web! (⁀ᗢ⁀)
-        </p>
+    <section class="identity-card paper-card paper-strip" aria-labelledby="identity-title">
+      <span class="tape-accent tape tape-accent-left" aria-hidden="true"></span>
+      <img class="scrap-icon identity-girl" src="images/icons/i02-icon-girl.gif" alt="" aria-hidden="true">
+      <div>
+        <h2 id="identity-title" class="section-title">things that define me</h2>
+        <div class="identity-badges badge-list" aria-label="Things that define Lupita">
+          <span>mexican-american</span>
+          <span>indie web</span>
+          <span>fucking weeb</span>
+          <span>music lover</span>
+          <span>html enthusiast</span>
+        </div>
       </div>
+      <img class="scrap-icon identity-strawberry" src="images/icons/470445zu82zzkdoj.gif" alt=""
+        aria-hidden="true">
     </section>
 
-    <!-- blinkies -->
-    <section class="card card-taped blinkies-card" aria-labelledby="blinkies-title">
-      <h2 id="blinkies-title" class="section-title">
-        blinkies & buttons ╰✿´⌣`✿╯♡
-      </h2>
+    <section class="quick-links-card paper-card" aria-labelledby="quick-links-title">
+      <span class="tape-accent tape" aria-hidden="true"></span>
+      <span class="tape-accent tape tape-right" aria-hidden="true"></span>
+      <h2 id="quick-links-title" class="section-title">quick links</h2>
+      <div class="quick-links-list">
+        <a href="pages/about.html"><span>about me</span><small>meet the webmaster</small></a>
+        <a href="pages/music.html"><span>music</span><small>songs, playlists, and favorites</small></a>
+        <a href="pages/learn-to-code.html"><span>learn to code</span><small>notes from my coding journey</small></a>
+        <a href="pages/bleach-shrine.html"><span>shrines</span><small>pages made with excessive affection</small></a>
+        <a href="pages/guestbook.html"><span>guestbook</span><small>leave a note before you go</small></a>
+        <a href="pages/project-senpai.html"><span>project senpai</span><small>see what I am building</small></a>
+      </div>
+      <details class="quick-links-ai">
+        <summary>open lupita.ai</summary>
+        <div class="quick-links-agent-slot"></div>
+      </details>
+    </section>
 
+    <section class="paper-section blinkies-card shelf-card" aria-labelledby="blinkies-title">
+      <span class="tape-accent tape tape-left" aria-hidden="true"></span>
+      <span class="tape-accent tape tape-right" aria-hidden="true"></span>
+      <img class="scrap-icon shelf-birds" src="images/icons/i-bird01.gif" alt="" aria-hidden="true">
+      <h2 id="blinkies-title" class="section-title">blinkies &amp; buttons ╰✿´⌣`✿╯♡</h2>
       <div class="blinkies">
         <a class="blinky" href="https://lupitazambrano.com" target="_blank" rel="noopener">
-          <img src="/images/lupita_z_88x31.gif" alt="lupitazambrano.com" width="88" height="31" loading="lazy">
+          <img src="images/lupita_z_88x31.gif" alt="lupitazambrano.com" width="88" height="31" loading="lazy">
         </a>
-
         <a class="blinky" href="https://wiredcollective.neocities.org/" target="_blank" rel="noopener">
           <img src="https://wiredcollective.neocities.org/webringimages/wiredcollectivebutton.png"
             alt="WIRED COLLECTIVE WEBRING" width="88" height="31" loading="lazy">
         </a>
+        <span class="blinky">
+          <img src="buttons/1neo6.gif" alt="NeoCities: the web is yours" width="88" height="31" loading="lazy">
+        </span>
+        <a class="blinky" href="pages/learn-to-code.html">
+          <img src="buttons/2linus.gif" alt="Free tech tips — visit Learn to Code" width="88" height="31"
+            loading="lazy">
+        </a>
+        <span class="blinky">
+          <img src="buttons/2sanrio2.gif" alt="Cinnamoroll animation" width="88" height="31" loading="lazy">
+        </span>
+        <span class="blinky">
+          <img src="buttons/2sanrio3.gif" alt="Cinnamoroll approved" width="88" height="31" loading="lazy">
+        </span>
+        <span class="blinky">
+          <img src="buttons/104.gif" alt="Hyper Friend" width="88" height="31" loading="lazy">
+        </span>
+        <span class="blinky">
+          <img src="buttons/dontleave.gif" alt="Don't leave me alone" width="88" height="31" loading="lazy">
+        </span>
+        <span class="blinky">
+          <img src="buttons/froggygif.gif" alt="Animated frog" width="88" height="31" loading="lazy">
+        </span>
+        <span class="blinky">
+          <img src="buttons/lulu_tinyuniverses_wannachill.gif" alt="Wanna chill?" width="88" height="31"
+            loading="lazy">
+        </span>
+        <span class="blinky">
+          <img src="buttons/notperfect.gif" alt="Not perfect" width="88" height="31" loading="lazy">
+        </span>
       </div>
     </section>
 
-    <!-- about this place (everything in one calm drawer) -->
-    <section class="card card-taped about-drawer" aria-labelledby="about-drawer-title">
-      <h2 id="about-drawer-title" class="section-title">
-        about this place
-      </h2>
-
+    <section class="paper-section about-drawer notebook notebook-section" aria-labelledby="about-drawer-title">
+      <h2 id="about-drawer-title" class="section-title">about this place</h2>
       <p class="meta-note">if you're curious — open a tab. if not, keep scrolling ♡</p>
 
+      <div class="about-notice-slot"></div>
       <div class="drawer-stack">
-        <!-- 1: what is this site -->
-        <details class="post-card drawer-item">
+        <details class="post-card drawer-item shelf-card">
           <summary class="post-cover drawer-cover">what is this website?</summary>
           <div class="post-body">
             <p>
               this is my little corner of the internet, part of the <strong>indie web</strong>. the indie web is all
-              about making personal sites instead of living only on big social media platforms.
-              think of it like an online scrapbook: a place where i can ramble, keep a media log, post blogs,
-              and experiment with web design just because it's fun.
+              about making personal sites instead of living only on big social media platforms. think of it like an
+              online scrapbook: a place where i can ramble, keep a media log, post blogs, and experiment with web
+              design just because it's fun.
             </p>
             <p>
               you'll find a mix of personal projects, things i enjoy, and little pieces of my life here.
@@ -134,9 +227,9 @@
             <h3>¿qué es este sitio web?</h3>
             <p>
               este es mi pequeño rincón del internet, parte del <strong>indie web</strong>. el indie web se trata de
-              crear sitios personales en lugar de depender solo de las grandes plataformas.
-              es como un diario digital: un espacio donde comparto mis pensamientos, llevo un registro de lo que veo,
-              escribo blogs y juego con el diseño web por gusto.
+              crear sitios personales en lugar de depender solo de las grandes plataformas. es como un diario digital:
+              un espacio donde comparto mis pensamientos, llevo un registro de lo que veo, escribo blogs y juego con
+              el diseño web por gusto.
             </p>
             <p>
               aquí encontrarás una mezcla de proyectos personales, cosas que disfruto y pedacitos de mi vida.
@@ -145,21 +238,16 @@
           </div>
         </details>
 
-        <!-- 2: indie web -->
-        <details class="post-card drawer-item">
-          <summary class="post-cover drawer-cover">
-            what is the indie web?
-          </summary>
-
+        <details class="post-card drawer-item shelf-card">
+          <summary class="post-cover drawer-cover">what is the indie web?</summary>
           <div class="post-body">
             <div class="video-wrapper">
-              <iframe src="https://www.youtube-nocookie.com/embed/Tv223kX0SRg" title="Marighoul: What is the Indie Web?"
-                frameborder="0"
+              <iframe src="https://www.youtube-nocookie.com/embed/Tv223kX0SRg"
+                title="Marighoul: What is the Indie Web?"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
             </div>
-
-            <p class="meta" style="margin-top:.5rem">
+            <p class="meta">
               marighoul's video explaining the indie web: what it is, why it matters, and why it's so inspiring.
               check out their site ➜
               <a href="https://marighoul.com/" target="_blank" rel="noopener">marighoul.com</a>
@@ -167,14 +255,10 @@
           </div>
         </details>
 
-        <!-- 3: soft pitch -->
-        <details class="post-card drawer-item drawer-pitch">
+        <details class="post-card drawer-item drawer-pitch shelf-card">
           <summary class="post-cover drawer-cover">want a website like this?</summary>
-
           <div class="post-body">
-            <p class="meta-note" style="margin-top:0">
-              low-pressure note: i sometimes build tiny sites for other people too.
-            </p>
+            <p class="meta-note">low-pressure note: i sometimes build tiny sites for other people too.</p>
 
             <div class="lang-block">
               <p>
@@ -182,8 +266,8 @@
                 i can build you a personalized website — simple, cute, and just for you.
               </p>
               <p>
-                i'm still a beginner, so my prices are low while i learn. i hand-code everything
-                myself and keep things clean, soft, and cozy.
+                i'm still a beginner, so my prices are low while i learn. i hand-code everything myself and keep
+                things clean, soft, and cozy.
               </p>
 
               <h3 class="subheading">what i offer:</h3>
@@ -200,8 +284,8 @@
               <ul class="dash">
                 <li>creators of all kinds</li>
                 <li>small business owners</li>
-                <li>influencers & streamers</li>
-                <li>artists, writers, & musicians</li>
+                <li>influencers &amp; streamers</li>
+                <li>artists, writers, &amp; musicians</li>
                 <li>anyone who wants a soft, custom space online</li>
               </ul>
 
@@ -211,11 +295,8 @@
                   i'm keeping mine around $75-$150 to stay beginner-friendly and accessible (⌒_⌒;) ♥
                 </small>
               </p>
-
               <p class="meta-note">
-                <small>
-                  want to leave a message? <a href="/pages/guestbook.html">sign my guestbook</a>!
-                </small>
+                <small>want to leave a message? <a href="pages/guestbook.html">sign my guestbook</a>!</small>
               </p>
             </div>
 
@@ -262,125 +343,170 @@
       </div>
     </section>
 
-    <!-- cbox -->
-    <section class="card card-taped chatbox-card" id="chat">
+    <section class="paper-section chatbox-card paper paper-card" id="chat">
       <header class="chatbox-header">
         <h2 class="section-title">comment box</h2>
         <p class="meta-note">leave me a little note, song rec, or link to your site (⁀ᗢ⁀)</p>
       </header>
-
       <div class="chatbox-frame">
-        <iframe src="https://www3.cbox.ws/box/?boxid=3550275&boxtag=FWuK6g" title="lupe's chatbox" loading="lazy"
-          allow="autoplay" allowtransparency="true" frameborder="0" marginheight="0" marginwidth="0"
-          scrolling="auto"></iframe>
+        <iframe src="https://www3.cbox.ws/box/?boxid=3550275&amp;boxtag=FWuK6g" title="lupe's chatbox"
+          loading="lazy" allow="autoplay" scrolling="auto"></iframe>
       </div>
-
       <p class="meta chatbox-note">powered by cbox • please be kind (^‿^)</p>
     </section>
 
-    <section class="card card-taped" aria-labelledby="vibe-agent-title">
-      <h2 id="vibe-agent-title" class="section-title"><span class="i"></span>lupita.ai</h2>
+    <section class="paper-section sticky-note ai-note" aria-labelledby="vibe-agent-title">
+      <h2 id="vibe-agent-title" class="section-title">lupita.ai</h2>
       <p class="meta-note">unstable ai. use gently.</p>
       <div id="vibe-agent" class="va">
         <div class="va-header">
           <span>lupita.ai</span>
           <span id="va-state" class="va-pill">calm</span>
         </div>
-
         <div id="va-log" class="va-log" aria-live="polite"></div>
-
         <form id="va-form" class="va-form">
-          <input id="va-input" class="va-input" placeholder="say something..." autocomplete="off" />
+          <input id="va-input" class="va-input" placeholder="say something..." autocomplete="off">
           <button class="va-btn" type="submit">send</button>
         </form>
-
         <div class="va-controls">
           <button id="va-reset" class="va-link" type="button">reset</button>
           <button id="va-toggle" class="va-link" type="button">toggle chaos</button>
         </div>
       </div>
     </section>
+    </div>
 
-
+    <footer class="site-footer">
+      <p>&copy; lupita zambrano ☆(>ᴗ•) 2025</p>
+    </footer>
   </main>
-
-  <footer class="site-footer">
-    <p>&copy; lupita zambrano ☆(>ᴗ•) 2025</p>
-  </footer>
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      // welcome banner dismiss
       const banner = document.querySelector('.alert.alert-welcome');
       const closeBtn = banner?.querySelector('.alert-close');
-      const KEY = 'welcomeBannerDismissed';
+      const key = 'welcomeBannerDismissed';
 
-      if (localStorage.getItem(KEY) === '1') {
+      if (localStorage.getItem(key) === '1') {
         banner?.remove();
       } else if (banner && closeBtn) {
         closeBtn.addEventListener('click', () => {
           banner.remove();
-          localStorage.setItem(KEY, '1');
+          localStorage.setItem(key, '1');
         });
       }
 
-      // lottie
-      const opts = { renderer: 'svg', loop: true, autoplay: true };
-
-      const sparkleLeft = document.getElementById('sparkleLeft');
-      const sparkleRight = document.getElementById('sparkleRight');
-      const handAnim = document.getElementById('handAnim');
-      const lineAnim = document.getElementById('lineAnim');
-      const currentMusicAnim = document.getElementById('currentMusicAnim');
-
-      const fallback = (el, emoji) => {
-        if (el) el.textContent = emoji;
-      };
-
-      if (!window.lottie) {
-        fallback(sparkleLeft, '✨');
-        fallback(sparkleRight, '✨');
-        fallback(handAnim, '👋');
-        fallback(currentMusicAnim, '🎵');
-      } else {
-        if (sparkleLeft) {
-          lottie.loadAnimation({ ...opts, container: sparkleLeft, path: 'animations/sparkle-left.json' });
-        }
-        if (sparkleRight) {
-          lottie.loadAnimation({ ...opts, container: sparkleRight, path: 'animations/sparkle-right.json' });
-        }
-        if (handAnim) {
-          lottie.loadAnimation({ ...opts, container: handAnim, path: 'animations/wave-hand.json' });
-        }
-        if (lineAnim) {
-          const anim = lottie.loadAnimation({
-            ...opts,
-            container: lineAnim,
-            path: 'animations/line.json',
-            rendererSettings: { preserveAspectRatio: 'xMidYMid meet' }
-          });
-          anim.setSpeed(0.5);
-        }
-        if (currentMusicAnim) {
-          lottie.loadAnimation({ ...opts, container: currentMusicAnim, path: 'animations/music.json' });
-        }
-      }
-
-      // about drawer: only one open at a time
       const drawerDetails = document.querySelectorAll('.about-drawer details');
-      drawerDetails.forEach(d => {
-        d.addEventListener('toggle', () => {
-          if (!d.open) return;
-          drawerDetails.forEach(other => {
-            if (other !== d) other.open = false;
+      drawerDetails.forEach((detail) => {
+        detail.addEventListener('toggle', () => {
+          if (!detail.open) return;
+          drawerDetails.forEach((other) => {
+            if (other !== detail) other.open = false;
           });
         });
       });
+
+      const aboutNoticeSlot = document.querySelector('.about-notice-slot');
+      if (banner?.isConnected && aboutNoticeSlot) {
+        aboutNoticeSlot.append(banner);
+      }
+
+      const agent = document.querySelector('.ai-note');
+      const agentSlot = document.querySelector('.quick-links-agent-slot');
+      if (agent && agentSlot) {
+        agentSlot.append(agent);
+      }
+
+      const homeAudio = document.querySelector('[data-home-audio]');
+      const homeTrackTitle = document.querySelector('[data-home-track-title]');
+      const homeTracks = document.querySelectorAll('.home-track');
+      const homeToggle = document.querySelector('[data-home-toggle]');
+      const homeToggleIcon = document.querySelector('[data-home-toggle-icon]');
+      const homeBack = document.querySelector('[data-home-back]');
+      const homeNext = document.querySelector('[data-home-next]');
+      const homeProgress = document.querySelector('[data-home-progress]');
+      const homeCurrent = document.querySelector('[data-home-current]');
+      const homeDuration = document.querySelector('[data-home-duration]');
+
+      const formatHomeTime = (seconds) => {
+        if (!Number.isFinite(seconds)) return '0:00';
+        return `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
+      };
+
+      const syncHomePlayer = () => {
+        if (!homeAudio) return;
+        const duration = Number.isFinite(homeAudio.duration) ? homeAudio.duration : 0;
+        const currentTime = Number.isFinite(homeAudio.currentTime) ? homeAudio.currentTime : 0;
+        const isPlaying = !homeAudio.paused;
+
+        if (homeProgress) homeProgress.value = duration ? (currentTime / duration) * 100 : 0;
+        if (homeCurrent) homeCurrent.textContent = formatHomeTime(currentTime);
+        if (homeDuration) homeDuration.textContent = formatHomeTime(duration);
+        if (homeToggle) {
+          homeToggle.setAttribute('aria-pressed', String(isPlaying));
+          homeToggle.setAttribute('aria-label', isPlaying ? 'Pause track' : 'Play track');
+        }
+        if (homeToggleIcon) {
+          homeToggleIcon.src = isPlaying
+            ? 'music-player/media-player-music-pause-svgrepo-com.png'
+            : 'music-player/music-play-play-button-svgrepo-com.png';
+        }
+      };
+
+      const selectHomeTrack = (track, autoplay = true) => {
+        if (!homeAudio || !track) return;
+
+        homeAudio.src = track.dataset.src;
+        homeAudio.load();
+        if (homeTrackTitle) homeTrackTitle.textContent = track.dataset.title;
+
+        homeTracks.forEach((item) => {
+          const isActive = item === track;
+          item.classList.toggle('is-active', isActive);
+          item.setAttribute('aria-pressed', String(isActive));
+        });
+
+        if (autoplay) homeAudio.play().catch(() => {});
+        syncHomePlayer();
+      };
+
+      homeTracks.forEach((track) => {
+        track.addEventListener('click', () => {
+          selectHomeTrack(track);
+        });
+      });
+
+      homeToggle?.addEventListener('click', () => {
+        if (!homeAudio) return;
+        if (homeAudio.paused) {
+          homeAudio.play().catch(() => {});
+        } else {
+          homeAudio.pause();
+        }
+      });
+
+      const stepHomeTrack = (direction) => {
+        const tracks = [...homeTracks];
+        const activeIndex = tracks.findIndex((track) => track.classList.contains('is-active'));
+        selectHomeTrack(tracks[(activeIndex + direction + tracks.length) % tracks.length]);
+      };
+
+      homeBack?.addEventListener('click', () => stepHomeTrack(-1));
+      homeNext?.addEventListener('click', () => stepHomeTrack(1));
+
+      homeProgress?.addEventListener('input', () => {
+        if (!homeAudio || !Number.isFinite(homeAudio.duration)) return;
+        homeAudio.currentTime = (Number(homeProgress.value) / 100) * homeAudio.duration;
+      });
+
+      homeAudio?.addEventListener('loadedmetadata', syncHomePlayer);
+      homeAudio?.addEventListener('timeupdate', syncHomePlayer);
+      homeAudio?.addEventListener('play', syncHomePlayer);
+      homeAudio?.addEventListener('pause', syncHomePlayer);
+      homeAudio?.addEventListener('ended', () => stepHomeTrack(1));
     });
   </script>
   <script src="scripts/vibe-agent.js" defer></script>
-
-
 </body>
 
 </html>
