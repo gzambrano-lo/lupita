@@ -105,6 +105,7 @@ body {
 
 .polaroid {
   flex: 0 0 auto;
+  justify-self: center;
   width: min(100%, 225px);
   padding: .85rem .85rem 2.2rem;
   background: #fff;
@@ -271,10 +272,11 @@ body {
 
 .hero-rainbow {
   position: absolute;
-  top: -2.2rem;
-  right: -.3rem;
+  top: -1.15rem;
+  right: auto;
+  left: 1.25rem;
   width: 74px;
-  transform: rotate(2deg);
+  transform: rotate(-6deg);
 }
 
 .alert-welcome {
@@ -618,8 +620,9 @@ body {
   }
 
   .hero-rainbow {
-    top: -1.5rem;
-    right: 0;
+    top: -1.2rem;
+    right: auto;
+    left: .9rem;
     width: 58px;
   }
 
@@ -889,6 +892,31 @@ body {
   transform: rotate(-.45deg);
 }
 
+.home-visitor-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  width: fit-content;
+  margin: .55rem auto 0;
+  color: #6f625d;
+  font-size: .82rem;
+  line-height: 1;
+  text-transform: lowercase;
+}
+
+.home-visitor-counter strong {
+  display: inline-block;
+  padding: .22rem .4rem .18rem;
+  color: #6f8475;
+  background: #eef2df;
+  border: 1px inset rgba(132, 165, 157, .62);
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .72);
+  font-family: "Courier New", monospace;
+  font-size: .88rem;
+  letter-spacing: .12em;
+  line-height: 1;
+}
+
 @media (min-width: 851px) {
   .home-grid .hero-paper {
     grid-template-columns: minmax(150px, 185px) minmax(0, 1fr);
@@ -921,8 +949,11 @@ body {
   }
 
   .home-grid .hero-rainbow {
-    top: -1.4rem;
-    width: 62px;
+    top: -1.15rem;
+    right: 1.1rem;
+    left: auto;
+    width: 58px;
+    transform: rotate(5deg);
   }
 
   .home-grid .now-playing-card {
@@ -1066,8 +1097,16 @@ body {
 }
 
 .site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   margin-top: clamp(1.35rem, 2.5vw, 2rem);
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
 }
 
 @media (max-width: 850px) {
@@ -1202,9 +1241,10 @@ body {
   }
 
   .home-grid .hero-rainbow {
-    top: -1rem;
-    right: .2rem;
-    width: 52px;
+    top: -.75rem;
+    right: auto;
+    left: .75rem;
+    width: 50px;
   }
 
   .home-audio-controls {

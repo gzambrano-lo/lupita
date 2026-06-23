@@ -150,6 +150,9 @@
         <a href="pages/bleach-shrine.html"><span>shrines</span><small>pages made with excessive affection</small></a>
         <a href="pages/guestbook.html"><span>guestbook</span><small>leave a note before you go</small></a>
         <a href="pages/project-senpai.html"><span>project senpai</span><small>see what I am building</small></a>
+        <a href="pages/blog.html"><span>blog</span><small>personal posts and updates</small></a>
+        <a href="pages/gallery.html"><span>gallery</span><small>images, favorites, and visual bits</small></a>
+        <a href="pages/media-log.html"><span>media log</span><small>what I am watching, reading, and playing</small></a>
       </div>
       <details class="quick-links-ai">
         <summary>open lupita.ai</summary>
@@ -378,6 +381,10 @@
 
     <footer class="site-footer">
       <p>&copy; lupita zambrano ☆(>ᴗ•) 2025</p>
+      <div class="home-visitor-counter" aria-label="visitor counter">
+        <span>visitors:</span>
+        <strong id="visitorCount">0000000</strong>
+      </div>
     </footer>
   </main>
 
@@ -427,6 +434,29 @@
       const homeProgress = document.querySelector('[data-home-progress]');
       const homeCurrent = document.querySelector('[data-home-current]');
       const homeDuration = document.querySelector('[data-home-duration]');
+      const visitorCount = document.getElementById('visitorCount');
+      const visitorCounterApi = 'https://visitor-counter.gzamlo98.workers.dev?slug=index';
+
+      const formatVisitorCount = (count) => String(Number(count) || 0).padStart(7, '0');
+
+      const loadVisitorCount = async () => {
+        if (!visitorCount) return;
+
+        try {
+          const res = await fetch(visitorCounterApi, {
+            method: 'GET',
+            headers: {
+              Accept: 'application/json',
+            },
+          });
+          if (!res.ok) throw new Error('failed to load visitor counter');
+          const data = await res.json();
+          visitorCount.textContent = formatVisitorCount(typeof data === 'number' ? data : data.count);
+        } catch (err) {
+          console.error('visitor counter error:', err);
+          visitorCount.textContent = '0000000';
+        }
+      };
 
       const formatHomeTime = (seconds) => {
         if (!Number.isFinite(seconds)) return '0:00';
@@ -504,6 +534,7 @@
       homeAudio?.addEventListener('play', syncHomePlayer);
       homeAudio?.addEventListener('pause', syncHomePlayer);
       homeAudio?.addEventListener('ended', () => stepHomeTrack(1));
+      loadVisitorCount();
     });
   </script>
   <script src="scripts/vibe-agent.js" defer></script>
