@@ -1,4 +1,31 @@
 window.addEventListener('DOMContentLoaded', () => {
+  const mainNav = document.querySelector('#nav_menu');
+  if (mainNav) {
+    const canonicalLabels = new Map([
+      ['/index.html', 'home'],
+      ['/pages/about.html', 'about'],
+      ['/pages/music.html', 'music'],
+      ['/pages/learn-to-code.html', 'learn to code'],
+      ['/pages/bleach-shrine.html', 'shrines'],
+      ['/pages/project-senpai.html', 'project senpai']
+    ]);
+    const currentPath = window.location.pathname === '/' ? '/index.html' : window.location.pathname;
+
+    mainNav.querySelectorAll('a[href]').forEach((link) => {
+      const linkPath = new URL(link.href, window.location.href).pathname;
+      if (canonicalLabels.has(linkPath)) {
+        link.textContent = canonicalLabels.get(linkPath);
+      }
+
+      const isCurrent = linkPath === currentPath;
+      if (isCurrent) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+      link.closest('li')?.classList.toggle('current', isCurrent);
+    });
+  }
 
   const banner = document.querySelector('.alert.alert-welcome');
   const closeBtn = banner?.querySelector('.alert-close');
