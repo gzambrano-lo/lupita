@@ -436,6 +436,15 @@
     margin: 0 auto;
 }
 
+.post-page-2026-04-21 .duck-player-gif {
+    display: block;
+    aspect-ratio: 364 / 300;
+    background-image: url("../images/duck_player.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
 .post-page-2026-05-13 .player-next-track-btn {
     display: inline-flex;
     align-items: center;
