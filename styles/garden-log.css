@@ -26,18 +26,18 @@
   grid-template-columns: 64px 1fr;
   gap: .75rem;
   align-items: start;
-  background: color-mix(in srgb, var(--soft) 18%, transparent);
-  border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+  background: var(--paper);
+  border: 1px solid var(--paper-border);
   border-radius: var(--radius);
   padding: .7rem .9rem;
-  box-shadow: var(--shadow);
+  box-shadow: var(--paper-shadow-small);
 }
 
 .plant-img {
   width: 64px;
   height: 64px;
   image-rendering: pixelated;
-  border-radius: calc(var(--radius) - 4px);
+  border-radius: var(--radius-sm);
   background: color-mix(in srgb, var(--soft) 35%, transparent);
 }
 
@@ -120,7 +120,7 @@
 
 .tag {
   padding: .2rem .6rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
   font-size: .75rem;
   margin: .2rem;
   color: var(--text);

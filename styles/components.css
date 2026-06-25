@@ -1,9 +1,11 @@
 section,
 .card {
-    background: rgba(255, 255, 255, .7);
-    border: 1px solid var(--border);
+    background:
+        linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, 0)),
+        var(--paper);
+    border: 1px solid var(--paper-border);
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    box-shadow: var(--paper-shadow);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -53,9 +55,9 @@ section,
         color-mix(in srgb, var(--soft) 55%, #fff)
     );
     opacity: .9;
-    border-radius: 999px;
+    border-radius: var(--radius-sm);
     transform: rotate(-4deg);
-    box-shadow: 0 3px 6px rgb(0 0 0 / .12);
+    box-shadow: 0 2px 5px rgb(58 45 37 / .08);
     pointer-events: none;
 }
 
@@ -298,7 +300,7 @@ section,
     align-items: center;
     gap: clamp(1rem, 3vw, 1.5rem);
     padding: clamp(1.25rem, 3vw, 2rem);
-    border-radius: 1rem;
+    border-radius: var(--radius);
 }
 
 .profile-pic {
@@ -340,9 +342,9 @@ section,
 }
 
 .post {
-    background: rgba(255, 255, 255, .7);
-    border: 1px solid var(--border);
-    border-radius: 1rem;
+    background: var(--paper);
+    border: 1px solid var(--paper-border);
+    border-radius: var(--radius);
     padding: 1.25rem 1.5rem;
 }
 
@@ -360,9 +362,10 @@ section,
     max-width: 720px;
     margin: 2rem auto;
     padding: 1.25rem 1.5rem;
-    background: rgba(255, 255, 255, .7);
-    border: 1px solid var(--border);
+    background: var(--paper);
+    border: 1px solid var(--paper-border);
     border-radius: var(--radius);
+    box-shadow: var(--paper-shadow);
 }
 
 .link-grid {
@@ -385,8 +388,8 @@ section,
     padding: 1rem;
     background: #fff;
     border: 1px solid var(--soft);
-    border-radius: 16px;
-    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    box-shadow: var(--paper-shadow-small);
     color: var(--text);
     transition: transform .15s, box-shadow .2s, border-color .2s;
 }
@@ -480,8 +483,9 @@ section,
     gap: 12px;
     padding: 1rem;
     border-radius: var(--radius);
-    background: rgba(255, 255, 255, .7);
-    box-shadow: var(--shadow);
+    background: var(--paper);
+    border: 1px solid var(--paper-border);
+    box-shadow: var(--paper-shadow-small);
 }
 
 .music-card h4 {
@@ -495,15 +499,15 @@ section,
     display: block;
     margin: 0 auto;
     width: 180px;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    box-shadow: var(--paper-shadow-small);
 }
 
 .music-card iframe {
     width: 100%;
     height: 152px;
     border: 0;
-    border-radius: 12px;
+    border-radius: var(--radius);
 }
 
 .video-wrapper {
@@ -511,7 +515,7 @@ section,
     aspect-ratio: 16 / 9;
     border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: var(--paper-shadow-small);
     margin-top: .75rem;
 }
 
@@ -524,10 +528,10 @@ section,
 .form-card {
     max-width: 720px;
     margin: 2rem auto;
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: var(--paper);
+    border: 1px solid var(--paper-border);
     border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    box-shadow: var(--paper-shadow);
     padding: 1.25rem;
 }
 
@@ -576,7 +580,7 @@ section,
     padding: 1.1rem 1.4rem;
     background: rgba(242, 132, 130, .15);
     border: 1px solid var(--bd);
-    border-radius: calc(var(--radius) + 10px);
+    border-radius: var(--radius-lg);
     backdrop-filter: blur(6px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, .05), inset 0 1px 0 rgba(255, 255, 255, .4);
     color: var(--ink);
@@ -638,7 +642,7 @@ details {
     margin: 1em 0;
     padding: .75em;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: var(--radius);
     background-color: #fdfdfd;
 }
 
@@ -657,7 +661,7 @@ details[open] {
     margin-top: .6rem;
     background: transparent;
     border: 1px solid color-mix(in oklab, var(--bd), white 25%);
-    border-radius: 12px;
+    border-radius: var(--radius);
 }
 
 .alert summary {

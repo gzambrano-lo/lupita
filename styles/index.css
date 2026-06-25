@@ -13,11 +13,11 @@ body {
   margin: 0;
   font-family: "Nunito", sans-serif;
   color: var(--scrap-ink);
-  background-color: #fffaf3;
+  background-color: var(--site-bg);
   background-image:
-    linear-gradient(90deg, rgba(132, 165, 157, .22) 50%, transparent 50%),
-    linear-gradient(rgba(132, 165, 157, .22) 50%, transparent 50%);
-  background-size: 140px 140px;
+    linear-gradient(90deg, var(--site-grid) 50%, transparent 50%),
+    linear-gradient(var(--site-grid) 50%, transparent 50%);
+  background-size: var(--site-grid-size);
   background-attachment: fixed;
 }
 
@@ -31,7 +31,7 @@ body {
   width: min(100%, 1180px);
   max-width: none;
   margin: 0 auto;
-  padding: clamp(1rem, 4vw, 3.5rem);
+  padding: 0 clamp(1rem, 4vw, 3.5rem) clamp(1rem, 4vw, 3.5rem);
   box-sizing: border-box;
 }
 
@@ -181,54 +181,6 @@ body {
   box-shadow: var(--scrap-shadow-small);
 }
 
-/* Major grid placement */
-.paper-nav {
-  grid-column: 1 / -1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: .55rem;
-  margin: 0;
-  padding: 1rem clamp(1rem, 3vw, 2rem);
-  transform: rotate(-.3deg);
-}
-
-.paper-nav::before {
-  left: 18%;
-}
-
-.paper-nav a {
-  color: #675853;
-  background: #fff;
-  border: 1px solid #ead6ca;
-  border-radius: 2px;
-  padding: .52rem .85rem;
-  box-shadow: 2px 3px 0 rgba(90, 70, 60, .08);
-  text-decoration: none;
-  transition: color .18s ease, transform .18s ease, box-shadow .18s ease;
-}
-
-.paper-nav a:nth-child(2n) {
-  transform: rotate(1deg);
-}
-
-.paper-nav a:nth-child(3n) {
-  transform: rotate(-1deg);
-}
-
-.paper-nav a:hover,
-.paper-nav a:focus-visible {
-  color: var(--scrap-pink);
-  box-shadow: 3px 5px 8px rgba(90, 70, 60, .12);
-  transform: translateY(-2px) rotate(-1deg);
-}
-
-.paper-nav a[aria-current="page"] {
-  color: #b9526d;
-  background: #f8ddd9;
-  border-color: rgba(199, 111, 132, .3);
-}
-
 .hero-paper {
   grid-column: 1 / span 9;
   display: grid;
@@ -328,19 +280,22 @@ body {
 
 .identity-badges {
   display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: .42rem;
 }
 
 .identity-badges span {
-  padding: .38rem .75rem;
+  flex: 0 0 auto;
+  padding: .34rem .62rem;
   color: #5e514c;
   background: #f8ddd9;
   border: 1px solid rgba(199, 111, 132, .2);
   border-radius: 999px;
   box-shadow: 1px 2px 0 rgba(96, 72, 61, .08);
-  font-size: .82rem;
+  font-size: .78rem;
   font-weight: 700;
+  white-space: nowrap;
   transform: rotate(-1deg);
 }
 
@@ -563,14 +518,13 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: 1rem .8rem 2rem;
+    padding: 0 .8rem 2rem;
   }
 
   .scrapbook::before {
     display: none;
   }
 
-  .paper-nav,
   .hero-paper,
   .alert-welcome,
   .identity-card,
@@ -582,10 +536,6 @@ body {
     grid-column: 1;
     width: 100%;
     transform: none;
-  }
-
-  .paper-nav {
-    justify-content: flex-start;
   }
 
   .hero-paper {
@@ -614,6 +564,7 @@ body {
   }
 
   .identity-badges {
+    flex-wrap: wrap;
     justify-content: center;
   }
 
@@ -627,13 +578,9 @@ body {
     width: min(76vw, 220px);
   }
 
-  .paper-nav a:nth-child(n) {
-    transform: none;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .paper-nav,
   .hero-paper,
   .alert-welcome,
   .identity-card,
@@ -657,10 +604,6 @@ body {
 
 .paper-strip {
   width: 100%;
-}
-
-.paper-nav {
-  margin-bottom: clamp(1.35rem, 2.5vw, 2rem);
 }
 
 .home-grid {
@@ -1133,28 +1076,9 @@ body {
     overflow-x: hidden;
   }
 
-  body {
-    padding: .45rem;
-  }
-
   .scrapbook {
     width: 100%;
-    padding: .65rem;
-  }
-
-  .paper-nav {
-    gap: .4rem;
-    margin-bottom: 1.25rem;
-    padding: .75rem;
-  }
-
-  .paper-nav::before {
-    left: 18%;
-  }
-
-  .paper-nav a {
-    padding: .45rem .65rem;
-    font-size: .88rem;
+    padding: 0 .65rem .65rem;
   }
 
   .home-grid {
@@ -1245,6 +1169,7 @@ body {
   }
 
   .identity-badges {
+    flex-wrap: wrap;
     justify-content: flex-start;
   }
 
@@ -1299,9 +1224,5 @@ body {
 @media (max-width: 350px) {
   .blinkies {
     grid-template-columns: repeat(2, 88px);
-  }
-
-  .paper-nav a {
-    font-size: .82rem;
   }
 }

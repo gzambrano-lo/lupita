@@ -43,9 +43,9 @@
   margin: 1rem 0;
   padding: .75rem;
   border: 1px solid color-mix(in srgb, var(--border) 75%, transparent);
-  border-radius: .85rem;
+  border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, .85);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, .05);
+  box-shadow: var(--paper-shadow-small);
 }
 
 .post pre {
@@ -61,10 +61,10 @@
 
 .post-card {
   margin-block: 1.5rem;
-  background: rgba(255, 255, 255, .55);
-  border: 1px solid var(--border);
-  border-radius: 1.25rem;
-  box-shadow: var(--shadow);
+  background: var(--paper);
+  border: 1px solid var(--paper-border);
+  border-radius: var(--radius);
+  box-shadow: var(--paper-shadow-small);
   overflow: visible;
   backdrop-filter: blur(6px);
 }
@@ -154,10 +154,10 @@
   position: relative;
   margin: 1rem 0 1.25rem;
   padding: .85rem 1rem;
-  border-radius: 1rem;
+  border-radius: var(--radius);
   border: 1px dashed var(--sage);
   background: rgba(255, 255, 255, .78);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, .06);
+  box-shadow: var(--paper-shadow-small);
   color: var(--muted);
   font-size: .9rem;
 }
@@ -191,7 +191,7 @@
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  border-radius: .75rem;
+  border-radius: var(--radius);
 }
 
 .video-wrapper iframe {
@@ -270,11 +270,11 @@
   padding: .5rem .65rem;
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: .6rem;
+  border-radius: var(--radius);
   background-clip: padding-box;
   isolation: isolate;
   z-index: 1000;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, .12);
+  box-shadow: var(--paper-shadow-small);
   font-size: .85rem;
   line-height: 1.4;
   color: var(--text);
@@ -320,10 +320,10 @@ h4 {
   max-width: 360px;
   margin: 0;
   padding: .65rem .85rem;
-  border-radius: .75rem;
+  border-radius: var(--radius);
   background: #fff;
   border: 1px solid var(--border);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, .14);
+  box-shadow: var(--paper-shadow-small);
   color: var(--text);
   font-size: .9rem;
   line-height: 1.4;
