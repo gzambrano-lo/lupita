@@ -1,0 +1,181 @@
+/* Blog comments: matches the site's paper and pill styling. */
+
+.comments-card {
+  max-width: 800px;
+  margin: 1.5rem auto 0;
+}
+
+.comments-card .section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.75rem;
+}
+
+.comment-count-pill {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #b9526d;
+  background: var(--cream);
+  border: 1px solid var(--pink);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  line-height: 1;
+}
+
+.comment-sort {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.comments-card .pill-btn {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.comments-card .pill-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.comment-sort .sort-btn {
+  font-size: 0.82rem;
+  padding: 0.4rem 0.85rem;
+  color: var(--muted);
+}
+
+.comment-sort .sort-btn.is-active {
+  background: var(--pink);
+  border-color: var(--coral);
+  color: #b9526d;
+}
+
+.comment-form {
+  background: color-mix(in srgb, var(--pink) 22%, #fff);
+  border: 1px solid color-mix(in srgb, var(--pink) 60%, var(--border));
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.comment-input,
+.comment-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.85rem;
+  font: inherit;
+  background: #fff;
+  color: var(--text);
+}
+
+.comment-textarea {
+  margin-top: 0.6rem;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.comment-input:focus,
+.comment-textarea:focus {
+  outline: 2px solid color-mix(in srgb, var(--coral) 55%, transparent);
+  outline-offset: 1px;
+  border-color: var(--pink);
+}
+
+.comment-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.6rem;
+}
+
+.comments-card .post-btn {
+  color: #fff;
+  background: var(--coral);
+  border-color: color-mix(in srgb, var(--coral) 80%, #000 8%);
+}
+
+.comments-card .post-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
+.heart-divider {
+  text-align: center;
+  color: color-mix(in srgb, var(--pink) 90%, var(--coral));
+  font-size: 0.85rem;
+  letter-spacing: 0.4rem;
+  margin: 1.1rem 0 0.4rem;
+  user-select: none;
+}
+
+.comment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comment-item {
+  border-top: 1px dotted color-mix(in srgb, var(--pink) 80%, var(--border));
+  padding: 0.9rem 0.15rem 0.85rem;
+}
+
+.comment-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.comment-name {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 700;
+  color: var(--coral);
+  font-size: 0.98rem;
+}
+
+.comment-time {
+  font-size: 0.72rem;
+  color: var(--muted);
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+.comment-body {
+  margin: 0.35rem 0 0.6rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.comment-reactions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.comment-reactions .react-btn {
+  font-size: 0.78rem;
+  padding: 0.35rem 0.7rem;
+  color: #b9526d;
+}
+
+.comment-empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 1.4rem 0.5rem 0.4rem;
+}
+
+@media (max-width: 600px) {
+  .heart-divider {
+    letter-spacing: 0.28rem;
+    font-size: 0.78rem;
+  }
+}

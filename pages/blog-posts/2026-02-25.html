@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../../styles/blog.css">
     <link rel="stylesheet" href="../../styles/blog-post.css">
     <link rel="stylesheet" href="../../styles/click-counter.css">
+    <link rel="stylesheet" href="../../styles/comments.css">
     <link rel="stylesheet" href="../../styles/2026-02-25.css?v=20260226b">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
@@ -189,6 +190,33 @@
             </div>
 
 
+
+            <section class="comments-card" aria-label="Comments" data-comments-slug="2026-02-25">
+                <h3 class="section-title">
+                    <i class="fa-regular fa-comment-dots i" aria-hidden="true"></i>
+                    comments
+                    <span class="comment-count-pill" id="commentCount">0</span>
+                </h3>
+
+                <div class="comment-sort" role="group" aria-label="Sort comments">
+                    <button type="button" class="pill-btn sort-btn is-active" data-sort="newest">newest</button>
+                    <button type="button" class="pill-btn sort-btn" data-sort="oldest">oldest</button>
+                </div>
+
+                <form class="comment-form" id="commentForm" autocomplete="off">
+                    <input type="text" name="name" class="comment-input" maxlength="40" placeholder="your name">
+                    <textarea name="body" class="comment-textarea" rows="3" maxlength="500" placeholder="leave a comment..." required></textarea>
+                    <div class="comment-form-actions">
+                        <button type="submit" class="pill-btn post-btn">post &#9825;</button>
+                    </div>
+                </form>
+
+                <div class="heart-divider" aria-hidden="true">&#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825;</div>
+
+                <ul class="comment-list" id="commentList"></ul>
+                <p class="comment-empty" id="commentEmpty">no comments yet &#9825; be the first to say something nice</p>
+            </section>
+
             <p class="read-more">
                 <a href="../blog.html" class="highlight-link">&larr; back to blog</a>
             </p>
@@ -297,6 +325,7 @@
             }
         })();
     </script>
+    <script src="/scripts/comments.js" defer></script>
 </body>
 
 </html>

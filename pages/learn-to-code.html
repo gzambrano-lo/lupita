@@ -48,6 +48,247 @@
 
     <main>
 
+        <!-- build a website -->
+        <!-- WIP: hidden from the live page until this guide is ready.
+        <details class="post-card" open>
+            <summary class="post-cover">
+                <h2>how to build your own web page</h2>
+            </summary>
+
+            <article class="post">
+                <h2>how i build and publish a website</h2>
+                <h3>0. before we begin</h3>
+                <p>
+                    if you have never built a website before, do not worry!! this guide is meant to be beginner
+                    friendly. we are not trying to build the fanciest website on the internet right away. we are just
+                    learning how to make a small web page, save it properly, and put it online where other people can
+                    visit it.
+                </p>
+                <p>
+                    think of this like setting up your little corner of the internet. first we make a place for the
+                    project to live, then we learn how to save our progress, and then we publish it.
+                </p>
+                <p class="tip">
+                    dev note: i started working on this guide on 6/29/2026.
+                </p>
+
+                <h3>what is a website?</h3>
+                <p>
+                    a website is a group of files that a browser can read and show on a screen. the main file is usually
+                    html, which holds the words, links, images, and structure of the page. css makes it look cute,
+                    organized, or dramatic. javascript can make parts of the page react when someone clicks, types, or
+                    scrolls.
+                </p>
+
+                <h3>what you will need: download your tools</h3>
+                <p>
+                    we are installing everything now so we do not have to interrupt ourselves later. it is okay if you
+                    do not understand what each program does yet. for now, we are just getting the tools ready.
+                </p>
+                <ul class="dash">
+                    <li>a computer where you can create and save files</li>
+                    <li>a browser, like chrome, edge, firefox, or safari</li>
+                    <li>a code editor, like <a href="https://code.visualstudio.com/" target="_blank"
+                            rel="noopener">visual studio code</a></li>
+                    <li><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git</a>, so your
+                        computer can track project changes</li>
+                    <li>a <a href="https://github.com/signup" target="_blank" rel="noopener">github</a> account, so your
+                        project can be stored online</li>
+                    <li>a <a href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener">cloudflare</a>
+                        account, so the website can be published. optional: cloudflare is also useful later if you want
+                        to buy a cheap domain and connect it to your site</li>
+                </ul>
+
+                <h3>how this guide is structured</h3>
+                <p>
+                    this guide moves in the same order i use when i build websites. first we install the tools. then we
+                    create the project on the computer. after that, we save the project with git, upload a copy to
+                    github, and publish it with cloudflare pages.
+                </p>
+
+                <h3>helpful visual studio code extensions</h3>
+                <p>
+                    extensions are add-ons for visual studio code. when you search for them, check the author or
+                    publisher so you download the correct one. at minimum, i recommend installing live server and
+                    prettier.
+                </p>
+                <ul class="dash">
+                    <li>minimum: live server by ritwick dey: opens your website in the browser and refreshes it when you
+                        save</li>
+                    <li>minimum: prettier - code formatter by prettier: formats your code so it stays easier to read
+                    </li>
+                    <li>optional: auto rename tag by jun han: renames the closing html tag when you rename the opening
+                        tag</li>
+                    <li>optional: html css support by ecmel: helps visual studio code understand your html and css
+                        better</li>
+                </ul>
+                <p class="tip">
+                    keep extensions simple at first. too many extensions can make visual studio code feel cluttered.
+                </p>
+                <p class="tip">
+                    visual studio code may show ai features, chat tools, or coding assistants when you open it. when i
+                    first started using visual studio code, ai was not this integrated into the editor. now it is much
+                    more common to see ai coding tools built in or offered as extensions. you do not need to use them
+                    for this guide.
+                </p>
+
+                <h3>1. create your project</h3>
+                <p>
+                    open file explorer, or the similar file manager for your operating system. i am going to explain
+                    this using windows because it is the most common. make your website folder somewhere it will not be
+                    disturbed. in file explorer, go to:
+                    <code>this pc &rarr; local disk (c:) &rarr; users &rarr; your user folder &rarr; documents</code>.
+                    then create your project folder there.
+                </p>
+                <p class="tip">
+                    your user folder will usually have your windows username on it, so it may look different from mine.
+                </p>
+                <p>
+                    your folder name should match your project name if you can. i recommend using
+                    <span class="term"
+                        data-def="a naming style where words are lowercase and separated with hyphens, like my-website."
+                        tabindex="0">kebab-case</span>
+                    or something similar. hyphens are common in urls and project names. we do not want spaces in our
+                    file or folder names because spaces can make paths and links harder to work with later.
+                </p>
+                <p>
+                    after you make your project folder, open visual studio code. go to
+                    <code>file &rarr; open folder</code>, then choose the folder you just created. this lets visual
+                    studio code treat that folder as your website workspace.
+                </p>
+                <img class="post-illustration" src="../images/learn-to-code/my-website/project_folder.png"
+                    alt="visual studio code open with the my-website project folder in the explorer sidebar">
+                <p>
+                    from inside visual studio code, create a file named <code>index.html</code>. every website usually
+                    begins with an <code>index.html</code> file because browsers and hosting services automatically look
+                    for that file first. it is like the front door of your website.
+                </p>
+                <p>
+                    inside <code>index.html</code>, type <code>!</code> and press <code>tab</code>. visual studio code
+                    uses a tool called emmet to generate the basic html boilerplate for you automatically. this saves
+                    time and helps you start with the correct structure.
+                </p>
+                <p>
+                    the generated template will include <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>,
+                    <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code>. the doctype tells the browser this is a
+                    modern html page. the html element holds the whole page. the head holds information about the page,
+                    like the title. the body holds what people actually see.
+                </p>
+                <p class="tip">
+                    do not worry if you do not understand every line yet. the goal right now is to get a working page
+                    started. you will learn what each piece does as you keep building.
+                </p>
+                <p>
+                    next, create folders named <code>css</code>, <code>js</code>, and <code>images</code>. organizing
+                    files into folders keeps the project easier to understand. html files can stay at the main level,
+                    css files go in the css folder, javascript files go in the js folder, and pictures go in the images
+                    folder.
+                </p>
+                <p>
+                    a simple starter project might look like this:
+                </p>
+                <pre><code>my-website/
+  index.html
+  css/
+  js/
+  images/</code></pre>
+                <video class="post-illustration" controls preload="metadata">
+                    <source src="https://media.lupitazambrano.com/learn-to-code/Create_Files.mp4" type="video/mp4">
+                    your browser does not support the video tag.
+                </video>
+
+                <h3>2. save your project with git</h3>
+                <p>
+                    <span class="term"
+                        data-def="version control software installed on your computer that tracks changes in your project files."
+                        tabindex="0">git</span>
+                    is version control software installed on your computer. version control is like a save point in a
+                    video game. when your project is working, you can save a checkpoint. if something breaks later, you
+                    can look back at what changed.
+                </p>
+                <p>
+                    a <span class="term" data-def="a git project that contains files and saved history."
+                        tabindex="0">repository</span> is a git project. when we turn this folder into a repository,
+                    git can start tracking it.
+                </p>
+                <pre><code>git init
+git add .
+git commit -m "initial commit"</code></pre>
+                <p>
+                    <code>git init</code> starts git inside your project folder. it creates a hidden <code>.git</code>
+                    folder that stores the project's history. you usually do not need to open that folder, but it is
+                    what makes git work.
+                </p>
+                <p>
+                    <code>git add .</code> tells git to include all current project files in the next checkpoint.
+                    <code>git commit -m "initial commit"</code> saves the checkpoint and gives it a short message. we
+                    create commits because they give us a history of what changed and when.
+                </p>
+
+                <h3>3. upload your project to github</h3>
+                <p>
+                    <span class="term"
+                        data-def="a website where you can store git projects online and share them with other services."
+                        tabindex="0">github</span>
+                    stores a copy of your git repository online. git lives on your computer. github stores the online
+                    copy. a
+                    <span class="term"
+                        data-def="the online copy of your git repository stored on github."
+                        tabindex="0">github repository</span>
+                    is useful because it backs up your project and lets services like cloudflare pages publish it.
+                </p>
+                <p>
+                    in github, create a new repository and name it the same thing as your project, like
+                    <code>my-website</code>. leave <code>initialize this repository with a README</code> unchecked.
+                    since we already started our project locally, we want github to create an empty repository so our
+                    first push is simple.
+                </p>
+                <p>
+                    after github creates the empty repository, it will show commands for connecting your local
+                    repository to github. follow those commands to add the github address as the remote, then push your
+                    first commit online.
+                </p>
+                <pre><code>git branch -M main
+git remote add origin your-github-repository-link
+git push -u origin main</code></pre>
+                <p>
+                    <code>git branch -M main</code> names your main project branch <code>main</code>. <code>git remote
+                        add origin</code> connects your computer folder to the github repository. <code>git push -u
+                        origin main</code> uploads your first commit to github.
+                </p>
+                <p class="tip">
+                    if you want to learn how to make a website without sharing your repository on github, i will make a
+                    separate lesson for that.
+                </p>
+
+                <h3>4. publish with cloudflare pages</h3>
+                <p>
+                    cloudflare pages can connect directly to your github repository and publish the website. once it is
+                    connected, cloudflare builds and hosts the site for you. every time you push new commits to github,
+                    cloudflare can automatically rebuild the website and update the live version.
+                </p>
+
+                <h3>quick checklist</h3>
+                <ul class="dash">
+                    <li>download visual studio code, git, and make your github and cloudflare accounts</li>
+                    <li>make a website folder on your computer</li>
+                    <li>open your website folder in visual studio code</li>
+                    <li>create <code>index.html</code>, then make <code>css</code>, <code>js</code>, and
+                        <code>images</code> folders</li>
+                    <li>use git to create your first checkpoint</li>
+                    <li>create an empty github repository and push your project</li>
+                    <li>connect the github repository to cloudflare pages</li>
+                    <li>push updates whenever you want to change the live site</li>
+                </ul>
+
+                <p class="tip">
+                    start small. a finished one-page website is better practice than a huge idea that never gets
+                    published.
+                </p>
+            </article>
+        </details>
+        -->
+
         <!--rwd-->
         <details class="post-card">
             <summary clas="post-cover">

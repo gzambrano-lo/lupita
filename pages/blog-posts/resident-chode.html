@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../../styles/layout.css" />
   <link rel="stylesheet" href="../../styles/components.css" />
   <link rel="stylesheet" href="../../styles/click-counter.css" />
+  <link rel="stylesheet" href="../../styles/comments.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
@@ -622,7 +623,31 @@
     </div>
   </div>
 
+  <section class="comments-card" aria-label="Comments" data-comments-slug="resident-chode">
+    <h3 class="section-title">
+      <i class="fa-regular fa-comment-dots i" aria-hidden="true"></i>
+      comments
+      <span class="comment-count-pill" id="commentCount">0</span>
+    </h3>
 
+    <div class="comment-sort" role="group" aria-label="Sort comments">
+      <button type="button" class="pill-btn sort-btn is-active" data-sort="newest">newest</button>
+      <button type="button" class="pill-btn sort-btn" data-sort="oldest">oldest</button>
+    </div>
+
+    <form class="comment-form" id="commentForm" autocomplete="off">
+      <input type="text" name="name" class="comment-input" maxlength="40" placeholder="your name">
+      <textarea name="body" class="comment-textarea" rows="3" maxlength="500" placeholder="leave a comment..." required></textarea>
+      <div class="comment-form-actions">
+        <button type="submit" class="pill-btn post-btn">post &#9825;</button>
+      </div>
+    </form>
+
+    <div class="heart-divider" aria-hidden="true">&#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825;</div>
+
+    <ul class="comment-list" id="commentList"></ul>
+    <p class="comment-empty" id="commentEmpty">no comments yet &#9825; be the first to say something nice</p>
+  </section>
   <script>
     function setLang(lang) {
       document.getElementById('content-en').classList.toggle('visible', lang === 'en');
@@ -724,6 +749,7 @@
     window.setInterval(advanceProgressBar, 3000);
   </script>
   <script src="../../scripts/smokescreen.js"></script>
+  <script src="/scripts/comments.js" defer></script>
 </body>
 
 </html>

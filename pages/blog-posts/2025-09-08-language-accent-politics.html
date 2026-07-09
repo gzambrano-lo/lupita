@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../../styles/layout.css">
     <link rel="stylesheet" href="../../styles/components.css">
     <link rel="stylesheet" href="../../styles/post-toggle.css">
+  <link rel="stylesheet" href="../../styles/comments.css">
     <meta name="description" content="tiny sprouts poking through the soil — my tomatillo babies.">
     <link rel="canonical" href="/pages/blog-posts/2025-09-08-language-accent-politics.html">
 </head>
@@ -55,7 +56,7 @@
         <h3>speak english doc! we aint scientists</h3>
         what does that mean in plain words? it means if you're speaking spanish at work, or you have an accent when
         you order food, immigration officers can use that as one of their excuses to stop you, question you, or
-        detain you. before, there was a block in place — a lower court said no, that's profiling, you can't do that.
+        detain you. before, there was a block in place. a lower court said no, that's profiling, you can't do that.
         now, the supreme court just removed that block.
         </p>
 
@@ -67,7 +68,7 @@
             i remember back in 2014, 2015 and 2016, people were warning about what donald trump would do if he got the
             chance
             and support. a lot of us skeptics saw the signs. now, this is the proof. policies like this don't come from
-            nowhere — they grow out of years of rhetoric, out of the idea that brown bodies don't belong here at all.
+            nowhere. they grow out of years of rhetoric, out of the idea that brown bodies don't belong here at all.
         </p>
 
         <p>
@@ -108,13 +109,13 @@
         <h3>response to the trump dick riders</h3>
         i know the lines by heart.
         <emphasize>if you had time to party and drink, you had time to get your papers</emphasize>
-        i hear that. i even understand you, and where you're coming from. for me, it's pretty black and white — if you
+        i hear that. i even understand you, and where you're coming from. for me, it's pretty black and white. if you
         commit a crime while under asylum or refugee protection, you risk losing the privilege of being here. but that
         decision still has to go through due process, not be used as an excuse to strip people of their rights
         </p>
 
         <p>
-            but what i'm fighting for is due process — the guarantee that people deserve a fair hearing before their
+            but what i'm fighting for is due process: the guarantee that people deserve a fair hearing before their
             lives
             are uprooted. and that is disappearing under the trump administration. are we really going to forget the
             children lost during the “zero tolerance” policy? the infants, the toddlers, the kids torn from their
@@ -125,14 +126,14 @@
         <p>
             and let's be real: this isn't just about paperwork or “following the rules.” or making america safer. it's
             about erasure. because what
-            do you call it when people are deported to places like south sudan — countries they've never even lived in,
+            do you call it when people are deported to places like south sudan, countries they've never even lived in,
             with no safety net, no community, no future? that isn't law and order. that's exile. that's elimination.
         </p>
 
         <p>
             history has shown us where this slope leads. in nazi germany, it started with laws about who was
             'suspicious'
-            and ended in genocide. in the united states, japanese american families — even citizens — were thrown into
+            and ended in genocide. in the united states, japanese american families, even citizens, were thrown into
             internment camps during wwii simply because of their ancestry and language. and in the 1950s, operation
             wetback deported not just immigrants but mexican americans who were citizens. every time, the government
             said
@@ -164,13 +165,13 @@
         it began with labeling accents, language, and heritage as undesirable. before the camps, there was suspicion,
         paperwork, and erasure.
         <h4>japanese interment in the u.s</h4>
-        entire families — even american citizens — were rounded up during wwii just because of ancestry and language.
+        entire families, even american citizens, were rounded up during wwii just because of ancestry and language.
         no
         due process, only fear.
         <h4>jim crow laws</h4>
         they were legal, but they were never moral. “separate but equal” was just law dressed up to hide exclusion.
         <h4>operation wetback (1950's)</h4>
-        mass deportations of mexican immigrants — and even u.s. citizens of mexican descent — under the guise of
+        mass deportations of mexican immigrants, and even u.s. citizens of mexican descent, under the guise of
         immigration enforcement.
         <strong>every time, it's framed as law and order. every time, it's about erasure. and now, with ICE using
             accents and language as suspicion, we're watching the same script unfold again.</strong>
@@ -186,7 +187,7 @@
         i will not be told i am too brown, too indigenous for mexico,
         not by criollo mouths that built their whiteness on erasing ours
         and as if the shade of my skin could make me less at home on the soil that bore me.
-        that is how deep the colorism cuts — but it will not cut me out.
+        that is how deep the colorism cuts, but it will not cut me out.
 
         i belong here.
         i will keep my body, my voice, my spirit on this side of the world that i love and claim.
@@ -195,7 +196,32 @@
         this is my continent.
         and i am staying.
         </p>
-        </article>
+
+      <section class="comments-card" aria-label="Comments" data-comments-slug="2025-09-08-language-accent-politics">
+        <h3 class="section-title">
+          <i class="fa-regular fa-comment-dots i" aria-hidden="true"></i>
+          comments
+          <span class="comment-count-pill" id="commentCount">0</span>
+        </h3>
+
+        <div class="comment-sort" role="group" aria-label="Sort comments">
+          <button type="button" class="pill-btn sort-btn is-active" data-sort="newest">newest</button>
+          <button type="button" class="pill-btn sort-btn" data-sort="oldest">oldest</button>
+        </div>
+
+        <form class="comment-form" id="commentForm" autocomplete="off">
+          <input type="text" name="name" class="comment-input" maxlength="40" placeholder="your name">
+          <textarea name="body" class="comment-textarea" rows="3" maxlength="500" placeholder="leave a comment..." required></textarea>
+          <div class="comment-form-actions">
+            <button type="submit" class="pill-btn post-btn">post &#9825;</button>
+          </div>
+        </form>
+
+        <div class="heart-divider" aria-hidden="true">&#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825;</div>
+
+        <ul class="comment-list" id="commentList"></ul>
+        <p class="comment-empty" id="commentEmpty">no comments yet &#9825; be the first to say something nice</p>
+      </section>    </article>
 
         <nav class="post-nav" style="margin-top:1rem; display:flex; gap:.75rem; flex-wrap:wrap;">
             <a class="btn" href="../blog.html">← back to blog</a>
@@ -205,6 +231,7 @@
     <footer class="site-footer">
         <p>&copy; lupita zambrano ☆(>ᴗ•) 2025</p>
     </footer>
+  <script src="/scripts/comments.js" defer></script>
 </body>
 
 </html>
