@@ -250,8 +250,16 @@
 
         <aside class="music-sidebar" aria-label="music page notes">
           <section class="genre-widget music-sticker">
-            <p class="widget-title">sort by mood ♡</p>
+            <p class="widget-title">sort by mood ?</p>
             <div class="genre-filter-bar" data-genre-filter-bar aria-label="filter tracklist by genre"></div>
+          </section>
+
+          <section class="lyrics-card music-sticker" aria-labelledby="lyrics-title" aria-live="polite">
+            <h5 id="lyrics-title">lyrics</h5>
+            <p class="lyrics-track" data-lyrics-track>track title</p>
+            <div class="lyrics-scroll" data-track-lyrics>
+              <p>pick a song to load lyrics.</p>
+            </div>
           </section>
 
           <section class="listener-log music-sticker">
@@ -293,6 +301,8 @@
       const title = root.querySelector("[data-track-title]");
       const note = root.querySelector("[data-track-note]");
       const mood = root.querySelector("[data-track-mood]");
+      const lyricsTrack = root.querySelector("[data-lyrics-track]");
+      const lyricsPanel = root.querySelector("[data-track-lyrics]");
       const coverImg = root.querySelector("[data-track-cover]");
       const coverFrame = root.querySelector("[data-cover-frame]");
       const repeatTitle = root.querySelector("[data-repeat-title]");
@@ -318,7 +328,136 @@
       const infoToggle = root.querySelector("[data-player-info-toggle]");
       const drawer = root.querySelector("[data-player-drawer]");
       const defaultCover = "../images/music-player/default-cover.png";
+      const extraGenres = [
+        "desmadre mexicano"
+      ];
       const playlist = [
+        {
+          "title": "ikoniko, cachirula - 1perreo",
+          "cover": "",
+          "embed": "",
+          "audioSrc": "https://media.lupitazambrano.com/music/Ikoniko_Cachirula_1Perreo.mp3",
+          "note": "",
+          "mood": "",
+          "duration": "",
+          "date": "07/24/2026",
+          "tags": [
+            "reggaeton",
+            "perreo"
+          ],
+          "spotify": "",
+          "apple": "",
+          "youtube": "",
+          "vinyl": ""
+        },
+        {
+          "title": "bellakath ft yeyo - mami chakalosa",
+          "cover": "",
+          "embed": "",
+          "audioSrc": "https://media.lupitazambrano.com/music/MAMI_CHAKALOSA_Bellakath_ft_Yeyo.mp3",
+          "note": "",
+          "mood": "",
+          "duration": "",
+          "date": "07/24/2026",
+          "tags": [
+            "desmadre mexicano",
+            "reggaeton"
+          ],
+          "spotify": "",
+          "apple": "",
+          "youtube": "",
+          "vinyl": ""
+        },
+        {
+          "title": "dani flow - las que no tienen papá",
+          "cover": "",
+          "embed": "",
+          "audioSrc": "https://media.lupitazambrano.com/music/LAS_QUE_NO_TIENEN_PAP%C3%81_Dani_Flow.mp3",
+          "note": "",
+          "mood": "",
+          "duration": "",
+          "date": "07/24/2026",
+          "tags": [
+            "desmadre mexicano",
+            "reggaeton"
+          ],
+          "spotify": "",
+          "apple": "",
+          "youtube": "",
+          "vinyl": ""
+        },
+        {
+          "title": "ximena sariñana - cuento",
+          "cover": "",
+          "embed": "",
+          "audioSrc": "https://media.lupitazambrano.com/music/Ximena_Sari%C3%B1ana_Cuento.mp3",
+          "note": "",
+          "mood": "",
+          "duration": "",
+          "date": "07/23/2026",
+          "tags": [
+            "latin pop"
+          ],
+          "spotify": "",
+          "apple": "",
+          "youtube": "",
+          "vinyl": ""
+        },
+        {
+          "title": "cartel de santa - la pelotona",
+          "cover": "../images/blog/cartel_de_santa.png",
+          "embed": "",
+          "audioSrc": "https://media.lupitazambrano.com/music/cartel_de_santa_la_pelotona.mp3",
+          "note": "",
+          "mood": "",
+          "duration": "",
+          "date": "07/23/2026",
+          "lyrics": [
+            "Viajo en silencio y no expreso mis sentimientos",
+            "Pero tú bien sabes que te llevo aquí adentro",
+            "Cuando llega la noche y es la hora de partir",
+            "Voy viendo tu silueta alejándose de mí",
+            "Un profundo sentimiento se apodera de mi cuerpo",
+            "Y es que si no estoy contigo es como si estuviera muerto",
+            "Tristezas se apoderan de mi mente y de mi alma",
+            "Por que solo a tu lado puedo conocer la calma",
+            "Se tiene mucho el tiempo que no estas tu conmigo",
+            "Pero me parece eterno y me pierdo en el olvido",
+            "El viento me acaricia y me recuerda a tus manos",
+            "La brisa de la noche me hace pensar en tus labios",
+            "El brillo de la luna es igual al de tus ojos",
+            "Sabes que sin ti tan solo soy un despojo",
+            "Y aquí sobre mi cama el aroma de tu cuerpo",
+            "Que me mantiene vivo y me eleva al firmamento",
+            "Eres lo mejor que en mi vida ha pasado",
+            "Te juro pierdo el rumbo cuando no estas a mi lado",
+            "El viento me repite tu nombre a cada instante",
+            "La brisa de la noche me recuerda lo distante",
+            "Cuando estoy contigo cada día es alegría",
+            "Pero lejos de ti me sumerjo en la agonía",
+            "Del recuerdo de tus besos y el sabor de tu saliva",
+            "Despierto en las madrugadas y abrazo a una pinché almohada",
+            "Deseando fueras tú la que comparte mi cama",
+            "Te juro que estremezco cuando no estas tú conmigo",
+            "Quisiera mandarle al tiempo pudieran ser eternos",
+            "Todos los momentos en que me elevas al cielo",
+            "Mi vida es codiciada muchos quieren mi cabeza",
+            "La verdad no me preocupa si la muerte se atraviesa",
+            "Con tal de estar contigo juro resucitaría",
+            "Para estar a tu lado lo que te resta de vida",
+            "Eres lo mejor que en mi vida a pasado",
+            "Te juro pierdo el rumbo cuando no estas a mi lado",
+            "El viento me repite tu nombre a cada instante",
+            "La brisa de la noche me recuerda lo distante"
+          ],
+          "tags": [
+            "reggaeton"
+          ],
+          "spotify": "",
+          "apple": "",
+          "youtube": "",
+          "vinyl": ""
+        },
         {
           "title": "i love america - blow ya mind",
           "cover": "../images/music-player/blow-ya-mind.jpg",
@@ -327,7 +466,7 @@
           "note": "",
           "mood": "",
           "duration": "",
-          "date": "",
+          "date": "07/14/2026",
           "tags": [],
           "spotify": "",
           "apple": "",
@@ -342,7 +481,7 @@
           "note": "",
           "mood": "",
           "duration": "",
-          "date": "",
+          "date": "07/14/2026",
           "tags": [],
           "spotify": "",
           "apple": "",
@@ -357,7 +496,7 @@
           "note": "",
           "mood": "",
           "duration": "",
-          "date": "",
+          "date": "07/14/2026",
           "tags": [],
           "spotify": "",
           "apple": "",
@@ -372,7 +511,7 @@
           "note": "",
           "mood": "",
           "duration": "",
-          "date": "",
+          "date": "07/14/2026",
           "tags": [],
           "spotify": "",
           "apple": "",
@@ -387,7 +526,7 @@
           "note": "",
           "mood": "",
           "duration": "",
-          "date": "",
+          "date": "07/14/2026",
           "tags": [],
           "spotify": "",
           "apple": "",
@@ -402,7 +541,7 @@
           "note": "",
           "mood": "",
           "duration": "",
-          "date": "",
+          "date": "07/14/2026",
           "tags": [],
           "spotify": "",
           "apple": "",
@@ -417,7 +556,7 @@
           "note": "",
           "mood": "",
           "duration": "",
-          "date": "",
+          "date": "07/14/2026",
           "tags": [],
           "spotify": "",
           "apple": "",
@@ -432,7 +571,7 @@
           "note": "",
           "mood": "",
           "duration": "",
-          "date": "",
+          "date": "07/14/2026",
           "tags": [],
           "spotify": "",
           "apple": "",
@@ -447,7 +586,7 @@
           "note": "",
           "mood": "",
           "duration": "",
-          "date": "",
+          "date": "07/14/2026",
           "tags": [],
           "spotify": "",
           "apple": "",
@@ -462,7 +601,7 @@
           "note": "",
           "mood": "",
           "duration": "",
-          "date": "",
+          "date": "07/14/2026",
           "tags": [],
           "spotify": "",
           "apple": "",
@@ -477,7 +616,7 @@
           "note": "",
           "mood": "",
           "duration": "",
-          "date": "",
+          "date": "07/14/2026",
           "tags": [],
           "spotify": "",
           "apple": "",
@@ -553,7 +692,9 @@
           "mood": "",
           "duration": "",
           "date": "03/01/2026",
-          "tags": [],
+          "tags": [
+            "reggaeton"
+          ],
           "spotify": "",
           "apple": "",
           "youtube": "",
@@ -568,7 +709,9 @@
           "mood": "",
           "duration": "",
           "date": "03/01/2026",
-          "tags": [],
+          "tags": [
+            "reggaeton"
+          ],
           "spotify": "",
           "apple": "",
           "youtube": "",
@@ -583,7 +726,9 @@
           "mood": "",
           "duration": "",
           "date": "03/01/2026",
-          "tags": [],
+          "tags": [
+            "reggaeton"
+          ],
           "spotify": "",
           "apple": "",
           "youtube": "",
@@ -613,7 +758,9 @@
           "mood": "",
           "duration": "",
           "date": "03/01/2026",
-          "tags": [],
+          "tags": [
+            "reggaeton"
+          ],
           "spotify": "",
           "apple": "",
           "youtube": "https://youtu.be/cvcHPK02Tnk?si=twFHpNN_b6s8zhmA",
@@ -643,7 +790,9 @@
           "mood": "",
           "duration": "",
           "date": "03/01/2026",
-          "tags": [],
+          "tags": [
+            "reggaeton"
+          ],
           "spotify": "",
           "apple": "",
           "youtube": "https://www.youtube.com/watch?v=czgLpfLPUlw&list=RDczgLpfLPUlw&start_radio=1",
@@ -706,7 +855,9 @@
           "mood": "",
           "duration": "",
           "date": "",
-          "tags": [],
+          "tags": [
+            "reggaeton"
+          ],
           "spotify": "",
           "apple": "",
           "youtube": "",
@@ -872,7 +1023,7 @@
           "note": "i miss this era of cachirula. she is switching up her style now.",
           "date": "02/16/26",
           "tags": [
-            "reggeaton"
+            "reggaeton"
           ],
           "spotify": "https://open.spotify.com/track/69XahueM5WuJMg6OmeEL9g?si=8ef409476d8044f5",
           "apple": "https://music.apple.com/us/song/intro-mp3/1788987833"
@@ -1106,7 +1257,7 @@
           "spotify": ""
         },
         {
-          "title": "ほんをよむ - hyakkei",
+          "title": "????? - hyakkei",
           "embed": "https://www.youtube.com/embed/xiWuxHO417M?si=GJZwFnNofSzmLrtw",
           "audioSrc": "https://media.lupitazambrano.com/music/%E3%81%BE%E3%81%BB%E3%81%86%E3%81%AE%E3%81%98%E3%82%85%E3%81%86%E3%81%9F%E3%82%93.mp3",
           "note": "song is meant to be felt, not heard.",
@@ -1329,6 +1480,48 @@
         return parts.length > 1 ? parts.slice(1).join(" - ") : String(fullTitle);
       }
 
+      function getSongArtist(fullTitle) {
+        const parts = String(fullTitle).split(/\s[-–—]\s/);
+        return parts.length > 1 ? parts[0] : "lupe zambrano";
+      }
+
+      function getArtworkUrl(src) {
+        return new URL(src || defaultCover, window.location.href).href;
+      }
+
+      function getArtworkType(src) {
+        const pathname = String(src || "").split(/[?#]/)[0].toLowerCase();
+
+        if (pathname.endsWith(".jpg") || pathname.endsWith(".jpeg")) {
+          return "image/jpeg";
+        }
+
+        if (pathname.endsWith(".webp")) {
+          return "image/webp";
+        }
+
+        return "image/png";
+      }
+
+      function syncMediaSession(track) {
+        if (!("mediaSession" in navigator) || typeof MediaMetadata === "undefined" || !track) return;
+
+        const artworkSrc = track.cover || defaultCover;
+
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: getSongTitle(track.title),
+          artist: getSongArtist(track.title),
+          album: "lupita.fm",
+          artwork: [
+            {
+              src: getArtworkUrl(artworkSrc),
+              sizes: "512x512",
+              type: getArtworkType(artworkSrc)
+            }
+          ]
+        });
+      }
+
       function syncExternalLink(link, href) {
         if (!link) return;
         const available = Boolean(href);
@@ -1353,6 +1546,10 @@
         playBtn.dataset.state = isPlayingDirectAudio ? "playing" : "paused";
         playBtn.setAttribute("aria-pressed", isPlayingDirectAudio ? "true" : "false");
         playBtn.setAttribute("aria-label", isPlayingDirectAudio ? "Pause track" : "Play track");
+
+        if ("mediaSession" in navigator) {
+          navigator.mediaSession.playbackState = isPlayingDirectAudio ? "playing" : "paused";
+        }
       }
 
       function getAudioMimeType(src) {
@@ -1403,7 +1600,7 @@
       }
 
       function getGenres() {
-        const genreSet = new Set();
+        const genreSet = new Set(extraGenres);
 
         playlist.forEach(function (track) {
           (track.tags || []).forEach(function (tag) {
@@ -1493,6 +1690,47 @@
         });
       }
 
+      function getLyricsLines(track) {
+        if (!track) return [];
+
+        if (Array.isArray(track.lyrics)) {
+          return track.lyrics.filter(Boolean);
+        }
+
+        if (typeof track.lyrics === "string" && track.lyrics.trim()) {
+          return track.lyrics.split(/\n+/).map(function (line) {
+            return line.trim();
+          }).filter(Boolean);
+        }
+
+        return [];
+      }
+
+      function renderLyrics(track) {
+        if (!lyricsPanel) return;
+
+        const lines = getLyricsLines(track);
+        lyricsPanel.innerHTML = "";
+
+        if (lyricsTrack) {
+          lyricsTrack.textContent = track ? track.title : "";
+        }
+
+        if (!lines.length) {
+          const emptyMessage = document.createElement("p");
+          emptyMessage.className = "lyrics-empty";
+          emptyMessage.textContent = "lyrics coming soon for this track.";
+          lyricsPanel.appendChild(emptyMessage);
+          return;
+        }
+
+        lines.forEach(function (line) {
+          const lyricLine = document.createElement("p");
+          lyricLine.textContent = line;
+          lyricsPanel.appendChild(lyricLine);
+        });
+      }
+
       function renderTrack(index, autoplay) {
         const track = playlist[index];
         if (!track) return;
@@ -1530,6 +1768,8 @@
         syncExternalLink(youtubeLink, track.youtube || (track.embed ? toWatchUrl(track.embed) : ""));
         syncExternalLink(vinylLink, track.vinyl);
         syncDrawer(track);
+        renderLyrics(track);
+        syncMediaSession(track);
         renderQueue();
         syncPlayButton();
 
@@ -1559,6 +1799,16 @@
         }
       }
 
+      function setMediaSessionAction(action, handler) {
+        if (!("mediaSession" in navigator)) return;
+
+        try {
+          navigator.mediaSession.setActionHandler(action, handler);
+        } catch (error) {
+          console.info("media session action not supported:", action, error);
+        }
+      }
+
       backBtn.addEventListener("click", function () {
         skipSequentialTrack(-1);
       });
@@ -1584,6 +1834,30 @@
         audio.addEventListener("ended", function () {
           syncPlayButton();
           playNextShuffledTrack();
+        });
+
+        setMediaSessionAction("play", function () {
+          renderTrack(currentIndex, true);
+        });
+
+        setMediaSessionAction("pause", function () {
+          audio.pause();
+        });
+
+        setMediaSessionAction("previoustrack", function () {
+          skipSequentialTrack(-1);
+        });
+
+        setMediaSessionAction("nexttrack", function () {
+          skipSequentialTrack(1);
+        });
+
+        setMediaSessionAction("seekbackward", function (details) {
+          audio.currentTime = Math.max(0, audio.currentTime - (details.seekOffset || 10));
+        });
+
+        setMediaSessionAction("seekforward", function (details) {
+          audio.currentTime = Math.min(audio.duration || audio.currentTime, audio.currentTime + (details.seekOffset || 10));
         });
       }
 
@@ -1625,3 +1899,4 @@
 </footer>
 
 </html>
+

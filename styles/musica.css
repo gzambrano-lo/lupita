@@ -1045,6 +1045,66 @@ details.lyrics[open] {
   line-height: 1.45;
 }
 
+.lyrics-card {
+  overflow: visible;
+}
+
+.lyrics-track {
+  margin-bottom: 0.5rem;
+  color: #9b6b7b;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  text-transform: lowercase;
+  overflow-wrap: anywhere;
+}
+
+.lyrics-scroll {
+  display: grid;
+  gap: 0.48rem;
+  max-height: 178px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.55rem 0.55rem 0.55rem 0.7rem;
+  border: 1px dashed rgba(204, 129, 149, 0.28);
+  border-radius: 8px;
+  background: rgba(255, 250, 238, 0.72);
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+
+.lyrics-scroll p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.lyrics-empty {
+  color: #9b7c89;
+  font-style: italic;
+}
+
+.lyrics-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.lyrics-scroll::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+  border-radius: 999px;
+}
+
+.lyrics-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--pink), var(--scroll-thumb));
+  border: 3px solid var(--scroll-border);
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+.lyrics-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--coral), var(--scroll-thumb-hover));
+}
+
 .listener-log {
   overflow: visible;
 }
