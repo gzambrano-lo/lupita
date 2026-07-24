@@ -269,10 +269,13 @@
                 white-knight urge to keep music free and self-hosted when i can. apple, spotify, and youtube links are
                 here if you prefer streaming there, but this player should work too. lock your phone, skip around, no
                 ads.</p>
+              <p><strong>07/24/2026:</strong> i made the browser tell ios what song is playing. before, safari only
+                knew the page title, so the lock screen showed “music - lupe zambrano.” now the player sends the current
+                song title, artist, and cover art whenever the track changes.</p>
               <p><strong>06/11/2026:</strong> i caught myself following the sterile GUI path. so i added decorations.
               </p>
             </div>
-            <p class="listener-log-date">last updated: <span data-listener-updated>06/11/2026</span></p>
+            <p class="listener-log-date">last updated: <span data-listener-updated>07/24/2026</span></p>
           </section>
 
           <section class="repeat-card music-sticker">
@@ -1852,13 +1855,6 @@
           skipSequentialTrack(1);
         });
 
-        setMediaSessionAction("seekbackward", function (details) {
-          audio.currentTime = Math.max(0, audio.currentTime - (details.seekOffset || 10));
-        });
-
-        setMediaSessionAction("seekforward", function (details) {
-          audio.currentTime = Math.min(audio.duration || audio.currentTime, audio.currentTime + (details.seekOffset || 10));
-        });
       }
 
       if (infoToggle && drawer) {
