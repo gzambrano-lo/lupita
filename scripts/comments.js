@@ -20,12 +20,6 @@
   let comments = [];
   let sort = "newest";
 
-  function esc(s) {
-    return String(s).replace(/[&<>"']/g, (c) =>
-      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
-    );
-  }
-
   function rel(t) {
     const s = Math.max(0, (Date.now() - t) / 1000 | 0);
     if (s < 45) return "just now";
@@ -39,6 +33,53 @@
     return (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + String(dt.getFullYear()).slice(2);
   }
 
+  function makeReactionButton(type, label, count) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "pill-btn react-btn";
+    btn.dataset.type = type;
+    btn.append(document.createTextNode(label + " "));
+
+    const countEl = document.createElement("span");
+    countEl.textContent = count;
+    btn.append(countEl);
+
+    return btn;
+  }
+
+  function makeCommentItem(comment) {
+    const item = document.createElement("li");
+    item.className = "comment-item";
+    item.dataset.id = comment.id;
+
+    const head = document.createElement("div");
+    head.className = "comment-head";
+
+    const name = document.createElement("span");
+    name.className = "comment-name";
+    name.textContent = comment.name;
+
+    const time = document.createElement("span");
+    time.className = "comment-time";
+    time.textContent = rel(comment.created_at);
+
+    head.append(name, time);
+
+    const body = document.createElement("p");
+    body.className = "comment-body";
+    body.textContent = comment.body;
+
+    const reactions = document.createElement("div");
+    reactions.className = "comment-reactions";
+    reactions.append(
+      makeReactionButton("hearts", "\u2661", comment.hearts),
+      makeReactionButton("headpats", "head pat", comment.headpats)
+    );
+
+    item.append(head, body, reactions);
+    return item;
+  }
+
   function render() {
     const arr = [...comments].sort((a, b) =>
       sort === "newest" ? b.created_at - a.created_at : a.created_at - b.created_at
@@ -46,22 +87,7 @@
     countEl.textContent = comments.length;
     emptyEl.style.display = comments.length ? "none" : "block";
 
-    listEl.innerHTML = arr
-      .map(
-        (c) => `
-      <li class="comment-item" data-id="${c.id}">
-        <div class="comment-head">
-          <span class="comment-name">${esc(c.name)}</span>
-          <span class="comment-time">${rel(c.created_at)}</span>
-        </div>
-        <p class="comment-body">${esc(c.body)}</p>
-        <div class="comment-reactions">
-          <button type="button" class="pill-btn react-btn" data-type="hearts">&#9825; <span>${c.hearts}</span></button>
-          <button type="button" class="pill-btn react-btn" data-type="headpats">head pat <span>${c.headpats}</span></button>
-        </div>
-      </li>`
-      )
-      .join("");
+    listEl.replaceChildren(...arr.map(makeCommentItem));
   }
 
   async function load() {
