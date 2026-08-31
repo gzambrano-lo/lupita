@@ -6,6 +6,7 @@
   const nextButton = document.querySelector("[data-minimal-next]");
   const nowPlaying = document.querySelector("[data-minimal-now-playing]");
   const playlist = Array.isArray(window.lupitaMusicPlaylist) ? window.lupitaMusicPlaylist : [];
+  const defaultCover = "../assets/avatar.png";
 
   if (!list || !playlist.length) return;
 
@@ -44,6 +45,60 @@
     nowPlaying.textContent = "now playing: " + (track ? splitTitle(track.title).song : "pick a song");
   }
 
+  function getArtworkUrl(src) {
+    return new URL(src || defaultCover, window.location.href).href;
+  }
+
+  function getArtworkType(src) {
+    const pathname = String(src || "").split(/[?#]/)[0].toLowerCase();
+
+    if (pathname.endsWith(".jpg") || pathname.endsWith(".jpeg")) {
+      return "image/jpeg";
+    }
+
+    if (pathname.endsWith(".webp")) {
+      return "image/webp";
+    }
+
+    return "image/png";
+  }
+
+  function syncMediaSession(track) {
+    if (!("mediaSession" in navigator) || typeof MediaMetadata === "undefined" || !track) return;
+
+    const title = splitTitle(track.title);
+    const artworkSrc = track.cover || defaultCover;
+
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: title.song,
+      artist: title.artist || "lupe zambrano",
+      album: "lupita.fm",
+      artwork: [
+        {
+          src: getArtworkUrl(artworkSrc),
+          sizes: "512x512",
+          type: getArtworkType(artworkSrc)
+        }
+      ]
+    });
+  }
+
+  function syncMediaPlaybackState() {
+    if (!("mediaSession" in navigator) || !audio) return;
+
+    navigator.mediaSession.playbackState = audio.paused ? "paused" : "playing";
+  }
+
+  function setMediaSessionAction(action, handler) {
+    if (!("mediaSession" in navigator)) return;
+
+    try {
+      navigator.mediaSession.setActionHandler(action, handler);
+    } catch (error) {
+      console.info("media session action not supported:", action, error);
+    }
+  }
+
   function setActive(index, shouldPlay) {
     const button = trackButtons[index];
     const track = playlist[index];
@@ -52,6 +107,7 @@
 
     currentIndex = index;
     syncNowPlaying(track);
+    syncMediaSession(track);
 
     list.querySelectorAll(".minimal-track").forEach(function (item) {
       const active = item === button;
@@ -152,14 +208,43 @@
   }
 
   if (audio) {
-    audio.addEventListener("play", syncPlayButton);
-    audio.addEventListener("pause", syncPlayButton);
+    audio.addEventListener("play", function () {
+      syncPlayButton();
+      syncMediaPlaybackState();
+    });
+    audio.addEventListener("pause", function () {
+      syncPlayButton();
+      syncMediaPlaybackState();
+    });
     audio.addEventListener("ended", function () {
       const nextIndex = currentIndex === -1 ? 0 : (currentIndex + 1) % playlist.length;
       setActive(nextIndex, true);
     });
+
+    setMediaSessionAction("play", function () {
+      if (currentIndex === -1) {
+        setActive(0, true);
+        return;
+      }
+
+      setActive(currentIndex, true);
+    });
+
+    setMediaSessionAction("pause", function () {
+      audio.pause();
+    });
+
+    setMediaSessionAction("previoustrack", function () {
+      skipTrack(-1);
+    });
+
+    setMediaSessionAction("nexttrack", function () {
+      skipTrack(1);
+    });
   }
 
   syncNowPlaying(playlist[0]);
+  syncMediaSession(playlist[0]);
   syncPlayButton();
+  syncMediaPlaybackState();
 }());

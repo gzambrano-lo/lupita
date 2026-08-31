@@ -62,11 +62,12 @@ eventual structure:
 
 ```text
 assets/
-  assets/
   audio/
   video/
-  assets/animations/
+  animations/
+  buttons/
   icons/
+  music-player/
 ```
 
 before moving assets:
@@ -100,6 +101,9 @@ keeping these in git on purpose:
 
 removed during cleanup:
 
+- `buttons/` root folder; 88x31 buttons now live in `assets/buttons/`.
+- `music-player/` root folder; needed page audio controls now live in `assets/music-player/`.
+- `assets/ns-shell/`; it was unused.
 - `assets/favicon-io/faviconio-logo.zip`
 - `css-dump.txt`
 - `pages/blog-posts/2026-07-24.html`
