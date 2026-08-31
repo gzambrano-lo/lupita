@@ -94,6 +94,26 @@
   box-shadow: inset 0 -32px 48px rgba(255, 248, 240, 0.45);
 }
 
+.watch-poster-placeholder {
+  display: grid;
+  min-height: 19rem;
+  aspect-ratio: 3 / 4.2;
+  place-items: center;
+  padding: 1.5rem;
+  border-radius: 16px 16px 0 0;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.72), transparent 28%),
+    linear-gradient(150deg, #ffd4df, #f9e8c8 48%, #c9defa);
+  box-shadow: inset 0 -32px 48px rgba(255, 248, 240, 0.45);
+  color: #86566a;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 8vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  text-align: center;
+  text-transform: lowercase;
+}
+
 /* caption sits below the poster and scrolls when an entry has a lot to say */
 .watch-item figcaption {
   padding: 1rem 1rem 1.1rem;

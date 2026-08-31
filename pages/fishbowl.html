@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>fishbowl &mdash; lupe zambrano</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles/reset.css" />
+  <link rel="stylesheet" href="../styles/tokens.css" />
+  <link rel="stylesheet" href="../styles/base.css" />
+  <link rel="stylesheet" href="../styles/layout.css" />
+  <link rel="stylesheet" href="../styles/components.css" />
+  <link rel="stylesheet" href="../styles/pages/fishbowl.css" />
+
+  <script src="/scripts/site.js" defer></script>
+  <script src="/scripts/pages/fishbowl.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>lupe zambrano</h1>
+    <nav id="nav_menu" aria-label="Main" class="hero-tabs tab-nav">
+  <ul class="tab-nav-list">
+    <li class="tab-nav-item"><a class="tab-nav-link" href="/index.html">home</a></li>
+    <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/about.html">about</a></li>
+    <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/music.html">music</a></li>
+    <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/links.html">links</a></li>
+  </ul>
+</nav>
+  </header>
+
+  <main class="fishbowl-page">
+    <section class="fishbowl-intro">
+      <h2>the fishbowl <span aria-hidden="true">&#128032;</span></h2>
+      <p>
+        design a little sea creature and set it loose. it will drift around the tank until this browser forgets.
+      </p>
+    </section>
+
+    <div class="fishbowl-grid">
+      <section class="fishbowl-designer" aria-labelledby="designer-title">
+        <h2 id="designer-title" class="section-title">design your creature</h2>
+
+        <form id="fishbowl-form" class="fishbowl-form">
+          <label for="creature-name">name it</label>
+          <input id="creature-name" name="creature-name" type="text" maxlength="28" placeholder="e.g. gary" />
+
+          <fieldset>
+            <legend>species</legend>
+            <div class="option-grid" data-option-group="species"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>color</legend>
+            <div class="swatch-grid" data-option-group="color"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend>accessory</legend>
+            <div class="option-grid" data-option-group="accessory"></div>
+          </fieldset>
+
+          <div class="creature-preview">
+            <span class="preview-label">preview</span>
+            <div class="preview-creature" aria-hidden="true">
+              <span data-preview-species>&#128031;</span>
+              <span class="preview-accessory" data-preview-accessory></span>
+            </div>
+            <span class="preview-name" data-preview-name>fish friend</span>
+          </div>
+
+          <button class="btn fishbowl-release" type="submit">release into the tank</button>
+        </form>
+      </section>
+
+      <section class="fishbowl-tank-card" aria-labelledby="tank-title">
+        <h2 id="tank-title" class="section-title">the tank</h2>
+
+        <div class="fishbowl-tank" data-tank>
+          <span class="bubble bubble-one" aria-hidden="true"></span>
+          <span class="bubble bubble-two" aria-hidden="true"></span>
+          <span class="bubble bubble-three" aria-hidden="true"></span>
+          <span class="bubble bubble-four" aria-hidden="true"></span>
+          <p class="empty-tank" data-empty-message>the tank is empty so far. design a creature and release it.</p>
+        </div>
+
+        <p class="population-note" data-population-note>no creatures yet.</p>
+        <ul class="creature-list" data-creature-list aria-label="released creatures"></ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; lupita zambrano &#9734;(&gt;&#7447;&bull;) 2025</p>
+  </footer>
+</body>
+
+</html>

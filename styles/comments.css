@@ -137,7 +137,7 @@
 }
 
 .comment-name {
-  font-family: "Poppins", system-ui, sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
   color: var(--coral);
   font-size: 0.98rem;

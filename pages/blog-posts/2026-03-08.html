@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="../../styles/reset.css">
@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="../../styles/layout.css">
     <link rel="stylesheet" href="../../styles/components.css">
     <link rel="stylesheet" href="../../styles/blog.css">
+  <link rel="stylesheet" href="../../styles/pages/2026-03-08.css?v=20260309a">
     <link rel="stylesheet" href="../../styles/blog-post.css">
     <link rel="stylesheet" href="../../styles/click-counter.css">
     <link rel="stylesheet" href="../../styles/comments.css">
     <link rel="stylesheet" href="../../styles/language-toggle.css">
-    <link rel="stylesheet" href="../../styles/2026-03-08.css?v=20260309a">
     <script src="/scripts/site.js" defer></script>
     <script src="/scripts/language-toggle.js" defer></script>
 </head>
@@ -33,15 +33,13 @@
     </header>
 
     <nav id="nav_menu" aria-label="Main" class="hero-tabs tab-nav">
-        <ul class="tab-nav-list">
-            <li class="tab-nav-item"><a class="tab-nav-link" href="/index.html" data-i18n="nav.home">home</a></li>
-            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/about.html" data-i18n="nav.about">about</a></li>
-            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/music.html" data-i18n="nav.music">music</a></li>
-            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/learn-to-code.html" data-i18n="nav.learnToCode">learn to code</a></li>
-            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/bleach-shrine.html" data-i18n="nav.bleachShrine">shrines</a></li>
-            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/project-senpai.html" data-i18n="nav.projectSenpai">project senpai</a></li>
-        </ul>
-    </nav>
+  <ul class="tab-nav-list">
+    <li class="tab-nav-item"><a class="tab-nav-link" href="/index.html">home</a></li>
+    <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/about.html">about</a></li>
+    <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/music.html">music</a></li>
+    <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/links.html">links</a></li>
+  </ul>
+</nav>
 
     <main id="main" class="container">
         <article class="post post-dessert-devlog">
@@ -62,7 +60,7 @@
                     <span data-i18n="audio.metaBody">Kimi Ni Todoke's OST "Pure" (Waltz)</span>
                 </p>
                 <audio id="pageAudio" preload="metadata" loop>
-                    <source src="../../images/audio/kimi_ni_todoke_ost_pure_waltz.mp3" type="audio/mpeg">
+                    <source src="https://media.lupitazambrano.com/lupitazam-siteaudio/kimi_ni_todoke_ost_pure_waltz.mp3" type="audio/mpeg">
                     your browser does not support the audio element.
                 </audio>
             </section>
@@ -82,7 +80,7 @@
                 <figure class="journal-media" aria-labelledby="kitchen-clip-caption">
                     <div class="journal-video-shell">
                         <video class="journal-video" preload="metadata" playsinline muted data-dessert-video>
-                            <source src="../../images/videos/2026-03-08/cheesecake_mousse.mov" type="video/quicktime">
+                            <source src="../../assets/videos/2026-03-08/cheesecake_mousse.mov" type="video/quicktime">
                             your browser does not support the video tag.
                         </video>
                         <button class="journal-video-overlay" type="button" data-video-toggle aria-label="Play taste test video">
@@ -127,12 +125,12 @@
             </section>
 
             <figure class="memory-photo">
-                <img src="../../images/blog/2026-03-07/marley.JPG" alt="Marley the first year I bought her" loading="lazy">
+                <img src="../../assets/blog/2026-03-07/marley.JPG" alt="Marley the first year I bought her" loading="lazy">
                 <figcaption data-i18n="aside.marleyCaption">marley the first year i bought her. she was only $50 bucks!! yeaaa</figcaption>
             </figure>
 
             <figure class="memory-photo">
-                <img src="../../images/blog/2026-03-08/asset-03.JPG" alt="March 8 photo" loading="lazy">
+                <img src="../../assets/blog/2026-03-08/asset-03.JPG" alt="March 8 photo" loading="lazy">
             </figure>
 
             <div class="click-row" aria-label="head pat counter">
@@ -201,7 +199,6 @@
                     "nav.blog": "blog",
                     "nav.links": "links",
                     "nav.guestbook": "guestbook",
-                    "nav.gardenLog": "garden log",
                     "nav.music": "music",
                     "nav.learnToCode": "learn to code",
                     "nav.gallery": "gallery",
@@ -248,7 +245,6 @@
                     "nav.blog": "blog",
                     "nav.links": "links",
                     "nav.guestbook": "libro de visitas",
-                    "nav.gardenLog": "registro del jardin",
                     "nav.music": "musica",
                     "nav.learnToCode": "aprender a programar",
                     "nav.gallery": "galeria",

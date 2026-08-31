@@ -4,195 +4,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>about — lupe zambrano</title>
+  <title>about - lupe zambrano</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap"
     rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
   <link rel="stylesheet" href="../styles/reset.css" />
   <link rel="stylesheet" href="../styles/tokens.css" />
   <link rel="stylesheet" href="../styles/base.css" />
   <link rel="stylesheet" href="../styles/layout.css" />
   <link rel="stylesheet" href="../styles/components.css" />
-  <link rel="stylesheet" href="../styles/about.css" />
-  <link rel="stylesheet" href="../styles/carousel.css" />
-
-  <!--vanilla-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
-
-  <!--js-->
-  <script src="/scripts/site.js" defer></script>
-  <script src="/scripts/carousel.js" defer></script>
+  <link rel="stylesheet" href="../styles/pages/about.css" />
+  <link rel="stylesheet" href="../styles/minimal.css" />
 </head>
 
 <body>
-  <header class="site-header">
-    <nav id="nav_menu" aria-label="Main" class="hero-tabs tab-nav">
-      <ul class="tab-nav-list">
-        <li class="tab-nav-item"><a class="tab-nav-link" href="/index.html">home</a></li>
-        <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/about.html" aria-current="page">about</a></li>
-        <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/music.html">music</a></li>
-        <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/learn-to-code.html">learn to code</a></li>
-        <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/bleach-shrine.html">shrines</a></li>
-        <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/project-senpai.html">project senpai</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main id="main" class="container">
+  <main class="about-shell" id="main">
+    <div class="about-site-card">
+      <header class="site-header">
+        <nav id="nav_menu" aria-label="Main" class="hero-tabs tab-nav">
+          <ul class="tab-nav-list">
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/index.html">home</a></li>
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/about.html" aria-current="page">about</a></li>
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/music.html">music</a></li>
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/links.html">links</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <section class="about-grid">
-      <!-- about me -->
-      <article class="about-card">
-        <h3>about me</h3>
-        <ul class="dash">
-          <li>i'm lupita, but i go by lupe when communicating in english</li>
-          <li>based in western washington</li>
-          <li>27 years old</li>
-          <li>i study computer information systems</li>
-          <li>i'm a little bit insane</li>
-        </ul>
-      </article>
-
-      <!-- how i build -->
-      <article class="about-card">
-        <h3>build notes</h3>
-
-        <ul class="dash">
-          <li>stack: html, css, vanilla js.</li>
-          <li>no frameworks.</li>
-          <li>progressively enhanced.</li>
-          <li>hosted on cloudflare pages.</li>
-        </ul>
-      </article>
-
-      <!-- tiny life story -->
-      <article class="about-card">
-        <h3>journey</h3>
-
-        <p>
-          i didn't end up in tech because i always dreamed about it.
-        </p>
-
-        <p>
-          i went back to school to continue my education, and tech felt like the direction everything was already
-          moving. i don't want to be left behind.
-        </p>
-
-        <p>
-          this website is where i learn in public. you'll find coursework, experiments, notes, and projects that slowly
-          become less broken over time.
-        </p>
-
-        <p>
-          it's easier to keep everything in one place.
-        </p>
-      </article>
-
-      <!-- blog, links, media log, guestbook -->
-      <section class="about-card blog-card">
-        <h2>blog!</h2>
-
-        <p class="blog-intro">
-          tiny posts, messy notes, and whatever thought would not leave me alone.
-        </p>
-
-        <ul class="heart-list">
-          <li><a href="blog.html">read my blog</a></li>
-          <li><a href="media-log.html">see what i'm watching / playing</a></li>
-          <li><a href="guestbook.html">leave something in the guestbook</a></li>
-        </ul>
+      <section class="about-copy" aria-labelledby="about-title">
+        <p>somewhere between a life archive and a collection of internet debris.</p>
+        <p>i have always liked collecting things. photographs, music, old interests, unfinished thoughts, and anything
+          else that feels worth keeping. some of it is meaningful, and some of it is not. i enjoy giving these things a
+          place to exist and arranging them with html and css.</p>
+        <p>i'm a leo sun, aquarius moon, and gemini rising. i tend to become deeply interested in whatever catches my attention, so what
+          appears here will probably change along with me.</p>
       </section>
 
-
-      <!--image carousel-->
-      <article class="about-card carousel js-carousel" data-carousel="about-photos">
-        <h3 data-ico="📷">meeee</h3>
-
-        <div class="carousel-frame" data-carousel-frame>
-          <ul class="carousel-track" data-carousel-track>
-
-            <li class="carousel-slide" data-carousel-slide>
-              <img src="../images/about/me13.jpg">
-            </li>
-
-            <li class="carousel-slide" data-carousel-slide>
-              <img src="../images/about/me9.jpg">
-            </li>
-
-            <li class="carousel-slide" data-carousel-slide>
-              <img src="../images/about/me10.jpg">
-            </li>
-
-            <li class="carousel-slide" data-carousel-slide>
-              <img src="../images/about/me14.jpg">
-            </li>
-
-            <li class="carousel-slide" data-carousel-slide>
-              <img src="../images/about/me15.jpg">
-            </li>
-
-            <li class="carousel-slide" data-carousel-slide>
-              <img src="../images/about/me1.jpg">
-            </li>
-
-            <li class="carousel-slide" data-carousel-slide>
-              <img src="../images/about/me2.jpg">
-            </li>
-
-            <li class="carousel-slide" data-carousel-slide="">
-              <img src="../images/about/me4.jpg">
-            </li>
-
-            <li class="carousel-slide" data-carousel-slide="">
-              <img src="../images/about/me5.jpg">
-            </li>
-
-            <li class="carousel-slide" data-carousel-slide="">
-              <img src="../images/about/me6.jpg">
-            </li>
-
-            <li class="carousel-slide" data-carousel-slide="">
-              <img src="../images/about/me7.jpg">
-            </li>
-
-            <li class="carousel-slide" data-carousel-slide="">
-              <img src="../images/about/me8.jpg">
-            </li>
-          </ul>
-
-          <button class="carousel-arrow carousel-arrow--prev" type="button" data-carousel-prev
-            aria-label="Previous image">‹</button>
-          <button class="carousel-arrow carousel-arrow--next" type="button" data-carousel-next
-            aria-label="Next image">›</button>
-        </div>
-
-        <div class="carousel-dots" data-carousel-dots aria-label="Select image"></div>
-      </article>
-
-      <!-- other websites -->
-      <article class="about-card">
-        <h3>my other websites</h3>
-        <ul class="dash">
-          <li><a class="highlight-link" href="https://fignberry.club/" target="_blank"
-              rel="noopener noreferrer">fignberry</a></li>
-          <li><a class="highlight-link" href="https://tinywebpractice.com/" target="_blank"
-              rel="noopener noreferrer">tinywebpractice</a>
-          </li>
-          <li><a class="highlight-link" href="https://nekomoji.com/" target="_blank"
-              rel="noopener noreferrer">nekomoji</a></li>
-        </ul>
-      </article>
-    </section>
-
+      <footer class="site-footer">
+        <p>&copy; lupita zambrano &#9734;(&gt;&#7447;&bull;) 2025</p>
+      </footer>
+    </div>
   </main>
-
-  <footer class="site-footer">
-    <p>&copy; lupita zambrano ☆(>ᴗ•) 2025</p>
-  </footer>
 </body>
 
 </html>

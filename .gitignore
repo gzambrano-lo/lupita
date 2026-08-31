@@ -1,2 +1,14 @@
-audio/26-03-01/
-audio/start_movin_chronosonder.mp4
+# keep generated/local media out of the repository.
+audio/
+videos/
+
+# large binary media should live on the media host and be referenced by URL.
+*.mp3
+*.mp4
+*.mov
+*.mkv
+*.zip
+
+# os/editor noise
+.DS_Store
+Thumbs.db

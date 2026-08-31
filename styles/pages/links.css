@@ -1,0 +1,111 @@
+.no-link {
+  cursor: default;
+}
+
+.links-site-card {
+  width: min(800px, calc(100% - 40px));
+}
+
+.links-site-card .links-page {
+  margin: 0;
+  padding: clamp(1.6rem, 3.8vw, 2.35rem) clamp(.25rem, .8vw, .55rem) 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.links-page-heading {
+  display: flex;
+  justify-content: center;
+  margin-bottom: clamp(1rem, 2.6vw, 1.45rem);
+}
+
+.links-page .hero-title {
+  margin: 0;
+  color: #c9627d;
+  font-size: clamp(1.4rem, 3.6vw, 1.85rem);
+  line-height: 1.1;
+}
+
+.links-page .header-sparkle {
+  width: 42px;
+  height: 42px;
+  margin-inline: .1rem;
+}
+
+.links-page .link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .55rem;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links-page .link-grid li {
+  min-width: 0;
+}
+
+.link-grid li > a,
+.link-grid li > .no-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.links-page .link-grid li > a,
+.links-page .link-grid li > .no-link {
+  min-height: 84px;
+  padding: .72rem .78rem;
+  color: #62554f;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, .36), transparent 58%),
+    rgba(255, 255, 255, .42);
+  border: 1px solid rgba(132, 165, 157, .24);
+  border-radius: 8px 5px 7px 6px;
+  box-shadow: 2px 3px 0 rgba(120, 152, 139, .12);
+}
+
+.links-page .link-grid li:nth-child(even) > a,
+.links-page .link-grid li:nth-child(even) > .no-link {
+  background:
+    linear-gradient(145deg, rgba(248, 221, 217, .55), transparent 58%),
+    rgba(255, 255, 255, .38);
+  border-color: rgba(199, 111, 132, .22);
+}
+
+.links-page .link-grid li > a:hover,
+.links-page .link-grid li > a:focus-visible {
+  border-color: rgba(231, 127, 152, .55);
+  box-shadow: 3px 5px 10px rgba(152, 94, 86, .13);
+  transform: translateY(-2px) rotate(-.35deg);
+}
+
+.links-page .lg-title {
+  color: #bd6078;
+}
+
+.links-page .lg-sub {
+  color: #71645f;
+}
+
+@media (max-width: 620px) {
+  .links-site-card {
+    width: min(100% - 24px, 800px);
+  }
+
+  .links-site-card .links-page {
+    padding-top: 1.35rem;
+  }
+
+  .links-page .link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .links-page .link-grid li > a,
+  .links-page .link-grid li > .no-link {
+    min-height: 74px;
+  }
+}

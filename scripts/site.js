@@ -5,11 +5,34 @@ window.addEventListener('DOMContentLoaded', () => {
       ['/index.html', 'home'],
       ['/pages/about.html', 'about'],
       ['/pages/music.html', 'music'],
+      ['/pages/blog.html', 'blog'],
+      ['/pages/links.html', 'links'],
       ['/pages/learn-to-code.html', 'learn to code'],
       ['/pages/bleach-shrine.html', 'shrines'],
       ['/pages/project-senpai.html', 'project senpai']
     ]);
     const currentPath = window.location.pathname === '/' ? '/index.html' : window.location.pathname;
+    const isBlogPostPage = document.body.classList.contains('post-page');
+    const navList = mainNav.querySelector('.tab-nav-list');
+
+    if (isBlogPostPage && navList && !mainNav.querySelector('a[href="/pages/blog.html"]')) {
+      const blogItem = document.createElement('li');
+      blogItem.className = 'tab-nav-item';
+      blogItem.innerHTML = '<a class="tab-nav-link" href="/pages/blog.html">blog</a>';
+      const linksItem = mainNav.querySelector('a[href="/pages/links.html"]')?.closest('li');
+      navList.insertBefore(blogItem, linksItem || null);
+    }
+
+    if (isBlogPostPage && !document.querySelector('.minimal-post-back')) {
+      const postHeader = document.querySelector('.post > header, .post-shell-header');
+      if (postHeader) {
+        const backLink = document.createElement('a');
+        backLink.className = 'minimal-post-back';
+        backLink.href = '/pages/blog.html';
+        backLink.textContent = '\u2190 back';
+        postHeader.insertBefore(backLink, postHeader.firstChild);
+      }
+    }
 
     mainNav.querySelectorAll('a[href]').forEach((link) => {
       const linkPath = new URL(link.href, window.location.href).pathname;
@@ -17,7 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
         link.textContent = canonicalLabels.get(linkPath);
       }
 
-      const isCurrent = linkPath === currentPath;
+      const isCurrent = linkPath === currentPath || (isBlogPostPage && linkPath === '/pages/blog.html');
       if (isCurrent) {
         link.setAttribute('aria-current', 'page');
       } else {
@@ -60,9 +83,9 @@ window.addEventListener('DOMContentLoaded', () => {
   const opts = { renderer: 'svg', loop: true, autoplay: true };
 
   const paths = {
-    'sparkle-left': '/animations/sparkle-left.json',
-    'sparkle-right': '/animations/sparkle-right.json',
-    'new-sparkles': '/animations/new_sparkles.json'
+    'sparkle-left': '/assets/animations/sparkle-left.json',
+    'sparkle-right': '/assets/animations/sparkle-right.json',
+    'new-sparkles': '/assets/animations/new_sparkles.json'
   };
 
   document.querySelectorAll('[data-lottie]').forEach((el) => {

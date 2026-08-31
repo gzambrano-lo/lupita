@@ -32,7 +32,7 @@
       const forwardBtn = root.querySelector("[data-track-forward]");
       const infoToggle = root.querySelector("[data-player-info-toggle]");
       const drawer = root.querySelector("[data-player-drawer]");
-      const defaultCover = "../images/avatar.png";
+      const defaultCover = "../assets/avatar.png";
       const extraGenres = [
         "desmadre mexicano"
       ];

@@ -1,7 +1,7 @@
 window.lupitaMusicPlaylist = [
   {
     "title": "hotel ugly - shut up my moms calling",
-    "cover": "../images/music-player/shut_up_my_moms_calling.jpg",
+    "cover": "../assets/music-player/shut_up_my_moms_calling.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/hotel_ugly_shut_up_my_moms_calling.mp3",
     "note": "",
     "date": "",
@@ -13,7 +13,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "mild orange - mysight",
-    "cover": "../images/music-player/mild_orange_mysight.jpg",
+    "cover": "../assets/music-player/mild_orange_mysight.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/mild_orange_mysight.mp3",
     "note": "",
     "date": "",
@@ -25,7 +25,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "chetes - querer",
-    "cover": "../images/music-player/chetes_querer.jpg",
+    "cover": "../assets/music-player/chetes_querer.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/chetes_querer.mp3",
     "note": "",
     "date": "",
@@ -37,7 +37,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "los shadows - laugh now cry later",
-    "cover": "../images/music-player/los_shadows_laugh_now_cry_later.jpg",
+    "cover": "../assets/music-player/los_shadows_laugh_now_cry_later.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/los_shadows_laugh_now_cry_later.mp3",
     "note": "",
     "date": "",
@@ -49,7 +49,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "lucca bocci - bahia",
-    "cover": "../images/music-player/lucca_bocci_bahia.jpg",
+    "cover": "../assets/music-player/lucca_bocci_bahia.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/lucca_bocci_bahia.mp3",
     "note": "",
     "date": "",
@@ -61,7 +61,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "los juanos - disco y salieri",
-    "cover": "../images/music-player/los_juanos_disco_y_salieri.jpg",
+    "cover": "../assets/music-player/los_juanos_disco_y_salieri.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/los_juanos_disco_y_salieri.mp3",
     "note": "",
     "date": "",
@@ -73,7 +73,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "banes world - you say i'm in love",
-    "cover": "../images/music-player/banes_world_disco_y_salieri.jpg",
+    "cover": "../assets/music-player/banes_world_disco_y_salieri.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/banes_world_you_say_im_in_love.mp3",
     "note": "",
     "date": "",
@@ -87,7 +87,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "night tapes - forever",
-    "cover": "../images/music-player/night_tapes_forever.jpg",
+    "cover": "../assets/music-player/night_tapes_forever.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/night_tapes_forever.mp3",
     "note": "",
     "date": "",
@@ -99,7 +99,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "lucia - good luck with you",
-    "cover": "../images/music-player/lucia_good_luck_with_you.jpg",
+    "cover": "../assets/music-player/lucia_good_luck_with_you.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/lucia_good_luck_with_you.mp3",
     "note": "",
     "date": "",
@@ -111,7 +111,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "hotel books - nothing was the same",
-    "cover": "../images/music-player/hotel_books.jpg",
+    "cover": "../assets/music-player/hotel_books.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/Hotel_Books_Nothing_Was_The_Same.mp3",
     "note": "",
     "mood": "",
@@ -178,7 +178,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "princess nokia - bart simpson",
-    "cover": "../images/music-player/green_line.jpg",
+    "cover": "../assets/music-player/green_line.jpg",
     "embed": "https://www.youtube.com/embed/KMVrp5yvX7U?si=aqwOZVYwxxiucQFQ",
     "audioSrc": "https://media.lupitazambrano.com/music/princess_nokia_bart_simpson.mp3",
     "note": "",
@@ -254,7 +254,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "princess nokia - green line",
-    "cover": "../images/music-player/green_line.jpg",
+    "cover": "../assets/music-player/green_line.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/princess_nokia_green_line.mp3",
     "note": "",
@@ -271,7 +271,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "ikoniko, cachirula - 1perreo",
-    "cover": "../images/music-player/ikoniko_cachirula_1perreo.jpg",
+    "cover": "../assets/music-player/ikoniko_cachirula_1perreo.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/Ikoniko_Cachirula_1Perreo.mp3",
     "note": "",
@@ -289,7 +289,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "bellakath ft yeyo - mami chakalosa",
-    "cover": "../images/music-player/chakalosa.jpg",
+    "cover": "../assets/music-player/chakalosa.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/MAMI_CHAKALOSA_Bellakath_ft_Yeyo.mp3",
     "note": "",
@@ -307,7 +307,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "dani flow - las que no tienen pap\u00e1",
-    "cover": "../images/music-player/las_que_no_tienen_papa.jpg",
+    "cover": "../assets/music-player/las_que_no_tienen_papa.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/LAS_QUE_NO_TIENEN_PAP%C3%81_Dani_Flow.mp3",
     "note": "",
@@ -405,7 +405,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "ximena sari\u00f1ana - cuento",
-    "cover": "../images/music-player/cuento.jpg",
+    "cover": "../assets/music-player/cuento.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/Ximena_Sari%C3%B1ana_Cuento.mp3",
     "note": "",
@@ -422,7 +422,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "cartel de santa - la pelotona",
-    "cover": "../images/blog/cartel_de_santa.png",
+    "cover": "../assets/blog/cartel_de_santa.png",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/cartel_de_santa_la_pelotona.mp3",
     "note": "",
@@ -484,7 +484,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "i love america - blow ya mind",
-    "cover": "../images/music-player/blow-ya-mind.jpg",
+    "cover": "../assets/music-player/blow-ya-mind.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/Blow_Ya_Mind_I_LOVE_AMERICA.mp3",
     "note": "",
@@ -499,7 +499,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "double - little things you do",
-    "cover": "../images/music-player/double.jpg",
+    "cover": "../assets/music-player/double.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/Double_Little_Things_You_Do.mp3",
     "note": "",
@@ -514,7 +514,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "raveena - if only",
-    "cover": "../images/music-player/if_only.png",
+    "cover": "../assets/music-player/if_only.png",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/raveena_If_Only.mp3",
     "note": "",
@@ -529,7 +529,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "MoKenStef - he's mine",
-    "cover": "../images/music-player/mokenstef.jpg",
+    "cover": "../assets/music-player/mokenstef.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/Mokenstef_Hes_Mine.mp3",
     "note": "",
@@ -544,7 +544,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "the weeknd - coming down",
-    "cover": "../images/music-player/house_of_balloons.jpg",
+    "cover": "../assets/music-player/house_of_balloons.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/The_Weeknd_Coming_Down.mp3",
     "note": "",
@@ -559,7 +559,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "the weeknd - wicked games",
-    "cover": "../images/music-player/house_of_balloons.jpg",
+    "cover": "../assets/music-player/house_of_balloons.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/The_Weeknd_Wicked_Games.mp3",
     "note": "",
@@ -574,7 +574,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "the weeknd - what you need",
-    "cover": "../images/music-player/house_of_balloons.jpg",
+    "cover": "../assets/music-player/house_of_balloons.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/The_Weeknd_What_You_Need.mp3",
     "note": "",
@@ -589,7 +589,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "the weeknd - next",
-    "cover": "../images/music-player/next.jpg",
+    "cover": "../assets/music-player/next.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/The_Weeknd_Next.mp3",
     "note": "",
@@ -604,7 +604,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "the weeknd - drunk in love",
-    "cover": "../images/music-player/drunk_in_love.jpg",
+    "cover": "../assets/music-player/drunk_in_love.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/The_Weeknd_Drunk_In_Love.mp3",
     "note": "",
@@ -619,7 +619,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "the weeknd - trust issues remix",
-    "cover": "../images/music-player/trust_issues.jpg",
+    "cover": "../assets/music-player/trust_issues.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/The_Weeknd_Trust_Issues_Remix.mp3",
     "note": "",
@@ -634,7 +634,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "the weeknd - king of the fall",
-    "cover": "../images/music-player/king_of_the_fall.jpeg",
+    "cover": "../assets/music-player/king_of_the_fall.jpeg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/The_Weeknd_King_Of_The_Fall.mp3",
     "note": "",
@@ -649,7 +649,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "derrick cross - never too much",
-    "cover": "../images/music-player/never_too_much.jpg",
+    "cover": "../assets/music-player/never_too_much.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/Never_Too_Much.mp3",
     "note": "",
@@ -664,7 +664,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "lnrt - call me",
-    "cover": "../images/music-player/lnrt_call_me.jpg",
+    "cover": "../assets/music-player/lnrt_call_me.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/26-03-01/LNRT_Call_Me.mp4",
     "note": "",
@@ -679,7 +679,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "paeka - 2 easy",
-    "cover": "../images/music-player/2_easy.jpg",
+    "cover": "../assets/music-player/2_easy.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/26-03-01/2_easy_paeka.mp4",
     "note": "",
@@ -694,7 +694,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "dj pepo mix - dandole al cumbiaton!",
-    "cover": "../images/music-player/dandole_al_cumbiaton.jpg",
+    "cover": "../assets/music-player/dandole_al_cumbiaton.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/26-03-01/dandole_al_cumbiaton_pepo_mix.mp4",
     "note": "",
@@ -709,7 +709,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "denna la porri - vaqueritas",
-    "cover": "../images/music-player/vaqueritas.jpg",
+    "cover": "../assets/music-player/vaqueritas.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/26-03-01/denna_la_porri_vaqueritas%20audio.mp4",
     "note": "",
@@ -726,7 +726,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "denna la porri - gata en celo",
-    "cover": "../images/music-player/gata_en_celo.jpg",
+    "cover": "../assets/music-player/gata_en_celo.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/26-03-01/gata_en_celo_denna_la_porri.mp4",
     "note": "",
@@ -743,7 +743,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "bellakath - tuma",
-    "cover": "../images/music-player/tuma.jpg",
+    "cover": "../assets/music-player/tuma.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/26-03-01/tuma_bellakath.mp4",
     "note": "",
@@ -760,7 +760,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "italo - lo subo bajo",
-    "cover": "../images/music-player/lo_subo_bajo.webp",
+    "cover": "../assets/music-player/lo_subo_bajo.webp",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/26-03-01/lo_subo_bajo_italo.mp3",
     "note": "",
@@ -775,7 +775,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "charly gynn, tzunami - lo roce",
-    "cover": "../images/music-player/lo_roce.jpg",
+    "cover": "../assets/music-player/lo_roce.jpg",
     "embed": "https://www.youtube.com/embed/cvcHPK02Tnk",
     "audioSrc": "https://media.lupitazambrano.com/26-03-01/lo_roce_charly_gynn.mp3",
     "note": "",
@@ -792,7 +792,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "lnrt - right now",
-    "cover": "../images/music-player/right_now.jpg",
+    "cover": "../assets/music-player/right_now.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/26-03-01/lnrt_right_now.mp3",
     "note": "",
@@ -807,7 +807,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "joss ml & ennay - 2012",
-    "cover": "../images/music-player/2012.jpg",
+    "cover": "../assets/music-player/2012.jpg",
     "embed": "https://www.youtube.com/embed/czgLpfLPUlw",
     "audioSrc": "https://media.lupitazambrano.com/26-03-01/joss_ml_enayy_2012.mp4",
     "note": "",
@@ -824,7 +824,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "rammstein - rein raus",
-    "cover": "../images/music-player/mutter.jpg",
+    "cover": "../assets/music-player/mutter.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/03-12-26/Rein%20raus.mp3",
     "note": "",
@@ -842,7 +842,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "gucci mane ft. rich homie quan - i heard",
-    "cover": "../images/music-player/i_heard.jpg",
+    "cover": "../assets/music-player/i_heard.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/Gucci_Mane_I_Heard_feat_Rich_Homie_Quan.mp3",
     "note": "",
@@ -857,7 +857,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "wiz khalifa ft. the weeknd - remember you",
-    "cover": "../images/music-player/remember_you.png",
+    "cover": "../assets/music-player/remember_you.png",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/Wiz_Khalifa_Remember_You_ft_The_Weeknd_Audio.mp3",
     "note": "",
@@ -872,7 +872,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "chzter, flvckka, angely2k - 3some",
-    "cover": "../images/music-player/3some.jpg",
+    "cover": "../assets/music-player/3some.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/3SOME%20-%20Chzter%20FLVCKKA%20angely2k.mp3",
     "note": "a mi me vale verga. nadie me controla",
@@ -889,7 +889,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "citizen - how does it feel?",
-    "cover": "../images/music-player/how_does_it_feel.jpg",
+    "cover": "../assets/music-player/how_does_it_feel.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/Citizen_How_Does_It_Feel.mp3",
     "note": "",
@@ -904,7 +904,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "jennifer lara - we can make it work",
-    "cover": "../images/music-player/we_can_make_it_work.jpg",
+    "cover": "../assets/music-player/we_can_make_it_work.jpg",
     "embed": "https://www.youtube.com/embed/Hszc2VnIqPI",
     "audioSrc": "https://media.lupitazambrano.com/music/Jennifer_Lara_We_can_make_it_work.mp3",
     "note": "we can make it work.",
@@ -922,7 +922,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "chosen few - dont keep me waitin",
-    "cover": "../images/music-player/dont_keep_me_waiting.jpg",
+    "cover": "../assets/music-player/dont_keep_me_waiting.jpg",
     "embed": "https://www.youtube.com/embed/J1hcm8k2MDM",
     "audioSrc": "https://media.lupitazambrano.com/music/Dont_Keep_Me_Waiting.mp3",
     "note": "dont keep me waitin.",
@@ -936,7 +936,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "rixxia - u r such a lame",
-    "cover": "../images/music-player/u_are_such_a_lame.jpg",
+    "cover": "../assets/music-player/u_are_such_a_lame.jpg",
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/U_R_SUCH_A_LAME.mp3",
     "note": "ay, que hueva",
@@ -950,7 +950,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "julia hecht - boy i just blocked you",
-    "cover": '../images/music-player/boy_i_just_blocked_you.webp',
+    "cover": '../assets/music-player/boy_i_just_blocked_you.webp',
     "embed": "",
     "audioSrc": "https://media.lupitazambrano.com/music/Julia_Hecht_Boy_I_Just_Blocked_You.mp3",
     "note": "said you loved me, so i blocked you!",
@@ -966,7 +966,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "linea personal - malibu",
-    "cover": "../images/music-player/malibu.jpg",
+    "cover": "../assets/music-player/malibu.jpg",
     "embed": "https://www.youtube.com/embed/kVuxBRBgnOQ?si=TSDQkILxpostUq5x",
     "audioSrc": "https://media.lupitazambrano.com/2026-03-27/Linea_Personal_Malibu.mp3",
     "note": "i could loop this all day",
@@ -980,7 +980,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "jmsn - love 2 u",
-    "cover": "../images/music-player/love_to_u.webp",
+    "cover": "../assets/music-player/love_to_u.webp",
     "embed": "https://www.youtube.com/embed/RuyvLzcnSeI?si=hlHHTM1jkJtT9juK",
     "audioSrc": "https://media.lupitazambrano.com/music/JMSN_Love_2_U_.mp3",
     "note": "cause right now it\u0027s you and me in perfect symmetry",
@@ -994,7 +994,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "jmsn - angelica",
     "audioSrc": "https://media.lupitazambrano.com/music/JMSN_Angelica.mp3",
-    "cover": "../images/music-player/angelica.jpg",
+    "cover": "../assets/music-player/angelica.jpg",
     "note": "",
     "date": "",
     "tags": [
@@ -1008,7 +1008,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "jmsn - cruel intentions",
     "audioSrc": "https://media.lupitazambrano.com/music/JMSN_Cruel_Intentions.mp3",
-    "cover": "../images/music-player/cruel_intentions.jpg",
+    "cover": "../assets/music-player/cruel_intentions.jpg",
     "note": "",
     "date": "",
     "tags": [
@@ -1021,7 +1021,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "ldne, david santos - arreglate / mami descuidada",
-    "cover": "../images/music-player/descuiada.jpg",
+    "cover": "../assets/music-player/descuiada.jpg",
     "embed": "https://www.youtube.com/embed/tfFHuf01oR8?si=Ow9KY8jSaQPOCmy5",
     "audioSrc": "https://media.lupitazambrano.com/2026-03-27/LDNE_David_Santos_Arreglate%20_Mami_Descuidada.mp3",
     "note": "",
@@ -1046,7 +1046,7 @@ window.lupitaMusicPlaylist = [
     "title": "lucidbeatz - let u go",
     "embed": "https://www.youtube.com/embed/fXF59UWr-tA?si=rw-uI8Qf7HmSgKJN",
     "audioSrc": "https://media.lupitazambrano.com/music/Let_U_Go.mp3",
-    "cover": "../images/music-player/let_u_go.png",
+    "cover": "../assets/music-player/let_u_go.png",
     "note": "\u0026 when it\u0027s late at night, i think of what you\u0027re doing, do you think of me sometimes?",
     "date": "02/24/2026",
     "tags": [
@@ -1057,7 +1057,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "kami - home movies",
-    "cover": "../images/music-player/home_movies.jpg",
+    "cover": "../assets/music-player/home_movies.jpg",
     "embed": "https://www.youtube.com/embed/JQmn4DVmb7A?si=-q1QI5X4hWD1aecF",
     "audioSrc": "https://media.lupitazambrano.com/music/Home_Movies.mp3",
     "note": "i told her we can make that movie at home",
@@ -1070,7 +1070,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "cachirula - intro.mp3",
-    "cover": "../images/music-player/intromp3.jpg",
+    "cover": "../assets/music-player/intromp3.jpg",
     "embed": "https://www.youtube.com/embed/dp3pvXHGMFI?si=vWEKNnM0I1d13UAc",
     "audioSrc": "https://media.lupitazambrano.com/music/intro_mp3.mp3",
     "note": "i miss this era of cachirula. she is switching up her style now.",
@@ -1118,7 +1118,7 @@ window.lupitaMusicPlaylist = [
     "title": "pale jay - under the magnolia tree",
     "embed": "https://www.youtube.com/embed/8YSMeFykdvU?si=JmRkAdBuJr0WaTsg",
     "audioSrc": "https://media.lupitazambrano.com/music/Pale_Jay_Under_The_Magnolia_Tree.mp3",
-    "cover": "../images/music-player/pale_jay_under_the_magnolia_tree.jpg",
+    "cover": "../assets/music-player/pale_jay_under_the_magnolia_tree.jpg",
     "note": "oh baby, i\u0027ll miss you",
     "date": "02/14/2026",
     "tags": [
@@ -1130,7 +1130,7 @@ window.lupitaMusicPlaylist = [
     "title": "ramridddlz - bodmon",
     "embed": "https://www.youtube.com/embed/hSbpaPoGYbU?si=HC3qTFv8kuF2jxzF",
     "audioSrc": "https://media.lupitazambrano.com/music/Ramriddlz_Bodmon.mp3",
-    "cover": "../images/music-player/bodmon.jpg",
+    "cover": "../assets/music-player/bodmon.jpg",
     "note": "sweet and spicy too",
     "date": "01/16/2026",
     "tags": [
@@ -1141,7 +1141,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "yung lean - ginseng strip 2002",
     "embed": "https://www.youtube.com/embed/vrQWhFysPKY?si=1zCaROUz6Doa-zlo",
-    "cover": "../images/music-player/Ginseng_Strip_2002.png",
+    "cover": "../assets/music-player/Ginseng_Strip_2002.png",
     "audioSrc": "https://media.lupitazambrano.com/music/Yung_Lean_Ginseng_Strip_2002.mp3",
     "note": "emotional shawtys in this bitch",
     "date": "01/16/2026",
@@ -1153,7 +1153,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "03 greedo - floating",
     "embed": "https://www.youtube.com/embed/9hFqkIRV-Vg?si=KCDAHXkFkwEuNciN",
-    "cover": "../images/music-player/floating.webp",
+    "cover": "../assets/music-player/floating.webp",
     "audioSrc": "https://media.lupitazambrano.com/music/03_Greedo_Floating_Official_Audio.mp3",
     "note": "i dive inside her ocean",
     "date": "01/16/2026",
@@ -1165,7 +1165,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "rucci - b\u0027s up",
     "embed": "https://www.youtube.com/embed/2EnVke5axok?si=oTAcOQxRGPvIEqHu",
-    "cover": "../images/music-player/rucci_bs_up.png",
+    "cover": "../assets/music-player/rucci_bs_up.png",
     "audioSrc": "https://media.lupitazambrano.com/music/Rucci_Bs_Up.mp3",
     "note": "the way im living people say i need jesus",
     "date": "12/24/2025",
@@ -1177,7 +1177,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "pity party (girls club) - i hope you\u0027re doing okay",
     "embed": "https://www.youtube.com/embed/N3JYAXmKlCQ?si=QHrVuzI5NUvVrMnf",
-    "cover": "../images/music-player/i_hope_youre_doing_okay.jpg",
+    "cover": "../assets/music-player/i_hope_youre_doing_okay.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/i_hope_youre_doing_okay.mp3",
     "note": "and i hope it hurts to see me with someone else",
     "date": "12/24/2025",
@@ -1189,7 +1189,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "nestor en bloque - una calle nos separa",
     "embed": "https://www.youtube.com/embed/Fs3lKX1Fq6k?si=XWBoxAe572ej8rQG",
-    "cover": "../images/music-player/una_calle_me_separa.jpg",
+    "cover": "../assets/music-player/una_calle_me_separa.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/Una_Calle_Nos_Separa.mp3",
     "note": "de tu amor no exijo nada solo quiero ser tu due\u00f1o. y mi amor, que en busca de ella va, no importa ni el dolor que ayer me hizo llorar. yo s\u00e9 que al ventanal ma\u00f1ana asomar\u00e1 su cara angelical",
     "date": "12/14/2025",
@@ -1201,7 +1201,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "kumbia kingz - desde que no estas aqui",
     "embed": "https://www.youtube.com/embed/bT6tWIhsYp8?si=CbGyyDEd5E2FT6XLi",
-    "cover": "../images/music-player/desde_que_no_estas_aqui.jpg",
+    "cover": "../assets/music-player/desde_que_no_estas_aqui.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/Desde_Que_No_Estas_Aqui.mp3",
     "note": "y si tu sigues convencida que lloro por ti, deja de estar de presumida, no eres para mi",
     "date": "12/14/2025",
@@ -1214,7 +1214,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "a.b quintanilla III y los kumbia kingz - u don\u0027t love me",
     "embed": "https://www.youtube.com/embed/f7KRSizJ17A?si=_AWCytCFCU7Pduei",
-    "cover": "../images/music-player/u_dont_love_me.jpg",
+    "cover": "../assets/music-player/u_dont_love_me.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/U_Dont_Love_Me.mp3",
     "note": "",
     "date": "12/14/2025",
@@ -1238,7 +1238,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "cachirula, loojan, emex, morrow, 8 a.m - doble d",
     "embed": "https://www.youtube.com/embed/NdPPuIhHzHA?si=81L4c_OkS5kVamcH",
-    "cover": "../images/music-player/doble_d.png",
+    "cover": "../assets/music-player/doble_d.png",
     "audioSrc": "https://media.lupitazambrano.com/music/3_Doble_D_Cachirula_Loojan_Morrow_8am_Audio_Oficial.mp3",
     "note": "dice que me ama, pero se que miente",
     "date": "9/18/25",
@@ -1250,7 +1250,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "chzter - kamazu",
     "embed": "https://www.youtube.com/embed/zi0sIsXKgnY?si=oSYtLbQ5no-5Ezza",
-    "cover": "../images/music-player/kamazu.jpg",
+    "cover": "../assets/music-player/kamazu.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/kamazu_prod_Tzunami_mrworlwife.mp3",
     "note": "soy su mami, soy su papi",
     "date": "9/18/25",
@@ -1262,7 +1262,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "siimbiie liives long, brother kamauu - bad for the soul",
     "embed": "https://www.youtube.com/embed/yn3xf-sL99Q?si=4W_yBY66loWrMxBA",
-    "cover": "../images/music-player/bad_for_the_soul.jpg",
+    "cover": "../assets/music-player/bad_for_the_soul.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/SIIMBIIE_LIIVES_LONG_feat_KAMAUU_BAD_FOR_THE_SOUL.mp3",
     "note": "i gave you my heart and it still aint enough",
     "date": "9/17/25",
@@ -1275,7 +1275,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "deante\u0027 hitchcock - thinking \u0027bout you",
     "embed": "https://www.youtube.com/embed/POUdOMFmHA8?si=js3DtTYBSG5XlfzB",
-    "cover": "../images/music-player/thinkin_bout_you.jpg",
+    "cover": "../assets/music-player/thinkin_bout_you.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/Deante_Hitchcock_Thinking_Bout_You_Audio.mp3",
     "note": "i thought i had the right one the last time around but i think i love em all",
     "date": "9/17/25",
@@ -1288,7 +1288,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "iamddb - leaned out",
     "embed": "https://www.youtube.com/embed/JJjVBe0zrHs?si=Cyq41PsCqDE6mRLW",
-    "cover": "../images/music-player/leaned_out.jpg",
+    "cover": "../assets/music-player/leaned_out.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/IAMDDB_LEANED_OUT.mp3",
     "note": "my mind is blossoming lately",
     "date": "9/12/25",
@@ -1301,7 +1301,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "iamddb - more",
     "embed": "https://www.youtube.com/embed/9jytbdG_f2Q",
-    "cover": "../images/music-player/more.jpg",
+    "cover": "../assets/music-player/more.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/IAMDDB_More_Official_Video.mp3",
     "note": "i want more... can you give me more?",
     "date": "9/12/25",
@@ -1316,7 +1316,7 @@ window.lupitaMusicPlaylist = [
   {
     "title": "paperboy fabe, brent faiyaz - language",
     "embed": "https://www.youtube.com/embed/SUVahgS3Kxw?si=T3Xa7fsTzhmcmV2T",
-    "cover": "../images/music-player/language.jpg",
+    "cover": "../assets/music-player/language.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/Paperboy_Fabe_Language.mp3",
     "note": "it\u0027s your fault for loving me. you put your trust in me and i didnt ask. i didnt ask",
     "date": "9/12/25",
@@ -1407,7 +1407,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "linea personal - HENNESSY",
-    "cover": "../images/music-player/hennessy.jpg",
+    "cover": "../assets/music-player/hennessy.jpg",
     "embed": "https://open.spotify.com/embed/track/2TXRGv2F2dchMHNwxgPNGx?utm_source=generator",
     "audioSrc": "https://media.lupitazambrano.com/music/Linea_Personal_Hennessy_Official_Video.mp3",
     "note": "phone on dnd",
@@ -1444,7 +1444,7 @@ window.lupitaMusicPlaylist = [
   },
   {
     "title": "el malilla - azotame",
-    "cover": "../images/music-player/azotame_cover_art.jpg",
+    "cover": "../assets/music-player/azotame_cover_art.jpg",
     "embed": "https://www.youtube.com/embed/1TsKej1hyLo?si=h6wbmtJGFX4_xR1A",
     "audioSrc": "https://media.lupitazambrano.com/music/El_Malilla_Azotame_ft_Dj_Kiire_Gitana_Video_Oficial_poeta_call.mp3",
     "note": "whip cracks, “tra tra,” and malilla being dangerously hot. im feral.",

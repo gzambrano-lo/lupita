@@ -7,7 +7,7 @@
   <title>links - lupe zambrano</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
   <link rel="stylesheet" href="../styles/reset.css">
@@ -15,137 +15,80 @@
   <link rel="stylesheet" href="../styles/base.css">
   <link rel="stylesheet" href="../styles/layout.css">
   <link rel="stylesheet" href="../styles/components.css">
-  <link rel="stylesheet" href="../styles/links.css">
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/pages/links.css">
+  <link rel="stylesheet" href="../styles/minimal.css">
 
-  <!--vanilla-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
-
-  <!--js-->
   <script src="/scripts/site.js" defer></script>
 </head>
 
 <body>
-  <header class="site-header">
-    <h1 class="hero-title">
-      <span class="lottie header-sparkle" data-lottie="sparkle-left" aria-hidden="true"></span>
-      links
-      <span class="lottie header-sparkle" data-lottie="sparkle-right" aria-hidden="true"></span>
-    </h1>
-  </header>
+  <main class="scrapbook">
+    <div class="site-card links-site-card">
+      <header class="site-header">
+        <nav id="nav_menu" aria-label="Main" class="hero-tabs tab-nav">
+          <ul class="tab-nav-list">
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/index.html">home</a></li>
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/about.html">about</a></li>
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/music.html">music</a></li>
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/links.html" aria-current="page">links</a></li>
+          </ul>
+        </nav>
+      </header>
 
-  <nav id="nav_menu" aria-label="Main" class="hero-tabs tab-nav">
-    <ul class="tab-nav-list">
-      <li class="tab-nav-item"><a class="tab-nav-link" href="/index.html">home</a></li>
-      <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/about.html">about</a></li>
-      <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/music.html">music</a></li>
-      <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/learn-to-code.html">learn to code</a></li>
-      <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/bleach-shrine.html">shrines</a></li>
-      <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/project-senpai.html">project senpai</a></li>
-    </ul>
-  </nav>
+      <section class="page links-page" aria-labelledby="links-title">
+        <div class="links-page-heading">
+          <h1 id="links-title" class="hero-title">things i like</h1>
+        </div>
 
+        <ul class="link-grid">
+          <li>
+            <a href="https://buymeacoffee.com/lupitazambrano?new=1" target="_blank" rel="noopener"
+              aria-label="buy me a coffee">
+              <span class="lg-title">buy me a coffee</span>
+              <span class="lg-sub">for coffee &amp; other necessities</span>
+              <img class="external-link-icon" src="../assets/svg/noun-link-1630227.svg" alt="" aria-hidden="true">
+            </a>
+          </li>
 
-  <main class="page links-page">
-    <ul class="link-grid">
+          <li>
+            <a href="https://instagram.com/euphraxea/" target="_blank" rel="noopener" aria-label="instagram">
+              <span class="lg-title">instagram</span>
+              <span class="lg-sub">photos &amp; occasional evidence of life</span>
+              <img class="external-link-icon" src="../assets/svg/noun-link-1630227.svg" alt="" aria-hidden="true">
+            </a>
+          </li>
 
-      <!--buy me a coffee-->
-      <li><a href="https://buymeacoffee.com/lupitazambrano?new=1" target="_blank" rel="noopener">
-          <span class="lg-emoji">☕</span>
-          <span class="lg-title">buy me a coffee</span>
-          <span class="lg-sub">support my work</span>
-        </a></li>
+          <li>
+            <a href="https://cash.app/$frutilups" target="_blank" rel="noopener" aria-label="cashapp">
+              <span class="lg-title">cashapp</span>
+              <span class="lg-sub">for reasons</span>
+              <img class="external-link-icon" src="../assets/svg/noun-link-1630227.svg" alt="" aria-hidden="true">
+            </a>
+          </li>
 
-      <!--nintendo-->
-      <li>
-        <a href="#" class="no-link">
-          <span class="lg-emoji" aria-hidden="true">
-            <span class="lottie" data-lottie="/animations/gaming.json"></span>
-          </span>
-          <span class="lg-title">switch</span>
-          <span class="lg-sub">my friend code: SW-3245-6704-1323</span>
-        </a>
-      </li>
+          <li>
+            <a href="https://steamcommunity.com/id/euphraxxea/" target="_blank" rel="noopener" aria-label="steam">
+              <span class="lg-title">steam</span>
+              <span class="lg-sub">games i own but may not play</span>
+              <img class="external-link-icon" src="../assets/svg/noun-link-1630227.svg" alt="" aria-hidden="true">
+            </a>
+          </li>
 
-      <!--instagram-->
-      <li><a href="https://instagram.com/euphraxea/" target="_blank" rel="noopener">
-          <span class="lg-emoji">📷</span>
-          <span class="lg-title">insta</span>
-          <span class="lg-sub">handle is @euphraxxea</span>
-        </a></li>
+          <li class="switch-code-item">
+            <a href="#" class="no-link switch-code-bar" aria-label="switch friend code SW-3245-6704-1323">
+              <span class="lg-title">switch code</span>
+              <span class="lg-sub switch-code">SW-3245-6704-1323</span>
+            </a>
+          </li>
+        </ul>
+      </section>
 
-      <!--github-->
-      <li><a href="https://github.com/gzambrano-lo" target="_blank" rel="noopener">
-          <span class="lg-emoji">🐙</span>
-          <span class="lg-title">github</span>
-          <span class="lg-sub">look at my projects & code</span>
-        </a></li>
-
-      <!--cash app-->
-      <li><a href="https://cash.app/$frutilups" target="_blank" rel="noopener">
-          <span class="lg-emoji">💸</span>
-          <span class="lg-title">cashapp</span>
-          <span class="lg-sub">chicken allowance?</span>
-        </a></li>
-
-      <!--amazon wishlist-->
-      <li><a href="https://www.amazon.com/hz/wishlist/ls/38M6LODMK76KF?ref_=wl_share" target="_blank" rel="noopener">
-          <span class="lg-emoji">🎁</span>
-          <span class="lg-title">lupita's gift shoppe</span>
-          <span class="lg-sub">my wishlist</span>
-        </a></li>
-      <li>
-
-        <!--steam-->
-        <a href="https://steamcommunity.com/id/euphraxxea/" target="_blank" rel="noopener">
-          <span class="lg-emoji" aria-hidden="true">
-            <span class="lottie" data-lottie="/animations/gaming.json"></span>
-          </span>
-          <span class="lg-title">steam</span>
-          <span class="lg-sub">play wif me?</span>
-        </a>
-      </li>
-
-    </ul>
+      <footer class="site-footer">
+        <p>&copy; lupita zambrano &#9734;(&gt;&#7447;&bull;) 2025</p>
+      </footer>
+    </div>
   </main>
-
-  <footer class="site-footer">
-    <p>&copy; lupita zambrano ☆(>ᴗ•) 2025</p>
-  </footer>
-  <script>
-    (function () {
-      function initLottie() {
-        if (!window.lottie) return;
-        const items = document.querySelectorAll('.lottie[data-lottie]');
-        const mql = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-        items.forEach(el => {
-          const anim = lottie.loadAnimation({
-            container: el,
-            renderer: 'svg',
-            loop: true,
-            autoplay: !mql.matches,
-            path: el.getAttribute('data-lottie')
-          });
-
-          const link = el.closest('a');
-          if (link) {
-            link.addEventListener('mouseenter', () => { if (!mql.matches) anim.play(); });
-            link.addEventListener('mouseleave', () => { if (!mql.matches) anim.stop(); });
-          }
-
-          mql.addEventListener?.('change', e => e.matches ? anim.stop() : anim.play());
-        });
-      }
-
-      if (document.readyState === 'complete' || document.readyState === 'interactive') {
-        // DOM parsed; run after microtask to let deferred scripts execute
-        setTimeout(initLottie, 0);
-      } else {
-        window.addEventListener('DOMContentLoaded', initLottie, { once: true });
-      }
-    })();
-  </script>
-
 </body>
 
 </html>

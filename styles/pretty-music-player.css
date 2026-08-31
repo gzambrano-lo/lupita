@@ -53,7 +53,7 @@
 .pretty-music-player-block .dream-player-song {
     margin: 0;
     color: #7b9788;
-    font-family: "Nunito", sans-serif;
+    font-family: var(--font-body);
     font-size: clamp(1.24rem, 2vw, 1.9rem);
     font-weight: 800;
     line-height: 1;

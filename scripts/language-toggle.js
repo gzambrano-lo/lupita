@@ -11,12 +11,8 @@
     try {
         config = JSON.parse(configNode.textContent);
     } catch (jsonError) {
-        try {
-            config = Function("return (" + configNode.textContent + ");")();
-        } catch (evalError) {
-            console.error("Failed to parse language toggle config.", jsonError, evalError);
-            return;
-        }
+        console.error("Failed to parse language toggle config.", jsonError);
+        return;
     }
 
     const translations = config.translations || {};
@@ -44,6 +40,35 @@
         }
     }
 
+    function appendLimitedHtml(target, source) {
+        source.childNodes.forEach(function (child) {
+            if (child.nodeType === Node.TEXT_NODE) {
+                target.appendChild(document.createTextNode(child.textContent));
+                return;
+            }
+
+            if (child.nodeType !== Node.ELEMENT_NODE) {
+                return;
+            }
+
+            if (child.tagName.toLowerCase() === "span" && child.classList.contains("site-highlight")) {
+                const span = document.createElement("span");
+                span.className = "site-highlight";
+                appendLimitedHtml(span, child);
+                target.appendChild(span);
+                return;
+            }
+
+            appendLimitedHtml(target, child);
+        });
+    }
+
+    function setLimitedHtml(node, value) {
+        const parsed = new DOMParser().parseFromString(String(value), "text/html");
+        node.replaceChildren();
+        appendLimitedHtml(node, parsed.body);
+    }
+
     function applyText(language) {
         const copy = translations[language] || translations[defaultLanguage];
 
@@ -57,7 +82,7 @@
         document.querySelectorAll("[data-i18n-html]").forEach(function (node) {
             const key = node.dataset.i18nHtml;
             if (Object.prototype.hasOwnProperty.call(copy, key)) {
-                node.innerHTML = copy[key];
+                setLimitedHtml(node, copy[key]);
             }
         });
 

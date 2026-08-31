@@ -24,7 +24,7 @@ html {
 
 /* body */
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-body);
     color: var(--text);
     line-height: 1.6;
     padding: 2rem;
@@ -160,9 +160,4 @@ p {
     body {
         padding: 0.9rem;
     }
-}
-
-#nav_menu.tab-nav .current .tab-nav-link
-{
-    color: var(--coral);
 }

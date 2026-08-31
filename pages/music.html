@@ -2,351 +2,64 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>music - lupe zambrano</title>
 
-  <!-- google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap"
     rel="stylesheet">
 
-  <!-- icons (optional) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
-
-  <!-- css -->
-  <link rel="stylesheet" href="../styles/reset.css" />
-  <link rel="stylesheet" href="../styles/tokens.css" />
-  <link rel="stylesheet" href="../styles/base.css" />
-  <link rel="stylesheet" href="../styles/layout.css" />
-  <link rel="stylesheet" href="../styles/components.css" />
-  <link rel="stylesheet" href="../styles/comments.css" />
-  <link rel="stylesheet" href="../styles/pretty-music-player.css" />
-  <link rel="stylesheet" href="../styles/musica.css" />
-
-  <!--vanilla-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
-
-  <!--js-->
-  <script src="/scripts/site.js" defer></script>
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/minimal.css">
 </head>
 
 <body>
-  <header class="site-header">
-    <nav id="nav_menu" aria-label="Main" class="hero-tabs tab-nav">
-      <ul class="tab-nav-list">
-        <li class="tab-nav-item"><a class="tab-nav-link" href="/index.html">home</a></li>
-        <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/about.html">about</a></li>
-        <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/music.html" aria-current="page">music</a></li>
-        <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/learn-to-code.html">learn to code</a></li>
-        <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/bleach-shrine.html">shrines</a></li>
-        <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/project-senpai.html">project senpai</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main class="music-page">
+  <main class="scrapbook">
+    <div class="site-card music-site-card">
+      <header class="site-header">
+        <nav id="nav_menu" aria-label="Main" class="hero-tabs tab-nav">
+          <ul class="tab-nav-list">
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/index.html">home</a></li>
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/about.html">about</a></li>
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/music.html" aria-current="page">music</a></li>
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/links.html">links</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <section class="alert alert-info" role="status" aria-live="polite">
-      <div class="alert-content">
-        <p class="alert-title">maintenance note</p>
-        <p>this page is currently under maintenance while i update the music player and links.</p>
-      </div>
-    </section>
-
-    <section class="pretty-music-player-block youtube-pretty-player" data-youtube-pretty-player>
-      <section class="dream-player" aria-labelledby="music-player-title">
-        <div class="player-shell">
-          <div class="now-playing-card">
-            <div class="mobile-player-top">
-              <div class="cd-case" data-cover-frame>
-                <img class="track-cover" data-track-cover src="../images/avatar.png" alt="">
-                <span class="cover-fallback" data-cover-fallback aria-hidden="true">no cover yet</span>
-              </div>
-
-              <div class="now-playing-info">
-                <div class="player-topline">
-                  <div>
-                    <p class="tiny-label">now playing on lupita.fm</p>
-                    <h4 class="dream-player-song" id="music-player-title" data-track-title>
-                      <span class="track-title-full">track title</span>
-                      <span class="track-title-mobile">track title</span>
-                    </h4>
-                    <p class="song-mood" data-track-mood hidden></p>
-                  </div>
-
-                  <div class="player-top-actions">
-                    <button class="player-info-toggle" type="button" data-player-info-toggle aria-expanded="false"
-                      aria-label="Show track info and links">
-                      <span class="player-menu-icon" aria-hidden="true">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </span>
-                    </button>
-                    <span class="player-orb" aria-hidden="true"></span>
-                  </div>
-                </div>
-
-                <div class="youtube-player-shell">
-                  <audio preload="metadata" data-track-audio hidden>
-                    <source data-track-audio-source src="" type="audio/mpeg">
-                    your browser does not support the audio element.
-                  </audio>
-                  <div class="player-controls" aria-label="Track controls">
-                    <button class="player-btn player-btn-skip player-skip-back" type="button" data-track-back
-                      aria-label="Show previous track">
-                      <span class="player-skip-icon" aria-hidden="true">
-                        <img src="../music-player/music-next-next-button-svgrepo-com.svg" alt="">
-                      </span>
-                    </button>
-                    <button class="player-btn player-btn-primary" type="button" data-track-play data-state="paused"
-                      aria-label="Play track" aria-pressed="false">
-                      <span class="player-icon" aria-hidden="true">
-                        <img class="player-icon-svg player-icon-play"
-                          src="../music-player/music-play-play-button-svgrepo-com.svg" alt="">
-                        <img class="player-icon-svg player-icon-pause"
-                          src="../music-player/media-player-music-pause-svgrepo-com.svg" alt="">
-                      </span>
-                    </button>
-                    <button class="player-btn player-btn-skip player-skip-forward" type="button" data-track-forward
-                      aria-label="Show next track">
-                      <span class="player-skip-icon" aria-hidden="true">
-                        <img src="../music-player/music-next-next-button-svgrepo-com.svg" alt="">
-                      </span>
-                    </button>
-                  </div>
-
-                  <div class="equalizer" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-
-                  <p class="youtube-player-note note--soft" data-track-note hidden></p>
-                </div>
-              </div>
-            </div>
+      <section class="music-minimal-page" aria-label="music">
+        <div class="minimal-track-list" data-minimal-track-list></div>
+        <div class="minimal-player-bar">
+          <div class="minimal-player-controls" aria-label="Music controls">
+            <button class="minimal-player-button" type="button" data-minimal-previous aria-label="Previous song">
+              <img src="../assets/svg/noun_rewind_4627099_@1200.svg" alt="">
+            </button>
+            <button class="minimal-player-button minimal-player-button-main" type="button" data-minimal-play aria-label="Play song" aria-pressed="false">
+              <img src="../assets/svg/noun_playpause_4627102_@1200.svg" alt="">
+            </button>
+            <button class="minimal-player-button" type="button" data-minimal-next aria-label="Next song">
+              <img src="../assets/svg/noun_fastforward_4627100_@1200.svg" alt="">
+            </button>
           </div>
-
-          <div class="player-drawer" data-player-drawer hidden>
-            <div class="player-drawer-inner">
-              <div class="player-drawer-card">
-                <p class="player-drawer-label">track info</p>
-
-                <dl class="player-meta-list">
-                  <div class="player-meta-row" data-meta-row="date">
-                    <dt class="player-meta-term">date</dt>
-                    <dd class="player-meta-value" data-meta-date></dd>
-                  </div>
-                  <div class="player-meta-row" data-meta-row="tags">
-                    <dt class="player-meta-term">tags</dt>
-                    <dd class="player-meta-value" data-meta-tags></dd>
-                  </div>
-                  <div class="player-meta-row" data-meta-row="note">
-                    <dt class="player-meta-term">note</dt>
-                    <dd class="player-meta-value" data-meta-note></dd>
-                  </div>
-                </dl>
-
-                <div class="drawer-video-shell" data-drawer-video-shell>
-                  <iframe data-drawer-video src="" title="Selected track video" loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-
-                <div class="player-links" aria-label="external music links">
-                  <a class="player-link player-link-spotify" data-link-spotify href="#" target="_blank"
-                    rel="noopener noreferrer" aria-label="Open Spotify">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path fill="currentColor"
-                        d="M12 1.5a10.5 10.5 0 1 0 10.5 10.5A10.5 10.5 0 0 0 12 1.5Zm4.83 15.13a.66.66 0 0 1-.91.21 8.82 8.82 0 0 0-8.98-.68.66.66 0 1 1-.59-1.18 10.14 10.14 0 0 1 10.33.78.66.66 0 0 1 .15.87Zm1.3-2.42a.83.83 0 0 1-1.14.26 10.95 10.95 0 0 0-10.99-.79.83.83 0 1 1-.7-1.5 12.62 12.62 0 0 1 12.68.92.83.83 0 0 1 .15 1.11Zm.11-2.61A13.63 13.63 0 0 0 4.9 10.54a1 1 0 0 1-.8-1.83 15.63 15.63 0 0 1 15.31 1.2 1 1 0 0 1-1.17 1.69Z" />
-                    </svg>
-                  </a>
-                  <a class="player-link player-link-apple" data-link-apple href="#" target="_blank"
-                    rel="noopener noreferrer" aria-label="Open Apple Music">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path fill="currentColor"
-                        d="M17.58 3.15a3.9 3.9 0 0 1-.93 2.83 3.32 3.32 0 0 1-2.61 1.28 3.67 3.67 0 0 1 .96-2.73 3.74 3.74 0 0 1 2.58-1.38Zm2.88 13.69A8.25 8.25 0 0 1 19 19.52c-.9 1.16-1.83 2.31-3.28 2.34-1.42.03-1.88-.84-3.5-.84s-2.13.82-3.46.87c-1.4.06-2.46-1.24-3.37-2.39C3.52 16.98 2 13.18 3.96 10.09a5.15 5.15 0 0 1 4.34-2.63c1.35-.03 2.62.9 3.49.9s2.5-1.1 4.2-.94a5 5 0 0 1 3.9 2.1 4.42 4.42 0 0 0-2.35 3.94 4.3 4.3 0 0 0 2.92 4.08Z" />
-                    </svg>
-                  </a>
-                  <a class="player-link player-link-youtube" data-link-youtube href="#" target="_blank"
-                    rel="noopener noreferrer" aria-label="Open YouTube">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path fill="currentColor"
-                        d="M21.58 7.19a2.94 2.94 0 0 0-2.07-2.08C17.69 4.6 12 4.6 12 4.6s-5.69 0-7.51.51A2.94 2.94 0 0 0 2.42 7.19 30.9 30.9 0 0 0 1.9 12a30.9 30.9 0 0 0 .52 4.81 2.94 2.94 0 0 0 2.07 2.08c1.82.51 7.51.51 7.51.51s5.69 0 7.51-.51a2.94 2.94 0 0 0 2.07-2.08A30.9 30.9 0 0 0 22.1 12a30.9 30.9 0 0 0-.52-4.81ZM9.96 15.2V8.8L15.6 12Z" />
-                    </svg>
-                  </a>
-                  <a class="player-link player-link-vinyl" data-link-vinyl href="#" target="_blank"
-                    rel="noopener noreferrer" aria-label="Open vinyl record link">
-                    <i class="fa-solid fa-record-vinyl" aria-hidden="true"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <p class="minimal-now-playing" data-minimal-now-playing>now playing: pick a song</p>
         </div>
+        <audio data-minimal-audio preload="metadata"></audio>
       </section>
 
-      <div class="music-layout">
-        <div class="music-main-column">
-          <section class="dream-queue" aria-labelledby="music-queue-title">
-            <div class="dream-queue-shell">
-              <p class="dream-queue-label" id="music-queue-title">tracklist</p>
-              <div class="dream-queue-list" data-track-queue></div>
-              <button class="queue-back-top" type="button" data-track-queue-top aria-label="Back to top of tracklist" hidden>&uarr;</button>
-            </div>
-          </section>
-
-          <section class="comments-card music-comments-card" aria-label="Comments" data-comments-slug="music">
-            <h3 class="section-title">
-              <i class="fa-regular fa-comment-dots i" aria-hidden="true"></i>
-              comments
-              <span class="comment-count-pill" id="commentCount">0</span>
-            </h3>
-
-            <div class="comment-sort" role="group" aria-label="Sort comments">
-              <button type="button" class="pill-btn sort-btn is-active" data-sort="newest">newest</button>
-              <button type="button" class="pill-btn sort-btn" data-sort="oldest">oldest</button>
-            </div>
-
-            <form class="comment-form" id="commentForm" autocomplete="off">
-              <input type="text" name="name" class="comment-input" maxlength="40" placeholder="your name">
-              <textarea name="body" class="comment-textarea" rows="3" maxlength="500" placeholder="leave a comment..." required></textarea>
-              <div class="comment-form-actions">
-                <button type="submit" class="pill-btn post-btn">post &#9825;</button>
-              </div>
-            </form>
-
-            <div class="heart-divider" aria-hidden="true">&#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825;</div>
-
-            <ul class="comment-list" id="commentList"></ul>
-            <p class="comment-empty" id="commentEmpty">no comments yet &#9825; be the first to say something nice</p>
-          </section>
-        </div>
-
-        <aside class="music-sidebar" aria-label="music page notes">
-          <section class="genre-widget music-sticker">
-            <p class="widget-title">sort by mood ?</p>
-            <div class="genre-filter-bar" data-genre-filter-bar aria-label="filter tracklist by genre"></div>
-          </section>
-
-          <section class="lyrics-card music-sticker" aria-labelledby="lyrics-title" aria-live="polite">
-            <h5 id="lyrics-title">lyrics</h5>
-            <p class="lyrics-track" data-lyrics-track>track title</p>
-            <div class="lyrics-scroll" data-track-lyrics>
-              <p>pick a song to load lyrics.</p>
-            </div>
-          </section>
-
-          <section class="listener-log music-sticker">
-            <h5>listener log</h5>
-            <div class="listener-log-scroll">
-              <p><strong>page intentions:</strong> my favorite songs, my love of little music players, and my
-                white-knight urge to keep music free and self-hosted when i can. apple, spotify, and youtube links are
-                here if you prefer streaming there, but this player should work too. lock your phone, skip around, no
-                ads.</p>
-              <p><strong>07/24/2026:</strong> being introverted as fuck, i turned to music a lot growing up. songs have
-                this weird way of decorating time, making ordinary moments feel memorable, and making you feel a little
-                less alone.</p>
-              <p>i've been loyal to the same youtube account ever since i started surfing the web, so it's become this
-                accidental archive of who i used to be. lately, my algorithm has been resurfacing everything i listened
-                to when i was 17 or 18.</p>
-              <p>it's strange how music can collapse time. in the same way the smell of the soap your grandma used to
-                use can suddenly bring her back for a split second, a single song can throw you back into a version of
-                yourself you hadn't thought about in years. not just the memories, but the feelings too. for a few
-                minutes, you're there again.</p>
-              <p>i figured i'd start keeping a little music log here, partly to preserve those moments, and partly
-                because maybe someone else will stumble across a song that ends up decorating their own time.</p>
-              <p><strong>07/24/2026:</strong> i made the browser tell ios what song is playing. before, safari only
-                knew the page title, so the lock screen showed &ldquo;music - lupe zambrano.&rdquo; now the player sends the current
-                song title, artist, and cover art whenever the track changes.</p>
-              <p><strong>06/11/2026:</strong> i caught myself following the sterile GUI path. so i added decorations.
-              </p>
-            </div>
-            <p class="listener-log-date">last updated: <span data-listener-updated>07/24/2026</span>
-              <span class="listener-new-star" aria-hidden="true">?</span>
-            </p>
-          </section>
-
-          <section class="repeat-card music-sticker">
-            <h5>currently on repeat</h5>
-            <img class="repeat-cover" src="../images/music-player/dont_keep_me_waiting.jpg"
-              alt="chosen few - dont keep me waitin cover art">
-            <p class="repeat-title">chosen few - dont keep me waitin</p>
-          </section>
-
-          <section class="music-mood music-sticker">
-            <h5>music mood</h5>
-            <p>nostalgic / soft / late night</p>
-          </section>
-
-          <p class="music-footnote">under construction</p>
-        </aside>
-      </div>
-    </section>
+      <footer class="site-footer">
+        <p>&copy; lupita zambrano 2026</p>
+      </footer>
+    </div>
   </main>
 
-  <script src="/scripts/pages/music-playlist.js" defer></script>
-  <script src="/scripts/pages/music-page.js" defer></script>
-  <script src="/scripts/comments.js" defer></script>
+  <script src="../scripts/pages/music-playlist.js" defer></script>
+  <script src="../scripts/pages/music-list.js" defer></script>
 </body>
-<footer class="site-footer">
-  <p>&copy; lupita zambrano | this page is under maintenance and many buttons and links may not work</p>
-</footer>
 
 </html>
-
