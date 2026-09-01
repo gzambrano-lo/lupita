@@ -8,7 +8,6 @@ window.addEventListener('DOMContentLoaded', () => {
       ['/pages/blog.html', 'blog'],
       ['/pages/links.html', 'links'],
       ['/pages/learn-to-code.html', 'learn to code'],
-      ['/pages/bleach-shrine.html', 'shrines'],
       ['/pages/project-senpai.html', 'project senpai']
     ]);
     const currentPath = window.location.pathname === '/' ? '/index.html' : window.location.pathname;

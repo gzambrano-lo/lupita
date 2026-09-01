@@ -6,7 +6,7 @@
   const nextButton = document.querySelector("[data-minimal-next]");
   const nowPlaying = document.querySelector("[data-minimal-now-playing]");
   const playlist = Array.isArray(window.lupitaMusicPlaylist) ? window.lupitaMusicPlaylist : [];
-  const defaultCover = "../assets/avatar.png";
+  const defaultCover = "../assets/profile/commissioned-avatar.png";
 
   if (!list || !playlist.length) return;
 

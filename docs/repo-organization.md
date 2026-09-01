@@ -2,6 +2,115 @@
 
 this site is mostly huge because of media files, not really because of the code. so the main rule is: clean things up little by little, and check links before moving stuff around.
 
+## repo tree before and after cleanup
+
+before this cleanup, several page assets lived loose in root-level folders or directly under `assets/`.
+
+old shape:
+
+```text
+/
+  .gitignore
+  assets/
+    88by31.png
+    avatar.png
+    button_feb_9.gif
+    buy_me_a_coffee.png
+    coming-soon.png
+    duck_player.gif
+    favicon-io/
+    gallery/
+    gate-background.jpg
+    gate.jpg
+    iStock-1215450918.jpg
+    lupe.png
+    lupita_z_88x31.gif
+    mii.png
+    pyramid.gif
+    ...
+  buttons/
+  docs/
+    repo-organization.md
+  gate.html
+  index.html
+  music-player/
+  pages/
+    about.html
+    bleach-shrine.html
+    blog.html
+    blog-posts/
+    components/
+    fishbowl.html
+    gallery.html
+    guestbook.html
+    guestbook-success.html
+    learn-to-code.html
+    links.html
+    media-log.html
+    music.html
+    project-senpai.html
+    unknown-source.html
+    ...
+  README.md
+  scripts/
+  styles/
+```
+
+current shape:
+
+```text
+/
+  .gitignore
+  assets/
+    about/
+    animations/
+    blog/
+      shared/
+    brand/
+    buttons/
+    fishbowl/
+    gate/
+    icons/
+    learn-to-code/
+    music-player/
+    profile/
+    shows/
+    svg/
+    videos/
+  docs/
+    repo-organization.md
+  gate.html
+  index.html
+  pages/
+    about.html
+    blog.html
+    blog-posts/
+    components/
+    fishbowl.html
+    guestbook.html
+    guestbook-success.html
+    learn-to-code.html
+    links.html
+    media-log.html
+    music.html
+    project-senpai.html
+  README.md
+  scripts/
+    pages/
+  styles/
+    pages/
+```
+
+current asset folder meanings:
+
+- `assets/brand/`: site identity assets, like the lamb image and wordmark.
+- `assets/buttons/`: 88x31 buttons and button-style badges.
+- `assets/blog/`: blog post media, usually grouped by post date.
+- `assets/blog/shared/`: blog media reused by more than one post.
+- `assets/gate/`: images kept for the gate page or gate concept.
+- `assets/music-player/`: album covers and music player interface images that are still needed.
+- `assets/profile/`: personal/avatar images, including commissioned art and Mii avatar.
+
 ## priority tally
 
 - done: 6
@@ -28,7 +137,7 @@ current music files:
 ```text
 pages/music.html
 scripts/pages/music-playlist.js
-scripts/pages/music-page.js
+scripts/pages/music-list.js
 ```
 
 ## priority 2: normalize code locations
@@ -62,12 +171,19 @@ eventual structure:
 
 ```text
 assets/
-  audio/
-  video/
   animations/
+  blog/
+  brand/
   buttons/
+  fishbowl/
+  gate/
   icons/
+  learn-to-code/
   music-player/
+  profile/
+  shows/
+  svg/
+  videos/
 ```
 
 before moving assets:
@@ -96,15 +212,29 @@ needs hosted urls before removing from git:
 
 keeping these in git on purpose:
 
+- `assets/brand/brand-lamb.jpg`; purchased lamb image kept as a brand asset.
+- `assets/brand/wordmark-lupe-zambrano.png`; site wordmark.
+- `assets/profile/commissioned-avatar.png`; commissioned avatar art.
+- `assets/profile/mii-avatar.png`; Mii avatar.
 - `assets/videos/2026-03-08/cheesecake_mousse.mov`
 - `assets/doom-scroll/cutie.mp4`
 
 removed during cleanup:
 
-- `buttons/` root folder; 88x31 buttons now live in `assets/buttons/`.
+- `buttons/` root folder, `assets/88by31.png`, `assets/pyramid.gif`, `assets/lupita_z_88x31.gif`, and `assets/button_feb_9.gif`; 88x31 buttons now live in `assets/buttons/`.
 - `music-player/` root folder; needed page audio controls now live in `assets/music-player/`.
+- `assets/avatar.png`; commissioned avatar art now lives at `assets/profile/commissioned-avatar.png`.
+- `assets/mii.png`; Mii avatar now lives at `assets/profile/mii-avatar.png`.
+- `assets/lupe.png`; wordmark now lives at `assets/brand/wordmark-lupe-zambrano.png`.
+- `assets/iStock-1215450918.jpg`; purchased lamb image now lives at `assets/brand/brand-lamb.jpg`.
 - `assets/ns-shell/`; it was unused.
-- `assets/favicon-io/faviconio-logo.zip`
+- `pages/gallery.html` and `assets/gallery/`; the gallery page was unused.
+- `pages/bleach-shrine.html`, `pages/unknown-source.html`, and gallery/shrine-only CSS/JS files.
+- `assets/favicon-io/`; unused favicon export folder.
+- `assets/coming-soon.png`; unused placeholder image.
+- `assets/buy_me_a_coffee.png`; unused support button image.
+- `assets/duck_player.gif`; shared blog duck player art now lives at `assets/blog/shared/duck-player.gif`.
+- `assets/gate-background.jpg` and `assets/gate.jpg`; gate images now live in `assets/gate/`.
 - `css-dump.txt`
 - `pages/blog-posts/2026-07-24.html`
 
@@ -114,7 +244,7 @@ status: in progress
 
 missing local references right now:
 
-- `pages/music.html` used to point to a missing `default-cover.png`; it now uses `assets/avatar.png`.
+- none known right now.
 
 ## wishlist
 
@@ -167,10 +297,6 @@ fishbowl feature:
 - `scripts/pages/fishbowl.js`
 - `styles/pages/fishbowl.css`
 - `assets/fishbowl/`
-
-other new assets:
-
-- `assets/gallery/belly.jpg`
 
 ## media rule
 
