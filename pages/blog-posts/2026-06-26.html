@@ -11,11 +11,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap"
         rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
 
     <link rel="stylesheet" href="../../styles/reset.css">
     <link rel="stylesheet" href="../../styles/tokens.css">
@@ -24,8 +22,6 @@
     <link rel="stylesheet" href="../../styles/components.css">
     <link rel="stylesheet" href="../../styles/blog.css">
     <link rel="stylesheet" href="../../styles/blog-post.css">
-    <link rel="stylesheet" href="../../styles/click-counter.css">
-    <link rel="stylesheet" href="../../styles/comments.css">
     <script src="/scripts/site.js" defer></script>
 </head>
 
@@ -46,28 +42,9 @@
             <article class="post">
                 <header>
                     <div class="post-header-row">
-                        <h2>friday</h2>
-                        <div class="now-playing" aria-label="Now playing">
-                            <button class="audio-icon-btn" type="button" id="audioToggleBtn" aria-pressed="false">
-                                <img class="audio-play-icon"
-                                    src="../../assets/music-player/music-play-play-button-svgrepo-com.png" alt="">
-                                <img class="audio-pause-icon"
-                                    src="../../assets/music-player/media-player-music-pause-svgrepo-com.png" alt="">
-                                <span class="sr-only">play audio</span>
-                            </button>
-                            <span class="now-playing-copy">
-                                <span>&#9834; now playing &#9834;</span>
-                                <strong>Alanis Yuki - Xxulo</strong>
-                            </span>
-                            <audio id="pageAudio" preload="metadata" loop>
-                                <source src="https://media.lupitazambrano.com/music/Alanis_Yuki_Xxulo.mp3"
-                                    type="audio/mpeg">
-                                your browser does not support the audio element.
-                            </audio>
-                        </div>
+                        <h2>88x31 feelings</h2>
                     </div>
                     <p class="meta">
-                        <i class="fa-regular fa-calendar" aria-hidden="true"></i>
                         <time datetime="2026-06-26">posted june 26, 2026</time>
                     </p>
                 </header>
@@ -181,41 +158,6 @@
                         for years to come. i don't want to lose her because of some random, stupid accident.</p>
 
                 </section>
-
-
-
-                <div class="click-row" aria-label="head pat counter">
-                    <button id="headPatBtn" class="pill-btn" type="button">head pat</button>
-                    <button class="pill-btn count-pill" type="button" aria-live="polite" tabindex="-1">
-                        total head pats: <span id="headPatCount">0</span>
-                    </button>
-                </div>
-
-                <section class="comments-card" aria-label="Comments" data-comments-slug="2026-06-26">
-                    <h3 class="section-title">
-                        <i class="fa-regular fa-comment-dots i" aria-hidden="true"></i>
-                        comments
-                        <span class="comment-count-pill" id="commentCount">0</span>
-                    </h3>
-
-                    <div class="comment-sort" role="group" aria-label="Sort comments">
-                        <button type="button" class="pill-btn sort-btn is-active" data-sort="newest">newest</button>
-                        <button type="button" class="pill-btn sort-btn" data-sort="oldest">oldest</button>
-                    </div>
-
-                    <form class="comment-form" id="commentForm" autocomplete="off">
-                        <input type="text" name="name" class="comment-input" maxlength="40" placeholder="your name">
-                        <textarea name="body" class="comment-textarea" rows="3" maxlength="500" placeholder="leave a comment..." required></textarea>
-                        <div class="comment-form-actions">
-                            <button type="submit" class="pill-btn post-btn">post &#9825;</button>
-                        </div>
-                    </form>
-
-                    <div class="heart-divider" aria-hidden="true">&#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825; &#8902; &#9825;</div>
-
-                    <ul class="comment-list" id="commentList"></ul>
-                    <p class="comment-empty" id="commentEmpty">no comments yet &#9825; be the first to say something nice</p>
-                </section>
                 <footer class="post-footer">
                     <nav class="post-nav" aria-label="Post navigation">
                         <a href="/pages/blog.html" class="highlight-link">back to blog</a>
@@ -224,157 +166,12 @@
                     </nav>
                 </footer>
             </article>
-
-            <aside class="post-sidebar" aria-label="Blog sidebar">
-                <section class="sidebar-card">
-                    <h3>currently</h3>
-                    <ul class="status-list">
-                        <li><span>drinking:</span> iced coffee</li>
-                        <li><span>listening:</span> sign</li>
-                        <li><span>mood:</span> angry and sad</li>
-                        <li><span>weather:</span> overcast</li>
-                    </ul>
-                </section>
-
-                <section class="sidebar-card about-card">
-                    <h3>about me</h3>
-                    <p>chronically online. tired of social media. i love music, anime and soft things.</p>
-                    <a class="highlight-link" href="/pages/about.html">more about me</a>
-                </section>
-
-                <section class="sidebar-card">
-                    <h3>links</h3>
-                    <ul class="sidebar-links">
-                        <li><a href="/pages/music.html">music</a></li>
-                        <li><a href="/pages/blog.html">blog index</a></li>
-                        <li><a href="/pages/guestbook.html">guestbook</a></li>
-                        <li><a href="/pages/project-senpai.html">project senpai</a></li>
-                    </ul>
-                </section>
-
-                <section class="sidebar-card stamps-card">
-                    <h3>stamps</h3>
-                    <div class="stamp-grid" aria-label="Favorite stamps">
-                        <img src="../../assets/blog/2026-06-10/bunnydrawn.png" alt="Drawn bunny stamp">
-                        <img src="../../assets/blog/2026-06-10/cutethings.gif" alt="Cute things stamp">
-                        <img src="../../assets/blog/2026-06-10/snail.gif" alt="Snail stamp">
-                        <img src="../../assets/blog/2026-06-10/stupidbitch.gif" alt="Stupid bitch stamp">
-                        <img src="../../assets/blog/2026-06-10/voca.gif" alt="Vocaloid stamp">
-                        <img src="../../assets/blog/2026-06-10/youcanvent.png" alt="You can vent stamp">
-                        <img src="../../assets/blog/2026-06-10/nuko.png" alt="Nuko stamp">
-                        <img src="../../assets/blog/2026-06-10/melocinno.png" alt="Melocinno stamp">
-                    </div>
-                </section>
-            </aside>
         </div>
-
-        <section class="old-web-buttons" aria-label="Site buttons">
-            <span class="flowerfield-divider" aria-hidden="true"></span>
-        </section>
     </main>
 
     <footer class="site-footer">
         <p>&copy; lupita zambrano 2025</p>
     </footer>
-
-    <!--headpant counter-->
-    <script>
-        (function () {
-            const headPatBtn = document.getElementById("headPatBtn");
-            const headPatCount = document.getElementById("headPatCount");
-            const COUNTER_API = "https://site-counters.gzamlo98.workers.dev/api/counter?slug=2026-06-26";
-
-            if (!headPatBtn || !headPatCount) return;
-
-            async function loadCount() {
-                try {
-                    const res = await fetch(COUNTER_API, { method: "GET" });
-                    if (!res.ok) throw new Error("failed to load counter");
-                    const data = await res.json();
-                    headPatCount.textContent = Number(data.count) || 0;
-                } catch (err) {
-                    console.error(err);
-                }
-            }
-
-            headPatBtn.addEventListener("click", async function () {
-                try {
-                    const res = await fetch(COUNTER_API, { method: "POST" });
-                    if (!res.ok) throw new Error("failed to increment counter");
-                    const data = await res.json();
-                    headPatCount.textContent = Number(data.count) || 0;
-                } catch (err) {
-                    console.error(err);
-                }
-            });
-
-            loadCount();
-        })();
-    </script>
-
-    <!--music player-->
-    <script>
-        (function () {
-            const pageAudio = document.getElementById("pageAudio");
-            const audioToggleBtn = document.getElementById("audioToggleBtn");
-            let pageAudioStarted = false;
-            const desktopQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
-
-            function syncAudioUi() {
-                if (!pageAudio || !audioToggleBtn) return;
-                const playing = !pageAudio.paused;
-                const audioButtonText = audioToggleBtn.querySelector(".sr-only");
-                if (audioButtonText) {
-                    audioButtonText.textContent = playing ? "pause audio" : "play audio";
-                }
-                audioToggleBtn.setAttribute("aria-pressed", playing ? "true" : "false");
-                audioToggleBtn.setAttribute(
-                    "aria-label",
-                    playing ? "Pause page audio" : "Play page audio"
-                );
-            }
-
-            if (!pageAudio || !audioToggleBtn) return;
-
-            function isDesktopInteraction() {
-                return desktopQuery.matches;
-            }
-
-            function startPageAudioOnce() {
-                if (pageAudioStarted) return;
-                pageAudioStarted = true;
-                pageAudio.play().catch(function (error) {
-                    pageAudioStarted = false;
-                    console.error(error);
-                });
-            }
-
-            audioToggleBtn.addEventListener("click", function () {
-                if (pageAudio.paused) {
-                    startPageAudioOnce();
-                } else {
-                    pageAudio.pause();
-                    pageAudioStarted = false;
-                }
-            });
-
-            function startPageAudioFromPageInteraction(event) {
-                if (!isDesktopInteraction()) return;
-                if (event.target && event.target.closest("#audioToggleBtn")) return;
-                startPageAudioOnce();
-            }
-
-            ["play", "pause", "ended"].forEach(function (eventName) {
-                pageAudio.addEventListener(eventName, syncAudioUi);
-            });
-
-            ["pointerdown", "click", "keydown", "wheel"].forEach(function (eventName) {
-                document.addEventListener(eventName, startPageAudioFromPageInteraction, { once: true });
-            });
-            syncAudioUi();
-        })();
-    </script>
-    <script src="/scripts/comments.js" defer></script>
 </body>
 
 </html>

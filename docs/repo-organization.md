@@ -65,6 +65,7 @@ current shape:
     about/
     animations/
     blog/
+      icons/
       shared/
     brand/
     buttons/
@@ -106,6 +107,7 @@ current asset folder meanings:
 - `assets/brand/`: site identity assets, like the lamb image and wordmark.
 - `assets/buttons/`: 88x31 buttons and button-style badges.
 - `assets/blog/`: blog post media, usually grouped by post date.
+- `assets/blog/icons/`: small reusable icons used inside blog posts.
 - `assets/blog/shared/`: blog media reused by more than one post.
 - `assets/gate/`: images kept for the gate page or gate concept.
 - `assets/music-player/`: album covers and music player interface images that are still needed.
@@ -173,6 +175,8 @@ eventual structure:
 assets/
   animations/
   blog/
+    icons/
+    shared/
   brand/
   buttons/
   fishbowl/
@@ -248,6 +252,12 @@ missing local references right now:
 
 ## wishlist
 
+- blog post polish:
+  - use `assets/blog/icons/` for small reusable blog icons.
+  - keep the calendar/date icon decorative in CSS when possible, so the date stays semantic with `<time>`.
+  - give posts more abstract, specific titles instead of plain diary labels; aim for weird little relic names, internet artifacts, emotional objects, or bizarre mini-episode titles.
+  - keep mobile blog layouts to vertical scrolling only; avoid negative margins or fixed-width media controls that create sideways scrolling.
+  - use `object-fit: contain` for blog image carousels when preserving the full image matters more than filling the frame.
 - add Spotify-style synced lyrics to the music player without replacing the current audio/player logic. keep lyric data separate from rendering, support optional `syncedLyrics` arrays with `{ startTimeMs, words }`, use `requestAnimationFrame()` to update the active lyric line, scroll the active line into view, allow clicking lyrics to seek, and gracefully fall back to the current unsynced/no-lyrics behavior.
 
 ## not ready to commit

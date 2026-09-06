@@ -713,6 +713,10 @@
   gap: 0.9rem;
 }
 
+.post-page-2026-05-15 .post {
+  overflow-x: hidden;
+}
+
 .post-page-2026-05-15 .music-video-playlist h3 {
   margin-bottom: 0;
   text-align: center;
@@ -733,7 +737,7 @@
   overflow: hidden;
   border: 1px solid color-mix(in srgb, #cc8195 20%, var(--border));
   border-radius: 14px;
-  background: #fff7f9;
+  background: linear-gradient(135deg, #fff7f9, #f7fbf8);
   box-shadow: 0 10px 22px rgba(81, 71, 83, 0.08);
 }
 
@@ -746,7 +750,7 @@
   width: 100%;
   height: 100%;
   margin: 0;
-  object-fit: cover;
+  object-fit: contain;
   opacity: 1;
   transform: scale(1);
   transition:
@@ -874,8 +878,8 @@
 
 @media (max-width: 640px) {
   .post-page-2026-05-15 .auto-collage {
-    margin-inline: -0.75rem;
-    width: auto;
+    margin-inline: 0;
+    width: 100%;
   }
 
   .post-page-2026-05-15 .auto-collage-panel {
@@ -883,7 +887,9 @@
   }
 
   .post-page-2026-05-15 .video-playlist-card {
-    margin-inline: -1.25rem;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
     padding: 0.68rem 0.4rem 0.48rem;
     border-radius: 12px;
   }
@@ -898,11 +904,16 @@
     border-radius: 9px;
     outline-width: 2px;
   }
+
+  .post-page-2026-05-15 .video-playlist-track {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
 }
 
 @media (max-width: 420px) {
   .post-page-2026-05-15 .video-playlist-card {
-    margin-inline: -1.5rem;
+    margin-inline: 0;
     padding: 0.58rem 0.28rem 0.38rem;
   }
 }
@@ -1860,10 +1871,26 @@
 }
 
 .post-page .meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
     margin: 0 !important;
     color: var(--post-minimal-muted) !important;
     font-size: 12px !important;
     line-height: 1.4;
+}
+
+.post-page .meta::before {
+    content: "";
+    display: inline-block;
+    width: 1.15rem;
+    height: 1.15rem;
+    flex: 0 0 auto;
+    background: currentColor;
+    opacity: 0.82;
+    filter: drop-shadow(0.03rem 0 currentColor);
+    -webkit-mask: url("../assets/blog/icons/noun_Calendar_8245394.svg") center / contain no-repeat;
+    mask: url("../assets/blog/icons/noun_Calendar_8245394.svg") center / contain no-repeat;
 }
 
 .post-page .meta i,
