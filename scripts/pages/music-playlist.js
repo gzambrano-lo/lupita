@@ -1,5 +1,16 @@
 window.lupitaMusicPlaylist = [
   {
+    "title": "eyedress - jealous",
+    "audioSrc": "https://media.lupitazambrano.com/music/eyedress_jealous.mp3",
+    "note": "",
+    "date": "",
+    "tags": [],
+    "spotify": "",
+    "apple": "",
+    "youtube": "",
+    "vinyl": ""
+  },
+  {
     "title": "hotel ugly - shut up my moms calling",
     "cover": "../assets/music-player/shut_up_my_moms_calling.jpg",
     "audioSrc": "https://media.lupitazambrano.com/music/hotel_ugly_shut_up_my_moms_calling.mp3",
