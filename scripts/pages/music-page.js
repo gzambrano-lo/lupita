@@ -408,6 +408,12 @@
             audio.pause();
             audioSource.src = nextAudioSrc;
             audioSource.type = getAudioMimeType(nextAudioSrc);
+            const startTime = Math.max(0, Number(track.startTime) || 0);
+            if (startTime > 0) {
+              audio.addEventListener("loadedmetadata", function () {
+                audio.currentTime = Math.min(startTime, audio.duration || startTime);
+              }, { once: true });
+            }
             audio.load();
             activeAudioSrc = nextAudioSrc;
             syncPlayButton();
