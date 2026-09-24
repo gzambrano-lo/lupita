@@ -12,15 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
     ]);
     const currentPath = window.location.pathname === '/' ? '/index.html' : window.location.pathname;
     const isBlogPostPage = document.body.classList.contains('post-page');
-    const navList = mainNav.querySelector('.tab-nav-list');
-
-    if (isBlogPostPage && navList && !mainNav.querySelector('a[href="/pages/blog.html"]')) {
-      const blogItem = document.createElement('li');
-      blogItem.className = 'tab-nav-item';
-      blogItem.innerHTML = '<a class="tab-nav-link" href="/pages/blog.html">blog</a>';
-      const linksItem = mainNav.querySelector('a[href="/pages/links.html"]')?.closest('li');
-      navList.insertBefore(blogItem, linksItem || null);
-    }
 
     if (isBlogPostPage && !document.querySelector('.minimal-post-back')) {
       const postHeader = document.querySelector('.post > header, .post-shell-header');
