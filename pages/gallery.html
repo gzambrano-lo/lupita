@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>gallery - lupe zambrano</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/layout.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/minimal.css">
+  <link rel="stylesheet" href="../styles/pages/gallery.css">
+  <script src="../scripts/site.js" defer></script>
+  <script src="../scripts/pages/gallery-images.js" defer></script>
+  <script src="../scripts/pages/gallery.js" defer></script>
+</head>
+
+<body>
+  <main class="scrapbook" id="main">
+    <div class="site-card gallery-site-card">
+      <header class="site-header">
+        <nav id="nav_menu" aria-label="Main" class="hero-tabs tab-nav">
+          <ul class="tab-nav-list">
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/index.html">home</a></li>
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/about.html">about</a></li>
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/gallery.html" aria-current="page">gallery</a></li>
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/music.html">music</a></li>
+            <li class="tab-nav-item"><a class="tab-nav-link" href="/pages/links.html">links</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="gallery-page" aria-labelledby="gallery-title">
+        <div class="gallery-heading">
+          <h1 id="gallery-title">photos of me</h1>
+          <p class="gallery-count" data-gallery-count aria-live="polite"></p>
+        </div>
+        <div class="gallery-scroll" data-gallery-scroll tabindex="0" aria-label="Photo gallery">
+          <p class="gallery-empty" data-gallery-empty>photos will live here soon.</p>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>&copy; lupita zambrano &#9734;(&gt;&#7447;&bull;) 2025</p>
+      </footer>
+    </div>
+  </main>
+</body>
+
+</html>

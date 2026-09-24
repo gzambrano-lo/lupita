@@ -1,5 +1,17 @@
 window.lupitaMusicPlaylist = [
   {
+    "title": "flower in bloom - gimme",
+    "cover": "https://imagedelivery.net/BW5QuWu_MQgJGDnSKrk4Ug/6aa66ac8-8946-4452-f607-d3e2a346d700/public",
+    "audioSrc": "https://media.lupitazambrano.com/music/FlowerInBloom_Gimme.mp3",
+    "note": "",
+    "date": "9/23/26",
+    "tags": [],
+    "spotify": "",
+    "apple": "",
+    "youtube": "",
+    "vinyl": ""
+  },
+  {
     "title": "vanessa zamora - reprogramar",
     "cover": "https://imagedelivery.net/BW5QuWu_MQgJGDnSKrk4Ug/96b7ce95-c637-4c63-741d-79b0cf870500/public",
     "audioSrc": "https://media.lupitazambrano.com/music/VanessaZamora_Reprogramar.mp3",

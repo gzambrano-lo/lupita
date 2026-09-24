@@ -87,6 +87,12 @@
   color: #bd6078;
 }
 
+.links-page .unavailable-link .lg-title {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: rgba(98, 85, 79, .72);
+}
+
 .links-page .lg-sub {
   color: #71645f;
 }

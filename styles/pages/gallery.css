@@ -1,0 +1,130 @@
+.gallery-site-card {
+  width: min(100%, 680px);
+  height: min(720px, calc(100vh - 4rem));
+  min-height: 480px;
+}
+
+.gallery-page {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.gallery-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.gallery-heading h1,
+.gallery-count {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.gallery-heading h1 {
+  color: var(--minimal-text);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.gallery-count {
+  color: var(--minimal-muted);
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.gallery-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-snap-type: y mandatory;
+  scrollbar-color: #c9bfb2 transparent;
+  scrollbar-width: thin;
+}
+
+.gallery-scroll:focus-visible {
+  outline: 1px solid var(--minimal-accent);
+  outline-offset: 4px;
+}
+
+.gallery-photo {
+  display: grid;
+  min-height: 100%;
+  margin: 0;
+  padding: 0 0 1rem;
+  place-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.gallery-photo-inner {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.6rem;
+}
+
+.gallery-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+  object-position: var(--photo-position, center);
+  background: #f3eee8;
+}
+
+.gallery-photo figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 1rem;
+  color: var(--minimal-muted);
+  font-size: 0.7rem;
+  line-height: 1.45;
+}
+
+.gallery-photo-date {
+  flex: none;
+}
+
+.gallery-empty {
+  display: grid;
+  height: 100%;
+  margin: 0;
+  place-items: center;
+  color: var(--minimal-muted);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+@media (max-width: 620px) {
+  .gallery-site-card {
+    width: calc(100% - 1.5rem);
+    height: calc(100dvh - 1.5rem);
+    min-height: 420px;
+    padding: 1.15rem 1rem 0.9rem;
+  }
+
+  .gallery-site-card #nav_menu.tab-nav .tab-nav-list {
+    gap: 0.85rem !important;
+  }
+
+  .gallery-site-card #nav_menu.tab-nav .tab-nav-link {
+    font-size: 11px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-scroll {
+    scroll-snap-type: none;
+  }
+}
