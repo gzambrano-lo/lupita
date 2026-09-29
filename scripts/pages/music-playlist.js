@@ -42,7 +42,7 @@ window.lupitaMusicPlaylist = [
     "note": "",
     "date": "9/22/26",
     "tags": [],
-    "spotify": "",
+    "spotify": "https://open.spotify.com/track/6G9w78ki4mR3AxvAwjsZFq?si=f6fc1415b1a44b20",
     "apple": "",
     "youtube": "",
     "vinyl": ""

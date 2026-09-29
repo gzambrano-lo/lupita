@@ -37,7 +37,11 @@
       <section class="gallery-page" aria-labelledby="gallery-title">
         <div class="gallery-heading">
           <h1 id="gallery-title">photos of me</h1>
-          <p class="gallery-count" data-gallery-count aria-live="polite"></p>
+          <div class="gallery-controls">
+            <button class="gallery-control" type="button" data-gallery-previous aria-label="Previous photo" title="Previous photo">&larr;</button>
+            <p class="gallery-count" data-gallery-count aria-live="polite"></p>
+            <button class="gallery-control" type="button" data-gallery-next aria-label="Next photo" title="Next photo">&rarr;</button>
+          </div>
         </div>
         <div class="gallery-scroll" data-gallery-scroll tabindex="0" aria-label="Photo gallery">
           <p class="gallery-empty" data-gallery-empty>photos will live here soon.</p>
