@@ -1,4 +1,126 @@
 window.addEventListener('DOMContentLoaded', () => {
+  const marqueeQuery = '.marquee-text, [data-mobile-marquee]';
+  const mobileMarqueeMedia = window.matchMedia('(max-width: 620px)');
+  const marqueeObservers = new WeakMap();
+  const measuredMarquees = new Set();
+
+  const getMarqueeText = (el) => {
+    const copy = el.querySelector('.marquee-copy:not([aria-hidden="true"])');
+    return (copy ? copy.textContent : el.textContent || '').trim();
+  };
+
+  const ensureMarqueeMarkup = (el) => {
+    el.classList.add('mobile-marquee');
+
+    let track = el.querySelector(':scope > .marquee-track');
+    if (!track) {
+      const text = (el.textContent || '').trim();
+      el.textContent = '';
+      track = document.createElement('span');
+      track.className = 'marquee-track';
+
+      const copy = document.createElement('span');
+      copy.className = 'marquee-copy';
+      copy.textContent = text;
+
+      const duplicate = document.createElement('span');
+      duplicate.className = 'marquee-copy';
+      duplicate.setAttribute('aria-hidden', 'true');
+      duplicate.textContent = text;
+
+      track.append(copy, duplicate);
+      el.append(track);
+    }
+
+    const copies = track.querySelectorAll('.marquee-copy');
+    if (copies.length === 1) {
+      const duplicate = copies[0].cloneNode(true);
+      duplicate.setAttribute('aria-hidden', 'true');
+      track.append(duplicate);
+    }
+
+    return track;
+  };
+
+  const measureMarquee = (el) => {
+    if (!document.documentElement.contains(el)) return;
+
+    const track = ensureMarqueeMarkup(el);
+    const primaryCopy = track.querySelector('.marquee-copy:not([aria-hidden="true"])') || track.firstElementChild;
+    const fullText = getMarqueeText(el);
+
+    el.classList.remove('is-overflowing');
+    el.removeAttribute('tabindex');
+
+    if (!mobileMarqueeMedia.matches || !primaryCopy || !fullText) {
+      el.removeAttribute('title');
+      return;
+    }
+
+    const overflowBuffer = 2;
+    const isOverflowing = primaryCopy.scrollWidth > el.clientWidth + overflowBuffer;
+
+    el.classList.toggle('is-overflowing', isOverflowing);
+    if (isOverflowing) {
+      el.title = fullText;
+      el.setAttribute('tabindex', '0');
+      el.style.setProperty('--marquee-duration', Math.max(8, Math.min(18, fullText.length / 3.5)) + 's');
+    } else {
+      el.removeAttribute('title');
+      el.style.removeProperty('--marquee-duration');
+    }
+  };
+
+  const queueMarqueeMeasure = (el) => {
+    requestAnimationFrame(() => measureMarquee(el));
+  };
+
+  const initMarquee = (el) => {
+    if (!el || measuredMarquees.has(el)) return;
+
+    measuredMarquees.add(el);
+    ensureMarqueeMarkup(el);
+
+    if ('ResizeObserver' in window) {
+      const resizeObserver = new ResizeObserver(() => queueMarqueeMeasure(el));
+      resizeObserver.observe(el);
+      marqueeObservers.set(el, resizeObserver);
+    }
+
+    const mutationObserver = new MutationObserver(() => queueMarqueeMeasure(el));
+    mutationObserver.observe(el, {
+      characterData: true,
+      childList: true,
+      subtree: true
+    });
+
+    queueMarqueeMeasure(el);
+  };
+
+  const initMarquees = (root = document) => {
+    root.querySelectorAll?.(marqueeQuery).forEach(initMarquee);
+  };
+
+  initMarquees();
+  mobileMarqueeMedia.addEventListener?.('change', () => {
+    measuredMarquees.forEach(queueMarqueeMeasure);
+  });
+
+  const marqueeDomObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (node.nodeType !== Node.ELEMENT_NODE) return;
+        if (node.matches?.(marqueeQuery)) initMarquee(node);
+        initMarquees(node);
+      });
+    });
+  });
+
+  marqueeDomObserver.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+
   const mainNav = document.querySelector('#nav_menu');
   if (mainNav) {
     const canonicalLabels = new Map([

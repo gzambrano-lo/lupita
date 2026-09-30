@@ -119,6 +119,7 @@
 
                 const text = document.createElement("span");
                 text.className = "queue-track-title";
+                text.dataset.mobileMarquee = "";
                 text.textContent = String(track.queueTitle || track.title).toLowerCase();
 
                 const marker = document.createElement("span");
@@ -161,7 +162,10 @@
             source.type = track.type || "audio/mpeg";
             audio.load();
 
-            if (trackTitle) trackTitle.textContent = String(track.title).toLowerCase();
+            if (trackTitle) {
+                trackTitle.dataset.mobileMarquee = "";
+                trackTitle.textContent = String(track.title).toLowerCase();
+            }
             syncMetaRow(metaLabel1, metaValue1, track.meta && track.meta[0]);
             syncMetaRow(metaLabel2, metaValue2, track.meta && track.meta[1]);
             syncMetaRow(metaLabel3, metaValue3, track.meta && track.meta[2]);

@@ -158,7 +158,7 @@
         ${renderCreatureVisual(creature)}
         ${creature.accessoryImage ? `<img class="tank-creature-accessory tank-accessory-image" src="${creature.accessoryImage}" alt="" aria-hidden="true">` : ""}
         ${!creature.accessoryImage && creature.accessoryIcon ? `<span class="tank-creature-accessory" aria-hidden="true">${creature.accessoryIcon}</span>` : ""}
-        <span class="tank-creature-name">${escapeHtml(creature.name)}</span>
+        <span class="tank-creature-name" data-mobile-marquee>${escapeHtml(creature.name)}</span>
       `;
       tank.append(item);
     });

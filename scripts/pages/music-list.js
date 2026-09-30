@@ -43,6 +43,7 @@
     if (!nowPlaying) return;
 
     nowPlaying.textContent = "now playing: " + (track ? splitTitle(track.title).song : "pick a song");
+    nowPlaying.dataset.mobileMarquee = "";
   }
 
   function getArtworkUrl(src) {
@@ -173,9 +174,11 @@
     text.className = "minimal-track-text";
 
     song.className = "minimal-track-title";
+    song.dataset.mobileMarquee = "";
     song.textContent = title.song;
 
     artist.className = "minimal-track-artist";
+    artist.dataset.mobileMarquee = "";
     artist.textContent = title.artist || "unknown artist";
 
     duration.className = "minimal-track-duration";

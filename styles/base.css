@@ -90,6 +90,108 @@ p {
     z-index: 1000;
 }
 
+.marquee-text .marquee-track,
+.mobile-marquee .marquee-track {
+    display: block;
+}
+
+.marquee-text .marquee-copy[aria-hidden="true"],
+.mobile-marquee .marquee-copy[aria-hidden="true"] {
+    display: none;
+}
+
+@media (max-width: 620px) {
+    .mobile-marquee {
+        min-width: 0;
+    }
+
+    .mobile-marquee.is-overflowing {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: clip;
+        -webkit-line-clamp: unset;
+        -webkit-box-orient: initial;
+    }
+
+    .mobile-marquee.is-overflowing .marquee-track {
+        display: flex;
+        width: max-content;
+        max-width: none;
+        animation: mobile-text-marquee var(--marquee-duration, 9s) linear infinite;
+        will-change: transform;
+    }
+
+    .mobile-marquee.is-overflowing .marquee-copy {
+        display: block;
+        flex: none;
+        padding-right: var(--marquee-gap, 2.5rem);
+        white-space: nowrap;
+    }
+
+    .mobile-marquee.is-overflowing .marquee-copy[aria-hidden="true"] {
+        display: block;
+    }
+
+    .mobile-marquee.is-overflowing:focus,
+    .mobile-marquee.is-overflowing:focus-within,
+    .mobile-marquee.is-overflowing:hover {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .mobile-marquee.is-overflowing:focus::-webkit-scrollbar,
+    .mobile-marquee.is-overflowing:focus-within::-webkit-scrollbar,
+    .mobile-marquee.is-overflowing:hover::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mobile-marquee.is-overflowing:focus .marquee-track,
+    .mobile-marquee.is-overflowing:focus-within .marquee-track,
+    .mobile-marquee.is-overflowing:hover .marquee-track {
+        animation: none;
+        transform: translate3d(0, 0, 0);
+        will-change: auto;
+    }
+
+    .mobile-marquee.is-overflowing:focus .marquee-copy[aria-hidden="true"],
+    .mobile-marquee.is-overflowing:focus-within .marquee-copy[aria-hidden="true"],
+    .mobile-marquee.is-overflowing:hover .marquee-copy[aria-hidden="true"] {
+        display: none;
+    }
+}
+
+@keyframes mobile-text-marquee {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@media (max-width: 620px) and (prefers-reduced-motion: reduce) {
+    .mobile-marquee.is-overflowing {
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .mobile-marquee.is-overflowing::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mobile-marquee.is-overflowing .marquee-track {
+        animation: none;
+        transform: none;
+        will-change: auto;
+    }
+
+    .mobile-marquee.is-overflowing .marquee-copy[aria-hidden="true"] {
+        display: none;
+    }
+}
+
 /* reduce motion */
 @media (prefers-reduced-motion: reduce) {
     * {

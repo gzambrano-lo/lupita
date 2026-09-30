@@ -280,6 +280,7 @@
 
           const text = document.createElement("span");
           text.className = "queue-track-title";
+          text.dataset.mobileMarquee = "";
           text.textContent = track.title;
 
           const marker = document.createElement("span");
