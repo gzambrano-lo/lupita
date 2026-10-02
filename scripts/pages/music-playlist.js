@@ -1,5 +1,49 @@
 window.lupitaMusicPlaylist = [
   {
+    "title": "mind shrine - sad tv",
+    "audioSrc": "https://media.lupitazambrano.com/music/MindShrine_SadTV.mp3",
+    "note": "",
+    "date": "10/1/26",
+    "tags": [],
+    "spotify": "",
+    "apple": "",
+    "youtube": "",
+    "vinyl": ""
+  },
+  {
+    "title": "chzter - m\u00e1s all\u00e1 de mis ojeras",
+    "audioSrc": "https://media.lupitazambrano.com/music/Chzter_MasAllaDeMisOjeras.mp4",
+    "note": "",
+    "date": "10/1/26",
+    "tags": [],
+    "spotify": "",
+    "apple": "",
+    "youtube": "",
+    "vinyl": ""
+  },
+  {
+    "title": "lollie - tulips",
+    "audioSrc": "https://media.lupitazambrano.com/music/Lollie_Tulips.mp3",
+    "note": "",
+    "date": "10/1/26",
+    "tags": [],
+    "spotify": "",
+    "apple": "",
+    "youtube": "",
+    "vinyl": ""
+  },
+  {
+    "title": "linea personal - monalisa",
+    "audioSrc": "https://media.lupitazambrano.com/music/LineaPersonal_Monalisa.mp3",
+    "note": "",
+    "date": "10/1/26",
+    "tags": [],
+    "spotify": "",
+    "apple": "",
+    "youtube": "",
+    "vinyl": ""
+  },
+  {
     "title": "flower in bloom - gimme",
     "cover": "https://imagedelivery.net/BW5QuWu_MQgJGDnSKrk4Ug/6aa66ac8-8946-4452-f607-d3e2a346d700/public",
     "audioSrc": "https://media.lupitazambrano.com/music/FlowerInBloom_Gimme.mp3",
