@@ -1,5 +1,27 @@
 window.lupitaMusicPlaylist = [
   {
+    "title": "junior h - nac\u00ed para amarte",
+    "audioSrc": "https://media.lupitazambrano.com/music/JuniorH_NaciParaAmarte.mp3",
+    "note": "",
+    "date": "10/2/26",
+    "tags": [],
+    "spotify": "",
+    "apple": "",
+    "youtube": "",
+    "vinyl": ""
+  },
+  {
+    "title": "natanael cano - o me voy o te vas",
+    "audioSrc": "https://media.lupitazambrano.com/music/NatanaelCano_OMeVoyOTeVas.mp3",
+    "note": "",
+    "date": "10/2/26",
+    "tags": [],
+    "spotify": "",
+    "apple": "",
+    "youtube": "",
+    "vinyl": ""
+  },
+  {
     "title": "mind shrine - sad tv",
     "audioSrc": "https://media.lupitazambrano.com/music/MindShrine_SadTV.mp3",
     "note": "",
@@ -33,7 +55,7 @@ window.lupitaMusicPlaylist = [
     "vinyl": ""
   },
   {
-    "title": "linea personal - monalisa",
+    "title": "linea personal - mona lisa",
     "audioSrc": "https://media.lupitazambrano.com/music/LineaPersonal_Monalisa.mp3",
     "note": "",
     "date": "10/1/26",
